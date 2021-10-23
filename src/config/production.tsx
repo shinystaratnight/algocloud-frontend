@@ -1,16 +1,16 @@
 // Place the URL here with the /api suffix.
 // Ex.:`https://domain.com/api`;
-const backendUrl = `/api`;
+const backendUrl = `https://algocloud-backend.onrender.com/api`;
 
 // SwaggerUI Documentation URL
 // Leave black if documentation should be hidden
-const apiDocumentationUrl = `/documentation`;
+const apiDocumentationUrl = `https://algocloud-backend.onrender.com/documentation`;
 
 /**
  * Frontend URL.
  */
 const frontendUrl = {
-  host: 'algocloud.org',
+  host: 'algocloud-frontend.onrender.com',
   protocol: 'https',
 };
 

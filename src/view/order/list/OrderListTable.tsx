@@ -40,7 +40,7 @@ function OrderListTable(props) {
     selectors.selectSelectedKeys,
   );
   const hasRows = useSelector(selectors.selectHasRows);
-  const sorter = useSelector(selectors.selectSorter);
+  // const sorter = useSelector(selectors.selectSorter);
   const isAllSelected = useSelector(
     selectors.selectIsAllSelected,
   );
@@ -59,19 +59,19 @@ function OrderListTable(props) {
     setRecordIdToDestroy(null);
   };
 
-  const doChangeSort = (field) => {
-    const order =
-      sorter.field === field && sorter.order === 'ascend'
-        ? 'descend'
-        : 'ascend';
+  // const doChangeSort = (field) => {
+  //   const order =
+  //     sorter.field === field && sorter.order === 'ascend'
+  //       ? 'descend'
+  //       : 'ascend';
 
-    dispatch(
-      actions.doChangeSort({
-        field,
-        order,
-      }),
-    );
-  };
+  //   dispatch(
+  //     actions.doChangeSort({
+  //       field,
+  //       order,
+  //     }),
+  //   );
+  // };
 
   const doChangePagination = (pagination) => {
     dispatch(actions.doChangePagination(pagination));
