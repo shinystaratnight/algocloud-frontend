@@ -10,7 +10,7 @@ const apiDocumentationUrl = `https://algocloud-backend.onrender.com/documentatio
  * Frontend URL.
  */
 const frontendUrl = {
-  host: 'algocloud-frontend.onrender.com',
+  host: 'algocloud.org',
   protocol: 'https',
 };
 
