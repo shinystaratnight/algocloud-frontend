@@ -26,7 +26,7 @@ const es = {
     filters: 'Filtros',
   },
   app: {
-    title: 'Aplicación',
+    title: 'AlgoCloud',
   },
 
   api: {
