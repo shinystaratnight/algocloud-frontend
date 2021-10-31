@@ -5,27 +5,14 @@ const Content = styled.div`
   height: 100%;
   min-height: 100%;
   overflow-y: auto;
-  padding: 24px;
-      background-color: var(--white);
-      margin-left: auto;
-      height: 100%;
-      overflow: auto;
-      position: relative;
-      z-index: 2;
-      box-shadow: var(--shadow);
-      display: grid;
-      align-items: center;
-      padding: 40px 80px;
-}
-
-@media (min-width: 660px){
-.content {
-    flex-shrink: 0;
-    flex-basis: 50vw;
-    max-width: 50%;
-    min-width: 660px;
-}
-}
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 56px 40px;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
   h1,
   h2,
   h3,
