@@ -15,7 +15,6 @@ import ButtonIcon from 'src/view/shared/ButtonIcon';
 import InputFormItem from 'src/view/shared/form/items/InputFormItem';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import 'src/app.css';
 
 const schema = yup.object().shape({
   email: yupFormSchemas.string(i18n('user.fields.email'), {
@@ -70,21 +69,25 @@ function SignupPage() {
   };
 
   return (
-    <Wrapper className="screenshot"
+    <Wrapper
       style={{
         backgroundImage: `url(${
           backgroundImageUrl || '/images/signin-1.svg'
         })`,
       }}
     >
-      <Content className="screenshot-2">
-      <span className="subtitle" data-v-d768d00c="">AlgoCloud Dashboard</span>
-      <h1 data-v-d768d00c="">Register for your Cloud’s Super-Admin Account</h1>
-      <p data-v-d768d00c="">
-			The fastest way to get up-and-running with Algorand, our On-Demand Algo
-			dashboard allows you to easily create and manage all of your DeFi and NFT projects.&nbsp;
-			
-			<a href="https://headline-inc.com" data-v-d768d00c="">Learn More</a></p>
+      <Content>
+        <Logo>
+          {logoUrl ? (
+            <img
+              src={logoUrl}
+              width="240px"
+              alt={i18n('app.title')}
+            />
+          ) : (
+            <h1>{i18n('app.title')}</h1>
+          )}
+        </Logo>
 
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
@@ -103,7 +106,7 @@ function SignupPage() {
               type="password"
             />
             <button
-              className="base-button"
+              className="btn btn-primary btn-block"
               type="submit"
               disabled={loading}
             >
