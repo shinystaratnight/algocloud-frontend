@@ -459,6 +459,7 @@ const en = {
       default: 'Dark',
       light: 'Light',
       cyan: 'Cyan',
+      cyborg: 'Cyborg',
       'geek-blue': 'Geek Blue',
       gold: 'Gold',
       lime: 'Lime',

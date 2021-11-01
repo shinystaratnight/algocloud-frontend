@@ -476,6 +476,7 @@ const es = {
       default: 'Oscuro',
       light: 'Claro',
       cyan: 'Cian',
+      cyborg: 'Cyborg',
       'geek-blue': 'Geek Blue',
       gold: 'Oro',
       lime: 'Lima',

@@ -1,6 +1,7 @@
 node-sass ./default.scss ../dist/default.css --output-style compressed
 node-sass ./light.scss ../dist/light.css --output-style compressed
 node-sass ./cyan.scss ../dist/cyan.css --output-style compressed
+node-sass ./cyborg.scss ../dist/cyborg.css --output-style compressed
 node-sass ./geek-blue.scss ../dist/geek-blue.css --output-style compressed
 node-sass ./gold.scss ../dist/gold.css --output-style compressed
 node-sass ./lime.scss ../dist/lime.css --output-style compressed
