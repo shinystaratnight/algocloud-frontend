@@ -10,7 +10,7 @@ background-color: rgba(0,0,0,0.0) !important;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
-button.btn.btn-primary.btn-block:hover {
+button.screenshot-btn.btn.btn-primary.btn-block:hover {
     border-style: solid;
     border-width: 1px;
     border-color: #03dac5;
@@ -20,7 +20,7 @@ button.btn.btn-primary.btn-block:hover {
     outline-color: #5ffcff
 }
 
-.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .show>.btn-primary.dropdown-toggle {
+button.screenshot-btn.btn.btn-primary.btn-block:active {
     color: #000 !important;
     background-color: #03dac5c2 !important;
     border-color: #000;
@@ -28,7 +28,7 @@ button.btn.btn-primary.btn-block:hover {
     outline-color: #03dac5;
 }
 
-button.btn.btn-primary.btn-block {
+button.screenshot-btn.btn.btn-primary.btn-block {
     border-style: solid;
     border-width: 1px;
     border-color: #03dac5;
@@ -40,7 +40,7 @@ button.btn.btn-primary.btn-block {
     outline-color: rgb(3 218 197 / 39%);
 }
 
-.form-control:focus {
+.screenshot-form-control:focus {
     color: #ffffff;
     background-color: #000000;
     border-color: #03dac5;
@@ -49,17 +49,17 @@ button.btn.btn-primary.btn-block {
     box-shadow: 0 0 0 0.2rem rgb(6 30 51 / 25%);
 }
 
-.form-control:hover {
+.screenshot-form-control:hover {
     border-width: 1px;
     border-color: #03dac5;
 }
 
-.form-control {
+.screenshot-form-control {
     background-color: rgb(3 218 197 / 4%);
     height: 2.6rem;
 }
 
-.navbar-brand {
+.screenshot-navbar-brand {
     display: flex !important;
     align-items: center !important;
 }
