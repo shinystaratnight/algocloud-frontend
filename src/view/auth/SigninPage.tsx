@@ -120,14 +120,14 @@ function SigninPage() {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <InputFormItem
-              name="screenshot-form-control"
+              name="email"
               placeholder={i18n('user.fields.email')}
               autoComplete="email"
               autoFocus
               externalErrorMessage={externalErrorMessage}
             />
             <InputFormItem
-              name="screenshot-form-control"
+              name="password"
               placeholder={i18n('user.fields.password')}
               autoComplete="password"
               type="password"
