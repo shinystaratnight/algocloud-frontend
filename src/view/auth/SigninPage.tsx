@@ -104,7 +104,7 @@ function SigninPage() {
       </BackgroundVideo>
       <Content className="screenshot-2">
              <Logo>
-             <a className="screenshot-navbar-brand" href="."><h1 className="logo-font"><strong>Algo</strong>Cloud</h1><svg className="svg-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" viewBox="0 0 16 16">
+             <a className="screenshot-navbar-brand" href="."><h1 className="logo-font"><strong>Algo</strong>Cloud</h1><svg className="svg-logo" xmlns="http://www.w3.org/2000/svg" width="50" height="48" fill="currentColor" viewBox="0 0 16 16">
   <path d="M8.5 4a4.002 4.002 0 0 0-3.8 2.745.5.5 0 1 1-.949-.313 5.002 5.002 0 0 1 9.654.595A3 3 0 0 1 13 13H.5a.5.5 0 0 1 0-1H13a2 2 0 0 0 .001-4h-.026a.5.5 0 0 1-.5-.445A4 4 0 0 0 8.5 4zM0 8.5A.5.5 0 0 1 .5 8h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"></path>
 </svg></a>
           {logoUrl ? (
@@ -120,24 +120,23 @@ function SigninPage() {
         <FormProvider {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)}>
             <InputFormItem
-              name="email"
+              name="screenshot-form-control"
               placeholder={i18n('user.fields.email')}
               autoComplete="email"
               autoFocus
               externalErrorMessage={externalErrorMessage}
             />
-
             <InputFormItem
-              name="password"
+              name="screenshot-form-control"
               placeholder={i18n('user.fields.password')}
               autoComplete="password"
               type="password"
             />
 
             <div className="d-flex form-group">
-              <div className="form-check col-6">
+              <div className="screenshot-checkbox-box col-6">
                 <input
-                  className="form-check-input"
+                  className="screenshot-checkbox"
                   type="checkbox"
                   id={'rememberMe'}
                   name={'rememberMe'}
@@ -145,7 +144,7 @@ function SigninPage() {
                 />
 
                 <label
-                  className="form-check-label"
+                  className="screenshot-checkbox-label"
                   htmlFor={'rememberMe'}
                 >
                   {i18n('user.fields.rememberMe')}
@@ -205,8 +204,10 @@ function SigninPage() {
               </Link>
             </OtherActions>
 
-            <I18nFlags style={{ marginTop: '24px' }} />
           </form>
+          <div className="built-by">
+            <div className="built-by-flags"><I18nFlags className="built-by-flags"/></div>
+  <h2>Built by HEADLINE</h2><p className="copyright">© 2021 HEADLINE INC. All rights reserved.</p></div>
         </FormProvider>
       </Content>
     </Wrapper>

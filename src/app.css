@@ -8,6 +8,12 @@ background-color: rgba(0,0,0,0.0) !important;
     border-color: rgb(109, 109, 117);
     box-shadow: rgb(102 102 102 / 20%) 0px 10px 50px, rgb(102 102 102 / 20%) -10px -10px 50px;
     background-color: rgba(0, 0, 0, 0.6);
+    border-style: solid;
+}
+
+a.screenshot-navbar-brand:hover {
+    text-decoration: none;
+    opacity: 100%;
 }
 
 button.screenshot-btn.btn.btn-primary.btn-block:hover {
@@ -40,7 +46,7 @@ button.screenshot-btn.btn.btn-primary.btn-block {
     outline-color: rgb(3 218 197 / 39%);
 }
 
-.screenshot-form-control:focus {
+input#screenshot-form-control:focus, input#screenshot-form-control:focus {
     color: #ffffff;
     background-color: #000000;
     border-color: #03dac5;
@@ -49,19 +55,45 @@ button.screenshot-btn.btn.btn-primary.btn-block {
     box-shadow: 0 0 0 0.2rem rgb(6 30 51 / 25%);
 }
 
-.screenshot-form-control:hover {
+input#screenshot-form-control:hover {
     border-width: 1px;
     border-color: #03dac5;
+    background-color: #000;
 }
 
-.screenshot-form-control {
-    background-color: rgb(3 218 197 / 4%);
+input#screenshot-form-control {
+    background-color: #111111;
     height: 2.6rem;
+    border-color: rgb(109, 109, 117);
 }
+
+p.copyright {
+    margin-bottom: 0px;}
 
 .screenshot-navbar-brand {
     display: flex !important;
     align-items: center !important;
+}
+
+.built-by {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: baseline;
+    align-items: flex-start;
+    bottom: 0px;
+}
+
+.built-by-flags
+{
+    margin-bottom: .5rem;
+}
+
+
+a.screenshot-navbar-brand{
+    opacity: 100%;
 }
 
 svg.svg-logo {
@@ -109,3 +141,36 @@ h1.logo-font {
       body {
         background-color: #030d23;
       }
+
+
+    .screenshot-checkbox-label {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+    
+    .screenshot-checkbox-box {
+        position: relative;
+        display: block;
+        padding-left: 1.8rem;
+        padding-right: 8px;
+        padding-top: .1em;
+        border-radius: 4px;
+        cursor: pointer
+    }
+    
+    .screenshot-checkbox {
+        position: absolute;
+        margin-top: .3rem;
+        margin-left: -1.5rem;
+        width: 1em;
+        height: 1em;
+    }
+    
+    .screenshot-checkbox-box:active,  .screenshot-checkbox-box:hover {
+        background-color: #f5f6f629;
+        background-size: contain;
+        cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(109, 109, 117);
+    }
