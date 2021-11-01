@@ -90,6 +90,13 @@ h1.logo-font {
         top: 0;
         left: 0;
       }
+
+      @media screen and (max-width: 1500px){
+        .hero-video {
+    margin-left: -512px;
+    width: auto;
+            }
+        }
       
       @media screen and (max-width: 1000px) { /* Specific to this particular image */
         .hero-video {
