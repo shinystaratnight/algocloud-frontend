@@ -11,29 +11,39 @@ background-color: rgba(0,0,0,0.0) !important;
     border-style: solid;
 }
 
-a.algocloud-navbar-brand:hover {
-    text-decoration: none;
-    opacity: 100%;
-}
+a.algocloud-navbar-brand-landing:hover{text-decoration:none;opacity:100%;color:var(--primary)!important}.algocloud-navbar-brand{display:flex!important;flex-direction:row;width:100%;padding:18px 16px 8px 24px;align-content:center}a.algocloud-navbar-brand-landing{opacity:100%;color:#efefef!important;font-weight:500!important;font-family:"Libre Franklin","Arial",Arial,sans-serif!important;font-size:1.4rem!important}svg.algocloud-logo{width:32px;height:28px}
 
 .algocloud-navbar-brand {
     display: flex !important;
     align-items: center !important;
 }
 
-a.algocloud-navbar-brand{
+a.algocloud-navbar-brand-landing{
     opacity: 100%;
 }
 
-svg.algocloud-logo {
-    width: 60px;
+a.algocloud-navbar-brand-landing {
+    font-size: 2.6rem !important;
 }
 
-h3.algocloud-font {
+svg.algocloud-logo-landing {
+    width: 60px;
+    height: 40px;
+}
+
+h3.algocloud-font-landing {
     color: #ffffff;
     font-weight: 500!important;
     font-family: "Libre Franklin","Arial",Arial,sans-serif!important;
     font-size: calc(2.425rem + .4vw)!important;
+}
+
+a.algocloud-navbar-brand-landing {
+    opacity: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
 }
 
 button.screenshot-btn.btn.btn-primary.btn-block:hover {
