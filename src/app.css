@@ -11,9 +11,29 @@ background-color: rgba(0,0,0,0.0) !important;
     border-style: solid;
 }
 
-a.screenshot-navbar-brand:hover {
+a.algocloud-navbar-brand:hover {
     text-decoration: none;
     opacity: 100%;
+}
+
+.algocloud-navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+}
+
+a.algocloud-navbar-brand{
+    opacity: 100%;
+}
+
+svg.algocloud-logo {
+    width: 60px;
+}
+
+h3.algocloud-font {
+    color: #ffffff;
+    font-weight: 500!important;
+    font-family: "Libre Franklin","Arial",Arial,sans-serif!important;
+    font-size: calc(2.425rem + .4vw)!important;
 }
 
 button.screenshot-btn.btn.btn-primary.btn-block:hover {
@@ -70,10 +90,6 @@ input#screenshot-form-control {
 p.copyright {
     margin-bottom: 0px;}
 
-.screenshot-navbar-brand {
-    display: flex !important;
-    align-items: center !important;
-}
 
 .built-by {
     display: flex;
@@ -91,21 +107,6 @@ p.copyright {
     margin-bottom: .5rem;
 }
 
-
-a.screenshot-navbar-brand{
-    opacity: 100%;
-}
-
-svg.svg-logo {
-    width: 60px;
-}
-
-h1.logo-font {
-    color: #ffffff;
-    font-weight: 500!important;
-    font-family: "Libre Franklin","Arial",Arial,sans-serif!important;
-    font-size: calc(2.425rem + .4vw)!important;
-}
 
 .hero-video {
     filter: hue-rotate(7deg) !important;
