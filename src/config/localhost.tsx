@@ -1,3 +1,5 @@
+// Place the URL here with the /api suffix.
+// Ex.:`https://domain.com/api`;
 const backendUrl = `http://localhost:8080/api`;
 
 // SwaggerUI Documentation URL
@@ -24,7 +26,7 @@ const tenantMode = 'multi';
  * Plan payments configuration.
  */
 const isPlanEnabled = true;
-const stripePublishableKey = '';
+const stripePublishableKey = 'pk_live_51JpIyQLnyNFZ6q7ACYsn4alSu0zzJ7rMzROFi4LtnYRjw3DEhzYbV4r98U8biAWwhK4y055pRagMeZdYJitrdLmn00ugK91EL1';
 
 export default {
   frontendUrl,
