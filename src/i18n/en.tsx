@@ -267,9 +267,13 @@ const en = {
   },
 
   roles: {
+    superadmin: {
+      label: 'Super Admin',
+      description: 'Full access to all resources'
+    },
     admin: {
       label: 'Admin',
-      description: 'Full access to all resources',
+      description: 'Administrator access to a given tenant',
     },
     custom: {
       label: 'Custom Role',

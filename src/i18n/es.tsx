@@ -324,6 +324,10 @@ const es = {
     },
   },
   roles: {
+    superadmin: {
+      label: 'Super Administración',
+      description: 'Full access to all resources'
+    },
     admin: {
       label: 'Administración',
       description: 'Acceso total a todos los recursos.',

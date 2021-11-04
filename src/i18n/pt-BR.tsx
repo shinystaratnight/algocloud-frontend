@@ -265,6 +265,10 @@ const ptBR = {
   },
 
   roles: {
+    superadmin: {
+      label: 'Super Administrador',
+      description: 'Full access to all resources'
+    },
     admin: {
       label: 'Administrador',
       description: 'Acesso completo a todos os recursos',
