@@ -46,20 +46,22 @@ function PrivateRoute({
           return <Redirect to="/auth/inactive-user" />;
         }
 
-        if (
-          ['multi', 'multi-with-subdomain'].includes(
-            config.tenantMode,
-          ) &&
-          !tenantSubdomain.isSubdomain
-        ) {
-          if (permissionChecker.isEmptyTenant) {
-            return <Redirect to="/auth/tenant" />;
-          }
-        } else {
-          if (permissionChecker.isEmptyPermissions) {
-            return (
-              <Redirect to="/auth/empty-permissions" />
-            );
+        if (!permissionChecker.isUserSuperAdmin) {
+          if (
+            ['multi', 'multi-with-subdomain'].includes(
+              config.tenantMode,
+            ) &&
+            !tenantSubdomain.isSubdomain
+          ) {
+            if (permissionChecker.isEmptyTenant) {
+              return <Redirect to="/auth/tenant" />;
+            }
+          } else {
+            if (permissionChecker.isEmptyPermissions) {
+              return (
+                <Redirect to="/auth/empty-permissions" />
+              );
+            }
           }
         }
 

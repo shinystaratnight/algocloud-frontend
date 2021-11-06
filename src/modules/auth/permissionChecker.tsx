@@ -171,4 +171,12 @@ export default class PermissionChecker {
     }
     return this.currentUser.active;
   }
+
+  get isUserSuperAdmin() {
+    if (!this.currentUser.superAdmin) {
+      return false;
+    }
+
+    return true;
+  }
 }
