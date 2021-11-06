@@ -4,7 +4,7 @@
 }
 
 .menu-nav {
-  background-color: var(--primary);
+  background-color: rgba(255,255,255,0.05);
   color: #a2a3b7;
 }
 
@@ -24,11 +24,30 @@
 }
 
 .menu-li.active a {
-  border-right: 2px solid white;
   color: white;
-  background-color: #082947;
+  background-color: #23325D;
 }
 
 a.algocloud-navbar-brand{
-  color:#a2a3b7!important;
+  color:#F8F8F8!important;
+}
+
+.bg-box {
+  background:#1E2D58;
+  background: rgba(255,255,255,.05);
+  box-shadow: 0px 0px 50px 14px rgb(18 28 53 / 25%);
+}
+
+.menu-toggle-button {
+  color: rgba(255,255,255,.3) !important
+}
+
+.i18n-select select {
+  background: none !important;
+  color: #ffffff !important;
+  border-color: rgba(255,255,255,.5) !important;
+}
+
+.i18n-select select option {
+  background: #1D294F !important;
 }
