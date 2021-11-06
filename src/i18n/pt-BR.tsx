@@ -236,6 +236,9 @@ const ptBR = {
       message: `Por favor, confirme seu email em <strong>{0}</strong> para continuar.`,
       submit: `Reenviar confirmação por email`,
     },
+    inactiveUser: {
+      message: 'Sua conta ainda não foi ativada. Aguarde até que o superadministrador aprove sua conta.',
+    },
     passwordResetEmail: {
       message: 'Enviar email de redefinição de senha',
       error: `Email não encontrado`,

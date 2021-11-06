@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import EmailUnverifiedRoute from 'src/view/shared/routes/EmailUnverifiedRoute';
+import InactiveUserRoute from 'src/view/shared/routes/InactiveUserRoute';
 import PrivateRoute from 'src/view/shared/routes/PrivateRoute';
 import PublicRoute from 'src/view/shared/routes/PublicRoute';
 import CustomLoadable from 'src/view/shared/CustomLoadable';
@@ -62,6 +63,19 @@ function RoutesComponent(props) {
 
       {routes.emailUnverifiedRoutes.map((route) => (
         <EmailUnverifiedRoute
+          key={route.path}
+          exact
+          path={route.path}
+          currentUser={currentUser}
+          currentTenant={currentTenant}
+          component={CustomLoadable({
+            loader: route.loader,
+          })}
+        />
+      ))}
+
+      {routes.inactiveUserRoutes.map((route) => (
+        <InactiveUserRoute
           key={route.path}
           exact
           path={route.path}

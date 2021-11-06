@@ -257,6 +257,14 @@ const emailUnverifiedRoutes = [
   },
 ].filter(Boolean);
 
+const inactiveUserRoutes = [
+  {
+    path: '/auth/inactive-user',
+    loader: () =>
+      import('src/view/auth/InactiveUserPage'),
+  },
+].filter(Boolean);
+
 const simpleRoutes = [
   {
     path: '/auth/password-reset',
@@ -293,5 +301,6 @@ export default {
   emptyTenantRoutes,
   emptyPermissionsRoutes,
   emailUnverifiedRoutes,
+  inactiveUserRoutes,
   simpleRoutes,
 };

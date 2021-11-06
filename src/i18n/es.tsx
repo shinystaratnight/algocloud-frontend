@@ -243,6 +243,9 @@ const es = {
         'Confirme su correo electrónico en <strong>{0}</strong> para continuar.',
       submit: 'Reenviar verificación de correo electrónico',
     },
+    inactiveUser: {
+      message: 'Tu cuenta no ha sido activada todavía. Espere a que el superadministrador apruebe su cuenta.',
+    },
     emptyPermissions: {
       message:
         'Aún no tienes permisos. Espera a que el administrador te otorgue privilegios.',

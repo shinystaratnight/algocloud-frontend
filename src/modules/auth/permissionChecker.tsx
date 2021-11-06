@@ -160,4 +160,15 @@ export default class PermissionChecker {
 
     return this.currentUser.emailVerified;
   }
+
+  get isUserActive() {
+    if (!this.isAuthenticated) {
+      return false;
+    }
+
+    if (!this.isEmailVerified) {
+      return false;
+    }
+    return this.currentUser.active;
+  }
 }

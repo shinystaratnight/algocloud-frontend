@@ -42,6 +42,10 @@ function PrivateRoute({
           return <Redirect to="/auth/email-unverified" />;
         }
 
+        if (!permissionChecker.isUserActive) {
+          return <Redirect to="/auth/inactive-user" />;
+        }
+
         if (
           ['multi', 'multi-with-subdomain'].includes(
             config.tenantMode,

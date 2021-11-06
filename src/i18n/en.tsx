@@ -238,6 +238,9 @@ const en = {
       message: `Please confirm your email at <strong>{0}</strong> to continue.`,
       submit: `Resend email verification`,
     },
+    inactiveUser: {
+      message: 'Your account has not been activated yet. Please wait for the super administrator to approve your account.',
+    },
     emptyPermissions: {
       message: `You have no permissions yet. Wait for the admin to grant you privileges.`,
     },
