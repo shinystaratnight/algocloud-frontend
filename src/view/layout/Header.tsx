@@ -26,6 +26,9 @@ function Header(props) {
   const currentTenant = useSelector(
     authSelectors.selectCurrentTenant,
   );
+  const currentSuperAdmin = useSelector(
+    authSelectors.selectCurrentSuperAdmin,
+  );
 
   const doSignout = () => {
     dispatch(authActions.doSignout());
@@ -73,7 +76,7 @@ function Header(props) {
               </span>
               <span className="user-dropdown-text">
                 <span>{userText}</span>{' '}
-                {['multi', 'multi-with-subdomain'].includes(
+                {!currentSuperAdmin && ['multi', 'multi-with-subdomain'].includes(
                   config.tenantMode,
                 ) && (
                   <span className="user-dropdown-text-tenant">
@@ -100,7 +103,7 @@ function Header(props) {
               <i className="fas fa-lock" />{' '}
               {i18n('auth.passwordChange.title')}
             </button>
-            {['multi', 'multi-with-subdomain'].includes(
+            {!currentSuperAdmin && ['multi', 'multi-with-subdomain'].includes(
               config.tenantMode,
             ) && (
               <button
