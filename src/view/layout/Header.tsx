@@ -83,6 +83,11 @@ function Header(props) {
                     {currentTenant && currentTenant.name}
                   </span>
                 )}
+                {currentSuperAdmin && (
+                  <span className="user-dropdown-text-superadmin">
+                    {i18n('roles.superadmin.label')}
+                  </span>
+                )}
               </span>
             </div>
           </span>
