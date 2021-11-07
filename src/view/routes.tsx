@@ -298,25 +298,25 @@ const simpleRoutes = [
 const superAdminRoutes = [
   {
     path: '/superadmin/user',
-    loader: () => import('src/view/superAdmin/user/list/UserPage'),
+    loader: () => import('src/view/superadmin/user/list/UserPage'),
     permissionRequired: permissions.userReadBySuperAdmin,
     exact: true,
   },
   {
     path: '/superadmin/tenant',
-    loader: () => import('src/view/superAdmin/tenant/list/TenantListPage'),
+    loader: () => import('src/view/superadmin/tenant/list/TenantListPage'),
     permissionRequired: permissions.userReadBySuperAdmin,
     exact: true,
   },
   {
     path: '/superadmin/subscribe',
-    loader: () => import('src/view/superAdmin/subscribe/list/SubscribeListPage'),
+    loader: () => import('src/view/superadmin/subscribe/list/SubscribeListPage'),
     permissionRequired: permissions.userReadBySuperAdmin,
     exact: true,
   },
   {
     path: '/superadmin/analytics',
-    loader: () => import('src/view/superAdmin/analytics/AnalyticsPage'),
+    loader: () => import('src/view/superadmin/analytics/AnalyticsPage'),
     permissionRequired: permissions.userReadBySuperAdmin,
     exact: true,
   },
