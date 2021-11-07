@@ -8,14 +8,19 @@ import { getHistory } from 'src/modules/store';
 import actions from 'src/modules/tenant/form/tenantFormActions';
 import selectors from 'src/modules/tenant/form/tenantFormSelectors';
 import { useSelector, useDispatch } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
+import { useRouteMatch, Redirect } from 'react-router-dom';
+import authSelectors from 'src/modules/auth/authSelectors';
 import Spinner from 'src/view/shared/Spinner';
 
 function TenantFormPage() {
+  const currentSuperAdmin = useSelector(
+    authSelectors.selectCurrentSuperAdmin,
+  );
+
   const dispatch = useDispatch();
   const [dispatched, setDispatched] = useState(false);
   const match = useRouteMatch();
-
+  
   const initLoading = useSelector(
     selectors.selectInitLoading,
   );
@@ -42,6 +47,8 @@ function TenantFormPage() {
   const title = isEditing
     ? i18n('tenant.edit.title')
     : i18n('tenant.new.title');
+
+  if (currentSuperAdmin) return <Redirect to="/403" />;
 
   return (
     <>
