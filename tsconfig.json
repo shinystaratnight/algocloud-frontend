@@ -16,7 +16,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noImplicitAny": false,
-    "strict": true
+    "strict": true,
+    "downlevelIteration": true,
+    "types": ["react-spring", "jest"]
   },
+  "exclude": ["node_modules", "cypress"],
   "include": ["src"]
 }
