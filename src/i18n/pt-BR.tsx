@@ -445,6 +445,10 @@ const ptBR = {
       createdByEmail: 'Email do Usuário',
     },
   },
+  analytics: {
+    menu: 'Analytics',
+    title: 'Analytics',
+  },
   settings: {
     title: 'Configurações',
     menu: 'Configurações',

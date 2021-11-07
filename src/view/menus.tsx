@@ -60,5 +60,33 @@ export default [
     permissionRequired: permissions.orderRead,
     icon: 'fas fa-chevron-right',
     label: i18n('entities.order.menu'),
-  },  
+  },
+  
+  {
+    path: '/admin/user',
+    label: i18n('user.menu'),
+    permissionRequired: permissions.userReadByAdmin,
+    icon: 'fas fa-user-plus',
+  },
+
+  config.isPlanEnabled && {
+    path: '/admin/subscribe',
+    permissionRequired: permissions.subscriberReadByAdmin,
+    icon: 'fas fa-credit-card',
+    label: i18n('plan.subscribe'),
+  },
+
+  {
+    path: '/admin/tenant',
+    label: i18n('tenant.label'),
+    permissionRequired: permissions.tenantReadByAdmin,
+    icon: 'fas fa-th-large',
+  },
+
+  {
+    path: '/admin/analytics',
+    label: i18n('analytics.menu'),
+    permissionRequired: permissions.statsReadByAdmin,
+    icon: 'fas fa-chart-bar',
+  }
 ].filter(Boolean);

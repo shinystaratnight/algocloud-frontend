@@ -467,6 +467,10 @@ const es = {
       createdByEmail: 'Email del usuario',
     },
   },
+  analytics: {
+    menu: 'Analítica',
+    title: 'Analítica',
+  },
   settings: {
     title: 'Configuraciones',
     menu: 'Configuraciones',

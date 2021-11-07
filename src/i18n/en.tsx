@@ -450,6 +450,10 @@ const en = {
       createdByEmail: 'User Email',
     },
   },
+  analytics: {
+    menu: 'Analytics',
+    title: 'Analytics',
+  },
   settings: {
     title: 'Settings',
     menu: 'Settings',
