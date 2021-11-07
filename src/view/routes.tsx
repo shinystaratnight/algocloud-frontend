@@ -295,6 +295,33 @@ const simpleRoutes = [
   },
 ].filter(Boolean);
 
+const superAdminRoutes = [
+  {
+    path: '/superadmin/user',
+    loader: () => import('src/view/superAdmin/user/list/UserPage'),
+    permissionRequired: permissions.userReadBySuperAdmin,
+    exact: true,
+  },
+  {
+    path: '/superadmin/tenant',
+    loader: () => import('src/view/superAdmin/tenant/list/TenantListPage'),
+    permissionRequired: permissions.userReadBySuperAdmin,
+    exact: true,
+  },
+  {
+    path: '/superadmin/subscribe',
+    loader: () => import('src/view/superAdmin/subscribe/list/SubscribeListPage'),
+    permissionRequired: permissions.userReadBySuperAdmin,
+    exact: true,
+  },
+  {
+    path: '/superadmin/analytics',
+    loader: () => import('src/view/superAdmin/analytics/AnalyticsPage'),
+    permissionRequired: permissions.userReadBySuperAdmin,
+    exact: true,
+  },
+].filter(Boolean);
+
 export default {
   privateRoutes,
   publicRoutes,
@@ -302,5 +329,6 @@ export default {
   emptyPermissionsRoutes,
   emailUnverifiedRoutes,
   inactiveUserRoutes,
+  superAdminRoutes,
   simpleRoutes,
 };

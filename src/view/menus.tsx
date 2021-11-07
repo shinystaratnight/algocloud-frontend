@@ -63,30 +63,30 @@ export default [
   },
   
   {
-    path: '/admin/user',
+    path: '/superadmin/user',
     label: i18n('user.menu'),
-    permissionRequired: permissions.userReadByAdmin,
+    permissionRequired: permissions.userReadBySuperAdmin,
     icon: 'fas fa-user-plus',
   },
 
   config.isPlanEnabled && {
-    path: '/admin/subscribe',
-    permissionRequired: permissions.subscriberReadByAdmin,
+    path: '/superadmin/subscribe',
+    permissionRequired: permissions.subscribeReadBySuperAdmin,
     icon: 'fas fa-credit-card',
     label: i18n('plan.subscribe'),
   },
 
   {
-    path: '/admin/tenant',
+    path: '/superadmin/tenant',
     label: i18n('tenant.label'),
-    permissionRequired: permissions.tenantReadByAdmin,
+    permissionRequired: permissions.tenantReadBySuperAdmin,
     icon: 'fas fa-th-large',
   },
 
   {
-    path: '/admin/analytics',
+    path: '/superadmin/analytics',
     label: i18n('analytics.menu'),
-    permissionRequired: permissions.statsReadByAdmin,
+    permissionRequired: permissions.analyticsReadBySuperAdmin,
     icon: 'fas fa-chart-bar',
   }
 ].filter(Boolean);

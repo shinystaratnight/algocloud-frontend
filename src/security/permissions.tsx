@@ -240,20 +240,24 @@ class Permissions {
         allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
-      userReadByAdmin: {
-        id: 'userReadbyAdmin',
+
+      userReadBySuperAdmin: {
+        id: 'userReadBySuperAdmin',
         allowedRoles: [roles.superadmin],
       },
-      subscriberReadByAdmin: {
-        id: 'subscriberReadByAdmin',
+
+      subscribeReadBySuperAdmin: {
+        id: 'subscribeReadBySuperAdmin',
         allowedRoles: [roles.superadmin],
       },
-      tenantReadByAdmin: {
-        id: 'tenantReadByAdmin',
+
+      tenantReadBySuperAdmin: {
+        id: 'tenantReadBySuperAdmin',
         allowedRoles: [roles.superadmin],
       },
-      statsReadByAdmin: {
-        id: 'statsReadByAdmin',
+      
+      analyticsReadBySuperAdmin: {
+        id: 'analyticsReadBySuperAdmin',
         allowedRoles: [roles.superadmin],
       },
     };
