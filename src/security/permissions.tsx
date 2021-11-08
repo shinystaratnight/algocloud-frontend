@@ -243,22 +243,22 @@ class Permissions {
 
       userReadBySuperAdmin: {
         id: 'userReadBySuperAdmin',
-        allowedRoles: [roles.superadmin],
+        allowedRoles: [Roles.superadmin],
       },
 
       subscribeReadBySuperAdmin: {
         id: 'subscribeReadBySuperAdmin',
-        allowedRoles: [roles.superadmin],
+        allowedRoles: [Roles.superadmin],
       },
 
       tenantReadBySuperAdmin: {
         id: 'tenantReadBySuperAdmin',
-        allowedRoles: [roles.superadmin],
+        allowedRoles: [Roles.superadmin],
       },
       
       analyticsReadBySuperAdmin: {
         id: 'analyticsReadBySuperAdmin',
-        allowedRoles: [roles.superadmin],
+        allowedRoles: [Roles.superadmin],
       },
     };
   }

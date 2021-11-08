@@ -2,7 +2,6 @@ import Plans from 'src/security/plans';
 import Roles from 'src/security/roles';
 
 const plans = Plans.values;
-const roles = Roles.values;
 
 export default class PermissionChecker {
   currentTenant;
@@ -20,7 +19,7 @@ export default class PermissionChecker {
 
     // If current user is superadmin, skip to check tenant plan validations.
     if (this.currentUser.superAdmin) {
-      return [roles.superadmin];
+      return [Roles.superadmin];
     }
 
     if (!this.currentUser.tenants) {
@@ -91,7 +90,7 @@ export default class PermissionChecker {
 
   planMatchOneOf(arg) {
     // Skip tenant plan checking if the current user is a super administrator.
-    if (this.currentUserRolesIds.includes(roles.superadmin)) {
+    if (this.currentUserRolesIds.includes(Roles.superadmin)) {
       return true;
     }
 
