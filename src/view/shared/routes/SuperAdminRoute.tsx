@@ -7,7 +7,7 @@ import {
 } from 'react-router-dom';
 import Layout from 'src/view/layout/Layout';
 
-function SuperAdminRoute({
+function SuperadminRoute({
   component: Component,
   currentUser,
   permissionRequired,
@@ -43,7 +43,7 @@ function SuperAdminRoute({
           return <Redirect to="/auth/inactive-user" />;
         }
 
-        if (!permissionChecker.isUserSuperAdmin) {
+        if (!permissionChecker.isUserSuperadmin) {
           return <Redirect to="/403" />;
         }
 
@@ -61,4 +61,4 @@ function SuperAdminRoute({
   );
 }
 
-export default SuperAdminRoute;
+export default SuperadminRoute;

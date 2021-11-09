@@ -10,11 +10,11 @@ import PageTitle from 'src/view/shared/styles/PageTitle';
 import { i18n } from 'src/i18n';
 
 function TenantListPage(props) {
-  const currentSuperAdmin = useSelector(
-    authSelectors.selectCurrentSuperAdmin,
+  const currentSuperadmin = useSelector(
+    authSelectors.selectCurrentSuperadmin,
   );
 
-  if (currentSuperAdmin) return <Redirect to="/403" />;
+  if (currentSuperadmin) return <Redirect to="/403" />;
 
   return (
     <>

@@ -46,7 +46,7 @@ function PrivateRoute({
           return <Redirect to="/auth/inactive-user" />;
         }
 
-        if (!permissionChecker.isUserSuperAdmin) {
+        if (!permissionChecker.isUserSuperadmin) {
           if (
             ['multi', 'multi-with-subdomain'].includes(
               config.tenantMode,

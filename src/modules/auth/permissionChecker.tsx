@@ -18,7 +18,7 @@ export default class PermissionChecker {
     }
 
     // If current user is superadmin, skip to check tenant plan validations.
-    if (this.currentUser.superAdmin) {
+    if (this.currentUser.superadmin) {
       return [Roles.superadmin];
     }
 
@@ -187,8 +187,8 @@ export default class PermissionChecker {
     return this.currentUser.active;
   }
 
-  get isUserSuperAdmin() {
-    if (!this.currentUser.superAdmin) {
+  get isUserSuperadmin() {
+    if (!this.currentUser.superadmin) {
       return false;
     }
 

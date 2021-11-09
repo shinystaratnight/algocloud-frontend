@@ -65,13 +65,13 @@ export default [
   {
     path: '/superadmin/user',
     label: i18n('user.menu'),
-    permissionRequired: permissions.userReadBySuperAdmin,
+    permissionRequired: permissions.userReadBySuperadmin,
     icon: 'fas fa-user-plus',
   },
 
   config.isPlanEnabled && {
     path: '/superadmin/subscribe',
-    permissionRequired: permissions.subscribeReadBySuperAdmin,
+    permissionRequired: permissions.subscribeReadBySuperadmin,
     icon: 'fas fa-credit-card',
     label: i18n('plan.subscribe'),
   },
@@ -79,14 +79,14 @@ export default [
   {
     path: '/superadmin/tenant',
     label: i18n('tenant.label'),
-    permissionRequired: permissions.tenantReadBySuperAdmin,
+    permissionRequired: permissions.tenantReadBySuperadmin,
     icon: 'fas fa-th-large',
   },
 
   {
     path: '/superadmin/analytics',
     label: i18n('analytics.menu'),
-    permissionRequired: permissions.analyticsReadBySuperAdmin,
+    permissionRequired: permissions.analyticsReadBySuperadmin,
     icon: 'fas fa-chart-bar',
   }
 ].filter(Boolean);

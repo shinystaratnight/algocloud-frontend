@@ -7,7 +7,7 @@ import EmailUnverifiedRoute from 'src/view/shared/routes/EmailUnverifiedRoute';
 import InactiveUserRoute from 'src/view/shared/routes/InactiveUserRoute';
 import PrivateRoute from 'src/view/shared/routes/PrivateRoute';
 import PublicRoute from 'src/view/shared/routes/PublicRoute';
-import SuperAdminRoute from 'src/view/shared/routes/SuperAdminRoute';
+import SuperadminRoute from 'src/view/shared/routes/SuperadminRoute';
 import CustomLoadable from 'src/view/shared/CustomLoadable';
 import ProgressBar from 'src/view/shared/ProgressBar';
 import routes from 'src/view/routes';
@@ -128,8 +128,8 @@ function RoutesComponent(props) {
         />
       ))}
 
-      {routes.superAdminRoutes.map((route) => (
-        <SuperAdminRoute
+      {routes.superadminRoutes.map((route) => (
+        <SuperadminRoute
           key={route.path}
           currentUser={currentUser}
           permissionRequired={route.permissionRequired}

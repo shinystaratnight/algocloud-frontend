@@ -241,23 +241,23 @@ class Permissions {
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
-      userReadBySuperAdmin: {
-        id: 'userReadBySuperAdmin',
+      userReadBySuperadmin: {
+        id: 'userReadBySuperadmin',
         allowedRoles: [Roles.superadmin],
       },
 
-      subscribeReadBySuperAdmin: {
-        id: 'subscribeReadBySuperAdmin',
+      subscribeReadBySuperadmin: {
+        id: 'subscribeReadBySuperadmin',
         allowedRoles: [Roles.superadmin],
       },
 
-      tenantReadBySuperAdmin: {
-        id: 'tenantReadBySuperAdmin',
+      tenantReadBySuperadmin: {
+        id: 'tenantReadBySuperadmin',
         allowedRoles: [Roles.superadmin],
       },
       
-      analyticsReadBySuperAdmin: {
-        id: 'analyticsReadBySuperAdmin',
+      analyticsReadBySuperadmin: {
+        id: 'analyticsReadBySuperadmin',
         allowedRoles: [Roles.superadmin],
       },
     };
