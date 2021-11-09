@@ -28,7 +28,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="bg-white p-2 border rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardDoughnutChart />
             </div>
           </div>
@@ -40,7 +40,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="bg-white p-2 border rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardMixChartTwo />
             </div>
           </div>
@@ -52,7 +52,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="bg-white p-2 border rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardBarChart />
             </div>
           </div>
@@ -65,7 +65,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
           >
-            <div className="bg-white p-2 border rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardMixChartOne />
             </div>
           </div>
@@ -78,7 +78,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
           >
-            <div className="bg-white p-2 border rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardPolarChart />
             </div>
           </div>
@@ -91,7 +91,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="bg-white p-2 border rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardHorizontalBarChart />
             </div>
           </div>
@@ -103,7 +103,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="bg-white p-2 border rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardLineChart />
             </div>
           </div>
@@ -115,7 +115,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="bg-white p-2 border rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardRadarChart />
             </div>
           </div>
@@ -125,7 +125,7 @@ const DashboardPage = (props) => {
             marginTop: '16px',
             width: '100%',
             textAlign: 'center',
-            color: 'grey',
+            color: '#bbbbbb',
           }}
         >
           {i18n('dashboard.message')}
