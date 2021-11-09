@@ -44,7 +44,7 @@ function Header(props) {
   };
 
   return (
-    <HeaderWrapper className="navbar sticky-top navbar-light bg-white border-bottom">
+    <HeaderWrapper className="navbar sticky-top">
       <button
         type="button"
         onClick={doToggleMenu}

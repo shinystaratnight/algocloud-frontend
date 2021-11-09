@@ -72,7 +72,7 @@ function SignupPage() {
     <Wrapper
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/signup.jpg'
+          backgroundImageUrl || '/images/signin.jpg'
         })`,
       }}
     >
@@ -106,7 +106,7 @@ function SignupPage() {
               type="password"
             />
             <button
-              className="btn btn-block btn-primary"
+              className="btn btn-primary btn-block"
               type="submit"
               disabled={loading}
             >

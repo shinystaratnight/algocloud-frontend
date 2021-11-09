@@ -13,7 +13,6 @@ const Content = styled.div`
   position: relative;
   background-color: rgba(0, 0, 0, 0.8);
   color: white;
-
   h1,
   h2,
   h3,

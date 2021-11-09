@@ -13,6 +13,10 @@ const settingsEnumerators = {
       hex: '#13c2c2',
     },
     {
+      id: 'cyborg',
+      hex: '#fff',
+    },
+    {
       id: 'geek-blue',
       hex: '#2f54eb',
     },

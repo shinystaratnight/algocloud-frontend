@@ -26,7 +26,7 @@ const en = {
   },
 
   app: {
-    title: 'Application',
+    title: 'AlgoCloud',
   },
 
   api: {
@@ -466,6 +466,7 @@ const en = {
       default: 'Dark',
       light: 'Light',
       cyan: 'Cyan',
+      cyborg: 'Cyborg',
       'geek-blue': 'Geek Blue',
       gold: 'Gold',
       lime: 'Lime',

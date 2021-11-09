@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 const LayoutWrapper = styled.div`
   color: rgba(0, 0, 0, 0.65);
-  background-color: #f0f2f5;
   display: flex;
   font-size: 13px;
 
@@ -35,6 +34,12 @@ const LayoutWrapper = styled.div`
     color: rgba(0, 0, 0, 0.85);
   }
 
+  body {
+    background: rgb(29,78,118);
+    background: linear-gradient(311deg, rgba(29,78,118,1) 0%, rgba(33,46,88,1) 100%);
+    
+  }
+
   .content {
     padding: 24px;
   }
@@ -51,7 +56,6 @@ const LayoutWrapper = styled.div`
     display: flex;
     flex-direction: column;
     flex: auto;
-    background: #f0f2f5;
     min-height: 100vh;
     overflow-x: hidden;
   }

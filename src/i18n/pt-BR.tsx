@@ -26,7 +26,7 @@ const ptBR = {
   },
 
   app: {
-    title: 'Aplicação',
+    title: 'AlgoCloud',
   },
 
   api: {
@@ -460,6 +460,7 @@ const ptBR = {
       default: 'Escuro',
       light: 'Claro',
       cyan: 'Ciano',
+      cyborg: 'Cyborg',
       'geek-blue': 'Azul escuro',
       gold: 'Ouro',
       lime: 'Limão',

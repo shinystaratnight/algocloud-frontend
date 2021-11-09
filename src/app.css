@@ -1,0 +1,187 @@
+.screenshot:before{ 
+background-color: rgba(0,0,0,0.0) !important;
+}
+
+.screenshot-2 {
+    background-color: rgba(0, 0, 0, 0.6);
+    border-width: 1px;
+    border-color: rgb(109, 109, 117);
+    box-shadow: rgb(102 102 102 / 20%) 0px 10px 50px, rgb(102 102 102 / 20%) -10px -10px 50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-style: solid;
+}
+
+a.algocloud-navbar-brand-landing:hover{text-decoration:none;opacity:100%;color:var(--primary)!important}.algocloud-navbar-brand{display:flex!important;flex-direction:row;width:100%;padding:18px 16px 8px 24px;align-content:center}a.algocloud-navbar-brand-landing{opacity:100%;color:#efefef!important;font-weight:500!important;font-family:"Libre Franklin","Arial",Arial,sans-serif!important;font-size:1.4rem!important}svg.algocloud-logo{width:32px;height:28px}
+
+.algocloud-navbar-brand {
+    display: flex !important;
+    align-items: center !important;
+}
+
+a.algocloud-navbar-brand-landing{
+    opacity: 100%;
+}
+
+a.algocloud-navbar-brand-landing {
+    font-size: 2.6rem !important;
+}
+
+svg.algocloud-logo-landing {
+    width: 60px;
+    height: 40px;
+}
+
+h3.algocloud-font-landing {
+    color: #ffffff;
+    font-weight: 500!important;
+    font-family: "Libre Franklin","Arial",Arial,sans-serif!important;
+    font-size: calc(2.425rem + .4vw)!important;
+}
+
+a.algocloud-navbar-brand-landing {
+    opacity: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+button.screenshot-btn.btn.btn-primary.btn-block:hover {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #03dac5;
+    color: #000;
+    padding: 10px;
+    background-color: #03dac5;
+    outline-color: #5ffcff
+}
+
+button.screenshot-btn.btn.btn-primary.btn-block:active {
+    color: #000 !important;
+    background-color: #03dac5c2 !important;
+    border-color: #000;
+    font-weight: bold !important;
+    outline-color: #03dac5;
+}
+
+button.screenshot-btn.btn.btn-primary.btn-block {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #03dac5;
+    padding: 10px;
+    background-color: #000;
+    outline-style: solid;
+    outline-offset: 3px;
+    outline-width: 1px;
+    outline-color: rgb(3 218 197 / 39%);
+}
+
+input#screenshot-form-control:focus, input#screenshot-form-control:focus {
+    color: #ffffff;
+    background-color: #000000;
+    border-color: #03dac5;
+    border-width: 1px;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgb(6 30 51 / 25%);
+}
+
+input#screenshot-form-control:hover {
+    border-width: 1px;
+    border-color: #03dac5;
+    background-color: #000;
+}
+
+input#screenshot-form-control {
+    background-color: #111111;
+    height: 2.6rem;
+    border-color: rgb(109, 109, 117);
+}
+
+p.copyright {
+    margin-bottom: 0px;}
+
+
+.built-by {
+    display: flex;
+    flex: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-content: baseline;
+    align-items: flex-start;
+    bottom: 0px;
+}
+
+.built-by-flags
+{
+    margin-bottom: .5rem;
+}
+
+
+.hero-video {
+    filter: hue-rotate(7deg) !important;
+        /* Set rules to fill background */
+        min-height: 100%;
+        min-width: 1024px;
+          
+        /* Set up proportionate scaling */
+        width: 100%;
+        height: auto;
+          
+        /* Set up positioning */
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      @media screen and (max-width: 1500px){
+        .hero-video {
+    margin-left: -512px;
+    width: auto;
+            }
+        }
+      
+      @media screen and (max-width: 1000px) { /* Specific to this particular image */
+        .hero-video {
+          left: 50%;
+          margin-left: -512px;   /* 50% */
+          width: auto;
+        }
+      }
+
+      body {
+        background-color: #030d23;
+      }
+
+
+    .screenshot-checkbox-label {
+        margin-bottom: 0;
+        cursor: pointer;
+    }
+    
+    .screenshot-checkbox-box {
+        position: relative;
+        display: block;
+        padding-left: 1.8rem;
+        padding-right: 8px;
+        padding-top: .1em;
+        border-radius: 4px;
+        cursor: pointer
+    }
+    
+    .screenshot-checkbox {
+        position: absolute;
+        margin-top: .3rem;
+        margin-left: -1.5rem;
+        width: 1em;
+        height: 1em;
+    }
+    
+    .screenshot-checkbox-box:active,  .screenshot-checkbox-box:hover {
+        background-color: #f5f6f629;
+        background-size: contain;
+        cursor: pointer;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgb(109, 109, 117);
+    }
