@@ -26,6 +26,10 @@ function EmptyTenantRoute({
             />
           );
         }
+        
+        if (permissionChecker.isUserSuperadmin) {
+          return <Redirect to="/" />;
+        }
 
         if (!permissionChecker.isEmptyTenant) {
           return <Redirect to="/" />;
