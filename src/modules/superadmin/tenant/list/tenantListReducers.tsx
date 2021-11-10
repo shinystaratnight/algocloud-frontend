@@ -1,4 +1,4 @@
-import actions from 'src/modules/superadmin/user/userActions';
+import actions from 'src/modules/superadmin/tenant/list/tenantListActions';
 
 const INITIAL_PAGE_SIZE = 10;
 
@@ -16,17 +16,9 @@ const initialData = {
 };
 
 export default (state = initialData, { type, payload }) => {
-
   if (type === actions.RESETED) {
     return {
       ...initialData,
-    };
-  }
-
-  if (type === actions.SORTER_CHANGED) {
-    return {
-      ...state,
-      sorter: payload || {},
     };
   }
 
@@ -40,27 +32,13 @@ export default (state = initialData, { type, payload }) => {
     };
   }
 
-  if (type === actions.UPDATE_STARTED) {
+  if (type === actions.SORTER_CHANGED) {
     return {
       ...state,
-      loading: true,
+      sorter: payload || {},
     };
   }
 
-  if (type === actions.UPDATE_SUCCESS) {
-    return {
-      ...state,
-      loading: false,
-    };
-  }
-
-  if (type === actions.UPDATE_ERROR) {
-    return {
-      ...state,
-      loading: false,
-    };
-  }
-  
   if (type === actions.FETCH_STARTED) {
     return {
       ...state,

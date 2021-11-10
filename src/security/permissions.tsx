@@ -250,13 +250,16 @@ class Permissions {
         allowedRoles: [Roles.superadmin],
       },
 
-      subscribeReadBySuperadmin: {
-        id: 'subscribeReadBySuperadmin',
-        allowedRoles: [Roles.superadmin],
-      },
-
       tenantReadBySuperadmin: {
         id: 'tenantReadBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
+      tenantCreateBySuperadmin: {
+        id: 'tenantCreateBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
+      tenantDestroyBySuperadmin: {
+        id: 'tenantDestroyBySuperadmin',
         allowedRoles: [Roles.superadmin],
       },
       

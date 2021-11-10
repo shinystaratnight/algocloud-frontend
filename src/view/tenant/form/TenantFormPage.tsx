@@ -13,8 +13,8 @@ import authSelectors from 'src/modules/auth/authSelectors';
 import Spinner from 'src/view/shared/Spinner';
 
 function TenantFormPage() {
-  const currentSuperadmin = useSelector(
-    authSelectors.selectCurrentSuperadmin,
+  const currentUserIsSuperadmin = useSelector(
+    authSelectors.selectCurrentUserSuperadmin
   );
 
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ function TenantFormPage() {
     ? i18n('tenant.edit.title')
     : i18n('tenant.new.title');
 
-  if (currentSuperadmin) return <Redirect to="/403" />;
+  if (currentUserIsSuperadmin) return <Redirect to="/403" />;
 
   return (
     <>

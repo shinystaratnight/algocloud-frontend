@@ -1,5 +1,4 @@
 import authAxios from 'src/modules/shared/axios/authAxios';
-import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
 
 export default class SuperadminService {
 
@@ -11,8 +10,7 @@ export default class SuperadminService {
       offset,
     };
 
-    const response = await authAxios.get(
-      `/superadmin/user`,
+    const response = await authAxios.get(`/superadmin/user`,
       {
         params,
       },
@@ -30,4 +28,30 @@ export default class SuperadminService {
     return response.data;
   }
 
+  static async fetchTenants(filter, orderBy, limit, offset) {
+    const params = {
+      filter,
+      orderBy,
+      limit,
+      offset,
+    };
+
+    const response = await authAxios.get(`/superadmin/tenant`, {
+      params,
+    });
+
+    return response.data;
+  }
+
+  static async destroyTenants(ids) {
+    const params = {
+      ids,
+    };
+
+    const response = await authAxios.delete(`/superadmin/tenant`, {
+      params,
+    });
+
+    return response.data;
+  }
 }

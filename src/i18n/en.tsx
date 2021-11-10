@@ -23,6 +23,7 @@ const en = {
     select: 'Select',
     continue: 'Continue',
     filters: 'Filters',
+    cancelSubscription: 'Cancel Subscription',
   },
 
   app: {

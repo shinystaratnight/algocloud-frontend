@@ -13,10 +13,20 @@ const selectPermissionToUpdateUser = createSelector(
     ),
 );
 
+const selectPermissionToDestroyTenant = createSelector(
+  [
+    authSelectors.selectCurrentUser,
+  ],
+  (currentUser) =>
+    new PermissionChecker(null, currentUser).match(
+      Permissions.values.tenantDestroyBySuperadmin,
+    )
+)
 
 
 const superadminSelectors = {
   selectPermissionToUpdateUser,
+  selectPermissionToDestroyTenant,
 };
 
 export default superadminSelectors;

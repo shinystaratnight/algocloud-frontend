@@ -24,6 +24,7 @@ const es = {
     select: 'Seleccione',
     continue: 'Continúa',
     filters: 'Filtros',
+    cancelSubscription: 'Cancel Subscription',
   },
   app: {
     title: 'Aplicación',

@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import selectors from 'src/modules/superadmin/user/userSelectors';
 import actions from 'src/modules/superadmin/user/userActions';
-import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import Pagination from 'src/view/shared/table/Pagination';
 import Spinner from 'src/view/shared/Spinner';
@@ -59,7 +58,7 @@ function UserTable() {
     <>
       <TableWrapper>
         <div className="table-responsive">
-          <table className="table table-striped">
+          <table className="table table-striped mt-2">
             <thead className="thead">
               <tr>
                 <TableColumnHeader
@@ -113,7 +112,7 @@ function UserTable() {
                     </td>
                     <td className="td-actions">
                       {hasPermissionToUpdateUser && (
-                        <Link
+                        <button
                           className="btn btn-link"
                           onClick={() =>
                             setRecordIdToUpdate(row.id)
@@ -121,7 +120,7 @@ function UserTable() {
                         >
                           {row.active && i18n('user.freeze')}
                           {!row.active && i18n('user.activate')}
-                        </Link>
+                        </button>
                       )}
                     </td>
                   </tr>
