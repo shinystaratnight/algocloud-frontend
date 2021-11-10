@@ -69,13 +69,6 @@ export default [
     icon: 'fas fa-user-plus',
   },
 
-  config.isPlanEnabled && {
-    path: '/superadmin/subscribe',
-    permissionRequired: permissions.subscribeReadBySuperadmin,
-    icon: 'fas fa-credit-card',
-    label: i18n('plan.subscribe'),
-  },
-
   {
     path: '/superadmin/tenant',
     label: i18n('tenant.label'),

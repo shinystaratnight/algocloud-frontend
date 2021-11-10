@@ -304,13 +304,7 @@ const superadminRoutes = [
   },
   {
     path: '/superadmin/tenant',
-    loader: () => import('src/view/superadmin/tenant/list/TenantListPage'),
-    permissionRequired: permissions.userReadBySuperadmin,
-    exact: true,
-  },
-  {
-    path: '/superadmin/subscribe',
-    loader: () => import('src/view/superadmin/subscribe/list/SubscribeListPage'),
+    loader: () => import('src/view/superadmin/tenant/TenantListPage'),
     permissionRequired: permissions.userReadBySuperadmin,
     exact: true,
   },
