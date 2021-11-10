@@ -31,6 +31,10 @@ function EmptyTenantRoute({
           return <Redirect to="/" />;
         }
 
+        if (!permissionChecker.isUserActive) {
+          return <Redirect to="/auth/inactive-user" />;
+        }
+
         if (!permissionChecker.isEmptyTenant) {
           return <Redirect to="/" />;
         }
