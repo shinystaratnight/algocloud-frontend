@@ -1,6 +1,7 @@
 import { connectRouter } from 'connected-react-router';
 import layout from 'src/modules/layout/layoutReducers';
 import auth from 'src/modules/auth/authReducers';
+import superadmin from 'src/modules/superadmin/superadminReducers';
 import tenant from 'src/modules/tenant/tenantReducers';
 import plan from 'src/modules/plan/planReducers';
 import user from 'src/modules/user/userReducers';
@@ -16,6 +17,7 @@ export default (history) =>
     router: connectRouter(history),
     layout,
     auth,
+    superadmin,
     tenant,
     plan,
     user,

@@ -312,6 +312,12 @@ const en = {
       invited: 'Invited',
       'empty-permissions': 'Waiting for Permissions',
     },
+    active: {
+      true: 'Active',
+      false: 'Inactive',
+    },
+    activate: 'Activate',
+    freeze: 'Freeze',
     invite: 'Invite',
     validations: {
       // eslint-disable-next-line

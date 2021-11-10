@@ -245,6 +245,10 @@ class Permissions {
         id: 'userReadBySuperadmin',
         allowedRoles: [Roles.superadmin],
       },
+      userUpdateBySuperadmin: {
+        id: 'userUpdateBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
 
       subscribeReadBySuperadmin: {
         id: 'subscribeReadBySuperadmin',

@@ -310,6 +310,12 @@ const ptBR = {
       invited: 'Convidado',
       'empty-permissions': 'Aguardando Permissões',
     },
+    active: {
+      true: 'Ativo',
+      false: 'Inativo',
+    },
+    activate: 'Ativar',
+    freeze: 'Congelar',
     invite: 'Convidar',
     validations: {
       // eslint-disable-next-line

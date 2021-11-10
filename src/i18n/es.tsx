@@ -389,6 +389,12 @@ const es = {
       invited: 'Invitado',
       'empty-permissions': 'Esperando permisos',
     },
+    active: {
+      true: 'Activo',
+      false: 'Inactivo',
+    },
+    activate: 'Activar',
+    freeze: 'Congelar',
     exporterFileName: 'usuarios_exportacion',
     doDestroySuccess: 'Usuario eliminado con éxito',
     doDestroyAllSelectedSuccess:

@@ -80,7 +80,7 @@ export default [
     path: '/superadmin/tenant',
     label: i18n('tenant.label'),
     permissionRequired: permissions.tenantReadBySuperadmin,
-    icon: 'fas fa-th-large',
+    icon: 'fas fa-building',
   },
 
   {
