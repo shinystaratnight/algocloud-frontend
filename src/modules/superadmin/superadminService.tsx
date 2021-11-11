@@ -70,4 +70,16 @@ export default class SuperadminService {
 
     return response.data;
   }
+
+  static async cancelSubscription(id) {
+    const params = {
+      tenantId: id,
+    };
+
+    const response = await authAxios.put(`/superadmin/cancel-subscription`, {
+      params,
+    });
+
+    return response.data;
+  }
 }

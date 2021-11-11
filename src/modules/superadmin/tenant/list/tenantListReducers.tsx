@@ -73,5 +73,26 @@ export default (state = initialData, { type, payload }) => {
     };
   }
 
+  if (type === actions.CANCEL_SUBSCRIPTION_STARTED) {
+    return {
+      ...state,
+      loading: true,
+    };
+  }
+
+  if (type === actions.CANCEL_SUBSCRIPTION_SUCCESS) {
+    return {
+      ...state,
+      loading: false,
+    };
+  }
+
+  if (type === actions.CANCEL_SUBSCRIPTION_ERROR) {
+    return {
+      ...state,
+      loading: false,
+    };
+  }
+
   return state;
 };

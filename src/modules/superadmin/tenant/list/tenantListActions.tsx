@@ -9,6 +9,10 @@ const tenantActions = {
   FETCH_SUCCESS: `${prefix}_FETCH_SUCCESS`,
   FETCH_ERROR: `${prefix}_FETCH_ERROR`,
 
+  CANCEL_SUBSCRIPTION_STARTED: `${prefix}_CANCEL_SUBSCRIPTION_STARTED`,
+  CANCEL_SUBSCRIPTION_SUCCESS: `${prefix}_CANCEL_SUBSCRIPTION_SUCCESS`,
+  CANCEL_SUBSCRIPTION_ERROR: `${prefix}_CANCEL_SUBSCRIPTION_ERROR`,
+
   RESETED: `${prefix}_RESETED`,
 
   PAGINATION_CHANGED: `${prefix}_PAGINATION_CHANGED`,
@@ -84,6 +88,29 @@ const tenantActions = {
       });
     }
   },
+
+  doCancelSubscription: (id) => async (
+    dispatch,
+    getState,
+  ) => {
+    try {
+      dispatch({
+        type: tenantActions.CANCEL_SUBSCRIPTION_STARTED
+      });
+
+      await SuperadminService.cancelSubscription(id);
+  
+      dispatch({
+        type: tenantActions.CANCEL_SUBSCRIPTION_SUCCESS
+      });
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: tenantActions.CANCEL_SUBSCRIPTION_ERROR,
+      });
+    }
+  }
 };
 
 export default tenantActions;

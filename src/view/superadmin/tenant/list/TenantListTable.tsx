@@ -72,7 +72,7 @@ function TenantListTable() {
 
   const doCancelSubscription = (id) => {
     setRecordIdToCancelSubscription(null);
-    // dispatch(actions.doCancelSubscription(id));
+    dispatch(actions.doCancelSubscription(id));
   }
 
   return (
