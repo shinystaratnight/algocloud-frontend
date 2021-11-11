@@ -137,6 +137,7 @@ function RoutesComponent(props) {
           component={CustomLoadable({
             loader: route.loader,
           })}
+          exact={Boolean(route.exact)}
         />
       ))}
 
