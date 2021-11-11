@@ -1,17 +1,14 @@
-import PermissionChecker from 'src/modules/auth/permissionChecker';
 import React from 'react';
+import PermissionChecker from 'src/modules/auth/permissionChecker';
 import {
   Redirect,
   Route,
   useLocation,
 } from 'react-router-dom';
 import Layout from 'src/view/layout/Layout';
-import config from 'src/config';
-import { tenantSubdomain } from 'src/modules/tenant/tenantSubdomain';
 
-function PrivateRoute({
+function SuperadminRoute({
   component: Component,
-  currentTenant,
   currentUser,
   permissionRequired,
   ...rest
@@ -23,7 +20,7 @@ function PrivateRoute({
       {...rest}
       render={(props) => {
         const permissionChecker = new PermissionChecker(
-          currentTenant,
+          null,
           currentUser,
         );
 
@@ -47,22 +44,7 @@ function PrivateRoute({
         }
 
         if (!permissionChecker.isUserSuperadmin) {
-          if (
-            ['multi', 'multi-with-subdomain'].includes(
-              config.tenantMode,
-            ) &&
-            !tenantSubdomain.isSubdomain
-          ) {
-            if (permissionChecker.isEmptyTenant) {
-              return <Redirect to="/auth/tenant" />;
-            }
-          } else {
-            if (permissionChecker.isEmptyPermissions) {
-              return (
-                <Redirect to="/auth/empty-permissions" />
-              );
-            }
-          }
+          return <Redirect to="/403" />;
         }
 
         if (!permissionChecker.match(permissionRequired)) {
@@ -79,4 +61,4 @@ function PrivateRoute({
   );
 }
 
-export default PrivateRoute;
+export default SuperadminRoute;

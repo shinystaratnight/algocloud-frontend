@@ -23,6 +23,7 @@ const en = {
     select: 'Select',
     continue: 'Continue',
     filters: 'Filters',
+    cancelPlan: 'Cancel Plan',
   },
 
   app: {
@@ -312,6 +313,12 @@ const en = {
       invited: 'Invited',
       'empty-permissions': 'Waiting for Permissions',
     },
+    active: {
+      true: 'Active',
+      false: 'Inactive',
+    },
+    activate: 'Activate',
+    freeze: 'Freeze',
     invite: 'Invite',
     validations: {
       // eslint-disable-next-line
@@ -384,6 +391,7 @@ const en = {
       tenantId: 'Workspace',
       tenantUrl: 'Workspace URL',
       plan: 'Plan',
+      adminEmail: 'Admin Email',
     },
     enumerators: {},
     new: {
@@ -449,6 +457,10 @@ const en = {
       timestamp: 'Date',
       createdByEmail: 'User Email',
     },
+  },
+  analytics: {
+    menu: 'Analytics',
+    title: 'Analytics',
   },
   settings: {
     title: 'Settings',

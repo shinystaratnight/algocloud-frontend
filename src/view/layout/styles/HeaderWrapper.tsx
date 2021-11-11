@@ -53,6 +53,12 @@ const HeaderWrapper = styled.div`
     font-size: 12px;
   }
 
+  .user-dropdown-text-superadmin {
+    font-weight: 500;
+    font-size: 12px;
+    color: red;
+  }
+
   .header-right {
     display: flex;
   }

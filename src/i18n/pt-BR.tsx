@@ -23,6 +23,7 @@ const ptBR = {
     select: 'Selecionar',
     continue: 'Continuar',
     filters: 'Filtros',
+    cancelPlan: 'cancelar Plano',
   },
 
   app: {
@@ -310,6 +311,12 @@ const ptBR = {
       invited: 'Convidado',
       'empty-permissions': 'Aguardando Permissões',
     },
+    active: {
+      true: 'Ativo',
+      false: 'Inativo',
+    },
+    activate: 'Ativar',
+    freeze: 'Congelar',
     invite: 'Convidar',
     validations: {
       // eslint-disable-next-line
@@ -380,6 +387,7 @@ const ptBR = {
       tenantUrl: 'URL da Área de Trabalho',
       tenantId: 'Área de Trabalho',
       plan: 'Plano',
+      adminEmail: 'Administrador Email',
     },
     enumerators: {},
     new: {
@@ -444,6 +452,10 @@ const ptBR = {
       timestamp: 'Data',
       createdByEmail: 'Email do Usuário',
     },
+  },
+  analytics: {
+    menu: 'Analytics',
+    title: 'Analytics',
   },
   settings: {
     title: 'Configurações',
