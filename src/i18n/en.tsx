@@ -380,6 +380,9 @@ const en = {
     destroyAll: {
       success: 'Workspace(s) successfully deleted',
     },
+    unsubscribe: {
+      success: 'Plan successfully unsubscribed',
+    },
     edit: {
       title: 'Edit Workspace',
     },

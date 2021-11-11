@@ -1,6 +1,8 @@
 import SuperadminService from 'src/modules/superadmin/superadminService';
 import selectors from 'src/modules/superadmin/tenant/list/tenantListSelectors';
 import Errors from 'src/modules/shared/error/errors';
+import Message from 'src/view/shared/message';
+import { i18n } from 'src/i18n';
 
 const prefix = 'SUPERADMIN_TENANT_LIST';
 
@@ -103,8 +105,14 @@ const tenantActions = {
       dispatch({
         type: tenantActions.CANCEL_SUBSCRIPTION_SUCCESS
       });
+
+      Message.success(i18n('tenant.unsubscribe.success'));
+
+      await dispatch(tenantActions.doFetchCurrentFilter());
     } catch (error) {
       Errors.handle(error);
+
+      await dispatch(tenantActions.doFetchCurrentFilter());
 
       dispatch({
         type: tenantActions.CANCEL_SUBSCRIPTION_ERROR,
