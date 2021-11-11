@@ -387,6 +387,7 @@ const ptBR = {
       tenantUrl: 'URL da Área de Trabalho',
       tenantId: 'Área de Trabalho',
       plan: 'Plano',
+      adminEmail: 'Administrador Email',
     },
     enumerators: {},
     new: {

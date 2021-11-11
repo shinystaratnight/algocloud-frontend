@@ -309,6 +309,12 @@ const superadminRoutes = [
     exact: true,
   },
   {
+    path: '/superadmin/tenant/new',
+    loader: () => import('src/view/superadmin/tenant/form/TenantFormPage'),
+    permissionRequired: permissions.userReadBySuperadmin,
+    exact: true,
+  },
+  {
     path: '/superadmin/analytics',
     loader: () => import('src/view/superadmin/analytics/AnalyticsPage'),
     permissionRequired: permissions.userReadBySuperadmin,

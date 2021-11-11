@@ -307,6 +307,7 @@ const es = {
       tenantId: 'Espacio de trabajo',
       tenantUrl: 'URL del espacio de trabajo',
       plan: 'Plan',
+      adminEmail: 'Administración Email',
     },
     enumerators: {},
     new: {

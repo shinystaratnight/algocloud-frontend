@@ -54,4 +54,14 @@ export default class SuperadminService {
 
     return response.data;
   }
+
+  static async createTenant(data) {
+    const body = {
+      data,
+    };
+
+    const response = await authAxios.post(`/superadmin/tenant`, body);
+
+    return response.data;
+  }
 }

@@ -391,6 +391,7 @@ const en = {
       tenantId: 'Workspace',
       tenantUrl: 'Workspace URL',
       plan: 'Plan',
+      adminEmail: 'Admin Email',
     },
     enumerators: {},
     new: {

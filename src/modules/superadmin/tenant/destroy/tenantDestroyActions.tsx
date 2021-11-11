@@ -1,13 +1,10 @@
-import authActions from 'src/modules/auth/authActions';
-import TenantService from 'src/modules/tenant/tenantService';
 import Errors from 'src/modules/shared/error/errors';
 import { i18n } from 'src/i18n';
-import { getHistory } from 'src/modules/store';
 import Message from 'src/view/shared/message';
 import listActions from 'src/modules/superadmin/tenant/list/tenantListActions';
 import SuperadminService from 'src/modules/superadmin/superadminService';
 
-const prefix = 'SUPERADMIN_TENANT';
+const prefix = 'SUPERADMIN_TENANT_DESTROY';
 
 const tenantDestroyActions = {
   DESTROY_STARTED: `${prefix}_DESTROY_STARTED`,
