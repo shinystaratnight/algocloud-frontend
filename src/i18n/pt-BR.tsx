@@ -377,6 +377,9 @@ const ptBR = {
     destroyAll: {
       success: 'Área(s) de Trabalho deletadas com sucesso',
     },
+    unsubscribe: {
+      success: 'Plan successfully unsubscribed',
+    },
     edit: {
       title: 'Editar Área de Trabalho',
     },

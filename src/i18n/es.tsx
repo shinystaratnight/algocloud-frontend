@@ -296,6 +296,9 @@ const es = {
       success:
         'Espacio(s) de trabajo eliminado(s) correctamente',
     },
+    unsubscribe: {
+      success: 'Plan successfully unsubscribed',
+    },
     edit: {
       title: 'Editar espacio de trabajo',
     },
