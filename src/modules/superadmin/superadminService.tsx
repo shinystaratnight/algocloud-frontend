@@ -64,4 +64,10 @@ export default class SuperadminService {
 
     return response.data;
   }
+
+  static async fetchAnalytics() {
+    const response = await authAxios.get(`/superadmin/analytics`, {});
+
+    return response.data;
+  }
 }
