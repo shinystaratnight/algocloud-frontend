@@ -23,6 +23,7 @@ const ptBR = {
     select: 'Selecionar',
     continue: 'Continuar',
     filters: 'Filtros',
+    cancelPlan: 'cancelar Plano',
   },
 
   app: {
@@ -236,6 +237,9 @@ const ptBR = {
       message: `Por favor, confirme seu email em <strong>{0}</strong> para continuar.`,
       submit: `Reenviar confirmação por email`,
     },
+    inactiveUser: {
+      message: 'Sua conta ainda não foi ativada. Aguarde até que o superadministrador aprove sua conta.',
+    },
     passwordResetEmail: {
       message: 'Enviar email de redefinição de senha',
       error: `Email não encontrado`,
@@ -265,6 +269,10 @@ const ptBR = {
   },
 
   roles: {
+    superadmin: {
+      label: 'Super Administrador',
+      description: 'Full access to all resources'
+    },
     admin: {
       label: 'Administrador',
       description: 'Acesso completo a todos os recursos',
@@ -303,6 +311,12 @@ const ptBR = {
       invited: 'Convidado',
       'empty-permissions': 'Aguardando Permissões',
     },
+    active: {
+      true: 'Ativo',
+      false: 'Inativo',
+    },
+    activate: 'Ativar',
+    freeze: 'Congelar',
     invite: 'Convidar',
     validations: {
       // eslint-disable-next-line
@@ -373,6 +387,7 @@ const ptBR = {
       tenantUrl: 'URL da Área de Trabalho',
       tenantId: 'Área de Trabalho',
       plan: 'Plano',
+      adminEmail: 'Administrador Email',
     },
     enumerators: {},
     new: {
@@ -437,6 +452,10 @@ const ptBR = {
       timestamp: 'Data',
       createdByEmail: 'Email do Usuário',
     },
+  },
+  analytics: {
+    menu: 'Analytics',
+    title: 'Analytics',
   },
   settings: {
     title: 'Configurações',

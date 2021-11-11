@@ -240,6 +240,33 @@ class Permissions {
         allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
+
+      userReadBySuperadmin: {
+        id: 'userReadBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
+      userUpdateBySuperadmin: {
+        id: 'userUpdateBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
+
+      tenantReadBySuperadmin: {
+        id: 'tenantReadBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
+      tenantCreateBySuperadmin: {
+        id: 'tenantCreateBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
+      tenantDestroyBySuperadmin: {
+        id: 'tenantDestroyBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
+      
+      analyticsReadBySuperadmin: {
+        id: 'analyticsReadBySuperadmin',
+        allowedRoles: [Roles.superadmin],
+      },
     };
   }
 

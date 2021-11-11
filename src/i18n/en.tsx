@@ -23,6 +23,7 @@ const en = {
     select: 'Select',
     continue: 'Continue',
     filters: 'Filters',
+    cancelPlan: 'Cancel Plan',
   },
 
   app: {
@@ -238,6 +239,9 @@ const en = {
       message: `Please confirm your email at <strong>{0}</strong> to continue.`,
       submit: `Resend email verification`,
     },
+    inactiveUser: {
+      message: 'Your account has not been activated yet. Please wait for the super administrator to approve your account.',
+    },
     emptyPermissions: {
       message: `You have no permissions yet. Wait for the admin to grant you privileges.`,
     },
@@ -267,9 +271,13 @@ const en = {
   },
 
   roles: {
+    superadmin: {
+      label: 'Super Admin',
+      description: 'Full access to all resources'
+    },
     admin: {
       label: 'Admin',
-      description: 'Full access to all resources',
+      description: 'Administrator access to a given tenant',
     },
     custom: {
       label: 'Custom Role',
@@ -305,6 +313,12 @@ const en = {
       invited: 'Invited',
       'empty-permissions': 'Waiting for Permissions',
     },
+    active: {
+      true: 'Active',
+      false: 'Inactive',
+    },
+    activate: 'Activate',
+    freeze: 'Freeze',
     invite: 'Invite',
     validations: {
       // eslint-disable-next-line
@@ -377,6 +391,7 @@ const en = {
       tenantId: 'Workspace',
       tenantUrl: 'Workspace URL',
       plan: 'Plan',
+      adminEmail: 'Admin Email',
     },
     enumerators: {},
     new: {
@@ -442,6 +457,10 @@ const en = {
       timestamp: 'Date',
       createdByEmail: 'User Email',
     },
+  },
+  analytics: {
+    menu: 'Analytics',
+    title: 'Analytics',
   },
   settings: {
     title: 'Settings',

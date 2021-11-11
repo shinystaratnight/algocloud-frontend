@@ -26,7 +26,8 @@ const tenantMode = 'multi';
  * Plan payments configuration.
  */
 const isPlanEnabled = true;
-const stripePublishableKey = 'pk_live_51JpIyQLnyNFZ6q7ACYsn4alSu0zzJ7rMzROFi4LtnYRjw3DEhzYbV4r98U8biAWwhK4y055pRagMeZdYJitrdLmn00ugK91EL1';
+// const stripePublishableKey = 'pk_live_51JpIyQLnyNFZ6q7ACYsn4alSu0zzJ7rMzROFi4LtnYRjw3DEhzYbV4r98U8biAWwhK4y055pRagMeZdYJitrdLmn00ugK91EL1';
+const stripePublishableKey = 'pk_test_51JpIyQLnyNFZ6q7AEmHZJN6WgBTYMH6vuKmAgXxUPirX9TFm6YbiUH2GmeRh5xGcSpMaD3DNm8iDYxNIxObigfWt00alQ3BPmS';
 
 export default {
   frontendUrl,

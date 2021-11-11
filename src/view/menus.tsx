@@ -60,5 +60,26 @@ export default [
     permissionRequired: permissions.orderRead,
     icon: 'fas fa-chevron-right',
     label: i18n('entities.order.menu'),
-  },  
+  },
+  
+  {
+    path: '/superadmin/user',
+    label: i18n('user.menu'),
+    permissionRequired: permissions.userReadBySuperadmin,
+    icon: 'fas fa-user-plus',
+  },
+
+  {
+    path: '/superadmin/tenant',
+    label: i18n('tenant.label'),
+    permissionRequired: permissions.tenantReadBySuperadmin,
+    icon: 'fas fa-building',
+  },
+
+  {
+    path: '/superadmin/analytics',
+    label: i18n('analytics.menu'),
+    permissionRequired: permissions.analyticsReadBySuperadmin,
+    icon: 'fas fa-chart-bar',
+  }
 ].filter(Boolean);

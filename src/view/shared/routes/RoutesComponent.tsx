@@ -4,8 +4,10 @@ import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 import EmailUnverifiedRoute from 'src/view/shared/routes/EmailUnverifiedRoute';
+import InactiveUserRoute from 'src/view/shared/routes/InactiveUserRoute';
 import PrivateRoute from 'src/view/shared/routes/PrivateRoute';
 import PublicRoute from 'src/view/shared/routes/PublicRoute';
+import SuperadminRoute from 'src/view/shared/routes/SuperadminRoute';
 import CustomLoadable from 'src/view/shared/CustomLoadable';
 import ProgressBar from 'src/view/shared/ProgressBar';
 import routes from 'src/view/routes';
@@ -73,6 +75,19 @@ function RoutesComponent(props) {
         />
       ))}
 
+      {routes.inactiveUserRoutes.map((route) => (
+        <InactiveUserRoute
+          key={route.path}
+          exact
+          path={route.path}
+          currentUser={currentUser}
+          currentTenant={currentTenant}
+          component={CustomLoadable({
+            loader: route.loader,
+          })}
+        />
+      ))}
+
       {routes.emptyTenantRoutes.map((route) => (
         <EmptyTenantRoute
           key={route.path}
@@ -104,6 +119,19 @@ function RoutesComponent(props) {
           key={route.path}
           currentUser={currentUser}
           currentTenant={currentTenant}
+          permissionRequired={route.permissionRequired}
+          path={route.path}
+          component={CustomLoadable({
+            loader: route.loader,
+          })}
+          exact={Boolean(route.exact)}
+        />
+      ))}
+
+      {routes.superadminRoutes.map((route) => (
+        <SuperadminRoute
+          key={route.path}
+          currentUser={currentUser}
           permissionRequired={route.permissionRequired}
           path={route.path}
           component={CustomLoadable({

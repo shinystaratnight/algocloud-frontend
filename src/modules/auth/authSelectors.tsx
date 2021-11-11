@@ -130,6 +130,11 @@ const selectCurrentUserNameOrEmailPrefix = createSelector(
   },
 );
 
+const selectCurrentUserSuperadmin = createSelector(
+  [selectCurrentUser],
+  (currentUser) => Boolean(currentUser.superadmin)
+);
+
 const selectCurrentUserAvatar = createSelector(
   [selectCurrentUser],
   (currentUser) => {
@@ -229,6 +234,7 @@ const authSelectors = {
   selectCurrentUserFullName,
   selectCurrentUserEmail,
   selectCurrentUser,
+  selectCurrentUserSuperadmin,
   selectAuthenticationUser,
   selectErrorMessage,
   selectErrorMessageVerifyEmail,

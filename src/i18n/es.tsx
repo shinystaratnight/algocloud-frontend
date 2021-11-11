@@ -24,6 +24,7 @@ const es = {
     select: 'Seleccione',
     continue: 'Continúa',
     filters: 'Filtros',
+    cancelPlan: 'Cancelar Plan',
   },
   app: {
     title: 'AlgoCloud',
@@ -243,6 +244,9 @@ const es = {
         'Confirme su correo electrónico en <strong>{0}</strong> para continuar.',
       submit: 'Reenviar verificación de correo electrónico',
     },
+    inactiveUser: {
+      message: 'Tu cuenta no ha sido activada todavía. Espere a que el superadministrador apruebe su cuenta.',
+    },
     emptyPermissions: {
       message:
         'Aún no tienes permisos. Espera a que el administrador te otorgue privilegios.',
@@ -303,6 +307,7 @@ const es = {
       tenantId: 'Espacio de trabajo',
       tenantUrl: 'URL del espacio de trabajo',
       plan: 'Plan',
+      adminEmail: 'Administración Email',
     },
     enumerators: {},
     new: {
@@ -324,6 +329,10 @@ const es = {
     },
   },
   roles: {
+    superadmin: {
+      label: 'Super Administración',
+      description: 'Full access to all resources'
+    },
     admin: {
       label: 'Administración',
       description: 'Acceso total a todos los recursos.',
@@ -382,6 +391,12 @@ const es = {
       invited: 'Invitado',
       'empty-permissions': 'Esperando permisos',
     },
+    active: {
+      true: 'Activo',
+      false: 'Inactivo',
+    },
+    activate: 'Activar',
+    freeze: 'Congelar',
     exporterFileName: 'usuarios_exportacion',
     doDestroySuccess: 'Usuario eliminado con éxito',
     doDestroyAllSelectedSuccess:
@@ -459,6 +474,10 @@ const es = {
       timestamp: 'Fecha',
       createdByEmail: 'Email del usuario',
     },
+  },
+  analytics: {
+    menu: 'Analítica',
+    title: 'Analítica',
   },
   settings: {
     title: 'Configuraciones',
