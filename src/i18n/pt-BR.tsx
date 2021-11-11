@@ -23,7 +23,7 @@ const ptBR = {
     select: 'Selecionar',
     continue: 'Continuar',
     filters: 'Filtros',
-    cancelSubscription: 'Cancel Subscription',
+    cancelPlan: 'cancelar Plano',
   },
 
   app: {

@@ -29,8 +29,6 @@ const tenantDestroyActions = {
       Message.success(i18n('tenant.destroy.success'));
 
       await dispatch(listActions.doFetchCurrentFilter());
-
-      getHistory().push('/tenant');
     } catch (error) {
       Errors.handle(error);
 

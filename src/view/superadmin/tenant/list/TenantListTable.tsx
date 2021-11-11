@@ -153,21 +153,20 @@ function TenantListTable() {
                         setRecordIdToCancelSubscription(row.id)
                       }
                       >
-                      {i18n('common.cancelSubscription')}
+                      {i18n('common.cancelPlan')}
                       </button>
                     )}
 
-                    {!tenantSubscribed(row) && (
-                        <button
-                        className="btn btn-link"
-                        type="button"
-                        onClick={() =>
-                          setRecordIdToDestroy(row.id)
-                        }
-                        >
-                        {i18n('common.destroy')}
-                        </button>
-                    )}
+                    <button
+                    className="btn btn-link"
+                    type="button"
+                    onClick={() =>
+                      setRecordIdToDestroy(row.id)
+                    }
+                    >
+                    {i18n('common.destroy')}
+                    </button>
+                    
                   </td>
                 </tr>
               ))}
