@@ -2,13 +2,12 @@ import React, { useEffect } from 'react';
 import { i18n } from 'src/i18n';
 import { getHistory } from 'src/modules/store';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
-import SettingsForm from 'src/view/settings/SettingsForm';
-import SettingsFormToolbar from 'src/view/settings/SettingsFormToolbar';
+import SettingsForm from 'src/view/superadmin/settings/SettingsForm';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 import Spinner from 'src/view/shared/Spinner';
-import actions from 'src/modules/settings/settingsActions';
-import selectors from 'src/modules/settings/settingsSelectors';
+import actions from 'src/modules/superadmin/settings/settingsActions';
+import selectors from 'src/modules/superadmin/settings/settingsSelectors';
 import { useSelector, useDispatch } from 'react-redux';
 
 const SettingsFormPage = (props) => {
@@ -36,8 +35,6 @@ const SettingsFormPage = (props) => {
 
       <ContentWrapper>
         <PageTitle>{i18n('settings.title')}</PageTitle>
-
-        <SettingsFormToolbar />
 
         {initLoading && <Spinner />}
 
