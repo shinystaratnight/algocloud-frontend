@@ -36,6 +36,7 @@ const LayoutWrapper = styled.div`
 
   .content {
     padding: 24px;
+    height: 100%;
   }
 
   .form-group {

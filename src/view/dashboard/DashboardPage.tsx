@@ -8,11 +8,13 @@ import DashboardMixChartOne from 'src/view/dashboard/DashboardMixChartOne';
 import DashboardMixChartTwo from 'src/view/dashboard/DashboardMixChartTwo';
 import DashboardPolarChart from 'src/view/dashboard/DashboardPolarChart';
 import DashboardRadarChart from 'src/view/dashboard/DashboardRadarChart';
+import Analytics from './analytics/App';
 
 const DashboardPage = (props) => {
   return (
     <>
-      <div
+    <Analytics />
+      {/* <div
         style={{
           padding: 0,
           marginLeft: '-12px',
@@ -130,7 +132,7 @@ const DashboardPage = (props) => {
         >
           {i18n('dashboard.message')}
         </p>
-      </div>
+      </div> */}
     </>
   );
 };
