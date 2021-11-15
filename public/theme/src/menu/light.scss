@@ -1,8 +1,3 @@
-.table .thead th {
-  background-color: var(--primary);
-  color: white;
-}
-
 .menu-nav {
   background-color: #F4F4F4;
   color: #a2a3b7;
@@ -14,18 +9,6 @@
 
 .menu-li a {
   color: #a2a3b7;
-}
-
-.menu-li a .icon,
-.menu-li.active a .icon,
-.menu-li:hover a,
-.menu-li:hover a .icon {
-  color: white;
-}
-
-.menu-li.active a {
-  color: white;
-  background-color: #23325D;
 }
 
 a.algocloud-navbar-brand{
@@ -130,7 +113,7 @@ h1 {
 }
 
 .hfxUdS {
-  background: none;
+  background: none!important;
   border: none!important;
   padding: 0px;
   color: #23325D;
@@ -146,7 +129,6 @@ h1 {
   color: #6c757d;
   border-color: #6c757d;
 }
-
 .menu-li.active a {
   background-color: white;
   color: #23325D;
