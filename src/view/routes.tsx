@@ -299,25 +299,31 @@ const superadminRoutes = [
   {
     path: '/superadmin/user',
     loader: () => import('src/view/superadmin/user/UserListPage'),
-    permissionRequired: permissions.userReadBySuperadmin,
+    permissionRequired: permissions.userReadSuperadmin,
     exact: true,
   },
   {
     path: '/superadmin/tenant',
     loader: () => import('src/view/superadmin/tenant/list/TenantListPage'),
-    permissionRequired: permissions.userReadBySuperadmin,
+    permissionRequired: permissions.tenantReadSuperadmin,
     exact: true,
   },
   {
     path: '/superadmin/tenant/new',
     loader: () => import('src/view/superadmin/tenant/form/TenantFormPage'),
-    permissionRequired: permissions.userReadBySuperadmin,
+    permissionRequired: permissions.tenantCreateSuperadmin,
     exact: true,
   },
   {
+    path: '/superadmin/settings',
+    loader: () => import('src/view/superadmin/settings/SettingsFormPage'),
+    permissionRequired: permissions.settingsReadSuperadmin,
+    exact: true,
+  },  
+  {
     path: '/superadmin/analytics',
     loader: () => import('src/view/superadmin/analytics/AnalyticsPage'),
-    permissionRequired: permissions.userReadBySuperadmin,
+    permissionRequired: permissions.userReadSuperadmin,
     exact: true,
   },
 ].filter(Boolean);

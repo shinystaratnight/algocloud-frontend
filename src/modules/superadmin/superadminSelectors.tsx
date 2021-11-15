@@ -9,7 +9,7 @@ const selectPermissionToUpdateUser = createSelector(
   ],
   (currentUser) =>
     new PermissionChecker(null, currentUser).match(
-      Permissions.values.userUpdateBySuperadmin,
+      Permissions.values.userUpdateSuperadmin,
     ),
 );
 
@@ -19,7 +19,7 @@ const selectPermissionToDestroyTenant = createSelector(
   ],
   (currentUser) =>
     new PermissionChecker(null, currentUser).match(
-      Permissions.values.tenantDestroyBySuperadmin,
+      Permissions.values.tenantDestroySuperadmin,
     )
 )
 
