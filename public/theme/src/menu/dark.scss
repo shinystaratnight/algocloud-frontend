@@ -69,6 +69,10 @@ h1 {
   color: #fff!important;
 }
 
+body {
+  background: rgb(29,78,118);
+  background: linear-gradient(311deg, rgba(29,78,118,1) 0%, rgba(33,46,88,1) 100%);
+}
 
 .btn-primary {
   background: rgba(255,255,255,.1)!important;
@@ -139,7 +143,7 @@ h1 {
 }
 
 .hfxUdS {
-  background: none;
+  background: none!important;
   border: none!important;
   padding: 0px;
   color: #ffffff;
