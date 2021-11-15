@@ -177,7 +177,7 @@ export async function getHistoricalPairReturns(startDateTimestamp, currentPairDa
     dayIndex = Math.round(sortedPositions[0].timestamp / 86400)
   }
 
-  const dayTimestamps = []
+  const dayTimestamps: number[] = []
   while (dayIndex < currentDayIndex) {
     // only account for days where this pair existed
     if (dayIndex * 86400 >= parseInt(currentPairData.createdAtTimestamp)) {
@@ -194,7 +194,7 @@ export async function getHistoricalPairReturns(startDateTimestamp, currentPairDa
 
   // set the default position and data
   let positionT0 = pairSnapshots[0]
-  const formattedHistory = []
+  const formattedHistory: any[] = []
   let netFees = 0
 
   // keep track of up to date metrics as we parse each day

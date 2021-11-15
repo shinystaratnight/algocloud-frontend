@@ -1,11 +1,12 @@
 import React from 'react'
 import styled, { css, keyframes } from 'styled-components'
 import { useDarkModeManager } from '../../contexts/LocalStorage'
+import logo1 from '../../assets/logo_white.png';
+import logo2 from '../../assets/logo.png';
 
 const rotate = keyframes`
-  0% { transform: scale(1); }
-  60% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 `
 
 const Loader = styled.div`
@@ -15,18 +16,13 @@ const Loader = styled.div`
   justify-content: center;
   height: 100%;
   width: 100%;
-  animation: ${rotate} 800ms linear infinite;
+  img {
+    animation: ${rotate} 2000ms linear infinite;
+  }
   & > * {
     width: 256px;
   }
-  ${props =>
-    props.fill && !props.height
-      ? css`
-          height: 100vh;
-        `
-      : css`
-          height: 180px;
-        `}
+  height: 100vh;
 `
 
 const LocalLoader = ({ fill }) => {
@@ -34,7 +30,7 @@ const LocalLoader = ({ fill }) => {
 
   return (
     <Loader fill={fill}>
-      <img src={require(darkMode ? '../../assets/logo_white.png' : '../../assets/logo.png')} alt="loading-icon" />
+      <img src={darkMode ? logo1 : logo2} alt="loading-icon" />
     </Loader>
   )
 }
