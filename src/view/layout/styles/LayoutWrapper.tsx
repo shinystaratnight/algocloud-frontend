@@ -34,9 +34,14 @@ const LayoutWrapper = styled.div`
     color: rgba(0, 0, 0, 0.85);
   }
 
+  body {
+    background: rgb(29,78,118);
+    background: linear-gradient(311deg, rgba(29,78,118,1) 0%, rgba(33,46,88,1) 100%);
+    
+  }
+
   .content {
     padding: 24px;
-    height: 100%;
   }
 
   .form-group {

@@ -13,7 +13,6 @@ const privateRoutes = [
   },
 
   {
-
     path: '/profile',
     loader: () => import('src/view/auth/ProfileFormPage'),
     permissionRequired: null,
