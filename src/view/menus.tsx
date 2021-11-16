@@ -65,21 +65,28 @@ export default [
   {
     path: '/superadmin/user',
     label: i18n('user.menu'),
-    permissionRequired: permissions.userReadBySuperadmin,
+    permissionRequired: permissions.userReadSuperadmin,
     icon: 'fas fa-user-plus',
   },
 
   {
     path: '/superadmin/tenant',
     label: i18n('tenant.label'),
-    permissionRequired: permissions.tenantReadBySuperadmin,
+    permissionRequired: permissions.tenantReadSuperadmin,
     icon: 'fas fa-building',
+  },
+
+  {
+    path: '/superadmin/settings',
+    label: i18n('settings.menu'),
+    permissionRequired: permissions.settingsReadSuperadmin,
+    icon: 'fas fa-cog',
   },
 
   {
     path: '/superadmin/analytics',
     label: i18n('analytics.menu'),
-    permissionRequired: permissions.analyticsReadBySuperadmin,
+    permissionRequired: permissions.analyticsReadSuperadmin,
     icon: 'fas fa-chart-bar',
   }
 ].filter(Boolean);

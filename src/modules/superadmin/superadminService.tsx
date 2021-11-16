@@ -80,4 +80,21 @@ export default class SuperadminService {
 
     return response.data;
   }
+
+  static async getSettings() {
+    const response = await authAxios.get(`/superadmin/settings`, {});
+    return response.data;
+  }
+
+  static async saveSettings(settings) {
+    const body = {
+      settings,
+    };
+
+    const response = await authAxios.put(
+      `/superadmin/settings`,
+      body,
+    );
+    return response.data;
+  }
 }
