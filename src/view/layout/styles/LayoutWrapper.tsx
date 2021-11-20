@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const LayoutWrapper = styled.div`
-  color: rgba(0, 0, 0, 0.65);
+  color: #fff;
   display: flex;
   font-size: 13px;
 
@@ -15,6 +15,7 @@ const LayoutWrapper = styled.div`
 
   h1 {
     font-size: 1.75em;
+    colorL #fff;
   }
 
   .bg-primary-light {
