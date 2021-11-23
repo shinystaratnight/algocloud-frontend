@@ -2,7 +2,7 @@ import authSelectors from 'src/modules/auth/authSelectors';
 import layoutSelectors from 'src/modules/layout/layoutSelectors';
 import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import EmailUnverifiedRoute from 'src/view/shared/routes/EmailUnverifiedRoute';
 import InactiveUserRoute from 'src/view/shared/routes/InactiveUserRoute';
 import PrivateRoute from 'src/view/shared/routes/PrivateRoute';
@@ -48,6 +48,7 @@ function RoutesComponent(props) {
   }
 
   return (
+    <BrowserRouter>
     <Switch>
       {routes.publicRoutes.map((route) => (
         <PublicRoute
@@ -152,6 +153,7 @@ function RoutesComponent(props) {
         />
       ))}
     </Switch>
+    </BrowserRouter>
   );
 }
 

@@ -88,5 +88,12 @@ export default [
     label: i18n('analytics.menu'),
     permissionRequired: permissions.analyticsReadSuperadmin,
     icon: 'fas fa-chart-bar',
+  },
+
+  {
+    path: '/superadmin/algochart',
+    label: 'Algocharts', // i18n('analytics.menu'),
+    permissionRequired: permissions.analyticsReadSuperadmin,
+    icon: 'fas fa-chart-bar',
   }
 ].filter(Boolean);

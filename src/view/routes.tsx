@@ -326,6 +326,18 @@ const superadminRoutes = [
     permissionRequired: permissions.userReadSuperadmin,
     exact: true,
   },
+  {
+    path: '/superadmin/algochart',
+    loader: () => import('src/view/superadmin/algorand/AlgorandPage'),
+    permissionRequired: permissions.userReadSuperadmin,
+    exact: true,
+  },
+  {
+    path: '/superadmin/algochart/pair',
+    loader: () => import('src/view/superadmin/algorand/PairDetail'),
+    permissionRequired: permissions.userReadSuperadmin,
+    exact: true,
+  },
 ].filter(Boolean);
 
 export default {
