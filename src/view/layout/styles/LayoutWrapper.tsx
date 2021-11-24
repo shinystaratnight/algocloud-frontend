@@ -15,7 +15,7 @@ const LayoutWrapper = styled.div`
 
   h1 {
     font-size: 1.75em;
-    colorL #fff;
+    color: #fff;
   }
 
   .bg-primary-light {
