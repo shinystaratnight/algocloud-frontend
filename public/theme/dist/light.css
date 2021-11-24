@@ -9805,5 +9805,16 @@ a.text-dark:focus,a.text-dark:hover {
 }
 
 .menu-li a .icon,.menu-li.active a .icon,.menu-li:hover a,.menu-li:hover a .icon {
-    color: rgb(29,46,83,.15)!important
+    color: rgb(29,46,83,.75)!important;
+    background-color: #ffffff87;
+}
+
+.menu-li:focus a {
+    border-right: none;
+    color: #23325d!important;
+    background-color: #fff !important;
+}
+
+.menu-li.focus a {
+    background-color: #fff;
 }
