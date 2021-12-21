@@ -216,6 +216,18 @@ const privateRoutes = [
     permissionRequired: permissions.orderRead,
     exact: true,
   },
+  {
+    path: '/chart',
+    loader: () => import('src/view/chart/OverviewPage'),
+    permissionRequired: permissions.userReadSuperadmin,
+    exact: true,
+  },
+  // {
+  //   path: '/chart/pool/:address',
+  //   loader: () => import('src/view/algorand/PoolsPage'),
+  //   permissionRequired: permissions.userReadSuperadmin,
+  //   exact: true,
+  // },
 ].filter(Boolean);
 
 const publicRoutes = [
@@ -326,18 +338,18 @@ const superadminRoutes = [
     permissionRequired: permissions.userReadSuperadmin,
     exact: true,
   },
-  {
-    path: '/superadmin/algochart',
-    loader: () => import('src/view/superadmin/algorand/AlgorandPage'),
-    permissionRequired: permissions.userReadSuperadmin,
-    exact: true,
-  },
-  {
-    path: '/superadmin/algochart/pair',
-    loader: () => import('src/view/superadmin/algorand/PairDetail'),
-    permissionRequired: permissions.userReadSuperadmin,
-    exact: true,
-  },
+  // {
+  //   path: '/superadmin/algochart',
+  //   loader: () => import('src/view/superadmin/algorand/AlgorandPage'),
+  //   permissionRequired: permissions.userReadSuperadmin,
+  //   exact: true,
+  // },
+  // {
+  //   path: '/superadmin/algochart/pair',
+  //   loader: () => import('src/view/superadmin/algorand/PairDetail'),
+  //   permissionRequired: permissions.userReadSuperadmin,
+  //   exact: true,
+  // },
 ].filter(Boolean);
 
 export default {

@@ -1,28 +1,28 @@
-import actions from 'src/modules/superadmin/algochart/marketCapChart/marketCapChartActions';
+import actions from 'src/modules/chart/pairChart/pairChartActions';
 
 const initialData = {
   loading: false,
-  marketCapChartData: []
+  pairChartData: []
 };
 
 export default (state = initialData, { type, payload }) => {
-  console.log(actions)
-  if (type === actions.FETCH_STARTED) {
+  
+  if (type === actions.FETCH_PAIR_PRICE_STARTED) {
     return {
       ...state,
       loading: true,
     };
   }
 
-  if (type === actions.FETCH_SUCCESS) {
+  if (type === actions.FETCH_PAIR_PRICE_SUCCESS) {
     return {
       ...state,
       loading: false,
-      marketCapChartData: payload.data,
+      pairChartData: payload.data,
     };
   }
 
-  if (type === actions.FETCH_ERROR) {
+  if (type === actions.FETCH_PAIR_PRICE_ERROR) {
     return {
       ...state,
       loading: false

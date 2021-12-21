@@ -61,6 +61,13 @@ export default [
     icon: 'fas fa-chevron-right',
     label: i18n('entities.order.menu'),
   },
+
+  {
+    path: '/chart',
+    permissionRequired: permissions.chartRead,
+    icon: 'fas fa-chart-bar',
+    label: i18n('entities.chart.menu'),
+  },
   
   {
     path: '/superadmin/user',
@@ -90,10 +97,10 @@ export default [
     icon: 'fas fa-chart-bar',
   },
 
-  {
-    path: '/superadmin/algochart',
-    label: 'Algocharts', // i18n('analytics.menu'),
-    permissionRequired: permissions.analyticsReadSuperadmin,
-    icon: 'fas fa-chart-bar',
-  }
+  // {
+  //   path: '/superadmin/algochart',
+  //   label: 'Algocharts', // i18n('analytics.menu'),
+  //   permissionRequired: permissions.analyticsReadSuperadmin,
+  //   icon: 'fas fa-chart-bar',
+  // }
 ].filter(Boolean);

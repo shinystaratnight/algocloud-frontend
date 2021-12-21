@@ -1,9 +1,9 @@
 import Errors from 'src/modules/shared/error/errors';
-import { getAlgoPriceChartData } from 'src/view/superadmin/algorand/api';
+import { getMarketCapChartData } from 'src/view/chart/api';
 
-const prefix = 'SUPERADMIN_ALGOPRICECHART';
+const prefix = 'SUPERADMIN_MARKETCAPCHART';
 
-const algoPriceChartActions = {
+const marketCapChartActions = {
 
   FETCH_STARTED: `${prefix}_FETCH_STARTED`,
   FETCH_SUCCESS: `${prefix}_FETCH_SUCCESS`,
@@ -13,13 +13,13 @@ const algoPriceChartActions = {
   doFetch: () => async (dispatch) => {
     try {
       dispatch({
-        type: algoPriceChartActions.FETCH_STARTED,
+        type: marketCapChartActions.FETCH_STARTED,
       });
 
-      const data = await getAlgoPriceChartData();
+      const data = await getMarketCapChartData();
       
       dispatch({
-        type: algoPriceChartActions.FETCH_SUCCESS,
+        type: marketCapChartActions.FETCH_SUCCESS,
         payload: {
           data
         },
@@ -29,10 +29,10 @@ const algoPriceChartActions = {
       Errors.handle(error);
 
       dispatch({
-        type: algoPriceChartActions.FETCH_ERROR,
+        type: marketCapChartActions.FETCH_ERROR,
       });
     }
   },
 };
 
-export default algoPriceChartActions;
+export default marketCapChartActions;
