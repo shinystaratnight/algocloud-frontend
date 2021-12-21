@@ -4,7 +4,6 @@ import { i18n } from 'src/i18n';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
-import actions from 'src/modules/superadmin/analytics/analyticsActions';
 import AnalyticsCard from 'src/view/superadmin/analytics/AnalyticsCard';
 import selectors from 'src/modules/superadmin/analytics/analyticsSelectors';
 import { PairsTable } from './PairsTable';
@@ -24,10 +23,7 @@ function OverviewPage() {
   );
   
   useEffect(() => {
-    dispatch(actions.doFetch());
   }, [dispatch]);
-
-  
 
   return (
     <>
@@ -38,7 +34,11 @@ function OverviewPage() {
         ]}
       />
       <GlobalChart />
-      <ContentWrapper>
+      {/* <ContentWrapper>
+        <PageTitle>Top Favorites</PageTitle>
+        <PairsTable />
+      </ContentWrapper> */}
+      {/* <ContentWrapper>
         <PageTitle>Top Pairs</PageTitle>
         <PairsTable />
       </ContentWrapper>
@@ -49,7 +49,7 @@ function OverviewPage() {
       <ContentWrapper>
         <PageTitle>Top Transactions</PageTitle>
         <TransactionsTable />
-      </ContentWrapper>
+      </ContentWrapper> */}
     </>
   )
 }

@@ -1,8 +1,8 @@
 import Errors from 'src/modules/shared/error/errors';
 import SuperadminService from 'src/modules/superadmin/superadminService';
-import { getPairPrices } from 'src/view/chart/api';
+import { getPairPrices } from 'src/view/algorand/api';
 
-const prefix = 'SUPERADMIN_ALGOCHART';
+const prefix = 'ALGORAND_ALGOCHART';
 
 const algochartActions = {
 

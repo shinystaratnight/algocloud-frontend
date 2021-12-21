@@ -211,10 +211,10 @@ const en = {
       },
     },
 
-    chart: {
-      name: 'chart',
-      label: 'Charts',
-      menu: 'Charts',
+    algorand: {
+      name: 'algorand',
+      label: 'Algorand',
+      menu: 'Algorand',
     }
   },
 

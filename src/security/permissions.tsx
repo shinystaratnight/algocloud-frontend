@@ -240,8 +240,8 @@ class Permissions {
         allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
-      chartRead: {
-        id: 'chartRead',
+      algorandRead: {
+        id: 'algorandRead',
         allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },

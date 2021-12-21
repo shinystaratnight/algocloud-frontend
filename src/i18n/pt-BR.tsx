@@ -211,10 +211,10 @@ const ptBR = {
       },
     },
 
-    chart: {
-      name: 'chart',
-      label: 'Gráficos',
-      menu: 'Gráficos',
+    algorand: {
+      name: 'algorand',
+      label: 'Algorand',
+      menu: 'Algorand',
     }
   },
 

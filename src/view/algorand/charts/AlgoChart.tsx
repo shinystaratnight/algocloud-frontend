@@ -2,14 +2,14 @@ import React, { useEffect, useState, useRef } from 'react';
 import { ResponsiveContainer } from 'recharts';
 import { useDispatch, useSelector } from 'react-redux';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
-import marketCapActions from 'src/modules/chart/marketCapChart/marketCapChartActions';
-import algoPriceActions from 'src/modules/chart/algoPriceChart/algoPriceChartActions';
-import marketCapSelectors from 'src/modules/chart/marketCapChart/marketCapChartSelectors';
-import algoPriceSelectors from 'src/modules/chart/algoPriceChart/algoPriceChartSelectors';
-import TradingViewChart from './components/TradingviewChart';
-import CandleStickChart from './components/CandleChart';
-import { formattedNum } from './Utils';
-import { FlexContainer } from './styled';
+import marketCapActions from 'src/modules/algorand/marketCapChart/marketCapChartActions';
+import algoPriceActions from 'src/modules/algorand/algoPriceChart/algoPriceChartActions';
+import marketCapSelectors from 'src/modules/algorand/marketCapChart/marketCapChartSelectors';
+import algoPriceSelectors from 'src/modules/algorand/algoPriceChart/algoPriceChartSelectors';
+import TradingViewChart from 'src/view/algorand/components/TradingviewChart';
+import CandleStickChart from 'src/view/algorand/components/CandleChart';
+import { formattedNum } from '../Utils';
+import { FlexContainer } from '../styled';
 
 function GlobalChart() {
   const dispatch = useDispatch();

@@ -1,8 +1,8 @@
-import actions from 'src/modules/chart/marketCapChart/marketCapChartActions';
+import actions from 'src/modules/algorand/algoPriceChart/algoPriceChartActions';
 
 const initialData = {
   loading: false,
-  marketCapChartData: []
+  poolsData: []
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -18,7 +18,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      marketCapChartData: payload.data,
+      poolsData: payload.data,
     };
   }
 

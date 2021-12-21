@@ -1,7 +1,7 @@
 import Errors from 'src/modules/shared/error/errors';
-import { getMarketCapChartData } from 'src/view/chart/api';
+import { getMarketCapChartData } from 'src/view/algorand/api';
 
-const prefix = 'SUPERADMIN_MARKETCAPCHART';
+const prefix = 'ALGORAND_MARKETCAPCHART';
 
 const marketCapChartActions = {
 

@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const selectRaw = (state) => state.superadmin.algochart.algoPriceChart;
+const selectRaw = (state) => state.algorand.algoPriceChart;
 
 const selectLoading = createSelector(
   [selectRaw],

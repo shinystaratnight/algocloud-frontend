@@ -1,28 +1,28 @@
-import actions from 'src/modules/chart/pairChart/pairChartActions';
+import actions from 'src/modules/algorand/marketCapChart/marketCapChartActions';
 
 const initialData = {
   loading: false,
-  pairChartData: []
+  marketCapChartData: []
 };
 
 export default (state = initialData, { type, payload }) => {
-  
-  if (type === actions.FETCH_PAIR_PRICE_STARTED) {
+  console.log(actions)
+  if (type === actions.FETCH_STARTED) {
     return {
       ...state,
       loading: true,
     };
   }
 
-  if (type === actions.FETCH_PAIR_PRICE_SUCCESS) {
+  if (type === actions.FETCH_SUCCESS) {
     return {
       ...state,
       loading: false,
-      pairChartData: payload.data,
+      marketCapChartData: payload.data,
     };
   }
 
-  if (type === actions.FETCH_PAIR_PRICE_ERROR) {
+  if (type === actions.FETCH_ERROR) {
     return {
       ...state,
       loading: false

@@ -1,7 +1,7 @@
 import Errors from 'src/modules/shared/error/errors';
-import { getAlgoPriceChartData } from 'src/view/chart/api';
+import { getAlgoPriceChartData } from 'src/view/algorand/api';
 
-const prefix = 'SUPERADMIN_ALGOPRICECHART';
+const prefix = 'ALGORAND_ALGOPRICECHART';
 
 const algoPriceChartActions = {
 

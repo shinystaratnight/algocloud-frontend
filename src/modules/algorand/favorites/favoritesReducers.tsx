@@ -1,8 +1,8 @@
-import actions from 'src/modules/chart/algoPriceChart/algoPriceChartActions';
+import actions from 'src/modules/algorand/algoPriceChart/algoPriceChartActions';
 
 const initialData = {
   loading: false,
-  algoPriceChartData: []
+  favoritesData: []
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -18,7 +18,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      algoPriceChartData: payload.data,
+      favoritesData: payload.data,
     };
   }
 

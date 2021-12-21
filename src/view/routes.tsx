@@ -217,9 +217,9 @@ const privateRoutes = [
     exact: true,
   },
   {
-    path: '/chart',
-    loader: () => import('src/view/chart/OverviewPage'),
-    permissionRequired: permissions.userReadSuperadmin,
+    path: '/algorand',
+    loader: () => import('src/view/algorand/OverviewPage'),
+    permissionRequired: permissions.algorandRead,
     exact: true,
   },
   // {
@@ -338,18 +338,6 @@ const superadminRoutes = [
     permissionRequired: permissions.userReadSuperadmin,
     exact: true,
   },
-  // {
-  //   path: '/superadmin/algochart',
-  //   loader: () => import('src/view/superadmin/algorand/AlgorandPage'),
-  //   permissionRequired: permissions.userReadSuperadmin,
-  //   exact: true,
-  // },
-  // {
-  //   path: '/superadmin/algochart/pair',
-  //   loader: () => import('src/view/superadmin/algorand/PairDetail'),
-  //   permissionRequired: permissions.userReadSuperadmin,
-  //   exact: true,
-  // },
 ].filter(Boolean);
 
 export default {

@@ -63,10 +63,10 @@ export default [
   },
 
   {
-    path: '/chart',
-    permissionRequired: permissions.chartRead,
+    path: '/algorand',
+    permissionRequired: permissions.algorandRead,
     icon: 'fas fa-chart-bar',
-    label: i18n('entities.chart.menu'),
+    label: i18n('entities.algorand.menu'),
   },
   
   {
@@ -96,11 +96,4 @@ export default [
     permissionRequired: permissions.analyticsReadSuperadmin,
     icon: 'fas fa-chart-bar',
   },
-
-  // {
-  //   path: '/superadmin/algochart',
-  //   label: 'Algocharts', // i18n('analytics.menu'),
-  //   permissionRequired: permissions.analyticsReadSuperadmin,
-  //   icon: 'fas fa-chart-bar',
-  // }
 ].filter(Boolean);
