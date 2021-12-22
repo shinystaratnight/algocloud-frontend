@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const selectRaw = (state) => state.algorand.pairChart;
+const selectRaw = (state) => state.algo.pairChart;
 
 const selectLoading = createSelector(
   [selectRaw],

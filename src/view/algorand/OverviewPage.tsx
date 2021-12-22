@@ -5,7 +5,8 @@ import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 import AnalyticsCard from 'src/view/superadmin/analytics/AnalyticsCard';
-import selectors from 'src/modules/superadmin/analytics/analyticsSelectors';
+import selectors from 'src/modules/algorand/stats/statsSelectors';
+import actions from 'src/modules/algorand/stats/statsActions';
 import { PairsTable } from './PairsTable';
 import { TokensTable } from './TokensTable';
 import { TransactionsTable } from './TransactionsTable';
@@ -14,15 +15,8 @@ import GlobalChart from './GlobalChart';
 function OverviewPage() {
   const dispatch = useDispatch();
 
-  const userCount = useSelector(
-    selectors.selectUserCount
-  );
-
-  const tenantCount = useSelector(
-    selectors.selectTenantCount
-  );
-  
   useEffect(() => {
+    // dispatch(actions.doFetch());
   }, [dispatch]);
 
   return (

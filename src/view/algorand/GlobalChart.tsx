@@ -6,6 +6,8 @@ import marketCapActions from 'src/modules/algorand/marketCapChart/marketCapChart
 import algoPriceActions from 'src/modules/algorand/algoPriceChart/algoPriceChartActions';
 import marketCapSelectors from 'src/modules/algorand/marketCapChart/marketCapChartSelectors';
 import algoPriceSelectors from 'src/modules/algorand/algoPriceChart/algoPriceChartSelectors';
+import actions from 'src/modules/algorand/stats/statsActions';
+import selectors from 'src/modules/algorand/stats/statsSelectors';
 import TradingViewChart from './components/TradingviewChart';
 import CandleStickChart from './components/CandleChart';
 import { formattedNum } from './Utils';
@@ -22,6 +24,8 @@ function GlobalChart() {
   const globalChartData = useSelector(marketCapSelectors.selectMarketCapChartData)
   const algoPriceChartData = useSelector(algoPriceSelectors.selectAlgoPriceChartData)
 
+  const historyData = useSelector(selectors.selectHistoryData);
+
   useEffect(() => {
     if (ref1.current) {
       const current: any = ref1.current;
@@ -34,8 +38,9 @@ function GlobalChart() {
   }, [ref1, ref2])
 
   useEffect(() => {
-    dispatch(marketCapActions.doFetch());
-    dispatch(algoPriceActions.doFetch());
+    dispatch(actions.doFetch());
+    // dispatch(marketCapActions.doFetch());
+    // dispatch(algoPriceActions.doFetch());
   }, [dispatch])
 
   function valueFormatter(val) {
@@ -47,20 +52,20 @@ function GlobalChart() {
   return (
     <FlexContainer gap="20px">
       <ContentWrapper>
-        {globalChartData &&
+        {historyData &&
           <ResponsiveContainer aspect={60 / 28} ref={ref1}>
             <TradingViewChart
-              data={globalChartData}
+              data={historyData}
               base={0}
               baseChange={0}
-              title="MarketCap"
-              field="market-cap"
+              title="Liquidity"
+              field="totalLiquidity"
               width={width1}
               type='area'
             />
           </ResponsiveContainer>}
       </ContentWrapper>
-      <ContentWrapper>
+      {/* <ContentWrapper>
         {algoPriceChartData &&
           <ResponsiveContainer aspect={60 / 28} ref={ref2}>
             <CandleStickChart
@@ -71,7 +76,7 @@ function GlobalChart() {
               valueFormatter={valueFormatter}
             />
           </ResponsiveContainer>}
-      </ContentWrapper>
+      </ContentWrapper> */}
     </FlexContainer>
   )
 }

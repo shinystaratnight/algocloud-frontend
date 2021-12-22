@@ -1,12 +1,11 @@
-import actions from 'src/modules/algorand/algoPriceChart/algoPriceChartActions';
+import actions from 'src/modules/algorand/stats/statsActions';
 
 const initialData = {
   loading: false,
-  algoData: []
+  historyData: []
 };
 
 export default (state = initialData, { type, payload }) => {
-  console.log(actions)
   if (type === actions.FETCH_STARTED) {
     return {
       ...state,
@@ -15,10 +14,11 @@ export default (state = initialData, { type, payload }) => {
   }
 
   if (type === actions.FETCH_SUCCESS) {
+    console.log(payload.data);
     return {
       ...state,
       loading: false,
-      algoData: payload.data,
+      historyData: payload.data,
     };
   }
 

@@ -1,6 +1,6 @@
 import { createSelector } from 'reselect';
 
-const selectRaw = (state) => state.algorand.marketCapChart;
+const selectRaw = (state) => state.algo.marketCapChart;
 
 const selectLoading = createSelector(
   [selectRaw],
