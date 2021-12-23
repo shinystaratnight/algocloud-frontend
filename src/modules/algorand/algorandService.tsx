@@ -11,4 +11,24 @@ export default class AlgorandService {
 
     return response.data;
   }
+
+  static async getAlgorandAssets() {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.get(
+      `/tenant/${tenantId}/algorand/assets`,
+    );
+
+    return response.data;
+  }
+
+  static async getAlgorandPools() {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.get(
+      `/tenant/${tenantId}/algorand/pools`,
+    );
+
+    return response.data;
+  }
 }

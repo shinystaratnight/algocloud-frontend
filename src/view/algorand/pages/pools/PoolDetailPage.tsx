@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const assetsListPage = () => {
+const PoolDetailPage = () => {
   return (
     <></>
   )
 }
 
-export default assetsListPage;
+export default PoolDetailPage;

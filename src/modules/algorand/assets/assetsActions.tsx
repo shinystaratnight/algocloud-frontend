@@ -16,7 +16,7 @@ const assetsActions = {
         type: assetsActions.FETCH_STARTED,
       });
 
-      const data = await AlgorandService.getAlgorandStats();
+      const data = await AlgorandService.getAlgorandAssets();
       
       dispatch({
         type: assetsActions.FETCH_SUCCESS,

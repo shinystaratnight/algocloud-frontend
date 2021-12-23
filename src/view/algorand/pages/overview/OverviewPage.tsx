@@ -1,21 +1,26 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import styled from 'styled-components';
-// import PageTitle from 'src/view/shared/styles/PageTitle';
-import AnalyticsCard from 'src/view/superadmin/analytics/AnalyticsCard';
-import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
 import actions from 'src/modules/algorand/statistics/statisticsActions';
 import StatisticsChart from './StatisticsChart';
 import TopAssets from 'src/view/algorand/pages/overview/TopAssets';
 import TopFavorites from 'src/view/algorand/pages/overview/TopFavorites';
 import TopPools from 'src/view/algorand/pages/overview/TopPools';
 
+const SectionTitleBar = styled.h5`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2rem;
+`;
+
 const SectionTitle = styled.h5`
-  margin-bottom: 24px;
   color: white;
+  margin-bottom: 10px;
   a {
     color: white;
   }
@@ -36,19 +41,49 @@ function OverviewPage() {
           [i18n('algorand.menu')],
         ]}
       />
-      
+
       <StatisticsChart />
 
       <ContentWrapper>
-        <SectionTitle>Top Favorites</SectionTitle>
+        <SectionTitleBar>
+          <SectionTitle>Top Favorites</SectionTitle>
+          <h6 className='m-0'>
+            <Link
+              className="btn btn-link"
+              to={`/algorand/favorites`}
+            >
+              Sell All
+            </Link>
+          </h6>
+        </SectionTitleBar>
         <TopFavorites />
       </ContentWrapper>
       <ContentWrapper>
-        <SectionTitle>Top Assets</SectionTitle>
+        <SectionTitleBar>
+          <SectionTitle>Top Assets</SectionTitle>
+          <h6 className='m-0'>
+            <Link
+              className="btn btn-link"
+              to={`/algorand/assets`}
+            >
+              Sell All
+            </Link>
+          </h6>
+        </SectionTitleBar>
         <TopAssets />
       </ContentWrapper>
       <ContentWrapper>
-        <SectionTitle>Top Pools</SectionTitle>
+        <SectionTitleBar>
+          <SectionTitle>Top Pools</SectionTitle>
+          <h6 className='m-0'>
+            <Link
+              className="btn btn-link"
+              to={`/algorand/pools`}
+            >
+              Sell All
+            </Link>
+          </h6>
+        </SectionTitleBar>
         <TopPools />
       </ContentWrapper>
       {/* 

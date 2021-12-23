@@ -6,7 +6,7 @@ import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 
 
-const assetsListPage = () => {
+const PoolListPage = () => {
   return (
     <>
     <Breadcrumb
@@ -25,4 +25,4 @@ const assetsListPage = () => {
   )
 }
 
-export default assetsListPage;
+export default PoolListPage;
