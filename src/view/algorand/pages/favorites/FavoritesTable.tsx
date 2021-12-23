@@ -2,20 +2,19 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/statistics/statisticsActions';
-import statisticsSelectors from 'src/modules/algorand/statistics/statisticsSelectors';
-import poolsSelectors from 'src/modules/algorand/pools/poolsSelectors';
+import assetsSelectors from 'src/modules/algorand/assets/assetsSelectors';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 
-function TopPools() {
+function FavoritesTable() {
 
-  const loading = useSelector(statisticsSelectors.selectLoading);
-  const topPools = useSelector(poolsSelectors.selectPools);
+  const loading = useSelector(assetsSelectors.selectLoading);
+  const assets = useSelector(assetsSelectors.selectAssets);
 
   return (
-    <div className="top-assets-table">
+    <div className="favorites-table">
       <TableWrapper>
         <div className="table-responsive">
           <table className="table table-striped mt-2">
@@ -26,20 +25,28 @@ function TopPools() {
                   label='NAME'
                 />
                 <TableColumnHeader
+                  name='symbol'
+                  label='SYMBOL'
+                />
+                <TableColumnHeader
                   name='liquidity'
                   label='LIQUIDITY'
                 />
                 <TableColumnHeader
-                  name='volume24h'
+                  name='volumn24h'
                   label='VOLUME[24H]'
                 />
                 <TableColumnHeader
-                  name='volume7d'
-                  label='VOLUME[7D]'
+                  name='price'
+                  label='PRICE'
                 />
                 <TableColumnHeader
-                  name='fees'
-                  label='FEES[24H]'
+                  name='change'
+                  label='PRICE CHANGE[24H]'
+                />
+                <TableColumnHeader
+                  name='action'
+                  label='ACTION'
                 />
               </tr>
             </thead>
@@ -51,7 +58,7 @@ function TopPools() {
                   </td>
                 </tr>
               )}
-              {!loading && !topPools.length && (
+              {!loading && !assets.length && (
                 <tr>
                   <td colSpan={100}>
                     <div className="d-flex justify-content-center">
@@ -60,15 +67,18 @@ function TopPools() {
                   </td>
                 </tr>
               )}
-              {!loading && (topPools.length > 0) && topPools.map((pool) => (
-                <tr key={pool.id}>
+              {!loading && (assets.length > 0) && assets.map((asset) => (
+                <tr key={asset.id}>
                   <td>
-                    <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
+                    <h6>{asset.name}</h6>
+                    {asset.assetId}
                   </td>
-                  <td>{formatNumber(pool.liquidity)}</td>
-                  <td>{formatNumber(pool.lastDayVolume)}</td>
-                  <td>{formatNumber(pool.lastWeekVolume)}</td>
-                  <td>{formatNumber(pool.lastDayFees)}</td>
+                  <td><b>{asset.unitName}</b></td>
+                  <td>{formatNumber(asset.liquidity)}</td>
+                  <td>{formatNumber(asset.lastDayVolume)}</td>
+                  <td>{formatNumber(asset.price)}</td>
+                  <td>{formatPercent(asset.lastDayPriceChange)}</td>
+                  <td><a href='#'><b>Favorite</b></a></td>
                 </tr>
               ))}
             </tbody>
@@ -79,4 +89,4 @@ function TopPools() {
   )
 }
 
-export default TopPools;
+export default FavoritesTable;

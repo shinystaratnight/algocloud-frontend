@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/statistics/statisticsActions';
-import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
+import statisticsSelectors from 'src/modules/algorand/statistics/statisticsSelectors';
+import assetsSelectors from 'src/modules/algorand/assets/assetsSelectors';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
@@ -10,9 +11,8 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 
 function TopAssets() {
 
-  const loading = useSelector(selectors.selectLoading);
-
-  const topAssets = useSelector(selectors.selectTopAssets);
+  const loading = useSelector(statisticsSelectors.selectLoading);
+  const topAssets = useSelector(assetsSelectors.selectAssets);
 
   return (
     <div className="top-assets-table">

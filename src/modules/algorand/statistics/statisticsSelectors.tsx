@@ -32,14 +32,12 @@ const selectTopPools = createSelector(
   (raw) => raw.topPools,
 );
 
-const statsSelectors = {
+const statisticsSelectors = {
   selectLoading,
   selectDailyData,
   selectWeeklyData,
   selectTopFavorites,
-  selectTopAssets,
-  selectTopPools,
   selectRaw,
 };
 
-export default statsSelectors;
+export default statisticsSelectors;

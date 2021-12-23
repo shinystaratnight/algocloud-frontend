@@ -218,7 +218,25 @@ const privateRoutes = [
   },
   {
     path: '/algorand',
-    loader: () => import('src/view/algorand/pages/overview'),
+    loader: () => import('src/view/algorand/pages/overview/OverviewPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/assets',
+    loader: () => import('src/view/algorand/pages/assets/AssetListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/pools',
+    loader: () => import('src/view/algorand/pages/pools/PoolListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/favorites',
+    loader: () => import('src/view/algorand/pages/favorites/FavoriteListPage'),
     permissionRequired: permissions.algorandRead,
     exact: true,
   },

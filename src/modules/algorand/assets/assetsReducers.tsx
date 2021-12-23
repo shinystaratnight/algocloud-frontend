@@ -1,12 +1,11 @@
-import actions from 'src/modules/algorand/algoPriceChart/algoPriceChartActions';
+import actions from 'src/modules/algorand/assets/assetsActions';
 
 const initialData = {
   loading: false,
-  favoritesData: []
+  assets: []
 };
 
 export default (state = initialData, { type, payload }) => {
-  console.log(actions)
   if (type === actions.FETCH_STARTED) {
     return {
       ...state,
@@ -18,7 +17,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      favoritesData: payload.data,
+      assets: payload.data,
     };
   }
 

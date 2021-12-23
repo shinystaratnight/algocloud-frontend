@@ -36,6 +36,7 @@ function OverviewPage() {
           [i18n('algorand.menu')],
         ]}
       />
+      
       <StatisticsChart />
 
       <ContentWrapper>
@@ -51,10 +52,6 @@ function OverviewPage() {
         <TopPools />
       </ContentWrapper>
       {/* 
-      <ContentWrapper>
-        <PageTitle>Top Tokens</PageTitle>
-        <TokensTable />
-      </ContentWrapper>
       <ContentWrapper>
         <PageTitle>Top Transactions</PageTitle>
         <TransactionsTable />

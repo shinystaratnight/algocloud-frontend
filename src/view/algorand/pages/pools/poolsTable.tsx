@@ -9,13 +9,13 @@ import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 
-function TopPools() {
+function PoolsTable() {
 
-  const loading = useSelector(statisticsSelectors.selectLoading);
-  const topPools = useSelector(poolsSelectors.selectPools);
+  const loading = useSelector(poolsSelectors.selectLoading);
+  const pools = useSelector(poolsSelectors.selectPools);
 
   return (
-    <div className="top-assets-table">
+    <div className="pools-table">
       <TableWrapper>
         <div className="table-responsive">
           <table className="table table-striped mt-2">
@@ -51,7 +51,7 @@ function TopPools() {
                   </td>
                 </tr>
               )}
-              {!loading && !topPools.length && (
+              {!loading && !pools.length && (
                 <tr>
                   <td colSpan={100}>
                     <div className="d-flex justify-content-center">
@@ -60,7 +60,7 @@ function TopPools() {
                   </td>
                 </tr>
               )}
-              {!loading && (topPools.length > 0) && topPools.map((pool) => (
+              {!loading && (pools.length > 0) && pools.map((pool) => (
                 <tr key={pool.id}>
                   <td>
                     <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
@@ -79,4 +79,4 @@ function TopPools() {
   )
 }
 
-export default TopPools;
+export default PoolsTable;
