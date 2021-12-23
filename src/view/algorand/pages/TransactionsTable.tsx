@@ -1,14 +1,14 @@
 import React, {useEffect, useState} from 'react';
-import { getPairs, getTokens, getTransactions } from './api';
+import { getPairs, getTokens, getTransactions } from '../api';
 import { i18n } from 'src/i18n';
 import Pagination from 'src/view/shared/table/Pagination';
 import Spinner from 'src/view/shared/Spinner';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
-import { formatNumber } from './Utils';
-import { StyledAmountView } from './styled';
+import { formatNumber } from 'src/modules/algorand/utils';
+import { StyledAmountView } from './Styled';
 import {differenceInSeconds} from'date-fns';
-import { getIconURL } from './components/Icons';
+import { getIconURL } from '../components/Icons';
 
 export const AmountView = ({name, amount, decimals}) => {
     return (

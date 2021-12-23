@@ -530,6 +530,9 @@ const en = {
       customer: 'Customer',
     },
   },
+  algorand: {
+    menu: 'Algorand',
+  },
   errors: {
     backToHome: 'Back to home',
     403: `Sorry, you don't have access to this page`,

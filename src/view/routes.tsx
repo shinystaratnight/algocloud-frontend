@@ -218,7 +218,7 @@ const privateRoutes = [
   },
   {
     path: '/algorand',
-    loader: () => import('src/view/algorand/OverviewPage'),
+    loader: () => import('src/view/algorand/pages/overview'),
     permissionRequired: permissions.algorandRead,
     exact: true,
   },

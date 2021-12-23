@@ -11,9 +11,9 @@ import selectors from 'src/modules/algorand/pairChart/pairChartSelectors';
 import { PairsTable } from './PairsTable';
 import { TokensTable } from './TokensTable';
 import { TransactionsTable } from './TransactionsTable';
-import { FlexContainer, StyledCardWrapper, StyledStatCard } from './styled';
-import { formatNumber } from './Utils';
-import { getIconURL, SymbolIcon } from './components/Icons';
+import { FlexContainer, StyledCardWrapper, StyledStatCard } from './Styled';
+import { formatNumber } from 'src/modules/algorand/utils';
+import { getIconURL, SymbolIcon } from '../components/Icons';
 
 const StatCard = ({name, value}) => {
   return (

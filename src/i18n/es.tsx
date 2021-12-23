@@ -548,6 +548,9 @@ const es = {
       customer: 'Cliente',
     },
   },
+  algorand: {
+    menu: 'Algorand',
+  },
   errors: {
     '403': 'Lo sentimos, no tienes acceso a esta página',
     '404': 'Lo sentimos, la página que visitaste no existe',

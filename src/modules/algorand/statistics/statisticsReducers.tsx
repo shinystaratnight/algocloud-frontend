@@ -1,8 +1,9 @@
-import actions from 'src/modules/algorand/stats/statsActions';
+import actions from 'src/modules/algorand/statistics/statisticsActions';
 
 const initialData = {
   loading: false,
-  historyData: []
+  dailyData: [],
+  weeklyData: [],
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -14,11 +15,11 @@ export default (state = initialData, { type, payload }) => {
   }
 
   if (type === actions.FETCH_SUCCESS) {
-    console.log(payload.data);
     return {
       ...state,
       loading: false,
-      historyData: payload.data,
+      dailyData: payload.data.dailyData,
+      weeklyData: payload.data.weeklyData,
     };
   }
 

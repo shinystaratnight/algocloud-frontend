@@ -524,6 +524,9 @@ const ptBR = {
       customer: 'Cliente',
     },
   },
+  algorand: {
+    menu: 'Algorand',
+  },
   errors: {
     backToHome: 'Voltar a página inicial',
     403: `Desculpe, você não tem acesso a esta página`,

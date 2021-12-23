@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react'
-import { createChart } from 'lightweight-charts'
+import { BusinessDay, createChart, IChartApi } from 'lightweight-charts'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
-import { formattedNum } from '../../Utils'
+import { formattedNum } from 'src/modules/algorand/utils'
 import styled from 'styled-components'
 import { usePrevious } from 'react-use'
 import { Play } from 'react-feather'
@@ -45,23 +45,23 @@ const TradingViewChart = ({
   type = CHART_TYPES.BAR,
   data,
   base,
-  baseChange,
   field,
   title,
   width,
+  timeField = 'createdDate',
   useWeekly = false
 }) => {
   // reference for DOM element to create with chart
-  const ref = useRef()
+  const ref = useRef<HTMLDivElement>(null)
 
   // pointer to the chart object
-  const [chartCreated, setChartCreated] = useState(false)
+  const [chartCreated, setChartCreated] = useState<IChartApi | null>(null)
   const dataPrev = usePrevious(data)
 
   // parese the data and format for tardingview consumption
   const formattedData = data?.map(entry => {
     return {
-      time: entry['createdDate'],
+      time: entry[timeField],
       value: parseFloat(entry[field])
     }
   })
@@ -81,13 +81,15 @@ const TradingViewChart = ({
         node.removeChild(tooltip)
       }
       chartCreated.resize(0, 0)
-      setChartCreated()
+      setChartCreated(null)
     }
   }, [chartCreated, data, dataPrev, type])
 
   // if no chart created yet, create one with options and add to DOM manually
   useEffect(() => {
     if (!chartCreated && formattedData) {
+      if (!ref.current) return;
+
       var chart = createChart(ref.current, {
         width: width,
         height: HEIGHT,
@@ -144,8 +146,8 @@ const TradingViewChart = ({
                 top: 0.32,
                 bottom: 0
               },
-              lineColor: '#8be1ea',
-              lineWidth: 3
+              // lineColor: '#8be1ea',
+              // lineWidth: 3
             })
           : chart.addAreaSeries({
               topColor: '#8be1ea',
@@ -158,7 +160,8 @@ const TradingViewChart = ({
       var toolTip = document.createElement('div')
       toolTip.setAttribute('id', 'tooltip-id' + type)
       toolTip.className = 'three-line-legend'
-      ref.current.appendChild(toolTip)
+      if (ref.current)
+        ref.current.appendChild(toolTip)
       toolTip.style.display = 'block'
       toolTip.style.fontWeight = '500'
       toolTip.style.left = -4 + 'px'
@@ -166,29 +169,20 @@ const TradingViewChart = ({
       toolTip.style.position = 'absolute'
       toolTip.style.backgroundColor = 'transparent'
 
-      // format numbers
-      let percentChange = baseChange?.toFixed(2)
-      let formattedPercentChange = (percentChange > 0 ? '+' : '') + percentChange + '%'
-      let color = percentChange >= 0 ? 'green' : 'red'
-
       // get the title of the chart
-      function setLastBarText() {
-        toolTip.innerHTML =
-          `<div style="font-size: 16px; margin: 4px 0px; color: ${textColor};">${title} ${
-            type === CHART_TYPES.BAR && !useWeekly ? '(24hr)' : ''
-          }</div>` +
-          `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >` +
-          formattedNum(base ?? 0, true) +
-          `<span style="margin-left: 10px; font-size: 16px; color: ${color};">${formattedPercentChange}</span>` +
-          '</div>'
-      }
-      setLastBarText()
+      toolTip.innerHTML =
+        `<div style="font-size: 16px; margin: 4px 0px; color: ${textColor};">${title}</div>` +
+        `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >` +
+        formattedNum(base ?? 0, true) +
+        '</div>'
 
       // update the title when hovering on the chart
       chart.subscribeCrosshairMove(function(param) {
+        
         if (
           param === undefined ||
           param.time === undefined ||
+          param.point == undefined ||
           param.point.x < 0 ||
           param.point.x > width ||
           param.point.y < 0 ||
@@ -196,15 +190,16 @@ const TradingViewChart = ({
         ) {
           // setLastBarText()
         } else {
+          const ts = param.time as BusinessDay;
           let dateStr = useWeekly
-            ? dayjs(param.time.year + '-' + param.time.month + '-' + param.time.day)
+            ? dayjs(ts.year + '-' + ts.month + '-' + ts.day)
                 .startOf('week')
                 .format('MMMM D, YYYY') +
               '-' +
-              dayjs(param.time.year + '-' + param.time.month + '-' + param.time.day)
+              dayjs(ts.year + '-' + ts.month + '-' + ts.day)
                 .endOf('week')
                 .format('MMMM D, YYYY')
-            : dayjs(param.time.year + '-' + param.time.month + '-' + param.time.day).format('MMMM D, YYYY')
+            : dayjs(ts.year + '-' + ts.month + '-' + ts.day).format('MMMM D, YYYY')
           var price = param.seriesPrices.get(series)
 
           toolTip.innerHTML =
@@ -224,7 +219,6 @@ const TradingViewChart = ({
     }
   }, [
     base,
-    baseChange,
     chartCreated,
     data,
     formattedData,
@@ -240,7 +234,7 @@ const TradingViewChart = ({
   useEffect(() => {
     if (width) {
       chartCreated && chartCreated.resize(width, HEIGHT)
-      chartCreated && chartCreated.timeScale().scrollToPosition(0)
+      chartCreated && chartCreated.timeScale().scrollToPosition(0, true)
     }
   }, [chartCreated, width])
 
