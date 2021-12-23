@@ -9,6 +9,9 @@ import AnalyticsCard from 'src/view/superadmin/analytics/AnalyticsCard';
 import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
 import actions from 'src/modules/algorand/statistics/statisticsActions';
 import StatisticsChart from './StatisticsChart';
+import TopAssets from 'src/view/algorand/pages/overview/TopAssets';
+import TopFavorites from 'src/view/algorand/pages/overview/TopFavorites';
+import TopPools from 'src/view/algorand/pages/overview/TopPools';
 
 const SectionTitle = styled.h5`
   margin-bottom: 24px;
@@ -22,7 +25,7 @@ function OverviewPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    // dispatch(actions.doFetch());
+    dispatch(actions.doFetch());
   }, [dispatch]);
 
   return (
@@ -34,14 +37,20 @@ function OverviewPage() {
         ]}
       />
       <StatisticsChart />
+
       <ContentWrapper>
         <SectionTitle>Top Favorites</SectionTitle>
-        {/* <PairsTable /> */}
+        <TopFavorites />
       </ContentWrapper>
-      {/* <ContentWrapper>
-        <PageTitle>Top Pairs</PageTitle>
-        <PairsTable />
+      <ContentWrapper>
+        <SectionTitle>Top Assets</SectionTitle>
+        <TopAssets />
       </ContentWrapper>
+      <ContentWrapper>
+        <SectionTitle>Top Pools</SectionTitle>
+        <TopPools />
+      </ContentWrapper>
+      {/* 
       <ContentWrapper>
         <PageTitle>Top Tokens</PageTitle>
         <TokensTable />

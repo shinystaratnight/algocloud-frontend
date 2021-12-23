@@ -17,10 +17,28 @@ const selectWeeklyData = createSelector(
   (raw) => raw.weeklyData,
 );
 
+const selectTopFavorites = createSelector(
+  [selectRaw],
+  (raw) => raw.topFavorites,
+);
+
+const selectTopAssets = createSelector(
+  [selectRaw],
+  (raw) => raw.topAssets,
+);
+
+const selectTopPools = createSelector(
+  [selectRaw],
+  (raw) => raw.topPools,
+);
+
 const statsSelectors = {
   selectLoading,
   selectDailyData,
   selectWeeklyData,
+  selectTopFavorites,
+  selectTopAssets,
+  selectTopPools,
   selectRaw,
 };
 

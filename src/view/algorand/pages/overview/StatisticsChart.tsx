@@ -7,7 +7,6 @@ import actions from 'src/modules/algorand/statistics/statisticsActions';
 import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
 import { formattedNum } from 'src/modules/algorand/utils';
 import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
-// import CandleStickChart from '../components/CandleChart';
 
 const FlexContainer = styled.div`
   display: flex;
@@ -34,7 +33,6 @@ export const CHART_TYPES = {
 };
 
 function StatisticsChart() {
-  const dispatch = useDispatch();
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const [width1, setWidth1] = useState(0);
@@ -57,9 +55,6 @@ function StatisticsChart() {
     }
   }, [ref1, ref2])
 
-  useEffect(() => {
-    dispatch(actions.doFetch());
-  }, [dispatch])
 
   function valueFormatter(val) {
     return (
@@ -67,6 +62,7 @@ function StatisticsChart() {
       formattedNum(val)
     )
   }
+
   return (
     <FlexContainer gap="20px">
       <ContentWrapper>
@@ -88,7 +84,7 @@ function StatisticsChart() {
             <TradingViewChart
               data={volumeWindow === 'weekly' ? weeklyData : dailyData}
               base={0}
-              title={volumeWindow === 'weekly' ? 'Volume (Week)' : 'Volume (Last Day)'}
+              title={volumeWindow === 'weekly' ? 'Volume (Week)' : 'Volume (24hr)'}
               field={volumeWindow === 'weekly' ? 'lastWeekVolume' : 'lastDayVolume'}
               width={width2}
               type={CHART_TYPES.BAR}
