@@ -17,7 +17,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      pools: payload.data,
+      ...(payload.data)
     };
   }
 

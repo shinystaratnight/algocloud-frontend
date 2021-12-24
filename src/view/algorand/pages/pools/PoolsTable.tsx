@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/algorand/statistics/statisticsActions';
-import statisticsSelectors from 'src/modules/algorand/statistics/statisticsSelectors';
 import poolsSelectors from 'src/modules/algorand/pools/poolsSelectors';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import Spinner from 'src/view/shared/Spinner';

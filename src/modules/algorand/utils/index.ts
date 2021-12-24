@@ -1,4 +1,7 @@
 import Numeral from 'numeral'
+import dayjs from 'dayjs'
+
+import { timeframeOptions } from 'src/modules/algorand/contants'
 
 export const formatNumber = (_volume) => {
   let volume = _volume;
@@ -64,4 +67,49 @@ export const formattedNum = (number, usd = false, acceptNegatives = false) => {
   }
 
   return Number(parseFloat(num.toString()).toFixed(5))
+}
+
+export const toNiceDateYear = date => dayjs.utc(dayjs.unix(date)).format('MMMM DD, YYYY');
+
+export const toNiceDate = date => {
+  console.log(date)
+  let x = dayjs.utc(dayjs.unix(date)).format('MMM DD')
+  return x
+}
+
+export function getTimeframe(timeWindow) {
+  const utcEndTime = dayjs.utc()
+  // based on window, get starttime
+  let utcStartTime
+  switch (timeWindow) {
+    case timeframeOptions.WEEK:
+      utcStartTime =
+        utcEndTime
+          .subtract(1, 'week')
+          .endOf('day')
+          .unix() - 1
+      break
+    case timeframeOptions.MONTH:
+      utcStartTime =
+        utcEndTime
+          .subtract(1, 'month')
+          .endOf('day')
+          .unix() - 1
+      break
+    case timeframeOptions.ALL_TIME:
+      utcStartTime =
+        utcEndTime
+          .subtract(1, 'year')
+          .endOf('day')
+          .unix() - 1
+      break
+    default:
+      utcStartTime =
+        utcEndTime
+          .subtract(1, 'year')
+          .startOf('year')
+          .unix() - 1
+      break
+  }
+  return utcStartTime
 }

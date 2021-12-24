@@ -2,7 +2,10 @@ import actions from 'src/modules/algorand/assets/assetsActions';
 
 const initialData = {
   loading: false,
-  assets: []
+  assets: [],
+  hourlyPrices: [],
+  dailyPrices: [],
+  dailyAssetData: [],
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -17,7 +20,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      assets: payload.data,
+      ...(payload.data),
     };
   }
 

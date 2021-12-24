@@ -27,12 +27,12 @@ const statisticsActions = {
 
       dispatch({
         type: assetsActions.FETCH_SUCCESS,
-        payload: { data: data.topAssets },
+        payload: { data: { 'assets': data.assets } },
       });
 
       dispatch({
         type: poolsActions.FETCH_SUCCESS,
-        payload: { data: data.topPools },
+        payload: { data: { 'pools': data.pools } },
       });
 
     } catch (error) {

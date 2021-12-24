@@ -2,10 +2,10 @@ import React, { useState, useEffect, useRef } from 'react'
 import { BusinessDay, createChart, IChartApi } from 'lightweight-charts'
 import dayjs from 'dayjs'
 import utc from 'dayjs/plugin/utc'
-import { formattedNum } from 'src/modules/algorand/utils'
 import styled from 'styled-components'
 import { usePrevious } from 'react-use'
 import { Play } from 'react-feather'
+import { formattedNum } from 'src/modules/algorand/utils'
 
 dayjs.extend(utc)
 

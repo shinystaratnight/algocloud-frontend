@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/algorand/statistics/statisticsActions';
 import assetsSelectors from 'src/modules/algorand/assets/assetsSelectors';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import Spinner from 'src/view/shared/Spinner';
@@ -70,8 +70,12 @@ function AssetsTable() {
               {!loading && (assets.length > 0) && assets.map((asset) => (
                 <tr key={asset.id}>
                   <td>
-                    <h6>{asset.name}</h6>
-                    {asset.assetId}
+                    <Link
+                      to={`/algorand/assets/${asset.assetId}`}
+                    >
+                      <h6>{asset.name}</h6>
+                      {asset.assetId}
+                    </Link>
                   </td>
                   <td><b>{asset.unitName}</b></td>
                   <td>{formatNumber(asset.liquidity)}</td>

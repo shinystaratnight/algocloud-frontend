@@ -12,9 +12,27 @@ const selectAssets = createSelector(
   (raw) => raw.assets,
 );
 
+const selectDailyPrices = createSelector(
+  [selectRaw],
+  (raw) => raw.dailyPrices,
+)
+
+const selectHourlyPrices = createSelector(
+  [selectRaw],
+  (raw) => raw.hourlyPrices,
+)
+
+const selectDailyAssetData = createSelector(
+  [selectRaw],
+  (raw) => raw.dailyAssetData,
+)
+
 const assetsSelectors = {
   selectLoading,
   selectAssets,
+  selectDailyPrices,
+  selectHourlyPrices,
+  selectDailyAssetData,
   selectRaw,
 };
 

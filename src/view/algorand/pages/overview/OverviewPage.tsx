@@ -11,7 +11,7 @@ import TopAssets from 'src/view/algorand/pages/overview/TopAssets';
 import TopFavorites from 'src/view/algorand/pages/overview/TopFavorites';
 import TopPools from 'src/view/algorand/pages/overview/TopPools';
 
-const SectionTitleBar = styled.h5`
+const SectionTitleBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -75,14 +75,12 @@ function OverviewPage() {
       <ContentWrapper>
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
-          <h6 className='m-0'>
-            <Link
-              className="btn btn-link"
-              to={`/algorand/pools`}
-            >
-              Sell All
-            </Link>
-          </h6>
+          <Link
+            className="btn btn-link"
+            to={`/algorand/pools`}
+          >
+            Sell All
+          </Link>
         </SectionTitleBar>
         <TopPools />
       </ContentWrapper>

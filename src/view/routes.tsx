@@ -240,6 +240,18 @@ const privateRoutes = [
     permissionRequired: permissions.algorandRead,
     exact: true,
   },
+  {
+    path: '/algorand/assets/:assetId',
+    loader: () => import('src/view/algorand/pages/assets/AssetDetailPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/pools/:address',
+    loader: () => import('src/view/algorand/pages/pools/PoolDetailPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
   // {
   //   path: '/chart/pool/:address',
   //   loader: () => import('src/view/algorand/PoolsPage'),

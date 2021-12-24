@@ -30,6 +30,28 @@ const assetsActions = {
       });
     }
   },
+
+  doFetchHistory: (assetId) =>async (dispatch) => {
+    try {
+      dispatch({
+        type: assetsActions.FETCH_STARTED
+      });
+
+      const data = await AlgorandService.getAlgorandAssetHistory(assetId);
+      
+      dispatch({
+        type: assetsActions.FETCH_SUCCESS,
+        payload: { data },
+      });
+
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: assetsActions.FETCH_ERROR,
+      });
+    }
+  }
 };
 
 export default assetsActions;
