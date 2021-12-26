@@ -1,7 +1,5 @@
 import Errors from 'src/modules/shared/error/errors';
 import AlgorandService from 'src/modules/algorand/algorandService';
-import assetsActions from 'src/modules/algorand/assets/assetsActions';
-import poolsActions from 'src/modules/algorand/pools/poolsActions';
 
 const prefix = 'ALGORAND_STATISTICS';
 
@@ -24,17 +22,6 @@ const statisticsActions = {
         type: statisticsActions.FETCH_SUCCESS,
         payload: { data },
       });
-
-      dispatch({
-        type: assetsActions.FETCH_SUCCESS,
-        payload: { data: { 'assets': data.assets } },
-      });
-
-      dispatch({
-        type: poolsActions.FETCH_SUCCESS,
-        payload: { data: { 'pools': data.pools } },
-      });
-
     } catch (error) {
       Errors.handle(error);
 

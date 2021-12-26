@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/assets/assetsActions';
-import AssetsTable from 'src/view/algorand/pages/assets/AssetsTable';
+import selectors from 'src/modules/algorand/assets/assetsSelectors';
+import AssetsTable from 'src/view/algorand/pages/table/AssetsTable';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
@@ -13,6 +14,9 @@ function AssetsListPage() {
   useEffect(() => {
     dispatch(actions.doFetch());
   }, [dispatch]);
+
+  const loading = useSelector(selectors.selectLoading);
+  const assets = useSelector(selectors.selectAssets);
 
   return (
     <>
@@ -26,7 +30,7 @@ function AssetsListPage() {
 
       <ContentWrapper>
         <PageTitle>Assets</PageTitle>
-        <AssetsTable />
+        <AssetsTable loading={loading} assets={assets} />
       </ContentWrapper>
     </>
   )

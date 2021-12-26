@@ -31,7 +31,7 @@ export const CHART_TYPES = {
   AREA: 'AREA'
 };
 
-function StatisticsChart() {
+function OverviewChart() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const [width1, setWidth1] = useState(0);
@@ -105,4 +105,4 @@ function StatisticsChart() {
   )
 }
 
-export default StatisticsChart;
+export default OverviewChart;

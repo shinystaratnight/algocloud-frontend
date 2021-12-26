@@ -15,9 +15,9 @@ const PoolDetailPage = () => {
   const dispatch = useDispatch();
   const address = match.params.address;
   
-  // useEffect(() => {
-  //   dispatch(actions.doFetchHistory(address));
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(actions.doFetchHistory(address));
+  }, [dispatch]);
   
   const backgroundColor = '#FAAB14';
   const priceUSD = 100;

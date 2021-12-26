@@ -9,10 +9,8 @@ import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 
-function TopPools() {
-
-  const loading = useSelector(statisticsSelectors.selectLoading);
-  const topPools = useSelector(poolsSelectors.selectPools);
+function PoolsTable(props) {
+  const { loading, pools } = props;
 
   return (
     <div className="top-assets-table">
@@ -51,7 +49,7 @@ function TopPools() {
                   </td>
                 </tr>
               )}
-              {!loading && !topPools.length && (
+              {!loading && !pools.length && (
                 <tr>
                   <td colSpan={100}>
                     <div className="d-flex justify-content-center">
@@ -60,7 +58,7 @@ function TopPools() {
                   </td>
                 </tr>
               )}
-              {!loading && (topPools.length > 0) && topPools.map((pool) => (
+              {!loading && (pools.length > 0) && pools.map((pool) => (
                 <tr key={pool.id}>
                   <td>
                     <Link to={`/algorand/pools/${pool.address}`}>
@@ -81,4 +79,4 @@ function TopPools() {
   )
 }
 
-export default TopPools;
+export default PoolsTable;

@@ -1,30 +1,17 @@
 import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
-import styled from 'styled-components';
 import actions from 'src/modules/algorand/statistics/statisticsActions';
-import StatisticsChart from './StatisticsChart';
-import TopAssets from 'src/view/algorand/pages/overview/TopAssets';
+import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
+import OverviewChart from './OverviewChart';
 import TopFavorites from 'src/view/algorand/pages/overview/TopFavorites';
-import TopPools from 'src/view/algorand/pages/overview/TopPools';
+import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
+import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
+import AssetsTable from 'src/view/algorand/pages/table/AssetsTable';
 
-const SectionTitleBar = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-right: 2rem;
-`;
-
-const SectionTitle = styled.h5`
-  color: white;
-  margin-bottom: 10px;
-  a {
-    color: white;
-  }
-`;
 
 function OverviewPage() {
   const dispatch = useDispatch();
@@ -32,6 +19,10 @@ function OverviewPage() {
   useEffect(() => {
     dispatch(actions.doFetch());
   }, [dispatch]);
+
+  const loading = useSelector(selectors.selectLoading);
+  const pools = useSelector(selectors.selectTopPools);
+  const assets = useSelector(selectors.selectTopAssets);
 
   return (
     <>
@@ -42,7 +33,7 @@ function OverviewPage() {
         ]}
       />
 
-      <StatisticsChart />
+      <OverviewChart />
 
       <ContentWrapper>
         <SectionTitleBar>
@@ -70,7 +61,7 @@ function OverviewPage() {
             </Link>
           </h6>
         </SectionTitleBar>
-        <TopAssets />
+        <AssetsTable loading={loading} assets={assets} />
       </ContentWrapper>
       <ContentWrapper>
         <SectionTitleBar>
@@ -82,7 +73,7 @@ function OverviewPage() {
             Sell All
           </Link>
         </SectionTitleBar>
-        <TopPools />
+        <PoolsTable loading={loading} pools={pools} />
       </ContentWrapper>
       {/* 
       <ContentWrapper>

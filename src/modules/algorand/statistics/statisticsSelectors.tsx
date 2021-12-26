@@ -37,6 +37,8 @@ const statisticsSelectors = {
   selectDailyData,
   selectWeeklyData,
   selectTopFavorites,
+  selectTopAssets,
+  selectTopPools,
   selectRaw,
 };
 

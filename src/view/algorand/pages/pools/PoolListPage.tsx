@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/pools/poolsActions';
-import PoolsTable from 'src/view/algorand/pages/pools/PoolsTable';
+import selectors from 'src/modules/algorand/pools/poolsSelectors';
+import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
@@ -15,6 +16,9 @@ const PoolListPage = () => {
   useEffect(() => {
     dispatch(actions.doFetch());
   }, [dispatch]);
+
+  const loading = useSelector(selectors.selectLoading);
+  const pools = useSelector(selectors.selectPools);
   
   return (
     <>
@@ -28,7 +32,7 @@ const PoolListPage = () => {
 
       <ContentWrapper>
         <PageTitle>Pools</PageTitle>
-        <PoolsTable />
+        <PoolsTable loading={loading} pools={pools} />
       </ContentWrapper>
     </>
   )

@@ -5,6 +5,8 @@ const initialData = {
   dailyData: [],
   weeklyData: [],
   topFavorites: [],
+  topPools: [],
+  topAssets: [],
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -19,9 +21,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      dailyData: payload.data.dailyData,
-      weeklyData: payload.data.weeklyData,
-      topFavorites: payload.data.topFavorites,
+      ...(payload.data),
     };
   }
 

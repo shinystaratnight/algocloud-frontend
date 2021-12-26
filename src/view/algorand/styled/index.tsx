@@ -1,6 +1,21 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
 
+export const SectionTitleBar = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 2rem;
+`;
+
+export const SectionTitle = styled.h5`
+  color: white;
+  margin-bottom: 10px;
+  a {
+    color: white;
+  }
+`;
+
 export const StyledTokenView = styled.div`
     display: flex;
     align-items: center;

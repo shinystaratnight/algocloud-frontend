@@ -1,12 +1,16 @@
 import React, { useEffect } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
+
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/assets/assetsActions';
+import selectors from 'src/modules/algorand/assets/assetsSelectors';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 import AssetChart from 'src/view/algorand/pages/assets/AssetChart1';
+import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
+import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
 
 
 const AssetDetailPage = () => {
@@ -19,6 +23,9 @@ const AssetDetailPage = () => {
     dispatch(actions.doFetchHistory(assetId));
   }, [dispatch]);
   
+  const loading = useSelector(selectors.selectLoading);
+  const pools = useSelector(selectors.selectTopPools);
+
   const backgroundColor = '#FAAB14';
   const priceUSD = 100;
 
@@ -40,6 +47,13 @@ const AssetDetailPage = () => {
           color={backgroundColor}
           base={1.51}
         />
+      </ContentWrapper>
+
+      <ContentWrapper>
+        <SectionTitleBar>
+          <SectionTitle>Top Pools</SectionTitle>
+        </SectionTitleBar>
+        <PoolsTable loading={loading} pools={pools} />
       </ContentWrapper>
     </>
   )

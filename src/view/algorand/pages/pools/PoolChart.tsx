@@ -36,12 +36,6 @@ const DATA_FREQUENCY = {
 
 const PoolChart = ({ address, color, base }) => {
 
-  const dispatch = useDispatch();
-  
-  useEffect(() => {
-    dispatch(actions.doFetchHistory(address));
-  }, [dispatch]);
-
   // settings for the window and candle width
   const [chartFilter, setChartFilter] = useState(CHART_VIEW.LIQUIDITY)
   const [frequency, setFrequency] = useState(DATA_FREQUENCY.HOUR)

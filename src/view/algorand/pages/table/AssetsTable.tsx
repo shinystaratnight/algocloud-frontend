@@ -1,20 +1,17 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import poolsSelectors from 'src/modules/algorand/pools/poolsSelectors';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 
-function PoolsTable() {
+function AssetsTable(props) {
 
-  const loading = useSelector(poolsSelectors.selectLoading);
-  const pools = useSelector(poolsSelectors.selectPools);
+  const { loading, assets } = props;
 
   return (
-    <div className="pools-table">
+    <div className="assets-table">
       <TableWrapper>
         <div className="table-responsive">
           <table className="table table-striped mt-2">
@@ -25,20 +22,28 @@ function PoolsTable() {
                   label='NAME'
                 />
                 <TableColumnHeader
+                  name='symbol'
+                  label='SYMBOL'
+                />
+                <TableColumnHeader
                   name='liquidity'
                   label='LIQUIDITY'
                 />
                 <TableColumnHeader
-                  name='volume24h'
+                  name='volumn24h'
                   label='VOLUME[24H]'
                 />
                 <TableColumnHeader
-                  name='volume7d'
-                  label='VOLUME[7D]'
+                  name='price'
+                  label='PRICE'
                 />
                 <TableColumnHeader
-                  name='fees'
-                  label='FEES[24H]'
+                  name='change'
+                  label='PRICE CHANGE[24H]'
+                />
+                <TableColumnHeader
+                  name='action'
+                  label='ACTION'
                 />
               </tr>
             </thead>
@@ -50,7 +55,7 @@ function PoolsTable() {
                   </td>
                 </tr>
               )}
-              {!loading && !pools.length && (
+              {!loading && !assets.length && (
                 <tr>
                   <td colSpan={100}>
                     <div className="d-flex justify-content-center">
@@ -59,17 +64,19 @@ function PoolsTable() {
                   </td>
                 </tr>
               )}
-              {!loading && (pools.length > 0) && pools.map((pool) => (
-                <tr key={pool.id}>
+              {!loading && (assets.length > 0) && assets.map((asset) => (
+                <tr key={asset.id}>
                   <td>
-                    <Link to={`/algorand/pools/${pool.address}`}>
-                      <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
+                    <Link to={`/algorand/assets/${asset.assetId}`}>
+                      <h6>{asset.name}</h6> ({asset.assetId})
                     </Link>
                   </td>
-                  <td>{formatNumber(pool.liquidity)}</td>
-                  <td>{formatNumber(pool.lastDayVolume)}</td>
-                  <td>{formatNumber(pool.lastWeekVolume)}</td>
-                  <td>{formatNumber(pool.lastDayFees)}</td>
+                  <td><b>{asset.unitName}</b></td>
+                  <td>{formatNumber(asset.liquidity)}</td>
+                  <td>{formatNumber(asset.lastDayVolume)}</td>
+                  <td>{formatNumber(asset.price)}</td>
+                  <td>{formatPercent(asset.lastDayPriceChange)}</td>
+                  <td><a href='#'><b>Favorite</b></a></td>
                 </tr>
               ))}
             </tbody>
@@ -80,4 +87,4 @@ function PoolsTable() {
   )
 }
 
-export default PoolsTable;
+export default AssetsTable;

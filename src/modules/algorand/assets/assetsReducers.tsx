@@ -6,6 +6,7 @@ const initialData = {
   hourlyPrices: [],
   dailyPrices: [],
   dailyAssetData: [],
+  topPools: [],
 };
 
 export default (state = initialData, { type, payload }) => {
