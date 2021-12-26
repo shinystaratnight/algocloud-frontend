@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import assetsSelectors from 'src/modules/algorand/assets/assetsSelectors';
 
 const selectRaw = (state) => state.algorand.favorites;
 

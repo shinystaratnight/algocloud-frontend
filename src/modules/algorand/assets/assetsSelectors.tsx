@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
 
 const selectRaw = (state) => state.algorand.assets;
 
@@ -32,6 +33,20 @@ const selectTopPools = createSelector(
   (raw) => raw.topPools,
 );
 
+const selectAllAssets = createSelector(
+  [
+    selectAssets,
+    favoritesSelectors.selectFavoriteList,
+  ],
+  (assets, favorites) => {
+    return assets.map(asset => {
+      if (favorites.includes(asset.assetId)) asset.status = 1;
+      else asset.status = 0;
+      return asset;
+    })
+  }
+);
+
 
 const assetsSelectors = {
   selectLoading,
@@ -40,6 +55,7 @@ const assetsSelectors = {
   selectHourlyPrices,
   selectDailyAssetData,
   selectTopPools,
+  selectAllAssets,
   selectRaw,
 };
 

@@ -30,7 +30,7 @@ const selectTopAssets = createSelector(
   ],
   (assets, favorites) => {
     return assets.map(asset => {
-      if (asset.assetId in favorites) asset.status = 1;
+      if (favorites.includes(asset.assetId)) asset.status = 1;
       else asset.status = 0;
       return asset;
     });

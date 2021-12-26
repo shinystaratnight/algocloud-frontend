@@ -7,6 +7,7 @@ import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 import selectors from 'src/modules/algorand/favorites/favoritesSelectors';
 import actions from 'src/modules/algorand/favorites/favoritesActions';
+import assetsActions from 'src/modules/algorand/assets/assetsActions';
 
 
 const FavoriteListPage = () => {
@@ -14,11 +15,12 @@ const FavoriteListPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(assetsActions.doFetch());
     dispatch(actions.doFetch());
   }, [dispatch])
 
   const loading = useSelector(selectors.selectLoading);
-  const favorites = useSelector(selectors.selectFavoriteList);
+  const favorites = useSelector(selectors.selectTopFavorites);
   
   return (
     <>
