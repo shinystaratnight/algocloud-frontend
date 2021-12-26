@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import poolsSelectors from 'src/modules/algorand/pools/poolsSelectors';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
@@ -61,7 +62,9 @@ function PoolsTable() {
               {!loading && (pools.length > 0) && pools.map((pool) => (
                 <tr key={pool.id}>
                   <td>
-                    <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
+                    <Link to={`/algorand/pools/${pool.address}`}>
+                      <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
+                    </Link>
                   </td>
                   <td>{formatNumber(pool.liquidity)}</td>
                   <td>{formatNumber(pool.lastDayVolume)}</td>

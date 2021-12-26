@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/algorand/statistics/statisticsActions';
 import statisticsSelectors from 'src/modules/algorand/statistics/statisticsSelectors';
 import poolsSelectors from 'src/modules/algorand/pools/poolsSelectors';
-import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
+import { formatNumber } from 'src/modules/algorand/utils';
 import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
@@ -63,7 +63,9 @@ function TopPools() {
               {!loading && (topPools.length > 0) && topPools.map((pool) => (
                 <tr key={pool.id}>
                   <td>
-                    <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
+                    <Link to={`/algorand/pools/${pool.address}`}>
+                      <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
+                    </Link>
                   </td>
                   <td>{formatNumber(pool.liquidity)}</td>
                   <td>{formatNumber(pool.lastDayVolume)}</td>

@@ -252,12 +252,6 @@ const privateRoutes = [
     permissionRequired: permissions.algorandRead,
     exact: true,
   },
-  // {
-  //   path: '/chart/pool/:address',
-  //   loader: () => import('src/view/algorand/PoolsPage'),
-  //   permissionRequired: permissions.userReadSuperadmin,
-  //   exact: true,
-  // },
 ].filter(Boolean);
 
 const publicRoutes = [

@@ -30,6 +30,28 @@ const poolsActions = {
       });
     }
   },
+
+  doFetchHistory: (address) =>async (dispatch) => {
+    try {
+      dispatch({
+        type: poolsActions.FETCH_STARTED
+      });
+
+      const data = await AlgorandService.getAlgorandPoolHistory(address);
+      
+      dispatch({
+        type: poolsActions.FETCH_SUCCESS,
+        payload: { data },
+      });
+
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: poolsActions.FETCH_ERROR,
+      });
+    }
+  }
 };
 
 export default poolsActions;

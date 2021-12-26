@@ -71,9 +71,7 @@ function TopAssets() {
               {!loading && (topAssets.length > 0) && topAssets.map((asset) => (
                 <tr key={asset.id}>
                   <td>
-                    <Link
-                      to={`/algorand/assets/${asset.assetId}`}
-                    >
+                    <Link to={`/algorand/assets/${asset.assetId}`}>
                       <h6>{asset.name}</h6>
                       {asset.assetId}
                     </Link>

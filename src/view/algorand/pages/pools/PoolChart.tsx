@@ -10,9 +10,9 @@ import { timeframeOptions } from 'src/modules/algorand/contants'
 import { toK, toNiceDate, toNiceDateYear, formattedNum, getTimeframe } from 'src/modules/algorand/utils'
 // import { useTokenChartData, useTokenPriceData } from '../../contexts/TokenData'
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart'
-import actions from 'src/modules/algorand/assets/assetsActions'
+import actions from 'src/modules/algorand/pools/poolsActions'
 import Spinner from 'src/view/shared/Spinner'
-import selectors from 'src/modules/algorand/assets/assetsSelectors'
+import selectors from 'src/modules/algorand/pools/poolsSelectors'
 
 const ChartWrapper = styled.div`
   height: 100%;
@@ -34,12 +34,12 @@ const DATA_FREQUENCY = {
   HOUR: 'HOUR',
 }
 
-const AssetChart1 = ({ assetId, color, base }) => {
+const PoolChart = ({ address, color, base }) => {
 
   const dispatch = useDispatch();
   
   useEffect(() => {
-    dispatch(actions.doFetchHistory(assetId));
+    dispatch(actions.doFetchHistory(address));
   }, [dispatch]);
 
   // settings for the window and candle width
@@ -57,7 +57,7 @@ const AssetChart1 = ({ assetId, color, base }) => {
   // }, [assetId, assetIdPrev])
 
   // let chartData = useTokenChartData(address)
-  let chartData: any = useSelector(selectors.selectDailyAssetData);
+  let chartData: any = useSelector(selectors.selectDailyPoolData);
 
   const [timeWindow, setTimeWindow] = useState(timeframeOptions.WEEK)
   const prevWindow = usePrevious(timeWindow)
@@ -69,8 +69,8 @@ const AssetChart1 = ({ assetId, color, base }) => {
   // const dailyWeek = useTokenPriceData(address, timeframeOptions.WEEK, 86400)
   // const dailyMonth = useTokenPriceData(address, timeframeOptions.MONTH, 86400)
   // const dailyAll = useTokenPriceData(address, timeframeOptions.ALL_TIME, 86400)
-  const priceData = useSelector(selectors.selectHourlyPrices)
-  console.log(priceData)
+  const oneRates = useSelector(selectors.selectHourlyOneRates)
+  const twoRates = useSelector(selectors.selectHourlyTwoRates)
 
   const below1080 = useMedia('(max-width: 1080px)')
   const below600 = useMedia('(max-width: 600px)')
@@ -101,8 +101,11 @@ const AssetChart1 = ({ assetId, color, base }) => {
   return (
     <ChartWrapper>
       {/* <ResponsiveContainer aspect={aspect} ref={ref}>
-        <CandleStickChart data={priceData} width={width} base={base} />
+        <CandleStickChart data={oneRates} width={width} base={base} />
       </ResponsiveContainer> */}
+      <ResponsiveContainer aspect={aspect} ref={ref}>
+        <CandleStickChart data={twoRates} width={width} base={base} />
+      </ResponsiveContainer>
       {/* <ResponsiveContainer aspect={aspect}>
         <BarChart margin={{ top: 0, right: 10, bottom: 6, left: 10 }} barCategoryGap={1} data={chartData}>
           <XAxis
@@ -154,7 +157,7 @@ const AssetChart1 = ({ assetId, color, base }) => {
         </BarChart>
       </ResponsiveContainer> */}
 
-      <ResponsiveContainer aspect={aspect}>
+      {/* <ResponsiveContainer aspect={aspect}>
         <AreaChart margin={{ top: 0, right: 10, bottom: 6, left: 0 }} barCategoryGap={1} data={chartData}>
           <defs>
             <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
@@ -211,7 +214,7 @@ const AssetChart1 = ({ assetId, color, base }) => {
             fill="#333"
           />
         </AreaChart>
-      </ResponsiveContainer>
+      </ResponsiveContainer> */}
         
       {/* {chartFilter === CHART_VIEW.LIQUIDITY && chartData && (
         <ResponsiveContainer aspect={aspect}>
@@ -337,4 +340,4 @@ const AssetChart1 = ({ assetId, color, base }) => {
   )
 }
 
-export default AssetChart1
+export default PoolChart

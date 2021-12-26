@@ -2,7 +2,12 @@ import actions from 'src/modules/algorand/pools/poolsActions';
 
 const initialData = {
   loading: false,
-  pools: []
+  pools: [],
+  hourlyOneRates: [],
+  hourlyTwoRates: [],
+  dailyOneRates: [],
+  dailyTwoRates: [],
+  dailyPoolData: [],
 };
 
 export default (state = initialData, { type, payload }) => {

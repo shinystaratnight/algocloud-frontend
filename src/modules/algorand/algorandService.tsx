@@ -41,4 +41,14 @@ export default class AlgorandService {
 
     return response.data;
   }
+
+  static async getAlgorandPoolHistory(address) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.get(
+      `/tenant/${tenantId}/algorand/pool/${address}`,
+    );
+
+    return response.data;
+  }
 }

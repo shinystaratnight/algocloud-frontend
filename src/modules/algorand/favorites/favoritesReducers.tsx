@@ -1,4 +1,4 @@
-import actions from 'src/modules/algorand/algoPriceChart/algoPriceChartActions';
+import actions from 'src/modules/algorand/favorites/favoritesActions';
 
 const initialData = {
   loading: false,

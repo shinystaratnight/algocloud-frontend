@@ -1,9 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ResponsiveContainer } from 'recharts';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
-import actions from 'src/modules/algorand/statistics/statisticsActions';
 import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
 import { formattedNum } from 'src/modules/algorand/utils';
 import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
