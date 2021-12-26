@@ -2,11 +2,21 @@ import authAxios from 'src/modules/shared/axios/authAxios';
 import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
 
 export default class AlgorandService {
-  static async getAlgorandStats() {
+  static async getAlgorandStatistics() {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/general-stats`,
+    );
+
+    return response.data;
+  }
+
+  static async getAlgorandFavorites() {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.get(
+      `/tenant/${tenantId}/algorand/favorites`,
     );
 
     return response.data;
@@ -47,6 +57,16 @@ export default class AlgorandService {
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/pool/${address}`,
+    );
+
+    return response.data;
+  }
+
+  static async toggleAlgorandFavorite(assetId) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.put(
+      `/tenant/${tenantId}/algorand/favorite/${assetId}/toggle`,
     );
 
     return response.data;

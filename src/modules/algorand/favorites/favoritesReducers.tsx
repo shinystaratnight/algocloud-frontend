@@ -2,7 +2,8 @@ import actions from 'src/modules/algorand/favorites/favoritesActions';
 
 const initialData = {
   loading: false,
-  favorites: []
+  list: [],
+  top: [],
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -17,7 +18,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      favorites: payload.data,
+      ...(payload.data),
     };
   }
 

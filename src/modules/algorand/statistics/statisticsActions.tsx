@@ -1,5 +1,6 @@
 import Errors from 'src/modules/shared/error/errors';
 import AlgorandService from 'src/modules/algorand/algorandService';
+import favoritesActions from 'src/modules/algorand/favorites/favoritesActions';
 
 const prefix = 'ALGORAND_STATISTICS';
 
@@ -16,12 +17,13 @@ const statisticsActions = {
         type: statisticsActions.FETCH_STARTED,
       });
 
-      const data = await AlgorandService.getAlgorandStats();
+      const data = await AlgorandService.getAlgorandStatistics();
 
       dispatch({
         type: statisticsActions.FETCH_SUCCESS,
         payload: { data },
       });
+
     } catch (error) {
       Errors.handle(error);
 

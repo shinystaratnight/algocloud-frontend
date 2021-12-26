@@ -7,14 +7,20 @@ const selectLoading = createSelector(
   (raw) => Boolean(raw.loading),
 );
 
-const selectFavorites = createSelector(
+const selectFavoriteList = createSelector(
   [selectRaw],
-  (raw) => raw.favorites,
+  (raw) => raw.list,
+);
+
+const selectTopFavorites = createSelector(
+  [selectRaw],
+  (raw) => raw.top,
 );
 
 const favoritesSelectors = {
   selectLoading,
-  selectFavorites,
+  selectFavoriteList,
+  selectTopFavorites,
   selectRaw,
 };
 

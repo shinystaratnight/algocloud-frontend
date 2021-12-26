@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
+import actions from 'src/modules/algorand/favorites/favoritesActions';
+import selectors from 'src/modules/algorand/algorandSelectors';
+import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 
 function AssetsTable(props) {
 
+  const dispatch = useDispatch();
+  const [assetIdToToggle, setAssetIdToToggle] = useState(null);
   const { loading, assets } = props;
+  
+  const hasPermissionToToggle = useSelector(
+    selectors.selectPermissionToToggle
+  );
 
+  const doToggle = (assetId) => {
+    setAssetIdToToggle(null);
+    dispatch(actions.doToggle(assetId));
+  };
+  
   return (
     <div className="assets-table">
       <TableWrapper>
@@ -76,13 +91,34 @@ function AssetsTable(props) {
                   <td>{formatNumber(asset.lastDayVolume)}</td>
                   <td>{formatNumber(asset.price)}</td>
                   <td>{formatPercent(asset.lastDayPriceChange)}</td>
-                  <td><a href='#'><b>Favorite</b></a></td>
+                  <td>
+                    {hasPermissionToToggle && (
+                      <button
+                        className="btn btn-link"
+                        onClick={() =>
+                          setAssetIdToToggle(asset.assetId)
+                        }
+                      >
+                        <b>{asset.status === 0 ? 'Favorite' : 'Unfavorite'}</b>
+                      </button>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
       </TableWrapper>
+
+      {(assetIdToToggle !== null) && (
+        <ConfirmModal
+          title={i18n('common.areYouSure')}
+          onConfirm={() => doToggle(assetIdToToggle)}
+          onClose={() => setAssetIdToToggle(null)}
+          okText={i18n('common.yes')}
+          cancelText={i18n('common.no')}
+        />
+      )}
     </div>
   )
 }

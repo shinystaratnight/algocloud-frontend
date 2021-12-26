@@ -5,9 +5,10 @@ import { i18n } from 'src/i18n';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import actions from 'src/modules/algorand/statistics/statisticsActions';
+import favoritesActions from 'src/modules/algorand/favorites/favoritesActions';
 import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
+import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
 import OverviewChart from './OverviewChart';
-import TopFavorites from 'src/view/algorand/pages/overview/TopFavorites';
 import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
 import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
 import AssetsTable from 'src/view/algorand/pages/table/AssetsTable';
@@ -18,11 +19,15 @@ function OverviewPage() {
 
   useEffect(() => {
     dispatch(actions.doFetch());
+    dispatch(favoritesActions.doFetch());
   }, [dispatch]);
 
   const loading = useSelector(selectors.selectLoading);
   const pools = useSelector(selectors.selectTopPools);
   const assets = useSelector(selectors.selectTopAssets);
+
+  const favLoading = useSelector(favoritesSelectors.selectLoading);
+  const favorites = useSelector(favoritesSelectors.selectTopFavorites);
 
   return (
     <>
@@ -47,7 +52,7 @@ function OverviewPage() {
             </Link>
           </h6>
         </SectionTitleBar>
-        <TopFavorites />
+        <AssetsTable loading={favLoading} assets={favorites} />
       </ContentWrapper>
       <ContentWrapper>
         <SectionTitleBar>

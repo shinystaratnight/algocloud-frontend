@@ -14,8 +14,20 @@ const selectPermissionToRead = createSelector(
     ),
 );
 
+const selectPermissionToToggle = createSelector(
+  [
+    authSelectors.selectCurrentTenant,
+    authSelectors.selectCurrentUser,
+  ],
+  (currentTenant, currentUser) =>
+    new PermissionChecker(currentTenant, currentUser).match(
+      Permissions.values.algorandToggle,
+    ),
+)
+
 const algorandSelectors = {
   selectPermissionToRead,
+  selectPermissionToToggle,
 };
 
 export default algorandSelectors;

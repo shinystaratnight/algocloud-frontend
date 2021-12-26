@@ -1,4 +1,5 @@
 import { createSelector } from 'reselect';
+import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
 
 const selectRaw = (state) => state.algorand.statistics;
 
@@ -17,15 +18,24 @@ const selectWeeklyData = createSelector(
   (raw) => raw.weeklyData,
 );
 
-const selectTopFavorites = createSelector(
-  [selectRaw],
-  (raw) => raw.topFavorites,
-);
-
-const selectTopAssets = createSelector(
+const selectTopAssetsNoStatus = createSelector(
   [selectRaw],
   (raw) => raw.topAssets,
 );
+
+const selectTopAssets = createSelector(
+  [
+    selectTopAssetsNoStatus,
+    favoritesSelectors.selectFavoriteList,
+  ],
+  (assets, favorites) => {
+    return assets.map(asset => {
+      if (asset.assetId in favorites) asset.status = 1;
+      else asset.status = 0;
+      return asset;
+    });
+  }
+)
 
 const selectTopPools = createSelector(
   [selectRaw],
@@ -36,7 +46,6 @@ const statisticsSelectors = {
   selectLoading,
   selectDailyData,
   selectWeeklyData,
-  selectTopFavorites,
   selectTopAssets,
   selectTopPools,
   selectRaw,

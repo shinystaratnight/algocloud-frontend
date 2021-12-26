@@ -16,7 +16,7 @@ const assetsActions = {
         type: assetsActions.FETCH_STARTED,
       });
 
-      const data = await AlgorandService.getAlgorandStats();
+      const data = await AlgorandService.getAlgorandFavorites();
       
       dispatch({
         type: assetsActions.FETCH_SUCCESS,
@@ -30,6 +30,27 @@ const assetsActions = {
       });
     }
   },
+
+  doToggle: (assetId) =>async (dispatch) => {
+    try {
+      dispatch({
+        type: assetsActions.FETCH_STARTED,
+      });
+
+      const data = await AlgorandService.toggleAlgorandFavorite(assetId);
+      
+      dispatch({
+        type: assetsActions.FETCH_SUCCESS,
+        payload: { data },
+      });
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: assetsActions.FETCH_ERROR,
+      });
+    }
+  }
 };
 
 export default assetsActions;
