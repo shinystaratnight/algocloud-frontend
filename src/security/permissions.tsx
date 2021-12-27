@@ -240,6 +240,16 @@ class Permissions {
         allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
+      algorandRead: {
+        id: 'algorandRead',
+        allowedRoles: [roles.admin, roles.custom],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
+      algorandToggle: {
+        id: 'algorandToggle',
+        allowedRoles: [roles.admin, roles.custom],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
 
       userReadSuperadmin: {
         id: 'userReadSuperadmin',

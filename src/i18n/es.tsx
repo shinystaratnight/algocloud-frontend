@@ -36,180 +36,186 @@ const es = {
 
   entities: {
     customer: {
-        name: 'customer',
-        label: 'Customers',
+      name: 'customer',
+      label: 'Customers',
+      menu: 'Customers',
+      exporterFileName: 'exportacion_customer',
+      list: {
         menu: 'Customers',
-        exporterFileName: 'exportacion_customer',
-        list: {
-          menu: 'Customers',
-          title: 'Customers',
-        },
-        create: {
-          success: 'Customer guardado con éxito',
-        },
-        update: {
-          success: 'Customer guardado con éxito',
-        },
-        destroy: {
-          success: 'Customer eliminado con éxito',
-        },
-        destroyAll: {
-          success: 'Customer(s) eliminado con éxito',
-        },
-        edit: {
-          title: 'Editar Customer',
-        },
-        fields: {
-          id: 'Id',
-          'name': 'Name',
-          'birthdateRange': 'Birthdate',
-          'birthdate': 'Birthdate',
-          'gender': 'Gender',
-          createdAt: 'Creado el',
-          updatedAt: 'Actualizado el',
-          createdAtRange: 'Creado el',
-        },
-        enumerators: {
-          'gender': {
-            'male': 'Male',
-            'female': 'Female',
-          },
-        },
-        placeholders: {
-
-        },
-        hints: {
-
-        },
-        new: {
-          title: 'Nuevo Customer',
-        },
-        view: {
-          title: 'Ver Customer',
-        },
-        importer: {
-          title: 'Importar Customers',
-          fileName: 'customer_import_template',
-          hint:
-            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+        title: 'Customers',
+      },
+      create: {
+        success: 'Customer guardado con éxito',
+      },
+      update: {
+        success: 'Customer guardado con éxito',
+      },
+      destroy: {
+        success: 'Customer eliminado con éxito',
+      },
+      destroyAll: {
+        success: 'Customer(s) eliminado con éxito',
+      },
+      edit: {
+        title: 'Editar Customer',
+      },
+      fields: {
+        id: 'Id',
+        'name': 'Name',
+        'birthdateRange': 'Birthdate',
+        'birthdate': 'Birthdate',
+        'gender': 'Gender',
+        createdAt: 'Creado el',
+        updatedAt: 'Actualizado el',
+        createdAtRange: 'Creado el',
+      },
+      enumerators: {
+        'gender': {
+          'male': 'Male',
+          'female': 'Female',
         },
       },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'Nuevo Customer',
+      },
+      view: {
+        title: 'Ver Customer',
+      },
+      importer: {
+        title: 'Importar Customers',
+        fileName: 'customer_import_template',
+        hint:
+          'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+      },
+    },
 
     product: {
-        name: 'product',
-        label: 'Products',
+      name: 'product',
+      label: 'Products',
+      menu: 'Products',
+      exporterFileName: 'exportacion_product',
+      list: {
         menu: 'Products',
-        exporterFileName: 'exportacion_product',
-        list: {
-          menu: 'Products',
-          title: 'Products',
-        },
-        create: {
-          success: 'Product guardado con éxito',
-        },
-        update: {
-          success: 'Product guardado con éxito',
-        },
-        destroy: {
-          success: 'Product eliminado con éxito',
-        },
-        destroyAll: {
-          success: 'Product(s) eliminado con éxito',
-        },
-        edit: {
-          title: 'Editar Product',
-        },
-        fields: {
-          id: 'Id',
-          'name': 'Name',
-          'description': 'Description',
-          'unitPriceRange': 'Unit Price',
-          'unitPrice': 'Unit Price',
-          'photos': 'Photos',
-          createdAt: 'Creado el',
-          updatedAt: 'Actualizado el',
-          createdAtRange: 'Creado el',
-        },
-        enumerators: {
-
-        },
-        placeholders: {
-
-        },
-        hints: {
-
-        },
-        new: {
-          title: 'Nuevo Product',
-        },
-        view: {
-          title: 'Ver Product',
-        },
-        importer: {
-          title: 'Importar Products',
-          fileName: 'product_import_template',
-          hint:
-            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
-        },
+        title: 'Products',
       },
+      create: {
+        success: 'Product guardado con éxito',
+      },
+      update: {
+        success: 'Product guardado con éxito',
+      },
+      destroy: {
+        success: 'Product eliminado con éxito',
+      },
+      destroyAll: {
+        success: 'Product(s) eliminado con éxito',
+      },
+      edit: {
+        title: 'Editar Product',
+      },
+      fields: {
+        id: 'Id',
+        'name': 'Name',
+        'description': 'Description',
+        'unitPriceRange': 'Unit Price',
+        'unitPrice': 'Unit Price',
+        'photos': 'Photos',
+        createdAt: 'Creado el',
+        updatedAt: 'Actualizado el',
+        createdAtRange: 'Creado el',
+      },
+      enumerators: {
+
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'Nuevo Product',
+      },
+      view: {
+        title: 'Ver Product',
+      },
+      importer: {
+        title: 'Importar Products',
+        fileName: 'product_import_template',
+        hint:
+          'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+      },
+    },
 
     order: {
-        name: 'order',
-        label: 'Orders',
+      name: 'order',
+      label: 'Orders',
+      menu: 'Orders',
+      exporterFileName: 'exportacion_order',
+      list: {
         menu: 'Orders',
-        exporterFileName: 'exportacion_order',
-        list: {
-          menu: 'Orders',
-          title: 'Orders',
-        },
-        create: {
-          success: 'Order guardado con éxito',
-        },
-        update: {
-          success: 'Order guardado con éxito',
-        },
-        destroy: {
-          success: 'Order eliminado con éxito',
-        },
-        destroyAll: {
-          success: 'Order(s) eliminado con éxito',
-        },
-        edit: {
-          title: 'Editar Order',
-        },
-        fields: {
-          id: 'Id',
-          'customer': 'Customer',
-          'products': 'Products',
-          'employee': 'Employee',
-          'delivered': 'Delivered',
-          'attachments': 'Attachments',
-          createdAt: 'Creado el',
-          updatedAt: 'Actualizado el',
-          createdAtRange: 'Creado el',
-        },
-        enumerators: {
-
-        },
-        placeholders: {
-
-        },
-        hints: {
-
-        },
-        new: {
-          title: 'Nuevo Order',
-        },
-        view: {
-          title: 'Ver Order',
-        },
-        importer: {
-          title: 'Importar Orders',
-          fileName: 'order_import_template',
-          hint:
-            'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
-        },
+        title: 'Orders',
       },
+      create: {
+        success: 'Order guardado con éxito',
+      },
+      update: {
+        success: 'Order guardado con éxito',
+      },
+      destroy: {
+        success: 'Order eliminado con éxito',
+      },
+      destroyAll: {
+        success: 'Order(s) eliminado con éxito',
+      },
+      edit: {
+        title: 'Editar Order',
+      },
+      fields: {
+        id: 'Id',
+        'customer': 'Customer',
+        'products': 'Products',
+        'employee': 'Employee',
+        'delivered': 'Delivered',
+        'attachments': 'Attachments',
+        createdAt: 'Creado el',
+        updatedAt: 'Actualizado el',
+        createdAtRange: 'Creado el',
+      },
+      enumerators: {
+
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'Nuevo Order',
+      },
+      view: {
+        title: 'Ver Order',
+      },
+      importer: {
+        title: 'Importar Orders',
+        fileName: 'order_import_template',
+        hint:
+          'Las columnas Archivos/Imágenes deben ser las URL de los archivos separados por espacio.',
+      },
+    },
+
+    algorand: {
+      name: 'algorand',
+      label: 'Algorand',
+      menu: 'Algorand',
+    }
   },
   auth: {
     tenants: 'Espacios de trabajo',
@@ -542,6 +548,9 @@ const es = {
       customer: 'Cliente',
     },
   },
+  algorand: {
+    menu: 'Algorand',
+  },
   errors: {
     '403': 'Lo sentimos, no tienes acceso a esta página',
     '404': 'Lo sentimos, la página que visitaste no existe',
@@ -562,7 +571,7 @@ const es = {
     error:
       'Lo sentimos, esta operación no está permitida en el modo de vista previa.',
   },
-  
+
   /* eslint-disable */
   validation: {
     mixed: {

@@ -36,180 +36,186 @@ const en = {
 
   entities: {
     customer: {
-        name: 'customer',
-        label: 'Customers',
+      name: 'customer',
+      label: 'Customers',
+      menu: 'Customers',
+      exporterFileName: 'customer_export',
+      list: {
         menu: 'Customers',
-        exporterFileName: 'customer_export',
-        list: {
-          menu: 'Customers',
-          title: 'Customers',
-        },
-        create: {
-          success: 'Customer successfully saved',
-        },
-        update: {
-          success: 'Customer successfully saved',
-        },
-        destroy: {
-          success: 'Customer successfully deleted',
-        },
-        destroyAll: {
-          success: 'Customer(s) successfully deleted',
-        },
-        edit: {
-          title: 'Edit Customer',
-        },
-        fields: {
-          id: 'Id',
-          'name': 'Name',
-          'birthdateRange': 'Birthdate',
-          'birthdate': 'Birthdate',
-          'gender': 'Gender',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
-          createdAtRange: 'Created at',
-        },
-        enumerators: {
-          'gender': {
-            'male': 'Male',
-            'female': 'Female',
-          },
-        },
-        placeholders: {
-
-        },
-        hints: {
-
-        },
-        new: {
-          title: 'New Customer',
-        },
-        view: {
-          title: 'View Customer',
-        },
-        importer: {
-          title: 'Import Customers',
-          fileName: 'customer_import_template',
-          hint:
-            'Files/Images columns must be the URLs of the files separated by space.',
+        title: 'Customers',
+      },
+      create: {
+        success: 'Customer successfully saved',
+      },
+      update: {
+        success: 'Customer successfully saved',
+      },
+      destroy: {
+        success: 'Customer successfully deleted',
+      },
+      destroyAll: {
+        success: 'Customer(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Customer',
+      },
+      fields: {
+        id: 'Id',
+        'name': 'Name',
+        'birthdateRange': 'Birthdate',
+        'birthdate': 'Birthdate',
+        'gender': 'Gender',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+        'gender': {
+          'male': 'Male',
+          'female': 'Female',
         },
       },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New Customer',
+      },
+      view: {
+        title: 'View Customer',
+      },
+      importer: {
+        title: 'Import Customers',
+        fileName: 'customer_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
 
     product: {
-        name: 'product',
-        label: 'Products',
+      name: 'product',
+      label: 'Products',
+      menu: 'Products',
+      exporterFileName: 'product_export',
+      list: {
         menu: 'Products',
-        exporterFileName: 'product_export',
-        list: {
-          menu: 'Products',
-          title: 'Products',
-        },
-        create: {
-          success: 'Product successfully saved',
-        },
-        update: {
-          success: 'Product successfully saved',
-        },
-        destroy: {
-          success: 'Product successfully deleted',
-        },
-        destroyAll: {
-          success: 'Product(s) successfully deleted',
-        },
-        edit: {
-          title: 'Edit Product',
-        },
-        fields: {
-          id: 'Id',
-          'name': 'Name',
-          'description': 'Description',
-          'unitPriceRange': 'Unit Price',
-          'unitPrice': 'Unit Price',
-          'photos': 'Photos',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
-          createdAtRange: 'Created at',
-        },
-        enumerators: {
-
-        },
-        placeholders: {
-
-        },
-        hints: {
-
-        },
-        new: {
-          title: 'New Product',
-        },
-        view: {
-          title: 'View Product',
-        },
-        importer: {
-          title: 'Import Products',
-          fileName: 'product_import_template',
-          hint:
-            'Files/Images columns must be the URLs of the files separated by space.',
-        },
+        title: 'Products',
       },
+      create: {
+        success: 'Product successfully saved',
+      },
+      update: {
+        success: 'Product successfully saved',
+      },
+      destroy: {
+        success: 'Product successfully deleted',
+      },
+      destroyAll: {
+        success: 'Product(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Product',
+      },
+      fields: {
+        id: 'Id',
+        'name': 'Name',
+        'description': 'Description',
+        'unitPriceRange': 'Unit Price',
+        'unitPrice': 'Unit Price',
+        'photos': 'Photos',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New Product',
+      },
+      view: {
+        title: 'View Product',
+      },
+      importer: {
+        title: 'Import Products',
+        fileName: 'product_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
 
     order: {
-        name: 'order',
-        label: 'Orders',
+      name: 'order',
+      label: 'Orders',
+      menu: 'Orders',
+      exporterFileName: 'order_export',
+      list: {
         menu: 'Orders',
-        exporterFileName: 'order_export',
-        list: {
-          menu: 'Orders',
-          title: 'Orders',
-        },
-        create: {
-          success: 'Order successfully saved',
-        },
-        update: {
-          success: 'Order successfully saved',
-        },
-        destroy: {
-          success: 'Order successfully deleted',
-        },
-        destroyAll: {
-          success: 'Order(s) successfully deleted',
-        },
-        edit: {
-          title: 'Edit Order',
-        },
-        fields: {
-          id: 'Id',
-          'customer': 'Customer',
-          'products': 'Products',
-          'employee': 'Employee',
-          'delivered': 'Delivered',
-          'attachments': 'Attachments',
-          createdAt: 'Created at',
-          updatedAt: 'Updated at',
-          createdAtRange: 'Created at',
-        },
-        enumerators: {
-
-        },
-        placeholders: {
-
-        },
-        hints: {
-
-        },
-        new: {
-          title: 'New Order',
-        },
-        view: {
-          title: 'View Order',
-        },
-        importer: {
-          title: 'Import Orders',
-          fileName: 'order_import_template',
-          hint:
-            'Files/Images columns must be the URLs of the files separated by space.',
-        },
+        title: 'Orders',
       },
+      create: {
+        success: 'Order successfully saved',
+      },
+      update: {
+        success: 'Order successfully saved',
+      },
+      destroy: {
+        success: 'Order successfully deleted',
+      },
+      destroyAll: {
+        success: 'Order(s) successfully deleted',
+      },
+      edit: {
+        title: 'Edit Order',
+      },
+      fields: {
+        id: 'Id',
+        'customer': 'Customer',
+        'products': 'Products',
+        'employee': 'Employee',
+        'delivered': 'Delivered',
+        'attachments': 'Attachments',
+        createdAt: 'Created at',
+        updatedAt: 'Updated at',
+        createdAtRange: 'Created at',
+      },
+      enumerators: {
+
+      },
+      placeholders: {
+
+      },
+      hints: {
+
+      },
+      new: {
+        title: 'New Order',
+      },
+      view: {
+        title: 'View Order',
+      },
+      importer: {
+        title: 'Import Orders',
+        fileName: 'order_import_template',
+        hint:
+          'Files/Images columns must be the URLs of the files separated by space.',
+      },
+    },
+
+    algorand: {
+      name: 'algorand',
+      label: 'Algorand',
+      menu: 'Algorand',
+    }
   },
 
   auth: {
@@ -524,6 +530,9 @@ const en = {
       customer: 'Customer',
     },
   },
+  algorand: {
+    menu: 'Algorand',
+  },
   errors: {
     backToHome: 'Back to home',
     403: `Sorry, you don't have access to this page`,
@@ -543,7 +552,7 @@ const en = {
     error:
       'Sorry, this operation is not allowed in preview mode.',
   },
-  
+
   // See https://github.com/jquense/yup#using-a-custom-locale-dictionary
   /* eslint-disable */
   validation: {

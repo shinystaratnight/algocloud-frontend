@@ -216,6 +216,42 @@ const privateRoutes = [
     permissionRequired: permissions.orderRead,
     exact: true,
   },
+  {
+    path: '/algorand',
+    loader: () => import('src/view/algorand/pages/overview/OverviewPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/assets',
+    loader: () => import('src/view/algorand/pages/assets/AssetListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/pools',
+    loader: () => import('src/view/algorand/pages/pools/PoolListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/favorites',
+    loader: () => import('src/view/algorand/pages/favorites/FavoriteListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/assets/:assetId',
+    loader: () => import('src/view/algorand/pages/assets/AssetDetailPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algorand/pools/:address',
+    loader: () => import('src/view/algorand/pages/pools/PoolDetailPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [
@@ -323,18 +359,6 @@ const superadminRoutes = [
   {
     path: '/superadmin/analytics',
     loader: () => import('src/view/superadmin/analytics/AnalyticsPage'),
-    permissionRequired: permissions.userReadSuperadmin,
-    exact: true,
-  },
-  {
-    path: '/superadmin/algochart',
-    loader: () => import('src/view/superadmin/algorand/AlgorandPage'),
-    permissionRequired: permissions.userReadSuperadmin,
-    exact: true,
-  },
-  {
-    path: '/superadmin/algochart/pair',
-    loader: () => import('src/view/superadmin/algorand/PairDetail'),
     permissionRequired: permissions.userReadSuperadmin,
     exact: true,
   },

@@ -10,6 +10,7 @@ import settings from 'src/modules/settings/settingsReducers';
 import customer from 'src/modules/customer/customerReducers';
 import product from 'src/modules/product/productReducers';
 import order from 'src/modules/order/orderReducers';
+import algorand from 'src/modules/algorand/algorandReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -26,4 +27,5 @@ export default (history) =>
     customer,
     product,
     order,
+    algorand,
   });
