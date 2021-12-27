@@ -216,7 +216,7 @@ const PoolChart = ({ color }) => {
               name={'Liquidity'}
               yAxisId={0}
               stroke={darken(0.12, color)}
-              fill="#8be1ea"
+              fill="url(#colorUv)"
             />
           </AreaChart>
         </ResponsiveContainer>
