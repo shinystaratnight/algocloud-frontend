@@ -52,7 +52,7 @@ const AssetDetailPage = () => {
       </ContentWrapper>
       
       <FlexContainer>
-        <AssetIndicator />
+        {/* <AssetIndicator /> */}
 
         <AssetChart
           color='#8be1ea'

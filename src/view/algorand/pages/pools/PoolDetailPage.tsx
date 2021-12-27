@@ -43,11 +43,10 @@ const PoolDetailPage = () => {
       </ContentWrapper>
 
       <FlexContainer>
-        <PoolIndicator />
+        {/* <PoolIndicator /> */}
 
         <PoolChart
           color='#8be1ea'
-          base={1.51}
         />
       </FlexContainer>
     </>

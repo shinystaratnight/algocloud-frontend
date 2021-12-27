@@ -1,19 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Area, XAxis, YAxis, ResponsiveContainer, Tooltip, AreaChart, BarChart, Bar } from 'recharts'
 import { darken } from 'polished'
 import { useMedia, usePrevious } from 'react-use'
-import styled from 'styled-components'
-import { Activity } from 'react-feather'
 
 import { TIME_FRAME, POOL_CHART_VIEW, DATA_FREQUENCY } from 'src/modules/algorand/constants'
-import { toK, toNiceDate, toNiceDateYear, formattedNum, getTimeframe } from 'src/modules/algorand/utils'
-import Spinner from 'src/view/shared/Spinner'
+import { toK, toNiceDate, toNiceDateYear, formattedNum } from 'src/modules/algorand/utils'
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart'
 import selectors from 'src/modules/algorand/pools/poolsSelectors'
-import { ChartWindowWrapper, ChartWrapper, OptionButton, OptionButtonContainer, OptionButtonWrapper } from 'src/view/algorand/styled'
+import {
+  ChartWindowWrapper,
+  OptionButton,
+  OptionButtonContainer,
+  RowBetween
+} from 'src/view/algorand/styled'
 
-const PoolChart = ({ color, base }) => {
+const PoolChart = ({ color }) => {
 
   // settings for the window and candle width
   const [chartFilter, setChartFilter] = useState(POOL_CHART_VIEW.LIQUIDITY)
@@ -21,19 +23,16 @@ const PoolChart = ({ color, base }) => {
   const [timeWindow, setTimeWindow] = useState(TIME_FRAME.WEEK)
   const prevWindow = usePrevious(timeWindow)
 
+  const loading = useSelector(selectors.selectLoading);
+  const detail = useSelector(selectors.selectPoolDetail);
+
   const textColor = 'white';
 
   // let chartData = useTokenChartData(address)
   let chartData: any = useSelector(selectors.selectDailyPoolData);
 
-  // hourly and daily price data based on the current time window
-  // const hourlyWeek = useTokenPriceData(address, timeframeOptions.WEEK, 3600)
-  // const hourlyMonth = useTokenPriceData(address, timeframeOptions.MONTH, 3600)
-  // const hourlyAll = useTokenPriceData(address, timeframeOptions.ALL_TIME, 3600)
-  // const dailyWeek = useTokenPriceData(address, timeframeOptions.WEEK, 86400)
-  // const dailyMonth = useTokenPriceData(address, timeframeOptions.MONTH, 86400)
-  // const dailyAll = useTokenPriceData(address, timeframeOptions.ALL_TIME, 86400)
-  const priceData = useSelector(selectors.selectHourlyOneRates)
+  const rateOneData = useSelector(selectors.selectHourlyOneRates);
+  const rateTwoData = useSelector(selectors.selectHourlyTwoRates);
 
   const below1080 = useMedia('(max-width: 1080px)')
   const below600 = useMedia('(max-width: 600px)')
@@ -45,7 +44,6 @@ const PoolChart = ({ color, base }) => {
   // update the width on a window resize
   const ref = useRef<HTMLElement>()
   const isClient = typeof window === 'object'
-  // const [width, setWidth] = useState(ref?.current?.container?.clientWidth)
   const [width, setWidth] = useState(ref?.current?.clientWidth)
 
   useEffect(() => {
@@ -62,9 +60,51 @@ const PoolChart = ({ color, base }) => {
 
   return (
     <ChartWindowWrapper>
-      {chartFilter === POOL_CHART_VIEW.RATE_ONE && chartData && (
+      <RowBetween
+        mb={
+          chartFilter === POOL_CHART_VIEW.LIQUIDITY ||
+          chartFilter === POOL_CHART_VIEW.VOLUME ||
+          chartFilter === POOL_CHART_VIEW.RATE_ONE ||
+          chartFilter === POOL_CHART_VIEW.RATE_TWO
+            ? 40
+            : 0
+        }
+        align="flex-start"
+      >
+        <OptionButtonContainer>
+          <OptionButton
+            onClick={() => setChartFilter(POOL_CHART_VIEW.LIQUIDITY)}
+          >
+            Liquidity
+          </OptionButton>
+          <OptionButton
+            onClick={() => setChartFilter(POOL_CHART_VIEW.VOLUME)}
+          >
+            Volume
+          </OptionButton>
+          <OptionButton
+            onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_ONE)}
+          >
+            {loading ? '' : `${detail['assetOneUnitName']}/${detail['assetTwoUnitName']}`}
+          </OptionButton>
+
+          <OptionButton
+            onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_TWO)}
+          >
+            {loading ? '' : `${detail['assetTwoUnitName']}/${detail['assetOneUnitName']}`}
+          </OptionButton>
+        </OptionButtonContainer>
+      </RowBetween>
+      
+      {chartFilter === POOL_CHART_VIEW.RATE_ONE && rateOneData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
-          <CandleStickChart data={priceData} width={width} base={base} />
+          <CandleStickChart data={rateOneData} width={width} base={null} />
+        </ResponsiveContainer>
+      )}
+
+      {chartFilter === POOL_CHART_VIEW.RATE_TWO && rateTwoData && (
+        <ResponsiveContainer aspect={aspect} ref={ref}>
+          <CandleStickChart data={rateTwoData} width={width} base={null} />
         </ResponsiveContainer>
       )}
 
@@ -110,7 +150,7 @@ const PoolChart = ({ color, base }) => {
             />
             <Bar
               type="monotone"
-              name={'Volume'}
+              name={'Volume (24hr)'}
               dataKey={'lastDayVolume'}
               fill={color}
               opacity={'0.5'}
@@ -181,42 +221,6 @@ const PoolChart = ({ color, base }) => {
           </AreaChart>
         </ResponsiveContainer>
       )}
-      {/* <OptionButtonWrapper right="100px">
-        <OptionButtonContainer>
-          <OptionButton
-          >
-            1W
-          </OptionButton>
-          <OptionButton
-          >
-            1M
-          </OptionButton>
-          <OptionButton
-          >
-            ALL
-          </OptionButton>
-        </OptionButtonContainer>
-      </OptionButtonWrapper>
-       */}
-      <OptionButtonWrapper left="40px">
-        <OptionButtonContainer>
-          <OptionButton
-            onClick={() => setChartFilter(POOL_CHART_VIEW.LIQUIDITY)}
-          >
-            Liquidity
-          </OptionButton>
-          <OptionButton
-            onClick={() => setChartFilter(POOL_CHART_VIEW.VOLUME)}
-          >
-            Volume
-          </OptionButton>
-          <OptionButton
-            onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_ONE)}
-          >
-            Price
-          </OptionButton>
-        </OptionButtonContainer>
-      </OptionButtonWrapper>
     </ChartWindowWrapper>
   )
 }
