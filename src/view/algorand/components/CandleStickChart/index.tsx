@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { BarPrices, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts'
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 import { formattedNum } from 'src/modules/algorand/utils'
 import { usePrevious } from 'react-use'
 import { Play } from 'react-feather'
@@ -15,6 +16,8 @@ const CandleStickChart = ({
   valueFormatter = val => formattedNum(val, true)
 }) => {
   // reference for DOM element to create with chart
+  dayjs.extend(utc)
+  
   const ref = useRef<HTMLDivElement>(null)
 
   const formattedData = data?.map(entry => {

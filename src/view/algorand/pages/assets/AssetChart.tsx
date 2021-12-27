@@ -1,17 +1,21 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Area, XAxis, YAxis, ResponsiveContainer, Tooltip, AreaChart, BarChart, Bar } from 'recharts'
 import { darken } from 'polished'
 import { useMedia, usePrevious } from 'react-use'
-import styled from 'styled-components'
-import { Activity } from 'react-feather'
 
 import { TIME_FRAME, ASSET_CHART_VIEW, DATA_FREQUENCY } from 'src/modules/algorand/constants'
-import { toK, toNiceDate, toNiceDateYear, formattedNum, getTimeframe } from 'src/modules/algorand/utils'
-import Spinner from 'src/view/shared/Spinner'
+import { toK, toNiceDate, toNiceDateYear, formattedNum } from 'src/modules/algorand/utils'
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart'
 import selectors from 'src/modules/algorand/assets/assetsSelectors'
-import { ChartWindowWrapper, ChartWrapper, OptionButton, OptionButtonContainer, OptionButtonWrapper, RowBetween } from 'src/view/algorand/styled'
+import {
+  ChartWindowWrapper,
+  ChartWrapper,
+  OptionButton,
+  OptionButtonContainer,
+  OptionButtonWrapper,
+  RowBetween
+} from 'src/view/algorand/styled'
 
 const AssetChart = ({ color }) => {
 
@@ -34,7 +38,6 @@ const AssetChart = ({ color }) => {
   // let utcStartTime = getTimeframe(timeWindow)
   // const domain = [dataMin => (dataMin > utcStartTime ? dataMin : utcStartTime), 'dataMax']
   const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22
-
 
   // update the width on a window resize
   const ref = useRef<HTMLElement>()

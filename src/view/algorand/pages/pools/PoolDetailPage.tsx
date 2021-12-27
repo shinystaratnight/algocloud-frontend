@@ -9,7 +9,10 @@ import PoolChart from 'src/view/algorand/pages/pools/PoolChart';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
-import { FlexContainer, PoolIndicator } from 'src/view/algorand/styled';
+import {
+  FlexContainer,
+  PoolIndicator
+} from 'src/view/algorand/styled';
 
 
 const PoolDetailPage = () => {

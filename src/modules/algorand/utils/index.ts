@@ -1,7 +1,10 @@
 import Numeral from 'numeral'
 import dayjs from 'dayjs'
+import utc from 'dayjs/plugin/utc'
 
 import { TIME_FRAME } from 'src/modules/algorand/constants'
+
+dayjs.extend(utc)
 
 export const formatNumber = (_volume) => {
   let volume = _volume;
