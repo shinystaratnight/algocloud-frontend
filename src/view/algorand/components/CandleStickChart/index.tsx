@@ -155,7 +155,7 @@ const CandleStickChart = ({
           const time = dayjs.unix(ts).format('MM/DD h:mm A')
           toolTip.innerHTML =
             `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` +
-            valueFormatter(price) +
+            price +
             `<span style="font-size: 12px; margin: 4px 6px; color: ${textColor}">` +
             time +
             ' UTC' +
