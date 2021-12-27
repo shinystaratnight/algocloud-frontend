@@ -11,9 +11,9 @@ import { toK, toNiceDate, toNiceDateYear, formattedNum, getTimeframe } from 'src
 import Spinner from 'src/view/shared/Spinner'
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart'
 import selectors from 'src/modules/algorand/assets/assetsSelectors'
-import { ChartWindowWrapper, ChartWrapper, OptionButton, OptionButtonContainer, OptionButtonWrapper } from 'src/view/algorand/styled'
+import { ChartWindowWrapper, ChartWrapper, OptionButton, OptionButtonContainer, OptionButtonWrapper, RowBetween } from 'src/view/algorand/styled'
 
-const AssetChart = ({ color, base }) => {
+const AssetChart = ({ color }) => {
 
   // settings for the window and candle width
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY)
@@ -49,6 +49,7 @@ const AssetChart = ({ color, base }) => {
   const isClient = typeof window === 'object'
   // const [width, setWidth] = useState(ref?.current?.container?.clientWidth)
   const [width, setWidth] = useState(ref?.current?.clientWidth)
+  const [height, setHeight] = useState(ref?.current?.clientHeight)
 
   useEffect(() => {
     if (!isClient) {
@@ -56,6 +57,7 @@ const AssetChart = ({ color, base }) => {
     }
     function handleResize() {
       setWidth(ref?.current?.clientWidth ?? width)
+      setHeight(ref?.current?.clientHeight ?? height)
     }
     window.addEventListener('resize', handleResize)
 
@@ -64,15 +66,62 @@ const AssetChart = ({ color, base }) => {
 
   return (
     <ChartWindowWrapper>
+      <RowBetween
+        mb={
+          chartFilter === ASSET_CHART_VIEW.LIQUIDITY ||
+          chartFilter === ASSET_CHART_VIEW.VOLUME ||
+          chartFilter === ASSET_CHART_VIEW.PRICE
+            ? 40
+            : 0
+        }
+        align="flex-start"
+      >
+        <OptionButtonContainer>
+          <OptionButton
+            onClick={() => setChartFilter(ASSET_CHART_VIEW.LIQUIDITY)}
+          >
+            Liquidity
+          </OptionButton>
+          <OptionButton
+            onClick={() => setChartFilter(ASSET_CHART_VIEW.VOLUME)}
+          >
+            Volume
+          </OptionButton>
+          <OptionButton
+            onClick={() => setChartFilter(ASSET_CHART_VIEW.PRICE)}
+          >
+            Price
+          </OptionButton>
+
+          {/* <OptionButtonWrapper right="100px">
+            <OptionButtonContainer>
+              <OptionButton
+              >
+                1W
+              </OptionButton>
+              <OptionButton
+              >
+                1M
+              </OptionButton>
+              <OptionButton
+              >
+                ALL
+              </OptionButton>
+            </OptionButtonContainer>
+          </OptionButtonWrapper>
+          */}
+        </OptionButtonContainer>
+      </RowBetween>
+      
       {chartFilter === ASSET_CHART_VIEW.PRICE && chartData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
-          <CandleStickChart data={priceData} width={width} base={base} />
+          <CandleStickChart data={priceData} width={width} height={height} base={null} />
         </ResponsiveContainer>
       )}
 
       {chartFilter === ASSET_CHART_VIEW.VOLUME && chartData && (
         <ResponsiveContainer aspect={aspect}>
-          <BarChart margin={{ top: 0, right: 10, bottom: 6, left: 10 }} barCategoryGap={1} data={chartData}>
+          <BarChart margin={{ top: 30, right: 10, bottom: 6, left: 10 }} barCategoryGap={1} data={chartData}>
             <XAxis
               tickLine={false}
               axisLine={false}
@@ -125,7 +174,7 @@ const AssetChart = ({ color, base }) => {
 
       {chartFilter === ASSET_CHART_VIEW.LIQUIDITY && chartData && (
         <ResponsiveContainer aspect={aspect}>
-          <AreaChart margin={{ top: 0, right: 10, bottom: 6, left: 0 }} barCategoryGap={1} data={chartData}>
+          <AreaChart margin={{ top: 30, right: 10, bottom: 6, left: 0 }} barCategoryGap={1} data={chartData}>
             <defs>
               <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="5%" stopColor={color} stopOpacity={0.35} />
@@ -178,47 +227,11 @@ const AssetChart = ({ color, base }) => {
               name={'Liquidity'}
               yAxisId={0}
               stroke={darken(0.12, color)}
-              fill="#8be1ea"
+              fill="url(#colorUv)"
             />
           </AreaChart>
         </ResponsiveContainer>
       )}
-      {/* <OptionButtonWrapper right="100px">
-        <OptionButtonContainer>
-          <OptionButton
-          >
-            1W
-          </OptionButton>
-          <OptionButton
-          >
-            1M
-          </OptionButton>
-          <OptionButton
-          >
-            ALL
-          </OptionButton>
-        </OptionButtonContainer>
-      </OptionButtonWrapper>
-       */}
-      <OptionButtonWrapper left="40px">
-        <OptionButtonContainer>
-          <OptionButton
-            onClick={() => setChartFilter(ASSET_CHART_VIEW.LIQUIDITY)}
-          >
-            Liquidity
-          </OptionButton>
-          <OptionButton
-            onClick={() => setChartFilter(ASSET_CHART_VIEW.VOLUME)}
-          >
-            Volume
-          </OptionButton>
-          <OptionButton
-            onClick={() => setChartFilter(ASSET_CHART_VIEW.PRICE)}
-          >
-            Price
-          </OptionButton>
-        </OptionButtonContainer>
-      </OptionButtonWrapper>
     </ChartWindowWrapper>
   )
 }

@@ -56,7 +56,6 @@ const AssetDetailPage = () => {
 
         <AssetChart
           color='#8be1ea'
-          base={1.51}
         />
           
       </FlexContainer>

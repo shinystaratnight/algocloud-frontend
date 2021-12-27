@@ -3,28 +3,8 @@ import { BarPrices, createChart, CrosshairMode, IChartApi, UTCTimestamp } from '
 import dayjs from 'dayjs'
 import { formattedNum } from 'src/modules/algorand/utils'
 import { usePrevious } from 'react-use'
-import styled from 'styled-components'
 import { Play } from 'react-feather'
-// import { useDarkModeManager } from '../../contexts/LocalStorage'
-
-const IconWrapper = styled.div`
-  position: absolute;
-  right: 10px;
-  color: ${({ theme }) => theme.text1}
-  border-radius: 3px;
-  height: 16px;
-  width: 16px;
-  padding: 0px;
-  bottom: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  :hover {
-    cursor: pointer;
-    opacity: 0.7;
-  }
-`
+import { IconWrapper } from 'src/view/algorand/styled'
 
 const CandleStickChart = ({
   data,
@@ -51,9 +31,9 @@ const CandleStickChart = ({
     formattedData.push({
       time: dayjs().unix(),
       open: parseFloat(formattedData[formattedData.length - 1].close),
-      close: parseFloat(base),
-      low: Math.min(parseFloat(base), parseFloat(formattedData[formattedData.length - 1].close)),
-      high: Math.max(parseFloat(base), parseFloat(formattedData[formattedData.length - 1].close))
+      close: parseFloat(formattedData[formattedData.length - 1].close),
+      low: parseFloat(formattedData[formattedData.length - 1].close),
+      high: parseFloat(formattedData[formattedData.length - 1].close)
     })
   }
 
@@ -142,13 +122,14 @@ const CandleStickChart = ({
       toolTip.className = 'three-line-legend'
       ref.current.appendChild(toolTip)
       toolTip.style.display = 'block'
-      toolTip.style.left = (margin ? 116 : 10) + 'px'
-      toolTip.style.top = 50 + 'px'
+      toolTip.style.left = (margin ? 16 : 10) + 'px'
+      toolTip.style.top = 5 + 'px'
       toolTip.style.backgroundColor = 'transparent'
+      toolTip.style.position = 'absolute'
 
       // get the title of the chart
       toolTip.innerHTML = base
-        ? `<div style="font-size: 22px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
+        ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
         : ''
 
       // update the title when hovering on the chart
@@ -163,7 +144,7 @@ const CandleStickChart = ({
           param.point.y > height
         ) {
           toolTip.innerHTML = base
-            ? `<div style="font-size: 22px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
+            ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
             : ''
         } else {
           if (param === undefined || param.seriesPrices === undefined) return;
@@ -173,7 +154,7 @@ const CandleStickChart = ({
           var price = (param.seriesPrices.get(candleSeries) as BarPrices).close
           const time = dayjs.unix(ts).format('MM/DD h:mm A')
           toolTip.innerHTML =
-            `<div style="font-size: 22px; margin: 4px 0px; color: ${textColor}">` +
+            `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` +
             valueFormatter(price) +
             `<span style="font-size: 12px; margin: 4px 6px; color: ${textColor}">` +
             time +
@@ -198,7 +179,7 @@ const CandleStickChart = ({
   }, [chartCreated, height, width])
 
   return (
-    <div>
+    <div className='position-relative'>
       <div ref={ref} id="test-id" />
       <IconWrapper>
         <Play

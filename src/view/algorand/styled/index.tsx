@@ -46,7 +46,7 @@ export const FlexContainer = styled.div`
 
 export const OptionButtonWrapper = styled.div`
   position: absolute;
-  top: 30px;
+  top: 20px;
   zIndex: 10;
   right: ${(props) => props.right ? props.right : 'auto'};
   left: ${(props) => props.left ? props.left : 'auto'};
@@ -76,6 +76,46 @@ export const AssetIndicator = styled.div`
 
 export const PoolIndicator = styled.div`
   width: 30%;
+`;
+
+export const IconWrapper = styled.div`
+  position: absolute;
+  right: 10px;
+  color: ${({ theme }) => theme.text1}
+  border-radius: 3px;
+  height: 16px;
+  width: 16px;
+  padding: 0px;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  :hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+`;
+
+export const GraphWrapper = styled.div`
+  position: relative;
+  padding-top: 58px;
+`;
+
+const Row = styled.div`
+  width: 100%;
+  display: flex;
+  padding: 0;
+  align-items: center;
+  align-items: ${({ align }) => align && align};
+  padding: ${({ padding }) => padding};
+  border: ${({ border }) => border};
+  border-radius: ${({ borderRadius }) => borderRadius};
+  justify-content: ${({ justify }) => justify};
+`;
+
+export const RowBetween = styled(Row)`
+  justify-content: space-between;
 `;
 
 // const TextWrapper = styled(Text)`

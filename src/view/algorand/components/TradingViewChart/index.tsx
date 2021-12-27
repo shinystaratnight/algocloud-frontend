@@ -6,37 +6,10 @@ import styled from 'styled-components'
 import { usePrevious } from 'react-use'
 import { Play } from 'react-feather'
 import { formattedNum } from 'src/modules/algorand/utils'
+import { CHART_TYPES } from 'src/modules/algorand/constants'
+import { GraphWrapper, IconWrapper } from 'src/view/algorand/styled'
 
 dayjs.extend(utc)
-
-export const CHART_TYPES = {
-  BAR: 'BAR',
-  AREA: 'AREA'
-}
-
-const Wrapper = styled.div`
-  position: relative;
-  padding-top: 58px;
-`
-
-export const IconWrapper = styled.div`
-  position: absolute;
-  right: 0;
-  border-radius: 3px;
-  height: 16px;
-  width: 16px;
-  padding: 0px;
-  bottom: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: ${({ theme }) => theme.text1};
-
-  :hover {
-    cursor: pointer;
-    opacity: 0.7;
-  }
-`
 
 // constant height for charts
 const HEIGHT = 300
@@ -143,7 +116,7 @@ const TradingViewChart = ({
                 type: 'volume'
               },
               scaleMargins: {
-                top: 0.32,
+                top: topScale,
                 bottom: 0
               },
               // lineColor: '#8be1ea',
@@ -239,7 +212,7 @@ const TradingViewChart = ({
   }, [chartCreated, width])
 
   return (
-    <Wrapper>
+    <GraphWrapper>
       <div ref={ref} id={'tradchart-id' + type} />
       <IconWrapper>
         <Play
@@ -248,7 +221,7 @@ const TradingViewChart = ({
           }}
         />
       </IconWrapper>
-    </Wrapper>
+    </GraphWrapper>
   )
 }
 
