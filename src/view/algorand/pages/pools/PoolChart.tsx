@@ -6,7 +6,7 @@ import { darken } from 'polished'
 import { useMedia, usePrevious } from 'react-use'
 import { Activity } from 'react-feather'
 
-import { timeframeOptions } from 'src/modules/algorand/contants'
+import { timeframeOptions } from 'src/modules/algorand/constants'
 import { toK, toNiceDate, toNiceDateYear, formattedNum, getTimeframe } from 'src/modules/algorand/utils'
 // import { useTokenChartData, useTokenPriceData } from '../../contexts/TokenData'
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart'

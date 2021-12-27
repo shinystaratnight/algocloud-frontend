@@ -1,3 +1,19 @@
+export const CHART_TYPES = {
+  BAR: 'BAR',
+  AREA: 'AREA'
+};
+
+export const CHART_VIEW = {
+  VOLUME: 'Volume',
+  LIQUIDITY: 'Liquidity',
+  PRICE: 'Price',
+}
+
+export const DATA_FREQUENCY = {
+  DAY: 'DAY',
+  HOUR: 'HOUR',
+}
+
 export const FACTORY_ADDRESS = '0xaC653cE27E04C6ac565FD87F18128aD33ca03Ba2'
 
 export const BUNDLE_ID = '1'

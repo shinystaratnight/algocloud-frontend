@@ -6,34 +6,12 @@ import { darken } from 'polished'
 import { useMedia, usePrevious } from 'react-use'
 import { Activity } from 'react-feather'
 
-import { timeframeOptions } from 'src/modules/algorand/contants'
+import { timeframeOptions, CHART_VIEW, DATA_FREQUENCY } from 'src/modules/algorand/constants'
 import { toK, toNiceDate, toNiceDateYear, formattedNum, getTimeframe } from 'src/modules/algorand/utils'
-// import { useTokenChartData, useTokenPriceData } from '../../contexts/TokenData'
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart'
-import actions from 'src/modules/algorand/assets/assetsActions'
+import { ChartWrapper } from 'src/view/algorand/styled'
 import Spinner from 'src/view/shared/Spinner'
 
-const ChartWrapper = styled.div`
-  height: 100%;
-  min-height: 300px;
-
-  @media screen and (max-width: 600px) {
-    min-height: 200px;
-  }
-`
-
-const CHART_VIEW = {
-  VOLUME: 'Volume',
-  LIQUIDITY: 'Liquidity',
-  PRICE: 'Price',
-  // LINE_PRICE: 'Price (Line)'
-}
-
-const DATA_FREQUENCY = {
-  DAY: 'DAY',
-  HOUR: 'HOUR',
-  // LINE: 'LINE'
-}
 
 const AssetChart = ({ assetId, color, base }) => {
 

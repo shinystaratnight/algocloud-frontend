@@ -1,7 +1,7 @@
 import Numeral from 'numeral'
 import dayjs from 'dayjs'
 
-import { timeframeOptions } from 'src/modules/algorand/contants'
+import { timeframeOptions } from 'src/modules/algorand/constants'
 
 export const formatNumber = (_volume) => {
   let volume = _volume;
