@@ -4,7 +4,6 @@ import { useRouteMatch } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/pools/poolsActions';
 import selectors from 'src/modules/algorand/pools/poolsSelectors';
-import { formatNumber } from 'src/modules/algorand/utils';
 import PoolChart from 'src/view/algorand/pages/pools/PoolChart';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';

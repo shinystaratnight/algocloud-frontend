@@ -3,7 +3,10 @@ import actions from 'src/modules/algorand/pools/poolsActions';
 const initialData = {
   loading: false,
   list: [],
-  show: {},
+  show: {
+    'assetOneUnitName': '',
+    'assetTwoUnitName': '',
+  },
   hourlyOneRates: [],
   hourlyTwoRates: [],
   dailyOneRates: [],

@@ -78,7 +78,7 @@ function OverviewChart() {
           </ResponsiveContainer>}
       </ContentWrapper>
       <ContentWrapper>
-        {dailyData &&
+        {dailyData && weeklyData &&
           <ResponsiveContainer aspect={60 / 28}>
             <TradingViewChart
               data={volumeWindow === 'weekly' ? weeklyData : dailyData}
@@ -92,14 +92,20 @@ function OverviewChart() {
             />
           </ResponsiveContainer>
         }
-        {/* <div className="row" style={{ bottom: '70px', position: 'absolute', left: '20px', zIndex: 10 }}>
+        <div className="row" style={{ bottom: '70px', position: 'absolute', left: '20px', zIndex: 10 }}>
           <OptionButton
             active={volumeWindow !== 'weekly'}
             onClick={() => setVolumeWindow('daily')}
           >
             <h3>D</h3>
           </OptionButton>
-        </div> */}
+          <OptionButton
+            active={volumeWindow !== 'daily'}
+            onClick={() => setVolumeWindow('weekly')}
+          >
+            <h3>W</h3>
+          </OptionButton>
+        </div>
       </ContentWrapper>
     </FlexContainer>
   )
