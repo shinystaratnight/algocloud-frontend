@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
+
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/pools/poolsActions';
 import selectors from 'src/modules/algorand/pools/poolsSelectors';
@@ -8,6 +9,7 @@ import PoolChart from 'src/view/algorand/pages/pools/PoolChart';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
+import { FlexContainer, PoolIndicator } from 'src/view/algorand/styled';
 
 
 const PoolDetailPage = () => {
@@ -22,9 +24,6 @@ const PoolDetailPage = () => {
     dispatch(actions.doFetchHistory(address));
   }, [dispatch]);
   
-  const backgroundColor = '#FAAB14';
-  const priceUSD = 100;
-
   return (
     <>
       <Breadcrumb
@@ -39,14 +38,18 @@ const PoolDetailPage = () => {
       <ContentWrapper>
         <PageTitle>
           {loading && 'Assets'}
-          {!loading && `${detail['assetOneUnitName']}-${detail['assetTwoUnitName']} Pool`}
+          {!loading && `Pool (${detail['assetOneUnitName']}-${detail['assetTwoUnitName']})`}
         </PageTitle>
-        <PoolChart
-          address={address}
-          color={backgroundColor}
-          base={72}
-        />
       </ContentWrapper>
+
+      <FlexContainer>
+        <PoolIndicator />
+
+        <PoolChart
+          color='#8be1ea'
+          base={1.51}
+        />
+      </FlexContainer>
     </>
   )
 }

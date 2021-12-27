@@ -1,15 +1,16 @@
 import styled from "styled-components";
 
 export const ChartWindowWrapper = styled.div`
-margin-top: 16px;
-padding: 24px;
-background: #1e2d58; 
-background: rgba(255,255,255,.05); 
-box-shadow: 0 0 50px 14px rgb(18 28 53 / 3%); 
-border: 1px solid;
-border-color: var(--border-var) !important;
-width: 100%;
-border-radius: 5px;
+  margin-top: 16px;
+  padding: 24px;
+  background: #1e2d58; 
+  background: rgba(255,255,255,.05); 
+  box-shadow: 0 0 50px 14px rgb(18 28 53 / 3%); 
+  border: 1px solid;
+  border-color: var(--border-var) !important;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
 `;
 
 export const ChartWrapper = styled.div`
@@ -47,7 +48,8 @@ export const OptionButtonWrapper = styled.div`
   position: absolute;
   top: 30px;
   zIndex: 10;
-  right: ${(props) => props.right ? props.right : '30px'};
+  right: ${(props) => props.right ? props.right : 'auto'};
+  left: ${(props) => props.left ? props.left : 'auto'};
 `;
 
 export const OptionButtonContainer = styled.div`
@@ -63,12 +65,16 @@ export const OptionButton = styled.div`
   border: 1px solid #44c4e2;
   cursor: pointer;
   margin-left: 10px;
-  width: 50px;
+  width: ${(props) => props.width ? props.width : 'auto'};
   background-color: #1D294F;
   text-align: center;
 `;
 
 export const AssetIndicator = styled.div`
+  width: 30%;
+`;
+
+export const PoolIndicator = styled.div`
   width: 30%;
 `;
 

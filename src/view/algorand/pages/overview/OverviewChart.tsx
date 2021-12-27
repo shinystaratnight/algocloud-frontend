@@ -8,6 +8,7 @@ import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
 import {
   FlexContainer,
+  ChartWindowWrapper,
   OptionButton,
   OptionButtonWrapper,
   OptionButtonContainer,
@@ -52,7 +53,7 @@ function OverviewChart() {
             />
           </ResponsiveContainer>}
       </ContentWrapper>
-      <ContentWrapper style={{position: 'relative'}}>
+      <ChartWindowWrapper>
         {dailyData && weeklyData &&
           <ResponsiveContainer aspect={60 / 28}>
             <TradingViewChart
@@ -70,12 +71,14 @@ function OverviewChart() {
         <OptionButtonWrapper right="40px">
           <OptionButtonContainer>
             <OptionButton
+              width='50px'
               active={volumeWindow !== 'weekly'}
               onClick={() => setVolumeWindow('daily')}
             >
               D
             </OptionButton>
             <OptionButton
+              width='50px'
               active={volumeWindow !== 'daily'}
               onClick={() => setVolumeWindow('weekly')}
             >
@@ -83,7 +86,7 @@ function OverviewChart() {
             </OptionButton>
           </OptionButtonContainer>
         </OptionButtonWrapper>
-      </ContentWrapper>
+      </ChartWindowWrapper>
     </FlexContainer>
   )
 }

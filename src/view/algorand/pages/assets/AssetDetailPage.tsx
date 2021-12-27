@@ -8,7 +8,7 @@ import selectors from 'src/modules/algorand/assets/assetsSelectors';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
-import AssetChart from 'src/view/algorand/pages/assets/AssetChart1';
+import AssetChart from 'src/view/algorand/pages/assets/AssetChart';
 import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
 import { formatNumber } from 'src/modules/algorand/utils';
 import {
@@ -33,9 +33,6 @@ const AssetDetailPage = () => {
   const pools = useSelector(selectors.selectTopPools);
   const detail = useSelector(selectors.selectAssetDetail);
 
-  const backgroundColor = '#8be1ea';
-  const priceUSD = 100;
-
   return (
     <>
       <Breadcrumb
@@ -53,18 +50,15 @@ const AssetDetailPage = () => {
           {!loading && `${detail['name']} (${detail['unitName']}) ${formatNumber(detail['price'])}`}
         </PageTitle>
       </ContentWrapper>
+      
       <FlexContainer>
         <AssetIndicator />
-        {/* <div style={{width: '600px'}}>
-          Hello
-        </div> */}
-        <ContentWrapper>
-          <AssetChart
-            assetId={assetId}
-            color={backgroundColor}
-            base={1.51}
-          />
-        </ContentWrapper>
+
+        <AssetChart
+          color='#8be1ea'
+          base={1.51}
+        />
+          
       </FlexContainer>
 
       <ContentWrapper>

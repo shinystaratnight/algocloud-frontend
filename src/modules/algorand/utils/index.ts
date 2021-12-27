@@ -1,7 +1,7 @@
 import Numeral from 'numeral'
 import dayjs from 'dayjs'
 
-import { timeframeOptions } from 'src/modules/algorand/constants'
+import { TIME_FRAME } from 'src/modules/algorand/constants'
 
 export const formatNumber = (_volume) => {
   let volume = _volume;
@@ -82,21 +82,21 @@ export function getTimeframe(timeWindow) {
   // based on window, get starttime
   let utcStartTime
   switch (timeWindow) {
-    case timeframeOptions.WEEK:
+    case TIME_FRAME.WEEK:
       utcStartTime =
         utcEndTime
           .subtract(1, 'week')
           .endOf('day')
           .unix() - 1
       break
-    case timeframeOptions.MONTH:
+    case TIME_FRAME.MONTH:
       utcStartTime =
         utcEndTime
           .subtract(1, 'month')
           .endOf('day')
           .unix() - 1
       break
-    case timeframeOptions.ALL_TIME:
+    case TIME_FRAME.ALL_TIME:
       utcStartTime =
         utcEndTime
           .subtract(1, 'year')
