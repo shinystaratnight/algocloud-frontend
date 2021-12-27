@@ -2,7 +2,8 @@ import actions from 'src/modules/algorand/assets/assetsActions';
 
 const initialData = {
   loading: false,
-  assets: [],
+  list: [],
+  show: {},
   hourlyPrices: [],
   dailyPrices: [],
   dailyAssetData: [],

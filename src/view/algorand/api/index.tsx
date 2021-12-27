@@ -15,7 +15,7 @@ export const getTokens = async () => {
 }
 
 export const getTransactions = async () => {
-  const url = `${BASE_API_URL}/operations/?limit=20&type__in=swap%2Cmint%2Cburn   `;
+  const url = `${BASE_API_URL}/operations/?limit=20&type__in=swap%2Cmint%2Cburn`;
   const { data: { results } } = await axios.get(url);
   return results;
 }

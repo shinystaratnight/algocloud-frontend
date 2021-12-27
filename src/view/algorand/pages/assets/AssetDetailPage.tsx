@@ -11,6 +11,7 @@ import PageTitle from 'src/view/shared/styles/PageTitle';
 import AssetChart from 'src/view/algorand/pages/assets/AssetChart1';
 import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
 import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
+import { formatNumber } from 'src/modules/algorand/utils';
 
 
 const AssetDetailPage = () => {
@@ -25,6 +26,7 @@ const AssetDetailPage = () => {
   
   const loading = useSelector(selectors.selectLoading);
   const pools = useSelector(selectors.selectTopPools);
+  const detail = useSelector(selectors.selectAssetDetail);
 
   const backgroundColor = '#FAAB14';
   const priceUSD = 100;
@@ -41,7 +43,10 @@ const AssetDetailPage = () => {
       />
 
       <ContentWrapper>
-        <PageTitle>Assets</PageTitle>
+        <PageTitle>
+          {loading && 'Assets'}
+          {!loading && `${detail['name']} (${detail['unitName']}) ${formatNumber(detail['price'])}`}
+        </PageTitle>
         <AssetChart
           assetId={assetId}
           color={backgroundColor}

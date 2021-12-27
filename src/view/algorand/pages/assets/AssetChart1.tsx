@@ -70,7 +70,6 @@ const AssetChart1 = ({ assetId, color, base }) => {
   // const dailyMonth = useTokenPriceData(address, timeframeOptions.MONTH, 86400)
   // const dailyAll = useTokenPriceData(address, timeframeOptions.ALL_TIME, 86400)
   const priceData = useSelector(selectors.selectHourlyPrices)
-  console.log(priceData)
 
   const below1080 = useMedia('(max-width: 1080px)')
   const below600 = useMedia('(max-width: 600px)')

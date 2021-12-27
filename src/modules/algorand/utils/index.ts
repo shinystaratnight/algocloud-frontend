@@ -72,7 +72,6 @@ export const formattedNum = (number, usd = false, acceptNegatives = false) => {
 export const toNiceDateYear = date => dayjs.utc(dayjs.unix(date)).format('MMMM DD, YYYY');
 
 export const toNiceDate = date => {
-  console.log(date)
   let x = dayjs.utc(dayjs.unix(date)).format('MMM DD')
   return x
 }
