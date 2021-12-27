@@ -14,8 +14,7 @@ import actions from 'src/modules/algorand/assets/assetsActions'
 import selectors from 'src/modules/algorand/assets/assetsSelectors'
 
 const ChartWrapper = styled.div`
-  height: 100%;
-  min-height: 300px;
+  min-height: 200px;
 
   @media screen and (max-width: 600px) {
     min-height: 200px;
@@ -155,7 +154,7 @@ const AssetChart1 = ({ assetId, color, base }) => {
             interval="preserveEnd"
             tickMargin={16}
             minTickGap={120}
-            // tickFormatter={tick => toNiceDate(tick)}
+            tickFormatter={tick => toNiceDate(tick)}
             dataKey="date"
             tick={{ fill: '#1ff' }}
             type={'number'}
@@ -164,7 +163,7 @@ const AssetChart1 = ({ assetId, color, base }) => {
           <YAxis
             type="number"
             orientation="right"
-            // tickFormatter={tick => '$' + toK(tick)}
+            tickFormatter={tick => '$' + toK(tick)}
             axisLine={false}
             tickLine={false}
             interval="preserveEnd"
@@ -175,7 +174,7 @@ const AssetChart1 = ({ assetId, color, base }) => {
           <Tooltip
             cursor={true}
             formatter={val => formattedNum(val, true)}
-            // labelFormatter={label => toNiceDateYear(label)}
+            labelFormatter={label => toNiceDateYear(label)}
             labelStyle={{ paddingTop: 4 }}
             contentStyle={{
               padding: '10px 14px',
@@ -195,7 +194,7 @@ const AssetChart1 = ({ assetId, color, base }) => {
             name={'Liquidity'}
             yAxisId={0}
             stroke={darken(0.12, color)}
-            fill="#333"
+            fill="#8be1ea"
           />
         </AreaChart>
       </ResponsiveContainer>

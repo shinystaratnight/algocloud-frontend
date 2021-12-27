@@ -9,9 +9,14 @@ import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 import AssetChart from 'src/view/algorand/pages/assets/AssetChart1';
-import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
 import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
 import { formatNumber } from 'src/modules/algorand/utils';
+import {
+  SectionTitleBar,
+  SectionTitle,
+  FlexContainer,
+  AssetIndicator,
+} from 'src/view/algorand/styled';
 
 
 const AssetDetailPage = () => {
@@ -28,7 +33,7 @@ const AssetDetailPage = () => {
   const pools = useSelector(selectors.selectTopPools);
   const detail = useSelector(selectors.selectAssetDetail);
 
-  const backgroundColor = '#FAAB14';
+  const backgroundColor = '#8be1ea';
   const priceUSD = 100;
 
   return (
@@ -47,12 +52,20 @@ const AssetDetailPage = () => {
           {loading && 'Assets'}
           {!loading && `${detail['name']} (${detail['unitName']}) ${formatNumber(detail['price'])}`}
         </PageTitle>
-        <AssetChart
-          assetId={assetId}
-          color={backgroundColor}
-          base={1.51}
-        />
       </ContentWrapper>
+      <FlexContainer>
+        <AssetIndicator />
+        {/* <div style={{width: '600px'}}>
+          Hello
+        </div> */}
+        <ContentWrapper>
+          <AssetChart
+            assetId={assetId}
+            color={backgroundColor}
+            base={1.51}
+          />
+        </ContentWrapper>
+      </FlexContainer>
 
       <ContentWrapper>
         <SectionTitleBar>

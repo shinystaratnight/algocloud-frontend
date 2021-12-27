@@ -63,8 +63,13 @@ export const OptionButton = styled.div`
   border: 1px solid #44c4e2;
   cursor: pointer;
   margin-left: 10px;
-  width: 30px;
+  width: 50px;
+  background-color: #1D294F;
   text-align: center;
+`;
+
+export const AssetIndicator = styled.div`
+  width: 30%;
 `;
 
 // const TextWrapper = styled(Text)`
