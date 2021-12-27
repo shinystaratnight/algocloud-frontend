@@ -30,16 +30,6 @@ const CandleStickChart = ({
     }
   })
 
-  if (formattedData && formattedData.length > 0) {
-    formattedData.push({
-      time: dayjs().unix(),
-      open: parseFloat(formattedData[formattedData.length - 1].close),
-      close: parseFloat(formattedData[formattedData.length - 1].close),
-      low: parseFloat(formattedData[formattedData.length - 1].close),
-      high: parseFloat(formattedData[formattedData.length - 1].close)
-    })
-  }
-
   // pointer to the chart object
   const [chartCreated, setChartCreated] = useState<IChartApi | null>(null)
   const dataPrev = usePrevious(data)
