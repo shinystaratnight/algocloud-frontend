@@ -9,10 +9,7 @@ import PoolChart from 'src/view/algorand/pages/pools/PoolChart';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
-import {
-  FlexContainer,
-  PoolIndicator
-} from 'src/view/algorand/styled';
+import { formattedNum } from 'src/modules/algorand/utils';
 
 
 const PoolDetailPage = () => {
@@ -45,13 +42,31 @@ const PoolDetailPage = () => {
         </PageTitle>
       </ContentWrapper>
 
-      <FlexContainer>
-        {/* <PoolIndicator /> */}
-
+      <div className='row'>
+        <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
+          <ContentWrapper style={{flex: 1}}>
+            <h6>Liqudity</h6>
+            <h5 className='text-info'>{formattedNum(detail['liquidity'], true)}</h5>
+          </ContentWrapper>
+          <ContentWrapper style={{flex: 1}}>
+            <h6>Volume (24hrs)</h6>
+            <h5 className='text-info'>{formattedNum(detail['lastDayVolume'], true)}</h5>
+          </ContentWrapper>
+          <ContentWrapper style={{flex: 1}}>
+            <h6>Volume (7days)</h6>
+            <h5 className='text-info'>{formattedNum(detail['lastWeekVolume'], true)}</h5>
+          </ContentWrapper>
+          {/* <ContentWrapper style={{flex: 1}}>
+            <h6>{`${detail['assetOneReserves']} ${detail['assetOneUnitName']}`}</h6>
+            <h5>{`${detail['assetTwoReserves']} ${detail['assetTwoUnitName']}`}</h6>
+          </ContentWrapper> */}
+        </div>
+        <div className="col-lg-8 col-sm-12">
         <PoolChart
           color='#8be1ea'
         />
-      </FlexContainer>
+        </div>
+      </div>
     </>
   )
 }

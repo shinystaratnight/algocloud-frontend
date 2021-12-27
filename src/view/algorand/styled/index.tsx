@@ -72,6 +72,9 @@ export const OptionButton = styled.div`
 
 export const AssetIndicator = styled.div`
   width: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const PoolIndicator = styled.div`
@@ -118,83 +121,6 @@ export const RowBetween = styled(Row)`
   justify-content: space-between;
 `;
 
-// const TextWrapper = styled(Text)`
-//   color: ${({ color, theme }) => theme[color]};
-// `;
-
-// export const StyledTokenView = styled.div`
-//     display: flex;
-//     align-items: center;
-//     gap: 5px;
-//     img {
-//         width: 24px;
-//         height: 24px;
-//     }
-//     .info {
-//         p {
-//             margin: 0;
-//         }
-//         .name {
-//             font-size: 15px;
-//             font-weight: 600;
-//         }
-//         .unit {
-//             font-size: 12px;
-//         }
-//     }
-// `;
-
-// export const StyledPairView = styled(Link)`
-//     display: flex;
-//     align-items: center;
-//     gap: 5px;
-//     color: white;
-//     img {
-//         width: 24px;
-//         height: 24px;
-//     }
-// `;
-
-// export const StyledPriceChangeView = styled.div`
-//     &.increase {
-//         color: #6dfabf;
-//     }
-//     &.decrease {
-//         color: #ff6033;
-//     }
-//     display: flex;
-//     align-items: center;
-//     gap: 5px;
-// `;
-
-// export const StyledAmountView = styled.div`
-//     display: flex;
-//     align-items: center;
-//     gap: 5px;
-//     img {
-//         width: 24px;
-//         height: 24px;
-//     }
-// `;
-
-// export const StyledStatCard = styled.div`
-//     p {
-//        margin-bottom: 0; 
-//     }
-//     .name {
-//         font-size: 15px;
-//         margin-bottom: 10px;
-//     }
-//     .value {
-//         font-size: 20px;
-//     }
-// `;
-
-// export const StyledCardWrapper = styled.div`
-//     display: flex;
-//     align-items: center;
-//     gap: 10px;
-//     @media screen and (max-width: 800px) {
-//         flex-direction: column;
-//     }
-// `;
+export const FlexColumn = styled.div`
+  flex: 1;
+`;

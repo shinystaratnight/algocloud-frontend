@@ -6,6 +6,11 @@ const initialData = {
   show: {
     'assetOneUnitName': '',
     'assetTwoUnitName': '',
+    'assetOneReserves': '',
+    'assetTwoReserves': '',
+    'liquidity': '',
+    'lastDayVolume': '',
+    'lastWeekVolume': '',
   },
   hourlyOneRates: [],
   hourlyTwoRates: [],
