@@ -9,9 +9,13 @@ import favoritesActions from 'src/modules/algorand/favorites/favoritesActions';
 import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
 import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
 import OverviewChart from './OverviewChart';
-import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
 import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
 import AssetsTable from 'src/view/algorand/pages/table/AssetsTable';
+import {
+  SectionTitleBar,
+  SectionTitle,
+  AlgoexplorerSection
+} from 'src/view/algorand/styled';
 
 
 function OverviewPage() {
@@ -37,6 +41,10 @@ function OverviewPage() {
           [i18n('algorand.menu')],
         ]}
       />
+
+      <AlgoexplorerSection>
+        You want to check Market Cap and Algo Prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
+      </AlgoexplorerSection>
 
       <OverviewChart />
 

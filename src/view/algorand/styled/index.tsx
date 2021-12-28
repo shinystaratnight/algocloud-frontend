@@ -102,7 +102,7 @@ export const IconWrapper = styled.div`
 
 export const GraphWrapper = styled.div`
   position: relative;
-  padding-top: 58px;
+  padding-top: ${(props) => props.pt ? props.pt : '58px'};
 `;
 
 const Row = styled.div`
@@ -124,3 +124,15 @@ export const RowBetween = styled(Row)`
 export const FlexColumn = styled.div`
   flex: 1;
 `;
+
+export const AlgoexplorerSection = styled.div`
+  margin-top: 10px;
+  color: #8be1ea;
+  font-size: 12px;
+
+  a {
+    color: white;
+    margin-left: 6px;
+  }
+`;
+

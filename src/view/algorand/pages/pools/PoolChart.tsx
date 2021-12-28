@@ -98,13 +98,25 @@ const PoolChart = ({ color }) => {
       
       {chartFilter === POOL_CHART_VIEW.RATE_ONE && rateOneData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
-          <CandleStickChart data={rateOneData} width={width} base={null} />
+          <CandleStickChart
+            data={rateOneData}
+            width={width}
+            base={null}
+            paddingTop='0'
+            valueFormatter={(val) => val.toFixed(4)}
+          />
         </ResponsiveContainer>
       )}
 
       {chartFilter === POOL_CHART_VIEW.RATE_TWO && rateTwoData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
-          <CandleStickChart data={rateTwoData} width={width} base={null} />
+          <CandleStickChart
+            data={rateTwoData}
+            width={width}
+            base={null}
+            paddingTop='0'
+            valueFormatter={(val) => val.toFixed(4)}
+          />
         </ResponsiveContainer>
       )}
 

@@ -108,7 +108,13 @@ const AssetChart = ({ color }) => {
       
       {chartFilter === ASSET_CHART_VIEW.PRICE && chartData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
-          <CandleStickChart data={priceData} width={width} base={null} />
+          <CandleStickChart
+            data={priceData}
+            width={width}
+            base={null}
+            paddingTop='0'
+            valueFormatter={(val) => val.toFixed(4)}
+          />
         </ResponsiveContainer>
       )}
 
