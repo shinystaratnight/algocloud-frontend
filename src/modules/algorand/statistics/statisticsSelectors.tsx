@@ -39,7 +39,7 @@ const selectTopAssets = createSelector(
       if (favorites.includes(asset.assetId)) asset.favorite = 1;
       else asset.favorite = 0;
       
-      if (asset.assetId === showcaseId) asset.showcase = 1;
+      if (asset.assetId === +showcaseId) asset.showcase = 1;
       else asset.showcase = 0;
       return asset;
     });

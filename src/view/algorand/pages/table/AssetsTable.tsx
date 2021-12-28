@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import actions from 'src/modules/algorand/favorites/favoritesActions';
+import statisticsActions from 'src/modules/algorand/statistics/statisticsActions';
 import selectors from 'src/modules/algorand/algorandSelectors';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
@@ -14,6 +15,8 @@ function AssetsTable(props) {
 
   const dispatch = useDispatch();
   const [assetIdToToggle, setAssetIdToToggle] = useState(null);
+  const [assetIdToShowcase, setAssetIdToShowcase] = useState(null);
+
   const { loading, assets, showcase=true } = props;
   
   const hasPermissionToToggle = useSelector(
@@ -27,6 +30,11 @@ function AssetsTable(props) {
   const doToggle = (assetId) => {
     setAssetIdToToggle(null);
     dispatch(actions.doToggle(assetId));
+  };
+
+  const setShowcase = (assetId) => {
+    setAssetIdToShowcase(null);
+    dispatch(statisticsActions.setShowcase(assetId));
   };
   
   return (
@@ -119,7 +127,7 @@ function AssetsTable(props) {
                         <button
                           className="btn btn-link"
                           onClick={() =>
-                            setAssetIdToToggle(asset.assetId)
+                            setAssetIdToShowcase(asset.assetId)
                           }
                         >
                           <b>Set As Main</b>
@@ -142,6 +150,16 @@ function AssetsTable(props) {
           title={i18n('common.areYouSure')}
           onConfirm={() => doToggle(assetIdToToggle)}
           onClose={() => setAssetIdToToggle(null)}
+          okText={i18n('common.yes')}
+          cancelText={i18n('common.no')}
+        />
+      )}
+
+      {(assetIdToShowcase !== null) && (
+        <ConfirmModal
+          title={i18n('common.areYouSure')}
+          onConfirm={() => setShowcase(assetIdToShowcase)}
+          onClose={() => setAssetIdToShowcase(null)}
           okText={i18n('common.yes')}
           cancelText={i18n('common.no')}
         />

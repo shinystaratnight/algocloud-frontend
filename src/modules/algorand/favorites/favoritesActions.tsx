@@ -31,7 +31,7 @@ const assetsActions = {
     }
   },
 
-  doToggle: (assetId) =>async (dispatch) => {
+  doToggle: (assetId) => async (dispatch) => {
     try {
       dispatch({
         type: assetsActions.FETCH_STARTED,
@@ -50,7 +50,7 @@ const assetsActions = {
         type: assetsActions.FETCH_ERROR,
       });
     }
-  }
+  },
 };
 
 export default assetsActions;

@@ -27,6 +27,16 @@ export default class AlgorandService {
     return response.data;
   }
 
+  static async setAlgorandShowcase(assetId) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.put(
+      `/tenant/${tenantId}/algorand/${assetId}/set-showcase`,
+    );
+
+    return response.data;
+  }
+
   static async getAlgorandFavorites() {
     const tenantId = AuthCurrentTenant.get();
 
