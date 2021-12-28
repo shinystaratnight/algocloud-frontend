@@ -7,6 +7,9 @@ const initialData = {
   topFavorites: [],
   topPools: [],
   topAssets: [],
+  showcaseData: [],
+  showcaseId: null,
+  showcaseName: '',
 };
 
 export default (state = initialData, { type, payload }) => {

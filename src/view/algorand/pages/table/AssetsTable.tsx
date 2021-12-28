@@ -14,10 +14,14 @@ function AssetsTable(props) {
 
   const dispatch = useDispatch();
   const [assetIdToToggle, setAssetIdToToggle] = useState(null);
-  const { loading, assets } = props;
+  const { loading, assets, showcase=true } = props;
   
   const hasPermissionToToggle = useSelector(
     selectors.selectPermissionToToggle
+  );
+
+  const hasPermissionToShowcase = useSelector(
+    selectors.selectPermissionToShowcase
   );
 
   const doToggle = (assetId) => {
@@ -57,9 +61,15 @@ function AssetsTable(props) {
                   label='PRICE CHANGE[24H]'
                 />
                 <TableColumnHeader
-                  name='action'
-                  label='ACTION'
+                  name='favorite'
+                  label='FAVORITE'
                 />
+                { showcase && (
+                  <TableColumnHeader
+                    name='showcase'
+                    label='SHOWCASE'
+                  />
+                )}
               </tr>
             </thead>
             <tbody>
@@ -99,10 +109,27 @@ function AssetsTable(props) {
                           setAssetIdToToggle(asset.assetId)
                         }
                       >
-                        <b>{asset.status === 0 ? 'Favorite' : 'Unfavorite'}</b>
+                        <b>{asset.favorite === 0 ? 'Favorite' : 'Unfavorite'}</b>
                       </button>
                     )}
                   </td>
+                  {showcase && (
+                    <td>
+                      {hasPermissionToShowcase && (asset.showcase === 0) && (
+                        <button
+                          className="btn btn-link"
+                          onClick={() =>
+                            setAssetIdToToggle(asset.assetId)
+                          }
+                        >
+                          <b>Set As Main</b>
+                        </button>
+                      )}
+                      {hasPermissionToShowcase && (asset.showcase !== 0) && (
+                        <b>Currently Set</b>
+                      )}
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>

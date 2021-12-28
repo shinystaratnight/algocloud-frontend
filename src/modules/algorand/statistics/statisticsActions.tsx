@@ -32,6 +32,28 @@ const statisticsActions = {
       });
     }
   },
+
+  doFetchShowcase: () => async (dispatch) => {
+    try {
+      dispatch({
+        type: statisticsActions.FETCH_STARTED,
+      });
+
+      const data = await AlgorandService.getAlgorandShowcase();
+
+      dispatch({
+        type: statisticsActions.FETCH_SUCCESS,
+        payload: { data },
+      });
+
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: statisticsActions.FETCH_ERROR,
+      });
+    }
+  },
 };
 
 export default statisticsActions;

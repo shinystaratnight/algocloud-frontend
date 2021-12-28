@@ -1,5 +1,6 @@
 import { createSelector } from 'reselect';
 import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
+import statisticsSelectors from 'src/modules/algorand/statistics/statisticsSelectors';
 
 const selectRaw = (state) => state.algorand.assets;
 
@@ -8,7 +9,7 @@ const selectLoading = createSelector(
   (raw) => Boolean(raw.loading),
 );
 
-const selectAssets = createSelector(
+const selectUnfilteredAssets = createSelector(
   [selectRaw],
   (raw) => raw.list,
 );
@@ -33,15 +34,19 @@ const selectTopPools = createSelector(
   (raw) => raw.topPools,
 );
 
-const selectAllAssets = createSelector(
+const selectAssets = createSelector(
   [
-    selectAssets,
+    selectUnfilteredAssets,
     favoritesSelectors.selectFavoriteList,
+    statisticsSelectors.selectShowcaseId,
   ],
-  (assets, favorites) => {
+  (assets, favorites, showcaseId) => {
     return assets.map(asset => {
-      if (favorites.includes(asset.assetId)) asset.status = 1;
-      else asset.status = 0;
+      if (favorites.includes(asset.assetId)) asset.favorite = 1;
+      else asset.favorite = 0;
+
+      if (asset.assetId === showcaseId) asset.showcase = 1;
+      else asset.showcase = 0;
       return asset;
     })
   }
@@ -55,12 +60,11 @@ const selectAssetDetail = createSelector(
 
 const assetsSelectors = {
   selectLoading,
-  selectAssets,
   selectDailyPrices,
   selectHourlyPrices,
   selectDailyAssetData,
   selectTopPools,
-  selectAllAssets,
+  selectAssets,
   selectAssetDetail,
   selectRaw,
 };

@@ -18,7 +18,7 @@ function AssetsListPage() {
   }, [dispatch]);
 
   const loading = useSelector(selectors.selectLoading);
-  const assets = useSelector(selectors.selectAllAssets);
+  const assets = useSelector(selectors.selectAssets);
 
   return (
     <>
