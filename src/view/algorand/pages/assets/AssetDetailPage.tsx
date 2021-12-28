@@ -10,7 +10,7 @@ import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 import AssetChart from 'src/view/algorand/pages/assets/AssetChart';
 import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
-import { formatNumber, formattedNum } from 'src/modules/algorand/utils';
+import { formatNumber, formatPercent, formattedNum } from 'src/modules/algorand/utils';
 import {
   SectionTitleBar,
   SectionTitle,
@@ -61,7 +61,7 @@ const AssetDetailPage = () => {
           </ContentWrapper>
           <ContentWrapper style={{flex: 1}}>
             <h6>Price Change (24hrs)</h6>
-            <h5 className='text-info'>{formattedNum(detail['lastDayPriceChange'], true)}</h5>
+            <h5 className='text-info'>{formatPercent(detail['lastDayPriceChange'])}</h5>
           </ContentWrapper>
         </div>
         <div className="col-lg-8 col-sm-12">
