@@ -51,7 +51,7 @@ function Header(props) {
       <button
         type="button"
         onClick={doToggleMenu}
-        className="menu-toggle-button"
+        className="btn navbar-toggler-humburger-icon navbar-vertical-toggle"
       >
         <i className="fas fa-bars" />
       </button>
@@ -92,6 +92,7 @@ function Header(props) {
             </div>
           </span>
           <div className="dropdown-menu dropdown-menu-right">
+          <div className="bg-white dark__bg-1000 rounded-2 py-2">
             <button
               onClick={doNavigateToProfile}
               className="dropdown-item"
@@ -145,6 +146,7 @@ function Header(props) {
               {i18n('auth.signout')}
             </button>
           </div>
+         </div>
         </div>
       </div>
     </HeaderWrapper>

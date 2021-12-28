@@ -11,7 +11,7 @@ const BreadcrumbNav = styled.nav`
   }
 
   .breadcrumb-item:not(.active) a {
-    color: rgba(0, 0, 0, 0.45);
+    color: var(--algocloud-primary);
   }
 `;
 

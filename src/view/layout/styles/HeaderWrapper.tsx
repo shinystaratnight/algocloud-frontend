@@ -102,7 +102,7 @@ box-shadow: 0 0 0 0.3rem rgb(216 217 219 / 80%) !important;
     background-color: transparent;
     font-size: 20px;
     transition: color 0.3s;
-    color: rgba(0, 0, 0, 0.85);
+    color: var(--falcon-headings-color);
 
     &:hover {
       color: var(--primary-color);
