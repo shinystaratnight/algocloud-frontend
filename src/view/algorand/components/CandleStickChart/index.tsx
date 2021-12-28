@@ -114,7 +114,7 @@ const CandleStickChart = ({
       // get the title of the chart
       toolTip.innerHTML = base
         ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
-        : ''
+        : `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(0) + '</div>'
 
       // update the title when hovering on the chart
       chart.subscribeCrosshairMove(function (param) {
