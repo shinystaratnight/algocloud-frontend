@@ -7835,7 +7835,7 @@ textarea.form-control-lg {
 @media (min-width: 576px){
     .sticky-top {
       position: fixed !important;
-      padding-left: 224px !important;
+      padding-left: 224px;
     
     }
     }
@@ -7849,7 +7849,6 @@ textarea.form-control-lg {
     inset: 0% 0% auto;
     z-index: 1000;
     height: 60px;
-    padding-left: 200px;
     border-bottom: 1px solid rgb(223, 230, 245);
     display: flex;
 }
@@ -20225,7 +20224,12 @@ code,kbd,pre,samp {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border-radius: 50%
+    border-radius: 50%;
+    border: 1px solid var(--algocloud-300);
+}
+
+i.fas.fa-bars {
+    font-size: 18px;
 }
 
 .navbar-toggler-humburger-icon:focus,.navbar-toggler-humburger-icon:hover {

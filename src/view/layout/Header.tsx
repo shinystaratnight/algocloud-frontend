@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import authActions from 'src/modules/auth/authActions';
@@ -10,10 +10,24 @@ import HeaderWrapper from 'src/view/layout/styles/HeaderWrapper';
 import Avatar from 'src/view/shared/Avatar';
 import config from 'src/config';
 
+
+
 function Header(props) {
   const dispatch = useDispatch();
+  const [toggle, setToggle] = useState(false);
 
   const doToggleMenu = () => {
+    let element = document.getElementById("main") || { style: { margin: "" } }
+    let element2 = document.getElementById("stickyTop") || { style: { margin: "" } }
+    toggle ? setToggle(false) : setToggle(true)
+    if (toggle) {
+      element.style["margin-left"] = ""
+      element2.style["padding-left"] = ""
+    }
+    else {
+      element.style["margin-left"] = "unset"
+      element2.style["padding-left"] = "1rem"
+    }
     dispatch(layoutActions.doToggleMenu());
   };
 
@@ -47,7 +61,7 @@ function Header(props) {
   };
 
   return (
-    <HeaderWrapper className="navbar sticky-top">
+    <HeaderWrapper id="stickyTop" className="navbar sticky-top">
       <button
         type="button"
         onClick={doToggleMenu}

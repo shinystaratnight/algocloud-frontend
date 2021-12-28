@@ -24,16 +24,19 @@ const layoutActions = {
   },
 
   doShowMenu: () => {
+    
     return {
       type: layoutActions.MENU_SHOW,
     };
   },
 
   doHideMenu: () => {
+    
     return {
       type: layoutActions.MENU_HIDE,
     };
   },
 };
+
 
 export default layoutActions;
