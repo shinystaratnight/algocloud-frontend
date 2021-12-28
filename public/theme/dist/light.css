@@ -1,3 +1,11 @@
+@media (min-width: 576px){
+.main {
+    margin-left: 200px;
+    margin-top: 61px;
+
+}
+}
+
 .navbar-vertical .navbar-nav .nav-item .nav-link {
     color: var(--falcon-navbar-vertical-link-color);
 }
@@ -7824,12 +7832,26 @@ textarea.form-control-lg {
     bottom: 0
 }
 
+@media (min-width: 576px){
+    .sticky-top {
+      position: fixed !important;
+      padding-left: 224px !important;
+    
+    }
+    }
+
 .sticky-top {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1015;
-    background: #f0f2f9
+    background: #f0f2f9;
+    inset: 0% 0% auto;
+    z-index: 1000;
+    height: 60px;
+    padding-left: 200px;
+    border-bottom: 1px solid rgb(223, 230, 245);
+    display: flex;
 }
 
 @media (min-width:576px) {

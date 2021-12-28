@@ -32,7 +32,7 @@ const LayoutWrapper = styled.div`
   h4,
   h5,
   h6 {
-    color: var(--falcon-headings-color);
+    color: var(--algocloud-headings-color);
   }
 
   body {

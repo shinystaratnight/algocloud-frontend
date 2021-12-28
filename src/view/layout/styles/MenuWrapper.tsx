@@ -3,14 +3,20 @@ import styled from 'styled-components';
 const MenuWrapper = styled.div`
   .menu-nav {
     inset: 0% auto 0% 0%;
-    z-index: 1000;
-    display: flex;
+    z-index: 10000;
     overflow: auto;
     width: 200px;
     height: 100%;
     flex-direction: column;
     background-color: rgb(40, 52, 71);
   }
+
+  @media (min-width: 576px){
+    .menu-nav {
+      position: fixed;
+    
+    }
+    }
 
   .css-ksc7ic:hover {
     background-color: rgba(52, 73, 104, 0.4);
@@ -53,14 +59,12 @@ a.algocloud-navbar-brand {
 }
 
 
-element.style {
-}
-<style>
+
 .dSLQxa .menu-li a:focus, .dSLQxa .menu-li a:hover {
     -webkit-text-decoration: none;
     text-decoration: none;
 }
-<style>
+
 .dSLQxa .menu-li a, .dSLQxa .menu-li .menu-li-locked {
     display: block;
     width: 100%;
@@ -85,7 +89,7 @@ element.style {
 
 .menu-nav {
   inset: 0% auto 0% 0%;
-  z-index: 1000;
+  z-index: 10000;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -97,8 +101,6 @@ element.style {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: rgb(40,52,71);
-  padding-left: 8px;
-  padding-right: 8px;
 }
 
   .menu-logo {
@@ -128,6 +130,9 @@ element.style {
     line-height: 0;
     transition: background 0.3s, width 0.2s;
     zoom: 1;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-top: 16px;
   }
 
   a.algocloud-navbar-brand {
@@ -136,6 +141,12 @@ element.style {
     font-weight: 500!important;
     font-size: 1.4rem!important;
     padding: 1rem;
+    padding-left: 0px;
+    padding-right: 0px;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: var(--algocloud-border-color);
+    height: 61px;
 }
 
 
