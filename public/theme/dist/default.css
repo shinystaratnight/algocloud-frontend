@@ -5263,7 +5263,7 @@ i.fas.fa-bars {
 .dropdown-item:focus,.dropdown-item:hover {
     color: var(--algocloud-dropdown-link-hover-color);
     text-decoration: none;
-    background-color: var(--algocloud-dropdown-link-hover-bg)
+    background-color: rgba(52,73,104,0.4);
 }
 
 .dropdown-item.active,.dropdown-item:active {
