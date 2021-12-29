@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import actions from 'src/modules/algorand/favorites/favoritesActions';
+import statisticsActions from 'src/modules/algorand/statistics/statisticsActions';
 import selectors from 'src/modules/algorand/algorandSelectors';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
@@ -14,15 +15,26 @@ function AssetsTable(props) {
 
   const dispatch = useDispatch();
   const [assetIdToToggle, setAssetIdToToggle] = useState(null);
-  const { loading, assets } = props;
+  const [assetIdToShowcase, setAssetIdToShowcase] = useState(null);
+
+  const { loading, assets, showcase=true } = props;
   
   const hasPermissionToToggle = useSelector(
     selectors.selectPermissionToToggle
   );
 
+  const hasPermissionToShowcase = useSelector(
+    selectors.selectPermissionToShowcase
+  );
+
   const doToggle = (assetId) => {
     setAssetIdToToggle(null);
     dispatch(actions.doToggle(assetId));
+  };
+
+  const setShowcase = (assetId) => {
+    setAssetIdToShowcase(null);
+    dispatch(statisticsActions.setShowcase(assetId));
   };
   
   return (
@@ -57,9 +69,15 @@ function AssetsTable(props) {
                   label='PRICE CHANGE[24H]'
                 />
                 <TableColumnHeader
-                  name='action'
-                  label='ACTION'
+                  name='favorite'
+                  label='FAVORITE'
                 />
+                { showcase && (
+                  <TableColumnHeader
+                    name='showcase'
+                    label='SHOWCASE'
+                  />
+                )}
               </tr>
             </thead>
             <tbody>
@@ -99,10 +117,27 @@ function AssetsTable(props) {
                           setAssetIdToToggle(asset.assetId)
                         }
                       >
-                        <b>{asset.status === 0 ? 'Favorite' : 'Unfavorite'}</b>
+                        <b>{asset.favorite === 0 ? 'Favorite' : 'Unfavorite'}</b>
                       </button>
                     )}
                   </td>
+                  {showcase && (
+                    <td>
+                      {hasPermissionToShowcase && (asset.showcase === 0) && (
+                        <button
+                          className="btn btn-link"
+                          onClick={() =>
+                            setAssetIdToShowcase(asset.assetId)
+                          }
+                        >
+                          <b>Set As Main</b>
+                        </button>
+                      )}
+                      {hasPermissionToShowcase && (asset.showcase !== 0) && (
+                        <b>Currently Set</b>
+                      )}
+                    </td>
+                  )}
                 </tr>
               ))}
             </tbody>
@@ -115,6 +150,16 @@ function AssetsTable(props) {
           title={i18n('common.areYouSure')}
           onConfirm={() => doToggle(assetIdToToggle)}
           onClose={() => setAssetIdToToggle(null)}
+          okText={i18n('common.yes')}
+          cancelText={i18n('common.no')}
+        />
+      )}
+
+      {(assetIdToShowcase !== null) && (
+        <ConfirmModal
+          title={i18n('common.areYouSure')}
+          onConfirm={() => setShowcase(assetIdToShowcase)}
+          onClose={() => setAssetIdToShowcase(null)}
           okText={i18n('common.yes')}
           cancelText={i18n('common.no')}
         />

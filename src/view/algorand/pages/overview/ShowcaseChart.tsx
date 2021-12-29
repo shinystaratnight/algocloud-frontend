@@ -9,22 +9,17 @@ import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
 import {
   FlexContainer,
   ChartWindowWrapper,
-  OptionButton,
-  OptionButtonWrapper,
-  OptionButtonContainer,
 } from 'src/view/algorand/styled';
 
 
-function OverviewChart() {
+function ShowcaseChart() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
   const [width1, setWidth1] = useState(0);
   const [width2, setWidth2] = useState(0);
 
-  const [volumeWindow, setVolumeWindow] = useState('daily');
-
-  const dailyData = useSelector(selectors.selectDailyData);
-  const weeklyData = useSelector(selectors.selectWeeklyData);
+  const showcaseData = useSelector(selectors.selectShowcase);
+  const showcaseName = useSelector(selectors.selectShowcaseName);
 
   useEffect(() => {
     if (ref1.current) {
@@ -37,58 +32,43 @@ function OverviewChart() {
     }
   }, [ref1, ref2])
 
+
   return (
     <FlexContainer gap="20px">
       <ContentWrapper>
-        {dailyData &&
+        {showcaseData &&
           <ResponsiveContainer aspect={60 / 28} ref={ref1}>
             <TradingViewChart
-              data={dailyData}
+              data={showcaseData}
               base={0}
-              title="Liquidity"
-              field="totalLiquidity"
+              title={`${showcaseName} Liquidity`}
+              field="liquidity"
               width={width1}
               type='area'
+              utc={true}
+              timeField='date'
             />
           </ResponsiveContainer>}
       </ContentWrapper>
-
       <ChartWindowWrapper>
-        {dailyData && weeklyData &&
+        {showcaseData &&
           <ResponsiveContainer aspect={60 / 28}>
             <TradingViewChart
-              data={volumeWindow === 'weekly' ? weeklyData : dailyData}
+              data={showcaseData}
               base={0}
-              title={volumeWindow === 'weekly' ? 'Volume (Week)' : 'Volume (24hr)'}
-              field={volumeWindow === 'weekly' ? 'lastWeekVolume' : 'lastDayVolume'}
+              title={`${showcaseName} Volume (24hr)`}
+              field={'lastDayVolume'}
               width={width2}
               type={CHART_TYPES.BAR}
-              timeField={volumeWindow === 'weekly' ? 'week' : 'createdDate'}
-              useWeekly={volumeWindow === 'weekly'}
+              timeField='date'
+              useWeekly={false}
+              utc={true}
             />
           </ResponsiveContainer>
         }
-        <OptionButtonWrapper right="40px">
-          <OptionButtonContainer>
-            <OptionButton
-              width='50px'
-              active={volumeWindow !== 'weekly'}
-              onClick={() => setVolumeWindow('daily')}
-            >
-              D
-            </OptionButton>
-            <OptionButton
-              width='50px'
-              active={volumeWindow !== 'daily'}
-              onClick={() => setVolumeWindow('weekly')}
-            >
-              W
-            </OptionButton>
-          </OptionButtonContainer>
-        </OptionButtonWrapper>
       </ChartWindowWrapper>
     </FlexContainer>
   )
 }
 
-export default OverviewChart;
+export default ShowcaseChart;

@@ -8,17 +8,21 @@ import actions from 'src/modules/algorand/statistics/statisticsActions';
 import favoritesActions from 'src/modules/algorand/favorites/favoritesActions';
 import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
 import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
-import OverviewChart from './OverviewChart';
-import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
+import ShowcaseChart from 'src/view/algorand/pages/overview/ShowcaseChart';
 import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
 import AssetsTable from 'src/view/algorand/pages/table/AssetsTable';
+import {
+  SectionTitleBar,
+  SectionTitle,
+  AlgoexplorerSection
+} from 'src/view/algorand/styled';
 
 
 function OverviewPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(actions.doFetch());
+    dispatch(actions.doFetchShowcase());
     dispatch(favoritesActions.doFetch());
   }, [dispatch]);
 
@@ -38,7 +42,12 @@ function OverviewPage() {
         ]}
       />
 
-      <OverviewChart />
+      <AlgoexplorerSection>
+        You want to check Market Cap and Algo Prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
+      </AlgoexplorerSection>
+
+      {/* <OverviewChart /> */}
+      <ShowcaseChart />
 
       <ContentWrapper>
         <SectionTitleBar>
@@ -52,8 +61,9 @@ function OverviewPage() {
             </Link>
           </h6>
         </SectionTitleBar>
-        <AssetsTable loading={favLoading} assets={favorites} />
+        <AssetsTable loading={favLoading} assets={favorites} showcase={false} />
       </ContentWrapper>
+
       <ContentWrapper>
         <SectionTitleBar>
           <SectionTitle>Top Assets</SectionTitle>
@@ -68,6 +78,7 @@ function OverviewPage() {
         </SectionTitleBar>
         <AssetsTable loading={loading} assets={assets} />
       </ContentWrapper>
+
       <ContentWrapper>
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
@@ -80,6 +91,7 @@ function OverviewPage() {
         </SectionTitleBar>
         <PoolsTable loading={loading} pools={pools} />
       </ContentWrapper>
+      
       {/* 
       <ContentWrapper>
         <PageTitle>Top Transactions</PageTitle>

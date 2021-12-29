@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Area, XAxis, YAxis, ResponsiveContainer, Tooltip, AreaChart, BarChart, Bar } from 'recharts'
 import { darken } from 'polished'
-import { useMedia, usePrevious } from 'react-use'
+import { useMedia } from 'react-use'
 
-import { TIME_FRAME, POOL_CHART_VIEW, DATA_FREQUENCY } from 'src/modules/algorand/constants'
+import { POOL_CHART_VIEW } from 'src/modules/algorand/constants'
 import { toK, toNiceDate, toNiceDateYear, formattedNum } from 'src/modules/algorand/utils'
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart'
 import selectors from 'src/modules/algorand/pools/poolsSelectors'
@@ -19,16 +19,12 @@ const PoolChart = ({ color }) => {
 
   // settings for the window and candle width
   const [chartFilter, setChartFilter] = useState(POOL_CHART_VIEW.LIQUIDITY)
-  const [frequency, setFrequency] = useState(DATA_FREQUENCY.HOUR)
-  const [timeWindow, setTimeWindow] = useState(TIME_FRAME.WEEK)
-  const prevWindow = usePrevious(timeWindow)
 
   const loading = useSelector(selectors.selectLoading);
   const detail = useSelector(selectors.selectPoolDetail);
 
   const textColor = 'white';
 
-  // let chartData = useTokenChartData(address)
   let chartData: any = useSelector(selectors.selectDailyPoolData);
 
   const rateOneData = useSelector(selectors.selectHourlyOneRates);
@@ -37,8 +33,6 @@ const PoolChart = ({ color }) => {
   const below1080 = useMedia('(max-width: 1080px)')
   const below600 = useMedia('(max-width: 600px)')
 
-  // let utcStartTime = getTimeframe(timeWindow)
-  // const domain = [dataMin => (dataMin > utcStartTime ? dataMin : utcStartTime), 'dataMax']
   const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22
 
   // update the width on a window resize
@@ -56,7 +50,7 @@ const PoolChart = ({ color }) => {
     window.addEventListener('resize', handleResize)
 
     return () => window.removeEventListener('resize', handleResize)
-  }, [isClient, width]) // Empty array ensures that effect is only run on mount and unmount
+  }, [isClient, width]);
 
   return (
     <ChartWindowWrapper>
@@ -98,13 +92,25 @@ const PoolChart = ({ color }) => {
       
       {chartFilter === POOL_CHART_VIEW.RATE_ONE && rateOneData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
-          <CandleStickChart data={rateOneData} width={width} base={null} />
+          <CandleStickChart
+            data={rateOneData}
+            width={width}
+            base={null}
+            paddingTop='0'
+            valueFormatter={(val) => val.toFixed(4)}
+          />
         </ResponsiveContainer>
       )}
 
       {chartFilter === POOL_CHART_VIEW.RATE_TWO && rateTwoData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
-          <CandleStickChart data={rateTwoData} width={width} base={null} />
+          <CandleStickChart
+            data={rateTwoData}
+            width={width}
+            base={null}
+            paddingTop='0'
+            valueFormatter={(val) => val.toFixed(4)}
+          />
         </ResponsiveContainer>
       )}
 
@@ -216,7 +222,7 @@ const PoolChart = ({ color }) => {
               name={'Liquidity'}
               yAxisId={0}
               stroke={darken(0.12, color)}
-              fill="#8be1ea"
+              fill="url(#colorUv)"
             />
           </AreaChart>
         </ResponsiveContainer>

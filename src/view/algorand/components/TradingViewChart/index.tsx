@@ -20,6 +20,7 @@ const TradingViewChart = ({
   field,
   title,
   width,
+  utc = false,
   timeField = 'createdDate',
   useWeekly = false
 }) => {
@@ -33,7 +34,7 @@ const TradingViewChart = ({
   // parese the data and format for tardingview consumption
   const formattedData = data?.map(entry => {
     return {
-      time: entry[timeField],
+      time: utc ? dayjs.unix(entry[timeField]).utc().format('YYYY-MM-DD') : entry[timeField],
       value: parseFloat(entry[field])
     }
   })
@@ -110,23 +111,23 @@ const TradingViewChart = ({
       var series =
         type === CHART_TYPES.BAR
           ? chart.addHistogramSeries({
-              color: '#8be1ea',
-              priceFormat: {
-                type: 'volume'
-              },
-              scaleMargins: {
-                top: topScale,
-                bottom: 0
-              },
-              // lineColor: '#8be1ea',
-              // lineWidth: 3
-            })
+            color: '#8be1ea',
+            priceFormat: {
+              type: 'volume'
+            },
+            scaleMargins: {
+              top: topScale,
+              bottom: 0
+            },
+            // lineColor: '#8be1ea',
+            // lineWidth: 3
+          })
           : chart.addAreaSeries({
-              topColor: '#8be1ea',
-              bottomColor: 'rgba(112, 82, 64, 0)',
-              lineColor: '#8be1ea',
-              lineWidth: 3
-            })
+            topColor: '#8be1ea',
+            bottomColor: 'rgba(112, 82, 64, 0)',
+            lineColor: '#8be1ea',
+            lineWidth: 3
+          })
 
       series.setData(formattedData)
       var toolTip = document.createElement('div')
@@ -149,12 +150,12 @@ const TradingViewChart = ({
         '</div>'
 
       // update the title when hovering on the chart
-      chart.subscribeCrosshairMove(function(param) {
-        
+      chart.subscribeCrosshairMove(function (param) {
+
         if (
           param === undefined ||
           param.time === undefined ||
-          param.point == undefined ||
+          param.point === undefined ||
           param.point.x < 0 ||
           param.point.x > width ||
           param.point.y < 0 ||
@@ -165,12 +166,12 @@ const TradingViewChart = ({
           const ts = param.time as BusinessDay;
           let dateStr = useWeekly
             ? dayjs(ts.year + '-' + ts.month + '-' + ts.day)
-                .startOf('week')
-                .format('MMMM D, YYYY') +
-              '-' +
-              dayjs(ts.year + '-' + ts.month + '-' + ts.day)
-                .endOf('week')
-                .format('MMMM D, YYYY')
+              .startOf('week')
+              .format('MMMM D, YYYY') +
+            '-' +
+            dayjs(ts.year + '-' + ts.month + '-' + ts.day)
+              .endOf('week')
+              .format('MMMM D, YYYY')
             : dayjs(ts.year + '-' + ts.month + '-' + ts.day).format('MMMM D, YYYY')
           var price = param.seriesPrices.get(series)
 

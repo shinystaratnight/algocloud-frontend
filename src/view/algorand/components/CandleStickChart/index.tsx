@@ -5,19 +5,26 @@ import utc from 'dayjs/plugin/utc'
 import { formattedNum } from 'src/modules/algorand/utils'
 import { usePrevious } from 'react-use'
 import { Play } from 'react-feather'
-import { IconWrapper } from 'src/view/algorand/styled'
+import {
+  IconWrapper,
+  GraphWrapper,
+} from 'src/view/algorand/styled'
+
+const HEIGHT = 300;
 
 const CandleStickChart = ({
   data,
   width,
-  height = 300,
   base,
+  height = 300,
+  fixed = false,
+  paddingTop = '58px',
   margin = true,
   valueFormatter = val => formattedNum(val, true)
 }) => {
   // reference for DOM element to create with chart
   dayjs.extend(utc)
-  
+
   const ref = useRef<HTMLDivElement>(null)
 
   const formattedData = data?.map(entry => {
@@ -34,29 +41,13 @@ const CandleStickChart = ({
   const [chartCreated, setChartCreated] = useState<IChartApi | null>(null)
   const dataPrev = usePrevious(data)
 
-  // const [darkMode] = useDarkModeManager()
-  const darkMode = 'white';
-  const textColor = darkMode ? 'white' : 'black'
-  const previousTheme = usePrevious(darkMode)
-
-  // reset the chart if theme switches
-  useEffect(() => {
-    if (chartCreated && previousTheme !== darkMode) {
-      // remove the tooltip element
-      let tooltip = document.getElementById('tooltip-id')
-      let node = document.getElementById('test-id')
-      if (node && tooltip)
-        node.removeChild(tooltip)
-      chartCreated.resize(0, 0)
-      setChartCreated(null)
-    }
-  }, [chartCreated, previousTheme])
+  const textColor = 'white'
 
   useEffect(() => {
     if (data !== dataPrev && chartCreated) {
       // remove the tooltip element
       let tooltip = document.getElementById('tooltip-id')
-      let node = document.getElementById('test-id')
+      let node = document.getElementById('candlechart-id')
       if (node && tooltip)
         node.removeChild(tooltip)
       chartCreated.resize(0, 0)
@@ -71,7 +62,7 @@ const CandleStickChart = ({
 
       const chart = createChart(ref.current, {
         width: width,
-        height: height,
+        height: fixed ? HEIGHT : height,
         layout: {
           backgroundColor: 'transparent',
           textColor: textColor
@@ -123,10 +114,10 @@ const CandleStickChart = ({
       // get the title of the chart
       toolTip.innerHTML = base
         ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
-        : ''
+        : `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(0) + '</div>'
 
       // update the title when hovering on the chart
-      chart.subscribeCrosshairMove(function(param) {
+      chart.subscribeCrosshairMove(function (param) {
         if (
           param === undefined ||
           param.time === undefined ||
@@ -136,9 +127,9 @@ const CandleStickChart = ({
           param.point.y < 0 ||
           param.point.y > height
         ) {
-          toolTip.innerHTML = base
-            ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
-            : ''
+          // toolTip.innerHTML = base
+          //   ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
+          //   : ''
         } else {
           if (param === undefined || param.seriesPrices === undefined) return;
           if (candleSeries === undefined) return;
@@ -148,7 +139,7 @@ const CandleStickChart = ({
           const time = dayjs.unix(ts).format('MM/DD h:mm A')
           toolTip.innerHTML =
             `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` +
-            price +
+            valueFormatter(price) +
             `<span style="font-size: 12px; margin: 4px 6px; color: ${textColor}">` +
             time +
             ' UTC' +
@@ -161,19 +152,19 @@ const CandleStickChart = ({
 
       setChartCreated(chart)
     }
-  }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor])
+  }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor, fixed])
 
   // responsiveness
   useEffect(() => {
     if (width) {
-      chartCreated && chartCreated.resize(width, height)
+      if (!fixed) chartCreated && chartCreated.resize(width, height)
       chartCreated && chartCreated.timeScale().scrollToPosition(0, true)
     }
-  }, [chartCreated, height, width])
+  }, [chartCreated, height, width, fixed])
 
   return (
-    <div className='position-relative'>
-      <div ref={ref} id="test-id" />
+    <GraphWrapper pt={paddingTop}>
+      <div ref={ref} id="candlechart-id" />
       <IconWrapper>
         <Play
           onClick={() => {
@@ -181,7 +172,7 @@ const CandleStickChart = ({
           }}
         />
       </IconWrapper>
-    </div>
+    </GraphWrapper>
   )
 }
 

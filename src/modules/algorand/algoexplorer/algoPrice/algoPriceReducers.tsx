@@ -1,15 +1,8 @@
-import actions from 'src/modules/algorand/statistics/statisticsActions';
+import actions from 'src/modules/algorand/algoexplorer/algoPrice/algoPriceActions';
 
 const initialData = {
   loading: false,
-  dailyData: [],
-  weeklyData: [],
-  topFavorites: [],
-  topPools: [],
-  topAssets: [],
-  showcaseData: [],
-  showcaseId: null,
-  showcaseName: '',
+  algoPriceChartData: [],
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -24,7 +17,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      ...(payload.data),
+      algoPriceChartData: payload.data,
     };
   }
 

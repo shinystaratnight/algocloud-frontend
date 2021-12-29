@@ -34,7 +34,7 @@ const FavoriteListPage = () => {
 
       <ContentWrapper>
         <PageTitle>Favorites</PageTitle>
-        <FavoritesTable loading={loading} assets={favorites} />
+        <FavoritesTable loading={loading} assets={favorites} showcase={false} />
       </ContentWrapper>
     </>
   )

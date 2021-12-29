@@ -252,6 +252,12 @@ const privateRoutes = [
     permissionRequired: permissions.algorandRead,
     exact: true,
   },
+  {
+    path: '/algorand/algoexplorer',
+    loader: () => import('src/view/algorand/pages/algoexplorer/AlgoExplorerPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [
