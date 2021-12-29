@@ -19,6 +19,17 @@
 }
 }
 
+.sticky-top {
+    z-index: 1015;
+    top: 0;
+    background: #34445c;
+    inset: 0% 0% auto;
+    z-index: 1000;
+    height: 60px;
+    border-bottom: 1px solid var(--algocloud-form-check-input-border);
+    display: flex;
+}
+
 
 
 @keyframes progress-bar-stripes {
