@@ -5265,7 +5265,7 @@ i.fas.fa-bars {
 .dropdown-item:focus,.dropdown-item:hover {
     color: var(--algocloud-dropdown-link-hover-color);
     text-decoration: none;
-    background-color: rgba(52,73,104,0.4);
+    background-color: rgba(52,73,104,0.4) !important;
 }
 
 .dropdown-item.active,.dropdown-item:active {
