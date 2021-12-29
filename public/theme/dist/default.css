@@ -22,11 +22,13 @@
 .sticky-top {
     z-index: 1015;
     top: 0;
-    background: #34445c;
+    background: var(--algocloud-body-bg);
+    border-bottom-color: var(--border-var) !important;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
     inset: 0% 0% auto;
     z-index: 1000;
     height: 60px;
-    border-bottom: 1px solid var(--algocloud-form-check-input-border);
     display: flex;
     padding-left: 224px;
 }
@@ -683,7 +685,7 @@
 }
 
 :root .light .table,:root .table,:root.light .table {
-    --algocloud-table-striped-bg: #f9fafd
+    --algocloud-table-striped-bg: #222c3c;
 }
 
 :root {
