@@ -14,7 +14,7 @@ const AvatarWrapper = styled.span`
     display: inline-block;
     text-align: center;
     background: #ccc;
-    color: #fff;
+    color: var(--algocloud-body-color);
     white-space: nowrap;
     position: relative;
     overflow: hidden;

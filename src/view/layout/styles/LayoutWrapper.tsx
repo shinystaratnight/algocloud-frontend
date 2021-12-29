@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const LayoutWrapper = styled.div`
-  color: #fff;
+  color: var(--algocloud-body-color);
   display: flex;
   font-size: 13px;
 
@@ -15,7 +15,7 @@ const LayoutWrapper = styled.div`
 
   h1 {
     font-size: 1.75em;
-    color: #fff;
+    color: var(--algocloud-body-color);
   }
 
   .bg-primary-light {
@@ -32,7 +32,7 @@ const LayoutWrapper = styled.div`
   h4,
   h5,
   h6 {
-    color: rgba(0, 0, 0, 0.85);
+    color: var(--algocloud-headings-color);
   }
 
   body {

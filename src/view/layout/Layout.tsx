@@ -10,11 +10,11 @@ function Layout(props) {
   return (
     <LayoutWrapper>
       <Menu url={match.url} />
-      <div className="main">
+      <div id="main" className="main">
         <Header />
         <div className="content">{props.children}</div>
-      </div>
-    </LayoutWrapper>
+      </div> 
+    </LayoutWrapper> 
   );
 }
 

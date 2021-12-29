@@ -2,7 +2,12 @@ import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
   height: 61px;
-  padding: 0 1rem;
+
+  @media (max-width: 576px) {
+    .sticky-top {
+      padding: 0 1rem;
+    }
+  }
 
   @media (max-width: 576px) {
     .i18n-select {
@@ -15,8 +20,8 @@ const HeaderWrapper = styled.div`
   }
 
   .user-dropdown {
-    padding: 0 24px;
-    padding-right: 0px;
+    padding: 0.45rem;
+    margin-left: 0.5rem;
     cursor: pointer;
     display: inline-block;
     transition: all 0.3s;
@@ -41,11 +46,10 @@ const HeaderWrapper = styled.div`
 
   .dropdown-menu.show {
     display: block;
-    margin-top: -6px;
+    margin-top: 5px;
 }
 
   .user-dropdown-avatar {
-    margin: 18px 8px 18px 0;
     vertical-align: top;
     border-radius: 50%;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out!important;
@@ -102,7 +106,7 @@ box-shadow: 0 0 0 0.3rem rgb(216 217 219 / 80%) !important;
     background-color: transparent;
     font-size: 20px;
     transition: color 0.3s;
-    color: rgba(0, 0, 0, 0.85);
+    color: var(--falcon-headings-color);
 
     &:hover {
       color: var(--primary-color);
