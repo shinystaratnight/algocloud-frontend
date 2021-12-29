@@ -62,11 +62,12 @@ export const OptionButton = styled.div`
   white-space: nowrap;
   padding: 6px;
   border-radius: 6px;
-  border: 1px solid #44c4e2;
+  border: 1px solid ${(props) => props.active ? '#687dfd' : '#44c4e2'};
   cursor: pointer;
   margin-left: 10px;
   width: ${(props) => props.width ? props.width : 'auto'};
-  background-color: #1D294F;
+  background-color: ${(props) => props.active ? '#EDEEF2' : '#1D294F'};
+  color: ${(props) => props.active ? '#000' : '#9da9bb'};
   text-align: center;
 `;
 

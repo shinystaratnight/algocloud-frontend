@@ -67,11 +67,13 @@ const PoolChart = ({ color }) => {
       >
         <OptionButtonContainer>
           <OptionButton
+            active={chartFilter === POOL_CHART_VIEW.LIQUIDITY}
             onClick={() => setChartFilter(POOL_CHART_VIEW.LIQUIDITY)}
           >
             Liquidity
           </OptionButton>
           <OptionButton
+            active={chartFilter === POOL_CHART_VIEW.VOLUME}
             onClick={() => setChartFilter(POOL_CHART_VIEW.VOLUME)}
           >
             Volume
@@ -79,6 +81,7 @@ const PoolChart = ({ color }) => {
 
           {!loading && (
             <OptionButton
+              active={chartFilter === POOL_CHART_VIEW.RATE_ONE}
               onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_ONE)}
             >
               {`${detail['assetOneUnitName']}/${detail['assetTwoUnitName']}`}
@@ -87,6 +90,7 @@ const PoolChart = ({ color }) => {
 
           {!loading && (
             <OptionButton
+              active={chartFilter === POOL_CHART_VIEW.RATE_TWO}
               onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_TWO)}
             >
               {`${detail['assetTwoUnitName']}/${detail['assetOneUnitName']}`}
