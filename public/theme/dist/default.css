@@ -12,11 +12,21 @@
     }
     }
 
+@media (min-width: 576px){
+.sticky-top {
+    position: fixed !important;
+    padding-left: 224px;
+}
+}
+
+
+
 @keyframes progress-bar-stripes {
     0% {
         background-position-x: 1rem
     }
 }
+
 
 @-webkit-keyframes spinner-border {
     to {
