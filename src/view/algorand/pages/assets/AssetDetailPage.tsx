@@ -25,7 +25,7 @@ const AssetDetailPage = () => {
   
   useEffect(() => {
     dispatch(actions.doFetchHistory(assetId));
-  }, [dispatch]);
+  }, [dispatch, assetId]);
   
   const loading = useSelector(selectors.selectLoading);
   const pools = useSelector(selectors.selectTopPools);

@@ -22,7 +22,7 @@ const PoolDetailPage = () => {
   
   useEffect(() => {
     dispatch(actions.doFetchHistory(address));
-  }, [dispatch]);
+  }, [dispatch, address]);
   
   return (
     <>

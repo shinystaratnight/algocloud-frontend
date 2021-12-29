@@ -152,7 +152,7 @@ const CandleStickChart = ({
 
       setChartCreated(chart)
     }
-  }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor])
+  }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor, fixed])
 
   // responsiveness
   useEffect(() => {
@@ -160,7 +160,7 @@ const CandleStickChart = ({
       if (!fixed) chartCreated && chartCreated.resize(width, height)
       chartCreated && chartCreated.timeScale().scrollToPosition(0, true)
     }
-  }, [chartCreated, height, width])
+  }, [chartCreated, height, width, fixed])
 
   return (
     <GraphWrapper pt={paddingTop}>

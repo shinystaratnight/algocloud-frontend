@@ -155,7 +155,7 @@ const TradingViewChart = ({
         if (
           param === undefined ||
           param.time === undefined ||
-          param.point == undefined ||
+          param.point === undefined ||
           param.point.x < 0 ||
           param.point.x > width ||
           param.point.y < 0 ||

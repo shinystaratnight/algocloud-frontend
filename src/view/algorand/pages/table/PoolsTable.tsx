@@ -1,9 +1,6 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import statisticsSelectors from 'src/modules/algorand/statistics/statisticsSelectors';
-import poolsSelectors from 'src/modules/algorand/pools/poolsSelectors';
 import { formatNumber } from 'src/modules/algorand/utils';
 import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';

@@ -19,7 +19,7 @@ export const formatPercent = (_volume) => {
   let volume = _volume;
   if (_volume === null) volume = 0;
   if (typeof _volume === 'string') volume = parseFloat(volume);
-  if (volume == 0) return '-';
+  if (volume === 0) return '-';
   return volume.toFixed(2) + '%';
 };
 
@@ -75,7 +75,7 @@ export const formattedNum = (number, usd = false, acceptNegatives = false) => {
 export const toNiceDateYear = date => dayjs.utc(dayjs.unix(date)).format('MMMM DD, YYYY');
 
 export const toNiceDate = date => {
-  if (date == Infinity || date == -Infinity) return '';
+  if (date === Infinity || date === -Infinity) return '';
   let x = dayjs.utc(dayjs.unix(date)).format('MMM DD')
   return x
 }
