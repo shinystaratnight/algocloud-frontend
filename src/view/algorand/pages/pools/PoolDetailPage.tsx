@@ -63,7 +63,7 @@ const PoolDetailPage = () => {
         </div>
         <div className="col-lg-8 col-sm-12">
         <PoolChart
-          color='#8be1ea'
+          color='#687dfd'
         />
         </div>
       </div>

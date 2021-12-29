@@ -127,7 +127,7 @@ export const FlexColumn = styled.div`
 
 export const AlgoexplorerSection = styled.div`
   margin-top: 10px;
-  color: #8be1ea;
+  color: #687dfd;
   font-size: 12px;
 
   a {

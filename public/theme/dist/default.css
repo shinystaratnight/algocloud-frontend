@@ -150,7 +150,7 @@
     --algocloud-gray-black: #000;
     --algocloud-gray-100: #f9fafd;
     --algocloud-gray-200: #edf2f9;
-    --algocloud-gray-300: #d8e2ef;
+    --algocloud-gray-300: #d8dbef;
     --algocloud-gray-400: #b6c1d2;
     --algocloud-gray-500: #9da9bb;
     --algocloud-gray-600: #748194;
@@ -200,7 +200,7 @@
     --algocloud-colored-link-100-hover-color: #fafbfd;
     --algocloud-200: #edf2f9;
     --algocloud-colored-link-200-hover-color: #f1f5fa;
-    --algocloud-300: #d8e2ef;
+    --algocloud-300: #d8dbef;
     --algocloud-colored-link-300-hover-color: #e0e8f2;
     --algocloud-400: #b6c1d2;
     --algocloud-colored-link-400-hover-color: #c5cddb;
@@ -363,7 +363,7 @@
     --algocloud-headings-color: #344050;
     --algocloud-link-color: #687dfd;
     --algocloud-link-hover-color: #3350fc	;
-    --algocloud-border-color: #d8e2ef;
+    --algocloud-border-color: #d8dbef;
     --algocloud-box-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
     --algocloud-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --algocloud-box-shadow-lg: 0 1rem 4rem rgba(0, 0, 0, 0.175);
@@ -381,8 +381,8 @@
     --algocloud-heading-color: #344050;
     --algocloud-input-bg: #fff;
     --algocloud-input-color: #344050;
-    --algocloud-input-border-color: #d8e2ef;
-    --algocloud-input-focus-border-color: #96bdf2;
+    --algocloud-input-border-color: #d8dbef;
+    --algocloud-input-focus-border-color: #687dfd;
     --algocloud-input-focus-color: var(--algocloud-input-color);
     --algocloud-input-placeholder-color: #b6c1d2;
     --algocloud-input-plaintext-color: #5e6e82;
@@ -409,7 +409,7 @@
     --algocloud-form-select-focus-box-shadow: 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
     --algocloud-form-select-border-color: var(--algocloud-input-border-color);
     --algocloud-form-select-focus-border-color: var(--algocloud-input-focus-border-color);
-    --algocloud-form-range-track-bg: #d8e2ef;
+    --algocloud-form-range-track-bg: #d8dbef;
     --algocloud-form-range-track-box-shadow: var(--algocloud-box-shadow-inset);
     --algocloud-form-range-thumb-bg: #687dfd;
     --algocloud-form-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -431,11 +431,11 @@
     --algocloud-nav-link-color: null;
     --algocloud-nav-link-hover-color: null;
     --algocloud-nav-link-disabled-color: #748194;
-    --algocloud-nav-tabs-border-color: #d8e2ef;
-    --algocloud-nav-tabs-link-hover-border-color: #edf2f9 #edf2f9 #d8e2ef;
+    --algocloud-nav-tabs-border-color: #d8dbef;
+    --algocloud-nav-tabs-link-hover-border-color: #edf2f9 #edf2f9 #d8dbef;
     --algocloud-nav-tabs-link-active-color: #5e6e82;
     --algocloud-nav-tabs-link-active-bg: #edf2f9;
-    --algocloud-nav-tabs-link-active-border-color: #d8e2ef #d8e2ef #edf2f9;
+    --algocloud-nav-tabs-link-active-border-color: #d8dbef #d8dbef #edf2f9;
     --algocloud-bg-navbar-glass: rgba(237, 242, 249, 0.96);
     --algocloud-nav-pills-link-active-color: #fff;
     --algocloud-nav-pills-link-active-bg: #687dfd;
@@ -460,7 +460,7 @@
     --algocloud-navbar-vertical-hr-color: rgba(0, 0, 0, 0.08);
     --algocloud-navbar-vertical-scrollbar-color: rgba(116, 129, 148, 0.3);
     --algocloud-dropdown-bg: #fff;
-    --algocloud-dropdown-color: #d8e2ef;
+    --algocloud-dropdown-color: #d8dbef;
     --algocloud-dropdown-border-color: var(--algocloud-border-color);
     --algocloud-dropdown-box-shadow: var(--algocloud-box-shadow);
     --algocloud-dropdown-link-color: #344050;
@@ -470,12 +470,12 @@
     --algocloud-dropdown-link-active-bg: #687dfd;
     --algocloud-dropdown-link-disabled-color: #748194;
     --algocloud-dropdown-header-color: #748194;
-    --algocloud-dropdown-dark-color: #d8e2ef;
+    --algocloud-dropdown-dark-color: #d8dbef;
     --algocloud-dropdown-dark-bg: #4d5969;
     --algocloud-dropdown-dark-border-color: var(--algocloud-dropdown-border-color);
     --algocloud-dropdown-dark-divider-bg: var(--algocloud-dropdown-border-color);
     --algocloud-dropdown-dark-box-shadow: null;
-    --algocloud-dropdown-dark-link-color: #d8e2ef;
+    --algocloud-dropdown-dark-link-color: #d8dbef;
     --algocloud-dropdown-dark-link-hover-color: #fff;
     --algocloud-dropdown-dark-link-hover-bg: rgba(255, 255, 255, 0.15);
     --algocloud-dropdown-dark-link-active-color: var(--algocloud-dropdown-link-active-color);
@@ -604,7 +604,7 @@
     --algocloud-kanban-item-color: #344050;
     --algocloud-kanban-btn-add-hover-bg: #edf2f9;
     --algocloud-kanban-draggable-source-dragging-bg: #edf2f9;
-    --algocloud-kanban-bg-attachment-bg: #d8e2ef;
+    --algocloud-kanban-bg-attachment-bg: #d8dbef;
     --algocloud-kanban-footer-color: #748194;
     --algocloud-kanban-nav-link-card-details-color: #5e6e82;
     --algocloud-kanban-nav-link-card-details-hover-bg: #edf2f9;
@@ -646,7 +646,7 @@
     --algocloud-hover-bg-black: #000;
     --algocloud-hover-bg-100: #f9fafd;
     --algocloud-hover-bg-200: #edf2f9;
-    --algocloud-hover-bg-300: #d8e2ef;
+    --algocloud-hover-bg-300: #d8dbef;
     --algocloud-hover-bg-400: #b6c1d2;
     --algocloud-hover-bg-500: #9da9bb;
     --algocloud-hover-bg-600: #748194;
@@ -668,7 +668,7 @@
     --algocloud-body: #232e3c;
     --algocloud-body-bg: #1c2432;
     --algocloud-body-color: #9da9bb;
-    --algocloud-headings-color: #d8e2ef;
+    --algocloud-headings-color: #d8dbef;
     --algocloud-card-bg-color: #283447;
     --algocloud-border-color: rgba(255, 255, 255, 0.05);
     --algocloud-box-shadow: 0 7px 14px 0 rgba(3, 12, 51, 0.15), 0 3px 6px 0 rgba(0, 0, 0, 0.2);
@@ -684,7 +684,7 @@
     --algocloud-600: #748194;
     --algocloud-700: #9da9bb;
     --algocloud-800: #b6c1d2;
-    --algocloud-900: #d8e2ef;
+    --algocloud-900: #d8dbef;
     --algocloud-1000: #edf2f9;
     --algocloud-1100: #f9fafd;
     --algocloud-white: #000;
@@ -705,7 +705,7 @@
     --algocloud-soft-light: #4b4b4c;
     --algocloud-soft-dark: #03070c;
     --algocloud-input-bg: #0b1727;
-    --algocloud-input-color: #d8e2ef;
+    --algocloud-input-color: #d8dbef;
     --algocloud-input-border-color: #344050;
     --algocloud-input-focus-border-color: #163e73;
     --algocloud-input-placeholder-color: #344050;
@@ -739,7 +739,7 @@
     --algocloud-dropdown-bg: #232e3c;
     --algocloud-dropdown-color: #344050;
     --algocloud-dropdown-box-shadow: var(--algocloud-box-shadow);
-    --algocloud-dropdown-link-color: #d8e2ef;
+    --algocloud-dropdown-link-color: #d8dbef;
     --algocloud-dropdown-link-hover-color: #eaeff6;
     --algocloud-dropdown-link-hover-bg: rgba(11, 23, 39, 0.4);
     --algocloud-dropdown-link-active-color: #fff;
@@ -956,7 +956,7 @@
     --algocloud-notification-indicator-border-color: #0a1727;
     --algocloud-kanban-bg: rgba(35, 46, 60, 0.25);
     --algocloud-kanban-item-bg: #232e3c;
-    --algocloud-kanban-item-color: #d8e2ef;
+    --algocloud-kanban-item-color: #d8dbef;
     --algocloud-kanban-btn-add-hover-bg: #232e3c;
     --algocloud-kanban-draggable-source-dragging-bg: #0b1727;
     --algocloud-kanban-bg-attachment-bg: #344050;
@@ -3419,8 +3419,8 @@ progress {
     background-color: var(--algocloud-input-bg);
     border-color: var(--algocloud-input-focus-border-color);
     outline: 0;
-    -webkit-box-shadow: var(--algocloud-box-shadow-inset),0 0 0 .25rem rgba(44,123,229,.25);
-    box-shadow: var(--algocloud-box-shadow-inset),0 0 0 .25rem rgba(44,123,229,.25)
+    -webkit-box-shadow: var(--algocloud-box-shadow-inset),0 0 0 .25rem rgba(104,125,253,.25);
+    box-shadow: var(--algocloud-box-shadow-inset),0 0 0 .25rem rgba(104,125,253,.25)
 }
 
 .form-control::-webkit-date-and-time-value {
@@ -3462,7 +3462,7 @@ progress {
     margin: -.3125rem -1rem;
     -webkit-margin-end: 1rem;
     margin-inline-end: 1rem;
-    color: #d8e2ef;
+    color: #d8dbef;
     background-color: #344050;
     pointer-events: none;
     border-color: inherit;
@@ -3493,7 +3493,7 @@ progress {
     margin: -.3125rem -1rem;
     -webkit-margin-end: 1rem;
     margin-inline-end: 1rem;
-    color: #d8e2ef;
+    color: #d8dbef;
     background-color: #344050;
     pointer-events: none;
     border-color: inherit;
@@ -3642,8 +3642,8 @@ textarea.form-control-lg {
 .form-select:focus {
     border-color: var(--algocloud-input-focus-border-color);
     outline: 0;
-    -webkit-box-shadow: var(--algocloud-box-shadow-inset),0 0 0 .25rem rgba(44,123,229,.25);
-    box-shadow: var(--algocloud-box-shadow-inset),0 0 0 .25rem rgba(44,123,229,.25)
+    -webkit-box-shadow: var(--algocloud-box-shadow-inset),0 0 0 .25rem rgba(104,125,253,.25);
+    box-shadow: var(--algocloud-box-shadow-inset),0 0 0 .25rem rgba(104,125,253,.25)
 }
 
 .form-select[multiple],.form-select[size]:not([size="1"]) {
@@ -3721,8 +3721,8 @@ textarea.form-control-lg {
 .form-check-input:focus {
     border-color: var(--algocloud-input-focus-border-color);
     outline: 0;
-    -webkit-box-shadow: 0 0 0 .25rem rgba(44,123,229,.25);
-    box-shadow: 0 0 0 .25rem rgba(44,123,229,.25)
+    -webkit-box-shadow: 0 0 0 .25rem rgba(104,125,253,.25);
+    box-shadow: 0 0 0 .25rem rgba(104,125,253,.25)
 }
 
 .form-check-input:checked {
@@ -3820,12 +3820,12 @@ textarea.form-control-lg {
 }
 
 .form-range:focus::-webkit-slider-thumb {
-    -webkit-box-shadow: 0 0 0 1px #edf2f9,0 0 0 .25rem rgba(44,123,229,.25);
-    box-shadow: 0 0 0 1px #edf2f9,0 0 0 .25rem rgba(44,123,229,.25)
+    -webkit-box-shadow: 0 0 0 1px #edf2f9,0 0 0 .25rem rgba(104,125,253,.25);
+    box-shadow: 0 0 0 1px #edf2f9,0 0 0 .25rem rgba(104,125,253,.25)
 }
 
 .form-range:focus::-moz-range-thumb {
-    box-shadow: 0 0 0 1px #edf2f9,0 0 0 .25rem rgba(44,123,229,.25)
+    box-shadow: 0 0 0 1px #edf2f9,0 0 0 .25rem rgba(104,125,253,.25)
 }
 
 .form-range::-moz-focus-outer {
@@ -3864,7 +3864,7 @@ textarea.form-control-lg {
     height: .5rem;
     color: transparent;
     cursor: pointer;
-    background-color: #d8e2ef;
+    background-color: #d8dbef;
     border-color: transparent;
     border-radius: 1rem;
     -webkit-box-shadow: var(--algocloud-box-shadow-inset);
@@ -3900,7 +3900,7 @@ textarea.form-control-lg {
     height: .5rem;
     color: transparent;
     cursor: pointer;
-    background-color: #d8e2ef;
+    background-color: #d8dbef;
     border-color: transparent;
     border-radius: 1rem;
     box-shadow: var(--algocloud-box-shadow-inset)
@@ -4337,8 +4337,8 @@ textarea.form-control-lg {
 
 .btn-check:focus+.btn,.btn:focus,.tox .tox-dialog__footer .btn-check:focus+.tox-button--secondary,.tox .tox-dialog__footer .btn-check:focus+.tox-button:last-child,.tox .tox-dialog__footer .tox-button--secondary:focus,.tox .tox-dialog__footer .tox-button:focus:last-child,.tox .tox-menu__footer .btn-check:focus+.tox-button--secondary,.tox .tox-menu__footer .btn-check:focus+.tox-button:last-child,.tox .tox-menu__footer .tox-button--secondary:focus,.tox .tox-menu__footer .tox-button:focus:last-child,[data-list] .btn-check:focus+.page,[data-list] .page:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 .25rem rgba(44,123,229,.25);
-    box-shadow: 0 0 0 .25rem rgba(44,123,229,.25)
+    -webkit-box-shadow: 0 0 0 .25rem rgba(104,125,253,.25);
+    box-shadow: 0 0 0 .25rem rgba(104,125,253,.25)
 }
 
 .btn-check:active+.btn,.btn-check:checked+.btn,.btn.active,.btn:active,.tox .tox-dialog__footer .active.tox-button--secondary,.tox .tox-dialog__footer .active.tox-button:last-child,.tox .tox-dialog__footer .btn-check:active+.tox-button--secondary,.tox .tox-dialog__footer .btn-check:active+.tox-button:last-child,.tox .tox-dialog__footer .btn-check:checked+.tox-button--secondary,.tox .tox-dialog__footer .btn-check:checked+.tox-button:last-child,.tox .tox-dialog__footer .tox-button--secondary:active,.tox .tox-dialog__footer .tox-button:active:last-child,.tox .tox-menu__footer .active.tox-button--secondary,.tox .tox-menu__footer .active.tox-button:last-child,.tox .tox-menu__footer .btn-check:active+.tox-button--secondary,.tox .tox-menu__footer .btn-check:active+.tox-button:last-child,.tox .tox-menu__footer .btn-check:checked+.tox-button--secondary,.tox .tox-menu__footer .btn-check:checked+.tox-button:last-child,.tox .tox-menu__footer .tox-button--secondary:active,.tox .tox-menu__footer .tox-button:active:last-child,[data-list] .active.page,[data-list] .btn-check:active+.page,[data-list] .btn-check:checked+.page,[data-list] .page:active {
@@ -4347,8 +4347,8 @@ textarea.form-control-lg {
 }
 
 .btn-check:active+.btn:focus,.btn-check:checked+.btn:focus,.btn.active:focus,.btn:active:focus,.tox .tox-dialog__footer .active.tox-button--secondary:focus,.tox .tox-dialog__footer .active.tox-button:focus:last-child,.tox .tox-dialog__footer .btn-check:active+.tox-button--secondary:focus,.tox .tox-dialog__footer .btn-check:active+.tox-button:focus:last-child,.tox .tox-dialog__footer .btn-check:checked+.tox-button--secondary:focus,.tox .tox-dialog__footer .btn-check:checked+.tox-button:focus:last-child,.tox .tox-dialog__footer .tox-button--secondary:active:focus,.tox .tox-dialog__footer .tox-button:active:focus:last-child,.tox .tox-menu__footer .active.tox-button--secondary:focus,.tox .tox-menu__footer .active.tox-button:focus:last-child,.tox .tox-menu__footer .btn-check:active+.tox-button--secondary:focus,.tox .tox-menu__footer .btn-check:active+.tox-button:focus:last-child,.tox .tox-menu__footer .btn-check:checked+.tox-button--secondary:focus,.tox .tox-menu__footer .btn-check:checked+.tox-button:focus:last-child,.tox .tox-menu__footer .tox-button--secondary:active:focus,.tox .tox-menu__footer .tox-button:active:focus:last-child,[data-list] .active.page:focus,[data-list] .btn-check:active+.page:focus,[data-list] .btn-check:checked+.page:focus,[data-list] .page:active:focus {
-    -webkit-box-shadow: 0 0 0 .25rem rgba(44,123,229,.25),inset 0 3px 5px rgba(0,0,0,.125);
-    box-shadow: 0 0 0 .25rem rgba(44,123,229,.25),inset 0 3px 5px rgba(0,0,0,.125)
+    -webkit-box-shadow: 0 0 0 .25rem rgba(104,125,253,.25),inset 0 3px 5px rgba(0,0,0,.125);
+    box-shadow: 0 0 0 .25rem rgba(104,125,253,.25),inset 0 3px 5px rgba(0,0,0,.125)
 }
 
 .btn.disabled,.btn:disabled,.tox .tox-dialog__footer .disabled.tox-button--secondary,.tox .tox-dialog__footer .disabled.tox-button:last-child,.tox .tox-dialog__footer .tox-button--secondary:disabled,.tox .tox-dialog__footer .tox-button:disabled:last-child,.tox .tox-dialog__footer fieldset:disabled .tox-button--secondary,.tox .tox-dialog__footer fieldset:disabled .tox-button:last-child,.tox .tox-menu__footer .disabled.tox-button--secondary,.tox .tox-menu__footer .disabled.tox-button:last-child,.tox .tox-menu__footer .tox-button--secondary:disabled,.tox .tox-menu__footer .tox-button:disabled:last-child,.tox .tox-menu__footer fieldset:disabled .tox-button--secondary,.tox .tox-menu__footer fieldset:disabled .tox-button:last-child,[data-list] .disabled.page,[data-list] .page:disabled,[data-list] fieldset:disabled .page,fieldset:disabled .btn,fieldset:disabled .tox .tox-dialog__footer .tox-button--secondary,fieldset:disabled .tox .tox-dialog__footer .tox-button:last-child,fieldset:disabled .tox .tox-menu__footer .tox-button--secondary,fieldset:disabled .tox .tox-menu__footer .tox-button:last-child,fieldset:disabled [data-list] .page {
@@ -5295,13 +5295,13 @@ i.fas.fa-bars {
 }
 
 .dropdown-menu-dark {
-    color: #d8e2ef;
+    color: #d8dbef;
     background-color: #4d5969;
     border-color: var(--algocloud-dropdown-border-color)
 }
 
 .dropdown-menu-dark .dropdown-item {
-    color: #d8e2ef
+    color: #d8dbef
 }
 
 .dropdown-menu-dark .dropdown-item:focus,.dropdown-menu-dark .dropdown-item:hover {
@@ -5323,7 +5323,7 @@ i.fas.fa-bars {
 }
 
 .dropdown-menu-dark .dropdown-item-text {
-    color: #d8e2ef
+    color: #d8dbef
 }
 
 .dropdown-menu-dark .dropdown-header {
@@ -5482,7 +5482,7 @@ i.fas.fa-bars {
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #d8e2ef
+    border-bottom: 1px solid #d8dbef
 }
 
 .nav-tabs .nav-link {
@@ -5491,7 +5491,7 @@ i.fas.fa-bars {
 }
 
 .nav-tabs .nav-link:focus,.nav-tabs .nav-link:hover {
-    border-color: #edf2f9 #edf2f9 #d8e2ef;
+    border-color: #edf2f9 #edf2f9 #d8dbef;
     isolation: isolate
 }
 
@@ -5501,7 +5501,7 @@ i.fas.fa-bars {
 
 .nav-tabs .nav-item.show .nav-link,.nav-tabs .nav-link.active {
     color: #5e6e82;
-    border-color: #d8e2ef #d8e2ef #edf2f9
+    border-color: #d8dbef #d8dbef #edf2f9
 }
 
 .nav-tabs .dropdown-menu {
@@ -6485,8 +6485,8 @@ i.fas.fa-bars {
     z-index: 3;
     border-color: var(--algocloud-input-focus-border-color);
     outline: 0;
-    -webkit-box-shadow: 0 0 0 .25rem rgba(44,123,229,.25);
-    box-shadow: 0 0 0 .25rem rgba(44,123,229,.25)
+    -webkit-box-shadow: 0 0 0 .25rem rgba(104,125,253,.25);
+    box-shadow: 0 0 0 .25rem rgba(104,125,253,.25)
 }
 
 .accordion-header {
@@ -6783,8 +6783,8 @@ i.fas.fa-bars {
 
 .btn-close:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 .25rem rgba(44,123,229,.25);
-    box-shadow: 0 0 0 .25rem rgba(44,123,229,.25);
+    -webkit-box-shadow: 0 0 0 .25rem rgba(104,125,253,.25);
+    box-shadow: 0 0 0 .25rem rgba(104,125,253,.25);
     opacity: 1
 }
 
@@ -20862,7 +20862,7 @@ code.language-html:first-child {
 }
 
 code[class*=language-],pre[class*=language-] {
-    color: #d8e2ef;
+    color: #d8dbef;
     font-family: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace
 }
 
@@ -22879,7 +22879,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
     line-height: 1;
     content: "“";
     display: inline-block;
-    color: #d8e2ef;
+    color: #d8dbef;
     font-size: 2.985984rem
 }
 
@@ -23468,7 +23468,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 
 .navbar-vertical .navbar-vertical-divider {
     margin-top: .5625rem;
-    color: #d8e2ef
+    color: #d8dbef
 }
 
 .navbar-vertical .navbar-vertical-label {
@@ -25872,7 +25872,7 @@ html[dir=rtl] .rtl-row-reverse {
 }
 
 a[href].bg-200:focus,a[href].bg-200:hover {
-    background-color: #d8e2ef!important
+    background-color: #d8dbef!important
 }
 
 .hover-primary:focus,.hover-primary:hover {
@@ -26248,8 +26248,8 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .form-check-input-primary:focus {
-    -webkit-box-shadow: 0 0 0 .25rem rgba(44,123,229,.25);
-    box-shadow: 0 0 0 .25rem rgba(44,123,229,.25)
+    -webkit-box-shadow: 0 0 0 .25rem rgba(104,125,253,.25);
+    box-shadow: 0 0 0 .25rem rgba(104,125,253,.25)
 }
 
 .form-check-input-primary:checked {
@@ -27198,7 +27198,7 @@ button.btn-circle {
 
 button.btn-circle:focus,button.btn-circle:hover {
     opacity: 1!important;
-    background-color: #d8e2ef
+    background-color: #d8dbef
 }
 
 .icon-title {
@@ -28221,11 +28221,11 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .dark .dark__bg-300 {
-    background-color: #d8e2ef!important
+    background-color: #d8dbef!important
 }
 
 .dark .dark__text-300 {
-    color: #d8e2ef!important
+    color: #d8dbef!important
 }
 
 .dark .dark__bg-400 {

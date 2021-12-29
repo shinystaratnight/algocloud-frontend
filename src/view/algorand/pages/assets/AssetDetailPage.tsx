@@ -65,7 +65,7 @@ const AssetDetailPage = () => {
           </ContentWrapper>
         </div>
         <div className="col-lg-8 col-sm-12">
-          <AssetChart color='#8be1ea' />
+          <AssetChart color='#687dfd' />
         </div>
       </div>
 
