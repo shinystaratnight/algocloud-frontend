@@ -111,7 +111,7 @@ const TradingViewChart = ({
       var series =
         type === CHART_TYPES.BAR
           ? chart.addHistogramSeries({
-            color: 'var(--algocloud-primary)',
+            color: '#687dfd',
             priceFormat: {
               type: 'volume'
             },
