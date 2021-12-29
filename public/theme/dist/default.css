@@ -12,27 +12,6 @@
     }
     }
 
-@media (min-width: 576px){
-.sticky-top {
-    position: fixed !important;
-    padding-left: 224px;
-}
-}
-
-.sticky-top {
-    z-index: 1015;
-    top: 0;
-    background: var(--algocloud-body-bg);
-    border-bottom-color: var(--border-var) !important;
-    border-bottom-width: 1px;
-    border-bottom-style: solid;
-    inset: 0% 0% auto;
-    z-index: 1000;
-    height: 60px;
-    display: flex;
-    padding-left: 224px;
-}
-
 
 
 @keyframes progress-bar-stripes {
@@ -7859,12 +7838,31 @@ i.fas.fa-bars {
     bottom: 0
 }
 
+@media (min-width: 576px){
+.sticky-top {
+    position: fixed !important;
+    padding-left: 224px;
+}
+}
+
+.sticky-top {
+    z-index: 1015;
+    top: 0;
+    background: var(--algocloud-body-bg);
+    border-bottom-color: var(--border-var) !important;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    inset: 0% 0% auto;
+    z-index: 1000;
+    height: 60px;
+    display: flex;
+}
+
 .sticky-top {
     position: -webkit-sticky;
     position: sticky;
     top: 0;
     z-index: 1015;
-    padding-left: 224px;
 }
 
 @media (min-width:576px) {
@@ -7872,7 +7870,7 @@ i.fas.fa-bars {
         position: -webkit-sticky;
         position: sticky;
         top: 0;
-        z-index: 1015
+        z-index: 1015;
     }
 }
 
