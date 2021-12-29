@@ -12,7 +12,9 @@
     }
     }
 
-
+a.algocloud-navbar-brand {
+    border-color: var(--border-var) !important;
+}
 
 @keyframes progress-bar-stripes {
     0% {
