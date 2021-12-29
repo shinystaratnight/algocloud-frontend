@@ -10,7 +10,6 @@ import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
 import { formattedNum } from 'src/modules/algorand/utils';
 import { FlexContainer } from 'src/view/algorand/styled';
-import { tr } from 'date-fns/locale';
 
 function GlobalChart() {
   const dispatch = useDispatch();

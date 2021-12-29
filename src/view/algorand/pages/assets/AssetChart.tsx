@@ -2,18 +2,16 @@ import React, { useState, useRef, useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Area, XAxis, YAxis, ResponsiveContainer, Tooltip, AreaChart, BarChart, Bar } from 'recharts'
 import { darken } from 'polished'
-import { useMedia, usePrevious } from 'react-use'
+import { useMedia } from 'react-use'
 
-import { TIME_FRAME, ASSET_CHART_VIEW, DATA_FREQUENCY } from 'src/modules/algorand/constants'
-import { toK, toNiceDate, toNiceDateYear, formattedNum } from 'src/modules/algorand/utils'
+import { ASSET_CHART_VIEW } from 'src/modules/algorand/constants'
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart'
 import selectors from 'src/modules/algorand/assets/assetsSelectors'
+import { toK, toNiceDate, toNiceDateYear, formattedNum } from 'src/modules/algorand/utils'
 import {
   ChartWindowWrapper,
-  ChartWrapper,
   OptionButton,
   OptionButtonContainer,
-  OptionButtonWrapper,
   RowBetween
 } from 'src/view/algorand/styled'
 
@@ -21,9 +19,6 @@ const AssetChart = ({ color }) => {
 
   // settings for the window and candle width
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY)
-  const [frequency, setFrequency] = useState(DATA_FREQUENCY.HOUR)
-  const [timeWindow, setTimeWindow] = useState(TIME_FRAME.WEEK)
-  const prevWindow = usePrevious(timeWindow)
 
   const textColor = 'white';
 
@@ -35,14 +30,11 @@ const AssetChart = ({ color }) => {
   const below1080 = useMedia('(max-width: 1080px)')
   const below600 = useMedia('(max-width: 600px)')
 
-  // let utcStartTime = getTimeframe(timeWindow)
-  // const domain = [dataMin => (dataMin > utcStartTime ? dataMin : utcStartTime), 'dataMax']
   const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22
 
   // update the width on a window resize
   const ref = useRef<HTMLElement>()
   const isClient = typeof window === 'object'
-  // const [width, setWidth] = useState(ref?.current?.container?.clientWidth)
   const [width, setWidth] = useState(ref?.current?.clientWidth)
 
   useEffect(() => {

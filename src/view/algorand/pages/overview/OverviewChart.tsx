@@ -37,7 +37,6 @@ function OverviewChart() {
     }
   }, [ref1, ref2])
 
-
   return (
     <FlexContainer gap="20px">
       <ContentWrapper>
@@ -53,6 +52,7 @@ function OverviewChart() {
             />
           </ResponsiveContainer>}
       </ContentWrapper>
+
       <ChartWindowWrapper>
         {dailyData && weeklyData &&
           <ResponsiveContainer aspect={60 / 28}>

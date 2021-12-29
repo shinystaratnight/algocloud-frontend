@@ -78,6 +78,7 @@ function OverviewPage() {
         </SectionTitleBar>
         <AssetsTable loading={loading} assets={assets} />
       </ContentWrapper>
+
       <ContentWrapper>
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
@@ -90,6 +91,7 @@ function OverviewPage() {
         </SectionTitleBar>
         <PoolsTable loading={loading} pools={pools} />
       </ContentWrapper>
+      
       {/* 
       <ContentWrapper>
         <PageTitle>Top Transactions</PageTitle>
