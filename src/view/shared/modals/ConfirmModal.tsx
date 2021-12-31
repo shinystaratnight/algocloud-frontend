@@ -25,10 +25,10 @@ const ConfirmModal = (props) => {
             <h5 className="modal-title">{props.title}</h5>
             <button
               type="button"
-              className="close"
+              className="btn-close btn"
               data-dismiss="modal"
             >
-              <span>&times;</span>
+              <span></span>
             </button>
           </div>
           <div className="modal-footer">
