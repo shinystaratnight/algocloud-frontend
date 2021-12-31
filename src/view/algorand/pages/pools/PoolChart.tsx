@@ -23,7 +23,7 @@ const PoolChart = ({ color }) => {
   const loading = useSelector(selectors.selectLoading);
   const detail = useSelector(selectors.selectPoolDetail);
 
-  const textColor = 'white';
+  const textColor = 'var(--algocloud-body-bg-2)';
 
   let chartData: any = useSelector(selectors.selectDailyPoolData);
 
@@ -125,7 +125,7 @@ const PoolChart = ({ color }) => {
               tickMargin={14}
               tickFormatter={tick => toNiceDate(tick)}
               dataKey="date"
-              tick={{ fill: textColor }}
+              tick={{ fill:'var(--algocloud-body-bg-2)' }}
               type={'number'}
               domain={['dataMin', 'dataMax']}
             />
@@ -133,13 +133,13 @@ const PoolChart = ({ color }) => {
               type="number"
               axisLine={false}
               tickMargin={16}
+              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
               tickFormatter={tick => '$' + toK(tick)}
               tickLine={false}
               orientation="right"
               interval="preserveEnd"
               minTickGap={80}
               yAxisId={0}
-              tick={{ fill: textColor }}
             />
             <Tooltip
               cursor={{ fill: color, opacity: 0.1 }}
@@ -184,7 +184,7 @@ const PoolChart = ({ color }) => {
               minTickGap={120}
               tickFormatter={tick => toNiceDate(tick)}
               dataKey="date"
-              tick={{ fill: '#1ff' }}
+              tick={{ fill:'var(--algocloud-body-bg-2)' }}
               type={'number'}
               domain={['dataMin', 'dataMax']}
             />
@@ -197,7 +197,7 @@ const PoolChart = ({ color }) => {
               interval="preserveEnd"
               minTickGap={80}
               yAxisId={0}
-              tick={{ fill: textColor }}
+              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
             />
             <Tooltip
               cursor={true}

@@ -41,7 +41,7 @@ const CandleStickChart = ({
   const [chartCreated, setChartCreated] = useState<IChartApi | null>(null)
   const dataPrev = usePrevious(data)
 
-  const textColor = 'white'
+  const textColor = 'var(--algocloud-body-bg-2)'
 
   useEffect(() => {
     if (data !== dataPrev && chartCreated) {
@@ -65,7 +65,7 @@ const CandleStickChart = ({
         height: fixed ? HEIGHT : height,
         layout: {
           backgroundColor: 'transparent',
-          textColor: textColor
+          textColor: 'var(--algocloud-body-bg-2)'
         },
         grid: {
           vertLines: {

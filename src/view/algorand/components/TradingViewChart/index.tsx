@@ -42,7 +42,7 @@ const TradingViewChart = ({
   // adjust the scale based on the type of chart
   const topScale = type === CHART_TYPES.AREA ? 0.32 : 0.2
 
-  const textColor = 'white'
+  const textColor = 'var(--algocloud-body-bg-2)'
 
   // reset the chart if them switches
   useEffect(() => {

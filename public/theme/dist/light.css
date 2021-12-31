@@ -169,7 +169,7 @@
     --algocloud-colored-link-primary-hover-color: #435cf2;
     --algocloud-secondary-rgb: 116, 129, 148;
     --algocloud-success-rgb: 0, 210, 122;
-    --algocloud-info-rgb: 39, 188, 253;
+    --algocloud-info-rgb: rgb(139 155 253);
     --algocloud-warning-rgb: 245, 128, 62;
     --algocloud-danger-rgb: 230, 55, 87;
     --algocloud-light-rgb: 249, 250, 253;
@@ -177,6 +177,7 @@
     --algocloud-white-rgb: 255, 255, 255;
     --algocloud-black-rgb: 0, 0, 0;
     --algocloud-body-color-rgb: 94, 110, 130;
+    --algocloud-body-bg-2: 237, 242, 249;
     --algocloud-body-bg-rgb: 237, 242, 249;
     --algocloud-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --algocloud-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -232,7 +233,7 @@
     --algocloud-colored-link-secondary-hover-color: #5d6776;
     --algocloud-success: #00d27a;
     --algocloud-colored-link-success-hover-color: #00a862;
-    --algocloud-info: #27bcfd;
+    --algocloud-info: #8b9bfd;
     --algocloud-colored-link-info-hover-color: #1f96ca;
     --algocloud-warning: #f5803e;
     --algocloud-colored-link-warning-hover-color: #c46632;
@@ -698,7 +699,7 @@
     --algocloud-primary: #687dfd;
     --algocloud-secondary: #748194;
     --algocloud-success: #00d27a;
-    --algocloud-info: #27bcfd;
+    --algocloud-info: #8b9bfd;
     --algocloud-warning: #f5803e;
     --algocloud-danger: #e63757;
     --algocloud-light: rgba(35, 46, 60, 0.25);
@@ -1168,7 +1169,7 @@ blockquote,figure {
 }
 
 b {
-    font-weight: 800
+    font-weight: 700
 }
 
 .small,small {
@@ -9882,7 +9883,7 @@ textarea.form-control-lg {
 }
 
 .fw-bolder {
-    font-weight: 800!important
+    font-weight: 700!important
 }
 
 .fw-black {
@@ -20286,7 +20287,7 @@ i.fas.fa-bars {
 }
 
 .navbar-brand {
-    font-weight: 800
+    font-weight: 700
 }
 
 .navbar-glass-shadow {
@@ -22210,7 +22211,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 .theme-slider .swiper-button-next:after,.theme-slider .swiper-button-prev:after {
     font-family: swiper-icons;
     font-size: 1rem;
-    font-weight: 800;
+    font-weight: 700;
     text-transform: none!important;
     letter-spacing: 0;
     font-variant: initial;

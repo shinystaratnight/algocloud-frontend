@@ -30,10 +30,10 @@ export const SectionTitleBar = styled.div`
 `;
 
 export const SectionTitle = styled.h5`
-  color: white;
+  color: var(--algocloud-body-bg-2);
   margin-bottom: 10px;
   a {
-    color: white;
+    color: var(--algocloud-body-bg-2);
   }
 `;
 
@@ -62,12 +62,22 @@ export const OptionButton = styled.div`
   white-space: nowrap;
   padding: 6px;
   border-radius: 6px;
-  border: 1px solid #44c4e2;
+  border: 1px solid #687dfd;
   cursor: pointer;
+  color: #fff;
   margin-left: 10px;
   width: ${(props) => props.width ? props.width : 'auto'};
-  background-color: #1D294F;
+  background-color: var(--algocloud-btn-link-color);
   text-align: center;
+  :hover {
+    cursor: pointer;
+    background-color: #687dfd
+  };
+  :active {
+    background-color: #3350fc
+  }
+
+  
 `;
 
 export const AssetIndicator = styled.div`
@@ -131,7 +141,7 @@ export const AlgoexplorerSection = styled.div`
   font-size: 12px;
 
   a {
-    color: white;
+    color: var(--algocloud-body-bg-2);
     margin-left: 6px;
   }
 `;

@@ -57,7 +57,7 @@ function OverviewPage() {
               className="btn btn-link"
               to={`/algorand/favorites`}
             >
-              Sell All
+              See All
             </Link>
           </h6>
         </SectionTitleBar>
@@ -72,7 +72,7 @@ function OverviewPage() {
               className="btn btn-link"
               to={`/algorand/assets`}
             >
-              Sell All
+              See All
             </Link>
           </h6>
         </SectionTitleBar>
@@ -86,7 +86,7 @@ function OverviewPage() {
             className="btn btn-link"
             to={`/algorand/pools`}
           >
-            Sell All
+            See All
           </Link>
         </SectionTitleBar>
         <PoolsTable loading={loading} pools={pools} />
