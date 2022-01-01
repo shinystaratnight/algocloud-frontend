@@ -43,13 +43,12 @@ function OverviewPage() {
       />
 
       <AlgoexplorerSection>
-        You want to check Market Cap and Algo Prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
+        Do you want to check Algo prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
       </AlgoexplorerSection>
 
       {/* <OverviewChart /> */}
       <ShowcaseChart />
-
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Favorites</SectionTitle>
           <h6 className='m-0'>
@@ -64,7 +63,7 @@ function OverviewPage() {
         <AssetsTable loading={favLoading} assets={favorites} showcase={false} />
       </ContentWrapper>
 
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Assets</SectionTitle>
           <h6 className='m-0'>
@@ -79,7 +78,7 @@ function OverviewPage() {
         <AssetsTable loading={loading} assets={assets} />
       </ContentWrapper>
 
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
           <Link

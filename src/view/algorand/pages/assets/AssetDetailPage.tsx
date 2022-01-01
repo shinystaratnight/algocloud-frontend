@@ -42,7 +42,7 @@ const AssetDetailPage = () => {
         ]}
       />
 
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <PageTitle>
           {loading && 'Assets'}
           {!loading && `${detail['name']} (${detail['unitName']}) ${formatNumber(detail['price'])}`}
@@ -51,15 +51,15 @@ const AssetDetailPage = () => {
       
       <div className='row'>
         <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
-          <ContentWrapper style={{flex: 1}}>
+          <ContentWrapper style={{flex: 1}} className="card-hover">
             <h6>Liqudity</h6>
             <h5 className='text-info'>{formattedNum(detail['liquidity'], true)}</h5>
           </ContentWrapper>
-          <ContentWrapper style={{flex: 1}}>
+          <ContentWrapper style={{flex: 1}} className="card-hover">
             <h6>Volume (24hrs)</h6>
             <h5 className='text-info'>{formattedNum(detail['lastDayVolume'], true)}</h5>
           </ContentWrapper>
-          <ContentWrapper style={{flex: 1}}>
+          <ContentWrapper style={{flex: 1}} className="card-hover">
             <h6>Price Change (24hrs)</h6>
             <h5 className='text-info'>{formatPercent(detail['lastDayPriceChange'])}</h5>
           </ContentWrapper>
@@ -69,7 +69,7 @@ const AssetDetailPage = () => {
         </div>
       </div>
 
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
         </SectionTitleBar>

@@ -32,7 +32,7 @@ const FavoriteListPage = () => {
         ]}
       />
 
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <PageTitle>Favorites</PageTitle>
         <FavoritesTable loading={loading} assets={favorites} showcase={false} />
       </ContentWrapper>

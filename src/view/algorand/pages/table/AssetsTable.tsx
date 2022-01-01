@@ -41,7 +41,7 @@ function AssetsTable(props) {
     <div className="assets-table">
       <TableWrapper>
         <div className="table-responsive">
-          <table className="table table-striped mt-2">
+          <table className="table-hover table table-striped mt-2">
             <thead className="thead">
               <tr>
                 <TableColumnHeader
@@ -66,7 +66,7 @@ function AssetsTable(props) {
                 />
                 <TableColumnHeader
                   name='change'
-                  label='PRICE CHANGE[24H]'
+                  label='24H %'
                 />
                 <TableColumnHeader
                   name='favorite'

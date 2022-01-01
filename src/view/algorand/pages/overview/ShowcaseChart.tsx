@@ -34,10 +34,11 @@ function ShowcaseChart() {
 
 
   return (
-    <FlexContainer gap="20px">
-      <ContentWrapper>
+    <div >
+    <FlexContainer gap="20px" className="showcase-row">
+      <ContentWrapper className=" card bg-box rounded ">
         {showcaseData &&
-          <ResponsiveContainer aspect={60 / 28} ref={ref1}>
+          <ResponsiveContainer  aspect={60 / 28} ref={ref1}>
             <TradingViewChart
               data={showcaseData}
               base={0}
@@ -50,10 +51,10 @@ function ShowcaseChart() {
             />
           </ResponsiveContainer>}
       </ContentWrapper>
-      <ChartWindowWrapper>
+      <ChartWindowWrapper className=" card bg-box rounded ">
         {showcaseData &&
-          <ResponsiveContainer aspect={60 / 28}>
-            <TradingViewChart
+          <ResponsiveContainer aspect={60 / 28} >
+            <TradingViewChart 
               data={showcaseData}
               base={0}
               title={`${showcaseName} Volume (24hr)`}
@@ -68,6 +69,7 @@ function ShowcaseChart() {
         }
       </ChartWindowWrapper>
     </FlexContainer>
+    </div>
   )
 }
 

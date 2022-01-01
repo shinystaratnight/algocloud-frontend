@@ -18,7 +18,7 @@ const CandleStickChart = ({
   base,
   height = 300,
   fixed = false,
-  paddingTop = '58px',
+  paddingTop = '',
   margin = true,
   valueFormatter = val => formattedNum(val, true)
 }) => {

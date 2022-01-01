@@ -50,7 +50,7 @@ const AssetChart = ({ color }) => {
   }, [isClient, width]) // Empty array ensures that effect is only run on mount and unmount
 
   return (
-    <ChartWindowWrapper>
+    <ChartWindowWrapper className="card-hover">
       <RowBetween
         mb={
           chartFilter === ASSET_CHART_VIEW.LIQUIDITY ||

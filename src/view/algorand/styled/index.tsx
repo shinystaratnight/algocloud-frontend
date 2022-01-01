@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const ChartWindowWrapper = styled.div`
   margin-top: 16px;
-  padding: 24px;
+  padding: 1.25rem;
   background: #1e2d58; 
   background: var(--algocloud-card-bg-color); 
   box-shadow: 0 0 50px 14px rgb(18 28 53 / 3%); 
@@ -112,7 +112,7 @@ export const IconWrapper = styled.div`
 
 export const GraphWrapper = styled.div`
   position: relative;
-  padding-top: ${(props) => props.pt ? props.pt : '58px'};
+  padding-top: ${(props) => props.pt ? props.pt : ''};
 `;
 
 const Row = styled.div`
@@ -137,11 +137,11 @@ export const FlexColumn = styled.div`
 
 export const AlgoexplorerSection = styled.div`
   margin-top: 10px;
-  color: #687dfd;
+  color: #748194;
   font-size: 12px;
 
   a {
-    color: var(--algocloud-body-bg-2);
+    color: #687dfd;
     margin-left: 6px;
   }
 `;

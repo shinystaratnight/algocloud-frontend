@@ -20,6 +20,75 @@ a.algocloud-navbar-brand {
     border-color: var(--border-var) !important;
 }
 
+@media (max-width: 576px){
+    .algocloud-navbar-brand-1 {
+        display: none !important;
+}
+}
+
+
+.bvsaRt-1 {
+
+    width: 100%;
+    column-gap: 6px !important;
+    -webkit-box-align: start !important;
+    align-items: start !important;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+@media (min-width: 768px){
+    .showcase-row {
+    -webkit-box-flex: 0 !important;
+    -ms-flex: 0 0 auto !important;
+    flex: 0 0 auto !important;
+    width: 50%;
+    flex-wrap: nowrap !important;
+    margin: 0px !important
+    ;
+}
+}
+
+.showcase-row{
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+
+.card.bg-box.rounded:hover, .card-hover:hover {
+    border-style: solid;
+    border-color: var(--algocloud-primary) !important;
+}
+
+
+
+.algocloud-navbar-brand-1:hover{
+    text-decoration: none;
+}
+
+
+
+.bvsaRt {
+
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 6px !important;
+    -webkit-box-align: start !important;
+    align-items: start !important;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.algocloud-navbar-brand-1 {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    position: absolute;
+    left: 70px;
+}
+
+
 @keyframes progress-bar-stripes {
     0% {
         background-position-x: 1rem
@@ -66,6 +135,8 @@ a.algocloud-navbar-brand {
         transform: none
     }
 }
+
+
 
 .var-color
 {color: #687dfd !important}
@@ -3162,7 +3233,7 @@ progress {
     --algocloud-table-active-color: #5e6e82;
     --algocloud-table-active-bg: rgba(0, 0, 0, 0.1);
     --algocloud-table-hover-color: #5e6e82;
-    --algocloud-table-hover-bg: rgba(0, 0, 0, 0.075);
+    --algocloud-table-hover-bg: rgba(52,73,104,0.4);
     width: 100%;
     margin-bottom: 1rem;
     color: #5e6e82;
