@@ -42,7 +42,9 @@ const TradingViewChart = ({
   // adjust the scale based on the type of chart
   const topScale = type === CHART_TYPES.AREA ? 0.32 : 0.2
 
-  const textColor = 'var(--algocloud-body-bg-2)'
+  let rootb = document.getElementById("root")!
+  let styleb = window.getComputedStyle(rootb)
+  let textColor = styleb.getPropertyValue('--algocloud-body-bg-2')
 
   // reset the chart if them switches
   useEffect(() => {
@@ -213,7 +215,7 @@ const TradingViewChart = ({
 
   return (
     <GraphWrapper>
-      <div ref={ref} id={'tradchart-id' + type} />
+      <div ref={ref} className="var-color" id={'tradchart-id' + type} />
       <IconWrapper>
         <Play
           onClick={() => {

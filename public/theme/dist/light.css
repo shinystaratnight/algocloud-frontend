@@ -138,6 +138,10 @@
     }
 }
 
+.var-color{
+    color: #687dfd !important
+}
+
 :root {
     --algocloud-blue: #687dfd;
     --algocloud-indigo: #727cf5;
@@ -177,7 +181,7 @@
     --algocloud-white-rgb: 255, 255, 255;
     --algocloud-black-rgb: 0, 0, 0;
     --algocloud-body-color-rgb: 94, 110, 130;
-    --algocloud-body-bg-2: 237, 242, 249;
+    --algocloud-body-bg-2: #667588;
     --algocloud-body-bg-rgb: 237, 242, 249;
     --algocloud-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --algocloud-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;

@@ -67,10 +67,17 @@ a.algocloud-navbar-brand {
     }
 }
 
+.var-color
+{color: #687dfd !important}
+
 @-webkit-keyframes placeholder-glow {
     50% {
         opacity: .2
     }
+}
+
+--red{
+    color:black !important;
 }
 
 @keyframes placeholder-glow {
