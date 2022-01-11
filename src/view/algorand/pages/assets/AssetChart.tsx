@@ -63,16 +63,19 @@ const AssetChart = ({ color }) => {
       >
         <OptionButtonContainer>
           <OptionButton
+            active={chartFilter === ASSET_CHART_VIEW.LIQUIDITY}
             onClick={() => setChartFilter(ASSET_CHART_VIEW.LIQUIDITY)}
           >
             Liquidity
           </OptionButton>
           <OptionButton
+            active={chartFilter === ASSET_CHART_VIEW.VOLUME}
             onClick={() => setChartFilter(ASSET_CHART_VIEW.VOLUME)}
           >
             Volume
           </OptionButton>
           <OptionButton
+            active={chartFilter === ASSET_CHART_VIEW.PRICE}
             onClick={() => setChartFilter(ASSET_CHART_VIEW.PRICE)}
           >
             Price
