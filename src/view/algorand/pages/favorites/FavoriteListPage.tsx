@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
-import FavoritesTable from 'src/view/algorand/pages/table/AssetsTable';
+import FavoritesTable from 'src/view/algorand/pages/overview/table/AssetsTable';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
@@ -34,7 +34,7 @@ const FavoriteListPage = () => {
 
       <ContentWrapper>
         <PageTitle>Favorites</PageTitle>
-        <FavoritesTable loading={loading} assets={favorites} showcase={false} />
+        <FavoritesTable assets={favorites} />
       </ContentWrapper>
     </>
   )

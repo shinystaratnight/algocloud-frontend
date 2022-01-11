@@ -42,6 +42,21 @@ const selectShowcase = createSelector(
   (raw) => raw.asset.showcase,
 );
 
+const selectShowcaseId = createSelector(
+  [selectRaw],
+  (raw) => raw.asset.showcase.assetId,
+);
+
+const selectAssetPagination = createSelector(
+  [selectRaw],
+  (raw) => raw.asset.pagination,
+);
+
+const selectPoolPagination = createSelector(
+  [selectRaw],
+  (raw) => raw.pool.pagination,
+);
+
 const overviewSelectors = {
   selectLoading,
   selectDailyData,
@@ -51,6 +66,9 @@ const overviewSelectors = {
   selectFavorites,
   selectFavoriteIds,
   selectShowcase,
+  selectShowcaseId,
+  selectAssetPagination,
+  selectPoolPagination,
   selectRaw,
 };
 

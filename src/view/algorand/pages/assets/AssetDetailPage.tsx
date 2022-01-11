@@ -9,7 +9,7 @@ import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 import AssetChart from 'src/view/algorand/pages/assets/AssetChart';
-import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
+import PoolsTable from 'src/view/algorand/pages/overview/table/PoolsTable';
 import { formatNumber, formatPercent, formattedNum } from 'src/modules/algorand/utils';
 import {
   SectionTitleBar,

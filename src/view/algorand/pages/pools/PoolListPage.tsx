@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/pools/poolsActions';
 import selectors from 'src/modules/algorand/pools/poolsSelectors';
-import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
+import PoolsTable from 'src/view/algorand/pages/overview/table/PoolsTable';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';

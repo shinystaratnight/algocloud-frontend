@@ -2,25 +2,26 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
+import selectors from 'src/modules/algorand/overview/overviewSelectors';
+import actions from 'src/modules/algorand/overview/overviewActions';
+
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
-import selectors from 'src/modules/algorand/overview/overviewSelectors';
-import ShowcaseChart from 'src/view/algorand/pages/overview/ShowcaseChart';
-import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
-import AssetsTable from 'src/view/algorand/pages/table/AssetsTable';
+import OverviewChart from 'src/view/algorand/pages/overview/chart/OverviewChart';
+import PoolsTable from 'src/view/algorand/pages/overview/table/PoolsTable';
+import AssetsTable from 'src/view/algorand/pages/overview/table/AssetsTable';
 import {
   SectionTitleBar,
   SectionTitle,
   AlgoexplorerSection
 } from 'src/view/algorand/styled';
 
-import overviewActions from 'src/modules/algorand/overview/overviewActions';
 
 function OverviewPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(overviewActions.doFetch());
+    dispatch(actions.doFetch());
   }, [dispatch]);
 
   const loading = useSelector(selectors.selectLoading);
@@ -43,9 +44,9 @@ function OverviewPage() {
         You want to check Market Cap and Algo Prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
       </AlgoexplorerSection>
 
-      <ShowcaseChart />
+      <OverviewChart />
 
-      <ContentWrapper>
+      {/* <ContentWrapper>
         <SectionTitleBar>
           <SectionTitle>Top Favorites</SectionTitle>
           <h6 className='m-0'>
@@ -63,7 +64,7 @@ function OverviewPage() {
           favorites={favIds}
           showcaseId={showcase.assetId}
         />
-      </ContentWrapper>
+      </ContentWrapper> */}
 
       <ContentWrapper>
         <SectionTitleBar>
@@ -78,14 +79,11 @@ function OverviewPage() {
           </h6>
         </SectionTitleBar>
         <AssetsTable
-          loading={loading}
           assets={assets}
-          favorites={favIds}
-          showcaseId={showcase.assetId}
         />
       </ContentWrapper>
 
-      <ContentWrapper>
+      {/* <ContentWrapper>
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
           <Link
@@ -99,7 +97,7 @@ function OverviewPage() {
           loading={loading}
           pools={pools}
         />
-      </ContentWrapper>
+      </ContentWrapper> */}
     </>
   )
 }

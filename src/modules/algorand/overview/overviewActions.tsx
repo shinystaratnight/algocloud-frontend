@@ -16,9 +16,9 @@ const overviewActions = {
         type: overviewActions.FETCH_STARTED,
       });
 
-      const data = await AlgorandService.getAlgorandOverview();
-
-      console.log(data)
+      const assetFilter = {};
+      const poolFilter = {};
+      const data = await AlgorandService.getAlgorandOverview(assetFilter, poolFilter);
 
       dispatch({
         type: overviewActions.FETCH_SUCCESS,
