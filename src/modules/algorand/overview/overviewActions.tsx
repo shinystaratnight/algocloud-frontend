@@ -1,5 +1,6 @@
 import Errors from 'src/modules/shared/error/errors';
 import AlgorandService from 'src/modules/algorand/algorandService';
+import selectors from 'src/modules/algorand/overview/overviewSelectors';
 
 const prefix = 'ALGORAND_OVERVIEW';
 
@@ -10,20 +11,16 @@ const overviewActions = {
   FETCH_ERROR: `${prefix}_FETCH_ERROR`,
 
 
-  doFetch: () => async (dispatch) => {
+  doFetch: () => async (dispatch, getState) => {
     try {
       dispatch({
         type: overviewActions.FETCH_STARTED,
       });
 
-      const favoriteFilter = {};
-      const assetFilter = {};
-      const poolFilter = {};
-      
       const data = await AlgorandService.getAlgorandOverview(
-        favoriteFilter,
-        assetFilter,
-        poolFilter,
+        selectors.selectFavoriteFilter(getState()),
+        selectors.selectAssetFilter(getState()),
+        selectors.selectPoolFilter(getState()),
       );
 
       dispatch({

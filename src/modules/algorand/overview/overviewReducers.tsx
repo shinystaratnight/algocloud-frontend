@@ -52,16 +52,19 @@ export default (state = initialData, { type, payload }) => {
 
     const favorite = {
       ...state.favorite,
+      count: payload.favoriteCount,
       rows: payload.favorites
     };
 
     const asset = {
       ...state.asset,
+      count: payload.assetCount,
       rows: payload.assets,
     };
 
     const pool = {
       ...state.pool,
+      count: payload.poolCount,
       rows: payload.pools,
     };
 
