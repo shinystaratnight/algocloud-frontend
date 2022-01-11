@@ -39,7 +39,7 @@ function GlobalChart() {
 
   function valueFormatter(val) {
     return (
-      `<div style="font-size: 16px; margin: 4px 0px; color: white;">ALGO / USD </div>` +
+      `<div style="font-size: 16px; margin: 4px 0px; color: var(--algocloud-body-bg-2);">ALGO / USD </div>` +
       formattedNum(val)
     )
   }

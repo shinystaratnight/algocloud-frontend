@@ -10,10 +10,10 @@ function PoolsTable(props) {
   const { loading, pools } = props;
 
   return (
-    <div className="top-assets-table">
-      <TableWrapper>
-        <div className="table-responsive">
-          <table className="table table-striped mt-2">
+    <div className=" top-assets-table">
+      <TableWrapper >
+        <div className="table-responsive ">
+          <table className="table-hover table table-striped mt-2">
             <thead className="thead">
               <tr>
                 <TableColumnHeader

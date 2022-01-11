@@ -18,7 +18,7 @@ const CandleStickChart = ({
   base,
   height = 300,
   fixed = false,
-  paddingTop = '58px',
+  paddingTop = '',
   margin = true,
   valueFormatter = val => formattedNum(val, true)
 }) => {
@@ -41,7 +41,9 @@ const CandleStickChart = ({
   const [chartCreated, setChartCreated] = useState<IChartApi | null>(null)
   const dataPrev = usePrevious(data)
 
-  const textColor = 'white'
+  let rootb = document.getElementById("root")!
+  let styleb = window.getComputedStyle(rootb)
+  let textColor = styleb.getPropertyValue('--algocloud-body-bg-2')
 
   useEffect(() => {
     if (data !== dataPrev && chartCreated) {
@@ -83,7 +85,8 @@ const CandleStickChart = ({
           visible: true
         },
         timeScale: {
-          borderColor: 'rgba(197, 203, 206, 0.8)'
+          borderColor: 'rgba(197, 203, 206, 0.8)',
+          visible: true
         },
         localization: {
           priceFormatter: val => formattedNum(val)
@@ -140,7 +143,7 @@ const CandleStickChart = ({
           toolTip.innerHTML =
             `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` +
             valueFormatter(price) +
-            `<span style="font-size: 12px; margin: 4px 6px; color: ${textColor}">` +
+            `<span style="font-size: 12px; margin: 4px 6px; color: ${textColor}>` +
             time +
             ' UTC' +
             '</span>' +

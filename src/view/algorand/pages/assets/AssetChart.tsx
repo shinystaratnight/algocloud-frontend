@@ -20,7 +20,7 @@ const AssetChart = ({ color }) => {
   // settings for the window and candle width
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY)
 
-  const textColor = 'white';
+  const textColor = 'var(--algocloud-body-bg-2)';
 
   let chartData: any = useSelector(selectors.selectDailyAssetData);
 
@@ -50,7 +50,7 @@ const AssetChart = ({ color }) => {
   }, [isClient, width]) // Empty array ensures that effect is only run on mount and unmount
 
   return (
-    <ChartWindowWrapper>
+    <ChartWindowWrapper className="card-hover">
       <RowBetween
         mb={
           chartFilter === ASSET_CHART_VIEW.LIQUIDITY ||
@@ -124,7 +124,7 @@ const AssetChart = ({ color }) => {
               tickMargin={14}
               tickFormatter={tick => toNiceDate(tick)}
               dataKey="date"
-              tick={{ fill: textColor }}
+              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
               type={'number'}
               domain={['dataMin', 'dataMax']}
             />
@@ -138,7 +138,7 @@ const AssetChart = ({ color }) => {
               interval="preserveEnd"
               minTickGap={80}
               yAxisId={0}
-              tick={{ fill: textColor }}
+              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
             />
             <Tooltip
               cursor={{ fill: color, opacity: 0.1 }}
@@ -183,7 +183,7 @@ const AssetChart = ({ color }) => {
               minTickGap={120}
               tickFormatter={tick => toNiceDate(tick)}
               dataKey="date"
-              tick={{ fill: '#1ff' }}
+              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
               type={'number'}
               domain={['dataMin', 'dataMax']}
             />
@@ -196,7 +196,7 @@ const AssetChart = ({ color }) => {
               interval="preserveEnd"
               minTickGap={80}
               yAxisId={0}
-              tick={{ fill: textColor }}
+              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
             />
             <Tooltip
               cursor={true}
