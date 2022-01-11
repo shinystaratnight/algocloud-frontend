@@ -2,15 +2,15 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
+import selectors from 'src/modules/algorand/overview/overviewSelectors';
+import actions from 'src/modules/algorand/overview/overviewActions';
+
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
-import actions from 'src/modules/algorand/statistics/statisticsActions';
-import favoritesActions from 'src/modules/algorand/favorites/favoritesActions';
-import selectors from 'src/modules/algorand/statistics/statisticsSelectors';
-import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
-import ShowcaseChart from 'src/view/algorand/pages/overview/ShowcaseChart';
-import PoolsTable from 'src/view/algorand/pages/table/PoolsTable';
-import AssetsTable from 'src/view/algorand/pages/table/AssetsTable';
+import OverviewChart from 'src/view/algorand/pages/overview/chart/OverviewChart';
+import PoolsTable from 'src/view/algorand/pages/overview/table/PoolsTable';
+import AssetsTable from 'src/view/algorand/pages/overview/table/AssetsTable';
+import FavoritesTable from 'src/view/algorand/pages/overview/table/FavoritesTable';
 import {
   SectionTitleBar,
   SectionTitle,
@@ -22,16 +22,15 @@ function OverviewPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(actions.doFetchShowcase());
-    dispatch(favoritesActions.doFetch());
+    dispatch(actions.doFetch());
   }, [dispatch]);
 
   const loading = useSelector(selectors.selectLoading);
-  const pools = useSelector(selectors.selectTopPools);
-  const assets = useSelector(selectors.selectTopAssets);
-
-  const favLoading = useSelector(favoritesSelectors.selectLoading);
-  const favorites = useSelector(favoritesSelectors.selectTopFavorites);
+  const assets = useSelector(selectors.selectAssets);
+  const pools = useSelector(selectors.selectPools);
+  const favorites = useSelector(selectors.selectFavorites);
+  const favIds = useSelector(selectors.selectFavoriteIds);
+  const showcase = useSelector(selectors.selectShowcase);
 
   return (
     <>
@@ -46,8 +45,8 @@ function OverviewPage() {
         Do you want to check Algo prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
       </AlgoexplorerSection>
 
-      {/* <OverviewChart /> */}
-      <ShowcaseChart />
+      <OverviewChart />
+
       <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Favorites</SectionTitle>
@@ -60,7 +59,9 @@ function OverviewPage() {
             </Link>
           </h6>
         </SectionTitleBar>
-        <AssetsTable loading={favLoading} assets={favorites} showcase={false} />
+        <FavoritesTable
+          assets={favorites}
+        />
       </ContentWrapper>
 
       <ContentWrapper className="card-hover">
@@ -75,7 +76,9 @@ function OverviewPage() {
             </Link>
           </h6>
         </SectionTitleBar>
-        <AssetsTable loading={loading} assets={assets} />
+        <AssetsTable
+          assets={assets}
+        />
       </ContentWrapper>
 
       <ContentWrapper className="card-hover">
@@ -88,14 +91,10 @@ function OverviewPage() {
             See All
           </Link>
         </SectionTitleBar>
-        <PoolsTable loading={loading} pools={pools} />
+        <PoolsTable
+          pools={pools}
+        />
       </ContentWrapper>
-      
-      {/* 
-      <ContentWrapper>
-        <PageTitle>Top Transactions</PageTitle>
-        <TransactionsTable />
-      </ContentWrapper> */}
     </>
   )
 }
