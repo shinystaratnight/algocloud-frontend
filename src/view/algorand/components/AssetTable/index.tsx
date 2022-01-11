@@ -122,6 +122,7 @@ function AssetTable(props) {
                 {showcasePermission && (
                   <button
                     className="btn btn-link"
+                    disabled={asset.assetId === showcaseId}
                     onClick={() =>
                       setShowcaseId(asset.assetId)
                     }
