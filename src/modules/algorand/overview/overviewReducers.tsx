@@ -12,7 +12,7 @@ const initialData = {
     count: 0,
     pagination: {
       current: 0,
-      pageSize: 5,
+      pageSize: 10,
     },
     sorter: {},
   },

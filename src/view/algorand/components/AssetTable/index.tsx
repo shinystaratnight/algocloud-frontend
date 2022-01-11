@@ -98,7 +98,7 @@ function AssetTable(props) {
             <tr key={asset.id}>
               <td>
                 <Link to={`/algorand/assets/${asset.assetId}`}>
-                  <h6>{asset.name}</h6> ({asset.assetId})
+                  <h6>{asset.name}</h6>
                 </Link>
               </td>
               <td><b>{asset.unitName}</b></td>
