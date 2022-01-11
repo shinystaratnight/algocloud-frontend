@@ -43,6 +43,62 @@ const overviewActions = {
     }
   },
 
+  doFavorite: (assetId) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: overviewActions.FETCH_STARTED,
+      });
+
+      await AlgorandService.putAlgorandFavorite(assetId);
+
+      const data = await AlgorandService.getAlgorandOverview(
+        selectors.selectFavoriteFilter(getState()),
+        selectors.selectAssetFilter(getState()),
+        selectors.selectPoolFilter(getState()),
+      );
+
+      dispatch({
+        type: overviewActions.FETCH_SUCCESS,
+        payload: data,
+      });
+
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: overviewActions.FETCH_ERROR,
+      });
+    }
+  },
+
+  doShowcase: (assetId) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: overviewActions.FETCH_STARTED,
+      });
+
+      await AlgorandService.putAlgorandShowcase(assetId);
+
+      const data = await AlgorandService.getAlgorandOverview(
+        selectors.selectFavoriteFilter(getState()),
+        selectors.selectAssetFilter(getState()),
+        selectors.selectPoolFilter(getState()),
+      );
+
+      dispatch({
+        type: overviewActions.FETCH_SUCCESS,
+        payload: data,
+      });
+
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: overviewActions.FETCH_ERROR,
+      });
+    }
+  },
+
   doChangeFavoriteSort: (sorter) => async (dispatch) => {
     dispatch({
       type: overviewActions.FAVORITE_SORTER_CHANGED,

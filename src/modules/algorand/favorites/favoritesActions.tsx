@@ -37,7 +37,7 @@ const assetsActions = {
         type: assetsActions.FETCH_STARTED,
       });
 
-      const data = await AlgorandService.toggleAlgorandFavorite(assetId);
+      const data = await AlgorandService.putAlgorandFavorite(assetId);
       
       dispatch({
         type: assetsActions.FETCH_SUCCESS,

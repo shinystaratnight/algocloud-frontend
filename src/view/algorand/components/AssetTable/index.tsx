@@ -16,8 +16,8 @@ function AssetTable(props) {
     hasRows,
     sorter,
     doChangeSort,
-    toggleFavorite,
-    setShowcase,
+    setToogleId,
+    setShowcaseId,
   } = props;
 
   return (
@@ -111,7 +111,7 @@ function AssetTable(props) {
                   <button
                     className="btn btn-link"
                     onClick={() =>
-                      toggleFavorite(asset.assetId)
+                      setToogleId(asset.assetId)
                     }
                   >
                     <b>{favoriteIds.includes(asset.assetId) ? 'Unfavorite' : 'Favorite'}</b>
@@ -123,7 +123,7 @@ function AssetTable(props) {
                   <button
                     className="btn btn-link"
                     onClick={() =>
-                      setShowcase(asset.assetId)
+                      setShowcaseId(asset.assetId)
                     }
                   >
                     <b>{asset.assetId === showcaseId ? 'Currently Set' : 'Set As Main'}</b>

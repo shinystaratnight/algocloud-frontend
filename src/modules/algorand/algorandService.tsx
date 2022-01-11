@@ -30,6 +30,26 @@ export default class AlgorandService {
     return response.data;
   }
 
+  static async putAlgorandFavorite(assetId) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.put(
+      `/tenant/${tenantId}/algorand/favorite/${assetId}`,
+    );
+
+    return response.data;
+  }
+
+  static async putAlgorandShowcase(assetId) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.put(
+      `/tenant/${tenantId}/algorand/showcase/${assetId}`,
+    );
+
+    return response.data;
+  }
+
   static async getAlgorandStatistics() {
     const tenantId = AuthCurrentTenant.get();
 
@@ -105,16 +125,6 @@ export default class AlgorandService {
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/pool/${address}`,
-    );
-
-    return response.data;
-  }
-
-  static async toggleAlgorandFavorite(assetId) {
-    const tenantId = AuthCurrentTenant.get();
-
-    const response = await authAxios.put(
-      `/tenant/${tenantId}/algorand/favorite/${assetId}/toggle`,
     );
 
     return response.data;

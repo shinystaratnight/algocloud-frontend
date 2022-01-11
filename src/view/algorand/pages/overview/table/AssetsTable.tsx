@@ -12,6 +12,7 @@ import AssetTable from 'src/view/algorand/components/AssetTable';
 function AssetsTable({ assets }) {
 
   const dispatch = useDispatch();
+
   const [assetIdToToggle, setAssetIdToToggle] = useState(null);
   const [assetIdToShowcase, setAssetIdToShowcase] = useState(null);
 
@@ -49,12 +50,20 @@ function AssetsTable({ assets }) {
   
   const toggleFavorite = (assetId) => {
     setAssetIdToToggle(null);
-    // dispatch(actions.doToggle(assetId));
+    dispatch(actions.doFavorite(assetId));
   };
 
   const setShowcase = (assetId) => {
     setAssetIdToShowcase(null);
-    // dispatch(statisticsActions.setShowcase(assetId));
+    dispatch(actions.doShowcase(assetId));
+  };
+
+  const setToogleId = (assetId) => {
+    setAssetIdToToggle(assetId);
+  };
+
+  const setShowcaseId = (assetId) => {
+    setAssetIdToShowcase(assetId);
   };
 
   const doChangeSort = (field) => {
@@ -87,8 +96,8 @@ function AssetsTable({ assets }) {
           sorter={sorter}
           togglePermission={hasPermissionToToggle}
           showcasePermission={hasPermissionToShowcase}
-          toggleFavorite={toggleFavorite}
-          setShowcase={setShowcase}
+          setToogleId={setToogleId}
+          setShowcaseId={setShowcaseId}
           doChangeSort={doChangeSort}
         />
 
