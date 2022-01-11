@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/algorand/favorites/favoritesActions';
-import algorandSelectors from 'src/modules/algorand/algorandSelectors';
+import actions from 'src/modules/algorand/overview/overviewActions';
 import selectors from 'src/modules/algorand/overview/overviewSelectors';
+import algorandSelectors from 'src/modules/algorand/algorandSelectors';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
@@ -49,7 +49,7 @@ function AssetsTable({ assets }) {
   
   const toggleFavorite = (assetId) => {
     setAssetIdToToggle(null);
-    dispatch(actions.doToggle(assetId));
+    // dispatch(actions.doToggle(assetId));
   };
 
   const setShowcase = (assetId) => {
@@ -57,9 +57,23 @@ function AssetsTable({ assets }) {
     // dispatch(statisticsActions.setShowcase(assetId));
   };
 
-  const doChangeSort = () => {};
+  const doChangeSort = (field) => {
+    const order =
+      sorter.field === field && sorter.order === 'ascend'
+        ? 'descend'
+        : 'ascend';
 
-  const doAssetPagination = (pagination) => {};
+    dispatch(
+      actions.doChangeAssetSort({
+        field,
+        order,
+      }),
+    );
+  };
+
+  const doAssetPagination = (pagination) => {
+    dispatch(actions.doChangeAssetPagination(pagination));
+  };
   
   return (
     <div className="assets-table">

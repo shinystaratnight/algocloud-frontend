@@ -136,7 +136,7 @@ const selectFavoriteFilter = createSelector(
     }
 
     const limit = raw.favorite.pagination.pageSize;
-    const current = raw.favorite.pagination.currrent;
+    const current = raw.favorite.pagination.current;
     const offset = (current > 0) ? (current - 1) * limit : 0;
 
     return {
@@ -161,7 +161,7 @@ const selectAssetFilter = createSelector(
     }
 
     const limit = raw.asset.pagination.pageSize;
-    const current = raw.asset.pagination.currrent;
+    const current = raw.asset.pagination.current;
     const offset = (current > 0) ? (current - 1) * limit : 0;
 
     return {
@@ -186,7 +186,7 @@ const selectPoolFilter = createSelector(
     }
 
     const limit = raw.pool.pagination.pageSize;
-    const current = raw.pool.pagination.currrent;
+    const current = raw.pool.pagination.current;
     const offset = (current > 0) ? (current - 1) * limit : 0;
 
     return {

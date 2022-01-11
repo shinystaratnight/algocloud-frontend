@@ -36,7 +36,7 @@ function AssetTable(props) {
               onSort={doChangeSort}
               hasRows={hasRows}
               sorter={sorter}
-              name='symbol'
+              name='unitName'
               label='SYMBOL'
             />
             <TableColumnHeader
@@ -50,7 +50,7 @@ function AssetTable(props) {
               onSort={doChangeSort}
               hasRows={hasRows}
               sorter={sorter}
-              name='volumn24h'
+              name='lastDayVolume'
               label='VOLUME[24H]'
             />
             <TableColumnHeader
@@ -64,7 +64,7 @@ function AssetTable(props) {
               onSort={doChangeSort}
               hasRows={hasRows}
               sorter={sorter}
-              name='change'
+              name='lastDayPriceChange'
               label='24H %'
             />
             <TableColumnHeader

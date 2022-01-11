@@ -44,6 +44,78 @@ export default (state = initialData, { type, payload }) => {
     };
   }
 
+  if (type === actions.FAVORITE_SORTER_CHANGED) {
+    const favorite = {
+      ...state.favorite,
+      sorter: payload,
+    };
+
+    return {
+      ...state,
+      favorite,
+    };
+  }
+
+  if (type === actions.FAVORITE_PAGINATION_CHANGED) {
+    const favorite = {
+      ...state.favorite,
+      pagination: payload,
+    };
+
+    return {
+      ...state,
+      favorite,
+    };
+  }
+
+  if (type === actions.ASSET_SORTER_CHANGED) {
+    const asset = {
+      ...state.asset,
+      sorter: payload,
+    };
+
+    return {
+      ...state,
+      asset,
+    };
+  }
+
+  if (type === actions.ASSET_PAGINATION_CHANGED) {
+    const asset = {
+      ...state.asset,
+      pagination: payload,
+    };
+
+    return {
+      ...state,
+      asset,
+    };
+  }
+
+  if (type === actions.POOL_SORTER_CHANGED) {
+    const pool = {
+      ...state.pool,
+      sorter: payload,
+    };
+
+    return {
+      ...state,
+      pool,
+    };
+  }
+
+  if (type === actions.POOL_PAGINATION_CHANGED) {
+    const pool = {
+      ...state.pool,
+      pagination: payload,
+    };
+
+    return {
+      ...state,
+      pool,
+    };
+  }
+
   if (type === actions.FETCH_SUCCESS) {
     const stats = {
       daily: payload.dailyData,

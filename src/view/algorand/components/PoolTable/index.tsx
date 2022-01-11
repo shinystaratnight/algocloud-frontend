@@ -8,7 +8,10 @@ import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 function PoolTable(props) {
   const {
     loading,
-    pools
+    pools,
+    hasRows,
+    sorter,
+    doChangeSort,
   } = props;
   
   return (
@@ -17,23 +20,38 @@ function PoolTable(props) {
         <thead className="thead">
           <tr>
             <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='name'
               label='NAME'
             />
             <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='liquidity'
               label='LIQUIDITY'
             />
             <TableColumnHeader
-              name='volume24h'
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
+              name='lastDayVolume'
               label='VOLUME[24H]'
             />
             <TableColumnHeader
-              name='volume7d'
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
+              name='lastWeekVolume'
               label='VOLUME[7D]'
             />
             <TableColumnHeader
-              name='fees'
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
+              name='lastDayFees'
               label='FEES[24H]'
             />
           </tr>
