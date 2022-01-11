@@ -34,8 +34,8 @@ function ShowcaseChart() {
   }, [ref1, ref2])
 
   return (
-    <FlexContainer gap="20px">
-      <ContentWrapper>
+    <FlexContainer gap="20px" className="showcase-row">
+      <ContentWrapper className=" card bg-box rounded">
         <ResponsiveContainer aspect={60 / 28} ref={ref1}>
           <TradingViewChart
             data={dailyData}
@@ -50,7 +50,7 @@ function ShowcaseChart() {
         </ResponsiveContainer>
       </ContentWrapper>
 
-      <ChartWindowWrapper>
+      <ChartWindowWrapper className=" card bg-box rounded">
         <ResponsiveContainer aspect={60 / 28}>
           <TradingViewChart
             data={dailyData}
