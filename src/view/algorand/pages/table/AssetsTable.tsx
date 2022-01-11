@@ -5,7 +5,8 @@ import { i18n } from 'src/i18n';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import actions from 'src/modules/algorand/favorites/favoritesActions';
 import statisticsActions from 'src/modules/algorand/statistics/statisticsActions';
-import selectors from 'src/modules/algorand/algorandSelectors';
+import algorandSelectors from 'src/modules/algorand/algorandSelectors';
+import overviewSelectors from 'src/modules/algorand/overview/overviewSelectors';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Spinner from 'src/view/shared/Spinner';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
@@ -17,14 +18,19 @@ function AssetsTable(props) {
   const [assetIdToToggle, setAssetIdToToggle] = useState(null);
   const [assetIdToShowcase, setAssetIdToShowcase] = useState(null);
 
-  const { loading, assets, showcase=true } = props;
+  const {
+    loading,
+    assets,
+    favorites,
+    showcaseId,
+  } = props;
   
   const hasPermissionToToggle = useSelector(
-    selectors.selectPermissionToToggle
+    algorandSelectors.selectPermissionToToggle
   );
 
   const hasPermissionToShowcase = useSelector(
-    selectors.selectPermissionToShowcase
+    algorandSelectors.selectPermissionToShowcase
   );
 
   const doToggle = (assetId) => {
@@ -72,12 +78,10 @@ function AssetsTable(props) {
                   name='favorite'
                   label='FAVORITE'
                 />
-                { showcase && (
-                  <TableColumnHeader
-                    name='showcase'
-                    label='SHOWCASE'
-                  />
-                )}
+                <TableColumnHeader
+                  name='showcase'
+                  label='SHOWCASE'
+                />
               </tr>
             </thead>
             <tbody>
@@ -117,27 +121,22 @@ function AssetsTable(props) {
                           setAssetIdToToggle(asset.assetId)
                         }
                       >
-                        <b>{asset.favorite === 0 ? 'Favorite' : 'Unfavorite'}</b>
+                        <b>{favorites.includes(asset.assetId) ? 'Unfavorite' : 'Favorite'}</b>
                       </button>
                     )}
                   </td>
-                  {showcase && (
-                    <td>
-                      {hasPermissionToShowcase && (asset.showcase === 0) && (
-                        <button
-                          className="btn btn-link"
-                          onClick={() =>
-                            setAssetIdToShowcase(asset.assetId)
-                          }
-                        >
-                          <b>Set As Main</b>
-                        </button>
-                      )}
-                      {hasPermissionToShowcase && (asset.showcase !== 0) && (
-                        <b>Currently Set</b>
-                      )}
-                    </td>
-                  )}
+                  <td>
+                    {hasPermissionToShowcase && (
+                      <button
+                        className="btn btn-link"
+                        onClick={() =>
+                          setAssetIdToShowcase(asset.assetId)
+                        }
+                      >
+                        <b>{asset.assetId === showcaseId ? 'Currently Set' : 'Set As Main'}</b>
+                      </button>
+                    )}
+                  </td>
                 </tr>
               ))}
             </tbody>

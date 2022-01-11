@@ -7,6 +7,16 @@ import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
 dayjs.extend(utc);
 
 export default class AlgorandService {
+  static async getAlgorandOverview() {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.get(
+      `/tenant/${tenantId}/algorand/overview`,
+    );
+
+    return response.data;
+  }
+
   static async getAlgorandStatistics() {
     const tenantId = AuthCurrentTenant.get();
 
