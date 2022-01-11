@@ -77,6 +77,51 @@ const selectPoolPagination = createSelector(
   },
 );
 
+const selectFavoriteCount = createSelector(
+  [selectRaw],
+  (raw) => raw.favorite.count,
+);
+
+const selectFavoritePagination = createSelector(
+  [selectRaw, selectFavoriteCount],
+  (raw, count) => {
+    return {
+      ...raw.favorite.pagination,
+      total: count,
+    };
+  },
+);
+
+const selectHasAssetRows = createSelector(
+  [selectAssetCount],
+  (count) => count > 0,
+);
+
+const selectHasPoolRows = createSelector(
+  [selectPoolCount],
+  (count) => count > 0,
+);
+
+const selectHasFavoriteRows = createSelector(
+  [selectFavoriteCount],
+  (count) => count > 0,
+);
+
+const selectAssertSorter = createSelector(
+  [selectRaw],
+  (raw) => raw.asset.sorter,
+);
+
+const selectPoolSorter = createSelector(
+  [selectRaw],
+  (raw) => raw.pool.sorter,
+);
+
+const selectFavoriteSorter = createSelector(
+  [selectRaw],
+  (raw) => raw.favorite.sorter,
+);
+
 const overviewSelectors = {
   selectLoading,
   selectDailyData,
@@ -89,6 +134,13 @@ const overviewSelectors = {
   selectShowcaseId,
   selectAssetPagination,
   selectPoolPagination,
+  selectFavoritePagination,
+  selectHasAssetRows,
+  selectHasPoolRows,
+  selectHasFavoriteRows,
+  selectAssertSorter,
+  selectPoolSorter,
+  selectFavoriteSorter,
   selectRaw,
 };
 

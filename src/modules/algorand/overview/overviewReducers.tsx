@@ -1,7 +1,5 @@
 import actions from 'src/modules/algorand/overview/overviewActions';
 
-const INITIAL_PAGE_SIZE = 5;
-
 const initialData = {
   loading: false,
   showcase: {},
@@ -14,7 +12,7 @@ const initialData = {
     count: 0,
     pagination: {
       current: 0,
-      pageSize: INITIAL_PAGE_SIZE,
+      pageSize: 5,
     },
     sorter: {},
   },
@@ -23,7 +21,7 @@ const initialData = {
     count: 0,
     pagination: {
       current: 0,
-      pageSize: INITIAL_PAGE_SIZE,
+      pageSize: 10,
     },
     sorter: {},
   },
@@ -32,7 +30,7 @@ const initialData = {
     count: 0,
     pagination: {
       current: 0,
-      pageSize: INITIAL_PAGE_SIZE,
+      pageSize: 10,
     },
     sorter: {},
   },

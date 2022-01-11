@@ -16,9 +16,15 @@ const overviewActions = {
         type: overviewActions.FETCH_STARTED,
       });
 
+      const favoriteFilter = {};
       const assetFilter = {};
       const poolFilter = {};
-      const data = await AlgorandService.getAlgorandOverview(assetFilter, poolFilter);
+      
+      const data = await AlgorandService.getAlgorandOverview(
+        favoriteFilter,
+        assetFilter,
+        poolFilter,
+      );
 
       dispatch({
         type: overviewActions.FETCH_SUCCESS,

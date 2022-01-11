@@ -7,8 +7,13 @@ import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
 dayjs.extend(utc);
 
 export default class AlgorandService {
-  static async getAlgorandOverview(assetFilter, poolFilter) {
+  static async getAlgorandOverview(
+    favoriteFilter,
+    assetFilter,
+    poolFilter
+  ) {
     const params = {
+      favoriteFilter,
       assetFilter,
       poolFilter,
     };

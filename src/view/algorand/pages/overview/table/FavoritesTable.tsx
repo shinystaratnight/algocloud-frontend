@@ -9,7 +9,7 @@ import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
 import AssetTable from 'src/view/algorand/components/AssetTable';
 
-function AssetsTable({ assets }) {
+function FavoritesTable({ assets }) {
 
   const dispatch = useDispatch();
   const [assetIdToToggle, setAssetIdToToggle] = useState(null);
@@ -27,8 +27,8 @@ function AssetsTable({ assets }) {
     selectors.selectLoading,
   );
 
-  const assetPagination = useSelector(
-    selectors.selectAssetPagination,
+  const favoritePagination = useSelector(
+    selectors.selectFavoritePagination,
   );
 
   const favoriteIds = useSelector(
@@ -40,11 +40,11 @@ function AssetsTable({ assets }) {
   );
 
   const hasRows = useSelector(
-    selectors.selectHasAssetRows,
+    selectors.selectHasFavoriteRows,
   );
 
   const sorter = useSelector(
-    selectors.selectAssertSorter,
+    selectors.selectFavoriteSorter,
   );
   
   const toggleFavorite = (assetId) => {
@@ -59,7 +59,7 @@ function AssetsTable({ assets }) {
 
   const doChangeSort = () => {};
 
-  const doAssetPagination = (pagination) => {};
+  const doFavoritePagination = (pagination) => {};
   
   return (
     <div className="assets-table">
@@ -79,9 +79,9 @@ function AssetsTable({ assets }) {
         />
 
         <Pagination
-          onChange={doAssetPagination}
+          onChange={doFavoritePagination}
           disabled={loading}
-          pagination={assetPagination}
+          pagination={favoritePagination}
         />
       </TableWrapper>
 
@@ -108,4 +108,4 @@ function AssetsTable({ assets }) {
   )
 }
 
-export default AssetsTable;
+export default FavoritesTable;

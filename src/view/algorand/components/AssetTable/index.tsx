@@ -13,6 +13,9 @@ function AssetTable(props) {
     showcaseId,
     togglePermission,
     showcasePermission,
+    hasRows,
+    sorter,
+    doChangeSort,
     toggleFavorite,
     setShowcase,
   } = props;
@@ -23,26 +26,44 @@ function AssetTable(props) {
         <thead className="thead">
           <tr>
             <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='name'
               label='NAME'
             />
             <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='symbol'
               label='SYMBOL'
             />
             <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='liquidity'
               label='LIQUIDITY'
             />
             <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='volumn24h'
               label='VOLUME[24H]'
             />
             <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='price'
               label='PRICE'
             />
             <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='change'
               label='24H %'
             />

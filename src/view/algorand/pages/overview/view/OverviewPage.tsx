@@ -10,6 +10,7 @@ import Breadcrumb from 'src/view/shared/Breadcrumb';
 import OverviewChart from 'src/view/algorand/pages/overview/chart/OverviewChart';
 import PoolsTable from 'src/view/algorand/pages/overview/table/PoolsTable';
 import AssetsTable from 'src/view/algorand/pages/overview/table/AssetsTable';
+import FavoritesTable from 'src/view/algorand/pages/overview/table/FavoritesTable';
 import {
   SectionTitleBar,
   SectionTitle,
@@ -46,7 +47,7 @@ function OverviewPage() {
 
       <OverviewChart />
 
-      {/*<ContentWrapper className="card-hover">
+      <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Favorites</SectionTitle>
           <h6 className='m-0'>
@@ -58,13 +59,10 @@ function OverviewPage() {
             </Link>
           </h6>
         </SectionTitleBar>
-        <AssetsTable
-          loading={loading}
+        <FavoritesTable
           assets={favorites}
-          favorites={favIds}
-          showcaseId={showcase.assetId}
         />
-      </ContentWrapper> */}
+      </ContentWrapper>
 
       <ContentWrapper className="card-hover">
         <SectionTitleBar>
