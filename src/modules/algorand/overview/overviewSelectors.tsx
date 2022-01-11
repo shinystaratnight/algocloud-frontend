@@ -29,32 +29,52 @@ const selectPools = createSelector(
 
 const selectFavorites = createSelector(
   [selectRaw],
-  (raw) => raw.asset.favorites,
+  (raw) => raw.favorite.rows,
 );
 
-const selectFavoriteIds = createSelector([selectRaw], (raw) => {
-  const favorites = raw.asset.favorites;
-  return favorites.map(({ assetId }) => assetId);
-});
+const selectFavoriteIds = createSelector(
+  [selectFavorites],
+  (favorites) => favorites.map(({ assetId }) => assetId)
+);
 
 const selectShowcase = createSelector(
   [selectRaw],
-  (raw) => raw.asset.showcase,
+  (raw) => raw.showcase,
 );
 
 const selectShowcaseId = createSelector(
+  [selectShowcase],
+  (showcase) => showcase.assetId,
+);
+
+const selectAssetCount = createSelector(
   [selectRaw],
-  (raw) => raw.asset.showcase.assetId,
+  (raw) => raw.asset.count,
 );
 
 const selectAssetPagination = createSelector(
+  [selectRaw, selectAssetCount],
+  (raw, count) => {
+    return {
+      ...raw.asset.pagination,
+      total: count,
+    };
+  },
+);
+
+const selectPoolCount = createSelector(
   [selectRaw],
-  (raw) => raw.asset.pagination,
+  (raw) => raw.pool.count,
 );
 
 const selectPoolPagination = createSelector(
-  [selectRaw],
-  (raw) => raw.pool.pagination,
+  [selectRaw, selectPoolCount],
+  (raw, count) => {
+    return {
+      ...raw.pool.pagination,
+      total: count,
+    };
+  },
 );
 
 const overviewSelectors = {

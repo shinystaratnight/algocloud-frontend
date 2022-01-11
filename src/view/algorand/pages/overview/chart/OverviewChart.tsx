@@ -20,7 +20,6 @@ function ShowcaseChart() {
 
   const showcase = useSelector(selectors.selectShowcase);
   const dailyData = useSelector(selectors.selectDailyData);
-  const weeklyData = useSelector(selectors.selectWeeklyData);
 
   useEffect(() => {
     if (ref1.current) {

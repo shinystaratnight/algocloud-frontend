@@ -83,7 +83,7 @@ function OverviewPage() {
         />
       </ContentWrapper>
 
-      {/*<ContentWrapper className="card-hover">
+      <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
           <Link
@@ -94,10 +94,9 @@ function OverviewPage() {
           </Link>
         </SectionTitleBar>
         <PoolsTable
-          loading={loading}
           pools={pools}
         />
-      </ContentWrapper> */}
+      </ContentWrapper>
     </>
   )
 }

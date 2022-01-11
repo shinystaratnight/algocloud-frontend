@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/favorites/favoritesActions';
 import algorandSelectors from 'src/modules/algorand/algorandSelectors';
-import overviewSelectors from 'src/modules/algorand/overview/overviewSelectors';
+import selectors from 'src/modules/algorand/overview/overviewSelectors';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
@@ -22,21 +22,21 @@ function AssetsTable({ assets }) {
   const hasPermissionToShowcase = useSelector(
     algorandSelectors.selectPermissionToShowcase
   );
-
-  const assetPagination = useSelector(
-    overviewSelectors.selectAssetPagination,
+  
+  const loading = useSelector(
+    selectors.selectLoading,
   );
 
-  const loading = useSelector(
-    overviewSelectors.selectLoading,
+  const assetPagination = useSelector(
+    selectors.selectAssetPagination,
   );
 
   const favoriteIds = useSelector(
-    overviewSelectors.selectFavoriteIds,
+    selectors.selectFavoriteIds,
   );
 
   const showcaseId = useSelector(
-    overviewSelectors.selectShowcaseId,
+    selectors.selectShowcaseId,
   )
   
   const toggleFavorite = (assetId) => {

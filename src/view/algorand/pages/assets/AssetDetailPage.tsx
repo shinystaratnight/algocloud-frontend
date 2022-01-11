@@ -73,7 +73,7 @@ const AssetDetailPage = () => {
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
         </SectionTitleBar>
-        <PoolsTable loading={loading} pools={pools} />
+        <PoolsTable pools={pools} />
       </ContentWrapper>
     </>
   )

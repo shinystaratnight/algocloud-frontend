@@ -1,29 +1,37 @@
 import actions from 'src/modules/algorand/overview/overviewActions';
 
-const INITIAL_PAGE_SIZE = 100;
+const INITIAL_PAGE_SIZE = 5;
 
 const initialData = {
   loading: false,
+  showcase: {},
   stats: {
     daily: [] as Array<any>,
     weekly: [] as Array<any>,
+  },
+  favorite: {
+    rows: [] as Array<any>,
+    count: 0,
+    pagination: {
+      current: 0,
+      pageSize: INITIAL_PAGE_SIZE,
+    },
+    sorter: {},
   },
   asset: {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 1,
+      current: 0,
       pageSize: INITIAL_PAGE_SIZE,
     },
     sorter: {},
-    favorites: [] as Array<any>,
-    showcase: {},
   },
   pool: {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 1,
+      current: 0,
       pageSize: INITIAL_PAGE_SIZE,
     },
     sorter: {},
@@ -44,20 +52,25 @@ export default (state = initialData, { type, payload }) => {
       weekly: payload.weeklyData,
     };
 
+    const favorite = {
+      ...state.favorite,
+      rows: payload.favorites
+    };
+
     const asset = {
-      ...(state.asset),
+      ...state.asset,
       rows: payload.assets,
-      favorites: payload.favorites,
-      showcase: payload.showcase,
     };
 
     const pool = {
-      ...(state.pool),
+      ...state.pool,
       rows: payload.pools,
     };
 
     return {
       loading: false,
+      showcase: payload.showcase,
+      favorite,
       stats,
       asset,
       pool,
