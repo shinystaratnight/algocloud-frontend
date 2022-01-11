@@ -41,12 +41,12 @@ function OverviewPage() {
       />
 
       <AlgoexplorerSection>
-        You want to check Market Cap and Algo Prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
+        Do you want to check Algo prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
       </AlgoexplorerSection>
 
       <OverviewChart />
 
-      {/* <ContentWrapper>
+      {/*<ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Favorites</SectionTitle>
           <h6 className='m-0'>
@@ -54,7 +54,7 @@ function OverviewPage() {
               className="btn btn-link"
               to={`/algorand/favorites`}
             >
-              Sell All
+              See All
             </Link>
           </h6>
         </SectionTitleBar>
@@ -66,7 +66,7 @@ function OverviewPage() {
         />
       </ContentWrapper> */}
 
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Assets</SectionTitle>
           <h6 className='m-0'>
@@ -74,7 +74,7 @@ function OverviewPage() {
               className="btn btn-link"
               to={`/algorand/assets`}
             >
-              Sell All
+              See All
             </Link>
           </h6>
         </SectionTitleBar>
@@ -83,14 +83,14 @@ function OverviewPage() {
         />
       </ContentWrapper>
 
-      {/* <ContentWrapper>
+      {/*<ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
           <Link
             className="btn btn-link"
             to={`/algorand/pools`}
           >
-            Sell All
+            See All
           </Link>
         </SectionTitleBar>
         <PoolsTable

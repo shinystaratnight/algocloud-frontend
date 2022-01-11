@@ -50,7 +50,7 @@ const AnalyticsCard = styled.div`
     margin-left: -17px;
     margin-right: -17px;
     background-color: #de3618;
-    color: white;
+    color: 'var(--algocloud-body-bg-2)';
     padding-left: 16px;
     border-bottom: 1px solid rgb(224, 224, 224);
     border-top: 1px solid rgb(224, 224, 224);
@@ -64,7 +64,7 @@ const AnalyticsCard = styled.div`
     margin-left: -17px;
     margin-right: -17px;
     background-color: #ed8936;
-    color: white;
+    color: 'var(--algocloud-body-bg-2)';
     padding-left: 16px;
     border-bottom: 1px solid rgb(224, 224, 224);
     border-top: 1px solid rgb(224, 224, 224);

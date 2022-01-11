@@ -35,7 +35,7 @@ const PoolDetailPage = () => {
         ]}
       />
 
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <PageTitle>
           {loading && 'Assets'}
           {!loading && `Pool (${detail['assetOneUnitName']}-${detail['assetTwoUnitName']})`}
@@ -44,15 +44,15 @@ const PoolDetailPage = () => {
 
       <div className='row'>
         <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
-          <ContentWrapper style={{flex: 1}}>
+          <ContentWrapper style={{flex: 1}} className="card-hover">
             <h6>Liqudity</h6>
             <h5 className='text-info'>{formattedNum(detail['liquidity'], true)}</h5>
           </ContentWrapper>
-          <ContentWrapper style={{flex: 1}}>
+          <ContentWrapper style={{flex: 1}} className="card-hover">
             <h6>Volume (24hrs)</h6>
             <h5 className='text-info'>{formattedNum(detail['lastDayVolume'], true)}</h5>
           </ContentWrapper>
-          <ContentWrapper style={{flex: 1}}>
+          <ContentWrapper style={{flex: 1}} className="card-hover">
             <h6>Volume (7days)</h6>
             <h5 className='text-info'>{formattedNum(detail['lastWeekVolume'], true)}</h5>
           </ContentWrapper>
@@ -63,7 +63,7 @@ const PoolDetailPage = () => {
         </div>
         <div className="col-lg-8 col-sm-12">
         <PoolChart
-          color='#8be1ea'
+          color='#687dfd'
         />
         </div>
       </div>

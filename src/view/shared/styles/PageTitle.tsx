@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 const PageTitle = styled.h1`
   margin-bottom: 24px;
-  color: white;
+  color: 'var(--algocloud-body-bg-2)';
   a {
-    color: white;
+    color: 'var(--algocloud-body-bg-2)';
   }
 `;
 

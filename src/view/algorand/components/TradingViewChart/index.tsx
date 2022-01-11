@@ -42,7 +42,9 @@ const TradingViewChart = ({
   // adjust the scale based on the type of chart
   const topScale = type === CHART_TYPES.AREA ? 0.32 : 0.2
 
-  const textColor = 'white'
+  let rootb = document.getElementById("root")!
+  let styleb = window.getComputedStyle(rootb)
+  let textColor = styleb.getPropertyValue('--algocloud-body-bg-2')
 
   // reset the chart if them switches
   useEffect(() => {
@@ -111,7 +113,7 @@ const TradingViewChart = ({
       var series =
         type === CHART_TYPES.BAR
           ? chart.addHistogramSeries({
-            color: '#8be1ea',
+            color: '#687dfd',
             priceFormat: {
               type: 'volume'
             },
@@ -119,13 +121,13 @@ const TradingViewChart = ({
               top: topScale,
               bottom: 0
             },
-            // lineColor: '#8be1ea',
+            // lineColor: '#687dfd',
             // lineWidth: 3
           })
           : chart.addAreaSeries({
-            topColor: '#8be1ea',
+            topColor: '#687dfd',
             bottomColor: 'rgba(112, 82, 64, 0)',
-            lineColor: '#8be1ea',
+            lineColor: '#687dfd',
             lineWidth: 3
           })
 
@@ -213,7 +215,7 @@ const TradingViewChart = ({
 
   return (
     <GraphWrapper>
-      <div ref={ref} id={'tradchart-id' + type} />
+      <div ref={ref} className="var-color" id={'tradchart-id' + type} />
       <IconWrapper>
         <Play
           onClick={() => {

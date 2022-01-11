@@ -57,17 +57,17 @@ const HeaderWrapper = styled.div`
 
   .user-dropdown-avatar:hover {
       border-radius: 50%;
-      box-shadow: 0 0 0 0.3rem rgb(216 217 219 / 30%);
+      box-shadow: 0 0 0 0.1rem rgb(104 125 253 / 50%) !important;
 }
 
 .user-dropdown-avatar:focus, .user-dropdown-avatar:active {
   border-radius: 50% !important;
-  box-shadow: 0 0 0 0.3rem rgb(216 217 219 / 50%);
+  box-shadow: 0 0 0 0.3rem rgba(104,125,253,.25);
 }
 
 .user-dropdown-avatar:active{
 border-radius: 50% !important;
-box-shadow: 0 0 0 0.3rem rgb(216 217 219 / 80%) !important;
+box-shadow: 0 0 0 0.3rem rgb(104 125 253 / 25%) !important;
 }
 
   .user-dropdown-text {
@@ -106,7 +106,7 @@ box-shadow: 0 0 0 0.3rem rgb(216 217 219 / 80%) !important;
     background-color: transparent;
     font-size: 20px;
     transition: color 0.3s;
-    color: var(--falcon-headings-color);
+    color: var(--algocloud-headings-color);
 
     &:hover {
       color: var(--primary-color);

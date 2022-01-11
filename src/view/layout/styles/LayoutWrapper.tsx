@@ -51,6 +51,11 @@ const LayoutWrapper = styled.div`
 
   .form-control {
     font-size: inherit;
+    cursor: pointer;
+  }
+
+  .form-control:hover {
+    border-color: var(--algocloud-input-focus-border-color);
   }
 
   .main {

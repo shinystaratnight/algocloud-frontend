@@ -30,7 +30,7 @@ function AssetsListPage() {
         ]}
       />
 
-      <ContentWrapper>
+      <ContentWrapper className="card-hover">
         <PageTitle>Assets</PageTitle>
         <AssetsTable assets={assets} />
       </ContentWrapper>

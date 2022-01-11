@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const ChartWindowWrapper = styled.div`
   margin-top: 16px;
-  padding: 24px;
+  padding: 1.25rem;
   background: #1e2d58; 
-  background: rgba(255,255,255,.05); 
+  background: var(--algocloud-card-bg-color); 
   box-shadow: 0 0 50px 14px rgb(18 28 53 / 3%); 
   border: 1px solid;
   border-color: var(--border-var) !important;
@@ -30,10 +30,10 @@ export const SectionTitleBar = styled.div`
 `;
 
 export const SectionTitle = styled.h5`
-  color: white;
+  color: var(--algocloud-body-bg-2);
   margin-bottom: 10px;
   a {
-    color: white;
+    color: var(--algocloud-body-bg-2);
   }
 `;
 
@@ -62,13 +62,22 @@ export const OptionButton = styled.div`
   white-space: nowrap;
   padding: 6px;
   border-radius: 6px;
-  border: 1px solid ${(props) => props.active ? '#687dfd' : '#44c4e2'};
+  border: 1px solid #687dfd;
   cursor: pointer;
+  color: #fff;
   margin-left: 10px;
   width: ${(props) => props.width ? props.width : 'auto'};
-  background-color: ${(props) => props.active ? '#EDEEF2' : '#1D294F'};
-  color: ${(props) => props.active ? '#000' : '#9da9bb'};
+  background-color: var(--algocloud-btn-link-color);
   text-align: center;
+  :hover {
+    cursor: pointer;
+    background-color: #687dfd
+  };
+  :active {
+    background-color: #3350fc
+  }
+
+  
 `;
 
 export const AssetIndicator = styled.div`
@@ -103,7 +112,7 @@ export const IconWrapper = styled.div`
 
 export const GraphWrapper = styled.div`
   position: relative;
-  padding-top: ${(props) => props.pt ? props.pt : '58px'};
+  padding-top: ${(props) => props.pt ? props.pt : ''};
 `;
 
 const Row = styled.div`
@@ -128,11 +137,11 @@ export const FlexColumn = styled.div`
 
 export const AlgoexplorerSection = styled.div`
   margin-top: 10px;
-  color: #8be1ea;
+  color: #748194;
   font-size: 12px;
 
   a {
-    color: white;
+    color: #687dfd;
     margin-left: 6px;
   }
 `;
