@@ -10,10 +10,10 @@ import PageTitle from 'src/view/shared/styles/PageTitle';
 
 
 const PoolListPage = () => {
-
   const dispatch = useDispatch();
   
   useEffect(() => {
+    dispatch(actions.doReset());
     dispatch(actions.doFetch());
   }, [dispatch]);
 

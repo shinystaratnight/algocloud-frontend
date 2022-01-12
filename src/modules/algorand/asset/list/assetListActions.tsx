@@ -9,8 +9,15 @@ const assetListActions = {
   FETCH_STARTED: `${prefix}_FETCH_STARTED`,
   FETCH_SUCCESS: `${prefix}_FETCH_SUCCESS`,
   FETCH_ERROR: `${prefix}_FETCH_ERROR`,
+  RESET: `${prefix}_RESET`,
   SORTER_CHANGED: `${prefix}_SORTER_CHANGED`,
   PAGINATION_CHANGED: `${prefix}_PAGINATION_CHANGED`,
+
+  doReset: () => async (dispatch) => {
+    dispatch({
+      type: assetListActions.RESET,
+    });
+  },
 
   doFetch: () => async (dispatch, getState) => {
     try {

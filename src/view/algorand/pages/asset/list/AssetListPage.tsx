@@ -8,10 +8,11 @@ import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
 
-function AssetsListPage() {
+function AssetListPage() {
   const dispatch = useDispatch();
   
   useEffect(() => {
+    dispatch(actions.doReset());
     dispatch(actions.doFetch());
   }, [dispatch]);
 
@@ -32,7 +33,7 @@ function AssetsListPage() {
         <AssetListTable assets={assets} />
       </ContentWrapper>
     </>
-  )
+  );
 }
 
-export default AssetsListPage;
+export default AssetListPage;

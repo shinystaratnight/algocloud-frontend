@@ -17,7 +17,7 @@ const initialData = {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 0,
+      current: 1,
       pageSize: 10,
     },
     sorter: {},
