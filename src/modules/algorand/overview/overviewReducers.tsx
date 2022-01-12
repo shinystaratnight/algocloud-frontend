@@ -12,7 +12,7 @@ const initialData = {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 0,
+      current: 1,
       pageSize: 10,
     },
     sorter: {},
@@ -21,7 +21,7 @@ const initialData = {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 0,
+      current: 1,
       pageSize: 10,
     },
     sorter: {},
@@ -30,7 +30,7 @@ const initialData = {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 0,
+      current: 1,
       pageSize: 10,
     },
     sorter: {},
@@ -39,7 +39,9 @@ const initialData = {
 
 export default (state = initialData, { type, payload }) => {
   if (type === actions.RESET) {
-    return initialData;
+    return {
+      ...initialData
+    };
   }
 
   if (type === actions.FETCH_STARTED) {
@@ -133,29 +135,17 @@ export default (state = initialData, { type, payload }) => {
       rows: payload.favorites,
     };
 
-    if (favorite.pagination.current === 0) {
-      favorite.pagination.current = (payload.favoriteCount > 0) ? 1 : 0;
-    }
-
     const asset = {
       ...state.asset,
       count: payload.assetCount,
       rows: payload.assets,
     };
 
-    if (asset.pagination.current === 0) {
-      asset.pagination.current = (payload.assetCount > 0) ? 1 : 0;
-    }
-
     const pool = {
       ...state.pool,
       count: payload.poolCount,
       rows: payload.pools,
     };
-
-    if (pool.pagination.current === 0) {
-      pool.pagination.current = (payload.poolCount > 0) ? 1 : 0;
-    }
 
     return {
       loading: false,

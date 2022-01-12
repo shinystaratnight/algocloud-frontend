@@ -13,6 +13,7 @@ const FavoriteListPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(actions.doReset());
     dispatch(actions.doFetch());
   }, [dispatch])
 

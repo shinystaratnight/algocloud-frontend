@@ -7,13 +7,19 @@ const initialData = {
   rows: [] as Array<any>,
   count: 0,
   pagination: {
-    current: 0,
+    current: 1,
     pageSize: 20,
   },
   sorter: {},
 };
 
 export default (state = initialData, { type, payload }) => {
+  if (type === actions.RESET) {
+    return {
+      ...initialData
+    };
+  }
+
   if (type === actions.FETCH_STARTED) {
     return {
       ...state,
