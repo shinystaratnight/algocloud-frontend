@@ -230,7 +230,7 @@ const privateRoutes = [
   },
   {
     path: '/algorand/favorites',
-    loader: () => import('src/view/algorand/pages/favorites/FavoriteListPage'),
+    loader: () => import('src/view/algorand/pages/favorite/FavoriteListPage'),
     permissionRequired: permissions.algorandRead,
     exact: true,
   },

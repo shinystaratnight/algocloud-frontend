@@ -16,7 +16,7 @@ const poolsActions = {
         type: poolsActions.FETCH_STARTED,
       });
 
-      const data = await AlgorandService.getAlgorandPools();
+      const data = 'await AlgorandService.getAlgorandPools()';
       
       dispatch({
         type: poolsActions.FETCH_SUCCESS,
@@ -37,7 +37,7 @@ const poolsActions = {
         type: poolsActions.FETCH_STARTED
       });
 
-      const data = await AlgorandService.getAlgorandPoolHistory(address);
+      const data = 'await AlgorandService.getAlgorandPoolHistory(address)';
       
       dispatch({
         type: poolsActions.FETCH_SUCCESS,

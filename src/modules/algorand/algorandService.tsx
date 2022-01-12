@@ -65,11 +65,20 @@ export default class AlgorandService {
     return response.data;
   }
 
-  static async getAlgorandFavorites() {
+  static async getAlgorandFavorites(orderBy, limit, offset) {
+    const params = {
+      orderBy,
+      limit,
+      offset,
+    };
+
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/favorites`,
+      {
+        params,
+      }
     );
 
     return response.data;
@@ -94,11 +103,20 @@ export default class AlgorandService {
     return response.data;
   }
 
-  static async getAlgorandPools() {
+  static async getAlgorandPools(orderBy, limit, offset) {
+    const params = {
+      orderBy,
+      limit,
+      offset,
+    };
+
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/pools`,
+      {
+        params,
+      }
     );
 
     return response.data;

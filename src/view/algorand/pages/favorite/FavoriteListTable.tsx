@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/algorand/overview/overviewActions';
-import selectors from 'src/modules/algorand/overview/overviewSelectors';
+import actions from 'src/modules/algorand/favorite/favoriteActions';
+import selectors from 'src/modules/algorand/favorite/favoriteSelectors';
 import algorandSelectors from 'src/modules/algorand/algorandSelectors';
 import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
 import AssetTable from 'src/view/algorand/components/AssetTable';
 
-function FavoritesTable({ assets }) {
+function FavoriteListTable({ assets }) {
 
   const dispatch = useDispatch();
 
@@ -28,8 +28,8 @@ function FavoritesTable({ assets }) {
     selectors.selectLoading,
   );
 
-  const favoritePagination = useSelector(
-    selectors.selectFavoritePagination,
+  const pagination = useSelector(
+    selectors.selectPagination,
   );
 
   const favoriteIds = useSelector(
@@ -41,11 +41,11 @@ function FavoritesTable({ assets }) {
   );
 
   const hasRows = useSelector(
-    selectors.selectHasFavoriteRows,
+    selectors.selectHasRows,
   );
 
   const sorter = useSelector(
-    selectors.selectFavoriteSorter,
+    selectors.selectSorter,
   );
   
   const toggleFavorite = (assetId) => {
@@ -73,19 +73,19 @@ function FavoritesTable({ assets }) {
         : 'ascend';
 
     dispatch(
-      actions.doChangeFavoriteSort({
+      actions.doChangeSort({
         field,
         order,
       }),
     );
   };
 
-  const doFavoritePagination = (pagination) => {
-    dispatch(actions.doChangeFavoritePagination(pagination));
+  const doPagination = (pagination) => {
+    dispatch(actions.doChangePagination(pagination));
   };
   
   return (
-    <div className="favorites-table">
+    <div className="assets-table">
       <TableWrapper>
         <AssetTable
           loading={loading}
@@ -102,9 +102,9 @@ function FavoritesTable({ assets }) {
         />
 
         <Pagination
-          onChange={doFavoritePagination}
+          onChange={doPagination}
           disabled={loading}
-          pagination={favoritePagination}
+          pagination={pagination}
         />
       </TableWrapper>
 
@@ -131,4 +131,4 @@ function FavoritesTable({ assets }) {
   )
 }
 
-export default FavoritesTable;
+export default FavoriteListTable;

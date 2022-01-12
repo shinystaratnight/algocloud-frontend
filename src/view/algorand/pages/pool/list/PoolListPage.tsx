@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/asset/list/assetListActions';
 import selectors from 'src/modules/algorand/asset/list/assetListSelectors';
-import AssetListTable from 'src/view/algorand/pages/asset/list/AssetListTable';
+import AssetsTable from 'src/view/algorand/pages/asset/list/AssetListTable';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PageTitle from 'src/view/shared/styles/PageTitle';
@@ -29,7 +29,7 @@ function AssetsListPage() {
 
       <ContentWrapper className="card-hover">
         <PageTitle>Assets</PageTitle>
-        <AssetListTable assets={assets} />
+        <AssetsTable assets={assets} />
       </ContentWrapper>
     </>
   )

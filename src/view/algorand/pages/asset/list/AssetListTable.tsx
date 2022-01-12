@@ -9,7 +9,7 @@ import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
 import AssetTable from 'src/view/algorand/components/AssetTable';
 
-function AssetsTable({ assets }) {
+function AssetListTable({ assets }) {
 
   const dispatch = useDispatch();
 
@@ -131,4 +131,4 @@ function AssetsTable({ assets }) {
   )
 }
 
-export default AssetsTable;
+export default AssetListTable;
