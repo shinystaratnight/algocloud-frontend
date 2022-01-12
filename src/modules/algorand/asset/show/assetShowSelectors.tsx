@@ -71,6 +71,16 @@ const selectOffset = createSelector([selectRaw], (raw) => {
   return (current - 1) * pagination.pageSize;
 });
 
+const selectHasRows = createSelector(
+  [selectCount],
+  (count) => count > 0,
+);
+
+const selectSorter = createSelector(
+  [selectRaw],
+  (raw) => raw.pool.sorter,
+);
+
 const assetShowSelectors = {
   selectLoading,
   selectData,
@@ -82,6 +92,8 @@ const assetShowSelectors = {
   selectOrderBy,
   selectLimit,
   selectOffset,
+  selectHasRows,
+  selectSorter,
   selectRaw,
 };
 

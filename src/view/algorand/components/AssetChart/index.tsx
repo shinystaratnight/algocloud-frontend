@@ -39,7 +39,7 @@ const AssetChart = (props) => {
   const below600 = useMedia('(max-width: 600px)');
   const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22;
   
-  const textColor = 'var(--algocloud-body-bg-2)';
+  // const textColor = 'var(--algocloud-body-bg-2)';
   const ref = useRef<HTMLElement>();
   const isClient = typeof window === 'object';
   const [width, setWidth] = useState(ref?.current?.clientWidth);

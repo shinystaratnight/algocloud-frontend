@@ -4,28 +4,20 @@ import { useRouteMatch } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/asset/show/assetShowActions';
 import selectors from 'src/modules/algorand/asset/show/assetShowSelectors';
+import { formatPercent, formattedNum } from 'src/modules/algorand/utils';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
-import PageTitle from 'src/view/shared/styles/PageTitle';
 import AssetChart from 'src/view/algorand/components/AssetChart';
-import {
-  formatNumber,
-  formatPercent,
-  formattedNum
-} from 'src/modules/algorand/utils';
-import {
-  SectionTitleBar,
-  SectionTitle,
-} from 'src/view/algorand/styled';
-
+import PoolsTable from 'src/view/algorand/pages/asset/show/PoolsTable';
+import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
 
 const AssetShowPage = () => {
   const match = useRouteMatch();
-
   const dispatch = useDispatch();
   const assetId = match.params.assetId;
   
   useEffect(() => {
+    dispatch(actions.doReset());
     dispatch(actions.doFetch(assetId));
   }, [dispatch, assetId]);
   
@@ -70,12 +62,15 @@ const AssetShowPage = () => {
         </div>
       </div>
 
-      {/* <ContentWrapper className="card-hover">
+      <ContentWrapper className="card-hover">
         <SectionTitleBar>
           <SectionTitle>Top Pools</SectionTitle>
         </SectionTitleBar>
-        <PoolsTable pools={pools} />
-      </ContentWrapper> */}
+        <PoolsTable
+          assetId={assetId}
+          pools={pools}
+        />
+      </ContentWrapper>
     </>
   )
 }

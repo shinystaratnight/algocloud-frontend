@@ -25,12 +25,9 @@ function OverviewPage() {
     dispatch(actions.doFetch());
   }, [dispatch]);
 
-  const loading = useSelector(selectors.selectLoading);
   const assets = useSelector(selectors.selectAssets);
   const pools = useSelector(selectors.selectPools);
   const favorites = useSelector(selectors.selectFavorites);
-  const favIds = useSelector(selectors.selectFavoriteIds);
-  const showcase = useSelector(selectors.selectShowcase);
 
   return (
     <>

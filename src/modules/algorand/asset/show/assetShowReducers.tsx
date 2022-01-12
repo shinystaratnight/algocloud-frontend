@@ -25,6 +25,10 @@ const initialData = {
 };
 
 export default (state = initialData, { type, payload }) => {
+  if (type === actions.RESET) {
+    return initialData;
+  }
+
   if (type === actions.FETCH_STARTED) {
     return {
       ...state,
@@ -46,6 +50,30 @@ export default (state = initialData, { type, payload }) => {
       hourlyPrices: payload.hourlyPrices,
       dailyPrices: payload.dailyPrices,
       dailyAssetData: payload.dailyAssetData,
+      pool,
+    };
+  }
+
+  if (type === actions.SORTER_CHANGED) {
+    const pool = {
+      ...state.pool,
+      sorter: payload,
+    };
+
+    return {
+      ...state,
+      pool,
+    };
+  }
+
+  if (type === actions.PAGINATION_CHANGED) {
+    const pool = {
+      ...state.pool,
+      pagination: payload,
+    };
+    
+    return {
+      ...state,
       pool,
     };
   }
