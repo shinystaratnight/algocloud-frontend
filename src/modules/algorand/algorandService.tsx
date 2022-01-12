@@ -141,7 +141,7 @@ export default class AlgorandService {
     return response.data;
   }
 
-  static async getAlgorandPoolHistory(address) {
+  static async getAlgorandPool(address) {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(

@@ -242,7 +242,7 @@ const privateRoutes = [
   },
   {
     path: '/algorand/pools',
-    loader: () => import('src/view/algorand/pages/pools/PoolListPage'),
+    loader: () => import('src/view/algorand/pages/pool/list/PoolListPage'),
     permissionRequired: permissions.algorandRead,
     exact: true,
   },
@@ -254,7 +254,7 @@ const privateRoutes = [
   },
   {
     path: '/algorand/pools/:address',
-    loader: () => import('src/view/algorand/pages/pools/PoolDetailPage'),
+    loader: () => import('src/view/algorand/pages/pool/show/PoolShowPage'),
     permissionRequired: permissions.algorandRead,
     exact: true,
   },
