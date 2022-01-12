@@ -1,7 +1,7 @@
 import React from 'react';
 import { i18n } from 'src/i18n';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
-import GlobalChart from './GlobalChart';
+import GlobalChart from 'src/view/algorand/pages/global/chart/GlobalChart';
 
 function AlgoExplorerPage() {
 
@@ -11,7 +11,7 @@ function AlgoExplorerPage() {
         items={[
           [i18n('dashboard.menu'), '/'],
           [i18n('algorand.menu'), '/algorand'],
-          ['AlgoExplorer'],
+          ['Global'],
         ]}
       />
       <GlobalChart />

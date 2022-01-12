@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ResponsiveContainer } from 'recharts';
 import { useSelector } from 'react-redux';
-
 import selectors from 'src/modules/algorand/overview/overviewSelectors';
 import { CHART_TYPES } from 'src/modules/algorand/constants';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';

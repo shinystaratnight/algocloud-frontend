@@ -50,16 +50,21 @@ export default class AlgorandService {
     return response.data;
   }
 
-  static async getAlgorandStatistics() {
-    const tenantId = AuthCurrentTenant.get();
-
-    const response = await authAxios.get(
-      `/tenant/${tenantId}/algorand/general-stats`,
-    );
-
-    return response.data;
+  static async getAlgorandGlobal() {
+    const to = Math.floor(Date.now() / 1000);
+    const from = to - 31536000;
+    const algoPriceUrl = `https://price.algoexplorerapi.io/price/algo-usd/history?since=${from}&until=${to}&interval=1D`;
+    const { data: { history } } = await axios.get(algoPriceUrl);
+    
+    const marketCapUrl = `https://indexer.algoexplorerapi.io/stats/v2/economics?interval=1W`;
+    const { data: { data } } = await axios.get(marketCapUrl);
+    
+    return {
+      'algoPriceData': history,
+      'marketCapData': data,
+    };
   }
-  
+
   static async getAlgorandShowcase() {
     const tenantId = AuthCurrentTenant.get();
 

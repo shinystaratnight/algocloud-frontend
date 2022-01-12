@@ -1,6 +1,5 @@
 import { createSelector } from 'reselect';
 import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
-import statisticsSelectors from 'src/modules/algorand/statistics/statisticsSelectors';
 
 const selectRaw = (state) => state.algorand.assets;
 
@@ -38,17 +37,13 @@ const selectAssets = createSelector(
   [
     selectUnfilteredAssets,
     favoritesSelectors.selectFavoriteList,
-    statisticsSelectors.selectShowcaseId,
   ],
-  (assets, favorites, showcaseId) => {
+  (assets, favorites) => {
     return assets.map(asset => {
       if (favorites.includes(asset.assetId)) asset.favorite = 1;
       else asset.favorite = 0;
 
-      if (asset.assetId === +showcaseId) asset.showcase = 1;
-      else asset.showcase = 0;
-      return asset;
-    })
+    });
   }
 );
 

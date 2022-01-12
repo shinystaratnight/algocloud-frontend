@@ -1,15 +1,9 @@
-import actions from 'src/modules/algorand/statistics/statisticsActions';
+import actions from 'src/modules/algorand/global/globalActions';
 
 const initialData = {
   loading: false,
-  dailyData: [],
-  weeklyData: [],
-  topFavorites: [],
-  topPools: [],
-  topAssets: [],
-  showcaseData: [],
-  showcaseId: null,
-  showcaseName: '',
+  marketCapData: [] as Array<any>,
+  algoPriceData: [] as Array<any>,
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -24,7 +18,8 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      ...(payload.data),
+      marketCapData: payload.marketCapData,
+      algoPriceData: payload.algoPriceData,
     };
   }
 

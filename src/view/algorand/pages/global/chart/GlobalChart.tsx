@@ -1,14 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ResponsiveContainer } from 'recharts';
 import { useDispatch, useSelector } from 'react-redux';
+import { formattedNum } from 'src/modules/algorand/utils';
+import actions from 'src/modules/algorand/global/globalActions';
+import selectors from 'src/modules/algorand/global/globalSelctors';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
-import marketCapActions from 'src/modules/algorand/algoexplorer/marketCap/marketCapActions';
-import algoPriceActions from 'src/modules/algorand/algoexplorer/algoPrice/algoPriceActions';
-import marketCapSelectors from 'src/modules/algorand/algoexplorer/marketCap/marketCapSelectors';
-import algoPriceSelectors from 'src/modules/algorand/algoexplorer/algoPrice/algoPriceSelectors';
 import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
-import { formattedNum } from 'src/modules/algorand/utils';
 import { FlexContainer } from 'src/view/algorand/styled';
 
 function GlobalChart() {
@@ -18,8 +16,8 @@ function GlobalChart() {
   const [width1, setWidth1] = useState(0);
   const [width2, setWidth2] = useState(0);
 
-  const globalChartData = useSelector(marketCapSelectors.selectMarketCapChartData)
-  const algoPriceChartData = useSelector(algoPriceSelectors.selectAlgoPriceChartData)
+  const marketCapData = useSelector(selectors.selectMarketCapData)
+  const algoPriceData = useSelector(selectors.selectAlgoPriceData)
 
   useEffect(() => {
     if (ref1.current) {
@@ -33,8 +31,7 @@ function GlobalChart() {
   }, [ref1, ref2])
 
   useEffect(() => {
-    dispatch(marketCapActions.doFetch());
-    dispatch(algoPriceActions.doFetch());
+    dispatch(actions.doFetch());
   }, [dispatch])
 
   function valueFormatter(val) {
@@ -46,10 +43,10 @@ function GlobalChart() {
   return (
     <FlexContainer gap="20px">
       <ContentWrapper>
-        {globalChartData &&
+        {marketCapData &&
           <ResponsiveContainer aspect={60 / 28} ref={ref1}>
             <TradingViewChart
-              data={globalChartData}
+              data={marketCapData}
               base={0}
               title="MarketCap"
               field="market-cap"
@@ -61,10 +58,10 @@ function GlobalChart() {
           </ResponsiveContainer>}
       </ContentWrapper>
       <ContentWrapper>
-        {algoPriceChartData &&
+        {algoPriceData &&
           <ResponsiveContainer aspect={60 / 28} ref={ref2}>
             <CandleStickChart
-              data={algoPriceChartData}
+              data={algoPriceData}
               base={0}
               margin={false}
               width={width2}
