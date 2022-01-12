@@ -104,11 +104,20 @@ export default class AlgorandService {
     return response.data;
   }
 
-  static async getAlgorandAssetHistory(assetId) {
+  static async getAlgorandAsset(assetId, orderBy, limit, offset) {
+    const params = {
+      orderBy,
+      limit,
+      offset,
+    };
+
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/asset/${assetId}`,
+      {
+        params,
+      }
     );
 
     return response.data;

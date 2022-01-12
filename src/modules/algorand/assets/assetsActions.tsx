@@ -37,7 +37,7 @@ const assetsActions = {
         type: assetsActions.FETCH_STARTED
       });
 
-      const data = await AlgorandService.getAlgorandAssetHistory(assetId);
+      const data = 123;
       
       dispatch({
         type: assetsActions.FETCH_SUCCESS,

@@ -229,6 +229,12 @@ const privateRoutes = [
     exact: true,
   },
   {
+    path: '/algorand/favorites',
+    loader: () => import('src/view/algorand/pages/favorites/FavoriteListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
     path: '/algorand/assets',
     loader: () => import('src/view/algorand/pages/asset/list/AssetListPage'),
     permissionRequired: permissions.algorandRead,
@@ -241,14 +247,8 @@ const privateRoutes = [
     exact: true,
   },
   {
-    path: '/algorand/favorites',
-    loader: () => import('src/view/algorand/pages/favorites/FavoriteListPage'),
-    permissionRequired: permissions.algorandRead,
-    exact: true,
-  },
-  {
     path: '/algorand/assets/:assetId',
-    loader: () => import('src/view/algorand/pages/assets/AssetDetailPage'),
+    loader: () => import('src/view/algorand/pages/asset/show/AssetShowPage'),
     permissionRequired: permissions.algorandRead,
     exact: true,
   },

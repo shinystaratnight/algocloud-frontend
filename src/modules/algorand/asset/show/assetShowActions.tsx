@@ -1,57 +1,41 @@
 import Errors from 'src/modules/shared/error/errors';
 import AlgorandService from 'src/modules/algorand/algorandService';
+import selectors from 'src/modules/algorand/asset/show/assetShowSelectors';
 
 const prefix = 'ALGORAND_ASSET_SHOW';
 
-const assetsActions = {
+const assetShowActions = {
 
   FETCH_STARTED: `${prefix}_FETCH_STARTED`,
   FETCH_SUCCESS: `${prefix}_FETCH_SUCCESS`,
   FETCH_ERROR: `${prefix}_FETCH_ERROR`,
 
 
-  doFetch: () => async (dispatch) => {
+  doFetch: (assetId) => async (dispatch, getState) => {
     try {
       dispatch({
-        type: assetsActions.FETCH_STARTED,
+        type: assetShowActions.FETCH_STARTED,
       });
 
-      const data = 123;
-      
+      const data = await AlgorandService.getAlgorandAsset(
+        assetId,
+        selectors.selectOrderBy(getState()),
+        selectors.selectLimit(getState()),
+        selectors.selectOffset(getState()),
+      );
+
       dispatch({
-        type: assetsActions.FETCH_SUCCESS,
+        type: assetShowActions.FETCH_SUCCESS,
         payload: data,
       });
     } catch (error) {
       Errors.handle(error);
 
       dispatch({
-        type: assetsActions.FETCH_ERROR,
+        type: assetShowActions.FETCH_ERROR,
       });
     }
   },
-
-  doFetchHistory: (assetId) =>async (dispatch) => {
-    try {
-      dispatch({
-        type: assetsActions.FETCH_STARTED
-      });
-
-      const data = await AlgorandService.getAlgorandAssetHistory(assetId);
-      
-      dispatch({
-        type: assetsActions.FETCH_SUCCESS,
-        payload: { data },
-      });
-
-    } catch (error) {
-      Errors.handle(error);
-
-      dispatch({
-        type: assetsActions.FETCH_ERROR,
-      });
-    }
-  }
 };
 
-export default assetsActions;
+export default assetShowActions;
