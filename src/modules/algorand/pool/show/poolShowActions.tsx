@@ -18,7 +18,7 @@ const poolShowActions = {
     });
   },
 
-  doFetch: (address) => async (dispatch, getState) => {
+  doFetch: (address) => async (dispatch) => {
     try {
       dispatch({
         type: poolShowActions.FETCH_STARTED,

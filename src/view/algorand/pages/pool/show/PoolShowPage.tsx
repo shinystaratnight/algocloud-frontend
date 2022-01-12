@@ -2,77 +2,79 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import actions from 'src/modules/algorand/asset/show/assetShowActions';
-import selectors from 'src/modules/algorand/asset/show/assetShowSelectors';
-import { formatPercent, formattedNum } from 'src/modules/algorand/utils';
+import { formattedNum } from 'src/modules/algorand/utils';
+import actions from 'src/modules/algorand/pool/show/poolShowActions';
+import selectors from 'src/modules/algorand/pool/show/poolShowSelectors';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
-import AssetChart from 'src/view/algorand/components/AssetChart';
-import PoolsTable from 'src/view/algorand/pages/asset/show/PoolsTable';
-import { SectionTitleBar, SectionTitle } from 'src/view/algorand/styled';
+import PoolChart from 'src/view/algorand/components/PoolChart';
 
-const AssetShowPage = () => {
-  const match = useRouteMatch();
+const PoolShowPage = () => {
   const dispatch = useDispatch();
-  const assetId = match.params.assetId;
+  const match = useRouteMatch();
+  const address = match.params.address;
   
   useEffect(() => {
-    dispatch(actions.doReset());
-    dispatch(actions.doFetch(assetId));
-  }, [dispatch, assetId]);
+    dispatch(actions.doFetch(address));
+  }, [dispatch, address]);
   
-  const asset = useSelector(selectors.selectData);
-  const pools = useSelector(selectors.selectPools);
-  const assetName = useSelector(selectors.selectAssetName);
+  const loading = useSelector(selectors.selectLoading);
+  const pool = useSelector(selectors.selectPool);
+  const poolName = useSelector(selectors.selectPoolName);
+  const chartData = useSelector(selectors.selectDailyPoolData);
+  const rateOneData = useSelector(selectors.selectHourlyOneRates);
+  const rateTwoData = useSelector(selectors.selectHourlyTwoRates);
 
-  const assetData = useSelector(selectors.selectDailyAssetData);
-  const priceData = useSelector(selectors.selectHourlyPrices);
   return (
     <>
       <Breadcrumb
         items={[
           [i18n('dashboard.menu'), '/'],
           [i18n('algorand.menu'), '/algorand'],
-          ['Assets', '/algorand/assets'],
-          [`Asset-${assetName}`]
+          ['Pools', '/algorand/pools'],
+          [`Pool (${poolName})`]
         ]}
       />
-      
+
+      {/* <ContentWrapper className="card-hover">
+        <PageTitle>
+          {loading && 'Pool'}
+          {!loading && `Pool (${pool['assetOneUnitName']}-${pool['assetTwoUnitName']})`}
+        </PageTitle>
+      </ContentWrapper> */}
+
       <div className='row'>
         <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
           <ContentWrapper style={{flex: 1}} className="card-hover">
             <h6>Liqudity</h6>
-            <h5 className='text-info'>{formattedNum(asset['liquidity'], true)}</h5>
+            <h5 className='text-info'>{formattedNum(pool['liquidity'], true)}</h5>
           </ContentWrapper>
           <ContentWrapper style={{flex: 1}} className="card-hover">
             <h6>Volume (24hrs)</h6>
-            <h5 className='text-info'>{formattedNum(asset['lastDayVolume'], true)}</h5>
+            <h5 className='text-info'>{formattedNum(pool['lastDayVolume'], true)}</h5>
           </ContentWrapper>
           <ContentWrapper style={{flex: 1}} className="card-hover">
-            <h6>Price Change (24hrs)</h6>
-            <h5 className='text-info'>{formatPercent(asset['lastDayPriceChange'])}</h5>
+            <h6>Volume (7days)</h6>
+            <h5 className='text-info'>{formattedNum(pool['lastWeekVolume'], true)}</h5>
           </ContentWrapper>
+          {/* <ContentWrapper style={{flex: 1}}>
+            <h6>{`${pool['assetOneReserves']} ${pool['assetOneUnitName']}`}</h6>
+            <h6>{`${pool['assetTwoReserves']} ${pool['assetTwoUnitName']}`}</h6>
+          </ContentWrapper> */}
         </div>
         <div className="col-lg-8 col-sm-12">
-          <AssetChart
-            color='#687dfd'
-            assetData={assetData}
-            priceData={priceData}
-          />
+        <PoolChart
+          color='#687dfd'
+          loading={loading}
+          pool={pool}
+          chartData={chartData}
+          rateOneData={rateOneData}
+          rateTwoData={rateTwoData}
+        />
         </div>
       </div>
-
-      <ContentWrapper className="card-hover">
-        <SectionTitleBar>
-          <SectionTitle>Top Pools</SectionTitle>
-        </SectionTitleBar>
-        <PoolsTable
-          assetId={assetId}
-          pools={pools}
-        />
-      </ContentWrapper>
     </>
-  )
+  );
 }
 
-export default AssetShowPage;
+export default PoolShowPage;

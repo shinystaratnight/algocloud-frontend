@@ -7,7 +7,7 @@ const selectLoading = createSelector(
   (raw) => Boolean(raw.loading),
 );
 
-const selectData = createSelector(
+const selectAsset = createSelector(
   [selectRaw],
   (raw) => raw.data,
 );
@@ -83,7 +83,7 @@ const selectSorter = createSelector(
 
 const assetShowSelectors = {
   selectLoading,
-  selectData,
+  selectAsset,
   selectAssetName,
   selectDailyAssetData,
   selectHourlyPrices,

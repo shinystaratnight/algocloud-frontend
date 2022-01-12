@@ -35,9 +35,11 @@ export default (state = initialData, { type, payload }) => {
       ...state,
       loading: false,
       data: payload.data,
-      hourlyPrices: payload.hourlyPrices,
-      dailyPrices: payload.dailyPrices,
-      dailyAssetData: payload.dailyAssetData,
+      hourlyOneRates: payload.hourlyOneRates,
+      hourlyTwoRates: payload.hourlyTwoRates,
+      dailyOneRates: payload.dailyOneRates,
+      dailyTwoRates: payload.dailyTwoRates,
+      dailyPoolData: payload.dailyPoolData,
     };
   }
 

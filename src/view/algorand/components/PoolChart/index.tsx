@@ -1,41 +1,44 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { useSelector } from 'react-redux'
-import { Area, XAxis, YAxis, ResponsiveContainer, Tooltip, AreaChart, BarChart, Bar } from 'recharts'
-import { darken } from 'polished'
-import { useMedia } from 'react-use'
+import React, { useState, useRef, useEffect } from 'react';
+import { darken } from 'polished';
+import { useMedia } from 'react-use';
+import {
+  ResponsiveContainer,
+  AreaChart,
+  BarChart,
+  Bar,
+  Area,
+  XAxis,
+  YAxis,
+  Tooltip,
+} from 'recharts';
 
-import { POOL_CHART_VIEW } from 'src/modules/algorand/constants'
-import { toK, toNiceDate, toNiceDateYear, formattedNum } from 'src/modules/algorand/utils'
-import CandleStickChart from 'src/view/algorand/components/CandleStickChart'
-import selectors from 'src/modules/algorand/pools/poolsSelectors'
+import { POOL_CHART_VIEW } from 'src/modules/algorand/constants';
+import { toK, toNiceDate, toNiceDateYear, formattedNum } from 'src/modules/algorand/utils';
+import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
 import {
   ChartWindowWrapper,
   OptionButton,
   OptionButtonContainer,
   RowBetween
-} from 'src/view/algorand/styled'
+} from 'src/view/algorand/styled';
 
-const PoolChart = ({ color }) => {
+const PoolChart = (props) => {
+  const {
+    color,
+    loading,
+    pool,
+    chartData,
+    rateOneData,
+    rateTwoData,
+  } = props;
 
-  // settings for the window and candle width
   const [chartFilter, setChartFilter] = useState(POOL_CHART_VIEW.LIQUIDITY)
-
-  const loading = useSelector(selectors.selectLoading);
-  const detail = useSelector(selectors.selectPoolDetail);
-
-  const textColor = 'var(--algocloud-body-bg-2)';
-
-  let chartData: any = useSelector(selectors.selectDailyPoolData);
-
-  const rateOneData = useSelector(selectors.selectHourlyOneRates);
-  const rateTwoData = useSelector(selectors.selectHourlyTwoRates);
-
+  // const textColor = 'var(--algocloud-body-bg-2)';
   const below1080 = useMedia('(max-width: 1080px)')
   const below600 = useMedia('(max-width: 600px)')
 
   const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22
 
-  // update the width on a window resize
   const ref = useRef<HTMLElement>()
   const isClient = typeof window === 'object'
   const [width, setWidth] = useState(ref?.current?.clientWidth)
@@ -59,9 +62,7 @@ const PoolChart = ({ color }) => {
           chartFilter === POOL_CHART_VIEW.LIQUIDITY ||
           chartFilter === POOL_CHART_VIEW.VOLUME ||
           chartFilter === POOL_CHART_VIEW.RATE_ONE ||
-          chartFilter === POOL_CHART_VIEW.RATE_TWO
-            ? 40
-            : 0
+          chartFilter === POOL_CHART_VIEW.RATE_TWO ? 40 : 0
         }
         align="flex-start"
       >
@@ -84,7 +85,7 @@ const PoolChart = ({ color }) => {
               active={chartFilter === POOL_CHART_VIEW.RATE_ONE}
               onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_ONE)}
             >
-              {`${detail['assetOneUnitName']}/${detail['assetTwoUnitName']}`}
+              {`${pool['assetOneUnitName']}/${pool['assetTwoUnitName']}`}
             </OptionButton>
           )}
 
@@ -93,7 +94,7 @@ const PoolChart = ({ color }) => {
               active={chartFilter === POOL_CHART_VIEW.RATE_TWO}
               onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_TWO)}
             >
-              {`${detail['assetTwoUnitName']}/${detail['assetOneUnitName']}`}
+              {`${pool['assetTwoUnitName']}/${pool['assetOneUnitName']}`}
             </OptionButton>
           )}
         </OptionButtonContainer>
@@ -237,7 +238,7 @@ const PoolChart = ({ color }) => {
         </ResponsiveContainer>
       )}
     </ChartWindowWrapper>
-  )
+  );
 }
 
-export default PoolChart
+export default PoolChart;

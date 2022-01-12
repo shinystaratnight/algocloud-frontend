@@ -136,7 +136,7 @@ function AssetTable(props) {
         </tbody>
       </table>
     </div>
-  )
+  );
 }
 
 export default AssetTable;

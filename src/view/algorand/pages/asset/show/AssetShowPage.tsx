@@ -21,11 +21,11 @@ const AssetShowPage = () => {
     dispatch(actions.doFetch(assetId));
   }, [dispatch, assetId]);
   
-  const asset = useSelector(selectors.selectData);
+  const asset = useSelector(selectors.selectAsset);
   const pools = useSelector(selectors.selectPools);
   const assetName = useSelector(selectors.selectAssetName);
 
-  const assetData: any = useSelector(selectors.selectDailyAssetData);
+  const assetData = useSelector(selectors.selectDailyAssetData);
   const priceData = useSelector(selectors.selectHourlyPrices);
   return (
     <>

@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { BarPrices, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import { formattedNum } from 'src/modules/algorand/utils'
-import { usePrevious } from 'react-use'
-import { Play } from 'react-feather'
+import React, { useState, useEffect, useRef } from 'react';
+import { BarPrices, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import { formattedNum } from 'src/modules/algorand/utils';
+import { usePrevious } from 'react-use';
+import { Play } from 'react-feather';
 import {
   IconWrapper,
   GraphWrapper,
-} from 'src/view/algorand/styled'
+} from 'src/view/algorand/styled';
 
 const HEIGHT = 300;
 
@@ -22,10 +22,9 @@ const CandleStickChart = ({
   margin = true,
   valueFormatter = val => formattedNum(val, true)
 }) => {
-  // reference for DOM element to create with chart
-  dayjs.extend(utc)
+  dayjs.extend(utc);
 
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
 
   const formattedData = data?.map(entry => {
     return {
@@ -34,28 +33,28 @@ const CandleStickChart = ({
       low: parseFloat(entry.open),
       close: parseFloat(entry.close),
       high: parseFloat(entry.close)
-    }
-  })
+    };
+  });
 
   // pointer to the chart object
-  const [chartCreated, setChartCreated] = useState<IChartApi | null>(null)
-  const dataPrev = usePrevious(data)
+  const [chartCreated, setChartCreated] = useState<IChartApi | null>(null);
+  const dataPrev = usePrevious(data);
 
-  let rootb = document.getElementById("root")!
-  let styleb = window.getComputedStyle(rootb)
-  let textColor = styleb.getPropertyValue('--algocloud-body-bg-2')
+  let rootb = document.getElementById("root")!;
+  let styleb = window.getComputedStyle(rootb);
+  let textColor = styleb.getPropertyValue('--algocloud-body-bg-2');
 
   useEffect(() => {
     if (data !== dataPrev && chartCreated) {
       // remove the tooltip element
-      let tooltip = document.getElementById('tooltip-id')
-      let node = document.getElementById('candlechart-id')
+      let tooltip = document.getElementById('tooltip-id');
+      let node = document.getElementById('candlechart-id');
       if (node && tooltip)
-        node.removeChild(tooltip)
-      chartCreated.resize(0, 0)
-      setChartCreated(null)
+        node.removeChild(tooltip);
+      chartCreated.resize(0, 0);
+      setChartCreated(null);
     }
-  }, [chartCreated, data, dataPrev])
+  }, [chartCreated, data, dataPrev]);
 
   // if no chart created yet, create one with options and add to DOM manually
   useEffect(() => {
@@ -91,7 +90,7 @@ const CandleStickChart = ({
         localization: {
           priceFormatter: val => formattedNum(val)
         }
-      })
+      });
 
       var candleSeries = chart.addCandlestickSeries({
         upColor: 'green',
@@ -100,24 +99,24 @@ const CandleStickChart = ({
         borderUpColor: 'green',
         wickDownColor: 'red',
         wickUpColor: 'green'
-      })
+      });
 
-      candleSeries.setData(formattedData)
+      candleSeries.setData(formattedData);
 
-      var toolTip = document.createElement('div')
-      toolTip.setAttribute('id', 'tooltip-id')
-      toolTip.className = 'three-line-legend'
-      ref.current.appendChild(toolTip)
-      toolTip.style.display = 'block'
-      toolTip.style.left = (margin ? 16 : 10) + 'px'
-      toolTip.style.top = 5 + 'px'
-      toolTip.style.backgroundColor = 'transparent'
-      toolTip.style.position = 'absolute'
+      var toolTip = document.createElement('div');
+      toolTip.setAttribute('id', 'tooltip-id');
+      toolTip.className = 'three-line-legend';
+      ref.current.appendChild(toolTip);
+      toolTip.style.display = 'block';
+      toolTip.style.left = (margin ? 16 : 10) + 'px';
+      toolTip.style.top = 5 + 'px';
+      toolTip.style.backgroundColor = 'transparent';
+      toolTip.style.position = 'absolute';
 
       // get the title of the chart
       toolTip.innerHTML = base
         ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
-        : `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(0) + '</div>'
+        : `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(0) + '</div>';
 
       // update the title when hovering on the chart
       chart.subscribeCrosshairMove(function (param) {
@@ -138,8 +137,8 @@ const CandleStickChart = ({
           if (candleSeries === undefined) return;
 
           const ts = param.time as UTCTimestamp;
-          var price = (param.seriesPrices.get(candleSeries) as BarPrices).close
-          const time = dayjs.unix(ts).format('MM/DD h:mm A')
+          var price = (param.seriesPrices.get(candleSeries) as BarPrices).close;
+          const time = dayjs.unix(ts).format('MM/DD h:mm A');
           toolTip.innerHTML =
             `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` +
             valueFormatter(price) +
@@ -147,23 +146,23 @@ const CandleStickChart = ({
             time +
             ' UTC' +
             '</span>' +
-            '</div>'
+            '</div>';
         }
-      })
+      });
 
-      chart.timeScale().fitContent()
+      chart.timeScale().fitContent();
 
-      setChartCreated(chart)
+      setChartCreated(chart);
     }
-  }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor, fixed])
+  }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor, fixed]);
 
   // responsiveness
   useEffect(() => {
     if (width) {
-      if (!fixed) chartCreated && chartCreated.resize(width, height)
-      chartCreated && chartCreated.timeScale().scrollToPosition(0, true)
+      if (!fixed) chartCreated && chartCreated.resize(width, height);
+      chartCreated && chartCreated.timeScale().scrollToPosition(0, true);
     }
-  }, [chartCreated, height, width, fixed])
+  }, [chartCreated, height, width, fixed]);
 
   return (
     <GraphWrapper pt={paddingTop}>
@@ -176,7 +175,7 @@ const CandleStickChart = ({
         />
       </IconWrapper>
     </GraphWrapper>
-  )
+  );
 }
 
-export default CandleStickChart
+export default CandleStickChart;

@@ -7,9 +7,14 @@ const selectLoading = createSelector(
   (raw) => Boolean(raw.loading),
 );
 
-const selectData = createSelector(
+const selectPool = createSelector(
   [selectRaw],
   (raw) => raw.data,
+);
+
+const selectPoolName = createSelector(
+  [selectRaw],
+  (raw) => `${raw.data.assetOneUnitName}-${raw.data.assetTwoUnitName}`,
 );
 
 const selectDailyOneRates = createSelector(
@@ -39,7 +44,8 @@ const selectDailyPoolData = createSelector(
 
 const poolShowSelectors = {
   selectLoading,
-  selectData,
+  selectPool,
+  selectPoolName,
   selectDailyOneRates,
   selectDailyTwoRates,
   selectHourlyOneRates,
