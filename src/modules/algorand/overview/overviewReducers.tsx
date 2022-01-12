@@ -38,6 +38,10 @@ const initialData = {
 };
 
 export default (state = initialData, { type, payload }) => {
+  if (type === actions.RESET) {
+    return initialData;
+  }
+
   if (type === actions.FETCH_STARTED) {
     return {
       ...state,
@@ -126,8 +130,12 @@ export default (state = initialData, { type, payload }) => {
     const favorite = {
       ...state.favorite,
       count: payload.favoriteCount,
-      rows: payload.favorites
+      rows: payload.favorites,
     };
+
+    if (favorite.pagination.current === 0) {
+      favorite.pagination.current = (payload.favoriteCount > 0) ? 1 : 0;
+    }
 
     const asset = {
       ...state.asset,
@@ -135,11 +143,19 @@ export default (state = initialData, { type, payload }) => {
       rows: payload.assets,
     };
 
+    if (asset.pagination.current === 0) {
+      asset.pagination.current = (payload.assetCount > 0) ? 1 : 0;
+    }
+
     const pool = {
       ...state.pool,
       count: payload.poolCount,
       rows: payload.pools,
     };
+
+    if (pool.pagination.current === 0) {
+      pool.pagination.current = (payload.poolCount > 0) ? 1 : 0;
+    }
 
     return {
       loading: false,

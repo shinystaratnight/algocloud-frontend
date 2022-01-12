@@ -5,10 +5,10 @@ import selectors from 'src/modules/algorand/overview/overviewSelectors';
 const prefix = 'ALGORAND_OVERVIEW';
 
 const overviewActions = {
-
   FETCH_STARTED: `${prefix}_FETCH_STARTED`,
   FETCH_SUCCESS: `${prefix}_FETCH_SUCCESS`,
   FETCH_ERROR: `${prefix}_FETCH_ERROR`,
+  RESET: `${prefix}_RESET`,
   FAVORITE_SORTER_CHANGED: `${prefix}_FAVORITE_SORTER_CHANGED`,
   FAVORITE_PAGINATION_CHANGED: `${prefix}_FAVORITE_PAGINATION_CHANGED`,
   ASSET_SORTER_CHANGED: `${prefix}_ASSET_SORTER_CHANGED`,
@@ -16,6 +16,11 @@ const overviewActions = {
   POOL_SORTER_CHANGED: `${prefix}_POOL_SORTER_CHANGED`,
   POOL_PAGINATION_CHANGED: `${prefix}_POOL_PAGINATION_CHANGED`,
 
+  doReset: () => async (dispatch) => {
+    dispatch({
+      type: overviewActions.RESET,
+    });
+  },
 
   doFetch: () => async (dispatch, getState) => {
     try {
