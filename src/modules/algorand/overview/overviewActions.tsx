@@ -5,10 +5,10 @@ import selectors from 'src/modules/algorand/overview/overviewSelectors';
 const prefix = 'ALGORAND_OVERVIEW';
 
 const overviewActions = {
-
   FETCH_STARTED: `${prefix}_FETCH_STARTED`,
   FETCH_SUCCESS: `${prefix}_FETCH_SUCCESS`,
   FETCH_ERROR: `${prefix}_FETCH_ERROR`,
+  RESET: `${prefix}_RESET`,
   FAVORITE_SORTER_CHANGED: `${prefix}_FAVORITE_SORTER_CHANGED`,
   FAVORITE_PAGINATION_CHANGED: `${prefix}_FAVORITE_PAGINATION_CHANGED`,
   ASSET_SORTER_CHANGED: `${prefix}_ASSET_SORTER_CHANGED`,
@@ -16,12 +16,73 @@ const overviewActions = {
   POOL_SORTER_CHANGED: `${prefix}_POOL_SORTER_CHANGED`,
   POOL_PAGINATION_CHANGED: `${prefix}_POOL_PAGINATION_CHANGED`,
 
+  doReset: () => async (dispatch) => {
+    dispatch({
+      type: overviewActions.RESET,
+    });
+  },
 
   doFetch: () => async (dispatch, getState) => {
     try {
       dispatch({
         type: overviewActions.FETCH_STARTED,
       });
+
+      const data = await AlgorandService.getAlgorandOverview(
+        selectors.selectFavoriteFilter(getState()),
+        selectors.selectAssetFilter(getState()),
+        selectors.selectPoolFilter(getState()),
+      );
+
+      dispatch({
+        type: overviewActions.FETCH_SUCCESS,
+        payload: data,
+      });
+
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: overviewActions.FETCH_ERROR,
+      });
+    }
+  },
+
+  doFavorite: (assetId) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: overviewActions.FETCH_STARTED,
+      });
+
+      await AlgorandService.putAlgorandFavorite(assetId);
+
+      const data = await AlgorandService.getAlgorandOverview(
+        selectors.selectFavoriteFilter(getState()),
+        selectors.selectAssetFilter(getState()),
+        selectors.selectPoolFilter(getState()),
+      );
+
+      dispatch({
+        type: overviewActions.FETCH_SUCCESS,
+        payload: data,
+      });
+
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: overviewActions.FETCH_ERROR,
+      });
+    }
+  },
+
+  doShowcase: (assetId) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: overviewActions.FETCH_STARTED,
+      });
+
+      await AlgorandService.putAlgorandShowcase(assetId);
 
       const data = await AlgorandService.getAlgorandOverview(
         selectors.selectFavoriteFilter(getState()),

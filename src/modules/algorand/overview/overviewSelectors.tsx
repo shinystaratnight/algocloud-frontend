@@ -33,8 +33,8 @@ const selectFavorites = createSelector(
 );
 
 const selectFavoriteIds = createSelector(
-  [selectFavorites],
-  (favorites) => favorites.map(({ assetId }) => assetId)
+  [selectRaw],
+  (raw) => raw.favorites,
 );
 
 const selectShowcase = createSelector(
@@ -129,7 +129,7 @@ const selectFavoriteFilter = createSelector(
     let orderBy;
 
     if (!sorter.field) {
-      orderBy = `id`;
+      orderBy = 'id';
     } else {
       const direction = sorter.order === 'descend' ? 'DESC' : 'ASC';
       orderBy = `"${sorter.field}" ${direction}`;

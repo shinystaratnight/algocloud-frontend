@@ -1,9 +1,7 @@
-import actions from 'src/modules/algorand/asset/list/assetListActions';
+import actions from 'src/modules/algorand/pool/list/poolListActions';
 
 const initialData = {
   loading: false,
-  showcase: {},
-  favoriteIds: [] as Array<any>,
   rows: [] as Array<any>,
   count: 0,
   pagination: {
@@ -31,8 +29,6 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      favoriteIds: payload.favoriteIds,
-      showcase: payload.showcase,
       rows: payload.rows,
       count: payload.count,
     };

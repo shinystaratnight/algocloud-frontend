@@ -3,6 +3,7 @@ import actions from 'src/modules/algorand/overview/overviewActions';
 const initialData = {
   loading: false,
   showcase: {},
+  favorites: [] as Array<any>,
   stats: {
     daily: [] as Array<any>,
     weekly: [] as Array<any>,
@@ -11,7 +12,7 @@ const initialData = {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 0,
+      current: 1,
       pageSize: 10,
     },
     sorter: {},
@@ -20,7 +21,7 @@ const initialData = {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 0,
+      current: 1,
       pageSize: 10,
     },
     sorter: {},
@@ -29,7 +30,7 @@ const initialData = {
     rows: [] as Array<any>,
     count: 0,
     pagination: {
-      current: 0,
+      current: 1,
       pageSize: 10,
     },
     sorter: {},
@@ -37,6 +38,12 @@ const initialData = {
 };
 
 export default (state = initialData, { type, payload }) => {
+  if (type === actions.RESET) {
+    return {
+      ...initialData
+    };
+  }
+
   if (type === actions.FETCH_STARTED) {
     return {
       ...state,
@@ -125,7 +132,7 @@ export default (state = initialData, { type, payload }) => {
     const favorite = {
       ...state.favorite,
       count: payload.favoriteCount,
-      rows: payload.favorites
+      rows: payload.favorites,
     };
 
     const asset = {
@@ -143,6 +150,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       loading: false,
       showcase: payload.showcase,
+      favorites: payload.favoriteIds,
       favorite,
       stats,
       asset,

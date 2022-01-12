@@ -1,13 +1,13 @@
 import { createSelector } from 'reselect';
 
-const selectRaw = (state) => state.algorand.asset.list;
+const selectRaw = (state) => state.algorand.favorite;
 
 const selectLoading = createSelector(
   [selectRaw],
   (raw) => Boolean(raw.loading),
 );
 
-const selectAssets = createSelector(
+const selectFavorites = createSelector(
   [selectRaw],
   (raw) => raw.rows,
 );
@@ -71,9 +71,9 @@ const selectSorter = createSelector(
   (raw) => raw.sorter,
 );
 
-const assetListSelectors = {
+const favoritesSelectors = {
   selectLoading,
-  selectAssets,
+  selectFavorites,
   selectFavoriteIds,
   selectShowcaseId,
   selectOrderBy,
@@ -85,4 +85,4 @@ const assetListSelectors = {
   selectRaw,
 };
 
-export default assetListSelectors;
+export default favoritesSelectors;

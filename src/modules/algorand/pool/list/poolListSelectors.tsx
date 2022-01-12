@@ -1,25 +1,15 @@
 import { createSelector } from 'reselect';
 
-const selectRaw = (state) => state.algorand.asset.list;
+const selectRaw = (state) => state.algorand.pool.list;
 
 const selectLoading = createSelector(
   [selectRaw],
   (raw) => Boolean(raw.loading),
 );
 
-const selectAssets = createSelector(
+const selectPools = createSelector(
   [selectRaw],
   (raw) => raw.rows,
-);
-
-const selectFavoriteIds = createSelector(
-  [selectRaw],
-  (raw) => raw.favoriteIds,
-);
-
-const selectShowcaseId = createSelector(
-  [selectRaw],
-  (raw) => raw.showcase.assetId,
 );
 
 const selectCount = createSelector(
@@ -71,11 +61,9 @@ const selectSorter = createSelector(
   (raw) => raw.sorter,
 );
 
-const assetListSelectors = {
+const poolListSelectors = {
   selectLoading,
-  selectAssets,
-  selectFavoriteIds,
-  selectShowcaseId,
+  selectPools,
   selectOrderBy,
   selectLimit,
   selectOffset,
@@ -85,4 +73,4 @@ const assetListSelectors = {
   selectRaw,
 };
 
-export default assetListSelectors;
+export default poolListSelectors;

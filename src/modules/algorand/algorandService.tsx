@@ -30,77 +30,118 @@ export default class AlgorandService {
     return response.data;
   }
 
-  static async getAlgorandStatistics() {
-    const tenantId = AuthCurrentTenant.get();
-
-    const response = await authAxios.get(
-      `/tenant/${tenantId}/algorand/general-stats`,
-    );
-
-    return response.data;
-  }
-  
-  static async getAlgorandShowcase() {
-    const tenantId = AuthCurrentTenant.get();
-
-    const response = await authAxios.get(
-      `/tenant/${tenantId}/algorand/showcase`,
-    );
-
-    return response.data;
+  static async getAlgorandGlobal() {
+    const to = Math.floor(Date.now() / 1000);
+    const from = to - 31536000;
+    const algoPriceUrl = `https://price.algoexplorerapi.io/price/algo-usd/history?since=${from}&until=${to}&interval=1D`;
+    const { data: { history } } = await axios.get(algoPriceUrl);
+    
+    const marketCapUrl = `https://indexer.algoexplorerapi.io/stats/v2/economics?interval=1W`;
+    const { data: { data } } = await axios.get(marketCapUrl);
+    
+    return {
+      'algoPriceData': history,
+      'marketCapData': data,
+    };
   }
 
-  static async setAlgorandShowcase(assetId) {
+  static async putAlgorandFavorite(assetId) {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.put(
-      `/tenant/${tenantId}/algorand/${assetId}/set-showcase`,
+      `/tenant/${tenantId}/algorand/favorite/${assetId}`,
     );
 
     return response.data;
   }
 
-  static async getAlgorandFavorites() {
+  static async putAlgorandShowcase(assetId) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.put(
+      `/tenant/${tenantId}/algorand/showcase/${assetId}`,
+    );
+
+    return response.data;
+  }
+
+  static async getAlgorandFavorites(orderBy, limit, offset) {
+    const params = {
+      orderBy,
+      limit,
+      offset,
+    };
+
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/favorites`,
+      {
+        params,
+      }
     );
 
     return response.data;
   }
 
-  static async getAlgorandAssets() {
+  static async getAlgorandAssets(orderBy, limit, offset) {
+    const params = {
+      orderBy,
+      limit,
+      offset,
+    };
+
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/assets`,
+      {
+        params,
+      },
     );
 
     return response.data;
   }
 
-  static async getAlgorandPools() {
+  static async getAlgorandPools(orderBy, limit, offset) {
+    const params = {
+      orderBy,
+      limit,
+      offset,
+    };
+
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/pools`,
+      {
+        params,
+      }
     );
 
     return response.data;
   }
 
-  static async getAlgorandAssetHistory(assetId) {
+  static async getAlgorandAsset(assetId, orderBy, limit, offset) {
+    const params = {
+      orderBy,
+      limit,
+      offset,
+    };
+
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
       `/tenant/${tenantId}/algorand/asset/${assetId}`,
+      {
+        params,
+      }
     );
 
     return response.data;
   }
 
-  static async getAlgorandPoolHistory(address) {
+  static async getAlgorandPool(address) {
     const tenantId = AuthCurrentTenant.get();
 
     const response = await authAxios.get(
@@ -108,29 +149,5 @@ export default class AlgorandService {
     );
 
     return response.data;
-  }
-
-  static async toggleAlgorandFavorite(assetId) {
-    const tenantId = AuthCurrentTenant.get();
-
-    const response = await authAxios.put(
-      `/tenant/${tenantId}/algorand/favorite/${assetId}/toggle`,
-    );
-
-    return response.data;
-  }
-
-  static async getAlgoPriceChartData() {
-    const to = Math.floor(Date.now() / 1000);
-    const from = to - 31536000;
-    const url = `https://price.algoexplorerapi.io/price/algo-usd/history?since=${from}&until=${to}&interval=1D`;
-    const { data: { history } } = await axios.get(url);
-    return history;
-  }
-
-  static async getMarketCapChartData() {
-    const url = `https://indexer.algoexplorerapi.io/stats/v2/economics?interval=1W`;
-    const { data: { data } } = await axios.get(url);
-    return data;
   }
 }

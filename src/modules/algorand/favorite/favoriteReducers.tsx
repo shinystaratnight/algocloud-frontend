@@ -1,4 +1,4 @@
-import actions from 'src/modules/algorand/asset/list/assetListActions';
+import actions from 'src/modules/algorand/favorite/favoriteActions';
 
 const initialData = {
   loading: false,

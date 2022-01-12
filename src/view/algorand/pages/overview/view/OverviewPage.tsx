@@ -22,15 +22,13 @@ function OverviewPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(actions.doReset());
     dispatch(actions.doFetch());
   }, [dispatch]);
 
-  const loading = useSelector(selectors.selectLoading);
   const assets = useSelector(selectors.selectAssets);
   const pools = useSelector(selectors.selectPools);
   const favorites = useSelector(selectors.selectFavorites);
-  const favIds = useSelector(selectors.selectFavoriteIds);
-  const showcase = useSelector(selectors.selectShowcase);
 
   return (
     <>
@@ -42,7 +40,7 @@ function OverviewPage() {
       />
 
       <AlgoexplorerSection>
-        Do you want to check Algo prices?<Link to="/algorand/algoexplorer">Click Here...</Link>
+        Do you want to check global statistics charts?<Link to="/algorand/global">Click Here...</Link>
       </AlgoexplorerSection>
 
       <OverviewChart />

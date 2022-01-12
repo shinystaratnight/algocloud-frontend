@@ -1,17 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react'
-import { BusinessDay, createChart, IChartApi } from 'lightweight-charts'
-import dayjs from 'dayjs'
-import utc from 'dayjs/plugin/utc'
-import { usePrevious } from 'react-use'
-import { Play } from 'react-feather'
-import { formattedNum } from 'src/modules/algorand/utils'
-import { CHART_TYPES } from 'src/modules/algorand/constants'
-import { GraphWrapper, IconWrapper } from 'src/view/algorand/styled'
+import React, { useState, useEffect, useRef } from 'react';
+import { BusinessDay, createChart, IChartApi } from 'lightweight-charts';
+import { usePrevious } from 'react-use';
+import { Play } from 'react-feather';
+import dayjs from 'dayjs';
+import utc from 'dayjs/plugin/utc';
+import { formattedNum } from 'src/modules/algorand/utils';
+import { CHART_TYPES } from 'src/modules/algorand/constants';
+import { GraphWrapper, IconWrapper } from 'src/view/algorand/styled';
 
-dayjs.extend(utc)
+dayjs.extend(utc);
 
-// constant height for charts
-const HEIGHT = 300
+const HEIGHT = 300;
 
 const TradingViewChart = ({
   type = CHART_TYPES.BAR,
@@ -24,43 +23,35 @@ const TradingViewChart = ({
   timeField = 'createdDate',
   useWeekly = false
 }) => {
-  // reference for DOM element to create with chart
-  const ref = useRef<HTMLDivElement>(null)
+  const ref = useRef<HTMLDivElement>(null);
 
-  // pointer to the chart object
-  const [chartCreated, setChartCreated] = useState<IChartApi | null>(null)
-  const dataPrev = usePrevious(data)
+  const [chartCreated, setChartCreated] = useState<IChartApi | null>(null);
+  const dataPrev = usePrevious(data);
 
-  // parese the data and format for tardingview consumption
   const formattedData = data?.map(entry => {
     return {
       time: utc ? dayjs.unix(entry[timeField]).utc().format('YYYY-MM-DD') : entry[timeField],
       value: parseFloat(entry[field])
-    }
-  })
+    };
+  });
 
-  // adjust the scale based on the type of chart
-  const topScale = type === CHART_TYPES.AREA ? 0.32 : 0.2
+  const topScale = type === CHART_TYPES.AREA ? 0.32 : 0.2;
+  let rootb = document.getElementById("root")!;
+  let styleb = window.getComputedStyle(rootb);
+  let textColor = styleb.getPropertyValue('--algocloud-body-bg-2');
 
-  let rootb = document.getElementById("root")!
-  let styleb = window.getComputedStyle(rootb)
-  let textColor = styleb.getPropertyValue('--algocloud-body-bg-2')
-
-  // reset the chart if them switches
   useEffect(() => {
     if (data !== dataPrev && chartCreated) {
-      // remove the tooltip element
-      let tooltip = document.getElementById('tooltip-id' + type)
-      let node = document.getElementById('tradchart-id' + type)
+      let tooltip = document.getElementById('tooltip-id' + type);
+      let node = document.getElementById('tradchart-id' + type);
       if (node && tooltip) {
-        node.removeChild(tooltip)
+        node.removeChild(tooltip);
       }
-      chartCreated.resize(0, 0)
-      setChartCreated(null)
+      chartCreated.resize(0, 0);
+      setChartCreated(null);
     }
-  }, [chartCreated, data, dataPrev, type])
+  }, [chartCreated, data, dataPrev, type]);
 
-  // if no chart created yet, create one with options and add to DOM manually
   useEffect(() => {
     if (!chartCreated && formattedData) {
       if (!ref.current) return;
@@ -108,7 +99,7 @@ const TradingViewChart = ({
         localization: {
           priceFormatter: val => formattedNum(val, true)
         }
-      })
+      });
 
       var series =
         type === CHART_TYPES.BAR
@@ -123,37 +114,34 @@ const TradingViewChart = ({
             },
             // lineColor: '#687dfd',
             // lineWidth: 3
-          })
-          : chart.addAreaSeries({
+          }) :
+          chart.addAreaSeries({
             topColor: '#687dfd',
             bottomColor: 'rgba(112, 82, 64, 0)',
             lineColor: '#687dfd',
             lineWidth: 3
-          })
+          });
 
-      series.setData(formattedData)
-      var toolTip = document.createElement('div')
-      toolTip.setAttribute('id', 'tooltip-id' + type)
-      toolTip.className = 'three-line-legend'
+      series.setData(formattedData);
+      var toolTip = document.createElement('div');
+      toolTip.setAttribute('id', 'tooltip-id' + type);
+      toolTip.className = 'three-line-legend';
       if (ref.current)
-        ref.current.appendChild(toolTip)
-      toolTip.style.display = 'block'
-      toolTip.style.fontWeight = '500'
-      toolTip.style.left = -4 + 'px'
-      toolTip.style.top = '-' + 8 + 'px'
-      toolTip.style.position = 'absolute'
-      toolTip.style.backgroundColor = 'transparent'
+        ref.current.appendChild(toolTip);
+      toolTip.style.display = 'block';
+      toolTip.style.fontWeight = '500';
+      toolTip.style.left = -4 + 'px';
+      toolTip.style.top = '-' + 8 + 'px';
+      toolTip.style.position = 'absolute';
+      toolTip.style.backgroundColor = 'transparent';
 
-      // get the title of the chart
       toolTip.innerHTML =
         `<div style="font-size: 16px; margin: 4px 0px; color: ${textColor};">${title}</div>` +
         `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >` +
         formattedNum(base ?? 0, true) +
-        '</div>'
+        '</div>';
 
-      // update the title when hovering on the chart
       chart.subscribeCrosshairMove(function (param) {
-
         if (
           param === undefined ||
           param.time === undefined ||
@@ -174,8 +162,8 @@ const TradingViewChart = ({
             dayjs(ts.year + '-' + ts.month + '-' + ts.day)
               .endOf('week')
               .format('MMMM D, YYYY')
-            : dayjs(ts.year + '-' + ts.month + '-' + ts.day).format('MMMM D, YYYY')
-          var price = param.seriesPrices.get(series)
+            : dayjs(ts.year + '-' + ts.month + '-' + ts.day).format('MMMM D, YYYY');
+          var price = param.seriesPrices.get(series);
 
           toolTip.innerHTML =
             `<div style="font-size: 16px; margin: 4px 0px; color: ${textColor};">${title}</div>` +
@@ -184,13 +172,13 @@ const TradingViewChart = ({
             '</div>' +
             '<div>' +
             dateStr +
-            '</div>'
+            '</div>';
         }
-      })
+      });
 
-      chart.timeScale().fitContent()
+      chart.timeScale().fitContent();
 
-      setChartCreated(chart)
+      setChartCreated(chart);
     }
   }, [
     base,
@@ -203,15 +191,14 @@ const TradingViewChart = ({
     type,
     useWeekly,
     width
-  ])
+  ]);
 
-  // responsiveness
   useEffect(() => {
     if (width) {
       chartCreated && chartCreated.resize(width, HEIGHT)
       chartCreated && chartCreated.timeScale().scrollToPosition(0, true)
     }
-  }, [chartCreated, width])
+  }, [chartCreated, width]);
 
   return (
     <GraphWrapper>
@@ -224,7 +211,7 @@ const TradingViewChart = ({
         />
       </IconWrapper>
     </GraphWrapper>
-  )
+  );
 }
 
-export default TradingViewChart
+export default TradingViewChart;
