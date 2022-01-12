@@ -42,7 +42,7 @@ function OverviewPage() {
       />
 
       <AlgoexplorerSection>
-        Do you want to check Algo prices?<Link to="/algorand/global">Click Here...</Link>
+        Do you want to check global statistics charts?<Link to="/algorand/global">Click Here...</Link>
       </AlgoexplorerSection>
 
       <OverviewChart />
