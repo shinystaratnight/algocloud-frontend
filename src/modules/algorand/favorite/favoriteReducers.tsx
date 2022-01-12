@@ -1,8 +1,9 @@
-import actions from 'src/modules/algorand/algoexplorer/marketCap/marketCapActions';
+import actions from 'src/modules/algorand/favorites/favoritesActions';
 
 const initialData = {
   loading: false,
-  marketCapChartData: [],
+  list: [],
+  top: [],
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -17,7 +18,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      marketCapChartData: payload.data,
+      ...(payload.data),
     };
   }
 

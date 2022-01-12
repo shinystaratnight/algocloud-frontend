@@ -230,7 +230,7 @@ const privateRoutes = [
   },
   {
     path: '/algorand/assets',
-    loader: () => import('src/view/algorand/pages/assets/AssetListPage'),
+    loader: () => import('src/view/algorand/pages/asset/list/AssetListPage'),
     permissionRequired: permissions.algorandRead,
     exact: true,
   },

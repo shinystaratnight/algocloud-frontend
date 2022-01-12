@@ -1,7 +1,7 @@
 import Errors from 'src/modules/shared/error/errors';
 import AlgorandService from 'src/modules/algorand/algorandService';
 
-const prefix = 'ALGORAND_ASSETS';
+const prefix = 'ALGORAND_ASSET_SHOW';
 
 const assetsActions = {
 
@@ -16,11 +16,11 @@ const assetsActions = {
         type: assetsActions.FETCH_STARTED,
       });
 
-      const data = await AlgorandService.getAlgorandAssets();
+      const data = 123;
       
       dispatch({
         type: assetsActions.FETCH_SUCCESS,
-        payload: { data },
+        payload: data,
       });
     } catch (error) {
       Errors.handle(error);

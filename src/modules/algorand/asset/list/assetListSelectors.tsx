@@ -1,67 +1,88 @@
 import { createSelector } from 'reselect';
-import favoritesSelectors from 'src/modules/algorand/favorites/favoritesSelectors';
 
-const selectRaw = (state) => state.algorand.assets;
+const selectRaw = (state) => state.algorand.asset.list;
 
 const selectLoading = createSelector(
   [selectRaw],
   (raw) => Boolean(raw.loading),
 );
 
-const selectUnfilteredAssets = createSelector(
-  [selectRaw],
-  (raw) => raw.list,
-);
-
-const selectDailyPrices = createSelector(
-  [selectRaw],
-  (raw) => raw.dailyPrices,
-);
-
-const selectHourlyPrices = createSelector(
-  [selectRaw],
-  (raw) => raw.hourlyPrices,
-);
-
-const selectDailyAssetData = createSelector(
-  [selectRaw],
-  (raw) => raw.dailyAssetData,
-);
-
-const selectTopPools = createSelector(
-  [selectRaw],
-  (raw) => raw.topPools,
-);
-
 const selectAssets = createSelector(
-  [
-    selectUnfilteredAssets,
-    favoritesSelectors.selectFavoriteList,
-  ],
-  (assets, favorites) => {
-    return assets.map(asset => {
-      if (favorites.includes(asset.assetId)) asset.favorite = 1;
-      else asset.favorite = 0;
-
-    });
-  }
-);
-
-const selectAssetDetail = createSelector(
   [selectRaw],
-  (raw) => raw.show,
+  (raw) => raw.rows,
 );
 
+const selectFavoriteIds = createSelector(
+  [selectRaw],
+  (raw) => raw.favoriteIds,
+);
 
-const assetsSelectors = {
+const selectShowcaseId = createSelector(
+  [selectRaw],
+  (raw) => raw.showcase.assetId,
+);
+
+const selectCount = createSelector(
+  [selectRaw],
+  (raw) => raw.count,
+);
+
+const selectPagination = createSelector(
+  [selectRaw, selectCount],
+  (raw, count) => {
+    return {
+      ...raw.pagination,
+      total: count,
+    };
+  },
+);
+
+const selectOrderBy = createSelector([selectRaw], (raw) => {
+  const sorter = raw.sorter;
+
+  if (!sorter.field) {
+    return 'id';
+  }
+
+  let direction =
+    sorter.order === 'descend' ? 'DESC' : 'ASC';
+
+  return `"${sorter.field}" ${direction}`;
+});
+
+const selectLimit = createSelector(
+  [selectRaw],
+  (raw) => raw.pagination.pageSize,
+);
+
+const selectOffset = createSelector([selectRaw], (raw) => {
+  const pagination = raw.pagination;
+  const current = pagination.current || 1;
+  return (current - 1) * pagination.pageSize;
+});
+
+const selectHasRows = createSelector(
+  [selectCount],
+  (count) => count > 0,
+);
+
+const selectSorter = createSelector(
+  [selectRaw],
+  (raw) => raw.sorter,
+);
+
+const assetListSelectors = {
   selectLoading,
-  selectDailyPrices,
-  selectHourlyPrices,
-  selectDailyAssetData,
-  selectTopPools,
   selectAssets,
-  selectAssetDetail,
+  selectFavoriteIds,
+  selectShowcaseId,
+  selectOrderBy,
+  selectLimit,
+  selectOffset,
+  selectPagination,
+  selectHasRows,
+  selectSorter,
   selectRaw,
 };
 
-export default assetsSelectors;
+export default assetListSelectors;

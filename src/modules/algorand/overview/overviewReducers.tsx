@@ -3,6 +3,7 @@ import actions from 'src/modules/algorand/overview/overviewActions';
 const initialData = {
   loading: false,
   showcase: {},
+  favorites: [] as Array<any>,
   stats: {
     daily: [] as Array<any>,
     weekly: [] as Array<any>,
@@ -143,6 +144,7 @@ export default (state = initialData, { type, payload }) => {
     return {
       loading: false,
       showcase: payload.showcase,
+      favorites: payload.favoriteIds,
       favorite,
       stats,
       asset,

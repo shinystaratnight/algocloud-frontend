@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
 import list from 'src/modules/algorand/asset/list/assetListReducers';
-import view from 'src/modules/algorand/asset/view/assetViewReducers';
+import show from 'src/modules/algorand/asset/show/assetShowReducers';
 
 export default combineReducers({
   list,
-  view,
+  show,
 });

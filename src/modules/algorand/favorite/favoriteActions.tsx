@@ -1,7 +1,7 @@
 import Errors from 'src/modules/shared/error/errors';
 import AlgorandService from 'src/modules/algorand/algorandService';
 
-const prefix = 'ALGORAND_ASSETS';
+const prefix = 'ALGORAND_FAVORITES';
 
 const assetsActions = {
 
@@ -16,7 +16,7 @@ const assetsActions = {
         type: assetsActions.FETCH_STARTED,
       });
 
-      const data = '123';
+      const data = await AlgorandService.getAlgorandFavorites();
       
       dispatch({
         type: assetsActions.FETCH_SUCCESS,
@@ -31,19 +31,18 @@ const assetsActions = {
     }
   },
 
-  doFetchHistory: (assetId) =>async (dispatch) => {
+  doToggle: (assetId) => async (dispatch) => {
     try {
       dispatch({
-        type: assetsActions.FETCH_STARTED
+        type: assetsActions.FETCH_STARTED,
       });
 
-      const data = await AlgorandService.getAlgorandAssetHistory(assetId);
+      const data = await AlgorandService.putAlgorandFavorite(assetId);
       
       dispatch({
         type: assetsActions.FETCH_SUCCESS,
         payload: { data },
       });
-
     } catch (error) {
       Errors.handle(error);
 
@@ -51,7 +50,7 @@ const assetsActions = {
         type: assetsActions.FETCH_ERROR,
       });
     }
-  }
+  },
 };
 
 export default assetsActions;

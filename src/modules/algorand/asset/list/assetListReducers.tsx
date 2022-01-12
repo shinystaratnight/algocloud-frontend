@@ -2,19 +2,15 @@ import actions from 'src/modules/algorand/asset/list/assetListActions';
 
 const initialData = {
   loading: false,
-  list: [],
-  show: {
-    'name': '',
-    'unitName': '',
-    'price': '',
-    'liquidity': '',
-    'lastDayVolume': '',
-    'lastDayPriceChange': '',
+  showcase: {},
+  favoriteIds: [] as Array<any>,
+  rows: [] as Array<any>,
+  count: 0,
+  pagination: {
+    current: 0,
+    pageSize: 20,
   },
-  hourlyPrices: [],
-  dailyPrices: [],
-  dailyAssetData: [],
-  topPools: [],
+  sorter: {},
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -29,7 +25,24 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false,
-      ...(payload.data),
+      favoriteIds: payload.favoriteIds,
+      showcase: payload.showcase,
+      rows: payload.rows,
+      count: payload.count,
+    };
+  }
+
+  if (type === actions.SORTER_CHANGED) {
+    return {
+      ...state,
+      sorter: payload,
+    };
+  }
+
+  if (type === actions.PAGINATION_CHANGED) {
+    return {
+      ...state,
+      pagination: payload,
     };
   }
 
