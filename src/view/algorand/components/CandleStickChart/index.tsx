@@ -27,12 +27,13 @@ const CandleStickChart = ({
   const ref = useRef<HTMLDivElement>(null);
 
   const formattedData = data?.map(entry => {
+
     return {
-      time: parseFloat(entry.timestamp),
-      open: parseFloat(entry.open),
-      low: parseFloat(entry.open),
-      close: parseFloat(entry.close),
-      high: parseFloat(entry.close)
+      time: entry.timestamp,
+      open: entry.open,
+      low: entry.low,
+      close: entry.close,
+      high: entry.high
     };
   });
 

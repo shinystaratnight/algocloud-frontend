@@ -1292,6 +1292,10 @@ a:hover {
     text-decoration: underline
 }
 
+#stickyTop a {
+    text-decoration: unset !important;
+}
+
 a:not([href]):not([class]),a:not([href]):not([class]):hover {
     color: inherit;
     text-decoration: none
