@@ -14,8 +14,10 @@ import {
 function ShowcaseChart() {
   const ref1 = useRef(null);
   const ref2 = useRef(null);
+  const ref3 = useRef(null);
   const [width1, setWidth1] = useState(0);
   const [width2, setWidth2] = useState(0);
+  const [width3, setWidth3] = useState(0);
 
   const showcase = useSelector(selectors.selectShowcase);
   const dailyData = useSelector(selectors.selectDailyData);
@@ -23,13 +25,17 @@ function ShowcaseChart() {
   useEffect(() => {
     if (ref1.current) {
       const current: any = ref1.current;
-      setWidth1(current.clientWidth);
+      setWidth1(Math.max(current.clientWidth, 400));
     }
     if (ref2.current) {
       const current: any = ref2.current;
-      setWidth2(current.clientWidth);
+      setWidth2(Math.max(current.clientWidth, 400));
     }
-  }, [ref1, ref2])
+    if (ref3.current) {
+      const current: any = ref3.current;
+      setWidth3(Math.max(current.clientWidth, 400));
+    }
+  }, [ref1, ref2, ref3])
 
   return (
     <FlexContainer gap="20px" className="showcase-row">
@@ -49,7 +55,7 @@ function ShowcaseChart() {
       </ContentWrapper>
 
       <ChartWindowWrapper className=" card bg-box rounded">
-        <ResponsiveContainer aspect={60 / 28}>
+        <ResponsiveContainer aspect={60 / 28} ref={ref2}>
           <TradingViewChart
             data={dailyData}
             base={0}
@@ -57,6 +63,22 @@ function ShowcaseChart() {
             field={'lastDayVolume'}
             width={width2}
             type={CHART_TYPES.BAR}
+            timeField='date'
+            useWeekly={false}
+            utc={true}
+          />
+        </ResponsiveContainer>
+      </ChartWindowWrapper>
+
+      <ChartWindowWrapper className=" card bg-box rounded">
+        <ResponsiveContainer aspect={60 / 28} ref={ref3}>
+          <TradingViewChart
+            data={dailyData}
+            base={0}
+            title={`${showcase.unitName} Market Cap`}
+            field={'marketCap'}
+            width={width3}
+            type={CHART_TYPES.AREA}
             timeField='date'
             useWeekly={false}
             utc={true}

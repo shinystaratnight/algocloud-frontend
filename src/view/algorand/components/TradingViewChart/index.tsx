@@ -115,6 +115,13 @@ const TradingViewChart = ({
             // lineColor: '#687dfd',
             // lineWidth: 3
           }) :
+          type === CHART_TYPES.AREA ?
+          chart.addBaselineSeries({
+            // topColor: '#d7829c',
+            // bottomColor: 'rgba(112, 82, 64, 0)',
+            // lineColor: '#d7829c',
+            // lineWidth: 3
+          }) :
           chart.addAreaSeries({
             topColor: '#687dfd',
             bottomColor: 'rgba(112, 82, 64, 0)',

@@ -10,6 +10,7 @@ export const formatNumber = (_volume) => {
   let volume = _volume;
   if (_volume === null) volume = 0;
   if (typeof _volume === 'string') volume = parseFloat(volume);
+  if (volume >= 1e+9) return '$' + (volume / 1e+9).toFixed(2) + 'B';
   if (volume >= 1e+6) return '$' + (volume / 1e+6).toFixed(2) + 'M';
   if (volume >= 1e+3) return '$' + (volume / 1e+3).toFixed(2) + 'K';
   return '$' + volume.toFixed(2);
