@@ -209,6 +209,10 @@ const en = {
         hint:
           'Files/Images columns must be the URLs of the files separated by space.',
       },
+    },    chalkboard: {
+      name: 'chalkboard',
+      label: 'Chalkboard',
+      menu: 'Chalkboard',
     },
 
     algorand: {

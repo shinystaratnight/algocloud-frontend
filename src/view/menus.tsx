@@ -26,6 +26,12 @@ export default [
     permissionRequired: permissions.userRead,
     icon: 'fas fa-user-plus',
   },
+  {
+    path: '/chalkboard',
+    permissionRequired: permissions.chalkboardRead,
+    icon: 'fas fa-file',
+    label: i18n('entities.chalkboard.menu'),
+  },
 
   {
     path: '/audit-logs',
