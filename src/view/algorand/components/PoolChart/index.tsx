@@ -105,9 +105,9 @@ const PoolChart = (props) => {
           <CandleStickChart
             data={rateOneData}
             width={width}
-            base={null}
+            base={0}
             paddingTop='0'
-            valueFormatter={(val) => val.toFixed(4)}
+            valueFormatter={(val) => val?.toFixed(4)}
           />
         </ResponsiveContainer>
       )}
@@ -117,9 +117,9 @@ const PoolChart = (props) => {
           <CandleStickChart
             data={rateTwoData}
             width={width}
-            base={null}
+            base={0}
             paddingTop='0'
-            valueFormatter={(val) => val.toFixed(4)}
+            valueFormatter={(val) => val?.toFixed(4)}
           />
         </ResponsiveContainer>
       )}

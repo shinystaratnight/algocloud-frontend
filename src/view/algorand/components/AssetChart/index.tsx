@@ -107,14 +107,14 @@ const AssetChart = (props) => {
         </OptionButtonContainer>
       </RowBetween>
       
-      {chartFilter === ASSET_CHART_VIEW.PRICE && assetData && (
+      {chartFilter === ASSET_CHART_VIEW.PRICE && priceData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
           <CandleStickChart
             data={priceData}
             width={width}
-            base={null}
+            base={0}
             paddingTop='0'
-            valueFormatter={(val) => val.toFixed(4)}
+            valueFormatter={(val) => val?.toFixed(4)}
           />
         </ResponsiveContainer>
       )}

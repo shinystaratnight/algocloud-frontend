@@ -30,10 +30,10 @@ const CandleStickChart = ({
 
     return {
       time: entry.timestamp,
-      open: entry.open,
-      low: entry.low,
-      close: entry.close,
-      high: entry.high
+      open: entry.open * 1,
+      low: entry.low * 1,
+      close: entry.close * 1,
+      high: entry.high * 1
     };
   });
 
