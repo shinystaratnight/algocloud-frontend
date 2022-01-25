@@ -240,6 +240,11 @@ class Permissions {
         allowedRoles: [roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
+      chalkboardRead: {
+        id: 'chalkboardRead',
+        allowedRoles: [roles.admin, roles.custom],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
       algorandRead: {
         id: 'algorandRead',
         allowedRoles: [roles.admin, roles.custom],
