@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BusinessDay, createChart, IChartApi } from 'lightweight-charts';
+import { BusinessDay, createChart, IChartApi, Time } from 'lightweight-charts';
 import { usePrevious } from 'react-use';
 import { Play } from 'react-feather';
 import dayjs from 'dayjs';
@@ -10,7 +10,7 @@ import { GraphWrapper, IconWrapper } from 'src/view/algorand/styled';
 
 dayjs.extend(utc);
 
-const HEIGHT = 300;
+const HEIGHT = 385;
 
 const TradingViewChart = ({
   type = CHART_TYPES.BAR,
@@ -116,18 +116,18 @@ const TradingViewChart = ({
             // lineWidth: 3
           }) :
           type === CHART_TYPES.AREA ?
-          chart.addBaselineSeries({
-            // topColor: '#d7829c',
-            // bottomColor: 'rgba(112, 82, 64, 0)',
-            // lineColor: '#d7829c',
-            // lineWidth: 3
-          }) :
-          chart.addAreaSeries({
-            topColor: '#687dfd',
-            bottomColor: 'rgba(112, 82, 64, 0)',
-            lineColor: '#687dfd',
-            lineWidth: 3
-          });
+            chart.addBaselineSeries({
+              // topColor: '#d7829c',
+              // bottomColor: 'rgba(112, 82, 64, 0)',
+              // lineColor: '#d7829c',
+              // lineWidth: 3
+            }) :
+            chart.addAreaSeries({
+              topColor: '#687dfd',
+              bottomColor: 'rgba(112, 82, 64, 0)',
+              lineColor: '#687dfd',
+              lineWidth: 3
+            });
 
       series.setData(formattedData);
       var toolTip = document.createElement('div');
@@ -184,7 +184,12 @@ const TradingViewChart = ({
         }
       });
 
-      chart.timeScale().fitContent();
+      var from = new Date();
+      from.setDate(from.getDate() - 7);
+      var to = new Date();
+      if (formattedData && formattedData.length > 0) {
+        chart.timeScale().setVisibleRange({ from: from.getTime() / 1000 as Time, to: to.getTime() / 1000 as Time });
+      }
 
       setChartCreated(chart);
     }

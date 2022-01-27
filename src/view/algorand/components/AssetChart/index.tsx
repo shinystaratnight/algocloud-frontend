@@ -18,7 +18,7 @@ import {
   toNiceDateYear,
   formattedNum,
 } from 'src/modules/algorand/utils';
-import { ASSET_CHART_VIEW } from 'src/modules/algorand/constants';
+import { ASSET_CHART_VIEW, CHART_TYPES } from 'src/modules/algorand/constants';
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
 import {
   ChartWindowWrapper,
@@ -26,6 +26,7 @@ import {
   OptionButtonContainer,
   RowBetween
 } from 'src/view/algorand/styled';
+import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
 
 const AssetChart = (props) => {
   const {
@@ -35,11 +36,11 @@ const AssetChart = (props) => {
   } = props;
 
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
-  
+
   const below1080 = useMedia('(max-width: 1080px)');
   const below600 = useMedia('(max-width: 600px)');
   const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22;
-  
+
   // const textColor = 'var(--algocloud-body-bg-2)';
   const ref = useRef<HTMLElement>();
   const isClient = typeof window === 'object';
@@ -62,8 +63,8 @@ const AssetChart = (props) => {
       <RowBetween
         mb={
           chartFilter === ASSET_CHART_VIEW.LIQUIDITY ||
-          chartFilter === ASSET_CHART_VIEW.VOLUME ||
-          chartFilter === ASSET_CHART_VIEW.PRICE ? 40 : 0
+            chartFilter === ASSET_CHART_VIEW.VOLUME ||
+            chartFilter === ASSET_CHART_VIEW.PRICE ? 40 : 0
         }
         align="flex-start"
       >
@@ -112,7 +113,7 @@ const AssetChart = (props) => {
           */}
         </OptionButtonContainer>
       </RowBetween>
-      
+
       {chartFilter === ASSET_CHART_VIEW.PRICE && priceData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
           <CandleStickChart
@@ -126,6 +127,48 @@ const AssetChart = (props) => {
       )}
 
       {chartFilter === ASSET_CHART_VIEW.VOLUME && assetData && (
+        <ResponsiveContainer aspect={aspect}>
+          <TradingViewChart
+            data={assetData}
+            base={0}
+            field={'lastDayVolume'}
+            width={'100%'}
+            type={CHART_TYPES.BAR}
+            timeField='date'
+            useWeekly={false}
+            utc={true}
+          />
+        </ResponsiveContainer>
+      )}
+      {chartFilter === ASSET_CHART_VIEW.LIQUIDITY && assetData && (
+        <ResponsiveContainer aspect={aspect}>
+          <TradingViewChart
+            data={assetData}
+            base={0}
+            field={'liquidity'}
+            width={'100%'}
+            type={'area'}
+            timeField='date'
+            useWeekly={false}
+            utc={true}
+          />
+        </ResponsiveContainer>
+      )}
+      {chartFilter === ASSET_CHART_VIEW.MARKETCAP && assetData && (
+        <ResponsiveContainer aspect={aspect}>
+          <TradingViewChart
+            data={assetData}
+            base={0}
+            field={'marketCap'}
+            width={'100%'}
+            type={CHART_TYPES.AREA}
+            timeField='date'
+            useWeekly={false}
+            utc={true}
+          />
+        </ResponsiveContainer>
+      )}
+      {/* {chartFilter === ASSET_CHART_VIEW.VOLUME && assetData && (
         <ResponsiveContainer aspect={aspect}>
           <BarChart margin={{ top: 30, right: 10, bottom: 6, left: 10 }} barCategoryGap={1} data={assetData}>
             <XAxis
@@ -298,7 +341,7 @@ const AssetChart = (props) => {
             />
           </AreaChart>
         </ResponsiveContainer>
-      )}
+      )} */}
     </ChartWindowWrapper>
   );
 }
