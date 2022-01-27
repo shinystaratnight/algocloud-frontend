@@ -154,8 +154,10 @@ const CandleStickChart = ({
       var from = new Date();
       from.setDate(from.getDate() - 3);
       var to = new Date();
-      chart.timeScale().setVisibleRange({from: from.getTime() / 1000 as Time, to: to.getTime() / 1000 as Time});
-      
+      if (formattedData && formattedData.length > 0) {
+        chart.timeScale().setVisibleRange({ from: from.getTime() / 1000 as Time, to: to.getTime() / 1000 as Time });
+      }
+
       setChartCreated(chart);
     }
   }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor, fixed]);

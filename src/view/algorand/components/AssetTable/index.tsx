@@ -105,7 +105,7 @@ function AssetTable(props) {
             <tr key={asset.id}>
               <td>
                 <Link to={`/algorand/assets/${asset.assetId}`}>
-                  <img src={`https://algoexplorer.io/images/assets/big/light/${asset.assetId}.png`} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                  <img src={asset.assetId === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${asset.assetId}.png`} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
                   <h6 className='table-algo-title'>{asset.name}</h6>
                 </Link>
               </td>
