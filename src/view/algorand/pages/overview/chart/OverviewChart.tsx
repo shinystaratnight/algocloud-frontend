@@ -44,7 +44,7 @@ function ShowcaseChart() {
           <TradingViewChart
             data={dailyData}
             base={0}
-            title={`${showcase.unitName} Liquidity`}
+            title={`<a href="/algorand/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Liquidity`}
             field="liquidity"
             width={width1}
             type='area'
@@ -59,7 +59,7 @@ function ShowcaseChart() {
           <TradingViewChart
             data={dailyData}
             base={0}
-            title={`${showcase.unitName} Volume (24hr)`}
+            title={`<a href="/algorand/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Volume (24hr)`}
             field={'lastDayVolume'}
             width={width2}
             type={CHART_TYPES.BAR}
@@ -75,7 +75,7 @@ function ShowcaseChart() {
           <TradingViewChart
             data={dailyData}
             base={0}
-            title={`${showcase.unitName} Market Cap`}
+            title={`<a href="/algorand/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Market Cap`}
             field={'marketCap'}
             width={width3}
             type={CHART_TYPES.AREA}
