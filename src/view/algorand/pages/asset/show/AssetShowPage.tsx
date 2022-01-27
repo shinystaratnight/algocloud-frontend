@@ -26,6 +26,8 @@ const AssetShowPage = () => {
   const assetName = useSelector(selectors.selectAssetName);
 
   const assetData = useSelector(selectors.selectDailyAssetData);
+  console.log(assetData);
+  
   const priceData = useSelector(selectors.selectHourlyPrices);
   return (
     <>

@@ -55,6 +55,13 @@ a.algocloud-navbar-brand {
     overflow-x: auto;
 }
 
+.table-algo-title {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+}
+
 
 
 .card.bg-box.rounded:hover, .card-hover:hover {

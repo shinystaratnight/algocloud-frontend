@@ -17,7 +17,7 @@ const TradingViewChart = ({
   data,
   base,
   field,
-  title,
+  title = '',
   width,
   utc = false,
   timeField = 'createdDate',
@@ -140,6 +140,7 @@ const TradingViewChart = ({
       toolTip.style.left = -4 + 'px';
       toolTip.style.top = '-' + 8 + 'px';
       toolTip.style.position = 'absolute';
+      toolTip.style.zIndex = '100';
       toolTip.style.backgroundColor = 'transparent';
 
       toolTip.innerHTML =

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { BarPrices, createChart, CrosshairMode, IChartApi, UTCTimestamp } from 'lightweight-charts';
+import { BarPrices, createChart, CrosshairMode, IChartApi, Time, UTCTimestamp } from 'lightweight-charts';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import { formattedNum } from 'src/modules/algorand/utils';
@@ -151,8 +151,11 @@ const CandleStickChart = ({
         }
       });
 
-      chart.timeScale().fitContent();
-
+      var from = new Date();
+      from.setDate(from.getDate() - 3);
+      var to = new Date();
+      chart.timeScale().setVisibleRange({from: from.getTime() / 1000 as Time, to: to.getTime() / 1000 as Time});
+      
       setChartCreated(chart);
     }
   }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor, fixed]);

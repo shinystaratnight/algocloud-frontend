@@ -20,6 +20,7 @@ export const ASSET_CHART_VIEW = {
   LIQUIDITY: 'Liquidity',
   VOLUME: 'Volume',
   PRICE: 'Price',
+  MARKETCAP: 'Market Cap'
 };
 
 export const TIME_FRAME = {
