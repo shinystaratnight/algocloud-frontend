@@ -8,7 +8,7 @@ const MenuWrapper = styled.div`
     width: 200px;
     height: 100%;
     flex-direction: column;
-    background-color: rgb(40, 52, 71);
+    background-color: var(--algocloud-card-bg-color);
   }
 
   @media (min-width: 576px){
@@ -19,7 +19,7 @@ const MenuWrapper = styled.div`
     }
 
   .css-ksc7ic:hover {
-    background-color: rgba(52, 73, 104, 0.4);
+    background-color: --algocloud-menu-li-hover;
     color: rgba(255, 255, 255, 0.89);
 }
 
@@ -31,31 +31,20 @@ a, a:hover {
 }
 
 a.algocloud-navbar-brand {
+  opacity: 100%;
+  color: #fff!important;
+  font-weight: 500!important;
+  font-size: 1.4rem!important;
+  left: 0px;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  align-content: center;
-  flex-wrap: wrap;
   flex-direction: row;
+  justify-content: flex-start;
 }
 
 .menu-li.active a {
-  font-family: Inter, sans-serif;
-  color: rgba(255, 255, 255, 0.89);
-  font-size: 14px;
-  font-weight: 300;
-  letter-spacing: 0.3px;
-  position: relative;
-  display: flex;
-  height: 48px;
-  margin-top: 2px;
-  margin-bottom: 2px;
-  padding-right: 16px;
-  padding-left: 16px;
-  -webkit-box-align: center;
-  align-items: center;
   border-radius: 6px;
-  background-color: rgb(52, 73, 104);
+  background-color: var(--algocloud-menu-li-bg-active);
+  color: var(--li-active);
 }
 
 
@@ -82,9 +71,8 @@ a.algocloud-navbar-brand {
     cursor: pointer;
 }
 .menu-li a .icon, .menu-li.active a .icon, .menu-li:hover a, .menu-li:hover a .icon {
-    color: #fff!important;
-    background-color: #ffffff87;
-  background-color: rgba(52, 73, 104, 0.4);
+    color: var(--li-hover)!important;
+    background-color: var(--algocloud-menu-li-hover);
 }
 
 .menu-nav {
@@ -100,7 +88,10 @@ a.algocloud-navbar-brand {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: rgb(40,52,71);
+  background-color: var(--algocloud-card-bg-color);
+  border-right-style: solid;
+  border-width: 1px;
+  border-color: var(--algocloud-menu-border-color) !important;
 }
 
   .menu-logo {
@@ -111,6 +102,10 @@ a.algocloud-navbar-brand {
     font-weight: 500;
     font-size: 1.5em;
   }
+
+  .algocloud-font {
+    text-transform: lowercase;
+}
 
   .menu-logo a {
     text-decoration: none;
@@ -132,21 +127,23 @@ a.algocloud-navbar-brand {
     zoom: 1;
     padding-left: 8px;
     padding-right: 8px;
-    padding-top: 16px;
+  }
+
+  .menu-li.active i {
+    color: #687dfd;
   }
 
   a.algocloud-navbar-brand {
     opacity: 100%;
-    color: #fff!important;
+    color: var(--algocloud-brand-color) !important;
     font-weight: 500!important;
     font-size: 1.4rem!important;
-    padding: 1rem;
-    padding-left: 0px;
-    padding-right: 0px;
-    border-bottom-style: solid;
-    border-width: 1px;
-    border-color: var(--algocloud-border-color);
-    height: 61px;
+    margin-left: 23px;
+    min-height: 68px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: flex-start;
 }
 
 
@@ -158,7 +155,7 @@ a.algocloud-navbar-brand {
     line-height: 40px;
     height: 40px;
     padding: 0 16px;
-    color: rgba(255, 255, 255, 0.68);
+    color: var(--algocloud-body-color);
     border-radius: 6px;
     line-height: 40px;
     height: 40px;

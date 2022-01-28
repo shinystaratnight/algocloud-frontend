@@ -7,7 +7,7 @@
 }
 
 .navbar-vertical .navbar-nav .nav-item .nav-link {
-    color: var(--falcon-navbar-vertical-link-color);
+    color: var(--algocloud-navbar-vertical-link-color);
 }
 
 @-webkit-keyframes progress-bar-stripes {
@@ -243,7 +243,16 @@
     --algocloud-body-font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     --algocloud-body-font-size: 1rem;
     --algocloud-body-font-weight: 400;
-    --algocloud-body-line-height: 1.5
+    --algocloud-body-line-height: 1.5;
+    --algocloud-menu-li-hover: #eef0f3;
+    --algocloud-menu-li-color-hover: #232e3c;
+    --algocloud-menu-li-bg-active: #eef0f3;
+    --algocloud-menu-li-color-active: #232e3c;
+    --algocloud-menu-border-color: #5b616e33;
+    --border-var: #5b616e33;
+    --algocloud-brand-color: #687dfd;
+    --li-active: #5e6e82;
+    --li-hover: #5e6e82;
 }
 
 :root,:root .light,:root.light {
@@ -423,7 +432,7 @@
     --algocloud-list-group-bg: #fff;
     --algocloud-list-group-action-hover-color: #5e6e82;
     --algocloud-list-group-hover-bg: #f9fafd;
-    --algocloud-body-bg: rgb(240 242 249);
+    --algocloud-body-bg: #f7f9fd;
     --algocloud-body-color: #5e6e82;
     --algocloud-headings-color: #344050;
     --algocloud-link-color: #687dfd;
@@ -3721,11 +3730,13 @@ textarea.form-control-lg {
 }
 
 .form-select-sm {
-    padding-top: .1875rem;
-    padding-bottom: .1875rem;
-    padding-left: .75rem;
-    font-size: .875rem;
-    border-radius: .2rem
+    cursor: pointer;
+    padding-top: 0.1875rem;
+    padding-bottom: 0.1875rem;
+    padding-left: 0.75rem;
+    font-size: inherit;
+    border-radius: 0.2rem;
+    padding-right: 0.75rem;
 }
 
 .form-select-lg {
@@ -6293,6 +6304,7 @@ textarea.form-control-lg {
     background-color: var(--algocloud-card-bg);
     background-clip: border-box;
     border: 0 solid var(--algocloud-card-border-color);
+    border-color: var(--algocloud-menu-border-color);
     border-radius: .375rem
 }
 
@@ -7642,9 +7654,9 @@ textarea.form-control-lg {
 }
 
 .spinner-border-sm {
-    width: 1.35rem;
-    height: 1.35rem;
-    border-width: .2em
+    width: 0.9rem;
+    height: 0.9rem;
+    border-width: 0.2em;
 }
 
 .spinner-grow {
@@ -7913,11 +7925,12 @@ textarea.form-control-lg {
     position: sticky;
     top: 0;
     z-index: 1015;
-    background: #f0f2f9;
+    background: var(--algocloud-card-bg-color);
     inset: 0% 0% auto;
     z-index: 1000;
     height: 60px;
     border-bottom: 1px solid #a7aab2;
+    border-bottom-color: var(--algocloud-menu-border-color) !important ;
     display: flex;
 }
 
@@ -28757,4 +28770,16 @@ button.btn-circle:focus,button.btn-circle:hover {
 
 .treeview.treeview-stripe {
     padding-left: .5rem!important
+}
+
+.svg-inline--fa{
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
+
+.form-select:hover {
+    border-color: var(--algocloud-input-focus-border-color);
 }
