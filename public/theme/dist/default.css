@@ -16,10 +16,6 @@
         background:white important!
     }
 
-a.algocloud-navbar-brand {
-    border-color: var(--border-var) !important;
-}
-
 @media (max-width: 576px){
     .algocloud-navbar-brand-1 {
         display: none !important;
@@ -806,7 +802,7 @@ a.algocloud-navbar-brand {
     --algocloud-input-bg: #0b1727;
     --algocloud-input-color: #d8dbef;
     --algocloud-input-border-color: #344050;
-    --algocloud-input-focus-border-color: #163e73;
+    --algocloud-input-focus-border-color: #687dfd;
     --algocloud-input-placeholder-color: #344050;
     --algocloud-form-check-input-border-color: #4d5969;
     --algocloud-accordion-border-color: rgba(255, 255, 255, 0.125);
@@ -1099,7 +1095,16 @@ a.algocloud-navbar-brand {
     --algocloud-body-font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
     --algocloud-body-font-size: 1rem;
     --algocloud-body-font-weight: 400;
-    --algocloud-body-line-height: 1.5
+    --algocloud-menu-li-hover: rgba(52,73,104,0.4);
+    --algocloud-menu-li-color-hover: #fff;
+    --algocloud-menu-li-bg-active: rgb(52,73,104);
+    --algocloud-menu-li-color-active: rgba(255,255,255,0.89);
+    --algocloud-body-line-height: 1.5;
+    --algocloud-menu-border-color: #4f5b6e;
+    --border-var: #4d5969;
+    --algocloud-brand-color: #fff;
+    --li-active: #fff;
+    --li-hover: #fff;
 }
 
 .dark .table {
@@ -3240,18 +3245,23 @@ progress {
     }
 }
 
+.sortable:hover{
+        opacity: 1 !important;
+        color: var(--algocloud-btn-algocloud-primary-color);
+}
+
 .table {
     --algocloud-table-bg: transparent;
     --algocloud-table-accent-bg: transparent;
-    --algocloud-table-striped-color: #5e6e82;
+    --algocloud-table-striped-color: var(--algocloud-body-color);
     --algocloud-table-striped-bg: rgba(0, 0, 0, 0.05);
     --algocloud-table-active-color: #5e6e82;
     --algocloud-table-active-bg: rgba(0, 0, 0, 0.1);
-    --algocloud-table-hover-color: #5e6e82;
+    --algocloud-table-hover-color: var(--algocloud-headings-color);
     --algocloud-table-hover-bg: rgba(52,73,104,0.4);
     width: 100%;
     margin-bottom: 1rem;
-    color: #5e6e82;
+    color: var(--algocloud-body-color);
     vertical-align: top;
     border-color: var(--algocloud-table-border-color)
 }
@@ -3764,11 +3774,13 @@ textarea.form-control-lg {
 }
 
 .form-select-sm {
-    padding-top: .1875rem;
-    padding-bottom: .1875rem;
-    padding-left: .75rem;
-    font-size: .875rem;
-    border-radius: .2rem
+    cursor: pointer;
+    padding-top: 0.1875rem;
+    padding-bottom: 0.1875rem;
+    padding-left: 0.75rem;
+    font-size: inherit;
+    border-radius: 0.2rem;
+    padding-right: 0.75rem;
 }
 
 .form-select-lg {
@@ -5036,8 +5048,8 @@ textarea.form-control-lg {
 }
 
 .btn-link:hover {
-    color: #3350fc	;
-    text-decoration: underline
+    color: var(--algocloud-info);
+    text-decoration: underline;
 }
 
 .btn-link:focus {
@@ -6340,6 +6352,7 @@ i.fas.fa-bars {
     background-color: var(--algocloud-card-bg);
     background-clip: border-box;
     border: 0 solid var(--algocloud-card-border-color);
+    border-color: var(--algocloud-menu-border-color);
     border-radius: .375rem
 }
 
@@ -7689,9 +7702,9 @@ i.fas.fa-bars {
 }
 
 .spinner-border-sm {
-    width: 1.35rem;
-    height: 1.35rem;
-    border-width: .2em
+    width: 0.9rem;
+    height: 0.9rem;
+    border-width: 0.2em;
 }
 
 .spinner-grow {
@@ -7948,8 +7961,8 @@ i.fas.fa-bars {
 .sticky-top {
     z-index: 1015;
     top: 0;
-    background: var(--algocloud-body-bg);
-    border-bottom-color: var(--border-var) !important;
+    background: var(--algocloud-card-bg-color);
+    border-bottom-color: var(--algocloud-menu-border-color) !important ;
     border-bottom-width: 1px;
     border-bottom-style: solid;
     inset: 0% 0% auto;
@@ -28785,4 +28798,22 @@ button.btn-circle:focus,button.btn-circle:hover {
 
 .treeview.treeview-stripe {
     padding-left: .5rem!important
+}
+
+.svg-inline--fa{
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
+
+.form-select:hover {
+    border-color: var(--algocloud-input-focus-border-color);
+}
+
+.navbar-toggler-humburger-icon:focus {
+    border-style: solid;
+    border-width: 1px;
+    border-color: var(--algocloud-primary);
 }

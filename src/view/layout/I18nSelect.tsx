@@ -10,7 +10,7 @@ function I18nSelect(props) {
   return (
     <select
       style={{ width: '100px', display: 'inline-block' }}
-      className="form-control form-control-sm"
+      className="form-select form-select-sm"
       value={getLanguageCode()}
       onChange={(event) =>
         doChangeLanguage(event.target.value)
