@@ -4,6 +4,7 @@ import { i18n } from 'src/i18n';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import Spinner from 'src/view/shared/Spinner';
+import { images } from 'src/images/images';
 
 function AssetTable(props) {
   const {
@@ -101,47 +102,58 @@ function AssetTable(props) {
               </td>
             </tr>
           )}
-          {!loading && (assets.length > 0) && assets.map((asset) => (
-            <tr key={asset.id}>
-              <td>
-                <Link to={`/algorand/assets/${asset.assetId}`}>
-                  <img src={asset.assetId === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${asset.assetId}.png`} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
-                  <h6 className='table-algo-title'>{asset.name}</h6>
-                </Link>
-              </td>
-              <td><b>{asset.unitName}</b></td>
-              <td>{formatNumber(asset.marketCap)}</td>
-              <td>{formatNumber(asset.liquidity)}</td>
-              <td>{formatNumber(asset.lastDayVolume)}</td>
-              <td>{formatNumber(asset.price)}</td>
-              <td>{formatPercent(asset.lastDayPriceChange)}</td>
-              <td>
-                {togglePermission && (
-                  <button
-                    className="btn btn-link"
-                    onClick={() =>
-                      setToogleId(asset.assetId)
-                    }
-                  >
-                    <b>{favoriteIds.includes(asset.assetId) ? 'Unfavorite' : 'Favorite'}</b>
-                  </button>
-                )}
-              </td>
-              <td>
-                {showcasePermission && (
-                  <button
-                    className="btn btn-link"
-                    disabled={asset.assetId === showcaseId}
-                    onClick={() =>
-                      setShowcaseId(asset.assetId)
-                    }
-                  >
-                    <b>{asset.assetId === showcaseId ? 'Currently Set' : 'Set As Main'}</b>
-                  </button>
-                )}
-              </td>
-            </tr>
-          ))}
+          {!loading && (assets.length > 0) && assets.map((asset) => {
+            let image = asset.assetId === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${asset.assetId}.png`;
+            for (let i = 0; i < images.length; i++) {
+              const img = images[i];
+              let id = parseInt(img.split('-')[1]);
+              if (id == asset.assetId) {
+                image = `/assets/asa-list/${img}/icon.png`;
+                break;
+              }
+            }
+            return (
+              <tr key={asset.id}>
+                <td>
+                  <Link to={`/algorand/assets/${asset.assetId}`}>
+                    <img src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                    <h6 className='table-algo-title'>{asset.name}</h6>
+                  </Link>
+                </td>
+                <td><b>{asset.unitName}</b></td>
+                <td>{formatNumber(asset.marketCap)}</td>
+                <td>{formatNumber(asset.liquidity)}</td>
+                <td>{formatNumber(asset.lastDayVolume)}</td>
+                <td>{formatNumber(asset.price)}</td>
+                <td>{formatPercent(asset.lastDayPriceChange)}</td>
+                <td>
+                  {togglePermission && (
+                    <button
+                      className="btn btn-link"
+                      onClick={() =>
+                        setToogleId(asset.assetId)
+                      }
+                    >
+                      <b>{favoriteIds.includes(asset.assetId) ? 'Unfavorite' : 'Favorite'}</b>
+                    </button>
+                  )}
+                </td>
+                <td>
+                  {showcasePermission && (
+                    <button
+                      className="btn btn-link"
+                      disabled={asset.assetId === showcaseId}
+                      onClick={() =>
+                        setShowcaseId(asset.assetId)
+                      }
+                    >
+                      <b>{asset.assetId === showcaseId ? 'Currently Set' : 'Set As Main'}</b>
+                    </button>
+                  )}
+                </td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>

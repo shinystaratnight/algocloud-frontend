@@ -9,6 +9,7 @@ import {
   FlexContainer,
   ChartWindowWrapper,
 } from 'src/view/algorand/styled';
+import Spinner from 'src/view/shared/Spinner';
 
 
 function ShowcaseChart() {

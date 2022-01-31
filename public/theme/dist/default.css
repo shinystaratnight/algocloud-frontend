@@ -48,7 +48,7 @@
 .showcase-row{
     width: 100%;
     flex-wrap: wrap;
-    overflow-x: auto;
+    /* overflow-x: auto; */
 }
 
 .table-algo-title {
@@ -65,9 +65,9 @@
     border-color: var(--algocloud-primary) !important;
 }
 
-.card.bg-box {
+/* .card.bg-box {
     min-width: 500px !important;
-}
+} */
 
 
 .algocloud-navbar-brand-1:hover{
