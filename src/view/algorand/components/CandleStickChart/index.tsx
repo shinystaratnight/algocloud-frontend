@@ -9,6 +9,7 @@ import {
   IconWrapper,
   GraphWrapper,
 } from 'src/view/algorand/styled';
+import Spinner from 'src/view/shared/Spinner';
 
 const HEIGHT = 300;
 
@@ -114,9 +115,17 @@ const CandleStickChart = ({
       toolTip.style.backgroundColor = 'transparent';
       toolTip.style.position = 'absolute';
 
+      let price = base;
+      let time: UTCTimestamp;
+      let date: string = '';
+      if (formattedData && formattedData.length > 0) {
+        price = formattedData[formattedData.length - 1].close;
+        time = formattedData[formattedData.length - 1].time;
+        date = dayjs.unix(time).format('MM/DD h:mm A');
+      }
       // get the title of the chart
-      toolTip.innerHTML = base
-        ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(base) + '</div>'
+      toolTip.innerHTML = price
+        ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(price) + '</div>'
         : `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(0) + '</div>';
 
       // update the title when hovering on the chart
@@ -173,6 +182,15 @@ const CandleStickChart = ({
   return (
     <GraphWrapper pt={paddingTop}>
       <div ref={ref} id="candlechart-id" />
+      {
+        (formattedData && formattedData.length > 0) ? (
+          ''
+        ) : (
+          <div style={{position: 'absolute', top: '40%', left: '45%'}}>
+            <Spinner />
+          </div>
+        )
+      }
       <IconWrapper>
         <Play
           onClick={() => {

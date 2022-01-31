@@ -7,6 +7,8 @@ import utc from 'dayjs/plugin/utc';
 import { formattedNum } from 'src/modules/algorand/utils';
 import { CHART_TYPES } from 'src/modules/algorand/constants';
 import { GraphWrapper, IconWrapper } from 'src/view/algorand/styled';
+import moment from 'moment';
+import Spinner from 'src/view/shared/Spinner';
 
 dayjs.extend(utc);
 
@@ -143,11 +145,26 @@ const TradingViewChart = ({
       toolTip.style.zIndex = '100';
       toolTip.style.backgroundColor = 'transparent';
 
+      let price = base;
+      let time: BusinessDay;
+      let date: string = '';
+      if (formattedData && formattedData.length > 0) {
+        price = formattedData[formattedData.length - 1].value;
+        time = formattedData[formattedData.length - 1].time;
+        date = useWeekly ? dayjs(time.year + '-' + time.month + '-' + time.day).format('MMMM D, YYYY')
+          : dayjs(time.year + '-' + time.month + '-' + time.day).format('MMMM D, YYYY');
+      }
+
       toolTip.innerHTML =
         `<div style="font-size: 16px; margin: 4px 0px; color: ${textColor};">${title}</div>` +
         `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >` +
-        formattedNum(base ?? 0, true) +
-        '</div>';
+        formattedNum(price, true) +
+        '</div>' +
+        (date ?
+          '<div>' +
+          date +
+          '</div>'
+          : '');
 
       chart.subscribeCrosshairMove(function (param) {
         if (
@@ -216,6 +233,15 @@ const TradingViewChart = ({
   return (
     <GraphWrapper>
       <div ref={ref} className="var-color" id={'tradchart-id' + type} />
+      {
+        (formattedData && formattedData.length > 0) ? (
+          ''
+        ) : (
+          <div style={{position: 'absolute', top: '40%', left: '45%'}}>
+            <Spinner />
+          </div>
+        )
+      }
       <IconWrapper>
         <Play
           onClick={() => {
