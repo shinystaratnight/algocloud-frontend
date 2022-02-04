@@ -28817,3 +28817,12 @@ button.btn-circle:focus,button.btn-circle:hover {
     border-width: 1px;
     border-color: var(--algocloud-primary);
 }
+
+.custom-icon-next:hover, .custom-icon-prev:hover {
+    color: var(--algocloud-primary);
+}
+
+.rc-pagination {
+    display: flex;
+    align-items: center;
+}
