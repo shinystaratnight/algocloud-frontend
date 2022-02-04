@@ -23,6 +23,18 @@ export const ASSET_CHART_VIEW = {
   MARKETCAP: 'Market Cap'
 };
 
+export const ASSET_CHART_VIEW_FRAME = {
+  DAILY: 'Daily',
+  HOURLY: 'Hourly',
+};
+
+export const ASSET_CHART_VIEW_DURATION = {
+  THREEDAY: 'ThreeDay',
+  WEEK: 'Week',
+  MONTH: 'Month',
+  ALL: 'All',
+};
+
 export const TIME_FRAME = {
   WEEK: '1 week',
   MONTH: '1 month',

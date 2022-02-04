@@ -16,12 +16,12 @@ export const formatNumber = (_volume) => {
   return '$' + volume.toFixed(2);
 };
 
-export const formatPercent = (_volume) => {
+export const formatPercent = (_volume, decimals=2) => {
   let volume = _volume;
   if (_volume === null) volume = 0;
   if (typeof _volume === 'string') volume = parseFloat(volume);
   if (volume === 0) return '-';
-  return volume.toFixed(2) + '%';
+  return volume.toFixed(decimals) + '%';
 };
 
 export const toK = num => {
