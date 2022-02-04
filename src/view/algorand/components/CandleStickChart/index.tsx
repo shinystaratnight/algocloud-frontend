@@ -10,6 +10,7 @@ import {
   GraphWrapper,
 } from 'src/view/algorand/styled';
 import Spinner from 'src/view/shared/Spinner';
+import { ASSET_CHART_VIEW_DURATION } from 'src/modules/algorand/constants';
 
 const HEIGHT = 300;
 
@@ -21,7 +22,8 @@ const CandleStickChart = ({
   fixed = false,
   paddingTop = '',
   margin = true,
-  valueFormatter = val => formattedNum(val, true)
+  valueFormatter = val => formattedNum(val, true),
+  duration = ASSET_CHART_VIEW_DURATION.THREEDAY
 }) => {
   dayjs.extend(utc);
 
@@ -41,6 +43,7 @@ const CandleStickChart = ({
   // pointer to the chart object
   const [chartCreated, setChartCreated] = useState<IChartApi | null>(null);
   const dataPrev = usePrevious(data);
+  const durationPrev = usePrevious(duration);
 
   let rootb = document.getElementById("root")!;
   let styleb = window.getComputedStyle(rootb);
@@ -57,6 +60,18 @@ const CandleStickChart = ({
       setChartCreated(null);
     }
   }, [chartCreated, data, dataPrev]);
+
+  useEffect(() => {
+    if (duration !== durationPrev && chartCreated) {
+      // remove the tooltip element
+      let tooltip = document.getElementById('tooltip-id');
+      let node = document.getElementById('candlechart-id');
+      if (node && tooltip)
+        node.removeChild(tooltip);
+      chartCreated.resize(0, 0);
+      setChartCreated(null);
+    }
+  }, [chartCreated, duration, durationPrev]);
 
   // if no chart created yet, create one with options and add to DOM manually
   useEffect(() => {
@@ -160,16 +175,25 @@ const CandleStickChart = ({
         }
       });
 
-      var from = new Date();
-      from.setDate(from.getDate() - 3);
-      var to = new Date();
-      if (formattedData && formattedData.length > 0) {
-        chart.timeScale().setVisibleRange({ from: from.getTime() / 1000 as Time, to: to.getTime() / 1000 as Time });
+      if (duration === ASSET_CHART_VIEW_DURATION.ALL) {
+        chart.timeScale().fitContent();
+      } else {
+        var from = new Date();
+        if (duration === ASSET_CHART_VIEW_DURATION.THREEDAY)
+          from.setDate(from.getDate() - 3);
+        if (duration === ASSET_CHART_VIEW_DURATION.WEEK)
+          from.setDate(from.getDate() - 7);
+        if (duration === ASSET_CHART_VIEW_DURATION.MONTH)
+          from.setMonth(from.getMonth() - 1);
+        var to = new Date();
+        if (formattedData && formattedData.length > 0) {
+          chart.timeScale().setVisibleRange({ from: from.getTime() / 1000 as Time, to: to.getTime() / 1000 as Time });
+        }
       }
 
       setChartCreated(chart);
     }
-  }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor, fixed]);
+  }, [chartCreated, formattedData, width, height, valueFormatter, base, margin, textColor, fixed, duration]);
 
   // responsiveness
   useEffect(() => {

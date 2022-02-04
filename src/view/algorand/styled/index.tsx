@@ -45,15 +45,24 @@ export const FlexContainer = styled.div`
 `;
 
 export const OptionButtonWrapper = styled.div`
-  position: absolute;
   top: 20px;
   zIndex: 10;
   right: ${(props) => props.right ? props.right : 'auto'};
   left: ${(props) => props.left ? props.left : 'auto'};
 `;
 
+export const Divider = styled.div`
+  top: 20px;
+  zIndex: 10;
+  width: ${(props) => props.width ? props.width : '1px'};
+  height: 33px;
+  background-color: grey;
+  margin-left: 10px;
+`;
+
 export const OptionButtonContainer = styled.div`
   display: flex;
+  margin-bottom: 10px;
 `;
 
 export const OptionButton = styled.div`
@@ -67,7 +76,7 @@ export const OptionButton = styled.div`
   color: #fff;
   margin-left: 10px;
   width: ${(props) => props.width ? props.width : 'auto'};
-  background-color: var(--algocloud-btn-link-color);
+  background-color: ${(props) => props.active ? 'var(--algocloud-btn-link-color)' : 'transparent'};
   text-align: center;
   :hover {
     cursor: pointer;
@@ -129,6 +138,8 @@ const Row = styled.div`
 
 export const RowBetween = styled(Row)`
   justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
 export const FlexColumn = styled.div`

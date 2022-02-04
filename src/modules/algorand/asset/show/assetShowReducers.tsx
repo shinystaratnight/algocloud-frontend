@@ -9,6 +9,8 @@ const initialData = {
     'liqudity': 0,
     'lastDayVolume': 0,
     'lastDayPriceChange': 0,
+    'lastDayLiquidityChange': 0,
+    'lastDayVolumeChange': 0
   },
   hourlyPrices: [] as Array<any>,
   dailyPrices: [] as Array<any>,
@@ -50,6 +52,7 @@ export default (state = initialData, { type, payload }) => {
       hourlyPrices: payload.hourlyPrices,
       dailyPrices: payload.dailyPrices,
       dailyAssetData: payload.dailyAssetData,
+      hourlyAssetData: payload.hourlyAssetData,
       pool,
     };
   }

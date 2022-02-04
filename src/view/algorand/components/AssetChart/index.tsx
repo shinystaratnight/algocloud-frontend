@@ -18,24 +18,30 @@ import {
   toNiceDateYear,
   formattedNum,
 } from 'src/modules/algorand/utils';
-import { ASSET_CHART_VIEW, CHART_TYPES } from 'src/modules/algorand/constants';
+import { ASSET_CHART_VIEW, ASSET_CHART_VIEW_DURATION, ASSET_CHART_VIEW_FRAME, CHART_TYPES } from 'src/modules/algorand/constants';
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
 import {
   ChartWindowWrapper,
+  Divider,
   OptionButton,
   OptionButtonContainer,
+  OptionButtonWrapper,
   RowBetween
 } from 'src/view/algorand/styled';
 import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
+import selectors from 'src/modules/algorand/asset/show/assetShowSelectors';
+import { useSelector } from 'react-redux';
 
 const AssetChart = (props) => {
   const {
     color,
-    assetData,
-    priceData,
+    __,
+    _,
   } = props;
 
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
+  const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.DAILY);
+  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.WEEK)
 
   const below1080 = useMedia('(max-width: 1080px)');
   const below600 = useMedia('(max-width: 600px)');
@@ -58,6 +64,14 @@ const AssetChart = (props) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isClient, width]);
 
+  const priceData = useSelector(frame === ASSET_CHART_VIEW_FRAME.DAILY ? selectors.selectDailyPrices : selectors.selectHourlyPrices);
+  const assetData = useSelector(frame === ASSET_CHART_VIEW_FRAME.DAILY ? selectors.selectDailyAssetData : selectors.selectHourlyAssetData);
+
+  const handleChangeDuration = (d: string) => {
+    setDuration(d);
+  }
+  
+
   return (
     <ChartWindowWrapper className="card-hover">
       <RowBetween
@@ -71,46 +85,87 @@ const AssetChart = (props) => {
         <OptionButtonContainer>
           <OptionButton
             active={chartFilter === ASSET_CHART_VIEW.LIQUIDITY}
-            onClick={() => setChartFilter(ASSET_CHART_VIEW.LIQUIDITY)}
+            onClick={() => {
+              setChartFilter(ASSET_CHART_VIEW.LIQUIDITY);
+              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+            }}
           >
             Liquidity
           </OptionButton>
           <OptionButton
             active={chartFilter === ASSET_CHART_VIEW.VOLUME}
-            onClick={() => setChartFilter(ASSET_CHART_VIEW.VOLUME)}
+            onClick={() => {
+              setChartFilter(ASSET_CHART_VIEW.VOLUME);
+              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+            }}
           >
             Volume
           </OptionButton>
           <OptionButton
             active={chartFilter === ASSET_CHART_VIEW.PRICE}
-            onClick={() => setChartFilter(ASSET_CHART_VIEW.PRICE)}
+            onClick={() => {
+              setChartFilter(ASSET_CHART_VIEW.PRICE);
+              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
+            }}
           >
             Price
           </OptionButton>
           <OptionButton
             active={chartFilter === ASSET_CHART_VIEW.MARKETCAP}
-            onClick={() => setChartFilter(ASSET_CHART_VIEW.MARKETCAP)}
+            onClick={() => {
+              setChartFilter(ASSET_CHART_VIEW.MARKETCAP);
+              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+            }}
           >
             Market Cap
           </OptionButton>
-
-          {/* <OptionButtonWrapper right="100px">
+        </OptionButtonContainer>
+        <OptionButtonContainer>
+          <OptionButtonWrapper right="180px">
             <OptionButtonContainer>
               <OptionButton
+                active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
+                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.DAILY)}
+              >
+                D
+              </OptionButton>
+              <OptionButton
+                active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
+                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)}
+              >
+                H
+              </OptionButton>
+            </OptionButtonContainer>
+          </OptionButtonWrapper>
+          <Divider width='2px' />
+          <OptionButtonWrapper right="10px">
+            <OptionButtonContainer>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.THREEDAY)}
+              >
+                3D
+              </OptionButton>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.WEEK}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.WEEK)}
               >
                 1W
               </OptionButton>
               <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.MONTH}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.MONTH)}
               >
                 1M
               </OptionButton>
               <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.ALL}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.ALL)}
               >
                 ALL
               </OptionButton>
             </OptionButtonContainer>
           </OptionButtonWrapper>
-          */}
         </OptionButtonContainer>
       </RowBetween>
 
@@ -122,6 +177,7 @@ const AssetChart = (props) => {
             base={0}
             paddingTop='0'
             valueFormatter={(val) => val?.toFixed(4)}
+            duration={duration}
           />
         </ResponsiveContainer>
       )}
@@ -137,6 +193,7 @@ const AssetChart = (props) => {
             timeField='date'
             useWeekly={false}
             utc={true}
+            duration={duration}
           />
         </ResponsiveContainer>
       )}
@@ -151,6 +208,7 @@ const AssetChart = (props) => {
             timeField='date'
             useWeekly={false}
             utc={true}
+            duration={duration}
           />
         </ResponsiveContainer>
       )}
@@ -165,6 +223,7 @@ const AssetChart = (props) => {
             timeField='date'
             useWeekly={false}
             utc={true}
+            duration={duration}
           />
         </ResponsiveContainer>
       )}

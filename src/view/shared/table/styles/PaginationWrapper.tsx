@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const PaginationWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   margin-top: 8px;
 
   .rc-pagination {

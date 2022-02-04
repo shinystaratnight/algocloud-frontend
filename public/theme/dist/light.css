@@ -28783,3 +28783,12 @@ button.btn-circle:focus,button.btn-circle:hover {
 .form-select:hover {
     border-color: var(--algocloud-input-focus-border-color);
 }
+
+.custom-icon-next:hover, .custom-icon-prev:hover {
+    color: var(--algocloud-primary);
+}
+
+.rc-pagination {
+    display: flex;
+    align-items: center;
+}

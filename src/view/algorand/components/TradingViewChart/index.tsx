@@ -5,7 +5,7 @@ import { Play } from 'react-feather';
 import dayjs from 'dayjs';
 import utc from 'dayjs/plugin/utc';
 import { formattedNum } from 'src/modules/algorand/utils';
-import { CHART_TYPES } from 'src/modules/algorand/constants';
+import { ASSET_CHART_VIEW_DURATION, CHART_TYPES } from 'src/modules/algorand/constants';
 import { GraphWrapper, IconWrapper } from 'src/view/algorand/styled';
 import moment from 'moment';
 import Spinner from 'src/view/shared/Spinner';
@@ -23,16 +23,18 @@ const TradingViewChart = ({
   width,
   utc = false,
   timeField = 'createdDate',
-  useWeekly = false
+  useWeekly = false,
+  duration = ASSET_CHART_VIEW_DURATION.WEEK
 }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   const [chartCreated, setChartCreated] = useState<IChartApi | null>(null);
   const dataPrev = usePrevious(data);
+  const durationPrev = usePrevious(duration);
 
   const formattedData = data?.map(entry => {
     return {
-      time: utc ? dayjs.unix(entry[timeField]).utc().format('YYYY-MM-DD') : entry[timeField],
+      time: utc ? entry[timeField] : entry[timeField],
       value: parseFloat(entry[field])
     };
   });
@@ -53,6 +55,18 @@ const TradingViewChart = ({
       setChartCreated(null);
     }
   }, [chartCreated, data, dataPrev, type]);
+
+  useEffect(() => {
+    if (duration !== durationPrev && chartCreated) {
+      let tooltip = document.getElementById('tooltip-id' + type);
+      let node = document.getElementById('tradchart-id' + type);
+      if (node && tooltip) {
+        node.removeChild(tooltip);
+      }
+      chartCreated.resize(0, 0);
+      setChartCreated(null);
+    }
+  }, [chartCreated, duration, durationPrev, type]);
 
   useEffect(() => {
     if (!chartCreated && formattedData) {
@@ -146,13 +160,13 @@ const TradingViewChart = ({
       toolTip.style.backgroundColor = 'transparent';
 
       let price = base;
-      let time: BusinessDay;
+      let time: number;
       let date: string = '';
       if (formattedData && formattedData.length > 0) {
         price = formattedData[formattedData.length - 1].value;
         time = formattedData[formattedData.length - 1].time;
-        date = useWeekly ? dayjs(time.year + '-' + time.month + '-' + time.day).format('MMMM D, YYYY')
-          : dayjs(time.year + '-' + time.month + '-' + time.day).format('MMMM D, YYYY');
+        date = useWeekly ? moment(time * 1000).format('MMMM D, YYYY')
+          : moment(time * 1000).format('MMMM D, YYYY');
       }
 
       toolTip.innerHTML =
@@ -178,16 +192,16 @@ const TradingViewChart = ({
         ) {
           // setLastBarText()
         } else {
-          const ts = param.time as BusinessDay;
+          const ts = param.time as number;
           let dateStr = useWeekly
-            ? dayjs(ts.year + '-' + ts.month + '-' + ts.day)
+            ? moment(ts * 1000)
               .startOf('week')
               .format('MMMM D, YYYY') +
             '-' +
-            dayjs(ts.year + '-' + ts.month + '-' + ts.day)
+            moment(ts * 1000)
               .endOf('week')
               .format('MMMM D, YYYY')
-            : dayjs(ts.year + '-' + ts.month + '-' + ts.day).format('MMMM D, YYYY');
+            : moment(ts * 1000).format('MMMM D, YYYY');
           var price = param.seriesPrices.get(series);
 
           toolTip.innerHTML =
@@ -201,11 +215,20 @@ const TradingViewChart = ({
         }
       });
 
-      var from = new Date();
-      from.setDate(from.getDate() - 7);
-      var to = new Date();
-      if (formattedData && formattedData.length > 0) {
-        chart.timeScale().setVisibleRange({ from: from.getTime() / 1000 as Time, to: to.getTime() / 1000 as Time });
+      if (duration === ASSET_CHART_VIEW_DURATION.ALL) {
+        chart.timeScale().fitContent();
+      } else {
+        var from = new Date();
+        if (duration === ASSET_CHART_VIEW_DURATION.THREEDAY)
+          from.setDate(from.getDate() - 3);
+        if (duration === ASSET_CHART_VIEW_DURATION.WEEK)
+          from.setDate(from.getDate() - 7);
+        if (duration === ASSET_CHART_VIEW_DURATION.MONTH)
+          from.setMonth(from.getMonth() - 1);
+        var to = new Date();
+        if (formattedData && formattedData.length > 0) {
+          chart.timeScale().setVisibleRange({ from: from.getTime() / 1000 as Time, to: to.getTime() / 1000 as Time });
+        }
       }
 
       setChartCreated(chart);
@@ -220,7 +243,8 @@ const TradingViewChart = ({
     topScale,
     type,
     useWeekly,
-    width
+    width,
+    duration
   ]);
 
   useEffect(() => {
@@ -237,7 +261,7 @@ const TradingViewChart = ({
         (formattedData && formattedData.length > 0) ? (
           ''
         ) : (
-          <div style={{position: 'absolute', top: '40%', left: '45%'}}>
+          <div style={{ position: 'absolute', top: '40%', left: '45%' }}>
             <Spinner />
           </div>
         )
