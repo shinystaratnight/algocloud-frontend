@@ -269,7 +269,7 @@
     --algocloud-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --algocloud-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --algocloud-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --algocloud-body-font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --algocloud-body-font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     --algocloud-body-font-size: 1rem;
     --algocloud-body-font-weight: 400;
     --algocloud-body-line-height: 1.5
@@ -1092,7 +1092,7 @@
     --algocloud-btn-disabled-custom-color: rgba(255, 255, 255, 0.2);
     --algocloud-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --algocloud-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --algocloud-body-font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --algocloud-body-font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     --algocloud-body-font-size: 1rem;
     --algocloud-body-font-weight: 400;
     --algocloud-menu-li-hover: rgba(52,73,104,0.4);
@@ -1105,6 +1105,7 @@
     --algocloud-brand-color: #fff;
     --li-active: #fff;
     --li-hover: #fff;
+    --algocloud-logo-1: #f9fafd;
 }
 
 .dark .table {
@@ -20268,6 +20269,15 @@ pre {
     transform: translate3d(0,0,0)
 }
 
+.algocloud-font {
+    font-family: var(--algocloud-body-font-family);
+    text-transform: lowercase;
+    opacity: .9;
+    font-size: 1.4rem!important;
+    color: var(--algocloud-logo-1);
+    font-weight: 600 !important;
+}
+
 strong,th {
     font-weight: 600
 }
@@ -20327,7 +20337,7 @@ code,kbd,pre,samp {
 }
 
 .navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
-    background-color: var(--algocloud-200);
+    background-color: var(--algocloud-menu-li-bg-active);
     color: var(--algocloud-1000)
 }
 
@@ -28825,4 +28835,23 @@ button.btn-circle:focus,button.btn-circle:hover {
 .rc-pagination {
     display: flex;
     align-items: center;
+}
+
+.content {
+    border-right-color: var(--algocloud-menu-border-color) !important;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #344968;
+    background-clip: content-box;
+    border: 3px solid transparent;
+    border-radius: 6px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: #283447;
 }
