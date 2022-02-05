@@ -11,6 +11,7 @@ import {
 } from 'src/view/algorand/styled';
 import Spinner from 'src/view/shared/Spinner';
 import { ASSET_CHART_VIEW_DURATION } from 'src/modules/algorand/constants';
+import { toLocalTime } from 'src/view/algorand/components/TradingViewChart';
 
 const HEIGHT = 300;
 
@@ -29,10 +30,10 @@ const CandleStickChart = ({
 
   const ref = useRef<HTMLDivElement>(null);
 
-  const formattedData = data?.map(entry => {
-
+  const formattedData = data?.map(entry => {    
+    let utcTime = typeof entry.timestamp === 'number' ? toLocalTime(entry.timestamp) : entry.timestamp;
     return {
-      time: entry.timestamp,
+      time: utcTime,
       open: entry.open * 1,
       low: entry.low * 1,
       close: entry.close * 1,

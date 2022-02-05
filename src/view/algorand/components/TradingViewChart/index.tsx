@@ -14,6 +14,12 @@ dayjs.extend(utc);
 
 const HEIGHT = 385;
 
+export const toLocalTime = (time: number) => {
+  let utcDate = new Date(time * 1000).toString();  
+  let localDate = new Date(utcDate + " UTC").getTime() / 1000;  
+  return localDate
+}
+
 const TradingViewChart = ({
   type = CHART_TYPES.BAR,
   data,
@@ -33,8 +39,9 @@ const TradingViewChart = ({
   const durationPrev = usePrevious(duration);
 
   const formattedData = data?.map(entry => {
+    let utcTime = toLocalTime(entry[timeField]);
     return {
-      time: utc ? entry[timeField] : entry[timeField],
+      time: utc ? utcTime : entry[timeField],
       value: parseFloat(entry[field])
     };
   });
