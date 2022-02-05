@@ -102,7 +102,8 @@ const CandleStickChart = ({
         },
         timeScale: {
           borderColor: 'rgba(197, 203, 206, 0.8)',
-          visible: true
+          visible: true,
+          timeVisible: true,
         },
         localization: {
           priceFormatter: val => formattedNum(val)

@@ -87,7 +87,8 @@ const TradingViewChart = ({
           borderVisible: false
         },
         timeScale: {
-          borderVisible: false
+          borderVisible: false,
+          timeVisible: true
         },
         grid: {
           horzLines: {
