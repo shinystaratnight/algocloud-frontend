@@ -240,7 +240,7 @@
     --algocloud-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --algocloud-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --algocloud-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --algocloud-body-font-family: Open Sans, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+    --algocloud-body-font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     --algocloud-body-font-size: 1rem;
     --algocloud-body-font-weight: 400;
     --algocloud-body-line-height: 1.5;
@@ -253,6 +253,7 @@
     --algocloud-brand-color: #687dfd;
     --li-active: #5e6e82;
     --li-hover: #5e6e82;
+    --algocloud-logo-1: #344050;
 }
 
 :root,:root .light,:root.light {
@@ -3220,6 +3221,13 @@ progress {
     color: #5e6e82;
     vertical-align: top;
     border-color: var(--algocloud-table-border-color)
+}
+
+.table-algo-title {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 4px;
 }
 
 .table>:not(caption)>*>* {
@@ -20290,7 +20298,7 @@ code,kbd,pre,samp {
 }
 
 .navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
-    background-color: var(--algocloud-200);
+    background-color: var(--algocloud-menu-li-bg-active);
     color: var(--algocloud-1000)
 }
 
@@ -28791,4 +28799,32 @@ button.btn-circle:focus,button.btn-circle:hover {
 .rc-pagination {
     display: flex;
     align-items: center;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #eef0f3;
+    background-clip: content-box;
+    border: 3px solid transparent;
+    border-radius: 6px;
+}
+
+.content {
+    border-right-color: var(--algocloud-menu-border-color) !important;
+    border-right-width: 1px;
+    border-right-style: solid;
+}
+
+.algocloud-font {
+    font-family: var(--algocloud-body-font-family);
+    text-transform: lowercase;
+    font-size: 1.4rem!important;
+    opacity: .9;
+    color: var(--algocloud-logo-1);
+    font-weight: 700 !important;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
 }
