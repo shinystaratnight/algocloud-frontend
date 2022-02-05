@@ -87,7 +87,7 @@ function Menu(props) {
       }}
     >
       <div className="menu-nav">
-      <a className="algocloud-navbar-brand" href="."><div className="algocloud-font"><strong>Algo</strong>Cloud</div></a>
+      <a className="algocloud-navbar-brand" href="."><div className="algocloud-font ">AlgoCloud</div></a>
 
         <ul className="menu-ul">
           {menus
