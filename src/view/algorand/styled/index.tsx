@@ -73,14 +73,15 @@ export const OptionButton = styled.div`
   border-radius: 6px;
   border: 1px solid #687dfd;
   cursor: pointer;
-  color: #fff;
+  color: ${(props) => props.active ? '#fff' : 'var(--algocloud-btn-link-color)'};
   margin-left: 10px;
   width: ${(props) => props.width ? props.width : 'auto'};
   background-color: ${(props) => props.active ? 'var(--algocloud-btn-link-color)' : 'transparent'};
   text-align: center;
   :hover {
     cursor: pointer;
-    background-color: #687dfd
+    background-color: rgb(104 125 253 / 90%);
+    color: #fff;
   };
   :active {
     background-color: #3350fc
@@ -140,6 +141,7 @@ export const RowBetween = styled(Row)`
   justify-content: space-between;
   display: flex;
   flex-wrap: wrap;
+  margin-left: -12px;
 `;
 
 export const FlexColumn = styled.div`

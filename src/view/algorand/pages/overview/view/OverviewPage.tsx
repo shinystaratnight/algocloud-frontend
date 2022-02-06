@@ -46,11 +46,11 @@ function OverviewPage() {
       <OverviewChart />
 
       <ContentWrapper className="card-hover">
-        <SectionTitleBar>
+        <SectionTitleBar className="table-header">
           <SectionTitle>Top Favorites</SectionTitle>
           <h6 className='m-0'>
             <Link
-              className="btn btn-link"
+              className="btn btn-link no-padding"
               to={`/algorand/favorites`}
             >
               See All
@@ -63,11 +63,11 @@ function OverviewPage() {
       </ContentWrapper>
 
       <ContentWrapper className="card-hover">
-        <SectionTitleBar>
+        <SectionTitleBar className="table-header">
           <SectionTitle>Top Assets</SectionTitle>
           <h6 className='m-0'>
             <Link
-              className="btn btn-link"
+              className="btn btn-link no-padding"
               to={`/algorand/assets`}
             >
               See All
@@ -80,10 +80,10 @@ function OverviewPage() {
       </ContentWrapper>
 
       <ContentWrapper className="card-hover">
-        <SectionTitleBar>
+        <SectionTitleBar className="table-header">
           <SectionTitle>Top Pools</SectionTitle>
           <Link
-            className="btn btn-link"
+            className="btn btn-link no-padding"
             to={`/algorand/pools`}
           >
             See All

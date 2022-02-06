@@ -49,7 +49,7 @@ const TradingViewChart = ({
   const topScale = type === CHART_TYPES.AREA ? 0.32 : 0.2;
   let rootb = document.getElementById("root")!;
   let styleb = window.getComputedStyle(rootb);
-  let textColor = styleb.getPropertyValue('--algocloud-body-bg-2');
+  let textColor = styleb.getPropertyValue('--algocloud-headings-color');
 
   useEffect(() => {
     if (data !== dataPrev && chartCreated) {

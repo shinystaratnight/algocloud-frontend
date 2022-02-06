@@ -55,14 +55,82 @@
     max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-top: 4px;
+    margin-top: 2px;
+    font-weight: 700;
+    line-height: 1.2rem;
+    margin-bottom: 0px;
+}
+
+h5.text-info-2 {
+    font-size: 1.5rem;
+}
+
+.card.bg-box.rounded:hover, .card-hover:hover, .card-hover-2:hover {
+    border-style: solid;
+    border-color: var(--algocloud-primary) !important;
+}
+
+@media (max-width: 768px){
+.table tr td:first-child, .table tr th:first-child {
+    padding-left: 24px !important;
+}
+}
+
+button.btn.btn-link.no-padding:hover {
+    box-shadow: 0 0 0 0.1rem rgb(104 125 253 / 25%) !important;
+    background-color: rgb(52 73 104);
+}
+
+button.btn.btn-link.no-padding:focus {
+box-shadow: 0 0 0 0.2rem rgb(104 125 253 / 25%) !important
+}
+
+.btn-link.disabled, .btn-link:disabled {
+    color: #fff !important;
+    background: #687dfd;
+}
+
+button.btn.btn-link.no-padding{
+    box-shadow: 0 0 0 0.1rem rgb(104 125 253 / 25%) !important;
 }
 
 
+.modal-backdrop {
+    z-index: 9939;
+}
 
-.card.bg-box.rounded:hover, .card-hover:hover {
-    border-style: solid;
-    border-color: var(--algocloud-primary) !important;
+.menu-nav {
+    z-index: 1032 !important;
+}
+
+.modal.show {
+    z-index: 9980;
+}
+
+.modal-content {
+    background-color: var(--algocloud-card-bg-color) !important;
+}
+
+.table-header {
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding-bottom: 1rem;
+    border-color: var(--border-var) !important;
+}
+
+.table tr td:first-child, .table tr th:first-child {
+    padding-left: 32px !important;
+}
+
+.card-hover-2{
+    padding: 1.25rem !important;
+}
+
+.card-hover{
+    padding: 1.25rem !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    text-indent: 1.25rem;
 }
 
 /* .card.bg-box {
@@ -1106,6 +1174,7 @@
     --li-active: #fff;
     --li-hover: #fff;
     --algocloud-logo-1: #f9fafd;
+    --algocloud-btn-link-color-2: #fff;
 }
 
 .dark .table {

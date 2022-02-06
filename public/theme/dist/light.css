@@ -733,7 +733,8 @@
     --algocloud-hover-bg-1100: #0b1727;
     --algocloud-hover-bg-white: #fff;
     --algocloud-btn-disabled-custom-background: rgba(249, 250, 253, 0.65);
-    --algocloud-btn-disabled-custom-color: rgba(11, 23, 39, 0.3)
+    --algocloud-btn-disabled-custom-color: rgba(11, 23, 39, 0.3);
+    --algocloud-btn-link-color-2: var(--primary);
 }
 
 :root .light .table,:root .table,:root.light .table {
@@ -3227,7 +3228,14 @@ progress {
     max-width: 100px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-top: 4px;
+    margin-top: 2px;
+    font-weight: 700;
+    line-height: 1.2rem;
+    margin-bottom: 0px;
+}
+
+h5.text-info-2 {
+    font-size: 1.5rem;
 }
 
 .table>:not(caption)>*>* {
@@ -7915,7 +7923,60 @@ textarea.form-control-lg {
     text-decoration: none;
 }
 
-.card.bg-box.rounded:hover, .card-hover:hover {
+
+button.btn.btn-link.no-padding:hover {
+    box-shadow: 0 0 0 0.1rem rgb(104 125 253 / 25%) !important;
+    background-color: rgb(52 73 104);
+}
+
+button.btn.btn-link.no-padding:focus {
+box-shadow: 0 0 0 0.2rem rgb(104 125 253 / 25%) !important
+}
+
+.btn-link.disabled, .btn-link:disabled {
+    color: #fff !important;
+    background: #687dfd;
+}
+
+button.btn.btn-link.no-padding{
+    box-shadow: 0 0 0 0.1rem rgb(104 125 253 / 25%) !important;
+}
+
+button.btn.btn-link.no-padding:hover{
+color: var(--li-hover)!important;
+background-color: var(--algocloud-menu-li-hover);
+}
+
+.modal-backdrop {
+    z-index: 9939;
+}
+.menu-nav{
+z-index: 9939 !important;
+}
+
+.modal.show {
+    z-index: 9980;
+}
+
+.table-header {
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding-bottom: 1rem;
+    border-color: var(--border-var) !important;
+}
+
+.card-hover{
+    padding: 1.25rem !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    text-indent: 1.25rem;
+}
+
+.table tr td:first-child, .table tr th:first-child {
+    padding-left: 24px !important;
+}
+
+.card.bg-box.rounded:hover, .card-hover:hover,card-hover-2:hover {
     border-style: solid;
     border-color: var(--algocloud-primary) !important;
 }

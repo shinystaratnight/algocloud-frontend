@@ -50,7 +50,7 @@ const AssetShowPage = () => {
       />
       <div className='row' style={{ paddingTop: 20 }}>
         <div className='col-sm-12 flex-row' style={{display: 'flex', alignItems: 'center'}}>
-          <img src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
+          <img src={image} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
           <h3 style={{ marginRight: 20 }}>{asset['unitName']}</h3>
           <h5 className='text-info' style={{ marginRight: 20 }}>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
           <h6 className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 3)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayPriceChange'], 2)}</h6>
@@ -58,29 +58,29 @@ const AssetShowPage = () => {
       </div>
       <div className='row'>
         <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
-          <ContentWrapper style={{ flex: 1 }} className="card-hover">
+          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             <h6>Liqudity</h6>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h5 className='text-info'>{formattedNum(asset['liquidity'], true)}</h5>
+              <h5 className='text-info-2'>{formattedNum(asset['liquidity'], true)}</h5>
               <h6 className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayLiquidityChange'], 2)}</h6>
             </div>
           </ContentWrapper>
-          <ContentWrapper style={{ flex: 1 }} className="card-hover">
+          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             <h6>Volume (24hrs)</h6>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h5 className='text-info'>{formattedNum(asset['lastDayVolume'], true)}</h5>
+              <h5 className='text-info-2'>{formattedNum(asset['lastDayVolume'], true)}</h5>
               <h6 className={(parseFloat(formatPercent(asset['lastDayVolumeChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayVolumeChange'], 2)}</h6>
             </div>
           </ContentWrapper>
-          <ContentWrapper style={{ flex: 1 }} className="card-hover">
+          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             <h6>Price</h6>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h5 className='text-info'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
+              <h5 className='text-info-2'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
               <h6 className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 3)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayPriceChange'], 2)}</h6>
             </div>
           </ContentWrapper>
         </div>
-        <div className="col-lg-8 col-sm-12">
+        <div className="col-lg-8 col-sm-12 ">
           <AssetChart
             color='#687dfd'
             assetData={assetData}
@@ -90,7 +90,7 @@ const AssetShowPage = () => {
       </div>
 
       <ContentWrapper className="card-hover">
-        <SectionTitleBar>
+        <SectionTitleBar className="table-header">
           <SectionTitle>Top Pools</SectionTitle>
         </SectionTitleBar>
         <PoolsTable
