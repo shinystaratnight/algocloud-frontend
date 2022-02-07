@@ -84,9 +84,11 @@ function Menu(props) {
     <MenuWrapper
       style={{
         display: menuVisible ? 'block' : 'none',
+        
       }}
     >
       <div className="menu-nav">
+        <div className="algocloud-fixed">
       <a className="algocloud-navbar-brand" href="."><div className="algocloud-font ">AlgoCloud</div></a>
 
         <ul className="menu-ul">
@@ -137,6 +139,7 @@ function Menu(props) {
               </li>
             ))}
         </ul>
+        </div>
       </div>
     </MenuWrapper>
   );

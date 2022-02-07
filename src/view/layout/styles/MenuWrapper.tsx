@@ -13,7 +13,7 @@ const MenuWrapper = styled.div`
 
   @media (min-width: 576px){
     .menu-nav {
-      position: fixed;
+      position: relative;
     
     }
     }

@@ -37,7 +37,7 @@ function OrderFormModal(props) {
 
   return ReactDOM.createPortal(
     <div ref={modalRef} className="modal" tabIndex={-1}>
-      <div className="modal-dialog modal-lg">
+      <div className="modal-dialog modal-lg modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">

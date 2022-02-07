@@ -20,12 +20,12 @@ function Header(props) {
   const doToggleMenu = () => {
     let element = document.getElementById("main") || { style: { margin: "" } }
     let element2 = document.getElementById("stickyTop") || { style: { padding: "" } }
-    let element3 = document.getElementById("stickyLogo") || { style: { display: "none" } }
+    let element3 = document.getElementById("stickyLogo") || { style: { display: "" } }
     toggle ? setToggle(false) : setToggle(true)
     if (toggle) {
       element.style["margin-left"] = ""
-      element2.style["padding-left"] = ""
-      element3.style["display"] = "none"
+      element2.style["padding-left"] = "224px"
+      element3.style["display"] = "flex"
     }
     else {
       element.style["margin-left"] = "unset"
@@ -90,7 +90,7 @@ function Header(props) {
             <div className="user-dropdown-content">
               <span className="user-dropdown-avatar">
                 <Avatar
-                  size="small"
+                  size="medium"
                   src={userAvatar || undefined}
                   alt="avatar"
                 />

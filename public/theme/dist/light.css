@@ -1,9 +1,19 @@
 @media (min-width: 576px){
 .main {
-    margin-left: 200px;
     margin-top: 61px;
 
 }
+}
+
+.algocloud-fixed {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+}
+
+.sortable:hover {
+    opacity: 1 !important;
+    color: var(--algocloud-btn-algocloud-primary-color);
 }
 
 .navbar-vertical .navbar-nav .nav-item .nav-link {
@@ -142,7 +152,7 @@
     color: #687dfd !important
 }
 
-@media (max-width: 576px){
+@media (max-width: 276px){
     .algocloud-navbar-brand-1 {
         display: none !important;
 }
@@ -187,6 +197,14 @@
     -webkit-box-pack: justify;
     justify-content: space-between;
 }
+
+@media (min-width: 576px){
+    .stickyTop,div#stickyTop {
+    padding-left: 224px;
+}
+}
+
+
 
 .algocloud-navbar-brand-1 {
     display: flex;
@@ -3225,7 +3243,7 @@ progress {
 }
 
 .table-algo-title {
-    max-width: 100px;
+    max-width: 110px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 2px;

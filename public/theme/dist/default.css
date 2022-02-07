@@ -6,7 +6,6 @@
 
 @media (min-width: 576px){
     .main {
-        margin-left: 200px;
         margin-top: 61px;
     
     }
@@ -16,7 +15,7 @@
         background:white important!
     }
 
-@media (max-width: 576px){
+@media (max-width: 276px){
     .algocloud-navbar-brand-1 {
         display: none !important;
 }
@@ -52,7 +51,7 @@
 }
 
 .table-algo-title {
-    max-width: 100px;
+    max-width: 110px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 2px;
@@ -8021,6 +8020,12 @@ i.fas.fa-bars {
     bottom: 0
 }
 
+@media (min-width: 276px){
+.sticky-top {
+    position: fixed !important;
+}
+}
+
 @media (min-width: 576px){
 .sticky-top {
     position: fixed !important;
@@ -10658,6 +10663,12 @@ i.fas.fa-bars {
 
 .bg-soft-dark,.fc-timegrid .event-bg-soft-dark {
     background-color: var(--algocloud-soft-dark)!important
+}
+
+.algocloud-fixed {
+    position: fixed;
+    width: 200px;
+    height: 100%;
 }
 
 @media (min-width:576px) {
