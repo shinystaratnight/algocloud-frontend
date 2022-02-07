@@ -8020,11 +8020,6 @@ i.fas.fa-bars {
     bottom: 0
 }
 
-@media (min-width: 276px){
-.sticky-top {
-    position: fixed !important;
-}
-}
 
 @media (min-width: 576px){
 .sticky-top {
@@ -8032,6 +8027,7 @@ i.fas.fa-bars {
     padding-left: 224px;
 }
 }
+
 
 .sticky-top {
     z-index: 1015;
