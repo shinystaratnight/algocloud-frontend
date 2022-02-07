@@ -24,13 +24,13 @@ function Header(props) {
     toggle ? setToggle(false) : setToggle(true)
     if (toggle) {
       element.style["margin-left"] = ""
-      element2.style["padding-left"] = "224px"
+      element2.style["padding-left"] = "1rem"
       element3.style["display"] = "flex"
     }
     else {
       element.style["margin-left"] = "unset"
       element2.style["padding-left"] = "1rem"
-      element3.style["display"] = "flex"
+      element3.style["display"] = "none"
     }
     dispatch(layoutActions.doToggleMenu());
   };
