@@ -29,7 +29,7 @@ function Header(props) {
     }
     else {
       element.style["margin-left"] = "unset"
-      element2.style["padding-left"] = "1rem"
+      element2.style["padding-left"] = ""
       element3.style["display"] = "flex"
     }
     dispatch(layoutActions.doToggleMenu());
@@ -66,7 +66,8 @@ function Header(props) {
   };
 
   return (
-    <HeaderWrapper id="stickyTop" className="navbar sticky-top">
+    <HeaderWrapper id="stickyTop" >
+      <div id="stickyTop-2" className="navbar sticky-top">
       <button
         type="button"
         onClick={doToggleMenu}
@@ -74,10 +75,9 @@ function Header(props) {
       >
         <i className="fas fa-bars" />
       </button>
-      <a id="stickyLogo" className="algocloud-navbar-brand-1" href="."><div className="algocloud-font">AlgoCloud</div></a>
 
 
-      <div>
+      <div className="last-child">
         <span className="i18n-select">
           <I18nSelect />
         </span>
@@ -171,6 +171,7 @@ function Header(props) {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </HeaderWrapper>

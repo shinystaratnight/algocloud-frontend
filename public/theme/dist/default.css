@@ -4,12 +4,68 @@
     }
 }
 
+@media (max-width: 480px){
+.algocloud-fixed {
+    height: 100% !important;
+    width: 100% !important;
+     z-index: 1100;
+    position: absolute !important;
+    background: #283447 !important;
+}
+.btn-close-algocloud {
+    cursor: pointer !important;
+    position: absolute !important;
+    display: block;
+    right: 1rem;
+    top: 1rem;
+    width: 25px;
+    height: 25px;
+    opacity: .5;
+    z-index: 100000;
+}
+.btn-close-algocloud:after, .btn-close-algocloud:before {
+    background-color: #9da9bb !important;
+}
+.btn-close-algocloud-container {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 1rem;
+}
+}
+
+@media (min-width: 480px){
+    .btn-close-algocloud-container{
+    display:none !important;
+}
+}
+
 @media (min-width: 576px){
-    .main {
+    .content {
         margin-top: 61px;
     
     }
+    a#stickyLogo{
+        display:none;
     }
+    .btn-close-algocloud {
+        display:none;
+    }
+    }
+
+
+    @media (max-width: 576px){
+        div#stickyTop {
+            position:relative !important;
+        
+        }
+        .last-child {
+            display: flex;
+            align-items: center;
+            position: absolute !important;
+            right: 1rem;
+        }
+        }
 
     --algocloud-body-color{
         background:white important!
@@ -21,6 +77,33 @@
 }
 }
 
+div#stickyTop-2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+button.btn-close.btn.menu-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10000 !important;
+}
+
+@media (min-width: 576px){
+    .sticky-top {
+        position: relative !important;
+    }
+    }
+    
+    div#stickyTop{
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    
 
 .bvsaRt-1 {
 
@@ -8023,9 +8106,14 @@ i.fas.fa-bars {
 
 @media (min-width: 576px){
 .sticky-top {
-    position: fixed !important;
-    padding-left: 224px;
+    position: relative !important;
 }
+}
+
+div#stickyTop{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
 }
 
 
@@ -28930,4 +29018,11 @@ button.btn-circle:focus,button.btn-circle:hover {
     width: 12px;
     height: 12px;
     background-color: #283447;
+}
+
+.last-child {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 1rem;
 }
