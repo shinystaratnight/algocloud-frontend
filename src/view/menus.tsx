@@ -99,7 +99,43 @@ export default [
   {
     path: '/superadmin/analytics',
     label: i18n('analytics.menu'),
-    permissionRequired: permissions.analyticsReadSuperadmin,
+    permissionRequired: permissions.settingsReadSuperadmin,
     icon: 'fas fa-chart-bar',
+  },
+  {
+    path: '/',
+    label: i18n('trade.menu'),
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-chart-bar',
+  },
+  {
+    path: '/',
+    label: i18n('pool.menu'),
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-tint',
+  },
+  {
+    path: '/',
+    label: i18n('explore.menu'),
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-globe',
+  },
+  {
+    path: '/',
+    label: i18n('farm.menu'),
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-chart-bar',
+  },
+  {
+    path: '/',
+    label: i18n('lending.menu'),
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-chart-bar',
+  },
+  {
+    path: '/',
+    label: i18n('launchpad.menu'),
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-rocket',
   },
 ].filter(Boolean);

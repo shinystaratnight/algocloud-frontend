@@ -58,7 +58,7 @@ function SettingsForm(props) {
     defaultValues: initialValues,
   });
 
-  const onSubmit = (values) => {
+  const onSubmit = (values) => {    
     dispatch(actions.doSave(values));
   };
 
