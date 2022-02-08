@@ -21,7 +21,7 @@ function Header(props) {
   const doToggleMenu = () => {
     let element = document.getElementById("main") || { style: { margin: "" } }
     let element2 = document.getElementById("stickyTop") || { style: { padding: "" } }
-    let element3 = document.getElementById("stickyLogo") || { style: { display: "none" } }
+    let element3 = document.getElementById("stickyLogo") || { style: { display: "" } }
     toggle ? setToggle(false) : setToggle(true)
     if (toggle) {
       element.style["margin-left"] = ""
@@ -30,7 +30,7 @@ function Header(props) {
     }
     else {
       element.style["margin-left"] = "unset"
-      element2.style["padding-left"] = "1rem"
+      element2.style["padding-left"] = ""
       element3.style["display"] = "flex"
     }
     dispatch(layoutActions.doToggleMenu());
@@ -67,7 +67,8 @@ function Header(props) {
   };
 
   return (
-    <HeaderWrapper id="stickyTop" className="navbar sticky-top">
+    <HeaderWrapper id="stickyTop" >
+      <div id="stickyTop-2" className="navbar sticky-top">
       <button
         type="button"
         onClick={doToggleMenu}
@@ -75,10 +76,9 @@ function Header(props) {
       >
         <i className="fas fa-bars" />
       </button>
-      <a id="stickyLogo" className="algocloud-navbar-brand-1" href="."><div className="algocloud-font">AlgoCloud</div></a>
 
 
-      <div style={{display: 'flex', alignItems: 'center'}}>
+      <div className="last-child" style={{display: 'flex', alignItems: 'center'}}>
         <DarkMode />
         <span className="i18n-select">
           <I18nSelect />
@@ -92,7 +92,7 @@ function Header(props) {
             <div className="user-dropdown-content">
               <span className="user-dropdown-avatar">
                 <Avatar
-                  size="small"
+                  size="medium"
                   src={userAvatar || undefined}
                   alt="avatar"
                 />
@@ -173,6 +173,7 @@ function Header(props) {
               </button>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </HeaderWrapper>

@@ -74,7 +74,7 @@ const AssetChart = (props) => {
 
 
   return (
-    <ChartWindowWrapper className="card-hover">
+    <ChartWindowWrapper className="card-hover-2">
       <RowBetween
         mb={
           chartFilter === ASSET_CHART_VIEW.LIQUIDITY ||

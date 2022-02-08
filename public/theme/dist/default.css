@@ -4,24 +4,106 @@
     }
 }
 
+@media (max-width: 480px){
+.algocloud-fixed {
+    height: 100% !important;
+    width: 100% !important;
+     z-index: 1100;
+    position: absolute !important;
+    background: #283447 !important;
+}
+.btn-close-algocloud {
+    cursor: pointer !important;
+    position: absolute !important;
+    display: block;
+    right: 1rem;
+    top: 1rem;
+    width: 25px;
+    height: 25px;
+    opacity: .5;
+    z-index: 100000;
+}
+.btn-close-algocloud:after, .btn-close-algocloud:before {
+    background-color: #9da9bb !important;
+}
+.btn-close-algocloud-container {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: 1rem;
+}
+}
+
+@media (min-width: 480px){
+    .btn-close-algocloud-container{
+    display:none !important;
+}
+}
+
 @media (min-width: 576px){
-    .main {
-        margin-left: 200px;
+    .content {
         margin-top: 61px;
     
     }
+    a#stickyLogo{
+        display:none;
     }
+    .btn-close-algocloud {
+        display:none;
+    }
+    }
+
+
+    @media (max-width: 576px){
+        div#stickyTop {
+            position:relative !important;
+        
+        }
+        .last-child {
+            display: flex;
+            align-items: center;
+            position: absolute !important;
+            right: 1rem;
+        }
+        }
 
     --algocloud-body-color{
         background:white important!
     }
 
-@media (max-width: 576px){
+@media (max-width: 276px){
     .algocloud-navbar-brand-1 {
         display: none !important;
 }
 }
 
+div#stickyTop-2 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+button.btn-close.btn.menu-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10000 !important;
+}
+
+@media (min-width: 576px){
+    .sticky-top {
+        position: relative !important;
+    }
+    }
+    
+    div#stickyTop{
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    
 
 .bvsaRt-1 {
 
@@ -52,17 +134,85 @@
 }
 
 .table-algo-title {
-    max-width: 100px;
+    max-width: 110px;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-top: 4px;
+    margin-top: 2px;
+    font-weight: 700;
+    line-height: 1.2rem;
+    margin-bottom: 0px;
+}
+
+h5.text-info-2 {
+    font-size: 1.5rem;
+}
+
+.card.bg-box.rounded:hover, .card-hover:hover, .card-hover-2:hover {
+    border-style: solid;
+    border-color: var(--algocloud-primary) !important;
+}
+
+@media (max-width: 768px){
+.table tr td:first-child, .table tr th:first-child {
+    padding-left: 24px !important;
+}
+}
+
+button.btn.btn-link.no-padding:hover {
+    box-shadow: 0 0 0 0.1rem rgb(104 125 253 / 25%) !important;
+    background-color: rgb(52 73 104);
+}
+
+button.btn.btn-link.no-padding:focus {
+box-shadow: 0 0 0 0.2rem rgb(104 125 253 / 25%) !important
+}
+
+.btn-link.disabled, .btn-link:disabled {
+    color: #fff !important;
+    background: #687dfd;
+}
+
+button.btn.btn-link.no-padding{
+    box-shadow: 0 0 0 0.1rem rgb(104 125 253 / 25%) !important;
 }
 
 
+.modal-backdrop {
+    z-index: 9939;
+}
 
-.card.bg-box.rounded:hover, .card-hover:hover {
-    border-style: solid;
-    border-color: var(--algocloud-primary) !important;
+.menu-nav {
+    z-index: 1032 !important;
+}
+
+.modal.show {
+    z-index: 9980;
+}
+
+.modal-content {
+    background-color: var(--algocloud-card-bg-color) !important;
+}
+
+.table-header {
+    border-bottom-style: solid;
+    border-width: 1px;
+    padding-bottom: 1rem;
+    border-color: var(--border-var) !important;
+}
+
+.table tr td:first-child, .table tr th:first-child {
+    padding-left: 32px !important;
+}
+
+.card-hover-2{
+    padding: 1.25rem !important;
+}
+
+.card-hover{
+    padding: 1.25rem !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    text-indent: 1.25rem;
 }
 
 /* .card.bg-box {
@@ -1106,6 +1256,7 @@
     --li-active: #fff;
     --li-hover: #fff;
     --algocloud-logo-1: #f9fafd;
+    --algocloud-btn-link-color-2: #fff;
 }
 
 .dark .table {
@@ -7952,12 +8103,19 @@ i.fas.fa-bars {
     bottom: 0
 }
 
+
 @media (min-width: 576px){
 .sticky-top {
-    position: fixed !important;
-    padding-left: 224px;
+    position: relative !important;
 }
 }
+
+div#stickyTop{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
 
 .sticky-top {
     z-index: 1015;
@@ -10589,6 +10747,12 @@ i.fas.fa-bars {
 
 .bg-soft-dark,.fc-timegrid .event-bg-soft-dark {
     background-color: var(--algocloud-soft-dark)!important
+}
+
+.algocloud-fixed {
+    position: fixed;
+    width: 200px;
+    height: 100%;
 }
 
 @media (min-width:576px) {
@@ -28854,4 +29018,11 @@ button.btn-circle:focus,button.btn-circle:hover {
     width: 12px;
     height: 12px;
     background-color: #283447;
+}
+
+.last-child {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    right: 1rem;
 }

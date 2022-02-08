@@ -38,6 +38,12 @@ const AvatarWrapper = styled.span`
     line-height: 40px;
   }
 
+  .avatar.avatar-md {
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+  }
+
   .avatar.avatar-sm {
     width: 24px;
     height: 24px;
@@ -61,6 +67,7 @@ const Avatar = (props) => {
   const sizeClass =
     {
       large: 'avatar-lg',
+      medium: 'avatar-md',
       small: 'avatar-sm',
     }[size] || '';
   return (

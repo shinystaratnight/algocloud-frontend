@@ -13,7 +13,7 @@ const MenuWrapper = styled.div`
 
   @media (min-width: 576px){
     .menu-nav {
-      position: fixed;
+      position: relative;
     
     }
     }
@@ -156,6 +156,7 @@ a.algocloud-navbar-brand {
     height: 40px;
     padding: 0 16px;
     color: var(--algocloud-body-color);
+    font-weight: 600;
     border-radius: 6px;
     line-height: 40px;
     height: 40px;
