@@ -677,6 +677,24 @@ const ptBR = {
     prev_3: '3 páginas anteriores',
     next_3: '3 próximas páginas',
   },
+  trade: {
+    menu: 'Trade',
+  },
+  pool: {
+    menu: 'Pool',
+  },
+  explore: {
+    menu: 'Explore',
+  },
+  farm: {
+    menu: 'Farm',
+  },
+  lending: {
+    menu: 'Lending',
+  },
+  launchpad: {
+    menu: 'Launchpad',
+  },
 };
 
 export default ptBR;

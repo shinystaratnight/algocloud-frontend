@@ -61,6 +61,10 @@ function SettingsForm(props) {
   });
 
   const onSubmit = (values) => {
+    console.log("Saving settings");
+    console.log(values);
+    
+    
     dispatch(actions.doSave(values));
   };
 

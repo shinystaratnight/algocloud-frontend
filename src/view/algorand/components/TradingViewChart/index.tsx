@@ -12,7 +12,7 @@ import Spinner from 'src/view/shared/Spinner';
 
 dayjs.extend(utc);
 
-const HEIGHT = 385;
+const HEIGHT = 300;
 
 export const toLocalTime = (time: number) => {
   let utcDate = new Date(time * 1000).toString();  
@@ -26,7 +26,9 @@ const TradingViewChart = ({
   base,
   field,
   title = '',
+  fixed = false,
   width,
+  height = 300,
   utc = false,
   timeField = 'createdDate',
   useWeekly = false,
@@ -257,10 +259,10 @@ const TradingViewChart = ({
 
   useEffect(() => {
     if (width) {
-      chartCreated && chartCreated.resize(width, HEIGHT)
-      chartCreated && chartCreated.timeScale().scrollToPosition(0, true)
+      if (!fixed) chartCreated && chartCreated.resize(width, height);
+      chartCreated && chartCreated.timeScale().scrollToPosition(0, true);
     }
-  }, [chartCreated, width]);
+  }, [chartCreated, height, width, fixed]);
 
   return (
     <GraphWrapper>

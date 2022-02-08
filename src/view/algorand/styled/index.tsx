@@ -65,6 +65,16 @@ export const OptionButtonContainer = styled.div`
   margin-bottom: 10px;
 `;
 
+export const OptionButtonBottomContainer = styled.div`
+  display: flex;
+  margin-top: 10px;
+  * {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 0px;
+  }
+`;
+
 export const OptionButton = styled.div`
   font-weight: 500;
   width: fit-content;

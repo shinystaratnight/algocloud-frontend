@@ -21,6 +21,7 @@ export const formatPercent = (_volume, decimals=2) => {
   if (_volume === null) volume = 0;
   if (typeof _volume === 'string') volume = parseFloat(volume);
   if (volume === 0) return '-';
+  if (volume > 0) return '+' + volume.toFixed(decimals) + '%';
   return volume.toFixed(decimals) + '%';
 };
 

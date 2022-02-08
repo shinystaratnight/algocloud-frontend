@@ -24,6 +24,7 @@ import {
   ChartWindowWrapper,
   Divider,
   OptionButton,
+  OptionButtonBottomContainer,
   OptionButtonContainer,
   OptionButtonWrapper,
   RowBetween
@@ -70,7 +71,7 @@ const AssetChart = (props) => {
   const handleChangeDuration = (d: string) => {
     setDuration(d);
   }
-  
+
 
   return (
     <ChartWindowWrapper className="card-hover-2">
@@ -120,6 +121,67 @@ const AssetChart = (props) => {
             Market Cap
           </OptionButton>
         </OptionButtonContainer>
+      </RowBetween>
+
+      {chartFilter === ASSET_CHART_VIEW.PRICE && priceData && (
+        <ResponsiveContainer aspect={aspect} ref={ref}>
+          <CandleStickChart
+            data={priceData}
+            width={width}
+            base={0}
+            paddingTop='0'
+            valueFormatter={(val) => val?.toFixed(4)}
+            duration={duration}
+          />
+        </ResponsiveContainer>
+      )}
+
+      {chartFilter === ASSET_CHART_VIEW.VOLUME && assetData && (
+        <ResponsiveContainer aspect={aspect}>
+          <TradingViewChart
+            data={assetData}
+            base={0}
+            field={'lastDayVolume'}
+            width={width}
+            type={CHART_TYPES.BAR}
+            timeField='date'
+            useWeekly={false}
+            utc={true}
+            duration={duration}
+          />
+        </ResponsiveContainer>
+      )}
+      {chartFilter === ASSET_CHART_VIEW.LIQUIDITY && assetData && (
+        <ResponsiveContainer aspect={aspect}>
+          <TradingViewChart
+            data={assetData}
+            base={0}
+            field={'liquidity'}
+            width={width}
+            type={'area'}
+            timeField='date'
+            useWeekly={false}
+            utc={true}
+            duration={duration}
+          />
+        </ResponsiveContainer>
+      )}
+      {chartFilter === ASSET_CHART_VIEW.MARKETCAP && assetData && (
+        <ResponsiveContainer aspect={aspect}>
+          <TradingViewChart
+            data={assetData}
+            base={0}
+            field={'marketCap'}
+            width={width}
+            type={CHART_TYPES.AREA}
+            timeField='date'
+            useWeekly={false}
+            utc={true}
+            duration={duration}
+          />
+        </ResponsiveContainer>
+      )}
+      <OptionButtonBottomContainer>
         <OptionButtonContainer>
           <OptionButtonWrapper right="180px">
             <OptionButtonContainer>
@@ -167,240 +229,7 @@ const AssetChart = (props) => {
             </OptionButtonContainer>
           </OptionButtonWrapper>
         </OptionButtonContainer>
-      </RowBetween>
-
-      {chartFilter === ASSET_CHART_VIEW.PRICE && priceData && (
-        <ResponsiveContainer aspect={aspect} ref={ref}>
-          <CandleStickChart
-            data={priceData}
-            width={width}
-            base={0}
-            paddingTop='0'
-            valueFormatter={(val) => val?.toFixed(4)}
-            duration={duration}
-          />
-        </ResponsiveContainer>
-      )}
-
-      {chartFilter === ASSET_CHART_VIEW.VOLUME && assetData && (
-        <ResponsiveContainer aspect={aspect}>
-          <TradingViewChart
-            data={assetData}
-            base={0}
-            field={'lastDayVolume'}
-            width={'100%'}
-            type={CHART_TYPES.BAR}
-            timeField='date'
-            useWeekly={false}
-            utc={true}
-            duration={duration}
-          />
-        </ResponsiveContainer>
-      )}
-      {chartFilter === ASSET_CHART_VIEW.LIQUIDITY && assetData && (
-        <ResponsiveContainer aspect={aspect}>
-          <TradingViewChart
-            data={assetData}
-            base={0}
-            field={'liquidity'}
-            width={'100%'}
-            type={'area'}
-            timeField='date'
-            useWeekly={false}
-            utc={true}
-            duration={duration}
-          />
-        </ResponsiveContainer>
-      )}
-      {chartFilter === ASSET_CHART_VIEW.MARKETCAP && assetData && (
-        <ResponsiveContainer aspect={aspect}>
-          <TradingViewChart
-            data={assetData}
-            base={0}
-            field={'marketCap'}
-            width={'100%'}
-            type={CHART_TYPES.AREA}
-            timeField='date'
-            useWeekly={false}
-            utc={true}
-            duration={duration}
-          />
-        </ResponsiveContainer>
-      )}
-      {/* {chartFilter === ASSET_CHART_VIEW.VOLUME && assetData && (
-        <ResponsiveContainer aspect={aspect}>
-          <BarChart margin={{ top: 30, right: 10, bottom: 6, left: 10 }} barCategoryGap={1} data={assetData}>
-            <XAxis
-              tickLine={false}
-              axisLine={false}
-              interval="preserveEnd"
-              minTickGap={80}
-              tickMargin={14}
-              tickFormatter={tick => toNiceDate(tick)}
-              dataKey="date"
-              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
-              type={'number'}
-              domain={['dataMin', 'dataMax']}
-            />
-            <YAxis
-              type="number"
-              axisLine={false}
-              tickMargin={16}
-              tickFormatter={tick => '$' + toK(tick)}
-              tickLine={false}
-              orientation="right"
-              interval="preserveEnd"
-              minTickGap={80}
-              yAxisId={0}
-              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
-            />
-            <Tooltip
-              cursor={{ fill: color, opacity: 0.1 }}
-              formatter={val => formattedNum(val, true)}
-              labelFormatter={label => toNiceDateYear(label)}
-              labelStyle={{ paddingTop: 4 }}
-              contentStyle={{
-                padding: '10px 14px',
-                borderRadius: 10,
-                borderColor: color,
-                color: 'black'
-              }}
-              wrapperStyle={{ top: -70, left: -10 }}
-            />
-            <Bar
-              type="monotone"
-              name={'Volume'}
-              dataKey={'lastDayVolume'}
-              fill={color}
-              opacity={'0.5'}
-              yAxisId={0}
-              stroke={color}
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      )}
-
-      {chartFilter === ASSET_CHART_VIEW.LIQUIDITY && assetData && (
-        <ResponsiveContainer aspect={aspect}>
-          <AreaChart margin={{ top: 30, right: 10, bottom: 6, left: 0 }} barCategoryGap={1} data={assetData}>
-            <defs>
-              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor={color} stopOpacity={0.35} />
-                <stop offset="95%" stopColor={color} stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <XAxis
-              tickLine={false}
-              axisLine={false}
-              interval="preserveEnd"
-              tickMargin={16}
-              minTickGap={120}
-              tickFormatter={tick => toNiceDate(tick)}
-              dataKey="date"
-              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
-              type={'number'}
-              domain={['dataMin', 'dataMax']}
-            />
-            <YAxis
-              type="number"
-              orientation="right"
-              tickFormatter={tick => '$' + toK(tick)}
-              axisLine={false}
-              tickLine={false}
-              interval="preserveEnd"
-              minTickGap={80}
-              yAxisId={0}
-              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
-            />
-            <Tooltip
-              cursor={true}
-              formatter={val => formattedNum(val, true)}
-              labelFormatter={label => toNiceDateYear(label)}
-              labelStyle={{ paddingTop: 4 }}
-              contentStyle={{
-                padding: '10px 14px',
-                borderRadius: 10,
-                borderColor: color,
-                color: 'black'
-              }}
-              wrapperStyle={{ top: -70, left: -10 }}
-            />
-            <Area
-              key={'other'}
-              dataKey={'liquidity'}
-              stackId="2"
-              strokeWidth={2}
-              dot={false}
-              type="monotone"
-              name={'Liquidity'}
-              yAxisId={0}
-              stroke={darken(0.12, color)}
-              fill="url(#colorUv)"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-      )}
-
-      {chartFilter === ASSET_CHART_VIEW.MARKETCAP && assetData && (
-        <ResponsiveContainer aspect={aspect}>
-          <AreaChart margin={{ top: 30, right: 10, bottom: 6, left: 0 }} barCategoryGap={1} data={assetData}>
-            <defs>
-              <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="5%" stopColor={color} stopOpacity={0.35} />
-                <stop offset="95%" stopColor={color} stopOpacity={0} />
-              </linearGradient>
-            </defs>
-            <XAxis
-              tickLine={false}
-              axisLine={false}
-              interval="preserveEnd"
-              tickMargin={16}
-              minTickGap={120}
-              tickFormatter={tick => toNiceDate(tick)}
-              dataKey="date"
-              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
-              type={'number'}
-              domain={['dataMin', 'dataMax']}
-            />
-            <YAxis
-              type="number"
-              orientation="right"
-              tickFormatter={tick => '$' + toK(tick)}
-              axisLine={false}
-              tickLine={false}
-              interval="preserveEnd"
-              minTickGap={80}
-              yAxisId={0}
-              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
-            />
-            <Tooltip
-              cursor={true}
-              formatter={val => formattedNum(val, true)}
-              labelFormatter={label => toNiceDateYear(label)}
-              labelStyle={{ paddingTop: 4 }}
-              contentStyle={{
-                padding: '10px 14px',
-                borderRadius: 10,
-                borderColor: color,
-                color: 'black'
-              }}
-              wrapperStyle={{ top: -70, left: -10 }}
-            />
-            <Area
-              key={'other'}
-              dataKey={'marketCap'}
-              stackId="2"
-              strokeWidth={2}
-              dot={false}
-              type="monotone"
-              name={'Market Cap'}
-              yAxisId={0}
-              stroke={darken(0.12, color)}
-              fill="url(#colorUv)"
-            />
-          </AreaChart>
-        </ResponsiveContainer>
-      )} */}
+      </OptionButtonBottomContainer>
     </ChartWindowWrapper>
   );
 }

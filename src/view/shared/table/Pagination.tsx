@@ -85,7 +85,7 @@ const Pagination = (props) => {
         {...iconsProps}
       />
 
-      <select
+      {/* <select
         style={{
           width: 'auto',
         }}
@@ -108,7 +108,7 @@ const Pagination = (props) => {
         <option value={40}>
           40 {i18n('pagination.items_per_page')}
         </option>
-      </select>
+      </select> */}
     </PaginationWrapper>
   );
 };

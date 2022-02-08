@@ -685,6 +685,24 @@ const en = {
     prev_3: 'Previous 3 Pages',
     next_3: 'Next 3 Pages',
   },
+  trade: {
+    menu: 'Trade',
+  },
+  pool: {
+    menu: 'Pool',
+  },
+  explore: {
+    menu: 'Explore',
+  },
+  farm: {
+    menu: 'Farm',
+  },
+  lending: {
+    menu: 'Lending',
+  },
+  launchpad: {
+    menu: 'Launchpad',
+  },
 };
 
 export default en;

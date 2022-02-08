@@ -10,6 +10,7 @@ import HeaderWrapper from 'src/view/layout/styles/HeaderWrapper';
 import Avatar from 'src/view/shared/Avatar';
 import config from 'src/config';
 import { Link } from 'react-router-dom';
+import DarkMode from 'src/view/algorand/components/DarkMode/DarkMode';
 
 
 
@@ -77,7 +78,8 @@ function Header(props) {
       </button>
 
 
-      <div className="last-child">
+      <div className="last-child" style={{display: 'flex', alignItems: 'center'}}>
+        <DarkMode />
         <span className="i18n-select">
           <I18nSelect />
         </span>
