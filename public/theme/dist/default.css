@@ -4,6 +4,13 @@
     }
 }
 
+@media(min-width: 1500px){
+    .table-algo-title {
+        margin-right: 0px !important;
+        display: flex !important;
+    }
+}
+
 @media (max-width: 480px){
 .algocloud-fixed {
     height: 100% !important;
@@ -12,6 +19,23 @@
     position: absolute !important;
     background: #283447 !important;
 }
+
+h5.text-info-2, h5.text-info {
+    font-size: calc(1.02813rem + .701vw) !important;
+}
+
+h6.grow {
+    font-size: calc(.892813rem + .120vw) !important;
+}
+
+.grow {
+    font-size: calc(.992813rem + .120vw) !important;
+}
+
+h6.text-success.grow {
+font-size: calc(.992813rem + .820vw) !important;
+}
+
 .btn-close-algocloud {
     cursor: pointer !important;
     position: absolute !important;
@@ -134,13 +158,15 @@ button.btn-close.btn.menu-close {
 }
 
 .table-algo-title {
-    max-width: 110px;
+    max-width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 2px;
     font-weight: 700;
     line-height: 1.2rem;
     margin-bottom: 0px;
+    margin-right: 30px;
+    display: inline-block;
 }
 
 h5.text-info-2 {

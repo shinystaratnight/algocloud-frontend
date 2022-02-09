@@ -46,15 +46,15 @@ const PoolShowPage = () => {
       <div className='row'>
         <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
           <ContentWrapper style={{flex: 1}} className="card-hover">
-            <h6>Liqudity</h6>
+            <h6 className="grow">Liqudity</h6>
             <h5 className='text-info'>{formattedNum(pool['liquidity'], true)}</h5>
           </ContentWrapper>
           <ContentWrapper style={{flex: 1}} className="card-hover">
-            <h6>Volume (24hrs)</h6>
+            <h6 className="grow">Volume (24hrs)</h6>
             <h5 className='text-info'>{formattedNum(pool['lastDayVolume'], true)}</h5>
           </ContentWrapper>
           <ContentWrapper style={{flex: 1}} className="card-hover">
-            <h6>Volume (7days)</h6>
+            <h6 className="grow">Volume (7days)</h6>
             <h5 className='text-info'>{formattedNum(pool['lastWeekVolume'], true)}</h5>
           </ContentWrapper>
           {/* <ContentWrapper style={{flex: 1}}>

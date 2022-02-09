@@ -130,7 +130,7 @@ a.algocloud-navbar-brand {
   }
 
   .menu-li.active i {
-    color: #687dfd;
+    color: var(--algocloud-primary);
   }
 
   a.algocloud-navbar-brand {

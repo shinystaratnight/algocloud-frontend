@@ -4,6 +4,29 @@ div#stickyTop {
     z-index: 1000;
 }
 
+@media(min-width: 1500px){
+    .table-algo-title {
+        margin-right: 0px !important;
+        display: flex !important;
+    }
+}
+
+h5.text-info-2 {
+    font-size: calc(1.02813rem + .701vw) !important;
+}
+
+h6.grow {
+    font-size: calc(.892813rem + .120vw) !important;
+}
+
+.grow {
+    font-size: calc(.992813rem + .120vw) !important;
+}
+
+h6.text-success.grow {
+font-size: calc(.992813rem + .820vw) !important;
+}
+
 @media (min-width: 576px){
     .content {
         margin-top: 61px;
@@ -47,7 +70,7 @@ div#stickyTop {
         width: 100% !important;
          z-index: 1100;
         position: absolute !important;
-        background: #283447 !important;
+        background: #f5f7fc !important;
     }
     .btn-close-algocloud {
         cursor: pointer !important;
@@ -235,7 +258,7 @@ div#stickyTop {
 }
 
 .var-color{
-    color: #687dfd !important
+    color: var(--algocloud-primary) !important
 }
 
 @media (max-width: 276px){
@@ -295,7 +318,7 @@ div#stickyTop {
 }
 
 :root {
-    --algocloud-blue: #687dfd;
+    --algocloud-blue: var(--algocloud-primary);
     --algocloud-indigo: #727cf5;
     --algocloud-purple: #6b5eae;
     --algocloud-pink: #ff679b;
@@ -321,7 +344,7 @@ div#stickyTop {
     --algocloud-gray-1100: #0b1727;
     --algocloud-gray-white: #fff;
     --algocloud-primary-rgb: 99, 121, 253;
-    --primary: #687dfd;
+    --primary: #3350fc;
     --algocloud-colored-link-primary-hover-color: #435cf2;
     --algocloud-secondary-rgb: 116, 129, 148;
     --algocloud-success-rgb: 0, 210, 122;
@@ -333,7 +356,7 @@ div#stickyTop {
     --algocloud-white-rgb: 255, 255, 255;
     --algocloud-black-rgb: 0, 0, 0;
     --algocloud-body-color-rgb: 94, 110, 130;
-    --algocloud-body-bg-2: #667588;
+    --algocloud-body-bg-2: var(--algocloud-body-color);
     --algocloud-body-bg-rgb: 237, 242, 249;
     --algocloud-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --algocloud-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -348,10 +371,10 @@ div#stickyTop {
     --algocloud-menu-li-color-active: #232e3c;
     --algocloud-menu-border-color: #5b616e33;
     --border-var: #5b616e33;
-    --algocloud-brand-color: #687dfd;
-    --li-active: #5e6e82;
-    --li-hover: #5e6e82;
-    --algocloud-logo-1: #344050;
+    --algocloud-brand-color: #0326f7;
+    --li-active: #000;
+    --li-hover: #000;
+    --algocloud-logo-1: --var(--algocloud-primary);
 }
 
 :root,:root .light,:root.light {
@@ -393,13 +416,13 @@ div#stickyTop {
     --algocloud-colored-link-1100-hover-color: #09121f;
     --algocloud-white: #fff;
     --algocloud-colored-link-white-hover-color: white;
-    --algocloud-primary: #687dfd;
+    --algocloud-primary: #3350fc;
     --algocloud-colored-link-primary-hover-color: #3350fc	;
     --algocloud-secondary: #748194;
     --algocloud-colored-link-secondary-hover-color: #5d6776;
     --algocloud-success: #00d27a;
     --algocloud-colored-link-success-hover-color: #00a862;
-    --algocloud-info: #8b9bfd;
+    --algocloud-info: var(--algocloud-primary);
     --algocloud-colored-link-info-hover-color: #1f96ca;
     --algocloud-warning: #f5803e;
     --algocloud-colored-link-warning-hover-color: #c46632;
@@ -532,30 +555,30 @@ div#stickyTop {
     --algocloud-list-group-action-hover-color: #5e6e82;
     --algocloud-list-group-hover-bg: #f9fafd;
     --algocloud-body-bg: #f7f9fd;
-    --algocloud-body-color: #5e6e82;
-    --algocloud-headings-color: #344050;
-    --algocloud-link-color: #687dfd;
+    --algocloud-body-color:  #0A0B0d;
+    --algocloud-headings-color: #0A0B0d;
+    --algocloud-link-color: var(--algocloud-primary);
     --algocloud-link-hover-color: #3350fc	;
     --algocloud-border-color: #d8dbef;
     --algocloud-box-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
     --algocloud-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --algocloud-box-shadow-lg: 0 1rem 4rem rgba(0, 0, 0, 0.175);
     --algocloud-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
-    --algocloud-component-active-color: ;--algocloud-component-active-bg:#687dfd;
+    --algocloud-component-active-color: ;--algocloud-component-active-bg:var(--algocloud-primary);
     --algocloud-text-muted: #748194;
     --algocloud-blockquote-footer-color: #748194;
     --algocloud-hr-color: var(--algocloud-border-color);
     --algocloud-hr-opacity: 0.25;
     --algocloud-mark-bg: #fcf8e3;
     --algocloud-input-btn-focus-color: rgba(44, 123, 229, 0.25);
-    --algocloud-btn-link-color: #687dfd;
-    --algocloud-btn-link-hover-color: #3350fc	;
+    --algocloud-btn-link-color: #4862fd;
+    --algocloud-btn-link-hover-color: var(--algocloud-primary);
     --algocloud-btn-disabled-color: #748194;
     --algocloud-heading-color: #344050;
     --algocloud-input-bg: #fff;
     --algocloud-input-color: #344050;
     --algocloud-input-border-color: #d8dbef;
-    --algocloud-input-focus-border-color: #687dfd;
+    --algocloud-input-focus-border-color: var(--algocloud-primary);
     --algocloud-input-focus-color: var(--algocloud-input-color);
     --algocloud-input-placeholder-color: #b6c1d2;
     --algocloud-input-plaintext-color: #5e6e82;
@@ -563,11 +586,11 @@ div#stickyTop {
     --algocloud-form-check-input-border: 1px solid var(--algocloud-form-check-input-border-color);
     --algocloud-form-check-input-border-color: #b6c1d2;
     --algocloud-form-check-input-checked-color: #fff;
-    --algocloud-form-check-input-checked-bg-color: #687dfd;
-    --algocloud-form-check-input-checked-border-color: #687dfd;
+    --algocloud-form-check-input-checked-bg-color: var(--algocloud-primary);
+    --algocloud-form-check-input-checked-border-color: var(--algocloud-primary);
     --algocloud-form-check-input-indeterminate-color: #fff;
-    --algocloud-form-check-input-indeterminate-bg-color: #687dfd;
-    --algocloud-form-check-input-indeterminate-border-color: #687dfd;
+    --algocloud-form-check-input-indeterminate-bg-color: var(--algocloud-primary);
+    --algocloud-form-check-input-indeterminate-border-color: var(--algocloud-primary);
     --algocloud-form-switch-color: rgba(0, 0, 0, .25);
     --algocloud-form-switch-focus-color: var(--algocloud-input-focus-border-color);
     --algocloud-form-switch-checked-color: #fff;
@@ -584,7 +607,7 @@ div#stickyTop {
     --algocloud-form-select-focus-border-color: var(--algocloud-input-focus-border-color);
     --algocloud-form-range-track-bg: #d8dbef;
     --algocloud-form-range-track-box-shadow: var(--algocloud-box-shadow-inset);
-    --algocloud-form-range-thumb-bg: #687dfd;
+    --algocloud-form-range-thumb-bg: var(--algocloud-primary);
     --algocloud-form-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
     --algocloud-form-range-thumb-focus-box-shadow: 0 0 0 1px #edf2f9, 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
     --algocloud-form-range-thumb-active-bg: #cbdef9;
@@ -611,7 +634,7 @@ div#stickyTop {
     --algocloud-nav-tabs-link-active-border-color: #d8dbef #d8dbef #edf2f9;
     --algocloud-bg-navbar-glass: rgba(237, 242, 249, 0.96);
     --algocloud-nav-pills-link-active-color: #fff;
-    --algocloud-nav-pills-link-active-bg: #687dfd;
+    --algocloud-nav-pills-link-active-bg: var(--algocloud-primary);
     --algocloud-navbar-dark-color: rgba(255, 255, 255, 0.55);
     --algocloud-navbar-dark-hover-color: rgba(255, 255, 255, 0.75);
     --algocloud-navbar-dark-active-color: #fff;
@@ -622,13 +645,13 @@ div#stickyTop {
     --algocloud-navbar-light-active-color: rgba(0, 0, 0, 0.9);
     --algocloud-navbar-light-disabled-color: rgba(0, 0, 0, 0.3);
     --algocloud-navbar-light-toggler-border-color: rgba(0, 0, 0, 0.1);
-    --algocloud-navbar-light-brand-color: #687dfd;
-    --algocloud-navbar-dark-brand-color: #687dfd;
+    --algocloud-navbar-light-brand-color: var(--algocloud-primary);
+    --algocloud-navbar-dark-brand-color: var(--algocloud-primary);
     --algocloud-navbar-vertical-collapsed-hover-shadow-color: rgba(0, 0, 0, 0.2);
     --algocloud-navbar-vertical-bg-color: var(--algocloud-bg-navbar-glass);
     --algocloud-navbar-vertical-link-color: #5e6e82;
     --algocloud-navbar-vertical-link-hover-color: #232e3c;
-    --algocloud-navbar-vertical-link-active-color: #687dfd;
+    --algocloud-navbar-vertical-link-active-color: var(--algocloud-primary);
     --algocloud-navbar-vertical-link-disable-color: #b6c1d2;
     --algocloud-navbar-vertical-hr-color: rgba(0, 0, 0, 0.08);
     --algocloud-navbar-vertical-scrollbar-color: rgba(116, 129, 148, 0.3);
@@ -640,7 +663,7 @@ div#stickyTop {
     --algocloud-dropdown-link-hover-color: #2a3441;
     --algocloud-dropdown-link-hover-bg: #f9fafd;
     --algocloud-dropdown-link-active-color: #fff;
-    --algocloud-dropdown-link-active-bg: #687dfd;
+    --algocloud-dropdown-link-active-bg: var(--algocloud-primary);
     --algocloud-dropdown-link-disabled-color: #748194;
     --algocloud-dropdown-header-color: #748194;
     --algocloud-dropdown-dark-color: #d8dbef;
@@ -659,11 +682,11 @@ div#stickyTop {
     --algocloud-pagination-bg: #fff;
     --algocloud-pagination-border-color: #edf2f9;
     --algocloud-pagination-hover-color: #fff;
-    --algocloud-pagination-hover-bg: #687dfd;
-    --algocloud-pagination-hover-border-color: #687dfd;
+    --algocloud-pagination-hover-bg: var(--algocloud-primary);
+    --algocloud-pagination-hover-border-color: var(--algocloud-primary);
     --algocloud-pagination-active-color: #fff;
-    --algocloud-pagination-active-bg: #687dfd;
-    --algocloud-pagination-active-border-color: #687dfd;
+    --algocloud-pagination-active-bg: var(--algocloud-primary);
+    --algocloud-pagination-active-border-color: var(--algocloud-primary);
     --algocloud-pagination-disabled-bg: #fff;
     --algocloud-card-border-color: rgba(0, 0, 0, 0.125);
     --algocloud-card-cap-bg: rgba(0, 0, 0, 0);
@@ -863,7 +886,7 @@ div#stickyTop {
     --algocloud-1000: #edf2f9;
     --algocloud-1100: #f9fafd;
     --algocloud-white: #000;
-    --algocloud-primary: #687dfd;
+    --algocloud-primary: var(--algocloud-primary);
     --algocloud-secondary: #748194;
     --algocloud-success: #00d27a;
     --algocloud-info: #8b9bfd;
@@ -901,13 +924,13 @@ div#stickyTop {
     --algocloud-navbar-light-brand-hover-color: var(--algocloud-navbar-light-active-color);
     --algocloud-navbar-dark-brand-color: var(--algocloud-navbar-dark-active-color);
     --algocloud-navbar-dark-brand-hover-color: var(--algocloud-navbar-dark-active-color);
-    --algocloud-navbar-light-brand-color: #687dfd;
-    --algocloud-navbar-dark-brand-color: #687dfd;
+    --algocloud-navbar-light-brand-color: var(--algocloud-primary);
+    --algocloud-navbar-dark-brand-color: var(--algocloud-primary);
     --algocloud-navbar-vertical-collapsed-hover-shadow-color: rgba(0, 0, 0, 0.2);
     --algocloud-navbar-vertical-bg-color: var(--algocloud-bg-navbar-glass);
     --algocloud-navbar-vertical-link-color: #9da9bb;
     --algocloud-navbar-vertical-link-hover-color: #edf2f9;
-    --algocloud-navbar-vertical-link-active-color: #687dfd;
+    --algocloud-navbar-vertical-link-active-color: var(--algocloud-primary);
     --algocloud-navbar-vertical-link-disable-color: #4d5969;
     --algocloud-navbar-vertical-hr-color: rgba(255, 255, 255, 0.08);
     --algocloud-navbar-vertical-scrollbar-color: rgba(116, 129, 148, 0.3);
@@ -918,7 +941,7 @@ div#stickyTop {
     --algocloud-dropdown-link-hover-color: #eaeff6;
     --algocloud-dropdown-link-hover-bg: rgba(11, 23, 39, 0.4);
     --algocloud-dropdown-link-active-color: #fff;
-    --algocloud-dropdown-link-active-bg: #687dfd;
+    --algocloud-dropdown-link-active-bg: var(--algocloud-primary);
     --algocloud-dropdown-link-disabled-color: #748194;
     --algocloud-dropdown-header-color: #748194;
     --algocloud-pagination-color: #fff;
@@ -1364,7 +1387,7 @@ sup {
 }
 
 a {
-    color: #687dfd;
+    color: var(--algocloud-primary);
     text-decoration: none
 }
 
@@ -3317,19 +3340,21 @@ progress {
     --algocloud-table-hover-bg: rgb(139 155 253 / 14%);
     width: 100%;
     margin-bottom: 1rem;
-    color: #5e6e82;
+    color: #5b616e;
     vertical-align: top;
     border-color: var(--algocloud-table-border-color)
 }
 
 .table-algo-title {
-    max-width: 110px;
+    max-width: 80px;
     overflow: hidden;
     text-overflow: ellipsis;
     margin-top: 2px;
     font-weight: 700;
     line-height: 1.2rem;
     margin-bottom: 0px;
+    margin-right: 30px;
+    display: inline-block;
 }
 
 h5.text-info-2 {
@@ -3911,8 +3936,8 @@ textarea.form-control-lg {
 }
 
 .form-check-input:checked {
-    background-color: #687dfd;
-    border-color: #687dfd
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .form-check-input:checked[type=checkbox] {
@@ -3924,8 +3949,8 @@ textarea.form-control-lg {
 }
 
 .form-check-input[type=checkbox]:indeterminate {
-    background-color: #687dfd;
-    border-color: #687dfd;
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary);
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e")
 }
 
@@ -4021,7 +4046,7 @@ textarea.form-control-lg {
     width: 1rem;
     height: 1rem;
     margin-top: -.25rem;
-    background-color: #687dfd;
+    background-color: var(--algocloud-primary);
     border: 0;
     border-radius: 1rem;
     -webkit-box-shadow: 0 .1rem .25rem rgba(0,0,0,.1);
@@ -4059,7 +4084,7 @@ textarea.form-control-lg {
 .form-range::-moz-range-thumb {
     width: 1rem;
     height: 1rem;
-    background-color: #687dfd;
+    background-color: var(--algocloud-primary);
     border: 0;
     border-radius: 1rem;
     box-shadow: 0 .1rem .25rem rgba(0,0,0,.1);
@@ -4545,8 +4570,8 @@ textarea.form-control-lg {
 
 .btn-primary,.navbar-vertical .btn-purchase,.tox .tox-dialog__footer .tox-button:last-child,.tox .tox-menu__footer .tox-button:last-child {
     color: #fff;
-    background-color: #687dfd;
-    border-color: #687dfd;
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary);
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075)
 }
@@ -4578,8 +4603,8 @@ textarea.form-control-lg {
 
 .btn-primary.disabled,.btn-primary:disabled,.navbar-vertical .btn-purchase:disabled,.navbar-vertical .disabled.btn-purchase,.tox .tox-dialog__footer .disabled.tox-button:last-child,.tox .tox-dialog__footer .tox-button:disabled:last-child,.tox .tox-menu__footer .disabled.tox-button:last-child,.tox .tox-menu__footer .tox-button:disabled:last-child {
     color: #fff;
-    background-color: #687dfd;
-    border-color: #687dfd
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .btn-secondary {
@@ -4856,14 +4881,14 @@ textarea.form-control-lg {
 }
 
 .btn-outline-primary {
-    color: #687dfd;
-    border-color: #687dfd
+    color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .btn-outline-primary:hover {
     color: #fff;
-    background-color: #687dfd;
-    border-color: #687dfd
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .btn-check:focus+.btn-outline-primary,.btn-outline-primary:focus {
@@ -4873,8 +4898,8 @@ textarea.form-control-lg {
 
 .btn-check:active+.btn-outline-primary,.btn-check:checked+.btn-outline-primary,.btn-outline-primary.active,.btn-outline-primary.dropdown-toggle.show,.btn-outline-primary:active {
     color: #fff;
-    background-color: #687dfd;
-    border-color: #687dfd
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .btn-check:active+.btn-outline-primary:focus,.btn-check:checked+.btn-outline-primary:focus,.btn-outline-primary.active:focus,.btn-outline-primary.dropdown-toggle.show:focus,.btn-outline-primary:active:focus {
@@ -4883,7 +4908,7 @@ textarea.form-control-lg {
 }
 
 .btn-outline-primary.disabled,.btn-outline-primary:disabled {
-    color: #687dfd;
+    color: var(--algocloud-primary);
     background-color: transparent
 }
 
@@ -5113,7 +5138,7 @@ textarea.form-control-lg {
 
 .btn-link {
     font-weight: 400;
-    color: #687dfd;
+    color: var(--algocloud-primary);
     text-decoration: none
 }
 
@@ -5637,7 +5662,7 @@ textarea.form-control-lg {
 .nav-link {
     display: block;
     padding: .5rem 1rem;
-    color: #687dfd;
+    color: var(--algocloud-primary);
     -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
     -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out
@@ -5699,7 +5724,7 @@ textarea.form-control-lg {
 
 .nav-pills .nav-link.active,.nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #687dfd
+    background-color: var(--algocloud-primary)
 }
 
 .nav-fill .nav-item,.nav-fill>.nav-link {
@@ -6912,7 +6937,7 @@ textarea.form-control-lg {
     color: #fff;
     text-align: center;
     white-space: nowrap;
-    background-color: #687dfd;
+    background-color: var(--algocloud-primary);
     -webkit-transition: width .6s ease;
     -o-transition: width .6s ease;
     transition: width .6s ease
@@ -8033,7 +8058,7 @@ box-shadow: 0 0 0 0.2rem rgb(104 125 253 / 25%) !important
 
 .btn-link.disabled, .btn-link:disabled {
     color: #fff !important;
-    background: #687dfd;
+    background: var(--algocloud-primary);
 }
 
 button.btn.btn-link.no-padding{
@@ -20350,12 +20375,12 @@ z-index: 9939 !important;
 }
 
 ::-moz-selection {
-    background-color: #687dfd;
+    background-color: var(--algocloud-primary);
     color: #fff
 }
 
 ::selection {
-    background-color: #687dfd;
+    background-color: var(--algocloud-primary);
     color: #fff
 }
 
@@ -21266,7 +21291,7 @@ pre[class*=language-] {
 }
 
 .circle-dashed {
-    border: 1px dashed #687dfd;
+    border: 1px dashed var(--algocloud-primary);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -21367,7 +21392,7 @@ pre[class*=language-] {
 }
 
 .terms-sidebar .nav-link.active {
-    color: #687dfd
+    color: var(--algocloud-primary)
 }
 
 .divider-content-center {
@@ -21703,12 +21728,12 @@ pre[class*=language-] {
 }
 
 .flatpickr-day.endRange,.flatpickr-day.startRange {
-    background-color: #687dfd!important;
+    background-color: var(--algocloud-primary)!important;
     border: 0
 }
 
 .flatpickr-day.endRange:focus,.flatpickr-day.endRange:hover,.flatpickr-day.startRange:focus,.flatpickr-day.startRange:hover {
-    background-color: #687dfd!important
+    background-color: var(--algocloud-primary)!important
 }
 
 .flatpickr-day.inRange,.flatpickr-day.nextMonthDay.inRange,.flatpickr-day.nextMonthDay.today.inRange,.flatpickr-day.nextMonthDay:focus,.flatpickr-day.nextMonthDay:hover,.flatpickr-day.prevMonthDay.inRange,.flatpickr-day.prevMonthDay.today.inRange,.flatpickr-day.prevMonthDay:focus,.flatpickr-day.prevMonthDay:hover,.flatpickr-day.today.inRange,.flatpickr-day:focus,.flatpickr-day:hover {
@@ -21722,13 +21747,13 @@ pre[class*=language-] {
 }
 
 .flatpickr-day.selected {
-    background-color: #687dfd;
-    border-color: #687dfd
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .flatpickr-day.selected:focus,.flatpickr-day.selected:hover {
-    background-color: #687dfd;
-    border-color: #687dfd
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .flatpickr-time input.flatpickr-hour {
@@ -21982,7 +22007,7 @@ pre[class*=language-] {
 }
 
 .dropzone.dz-drag-hover .dz-message {
-    border-color: #687dfd
+    border-color: var(--algocloud-primary)
 }
 
 .dropzone .dz-progress {
@@ -21990,7 +22015,7 @@ pre[class*=language-] {
 }
 
 .dropzone .dz-progress .dz-upload {
-    background: #687dfd!important
+    background: var(--algocloud-primary)!important
 }
 
 .dropzone-area {
@@ -22054,7 +22079,7 @@ pre[class*=language-] {
 }
 
 .choices .choices__list--dropdown .choices__item--selectable.is-highlighted {
-    background-color: #687dfd;
+    background-color: var(--algocloud-primary);
     color: var(--algocloud-choices-item-selectable-highlighted-bg)
 }
 
@@ -22134,7 +22159,7 @@ pre[class*=language-] {
 
 .marker-cluster-small div {
     margin: 5px;
-    background-color: #687dfd;
+    background-color: var(--algocloud-primary);
     color: #fff
 }
 
@@ -22255,7 +22280,7 @@ pre[class*=language-] {
 }
 
 .tinymce-mobile-toolstrip .tinymce-mobile-toolbar:not(.tinymce-mobile-context-toolbar) .tinymce-mobile-toolbar-group:first-of-type,.tinymce-mobile-toolstrip .tinymce-mobile-toolbar:not(.tinymce-mobile-context-toolbar) .tinymce-mobile-toolbar-group:last-of-type {
-    background-color: #687dfd!important
+    background-color: var(--algocloud-primary)!important
 }
 
 .tinymce-mobile-disabled-mask {
@@ -22396,7 +22421,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 
 [data-list] li.active .page {
     background-color: transparent;
-    color: #687dfd!important
+    color: var(--algocloud-primary)!important
 }
 
 .ios .navbar-vertical [data-list-pagination][disabled].btn-purchase,.ios .tox .tox-dialog__footer [data-list-pagination][disabled].tox-button:last-child,.ios .tox .tox-menu__footer [data-list-pagination][disabled].tox-button:last-child,.ios [data-list-pagination].btn-primary[disabled],.navbar-vertical .ios [data-list-pagination][disabled].btn-purchase,.tox .tox-dialog__footer .ios [data-list-pagination][disabled].tox-button:last-child,.tox .tox-menu__footer .ios [data-list-pagination][disabled].tox-button:last-child {
@@ -22599,7 +22624,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 
 .fc .fc-day-today:not(.fc-popover) .fc-daygrid-day-number {
-    background-color: #687dfd!important;
+    background-color: var(--algocloud-primary)!important;
     color: #fff
 }
 
@@ -23921,7 +23946,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 
 .navbar-vertical.navbar-card .navbar-nav .nav-item .nav-link.active {
-    color: #687dfd
+    color: var(--algocloud-primary)
 }
 
 .navbar-vertical.navbar-card .navbar-nav .nav-item .nav-link.nav-link-disable {
@@ -26144,7 +26169,7 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .hover-primary:focus,.hover-primary:hover {
-    color: #687dfd!important
+    color: var(--algocloud-primary)!important
 }
 
 .hover-shadow:focus,.hover-shadow:hover {
@@ -26512,7 +26537,7 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .form-check-input-primary {
-    border-color: #687dfd!important
+    border-color: var(--algocloud-primary)!important
 }
 
 .form-check-input-primary:focus {
@@ -26521,7 +26546,7 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .form-check-input-primary:checked {
-    background-color: #687dfd!important
+    background-color: var(--algocloud-primary)!important
 }
 
 .form-check-input-secondary {
@@ -27582,13 +27607,13 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .theme-wizard .nav-link.active {
-    color: #687dfd
+    color: var(--algocloud-primary)
 }
 
 .theme-wizard .nav-link.active .nav-item-circle {
-    background-color: #687dfd!important;
+    background-color: var(--algocloud-primary)!important;
     color: #fff;
-    border-color: #687dfd
+    border-color: var(--algocloud-primary)
 }
 
 .theme-wizard .nav-link.done {
@@ -27896,8 +27921,8 @@ button.btn-circle:focus,button.btn-circle:hover {
 .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #687dfd;
-    border-color: #687dfd
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .list-group-item+.list-group-item {
@@ -28569,11 +28594,11 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .dark .dark__bg-primary {
-    background-color: #687dfd!important
+    background-color: var(--algocloud-primary)!important
 }
 
 .dark .dark__text-primary {
-    color: #687dfd!important
+    color: var(--algocloud-primary)!important
 }
 
 .dark .dark__bg-secondary {
@@ -28649,7 +28674,7 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .chart-tab .nav-link.active {
-    border-bottom: 2px solid #687dfd;
+    border-bottom: 2px solid var(--algocloud-primary);
     background-color: var(--algocloud-card-bg)
 }
 
@@ -28684,8 +28709,8 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .timeline-primary.timeline-current::after,.timeline-primary.timeline-past::after {
-    background-color: #687dfd;
-    border-color: #687dfd
+    background-color: var(--algocloud-primary);
+    border-color: var(--algocloud-primary)
 }
 
 .timeline-primary.timeline-current::after {

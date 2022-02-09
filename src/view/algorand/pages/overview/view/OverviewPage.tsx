@@ -47,7 +47,7 @@ function OverviewPage() {
 
       <ContentWrapper className="card-hover">
         <SectionTitleBar className="table-header">
-          <SectionTitle>Top Favorites</SectionTitle>
+          <SectionTitle>Favorites</SectionTitle>
           <h6 className='m-0'>
             <Link
               className="btn btn-link no-padding"
