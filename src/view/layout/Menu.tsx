@@ -93,7 +93,14 @@ function Menu(props) {
       <div className="menu-nav">
       
         <div className="algocloud-fixed">
-      <a className="algocloud-navbar-brand" href="."><div className="algocloud-font ">AlgoCloud</div></a>
+        <header className="hamburger__content__header">
+      <h2 className="fs-l fw-bold flex-1 break-word lh-tight">algocloud</h2>
+
+      <button className="c-btn c-btn--icon-alone js-hamburger-trigger shrink-0" aria-label="Close">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" className="crayons-icon c-btn__icon"><title>Close</title><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636l4.95 4.95z"></path></svg>
+
+      </button>
+    </header>
 
         <ul className="menu-ul">
           {menus

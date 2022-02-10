@@ -5,9 +5,7 @@ const ContentWrapper = styled.div`
   padding: 1.25rem;
   background: #1e2d58; 
   background: var(--algocloud-card-bg-color); 
-  box-shadow: 0 0 50px 14px rgb(18 28 53 / 3%); 
-  border: 1px solid;
-  border-color: var(--border-var) !important;
+  box-shadow: 0 0 0 1px var(--card-border);
   width: 100%;
   border-radius: 5px;
 `;

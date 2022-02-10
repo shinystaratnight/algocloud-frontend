@@ -76,6 +76,7 @@ function Header(props) {
       >
         <i className="fas fa-bars" />
       </button>
+      <a className="algocloud-navbar-brand" href="."><div className="algocloud-font ">AlgoCloud</div></a>
 
 
       <div className="last-child" style={{display: 'flex', alignItems: 'center'}}>
