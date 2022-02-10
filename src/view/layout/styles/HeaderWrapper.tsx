@@ -52,7 +52,7 @@ const HeaderWrapper = styled.div`
 
   .dropdown-menu.show {
     display: block;
-    margin-top: 5px;
+    margin-top: 1px;
 }
 
   .user-dropdown-avatar {

@@ -87,9 +87,6 @@ function Menu(props) {
         
       }}
     >
-    <div className="btn-close-algocloud-container">
-                    <div className="btn-close-algocloud" aria-label="Close" data-bs-dismiss="alert"></div>
-                  </div>
       <div className="menu-nav">
       
         <div className="algocloud-fixed">

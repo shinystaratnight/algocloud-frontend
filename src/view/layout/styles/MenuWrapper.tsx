@@ -21,22 +21,33 @@ const MenuWrapper = styled.div`
     }
     }
 
-    @media (max-width: 576px){
+    @media (max-width: 575px){
       .menu-nav {
         min-width: 100%;
         position: absolute;
         background-color: rgb(10 10 10 / 50%) !important;
+        z-index: 10000 !important;
+        margin-top: 0px !important;
       }
       .algocloud-fixed {
-        width: 90%;
         z-index: 100;
         position: fixed !important;
-        background: #ffffff !important;
+        width: 90%;
+        background: var(--card-bg);
         max-width: 300px;
         height: 100%;
         overflow-y: auto;
         top: 0px;
     }
+
+    .algocloud-fixed {
+      background: var(--card-bg);
+      max-width: 300px;
+      z-index: var(--z-elevate);
+      position: relative;
+      height: 100%;
+      overflow-y: auto;
+  }
 
     .hamburger__content__header {
       min-height: var(--header-height);
@@ -104,10 +115,7 @@ a.algocloud-navbar-brand {
     text-overflow: ellipsis;
     cursor: pointer;
 }
-.menu-li a .icon, .menu-li.active a .icon, .menu-li:hover a, .menu-li:hover a .icon {
-    color: var(--li-hover)!important;
-    background-color: var(--algocloud-menu-li-hover);
-}
+
 
 .menu-nav {
   inset: 0% auto 0% 0%;

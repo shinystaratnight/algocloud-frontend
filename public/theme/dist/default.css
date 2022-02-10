@@ -1,3 +1,18 @@
+.btn-algocloud-default.disabled, .btn-algocloud-default:disabled, [data-list] .disabled.page, [data-list] .page:disabled {
+    -webkit-box-shadow: var(--algocloud-btn-algocloud-box-shadow);
+    box-shadow: var(--algocloud-btn-algocloud-box-shadow);
+    cursor: pointer;
+    color: #fff !important;
+    width: auto;
+    background-color: var(--algocloud-btn-link-color) !IMPORTANT;
+    opacity: 1 !important;
+}
+
+.btn-algocloud-default:focus, .btn-algocloud-default:hover, [data-list] .page:focus, [data-list] .page:hover {
+    background-color: rgb(104 125 253 / 90%) !important;
+    color: #fff !important;
+}
+
 .navbar .dropdown-item:focus, .navbar .dropdown-item:hover {
     background-color: var(--link-bg-hover);
     color: var(--algocloud-1000);
@@ -6,6 +21,20 @@
     --color: var(--link-color);
     --color-hover: var(--link-branded-color-hover);
     border-radius: var(--radius);
+}
+
+.btn-algocloud-default, [data-list] .page {
+    color: var(--cta-branded-border);
+    background-color: #7b78ff00 !important;
+    --bg: var(--cta-branded-bg);
+    --bg-hover: var(--cta-branded-bg-hover);
+    --color: var(--cta-branded-color);
+    --color-hover: var(--cta-branded-color-hover);
+    --border: var(--cta-branded-border);
+    --border-hover: var(--cta-branded-border-hover);
+    font-weight: var(--fw-medium);
+    border-style: solid;
+    border-color: var(--algocloud-btn-algocloud-info-color) !important;
 }
 
 .c-link {
@@ -24,13 +53,31 @@
     text-align: left;
     list-style: none;
     position: absolute;
-    padding: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding: .25rem;
     margin-top: 0.25rem;
     z-index: 400;
     background: #fff;
     color: #090909;
     box-shadow: 0 10px 15px -3px rgb(0 0 0 / 10%), 0 4px 6px -2px rgb(0 0 0 / 5%), 0 0 0 1px rgb(9 9 9 / 10%);
     border-radius: 0.375rem;
+}
+
+.btn, [data-list] .page {
+    color: var(--algocloud-body-color);
+    background-color: transparent;
+}
+
+.dropdown-menu.dropdown-menu-right.show{ 
+box-shadow: 0 0 0 1px var(--card-border),0 10px 15px -3px rgba(0,0,0,0.1),0 4px 6px -2px rgba(0,0,0,0.05),0 0 0 1px var(--base-a10);
+}
+
+.navbar .dropdown-item:focus, .navbar .dropdown-item:hover {
+    border-radius: 0.375rem;
+    color: #9896ff !important;
+    background-color: rgba(123, 120, 255, 0.1) !important;
+    z-index: 1;
 }
 
 .hamburger__content__header {
@@ -41,6 +88,8 @@ padding: 0 var(--su-2) 0 var(--su-4);
 justify-content: space-between;
 border-bottom: 1px solid var(--base-a10);
 }
+
+
 
 .shrink-0 {
 flex-shrink: 0;
@@ -86,7 +135,7 @@ background-color: var(--bg);
 color: var(--color);
 }
 .c-btn--icon-alone {
-padding: var(--su-2);
+    padding: 0.5rem;
 }
 .c-btn {
 --bg: var(--btn-bg);
@@ -106,15 +155,6 @@ padding: var(--su-2);
         margin-right: 0px !important;
         display: flex !important;
     }
-}
-
-@media (max-width: 480px){
-.algocloud-fixed {
-    height: 100% !important;
-    width: 100% !important;
-     z-index: 1100;
-    position: absolute !important;
-    background: #283447 !important;
 }
 
 h5.text-info-2, h5.text-info {
@@ -305,7 +345,13 @@ button.btn.btn-link.no-padding{
 }
 
 .menu-nav {
-    z-index: 1032 !important;
+    z-index: 1 !important;
+}
+
+.algocloud-fixed {
+    width: 200px;
+    height: 100%;
+    position: fixed;
 }
 
 .modal.show {
@@ -501,6 +547,14 @@ button.btn.btn-link.no-padding{
     }
 }
 
+.c-btn:hover:enabled:hover {
+    background-color: var(--algocloud-menu-li-hover) !important;
+    fill: var(--color-hover) !important;
+    z-index: var(--z-elevate);
+}
+
+
+
 :light {
     --algocloud-blue: #7b78ff;
     --algocloud-indigo: #727cf5;
@@ -517,15 +571,15 @@ button.btn.btn-link.no-padding{
     --algocloud-gray-black: #000;
     --algocloud-gray-100: #f9fafd;
     --algocloud-gray-200: #edf2f9;
-    --algocloud-gray-300: #d8dbef;
+    --algocloud-gray-300: #D6D6D7;
     --algocloud-gray-400: #b6c1d2;
     --algocloud-gray-500: #9da9bb;
     --algocloud-gray-600: #748194;
     --algocloud-gray-700: #5e6e82;
     --algocloud-gray-800: #4d5969;
     --algocloud-gray-900: #344050;
-    --algocloud-gray-1000: #232e3c;
-    --algocloud-gray-1100: #0b1727;
+    --algocloud-gray-1000: #242424;
+    --algocloud-gray-1100: #3d3d3d;
     --algocloud-gray-white: #fff;
     --algocloud-primary-rgb: 44, 123, 229;
     --algocloud-secondary-rgb: 116, 129, 148;
@@ -567,7 +621,7 @@ button.btn.btn-link.no-padding{
     --algocloud-colored-link-100-hover-color: #fafbfd;
     --algocloud-200: #edf2f9;
     --algocloud-colored-link-200-hover-color: #f1f5fa;
-    --algocloud-300: #d8dbef;
+    --algocloud-300: #D6D6D7;
     --algocloud-colored-link-300-hover-color: #e0e8f2;
     --algocloud-400: #b6c1d2;
     --algocloud-colored-link-400-hover-color: #c5cddb;
@@ -581,9 +635,9 @@ button.btn.btn-link.no-padding{
     --algocloud-colored-link-800-hover-color: #3e4754;
     --algocloud-900: #344050;
     --algocloud-colored-link-900-hover-color: #2a3340;
-    --algocloud-1000: #232e3c;
+    --algocloud-1000: #242424;
     --algocloud-colored-link-1000-hover-color: #1c2530;
-    --algocloud-1100: #0b1727;
+    --algocloud-1100: #3d3d3d;
     --algocloud-colored-link-1100-hover-color: #09121f;
     --algocloud-white: #fff;
     --algocloud-colored-link-white-hover-color: white;
@@ -591,8 +645,8 @@ button.btn.btn-link.no-padding{
     --algocloud-colored-link-primary-hover-color: #435cf2;
     --algocloud-secondary: #748194;
     --algocloud-colored-link-secondary-hover-color: #5d6776;
-    --algocloud-success: #00d27a;
-    --algocloud-colored-link-success-hover-color: #00a862;
+    --algocloud-success: #26d9ca;
+    --algocloud-colored-link-success-hover-color: #1ab3a6;
     --algocloud-info: #8b9bfd;
     --algocloud-colored-link-info-hover-color: #1f96ca;
     --algocloud-warning: #f5803e;
@@ -601,7 +655,7 @@ button.btn.btn-link.no-padding{
     --algocloud-colored-link-danger-hover-color: #b82c46;
     --algocloud-light: #f9fafd;
     --algocloud-colored-link-light-hover-color: #fafbfd;
-    --algocloud-dark: #0b1727;
+    --algocloud-dark: #3d3d3d;
     --algocloud-colored-link-dark-hover-color: #09121f;
     --algocloud-soft-primary: #e6effc;
     --algocloud-soft-secondary: #eef0f2;
@@ -621,7 +675,7 @@ button.btn.btn-link.no-padding{
     --algocloud-btn-disabled-color: #4d5969;
     --algocloud-btn-algocloud-box-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1), 0 2px 5px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.07), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
     --algocloud-btn-algocloud-hover-box-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1), 0 2px 5px 0 rgba(43, 45, 80, 0.1), 0 3px 9px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-    --algocloud-btn-algocloud-default-color: #4d5969;
+    --algocloud-btn-algocloud-default-color: #7b78ff;
     --algocloud-btn-algocloud-default-hover-color: #404a57;
     --algocloud-btn-algocloud-default-active-background: #e6e6e6;
     --algocloud-btn-algocloud-default-active-border: #404a57;
@@ -730,7 +784,7 @@ button.btn.btn-link.no-padding{
     --algocloud-headings-color: #344050;
     --algocloud-link-color: #7b78ff;
     --algocloud-link-hover-color: #3350fc	;
-    --algocloud-border-color: #d8dbef;
+    --algocloud-border-color: #D6D6D7;
     --algocloud-box-shadow: 0 7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
     --algocloud-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
     --algocloud-box-shadow-lg: 0 1rem 4rem rgba(0, 0, 0, 0.175);
@@ -748,14 +802,14 @@ button.btn.btn-link.no-padding{
     --algocloud-heading-color: #344050;
     --algocloud-input-bg: #fff;
     --algocloud-input-color: #344050;
-    --algocloud-input-border-color: #d8dbef;
+    --algocloud-input-border-color: #D6D6D7;
     --algocloud-input-focus-border-color: #7b78ff;
     --algocloud-input-focus-color: var(--algocloud-input-color);
-    --algocloud-input-placeholder-color: #b6c1d2;
+    --algocloud-input-placeholder-color: #7b78ff;
     --algocloud-input-plaintext-color: #5e6e82;
     --algocloud-form-check-label-color: ;--algocloud-form-check-input-bg:transparent;
     --algocloud-form-check-input-border: 1px solid var(--algocloud-form-check-input-border-color);
-    --algocloud-form-check-input-border-color: #b6c1d2;
+    --algocloud-form-check-input-border-color: #7b78ff;
     --algocloud-form-check-input-checked-color: #fff;
     --algocloud-form-check-input-checked-bg-color: #7b78ff;
     --algocloud-form-check-input-checked-border-color: #7b78ff;
@@ -776,7 +830,7 @@ button.btn.btn-link.no-padding{
     --algocloud-form-select-focus-box-shadow: 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
     --algocloud-form-select-border-color: var(--algocloud-input-border-color);
     --algocloud-form-select-focus-border-color: var(--algocloud-input-focus-border-color);
-    --algocloud-form-range-track-bg: #d8dbef;
+    --algocloud-form-range-track-bg: #D6D6D7;
     --algocloud-form-range-track-box-shadow: var(--algocloud-box-shadow-inset);
     --algocloud-form-range-thumb-bg: #7b78ff;
     --algocloud-form-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -798,11 +852,11 @@ button.btn.btn-link.no-padding{
     --algocloud-nav-link-color: null;
     --algocloud-nav-link-hover-color: null;
     --algocloud-nav-link-disabled-color: #748194;
-    --algocloud-nav-tabs-border-color: #d8dbef;
-    --algocloud-nav-tabs-link-hover-border-color: #edf2f9 #edf2f9 #d8dbef;
+    --algocloud-nav-tabs-border-color: #D6D6D7;
+    --algocloud-nav-tabs-link-hover-border-color: #edf2f9 #edf2f9 #D6D6D7;
     --algocloud-nav-tabs-link-active-color: #5e6e82;
     --algocloud-nav-tabs-link-active-bg: #edf2f9;
-    --algocloud-nav-tabs-link-active-border-color: #d8dbef #d8dbef #edf2f9;
+    --algocloud-nav-tabs-link-active-border-color: #D6D6D7 #D6D6D7 #edf2f9;
     --algocloud-bg-navbar-glass: rgba(237, 242, 249, 0.96);
     --algocloud-nav-pills-link-active-color: #fff;
     --algocloud-nav-pills-link-active-bg: #7b78ff;
@@ -821,13 +875,13 @@ button.btn.btn-link.no-padding{
     --algocloud-navbar-vertical-collapsed-hover-shadow-color: rgba(0, 0, 0, 0.2);
     --algocloud-navbar-vertical-bg-color: var(--algocloud-bg-navbar-glass);
     --algocloud-navbar-vertical-link-color: #5e6e82;
-    --algocloud-navbar-vertical-link-hover-color: #232e3c;
+    --algocloud-navbar-vertical-link-hover-color: #242424;
     --algocloud-navbar-vertical-link-active-color: #7b78ff;
     --algocloud-navbar-vertical-link-disable-color: #b6c1d2;
     --algocloud-navbar-vertical-hr-color: rgba(0, 0, 0, 0.08);
     --algocloud-navbar-vertical-scrollbar-color: rgba(116, 129, 148, 0.3);
-    --algocloud-dropdown-bg: #fff;
-    --algocloud-dropdown-color: #d8dbef;
+    --algocloud-dropdown-bg: #000;
+    --algocloud-dropdown-color: #D6D6D7;
     --algocloud-dropdown-border-color: var(--algocloud-border-color);
     --algocloud-dropdown-box-shadow: var(--algocloud-box-shadow);
     --algocloud-dropdown-link-color: #344050;
@@ -837,12 +891,12 @@ button.btn.btn-link.no-padding{
     --algocloud-dropdown-link-active-bg: #7b78ff;
     --algocloud-dropdown-link-disabled-color: #748194;
     --algocloud-dropdown-header-color: #748194;
-    --algocloud-dropdown-dark-color: #d8dbef;
+    --algocloud-dropdown-dark-color: #D6D6D7;
     --algocloud-dropdown-dark-bg: #4d5969;
     --algocloud-dropdown-dark-border-color: var(--algocloud-dropdown-border-color);
     --algocloud-dropdown-dark-divider-bg: var(--algocloud-dropdown-border-color);
     --algocloud-dropdown-dark-box-shadow: null;
-    --algocloud-dropdown-dark-link-color: #d8dbef;
+    --algocloud-dropdown-dark-link-color: #D6D6D7;
     --algocloud-dropdown-dark-link-hover-color: #fff;
     --algocloud-dropdown-dark-link-hover-bg: rgba(255, 255, 255, 0.15);
     --algocloud-dropdown-dark-link-active-color: var(--algocloud-dropdown-link-active-color);
@@ -947,7 +1001,7 @@ button.btn.btn-link.no-padding{
     --algocloud-table-light-active-bg: #e8eaee;
     --algocloud-table-light-active-color: #4d5969;
     --algocloud-table-light-border-color: #e8eaee;
-    --algocloud-table-dark-bg: #0b1727;
+    --algocloud-table-dark-bg: #3d3d3d;
     --algocloud-table-dark-color: #fff;
     --algocloud-table-dark-hover-bg: #1d2837;
     --algocloud-table-dark-hover-color: #fff;
@@ -971,7 +1025,7 @@ button.btn.btn-link.no-padding{
     --algocloud-kanban-item-color: #344050;
     --algocloud-kanban-btn-add-hover-bg: #edf2f9;
     --algocloud-kanban-draggable-source-dragging-bg: #edf2f9;
-    --algocloud-kanban-bg-attachment-bg: #d8dbef;
+    --algocloud-kanban-bg-attachment-bg: #D6D6D7;
     --algocloud-kanban-footer-color: #748194;
     --algocloud-kanban-nav-link-card-details-color: #5e6e82;
     --algocloud-kanban-nav-link-card-details-hover-bg: #edf2f9;
@@ -987,10 +1041,10 @@ button.btn.btn-link.no-padding{
     --algocloud-modal-shape-header-bg: #4494ff;
     --fc-button-bg-color: #344050;
     --fc-button-border-color: #344050;
-    --fc-button-hover-bg-color: #0b1727;
-    --fc-button-hover-border-color: #0b1727;
-    --fc-button-active-bg-color: #0b1727;
-    --fc-button-active-border-color: #0b1727;
+    --fc-button-hover-bg-color: #3d3d3d;
+    --fc-button-hover-border-color: #3d3d3d;
+    --fc-button-active-bg-color: #3d3d3d;
+    --fc-button-active-border-color: #3d3d3d;
     --fc-button-list-day-cushion: #fff;
     --algocloud-flatpickr-calendar-bg: #fff;
     --algocloud-leaflet-bar-bg: #fff;
@@ -1013,22 +1067,22 @@ button.btn.btn-link.no-padding{
     --algocloud-hover-bg-black: #000;
     --algocloud-hover-bg-100: #f9fafd;
     --algocloud-hover-bg-200: #edf2f9;
-    --algocloud-hover-bg-300: #d8dbef;
+    --algocloud-hover-bg-300: #D6D6D7;
     --algocloud-hover-bg-400: #b6c1d2;
     --algocloud-hover-bg-500: #9da9bb;
     --algocloud-hover-bg-600: #748194;
     --algocloud-hover-bg-700: #5e6e82;
     --algocloud-hover-bg-800: #4d5969;
     --algocloud-hover-bg-900: #344050;
-    --algocloud-hover-bg-1000: #232e3c;
-    --algocloud-hover-bg-1100: #0b1727;
+    --algocloud-hover-bg-1000: #242424;
+    --algocloud-hover-bg-1100: #3d3d3d;
     --algocloud-hover-bg-white: #fff;
     --algocloud-btn-disabled-custom-background: rgba(249, 250, 253, 0.65);
     --algocloud-btn-disabled-custom-color: rgba(11, 23, 39, 0.3)
 }
 
 :root .light .table,:root .table,:root.light .table {
-    --algocloud-table-striped-bg: #222c3c;
+    --algocloud-table-striped-bg: #242424;
 }
 
 .table{
@@ -1048,13 +1102,18 @@ border-color: rgba(255, 255, 255, 0.15) !important;
 }
 
 .card.bg-box.rounded:hover, .card-hover:hover, .card-hover-2:hover {
-    box-shadow: 0 0 0 1px var(--accent-brand);
+    box-shadow: 0 0 0 1px var(--accent-brand) !important;
     border: unset;
 }
 
+.table-algo-title:hover{
+    color: var(--accent-brand);
+}
+
 .navbar-toggler-humburger-icon:focus, .navbar-toggler-humburger-icon:hover {
-    background-color: #34405000;
+    background-color: rgb(59 73 223 / 25%);
     color: #d6d6d7;
+    box-shadow: none !important;
 }
 
 .card {
@@ -1063,13 +1122,75 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     background-color: #000 !important;
 }
 
+svg.crayons-icon.c-btn__icon {
+    fill: var(--btn-color);
+}
+
+li.menu-li.text-nowrap.menu-li-locked {
+    opacity: 50%;
+    pointer-events: none;
+}
+
 :root {
+    --header-height: 56px;
+    --site-width: 1280px;
+    --su-1: 0.25rem;
+    --su-2: 0.5rem;
+    --su-3: 0.75rem;
+    --su-4: 1rem;
+    --su-5: 1.25rem;
+    --su-6: 1.5rem;
+    --su-7: 2rem;
+    --su-8: 3rem;
+    --su-9: 4rem;
+    --su-10: 8rem;
+    --radius: 0.375rem;
+    --radius-large: 0.75rem;
+    --radius-auto: Max(0px, Min(var(--radius), calc((100vw - 4px - 100%) * 9999))) / var(--radius);
+    --radius-large-auto: Max( 0px, Min(var(--radius-large), calc((100vw - 4px - 100%) * 9999)) ) / var(--radius-large);
+    --transition-func: cubic-bezier(0.17, 0.67, 0.5, 0.71);
+    --transition-time: 100ms;
+    --transition-props: var(--transition-func) var(--transition-time);
+    --focus-ring: 0 0 0 2px var(--base-inverted), 0 0 0 4px var(--focus);
+    --ff-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+    --ff-monospace: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    --ff-serif: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua', Georgia, serif;
+    --ff-comic: 'Comic Sans MS', cursive, sans-serif;
+    --ff-dyslexic: OpenDyslexic, sans-serif;
+    --fs-xs: 0.75rem;
+    --fs-s: 0.875rem;
+    --fs-base: 1rem;
+    --fs-l: 1.125rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.5rem;
+    --fs-3xl: 1.875rem;
+    --fs-4xl: 2.25rem;
+    --fs-5xl: 3rem;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-heavy: 800;
+    --lh-tight: 1.25;
+    --lh-base: 1.5;
+    --opacity-0: 0.00001;
+    --opacity-25: 0.25;
+    --opacity-50: 0.5;
+    --opacity-75: 0.75;
+    --opacity-100: 1;
+    --z-negative: -1;
+    --z-elevate: 1;
+    --z-sticky: 100;
+    --z-drawer: 200;
+    --z-dropdown: 400;
+    --z-modal: 500;
+    --z-popover: 500;
+    --btn-color: var(--base-80);
     --algocloud-body-color: #d6d6d7;
-    --algocloud-body: #232e3c;
+    --algocloud-body: #242424;
     --algocloud-body-bg: #1c2432;
     --algocloud-body-bg-2: #9da9bb;
     --algocloud-body-color: #D6D6D7;
-    --algocloud-headings-color: #d8dbef;
+    --algocloud-headings-color: #D6D6D7;
     --algocloud-card-bg-color: #000;
     --algocloud-border-color: rgba(255, 255, 255, 0.05);
     --algocloud-box-shadow: 0 7px 14px 0 rgba(3, 12, 51, 0.15), 0 3px 6px 0 rgba(0, 0, 0, 0.2);
@@ -1077,18 +1198,18 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-box-shadow-lg: 0 1rem 4rem rgba(0, 0, 0, 0.175);
     --algocloud-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
     --algocloud-black: #fff;
-    --algocloud-100: #0b1727;
-    --algocloud-200: #232e3c;
+    --algocloud-100: #3d3d3d;
+    --algocloud-200: #242424;
     --algocloud-300: #344050;
     --algocloud-400: #4d5969;
     --algocloud-500: #5e6e82;
     --algocloud-600: #748194;
     --algocloud-700: #9da9bb;
     --algocloud-800: #b6c1d2;
-    --algocloud-900: #d8dbef;
+    --algocloud-900: #D6D6D7;
     --algocloud-1000: #edf2f9;
     --algocloud-1100: #f9fafd;
-    --algocloud-white: #222c3c;
+    --algocloud-white: #242424;
     --algocloud-primary: #7b78ff;
     --algocloud-secondary: #748194;
     --algocloud-success: #00d27a;
@@ -1105,8 +1226,8 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-soft-danger: #45111a;
     --algocloud-soft-light: #4b4b4c;
     --algocloud-soft-dark: #03070c;
-    --algocloud-input-bg: #0b1727;
-    --algocloud-input-color: #d8dbef;
+    --algocloud-input-bg: #3d3d3d;
+    --algocloud-input-color: #D6D6D7;
     --algocloud-input-border-color: #344050;
     --algocloud-input-focus-border-color: #7b78ff;
     --algocloud-input-placeholder-color: #344050;
@@ -1115,7 +1236,7 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-bg-navbar-glass: rgba(11, 23, 39, 0.96);
     --algocloud-navbar-dark-color: rgba(11, 23, 39, 0.55);
     --algocloud-navbar-dark-hover-color: rgba(11, 23, 39, 0.75);
-    --algocloud-navbar-dark-active-color: #0b1727;
+    --algocloud-navbar-dark-active-color: #3d3d3d;
     --algocloud-navbar-dark-disabled-color: rgba(11, 23, 39, 0.25);
     --algocloud-navbar-dark-toggler-border-color: rgba(11, 23, 39, 0.1);
     --algocloud-navbar-light-color: rgba(255, 255, 255, 0.55);
@@ -1137,10 +1258,10 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-navbar-vertical-link-disable-color: #4d5969;
     --algocloud-navbar-vertical-hr-color: rgba(255, 255, 255, 0.08);
     --algocloud-navbar-vertical-scrollbar-color: rgba(116, 129, 148, 0.3);
-    --algocloud-dropdown-bg: #232e3c;
+    --algocloud-dropdown-bg: #000;
     --algocloud-dropdown-color: #344050;
     --algocloud-dropdown-box-shadow: var(--algocloud-box-shadow);
-    --algocloud-dropdown-link-color: #d8dbef;
+    --algocloud-dropdown-link-color: #D6D6D7;
     --algocloud-dropdown-link-hover-color: #eaeff6;
     --algocloud-dropdown-link-hover-bg: rgba(11, 23, 39, 0.4);
     --algocloud-dropdown-link-active-color: #fff;
@@ -1148,20 +1269,20 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-dropdown-link-disabled-color: #748194;
     --algocloud-dropdown-header-color: #748194;
     --algocloud-pagination-color: #fff;
-    --algocloud-pagination-bg: #0b1727;
-    --algocloud-pagination-border-color: #232e3c;
+    --algocloud-pagination-bg: #3d3d3d;
+    --algocloud-pagination-border-color: #242424;
     --algocloud-pagination-hover-color: #fff;
-    --algocloud-pagination-disabled-bg: #0b1727;
+    --algocloud-pagination-disabled-bg: #3d3d3d;
     --algocloud-card-border-color: rgba(255, 255, 255, 0.125);
     --algocloud-card-cap-bg: rgba(35, 46, 60, 0.03);
     --algocloud-card-bg: var(--algocloud-card-bg-color);
-    --algocloud-popover-bg: #0b1727;
+    --algocloud-popover-bg: #3d3d3d;
     --algocloud-popover-border-color: rgba(255, 255, 255, 0.2);
     --algocloud-popover-header-bg: rgba(35, 46, 60, 0.25);
     --algocloud-popover-header-border-bottom-color: #323c4a;
-    --algocloud-popover-arrow-color: #0b1727;
+    --algocloud-popover-arrow-color: #3d3d3d;
     --algocloud-popover-arrow-outer-color: rgba(255, 255, 255, 0.25);
-    --algocloud-modal-content-bg: #0b1727;
+    --algocloud-modal-content-bg: #3d3d3d;
     --algocloud-btn-reveal-color: dark;
     --algocloud-btn-reveal-bg: #0a1523;
     --algocloud-btn-reveal-border-color: #0a1422;
@@ -1272,8 +1393,8 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-transparent-50: rgba(11, 23, 39, 0.5);
     --algocloud-list-group-bg: var(--algocloud-card-cap-bg);
     --algocloud-list-group-action-hover-color: #9da9bb;
-    --algocloud-list-group-hover-bg: #0b1727;
-    --algocloud-table-border-color: #0b1727;
+    --algocloud-list-group-hover-bg: #3d3d3d;
+    --algocloud-table-border-color: #3d3d3d;
     --algocloud-table-primary-bg: #09192e;
     --algocloud-table-primary-color: #fff;
     --algocloud-table-primary-hover-bg: #3c85e7;
@@ -1346,20 +1467,20 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-table-dark-active-bg: #232e3d;
     --algocloud-table-dark-active-color: #fff;
     --algocloud-table-dark-border-color: rgba(35, 46, 61, 0.05);
-    --algocloud-avatar-status-border-color: #0b1727;
+    --algocloud-avatar-status-border-color: #3d3d3d;
     --algocloud-avatar-name-bg: #4d5969;
     --algocloud-avatar-button-bg: #4d5969;
     --algocloud-avatar-button-hover-bg: #5e6e82;
     --algocloud-notification-bg: var(--algocloud-card-cap-bg);
     --algocloud-notification-title-bg: #344050;
-    --algocloud-notification-unread-bg: #232e3c;
+    --algocloud-notification-unread-bg: #242424;
     --algocloud-notification-unread-hover-bg: #1a222c;
     --algocloud-notification-indicator-border-color: #0a1727;
     --algocloud-kanban-bg: rgba(35, 46, 60, 0.25);
-    --algocloud-kanban-item-bg: #232e3c;
-    --algocloud-kanban-item-color: #d8dbef;
-    --algocloud-kanban-btn-add-hover-bg: #232e3c;
-    --algocloud-kanban-draggable-source-dragging-bg: #0b1727;
+    --algocloud-kanban-item-bg: #242424;
+    --algocloud-kanban-item-color: #D6D6D7;
+    --algocloud-kanban-btn-add-hover-bg: #242424;
+    --algocloud-kanban-draggable-source-dragging-bg: #3d3d3d;
     --algocloud-kanban-bg-attachment-bg: #344050;
     --algocloud-kanban-footer-color: #748194;
     --algocloud-kanban-nav-link-card-details-color: #9da9bb;
@@ -1374,26 +1495,26 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-modal-shape-header: linear-gradient(-45deg, #012552, #001835);
     --algocloud-modal-shape-header-after: linear-gradient(-45deg, rgba(20, 58, 101, 0.41), #053571);
     --algocloud-modal-shape-header-bg: #01224b;
-    --fc-button-list-day-cushion: #0b1727;
-    --fc-page-bg-color: #0b1727;
-    --fc-neutral-bg-color: #232e3c;
-    --algocloud-flatpickr-calendar-bg: #0b1727;
+    --fc-button-list-day-cushion: #3d3d3d;
+    --fc-page-bg-color: #3d3d3d;
+    --fc-neutral-bg-color: #242424;
+    --algocloud-flatpickr-calendar-bg: #3d3d3d;
     --algocloud-leaflet-bar-bg: #344050;
-    --algocloud-leaflet-popup-content-wrapper-bg: #0b1727;
-    --algocloud-choices-item-has-no-choices-bg: #0b1727;
-    --algocloud-thumbnail-bg: #232e3c;
+    --algocloud-leaflet-popup-content-wrapper-bg: #3d3d3d;
+    --algocloud-choices-item-has-no-choices-bg: #3d3d3d;
+    --algocloud-thumbnail-bg: #242424;
     --algocloud-chat-contact-bg: var(--algocloud-card-bg);
-    --algocloud-tinymce-bg: #0b1727;
+    --algocloud-tinymce-bg: #3d3d3d;
     --algocloud-swiper-nav-bg: rgba(11, 23, 39, 0.8);
     --algocloud-star-rating-bg-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFdElEQVR4nO2aXWxURRTH/2dut58Imho1SgStuit+vBo0BkgkRjDog+VBiJEXqJhKK21x+7EdUu5u2W1Uqi8Qo4YQY6gQDQlRn9RENGoMD0a7RCzGRCJGBLRF9mOOD+waKHe7e2f23mt0f4/zceY/Z2fmzJm7QI0aNWr8j6EgBu3sHG9oXHC2gxQvJ/CUhbpUPD5wMggtwv8hmZrmn3mHmF8G4XEm6s5R/kinlPP91xKAA7YN2A8CeHRW8eLmrOjwWwsQgAMYqs+xnLGls3O8wW89vjqgp1/eDWC1YyXhxqYFvz/ppx7AZwcIsnrmbMDUK6X0V5NfA/VJuRDgdWWa3Tmds1b5IqiAf97OUReAunLNCOx4RniFL/eALimvrs+KnwDMq6yHWJq0Bz/3VFRxJD8GabgY4iqcPABWvd6puRzPV4CUsnEmK6YA3OCiG1tKRRIJecwrXUU8XwHTGbEe7iYPAJQXYqsXeq4YyEvjUkoxkxXfAbhDo/uFOrYWxeMDv1Rb16V4ugJmctYa6E0eABpyItdZTT1OeLwFDEMa02YpZeWHpwaeOaBncOQhMJYamrnmvMdJUtXOgI0bd4daW0+25S0rAoV7iLiHgWqkuDkChjik9ibl8EmAuAo2/8G1A7ZKea24IMJkcQRAmJkiBIQBtAGwqiluNgScU4w0EU2CkWZSk8ycnleP76WUf2nadCYajbfmrfwDxIWJgiMAhQG06k7AQxSAEwAmiTnNRJMEMWkxpePx/lNzrRpHB7wwOLJcMR+Cm9vbv5cZAK81h1S3lFLNrnQ8BBVjF/4bkweAZgDPnc+IJ5wqS0QBDnsoKBAYdLtTubMDCF95qiYAhMUfOpY7FSqlOgCc9lSRjzDR86MjsS+d6hwdMBaX3zCrlQDOeKrMBwiIpnYMvVSqvuRNMBWXXwPiYQB/eKLMBxgY3mnHRudqM+dVOGkPfsEKjwCYrqoyHyAgnrKHRipoV57CveAwgCZjZT7AwFjKHuqr5Npc8VW4r3/7ShAdAuD7xwuXjCftoa5KcwZXuUDv4MgqYn4XQEhLmscw8+5UPPaMm4TJVTqc2jF0GERrAeRcq/MceqOlnje7zRa10uHege3tBHobgXxdvhIm7DuRjjw9MbE277av1gRS9vAEwE8BqGpurgVhf0ud2qAz+YvdDegb3L4BTK+b2DCBgffO/np9+549m7K6NoweMD795KOj9y9bcRsB95rY0SRTp+qW7drV/aeJEeM9TMzvm9rQg48mEv2/mVoxP8RYLDa2oYWor4oVYwuEu6qgQwOOtLfvN36DrEIY4yXmNrRobGv79hZTI0YOKPwCEVMRurBFxqvPyAGLw+lbEWBuoBCwAwhB7f/i+GS8/YwcwBzY/i8S7AoILgIUMY8EZluAzZegIY2Fc0gbbQdc9DwHFgGKCFZGP4K2AwoxuFGz+xkCehFSNxHzKoCO6uowjQRl/7dXCs0YnCXmVwWH7Evu8T9LKT+Yzoj1BNggLHRl0fAc0ncAiyVuHl8INKEI0aQdOz67rvDRcm9394sToabpLhBHAVxVkV02c4D2e0DfwMi+Cv76CoCPKEU9Y4nYZ5Xa7pHyOpEVwwA2oXzKfmHqWKRF90FEewVUkAMcZ/C2lB076PadbkzKUwCejUblK3kSO0FYM0fzhkXh9M0AptyMUcQkDJY6AE8D2NIcUktS9vABk7+0JBJyMhmPPcYKywEu9cGWQ3nrnO4Y2g5gYN+sogyIU5mQakvasXEpZUbX9mxSidjHzSG+jxjrAPx4eS29afIwor0FWkJq9HzOOsvMq5n5B0vx2OioPKFrrxyFg/ItKeXBmazoAGMFQEea6/MlP3zWqFGjRo0y/A3lxcMNXfCjjAAAAABJRU5ErkJggg==");
     --algocloud-toast-background-color: rgba(52, 64, 80, 0.3);
-    --algocloud-theme-wizard-nav-item-circle-bg: #0b1727;
-    --algocloud-card-span-img-bg: #0b1727;
+    --algocloud-theme-wizard-nav-item-circle-bg: #3d3d3d;
+    --algocloud-card-span-img-bg: #3d3d3d;
     --algocloud-card-span-img-box-shadow: var(--algocloud-box-shadow-sm);
     --algocloud-card-span-img-hover-box-shadow: var(--algocloud-box-shadow);
     --algocloud-setting-toggle-shadow: 0 -7px 14px 0 rgba(3, 12, 51, 0.15), 0 3px 6px 0 rgba(0, 0, 0, 0.2);
     --algocloud-scrollbar-bg: rgba(52, 64, 80, 0.6);
-    --algocloud-nav-pills-algocloud-active-bg-color: #0b1727;
+    --algocloud-nav-pills-algocloud-active-bg-color: #3d3d3d;
     --algocloud-btn-disabled-custom-background: rgba(11, 23, 39, 0.65);
     --algocloud-btn-disabled-custom-color: rgba(255, 255, 255, 0.2);
     --algocloud-font-sans-serif: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
@@ -1401,7 +1522,7 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-body-font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
     --algocloud-body-font-size: 1rem;
     --algocloud-body-font-weight: 400;
-    --algocloud-menu-li-hover: rgb(123 120 255 / 10%);
+    --algocloud-menu-li-hover: rgb(123 120 255 / 20%);
     --algocloud-menu-li-color-hover: #9896ff;
     --algocloud-menu-li-bg-active: rgb(52,73,104);
     --algocloud-menu-li-color-active: rgba(255,255,255,0.89);
@@ -1415,12 +1536,17 @@ border-color: rgba(255, 255, 255, 0.15) !important;
     --algocloud-btn-link-color-2: #fff;
 }
 
+.menu-li a .icon, .menu-li:hover a, .menu-li:hover a .icon {
+    color: var(--accent-brand-lighter) !important;
+    background-color: var(--algocloud-menu-li-hover) !important;
+}
+
 .dark .table {
-    --algocloud-table-striped-bg: #0b1727
+    --algocloud-table-striped-bg: #3d3d3d
 }
 
 .dark.emoji-picker {
-    --dark-background-color: #232e3c;
+    --dark-background-color: #242424;
     --dark-hover-color: #344050;
     --dark-border-color: #344050;
     --dark-search-background-color: $input-bg;
@@ -3565,8 +3691,8 @@ progress {
     --algocloud-table-striped-bg: rgba(0, 0, 0, 0.05);
     --algocloud-table-active-color: #5e6e82;
     --algocloud-table-active-bg: rgba(0, 0, 0, 0.1);
-    --algocloud-table-hover-color: var(--algocloud-headings-color);
-    --algocloud-table-hover-bg: rgba(52,73,104,0.4);
+    --algocloud-table-hover-color:#fff;
+    --algocloud-table-hover-bg: rgb(123 120 255 / 25%);
     width: 100%;
     margin-bottom: 1rem;
     color: var(--algocloud-body-color);
@@ -3883,7 +4009,7 @@ progress {
     margin: -.3125rem -1rem;
     -webkit-margin-end: 1rem;
     margin-inline-end: 1rem;
-    color: #d8dbef;
+    color: #D6D6D7;
     background-color: #344050;
     pointer-events: none;
     border-color: inherit;
@@ -3914,7 +4040,7 @@ progress {
     margin: -.3125rem -1rem;
     -webkit-margin-end: 1rem;
     margin-inline-end: 1rem;
-    color: #d8dbef;
+    color: #D6D6D7;
     background-color: #344050;
     pointer-events: none;
     border-color: inherit;
@@ -4287,7 +4413,7 @@ textarea.form-control-lg {
     height: .5rem;
     color: transparent;
     cursor: pointer;
-    background-color: #d8dbef;
+    background-color: #D6D6D7;
     border-color: transparent;
     border-radius: 1rem;
     -webkit-box-shadow: var(--algocloud-box-shadow-inset);
@@ -4323,7 +4449,7 @@ textarea.form-control-lg {
     height: .5rem;
     color: transparent;
     cursor: pointer;
-    background-color: #d8dbef;
+    background-color: #D6D6D7;
     border-color: transparent;
     border-radius: 1rem;
     box-shadow: var(--algocloud-box-shadow-inset)
@@ -4731,7 +4857,7 @@ textarea.form-control-lg {
 }
 
 .btn,[data-list] .page {
-    color: #5e6e82;
+    color: var(--algocloud-body-color);
     background-color: transparent
 }
 
@@ -5056,8 +5182,8 @@ textarea.form-control-lg {
 
 .btn-dark,.dark .btn-light,.dark .navbar-vertical [data-list-pagination][disabled].btn-purchase,.dark .navbar-vertical.navbar-vibrant .btn-purchase,.dark .tox .tox-dialog__footer .tox-button--secondary,.dark .tox .tox-dialog__footer [data-list-pagination][disabled].tox-button:last-child,.dark .tox .tox-menu__footer .tox-button--secondary,.dark .tox .tox-menu__footer [data-list-pagination][disabled].tox-button:last-child,.dark [data-list-pagination].btn-primary[disabled],.navbar-vertical .dark [data-list-pagination][disabled].btn-purchase,.navbar-vertical.navbar-vibrant .dark .btn-purchase,.tox .tox-dialog__footer .dark .tox-button--secondary,.tox .tox-dialog__footer .dark [data-list-pagination][disabled].tox-button:last-child,.tox .tox-menu__footer .dark .tox-button--secondary,.tox .tox-menu__footer .dark [data-list-pagination][disabled].tox-button:last-child {
     color: #fff;
-    background-color: #0b1727;
-    border-color: #0b1727;
+    background-color: #3d3d3d;
+    border-color: #3d3d3d;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075)
 }
@@ -5089,8 +5215,8 @@ textarea.form-control-lg {
 
 .btn-dark.disabled,.btn-dark:disabled,.dark .btn-light:disabled,.dark .disabled.btn-light,.dark .disabled[data-list-pagination].btn-primary[disabled],.dark .navbar-vertical .disabled[data-list-pagination][disabled].btn-purchase,.dark .navbar-vertical [data-list-pagination][disabled].btn-purchase:disabled,.dark .navbar-vertical.navbar-vibrant .btn-purchase:disabled,.dark .navbar-vertical.navbar-vibrant .disabled.btn-purchase,.dark .tox .tox-dialog__footer .disabled.tox-button--secondary,.dark .tox .tox-dialog__footer .disabled[data-list-pagination][disabled].tox-button:last-child,.dark .tox .tox-dialog__footer .tox-button--secondary:disabled,.dark .tox .tox-dialog__footer [data-list-pagination][disabled].tox-button:disabled:last-child,.dark .tox .tox-menu__footer .disabled.tox-button--secondary,.dark .tox .tox-menu__footer .disabled[data-list-pagination][disabled].tox-button:last-child,.dark .tox .tox-menu__footer .tox-button--secondary:disabled,.dark .tox .tox-menu__footer [data-list-pagination][disabled].tox-button:disabled:last-child,.dark [data-list-pagination].btn-primary[disabled]:disabled,.navbar-vertical .dark .disabled[data-list-pagination][disabled].btn-purchase,.navbar-vertical .dark [data-list-pagination][disabled].btn-purchase:disabled,.navbar-vertical.navbar-vibrant .dark .btn-purchase:disabled,.navbar-vertical.navbar-vibrant .dark .disabled.btn-purchase,.tox .tox-dialog__footer .dark .disabled.tox-button--secondary,.tox .tox-dialog__footer .dark .disabled[data-list-pagination][disabled].tox-button:last-child,.tox .tox-dialog__footer .dark .tox-button--secondary:disabled,.tox .tox-dialog__footer .dark [data-list-pagination][disabled].tox-button:disabled:last-child,.tox .tox-menu__footer .dark .disabled.tox-button--secondary,.tox .tox-menu__footer .dark .disabled[data-list-pagination][disabled].tox-button:last-child,.tox .tox-menu__footer .dark .tox-button--secondary:disabled,.tox .tox-menu__footer .dark [data-list-pagination][disabled].tox-button:disabled:last-child {
     color: #fff;
-    background-color: #0b1727;
-    border-color: #0b1727
+    background-color: #3d3d3d;
+    border-color: #3d3d3d
 }
 
 .btn-outline-primary {
@@ -5318,14 +5444,14 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark {
-    color: #0b1727;
-    border-color: #0b1727
+    color: #3d3d3d;
+    border-color: #3d3d3d
 }
 
 .btn-outline-dark:hover {
     color: #fff;
-    background-color: #0b1727;
-    border-color: #0b1727
+    background-color: #3d3d3d;
+    border-color: #3d3d3d
 }
 
 .btn-check:focus+.btn-outline-dark,.btn-outline-dark:focus {
@@ -5335,8 +5461,8 @@ textarea.form-control-lg {
 
 .btn-check:active+.btn-outline-dark,.btn-check:checked+.btn-outline-dark,.btn-outline-dark.active,.btn-outline-dark.dropdown-toggle.show,.btn-outline-dark:active {
     color: #fff;
-    background-color: #0b1727;
-    border-color: #0b1727
+    background-color: #3d3d3d;
+    border-color: #3d3d3d
 }
 
 .btn-check:active+.btn-outline-dark:focus,.btn-check:checked+.btn-outline-dark:focus,.btn-outline-dark.active:focus,.btn-outline-dark.dropdown-toggle.show:focus,.btn-outline-dark:active:focus {
@@ -5345,7 +5471,7 @@ textarea.form-control-lg {
 }
 
 .btn-outline-dark.disabled,.btn-outline-dark:disabled {
-    color: #0b1727;
+    color: #3d3d3d;
     background-color: transparent
 }
 
@@ -5683,7 +5809,7 @@ i.fas.fa-bars {
 .dropdown-item:focus,.dropdown-item:hover {
     color: var(--algocloud-dropdown-link-hover-color);
     text-decoration: none;
-    background-color: rgba(52,73,104,0.4) !important;
+    background-color: rgb(123 120 255 / 25%) !important;
 }
 
 .dropdown-item.active,.dropdown-item:active {
@@ -5718,13 +5844,13 @@ i.fas.fa-bars {
 }
 
 .dropdown-menu-dark {
-    color: #d8dbef;
+    color: #D6D6D7;
     background-color: #4d5969;
     border-color: var(--algocloud-dropdown-border-color)
 }
 
 .dropdown-menu-dark .dropdown-item {
-    color: #d8dbef
+    color: #D6D6D7
 }
 
 .dropdown-menu-dark .dropdown-item:focus,.dropdown-menu-dark .dropdown-item:hover {
@@ -5746,7 +5872,7 @@ i.fas.fa-bars {
 }
 
 .dropdown-menu-dark .dropdown-item-text {
-    color: #d8dbef
+    color: #D6D6D7
 }
 
 .dropdown-menu-dark .dropdown-header {
@@ -5905,7 +6031,7 @@ i.fas.fa-bars {
 }
 
 .nav-tabs {
-    border-bottom: 1px solid #d8dbef
+    border-bottom: 1px solid #D6D6D7
 }
 
 .nav-tabs .nav-link {
@@ -5914,7 +6040,7 @@ i.fas.fa-bars {
 }
 
 .nav-tabs .nav-link:focus,.nav-tabs .nav-link:hover {
-    border-color: #edf2f9 #edf2f9 #d8dbef;
+    border-color: #edf2f9 #edf2f9 #D6D6D7;
     isolation: isolate
 }
 
@@ -5924,7 +6050,7 @@ i.fas.fa-bars {
 
 .nav-tabs .nav-item.show .nav-link,.nav-tabs .nav-link.active {
     color: #5e6e82;
-    border-color: #d8dbef #d8dbef #edf2f9
+    border-color: #D6D6D7 #D6D6D7 #edf2f9
 }
 
 .nav-tabs .dropdown-menu {
@@ -6665,9 +6791,16 @@ i.fas.fa-bars {
 
 .menu-li.active a {
     border-radius: 6px;
-    color: var(--li-hover)!important;
+        color: var(--accent-brand-lighter);
     background-color: var(--algocloud-menu-li-hover) !important;
 }
+
+.menu-li:hover a {
+    border-radius: 6px;
+    color: var(--accent-brand-lighter) !important;
+    background-color: var(--algocloud-menu-li-hover) !important;
+}
+
 
 .card {
     background: var(--card-bg);
@@ -7009,7 +7142,7 @@ i.fas.fa-bars {
 }
 
 .breadcrumb-item.active {
-    color: #748194
+    color: var(--base-70);
 }
 
 .pagination {
@@ -10409,11 +10542,15 @@ div#stickyTop{
 }
 
 .text-info,.text-success {
-    color: var(--algocloud-success)!important
+    color: var(--accent-success)!important
 }
 
 .text-info {
     color: var(--algocloud-info)!important
+}
+
+.sortable:hover {
+    color: #687dfd !important;
 }
 
 .text-danger,.text-light,.text-warning {
@@ -10422,7 +10559,7 @@ div#stickyTop{
 }
 
 .text-danger,.text-light {
-    color: var(--algocloud-danger)!important
+    color: var(--accent-danger)!important
 }
 
 .text-light {
@@ -10548,7 +10685,7 @@ div#stickyTop{
 }
 
 .bg-white {
-    background-color: var(--algocloud-white)!important
+    background-color: #000000!important;
 }
 
 .bg-primary {
@@ -20630,26 +20767,6 @@ code,kbd,pre,samp {
     right: -0.5625rem;
 }
 
-.navbar .dropdown-menu:after {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 1rem;
-    height: 1rem;
-    background: var(--algocloud-card-bg);
-    top: -.375rem;
-    right: 1.15rem;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-    border-radius: .125rem;
-    border-width: 1px 0 0 1px;
-    border-style: solid;
-    border-color: var(--algocloud-dropdown-border-color);
-    -webkit-box-shadow: var(--algocloud-box-shadow-sm);
-    box-shadow: var(--algocloud-box-shadow-sm)
-}
-
 .navbar .dropdown-menu.dropdown-menu-end {
     left: auto;
     right: -.5625rem
@@ -20682,11 +20799,15 @@ code,kbd,pre,samp {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-    border-radius: 50%
+    border-radius: .375rem;
+    margin-right: .5rem;
+    padding-top: 0.4rem;
 }
 
 .navbar-toggler-humburger-icon:focus,.navbar-toggler-humburger-icon:hover {
-    background-color: var(--algocloud-300)
+    background-color: rgb(123 120 255 / 25%);
+    color: #9896ff;
+    border: 0px;
 }
 
 .navbar-toggle-icon {
@@ -20698,7 +20819,8 @@ code,kbd,pre,samp {
     transition: all .2s ease-in-out;
     display: block;
     top: -.3125rem;
-    padding-right: 0
+    padding-right: 0;
+    border:0px !important;
 }
 
 .navbar-toggle-icon .toggle-line,.navbar-toggle-icon:after,.navbar-toggle-icon:before {
@@ -20799,18 +20921,19 @@ code,kbd,pre,samp {
 }
 
 .badge-soft-info {
-    color: var(--algocloud-badge-soft-info-color);
-    background-color: var(--algocloud-badge-soft-info-background-color)
+    background-color: var(--accent-success-a10);
+    font-size: calc(.8rem + .1rem);
+}
+
+.badge-soft-warning {
+    color: var(--accent-danger) !important;
+    background-color: var(--accent-danger-a10);
+    font-size: calc(.8rem + .1rem);
 }
 
 .badge-soft-info[href]:focus,.badge-soft-info[href]:hover {
     text-decoration: none;
     color: var(--algocloud-badge-soft-info-color)
-}
-
-.badge-soft-warning {
-    color: var(--algocloud-badge-soft-warning-color);
-    background-color: var(--algocloud-badge-soft-warning-background-color)
 }
 
 .badge-soft-warning[href]:focus,.badge-soft-warning[href]:hover {
@@ -21327,7 +21450,7 @@ code,kbd,pre,samp {
 }
 
 :not(pre)>code[class*=language-],pre[class*=language-] {
-    background-color: #232e3c;
+    background-color: #242424;
     border: 1px solid var(--algocloud-border-color);
     border-radius: .25rem
 }
@@ -21337,7 +21460,7 @@ code.language-html:first-child {
 }
 
 code[class*=language-],pre[class*=language-] {
-    color: #d8dbef;
+    color: #D6D6D7;
     font-family: "SFMono-Regular",Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace
 }
 
@@ -23354,7 +23477,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
     line-height: 1;
     content: "“";
     display: inline-block;
-    color: #d8dbef;
+    color: #D6D6D7;
     font-size: 2.985984rem
 }
 
@@ -23943,7 +24066,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 
 .navbar-vertical .navbar-vertical-divider {
     margin-top: .5625rem;
-    color: #d8dbef
+    color: #D6D6D7
 }
 
 .navbar-vertical .navbar-vertical-label {
@@ -24058,7 +24181,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 
 .navbar-vertical.navbar-inverted .navbar-collapse {
-    background-color: #232e3c
+    background-color: #242424
 }
 
 .navbar-vertical.navbar-inverted .navbar-nav .nav-item .navbar-vertical-label-wrapper {
@@ -26347,7 +26470,7 @@ html[dir=rtl] .rtl-row-reverse {
 }
 
 a[href].bg-200:focus,a[href].bg-200:hover {
-    background-color: #d8dbef!important
+    background-color: #D6D6D7!important
 }
 
 .hover-primary:focus,.hover-primary:hover {
@@ -26603,7 +26726,7 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .btn-back-to-top {
-    background-color: #0b1727;
+    background-color: #3d3d3d;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -26810,7 +26933,7 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .form-check-input-dark {
-    border-color: #0b1727!important
+    border-color: #3d3d3d!important
 }
 
 .form-check-input-dark:focus {
@@ -26819,7 +26942,7 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .form-check-input-dark:checked {
-    background-color: #0b1727!important
+    background-color: #3d3d3d!important
 }
 
 .form-check-line-through:checked+label {
@@ -27673,7 +27796,7 @@ button.btn-circle {
 
 button.btn-circle:focus,button.btn-circle:hover {
     opacity: 1!important;
-    background-color: #d8dbef
+    background-color: #D6D6D7
 }
 
 .icon-title {
@@ -28696,11 +28819,11 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .dark .dark__bg-300 {
-    background-color: #d8dbef!important
+    background-color: #D6D6D7!important
 }
 
 .dark .dark__text-300 {
-    color: #d8dbef!important
+    color: #D6D6D7!important
 }
 
 .dark .dark__bg-400 {
@@ -28752,19 +28875,19 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .dark .dark__bg-1000 {
-    background-color: #232e3c!important
+    background-color: #242424!important
 }
 
 .dark .dark__text-1000 {
-    color: #232e3c!important
+    color: #242424!important
 }
 
 .dark .dark__bg-1100 {
-    background-color: #0b1727!important
+    background-color: #3d3d3d!important
 }
 
 .dark .dark__text-1100 {
-    color: #0b1727!important
+    color: #3d3d3d!important
 }
 
 .dark .dark__bg-white {
@@ -28832,11 +28955,11 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .dark .dark__bg-dark {
-    background-color: #0b1727!important
+    background-color: #3d3d3d!important
 }
 
 .dark .dark__text-dark {
-    color: #0b1727!important
+    color: #3d3d3d!important
 }
 
 .dark ::-moz-selection {
@@ -28975,8 +29098,8 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 .timeline-dark.timeline-current::after,.timeline-dark.timeline-past::after {
-    background-color: #0b1727;
-    border-color: #0b1727
+    background-color: #3d3d3d;
+    border-color: #3d3d3d
 }
 
 .timeline-dark.timeline-current::after {
@@ -29151,12 +29274,6 @@ button.btn-circle:focus,button.btn-circle:hover {
     border-color: var(--algocloud-input-focus-border-color);
 }
 
-.navbar-toggler-humburger-icon:focus {
-    border-style: solid;
-    border-width: 1px;
-    border-color: var(--algocloud-primary);
-}
-
 .custom-icon-next:hover, .custom-icon-prev:hover {
     color: var(--algocloud-primary);
 }
@@ -29166,23 +29283,17 @@ button.btn-circle:focus,button.btn-circle:hover {
     align-items: center;
 }
 
-.content {
-    border-right-color: var(--algocloud-menu-border-color) !important;
-    border-right-width: 1px;
-    border-right-style: solid;
+::-webkit-scrollbar {
+    width: 0px;
+    height: 12px;
+    background-color: #2e2e2e69;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #344968;
+    background-color: #2e2e2e;
     background-clip: content-box;
     border: 3px solid transparent;
     border-radius: 6px;
-}
-
-::-webkit-scrollbar {
-    width: 12px;
-    height: 12px;
-    background-color: #283447;
 }
 
 .last-child {
@@ -29375,6 +29486,10 @@ button.btn-circle:focus,button.btn-circle:hover {
     --syntax-error-color: #f9690e;
     --syntax-name-color: #7ed07e;
     --syntax-string-color: #f2ca27;
+}
+
+.btn-algocloud-default, [data-list] .page {
+    color: #7b78ff;
 }
 
 body{
