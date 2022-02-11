@@ -45,7 +45,7 @@ function AssetTable(props) {
               hasRows={hasRows}
               sorter={sorter}
               name='marketCap'
-              label='MARKET CAP'
+              label='MCAP'
             />
             <TableColumnHeader
               onSort={doChangeSort}
@@ -59,7 +59,7 @@ function AssetTable(props) {
               hasRows={hasRows}
               sorter={sorter}
               name='lastDayVolume'
-              label='VOLUME[24H]'
+              label='VOL[24H]'
             />
             <TableColumnHeader
               onSort={doChangeSort}

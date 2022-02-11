@@ -1,11 +1,11 @@
 var defaultTokens = [
     {
         assetId: 0,
-        unitName: 'Algo'
+        unitName: 'Algorand'
     },
     {
         assetId: 137594422,
-        unitName: 'HDL'
+        unitName: 'HEADLINE'
     },
     {
         assetId: 226701642,
@@ -29,7 +29,7 @@ var defaultTokens = [
     },
     {
         assetId: 523683256,
-        unitName: 'Akita'
+        unitName: 'AKITA INU'
     },
 ]
 

@@ -3,12 +3,12 @@ import styled from 'styled-components';
 const MenuWrapper = styled.div`
   .menu-nav {
     inset: 0% auto 0% 0%;
-    z-index: 10000;
     overflow: auto;
     width: 200px;
+    margin-top: 61px; 
     height: 100%;
     flex-direction: column;
-    background-color: var(--algocloud-card-bg-color);
+    background-color: transparent;
   }
 
   @media (min-width: 576px){
@@ -16,8 +16,55 @@ const MenuWrapper = styled.div`
       position: relative;
     
     }
+    .hamburger__content__header {
+      display: none;
+    }
+    .algocloud-fixed{
+      width: 200px;
+    }
     }
 
+    @media (max-width: 575px){
+      .menu-nav {
+        min-width: 100%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgb(10 10 10 / 50%) !important;
+        z-index: 10000000 !important;
+        margin-top: 0px !important;
+      }
+      .algocloud-fixed {
+        background: var(--algocloud-hover-bg-black);
+        max-width: 300px;
+        z-index: 1000000 !important;
+        position: relative;
+        height: 100%;
+        overflow: scroll;
+        overflow-y: auto;
+        box-shadow: var(--algocloud-card-span-img-hover-box-shadow);
+      max-width: 300px;
+      z-index: 1000000 !important;
+      position: relative;
+      height: 100%;
+      overflow: scroll;
+      overflow-y: auto;
+  }
+
+    .hamburger__content__header {
+      min-height: var(--header-height);
+      display: flex;
+      align-items: center;
+      padding: 0 var(--su-2) 0 var(--su-4);
+      justify-content: space-between;
+      height: 61px;
+      padding: 0 0.5rem 0 1rem;
+      1px solid var(--base-a10);
+  }
+      .menu-nav {
+        z-index: 100000;
+    }
+    }
   .css-ksc7ic:hover {
     background-color: --algocloud-menu-li-hover;
     color: rgba(255, 255, 255, 0.89);
@@ -70,14 +117,10 @@ a.algocloud-navbar-brand {
     text-overflow: ellipsis;
     cursor: pointer;
 }
-.menu-li a .icon, .menu-li.active a .icon, .menu-li:hover a, .menu-li:hover a .icon {
-    color: var(--li-hover)!important;
-    background-color: var(--algocloud-menu-li-hover);
-}
+
 
 .menu-nav {
   inset: 0% auto 0% 0%;
-  z-index: 10000;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -88,10 +131,7 @@ a.algocloud-navbar-brand {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
-  background-color: var(--algocloud-card-bg-color);
-  border-right-style: solid;
-  border-width: 1px;
-  border-color: var(--algocloud-menu-border-color) !important;
+  background-color: transparent;
 }
 
   .menu-logo {
@@ -127,10 +167,11 @@ a.algocloud-navbar-brand {
     zoom: 1;
     padding-left: 8px;
     padding-right: 8px;
+    padding: .5rem;
   }
 
   .menu-li.active i {
-    color: #687dfd;
+    color: var(--algocloud-primary);
   }
 
   a.algocloud-navbar-brand {
@@ -156,7 +197,7 @@ a.algocloud-navbar-brand {
     height: 40px;
     padding: 0 16px;
     color: var(--algocloud-body-color);
-    font-weight: 600;
+    font-weight: 400;
     border-radius: 6px;
     line-height: 40px;
     height: 40px;

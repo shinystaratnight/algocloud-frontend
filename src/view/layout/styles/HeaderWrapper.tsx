@@ -9,6 +9,12 @@ const HeaderWrapper = styled.div`
     }
   }
 
+  .sticky-top  {
+    height: 61px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    z-index: 100;
+}
+
   @media (max-width: 576px) {
     .i18n-select {
       display: none;
@@ -46,7 +52,7 @@ const HeaderWrapper = styled.div`
 
   .dropdown-menu.show {
     display: block;
-    margin-top: 5px;
+    margin-top: 1px;
 }
 
   .user-dropdown-avatar {

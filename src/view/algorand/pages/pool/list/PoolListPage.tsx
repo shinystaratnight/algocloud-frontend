@@ -30,7 +30,7 @@ const PoolListPage = () => {
       />
 
       <ContentWrapper className="card-hover">
-        <PageTitle>Pools</PageTitle>
+        <PageTitle className="table-header">Pools</PageTitle>
         <PoolListTable pools={pools} />
       </ContentWrapper>
     </>
