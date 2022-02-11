@@ -123,9 +123,9 @@ function Menu(props) {
             .filter((menu) =>
               match(menu.permissionRequired),
             )
-            .map((menu) => (
+            .map((menu, index) => (
               <li
-                key={menu.path}
+                key={menu.path + index}
                 className={`menu-li text-nowrap ${
                   selectedKeys().includes(menu.path)
                     ? 'active'
@@ -145,9 +145,9 @@ function Menu(props) {
             .filter((menu) =>
               lockedForCurrentPlan(menu.permissionRequired),
             )
-            .map((menu) => (
+            .map((menu, index) => (
               <li
-                key={menu.path}
+                key={menu.path + index}
                 className={`menu-li text-nowrap`}
                 style={{
                   cursor: 'auto',
