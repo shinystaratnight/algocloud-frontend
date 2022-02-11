@@ -309,7 +309,7 @@ button.btn-close.btn.menu-close {
 }
 
 .algocloud-fixed {
-    width: 200px;
+
     height: 100%;
     position: fixed;
     overflow: scroll;
@@ -412,7 +412,7 @@ button.btn-close.btn.menu-close {
     --algocloud-gray-white: #fff;
     --algocloud-primary-rgb: 99, 121, 253;
     --primary: #3b49df;
-    --algocloud-colored-link-primary-hover-color: #435cf2;
+    --algocloud-colored-link-primary-hover-color: #7b78ff;
     --algocloud-secondary-rgb: 116, 129, 148;
     --algocloud-success-rgb: 0, 210, 122;
     --algocloud-info-rgb: rgb(139 155 253);
@@ -923,7 +923,7 @@ h2.fs-l.fw-bold.flex-1.break-word.lh-tight {
     --algocloud-setting-toggle-shadow: 0 -7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
     --algocloud-scrollbar-bg: rgba(182, 193, 210, 0.55);
     --algocloud-nav-pills-algocloud-active-bg-color: #fff;
-    --algocloud-hover-bg-black: #000;
+    --algocloud-hover-bg-black: #fff;
     --algocloud-hover-bg-100: #f9fafd;
     --algocloud-hover-bg-200: #edf2f9;
     --algocloud-hover-bg-300: #d8dbef;
@@ -1441,7 +1441,7 @@ blockquote,figure {
 }
 
 a:hover {
-    color: #435cf2;
+    color: #7b78ff;
     text-decoration: underline
 }
 
@@ -4630,7 +4630,7 @@ textarea.form-control-lg {
 }
 
 .btn,[data-list] .page {
-    color: #5e6e82;
+        color: inherit;
     background-color: transparent
 }
 
@@ -4690,13 +4690,13 @@ textarea.form-control-lg {
 
 .btn-primary:hover,.navbar-vertical .btn-purchase:hover,.tox .tox-dialog__footer .tox-button:hover:last-child,.tox .tox-menu__footer .tox-button:hover:last-child {
     color: #fff;
-    background-color: #435cf2;
+    background-color: #7b78ff;
     border-color: #3b49df
 }
 
 .btn-check:focus+.btn-primary,.btn-primary:focus,.navbar-vertical .btn-check:focus+.btn-purchase,.navbar-vertical .btn-purchase:focus,.tox .tox-dialog__footer .btn-check:focus+.tox-button:last-child,.tox .tox-dialog__footer .tox-button:focus:last-child,.tox .tox-menu__footer .btn-check:focus+.tox-button:last-child,.tox .tox-menu__footer .tox-button:focus:last-child {
     color: #fff;
-    background-color: #435cf2;
+    background-color: #7b78ff;
     border-color: #3b49df;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075),0 0 0 0 rgba(76,143,233,.5);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075),0 0 0 0 rgba(76,143,233,.5)

@@ -28,15 +28,18 @@ function Header(props) {
   const [toggle, setToggle] = useState(false);
 
   const doToggleMenu = () => {
+    let element1 = document.getElementById("main") || { style: { margin: "" } }
     let element2 = document.getElementById("menu-nav") || { style: { position: "" } }
     let element3 = document.getElementById("body") || { style: { overflow: "" } }
     toggle ? setToggle(false) : setToggle(true)
     if  (window.innerWidth < 768)
     if (toggle) {
+      element1.style["margin"] = ""
       element2.style["position"] = "fixed"
       element3.style["overflow"] = "hidden"
     }
     else {
+      element1.style["margin"] = "unset"
       element2.style["position"] = "fixed"
       element3.style["overflow"] = "hidden"
     }
@@ -87,7 +90,7 @@ function Header(props) {
 
 
       <div className="last-child" style={{display: 'flex', alignItems: 'center'}}>
-        <DarkMode />
+        
         <span className="i18n-select">
           <I18nSelect />
         </span>
@@ -171,6 +174,7 @@ function Header(props) {
                   </button>
                 </a>
               )}
+              <DarkMode />
               <button
                 onClick={doSignout}
                 className="dropdown-item"
