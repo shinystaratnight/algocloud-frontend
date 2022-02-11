@@ -1,6 +1,7 @@
 import React from 'react';
 import { i18n } from 'src/i18n';
 import DashboardBarChart from 'src/view/dashboard/DashboardBarChart';
+import DashboardChart from 'src/view/dashboard/DashboardChart';
 import DashboardDoughnutChart from 'src/view/dashboard/DashboardDoughnutChart';
 import DashboardHorizontalBarChart from 'src/view/dashboard/DashboardHorizontalBarChart';
 import DashboardLineChart from 'src/view/dashboard/DashboardLineChart';
@@ -8,8 +9,35 @@ import DashboardMixChartOne from 'src/view/dashboard/DashboardMixChartOne';
 import DashboardMixChartTwo from 'src/view/dashboard/DashboardMixChartTwo';
 import DashboardPolarChart from 'src/view/dashboard/DashboardPolarChart';
 import DashboardRadarChart from 'src/view/dashboard/DashboardRadarChart';
+import defaultTokens from 'src/view/dashboard/DefaultTokens';
 
 const DashboardPage = (props) => {
+  const MAP: Record<string, string> = {
+    medication_id: 'prescription_id',
+    display_name: 'drug_name',
+    directions: 'instructions',
+    notes: 'instructions',
+    quantity: 'dispense',
+  };
+  const x = (medication) =>
+    Object.keys(medication).reduce(
+      (y, z) => ({
+        ...y,
+        [MAP[z] != null ? MAP[z] : z]: medication[z],
+      }),
+      {},
+    );
+  const medication = {
+    medication_id: 12345,
+    display_name: 'Lipitor',
+    strength: '20 mg',
+    route: 'by mouth',
+    directions: 'Take 1 tablet daily',
+    quantity: 30,
+  };
+  const result = x(medication);
+  console.log(result);
+  
   return (
     <>
       <div
@@ -27,7 +55,7 @@ const DashboardPage = (props) => {
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
             <div className=" card bg-box p-2 rounded">
-              <DashboardDoughnutChart />
+              <DashboardChart asset={defaultTokens[0]} />
             </div>
           </div>
           <div
@@ -39,7 +67,7 @@ const DashboardPage = (props) => {
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
             <div className="card bg-box p-2 rounded">
-              <DashboardMixChartTwo />
+              <DashboardChart asset={defaultTokens[1]} />
             </div>
           </div>
           <div
@@ -51,7 +79,7 @@ const DashboardPage = (props) => {
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
             <div className="card bg-box p-2 rounded">
-              <DashboardBarChart />
+              <DashboardChart asset={defaultTokens[2]} />
             </div>
           </div>
 
@@ -64,7 +92,7 @@ const DashboardPage = (props) => {
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
           >
             <div className="card bg-box p-2 rounded">
-              <DashboardMixChartOne />
+              <DashboardChart asset={defaultTokens[3]} />
             </div>
           </div>
 
@@ -77,7 +105,7 @@ const DashboardPage = (props) => {
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
           >
             <div className="card bg-box p-2 rounded">
-              <DashboardPolarChart />
+              <DashboardChart asset={defaultTokens[4]} />
             </div>
           </div>
 
@@ -90,7 +118,7 @@ const DashboardPage = (props) => {
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
             <div className=" card bg-box p-2 rounded">
-              <DashboardHorizontalBarChart />
+              <DashboardChart asset={defaultTokens[5]} />
             </div>
           </div>
           <div
@@ -102,7 +130,7 @@ const DashboardPage = (props) => {
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
             <div className="card bg-box p-2 rounded">
-              <DashboardLineChart />
+              <DashboardChart asset={defaultTokens[6]} />
             </div>
           </div>
           <div
@@ -114,7 +142,7 @@ const DashboardPage = (props) => {
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
             <div className=" card bg-box p-2 rounded">
-              <DashboardRadarChart />
+              <DashboardChart asset={defaultTokens[7]} />
             </div>
           </div>
         </div>

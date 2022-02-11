@@ -125,7 +125,15 @@ function AssetTable(props) {
                 <td>{formatNumber(asset.liquidity)}</td>
                 <td>{formatNumber(asset.lastDayVolume)}</td>
                 <td>{formatNumber(asset.price)}</td>
-                <td>{formatPercent(asset.lastDayPriceChange)}</td>
+                <td>
+                  <span className={(parseFloat(formatPercent(asset.lastDayPriceChange)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset.lastDayPriceChange)}
+                    {asset.lastDayPriceChange ? (parseFloat(formatPercent(asset.lastDayPriceChange)) < 0) ? <span>{'  '}<i
+                      className={`fas fa-arrow-down`}
+                    ></i></span> : <span>{'  '}<i
+                      className={`fas fa-arrow-up`}
+                    ></i></span> : ''}
+                  </span>
+                </td>
                 <td>
                   {togglePermission && (
                     <button
@@ -134,7 +142,7 @@ function AssetTable(props) {
                         setToogleId(asset.assetId)
                       }
                     >
-                      <b>{favoriteIds.includes(asset.assetId) ? <div><svg className="svg-inline--fa fa-minus fa-w-14 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>Unfavorite</div>  : <div><svg className="svg-inline--fa fa-plus fa-w-14 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>Favorite</div> }</b>
+                      <b>{favoriteIds.includes(asset.assetId) ? <div><svg className="svg-inline--fa fa-minus fa-w-14 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>Unfavorite</div> : <div><svg className="svg-inline--fa fa-plus fa-w-14 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>Favorite</div>}</b>
                     </button>
                   )}
                 </td>

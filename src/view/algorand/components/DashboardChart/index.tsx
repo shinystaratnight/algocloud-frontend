@@ -33,11 +33,10 @@ import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
 import selectors from 'src/modules/algorand/asset/show/assetShowSelectors';
 import { useSelector } from 'react-redux';
 
-const AssetChart = (props) => {
+const DashboardAssetChart = (props) => {
   const {
     color,
-    __,
-    _,
+    data
   } = props;
 
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
@@ -65,8 +64,10 @@ const AssetChart = (props) => {
     return () => window.removeEventListener('resize', handleResize);
   }, [isClient, width]);
 
-  const priceData = useSelector(frame === ASSET_CHART_VIEW_FRAME.DAILY ? selectors.selectDailyPrices : selectors.selectHourlyPrices);
-  const assetData = useSelector(frame === ASSET_CHART_VIEW_FRAME.DAILY ? selectors.selectDailyAssetData : selectors.selectHourlyAssetData);
+  let priceData = [];
+  let assetData = [];
+  priceData = frame === ASSET_CHART_VIEW_FRAME.DAILY ? data?.dailyPrices : data?.hourlyPrices;
+  assetData = frame === ASSET_CHART_VIEW_FRAME.DAILY ? data?.dailyAssetData : data?.hourlyAssetData;
 
   const handleChangeDuration = (d: string) => {
     setDuration(d);
@@ -238,4 +239,4 @@ const AssetChart = (props) => {
   );
 }
 
-export default AssetChart;
+export default DashboardAssetChart;

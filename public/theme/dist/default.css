@@ -29026,3 +29026,10 @@ button.btn-circle:focus,button.btn-circle:hover {
     position: fixed;
     right: 1rem;
 }
+
+.dashboard-chard-card {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
