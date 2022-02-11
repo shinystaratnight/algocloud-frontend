@@ -36,7 +36,7 @@ export default function DashboardChart(props) {
 
   return (
     <>
-      <h4 style={{ marginBottom: -10 }}>{asset.unitName}</h4>
+      <h4>{asset.unitName}</h4>
       <div className='dashboard-chard-card'>
         {
           loading && (
@@ -48,6 +48,7 @@ export default function DashboardChart(props) {
           <DashboardAssetChart
             color='#687dfd'
             data={assetData}
+            title={asset.unitName}
           />
         }
         {

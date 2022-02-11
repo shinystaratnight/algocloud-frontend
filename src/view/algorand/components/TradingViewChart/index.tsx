@@ -55,8 +55,8 @@ const TradingViewChart = ({
 
   useEffect(() => {
     if (data !== dataPrev && chartCreated) {
-      let tooltip = document.getElementById('tooltip-id' + type);
-      let node = document.getElementById('tradchart-id' + type);
+      let tooltip = document.getElementById('tooltip-id' + type + '-' + title);
+      let node = document.getElementById('tradchart-id' + type + '-' + title);
       if (node && tooltip) {
         node.removeChild(tooltip);
       }
@@ -67,8 +67,8 @@ const TradingViewChart = ({
 
   useEffect(() => {
     if (duration !== durationPrev && chartCreated) {
-      let tooltip = document.getElementById('tooltip-id' + type);
-      let node = document.getElementById('tradchart-id' + type);
+      let tooltip = document.getElementById('tooltip-id' + type + '-' + title);
+      let node = document.getElementById('tradchart-id' + type + '-' + title);
       if (node && tooltip) {
         node.removeChild(tooltip);
       }
@@ -157,7 +157,7 @@ const TradingViewChart = ({
 
       series.setData(formattedData);
       var toolTip = document.createElement('div');
-      toolTip.setAttribute('id', 'tooltip-id' + type);
+      toolTip.setAttribute('id', 'tooltip-id' + type + '-' + title);
       toolTip.className = 'three-line-legend';
       if (ref.current)
         ref.current.appendChild(toolTip);
@@ -266,7 +266,7 @@ const TradingViewChart = ({
 
   return (
     <GraphWrapper>
-      <div ref={ref} className="var-color" id={'tradchart-id' + type} />
+      <div ref={ref} className="var-color" id={'tradchart-id' + type + '-' + title} />
       {
         (formattedData && formattedData.length > 0) ? (
           ''

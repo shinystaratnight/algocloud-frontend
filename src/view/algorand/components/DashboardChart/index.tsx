@@ -36,7 +36,8 @@ import { useSelector } from 'react-redux';
 const DashboardAssetChart = (props) => {
   const {
     color,
-    data
+    data,
+    title=''
   } = props;
 
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
@@ -137,6 +138,7 @@ const DashboardAssetChart = (props) => {
             paddingTop='0'
             valueFormatter={(val) => val?.toFixed(4)}
             duration={duration}
+            title={title}
           />
         </ResponsiveContainer>
       )}
@@ -153,6 +155,7 @@ const DashboardAssetChart = (props) => {
             useWeekly={false}
             utc={true}
             duration={duration}
+            title={title}
           />
         </ResponsiveContainer>
       )}
@@ -168,6 +171,7 @@ const DashboardAssetChart = (props) => {
             useWeekly={false}
             utc={true}
             duration={duration}
+            title={title}
           />
         </ResponsiveContainer>
       )}
@@ -183,6 +187,7 @@ const DashboardAssetChart = (props) => {
             useWeekly={false}
             utc={true}
             duration={duration}
+            title={title}
           />
         </ResponsiveContainer>
       )}
