@@ -16,15 +16,16 @@ function Menu(props) {
   const [toggle, setToggle] = useState(false);
 
   const doToggleMenu = () => {
-    let element1 = document.getElementById("body") || { style: { overflow: "" } }
+    let element1 = document.getElementById("body") || { style: { position: "" } }
     let element2 = document.getElementById("menu-nav") || { style: { position: "" } }
     toggle ? setToggle(false) : setToggle(true)
-    if (toggle) {
-      element1.style["overflow"] = "scroll"
+    if (toggle)
+    if  (window.innerWidth < 575) {
+      element1.style["position"] = "relative"
       element2.style["position"] = "inherit"
     }
     else {
-      element1.style["overflow"] = ""
+      element1.style["position"] = ""
       element2.style["position"] = "inherit"
     }
     dispatch(layoutActions.doToggleMenu());
@@ -46,25 +47,6 @@ function Menu(props) {
     currentTenant,
     currentUser,
   );
-
-  useLayoutEffect(() => {
-    const toggleMenuOnResize = () => {
-      window.innerWidth < 576
-        ? dispatch(actions.doHideMenu())
-        : dispatch(actions.doShowMenu());
-    };
-
-    toggleMenuOnResize();
-
-    window.addEventListener('resize', toggleMenuOnResize);
-
-    return () => {
-      window.removeEventListener(
-        'resize',
-        toggleMenuOnResize,
-      );
-    };
-  }, [dispatch]);
 
   const selectedKeys = () => {
     const url = props.url;
@@ -104,8 +86,8 @@ function Menu(props) {
         
       }}
     >
-      <div id="menu-nav" className="menu-nav">
-      
+      <div id="menu-nav" className="menu-nav"
+   >
         <div className="algocloud-fixed">
         <header className="hamburger__content__header">
       <h2 className="fs-l fw-bold flex-1 break-word lh-tight">algocloud</h2>

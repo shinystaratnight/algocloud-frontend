@@ -13,8 +13,11 @@ const MenuWrapper = styled.div`
 
   @media (min-width: 576px){
     .menu-nav {
-      position: relative;
+      position: relative !important;
     
+    }
+    .body{
+      position:relative !important;
     }
     .hamburger__content__header {
       display: none;
@@ -29,6 +32,7 @@ const MenuWrapper = styled.div`
         min-width: 100%;
         width: 100%;
         height: 100%;
+        display: none;
         position: absolute;
         background-color: rgb(10 10 10 / 50%) !important;
         z-index: 10000000 !important;
@@ -121,10 +125,6 @@ a.algocloud-navbar-brand {
 
 .menu-nav {
   inset: 0% auto 0% 0%;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
   overflow: auto;
   width: 200px;
   height: 100%;
