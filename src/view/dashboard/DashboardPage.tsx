@@ -11,33 +11,7 @@ import DashboardPolarChart from 'src/view/dashboard/DashboardPolarChart';
 import DashboardRadarChart from 'src/view/dashboard/DashboardRadarChart';
 import defaultTokens from 'src/view/dashboard/DefaultTokens';
 
-const DashboardPage = (props) => {
-  const MAP: Record<string, string> = {
-    medication_id: 'prescription_id',
-    display_name: 'drug_name',
-    directions: 'instructions',
-    notes: 'instructions',
-    quantity: 'dispense',
-  };
-  const x = (medication) =>
-    Object.keys(medication).reduce(
-      (y, z) => ({
-        ...y,
-        [MAP[z] != null ? MAP[z] : z]: medication[z],
-      }),
-      {},
-    );
-  const medication = {
-    medication_id: 12345,
-    display_name: 'Lipitor',
-    strength: '20 mg',
-    route: 'by mouth',
-    directions: 'Take 1 tablet daily',
-    quantity: 30,
-  };
-  const result = x(medication);
-  console.log(result);
-  
+const DashboardPage = (props) => {  
   return (
     <>
       <div
