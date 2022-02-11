@@ -35,10 +35,10 @@ export default class AlgorandService {
     const from = to - 31536000;
     const algoPriceUrl = `https://price.algoexplorerapi.io/price/algo-usd/history?since=${from}&until=${to}&interval=1D`;
     const { data: { history } } = await axios.get(algoPriceUrl);
-    
+
     const marketCapUrl = `https://indexer.algoexplorerapi.io/stats/v2/economics?interval=1W`;
     const { data: { data } } = await axios.get(marketCapUrl);
-    
+
     return {
       'algoPriceData': history,
       'marketCapData': data,
@@ -131,14 +131,17 @@ export default class AlgorandService {
 
     const tenantId = AuthCurrentTenant.get();
 
-    const response = await authAxios.get(
-      `/tenant/${tenantId}/algorand/asset/${assetId}`,
-      {
-        params,
-      }
-    );
-
-    return response.data;
+    try {
+      const response = await authAxios.get(
+        `/tenant/${tenantId}/algorand/asset/${assetId}`,
+        {
+          params,
+        }
+      );
+      return response.data;
+    } catch (err) {
+      return { error: true }
+    }
   }
 
   static async getAlgorandPool(address) {

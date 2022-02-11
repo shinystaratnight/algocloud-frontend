@@ -19,6 +19,7 @@ const CandleStickChart = ({
   data,
   width,
   base,
+  title = null,
   height = 300,
   fixed = false,
   paddingTop = '',
@@ -53,8 +54,8 @@ const CandleStickChart = ({
   useEffect(() => {
     if (data !== dataPrev && chartCreated) {
       // remove the tooltip element
-      let tooltip = document.getElementById('tooltip-id');
-      let node = document.getElementById('candlechart-id');
+      let tooltip = document.getElementById('tooltip-id-' + title);
+      let node = document.getElementById('candlechart-id-' + title);
       if (node && tooltip)
         node.removeChild(tooltip);
       chartCreated.resize(0, 0);
@@ -65,8 +66,8 @@ const CandleStickChart = ({
   useEffect(() => {
     if (duration !== durationPrev && chartCreated) {
       // remove the tooltip element
-      let tooltip = document.getElementById('tooltip-id');
-      let node = document.getElementById('candlechart-id');
+      let tooltip = document.getElementById('tooltip-id-' + title);
+      let node = document.getElementById('candlechart-id-' + title);
       if (node && tooltip)
         node.removeChild(tooltip);
       chartCreated.resize(0, 0);
@@ -123,7 +124,7 @@ const CandleStickChart = ({
       candleSeries.setData(formattedData);
 
       var toolTip = document.createElement('div');
-      toolTip.setAttribute('id', 'tooltip-id');
+      toolTip.setAttribute('id', 'tooltip-id-' + title);
       toolTip.className = 'three-line-legend';
       ref.current.appendChild(toolTip);
       toolTip.style.display = 'block';
@@ -207,7 +208,7 @@ const CandleStickChart = ({
 
   return (
     <GraphWrapper pt={paddingTop}>
-      <div ref={ref} id="candlechart-id" />
+      <div ref={ref} id={'candlechart-id-' + title} />
       {
         (formattedData && formattedData.length > 0) ? (
           ''

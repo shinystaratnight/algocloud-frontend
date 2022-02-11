@@ -29175,6 +29175,14 @@ button.btn-circle:focus,button.btn-circle:hover {
 ::-webkit-scrollbar {
     width: 0px;
     height: 12px;
+    background-color: #fff;
+}
+
+.dashboard-chard-card {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #ffffff;
 }
 
