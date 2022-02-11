@@ -12,26 +12,33 @@ import config from 'src/config';
 import { Link } from 'react-router-dom';
 import DarkMode from 'src/view/algorand/components/DarkMode/DarkMode';
 
+function checkMediaQuery() {
+  // If the inner width of the window is greater then 768px
+  if (window.innerWidth < 768) {
+    // Then log this message to the console
+    console.log('Media Query Matched!')
+  }
+}
 
+// Add a listener for when the window resizes
+window.addEventListener('resize', checkMediaQuery);
 
 function Header(props) {
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
 
   const doToggleMenu = () => {
-    let element = document.getElementById("main") || { style: { margin: "" } }
-    let element2 = document.getElementById("stickyTop") || { style: { padding: "" } }
-    let element3 = document.getElementById("stickyLogo") || { style: { display: "" } }
+    let element2 = document.getElementById("menu-nav") || { style: { position: "" } }
+    let element3 = document.getElementById("body") || { style: { overflow: "" } }
     toggle ? setToggle(false) : setToggle(true)
+    if  (window.innerWidth < 768)
     if (toggle) {
-      element.style["margin-left"] = ""
-      element2.style["padding-left"] = ""
-      element3.style["display"] = "none"
+      element2.style["position"] = "fixed"
+      element3.style["overflow"] = "hidden"
     }
     else {
-      element.style["margin-left"] = "unset"
-      element2.style["padding-left"] = ""
-      element3.style["display"] = "flex"
+      element2.style["position"] = "fixed"
+      element3.style["overflow"] = "hidden"
     }
     dispatch(layoutActions.doToggleMenu());
   };

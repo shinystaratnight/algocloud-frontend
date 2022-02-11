@@ -24,9 +24,11 @@ const MenuWrapper = styled.div`
     @media (max-width: 575px){
       .menu-nav {
         min-width: 100%;
+        width: 100%;
+        height: 100%;
         position: absolute;
         background-color: rgb(10 10 10 / 50%) !important;
-        z-index: 10000 !important;
+        z-index: 10000000 !important;
         margin-top: 0px !important;
       }
       .algocloud-fixed {
@@ -43,9 +45,10 @@ const MenuWrapper = styled.div`
     .algocloud-fixed {
       background: var(--card-bg);
       max-width: 300px;
-      z-index: var(--z-elevate);
+      z-index: 1000000 !important;
       position: relative;
       height: 100%;
+      overflow: scroll;
       overflow-y: auto;
   }
 
