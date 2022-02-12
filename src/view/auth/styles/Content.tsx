@@ -11,15 +11,13 @@ const Content = styled.div`
   flex-direction: column;
   padding: 56px 40px;
   position: relative;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: 'var(--algocloud-body-bg-2)';
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    color: var(--algocloud-body-bg-2);
+    color: var(--base-100);
   }
 
   h4 {

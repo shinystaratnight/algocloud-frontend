@@ -20,7 +20,6 @@ import config from 'src/config';
 import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import Message from 'src/view/shared/message';
-import BackgroundVideo from 'src/components/BackgroundVideo/BackgroundVideo';
 import 'src/app.css';
 
 const schema = yup.object().shape({
@@ -97,14 +96,17 @@ function SigninPage() {
   };
 
   return (
-    <Wrapper className="screenshot" >      
-      <BackgroundVideo
-        blur={0}
-        videoSource={videoSource} >
-      </BackgroundVideo>
-      <Content className="screenshot-2">
-             <Logo>
-             <a className="algocloud-navbar-brand-landing" href="."><div className="algocloud-font-landing"><strong>Algo</strong>Cloud</div><svg xmlns="http://www.w3.org/2000/svg" width="28" height="22" fill="currentColor" viewBox="-2 3 18 12" className="algocloud-logo-landing"><path d="M8.5 4a4.002 4.002 0 0 0-3.8 2.745.5.5 0 1 1-.949-.313 5.002 5.002 0 0 1 9.654.595A3 3 0 0 1 13 13H.5a.5.5 0 0 1 0-1H13a2 2 0 0 0 .001-4h-.026a.5.5 0 0 1-.5-.445A4 4 0 0 0 8.5 4zM0 8.5A.5.5 0 0 1 .5 8h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm0 2a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5z"></path></svg></a>
+    <Wrapper className="main signin">
+            <div className="center-container-2" ><a href="/" className="logo nuxt-link-active" ><img src="/_nuxt/img/logo-purple.cb95760.svg" alt="" data-v-80e842dc=""/></a> <div className="login" data-v-9f658a16="" data-v-80e842dc=""><span className="subtitle" >AlgoCloud Dashboard</span> <h1 className="title">Sign in to your Cloud Account</h1> <div className="container-2" ><p >
+            A comprehensive Analytics and DeFi POS platform on the Algorand blockchain. Customizable, extendable, and 100% powered by the $HDL token.
+			<a href="https://twitter.com/headline_crypto"> Learn More</a></p>  <p className="note" >
+			Don't have an account?
+			<a href="/auth/signup"  className=""> Register for Free</a>. Must hold min. 500 HDL tokens to access AlgoCloud.</p></div></div></div>
+      <Content className="">
+            <div className="card">
+            <div className="card-header bg-circle-shape bg-shape text-center p-2">
+            <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}>
+             <a className="font-sans-serif fw-bolder fs-4 z-index-1 position-relative link-light light" href="."></a>
           {logoUrl ? (
             <img
               src={logoUrl}
@@ -112,101 +114,118 @@ function SigninPage() {
               alt={i18n('app.title')}
             />
           ) : (
-            <h1></h1>
+            <h1 className="algocloud-brand-login">algocloud</h1>
           )}
         </Logo>
-        <FormProvider {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)}>
-            <InputFormItem
+            </div>
+            <div className="card-body p-4">
+              <div className="row flex-between-center">
+                <div className="col-auto">
+                  <h3>Login</h3>
+                </div>
+                <div className="col-auto fs--1 text-600"><span className="mb-0 fw-semi-bold">New User?</span> <span className="col-auto fs--1 text-600">            <OtherActions>
+              <Link
+                
+                to="/auth/signup"
+              >
+                {i18n('auth.createAnAccount')}
+              </Link>
+            </OtherActions></span></div>
+              </div>
+              <FormProvider {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)}>
+                <div className="mb-3"><label className="form-label">Email address</label>            
+                <InputFormItem 
               name="email"
               placeholder={i18n('user.fields.email')}
               autoComplete="email"
               autoFocus
               externalErrorMessage={externalErrorMessage}
-            />
-            <InputFormItem
+            /></div>
+                <div className="mb-3">
+                  <div className="d-flex justify-content-between"><label className="form-label" >Password</label></div>            <InputFormItem
               name="password"
               placeholder={i18n('user.fields.password')}
               autoComplete="password"
               type="password"
             />
+                </div>
+                <div className="row flex-between-center">
+                  <div className="col-auto">
+                    <div className="form-check mb-0">                
+                    <input
+                  className=""
 
-            <div className="d-flex form-group">
-              <div className="screenshot-checkbox-box col-6">
-                <input
-                  className="screenshot-checkbox"
                   type="checkbox"
                   id={'rememberMe'}
                   name={'rememberMe'}
                   ref={form.register}
-                />
-
-                <label
-                  className="screenshot-checkbox-label"
-                  htmlFor={'rememberMe'}
-                >
-                  {i18n('user.fields.rememberMe')}
-                </label>
-              </div>
-
-              <div className="col-6 pr-0">
-                <Link
-                  className="btn btn-sm btn-link"
-                  style={{ float: 'right' }}
+                />                <label
+                className="form-check-label mb-0"
+                htmlFor={'rememberMe'}
+                style={{ paddingLeft: '0px !important' }}
+              >
+                {i18n('user.fields.rememberMe')}
+              </label></div>
+                  </div>
+                  <div className="col-auto">               
+                  <Link
+                  className="fs--1"
+                  style={{ paddingLeft: '0px' }}
                   to="/auth/forgot-password"
                 >
                   {i18n('auth.forgotPassword')}
-                </Link>
-              </div>
-            </div>
-
-            <button
-              className="screenshot-btn btn btn-primary btn-block"
+                </Link></div>
+                </div>
+                <div className="mb-3">            <button
+              className="btn btn-primary d-block w-100 mt-3"
               type="submit"
               disabled={loading}
             >
               <ButtonIcon loading={loading} />{' '}
               {i18n('auth.signin')}
-            </button>
-
-            <SocialButtons>
-              <a
+            </button></div>
+              </form>
+              <div className="position-relative mt-4">
+                <hr className="bg-300"/>
+                <div className="divider-content-center">or log in with</div>
+              </div>
+          <form >
+        <SocialButtons className="row g-2 mt-2">
+        <div className="row g-2 mt-2">
+        <div className="col-sm-6">
+              <a className="btn btn-outline-facebook btn-sm d-block w-100"
                 href={`${config.backendUrl}/auth/social/facebook`}
               >
-                <i
-                  className="fab fa-facebook"
-                  style={{
-                    color: '#3B5998',
-                  }}
-                />
+<svg className="svg-inline--fa fa-facebook-square fa-w-14 me-2" data-fa-transform="grow-8" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" ><g transform="translate(224 256)"><g transform="translate(0, 0)  scale(1.5, 1.5)  rotate(0 0 0)"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" transform="translate(-224 -256)"></path></g></g></svg>
+facebook
               </a>
-
-              <a
+              </div>
+              <div className="col-sm-6">
+              <a className="btn btn-outline-google-plus btn-sm d-block w-100"
                 href={`${config.backendUrl}/auth/social/google`}
               >
-                <i
-                  className="fab fa-google"
-                  style={{
-                    color: '#DB4437',
-                  }}
-                />
+<svg className="svg-inline--fa fa-google-plus-g fa-w-20 me-2" data-fa-transform="grow-8" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google-plus-g" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><g transform="translate(320 256)"><g transform="translate(0, 0)  scale(1.5, 1.5)  rotate(0 0 0)"><path fill="currentColor" d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z" transform="translate(-320 -256)"></path></g></g></svg>
+google
               </a>
+              </div>
+              </div>
             </SocialButtons>
 
-            <OtherActions>
-              <Link
-                className="btn btn-sm btn-link"
-                to="/auth/signup"
-              >
-                {i18n('auth.createAnAccount')}
-              </Link>
-            </OtherActions>
+
 
           </form>
-          <div className="built-by">
-            <div className="built-by-flags"><I18nFlags className="built-by-flags"/></div>
-  <h2>Built by HEADLINE</h2><p className="copyright">© 2021 HEADLINE INC. All rights reserved.</p></div>
+            <div className=""><I18nFlags className="built-by-flags"/></div>
+          
         </FormProvider>
+              
+
+            </div>
+        </div>
+        <div className="">
+        <div className="">
+        </div>
+      </div>
       </Content>
     </Wrapper>
     

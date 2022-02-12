@@ -25,7 +25,7 @@ function InactiveUserPage() {
       style={{
         backgroundImage: `url(${
           backgroundImageUrl ||
-          '/images/inactiveUser.jpg'
+          '/images/signin-3.svg'
         })`,
       }}
     >

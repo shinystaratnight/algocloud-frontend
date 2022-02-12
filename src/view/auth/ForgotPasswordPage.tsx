@@ -53,7 +53,7 @@ function ForgotPasswordPage() {
     <Wrapper
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/forgotPassword.jpg'
+          backgroundImageUrl || '/images/signin-3.svg'
         })`,
       }}
     >
