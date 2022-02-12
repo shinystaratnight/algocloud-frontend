@@ -618,9 +618,9 @@ button.btn.btn-link.no-padding {
     --algocloud-btn-algocloud-default-hover-color: #404a57;
     --algocloud-btn-algocloud-default-active-background: #e6e6e6;
     --algocloud-btn-algocloud-default-active-border: #404a57;
-    --algocloud-btn-algocloud-primary-hover-color: #2566be;
+    --algocloud-btn-algocloud-primary-hover-color: #4150f5;
     --algocloud-btn-algocloud-primary-active-background: #d5e5fa;
-    --algocloud-btn-algocloud-primary-active-color: #2566be;
+    --algocloud-btn-algocloud-primary-active-color: #4150f5;
     --algocloud-alert-primary-background: #d5e5fa;
     --algocloud-alert-primary-border-color: #c0d7f7;
     --algocloud-alert-primary-color: #1a4a89;
@@ -646,7 +646,7 @@ button.btn.btn-link.no-padding {
     --algocloud-alert-success-background: #ccf6e4;
     --algocloud-alert-success-border-color: #b3f2d7;
     --algocloud-alert-success-color: #007e49;
-    --algocloud-alert-success-link-color: #00a862;
+    --algocloud-alert-success-link-color: #1ab3a6;
     --algocloud-list-group-item-success-background: #ccf6e4;
     --algocloud-list-group-item-success-color: #007e49;
     --algocloud-badge-soft-success-background-color: #ccf6e4;
@@ -661,17 +661,17 @@ button.btn.btn-link.no-padding {
     --algocloud-list-group-item-info-background: rgb(38 217 202 / 10%);
     --algocloud-list-group-item-info-color: #177198;
     --algocloud-badge-soft-info-background-color: rgb(38 217 202 / 10%);
-    --algocloud-badge-soft-info-color: #1978a2;
+    --algocloud-badge-soft-info-color: #26d9ca;
     --algocloud-btn-algocloud-warning-hover-color: #cb6a33;
-    --algocloud-btn-algocloud-warning-active-background: #fde6d8;
+    --algocloud-btn-algocloud-warning-active-background: rgb(220 24 24 / 10%);
     --algocloud-btn-algocloud-warning-active-color: #cb6a33;
-    --algocloud-alert-warning-background: #fde6d8;
+    --algocloud-alert-warning-background: rgb(220 24 24 / 10%);
     --algocloud-alert-warning-border-color: #fcd9c5;
     --algocloud-alert-warning-color: #934d25;
     --algocloud-alert-warning-link-color: #c46632;
-    --algocloud-list-group-item-warning-background: #fde6d8;
+    --algocloud-list-group-item-warning-background: rgb(220 24 24 / 10%);
     --algocloud-list-group-item-warning-color: #934d25;
-    --algocloud-badge-soft-warning-background-color: #fde6d8;
+    --algocloud-badge-soft-warning-background-color: rgb(220 24 24 / 10%);
     --algocloud-badge-soft-warning-color: #9d5228;
     --algocloud-btn-algocloud-danger-hover-color: #bf2e48;
     --algocloud-btn-algocloud-danger-active-background: #fad7dd;
@@ -883,7 +883,7 @@ button.btn.btn-link.no-padding {
     --algocloud-table-info-active-bg: #c7e3f0;
     --algocloud-table-info-active-color: #4d5969;
     --algocloud-table-info-border-color: #c7e3f0;
-    --algocloud-table-warning-bg: #fde6d8;
+    --algocloud-table-warning-bg: rgb(220 24 24 / 10%);
     --algocloud-table-warning-color: #4d5969;
     --algocloud-table-warning-hover-bg: #f0dbd0;
     --algocloud-table-warning-hover-color: #4d5969;
@@ -5034,21 +5034,21 @@ textarea.form-control-lg {
 
 .btn-success:hover {
     color: #fff;
-    background-color: #00b368;
-    border-color: #00a862
+    background-color: #1ab3a6;
+    border-color: #1ab3a6
 }
 
 .btn-check:focus+.btn-success,.btn-success:focus {
     color: #fff;
-    background-color: #00b368;
-    border-color: #00a862;
+    background-color: #1ab3a6;
+    border-color: #1ab3a6;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075),0 0 0 0 rgba(38,217,142,.5);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075),0 0 0 0 rgba(38,217,142,.5)
 }
 
 .btn-check:active+.btn-success,.btn-check:checked+.btn-success,.btn-success.active,.btn-success:active,.show>.btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #00a862;
+    background-color: #1ab3a6;
     border-color: #009e5c
 }
 
