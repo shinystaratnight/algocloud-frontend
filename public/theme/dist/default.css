@@ -29668,3 +29668,41 @@ button.btn-circle:focus,button.btn-circle:hover {
 .btn-algocloud-default,[data-list] .page {
     color: #7b78ff
 }
+
+.showcase-row {
+    width: 100%;
+    display: flex;
+    flex-direction: column !important;
+    gap: 20px;
+}
+
+.showcase-row-2 {
+    width: 100%;
+}
+
+.showcase-row {
+    margin-top: 20px !important;
+}
+
+@media(max-width: 767px){
+    .showcase-row-1 {
+        width: 100%;
+        display: flex;
+        gap: 0px;
+        flex-direction: column;
+    }
+}
+
+.showcase-row-1 {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+}
+
+.card-hover {
+    padding: 1.25rem!important;
+    padding-left: 0!important;
+    padding-right: 4px!important;
+    padding-bottom: 12px!important;
+    text-indent: 1.25rem
+}

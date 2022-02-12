@@ -44,9 +44,10 @@ const AssetChart = (props) => {
   const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.DAILY);
   const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.WEEK)
 
+  const below2000 = useMedia('(max-width: 2000px)');
   const below1080 = useMedia('(max-width: 1080px)');
   const below600 = useMedia('(max-width: 600px)');
-  const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22;
+  const aspect = below2000 ? 60 / 32 : below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22;
 
   // const textColor = 'var(--algocloud-body-bg-2)';
   const ref = useRef<HTMLElement>();
