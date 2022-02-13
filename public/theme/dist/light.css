@@ -47510,10 +47510,19 @@ button.btn.btn-light:hover {
     opacity: 1
 }
 
-div#navbarDropdownMenu {
-    padding: 0;
-    margin: 0!important;
-    border-radius: .45rem
+button.app-dropdown.user-dropdown {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.3125rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .dropdown,.dropend,.dropstart,.dropup {
@@ -47533,13 +47542,6 @@ div#navbarDropdownMenu {
     padding-left: .5rem
 }
 
-.nine-dots {
-    width: 1.5rem;
-    height: 1.5rem;
-    display: block;
-    position: relative
-}
-
 span.i18n-select {
     margin-right: .8rem
 }
@@ -47548,10 +47550,17 @@ span.i18n-select {
     padding: 0.5rem 1rem;
 }
 
-div#navbarDropdownMenu:hover {
-    background-color: rgb(59 73 223/10%);
-    color: #323ebe;
-    border: 0
+button.app-dropdown.user-dropdown:hover {
+    background-color: rgb(59 73 223/10%) !important;
+    color: #323ebe !important;
+    border: 0;
+    border-radius: .375rem;
+}
+
+button.app-dropdown.user-dropdown {
+    background-color: #ffffff00;
+    color: var(--algo-body) !important;
+    border: 0;
 }
 
 .user-dropdown {
@@ -47561,31 +47570,9 @@ div#navbarDropdownMenu:hover {
     min-height: 1.5rem;
 }
 
-div#navbarDropdownMenu {
-    padding: 0;
-    margin: 0!important;
-    border-radius: 0.45rem;
-    width: 2rem;
-    padding: 4px !important;
-    height: 2rem;
-}
-
 .user-dropdown {
     padding: 0.45rem;
     margin: 0px !important;
-}
-
-.nine-dots::before {
-    content: ".........";
-    width: 1.5rem;
-    font-size: 1.75rem;
-    position: absolute;
-    word-break: break-word;
-    line-height: .4375rem;
-    top: -2px;
-    -webkit-transform: scale(.9);
-    -ms-transform: scale(.9);
-    transform: scale(.9)
 }
 
 .nav-link {
@@ -47637,4 +47624,26 @@ div#navbarDropdownMenu {
 
 .dropdown-menu.dropdown-menu-right.show,div#app-dropdown {
     box-shadow: 0 0 0 1px var(--card-border);
+}
+
+a.d-block.hover-bg-200.px-2.py-3.rounded-3.text-center.text-decoration-none {
+    color: var(--algocloud-body-color);
+}
+
+.hover-bg-200:hover {
+    background-color: var(--algocloud-200);
+    color: #7b78ff !important;
+}
+
+.dropdown-item{
+    cursor:pointer
+}
+
+.dropdown-item:hover{
+    text-decoration: underline;
+}
+
+.m-25 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
 }

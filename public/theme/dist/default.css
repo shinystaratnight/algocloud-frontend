@@ -250,7 +250,7 @@ h1.algocloud-brand-login {
 .navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
     border-radius: .375rem;
     color: #9896ff!important;
-    background-color: rgba(123,120,255,.1)!important;
+    background: var(--algocloud-menu-li-hover)!important;
     z-index: 1
 }
 
@@ -26683,7 +26683,8 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .hover-bg-200:hover {
-    background-color: var(--algocloud-200)
+    background-color: var(--algocloud-menu-li-hover)!important;
+    color: var(--accent-brand-lighter)!important;
 }
 
 .hover-bg-300:hover {
@@ -29892,10 +29893,19 @@ h6.grow {
     opacity: 1
 }
 
-div#navbarDropdownMenu {
-    padding: 0;
-    margin: 0!important;
-    border-radius: .45rem
+button.app-dropdown.user-dropdown {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.3125rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
 }
 
 .dropdown,.dropend,.dropstart,.dropup {
@@ -29926,14 +29936,28 @@ span.i18n-select {
     margin-right: .8rem
 }
 
+
 .nav-link {
     padding: 0.5rem 1rem;
 }
 
-div#navbarDropdownMenu:hover {
-    background-color: rgb(59 73 223/10%);
-    color: #323ebe;
-    border: 0
+button.app-dropdown.user-dropdown:hover {
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: rgb(123 120 255/25%) !important;
+    color: #9896ff !important;
+    border: 0;
+}
+
+.m-25 {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+}
+
+button.app-dropdown.user-dropdown {
+    background-color: #ffffff00;
+    color: var(--algo-body) !important;
+    border: 0;
 }
 
 .user-dropdown {
@@ -29943,31 +29967,9 @@ div#navbarDropdownMenu:hover {
     min-height: 1.5rem;
 }
 
-div#navbarDropdownMenu {
-    padding: 0;
-    margin: 0!important;
-    border-radius: 0.45rem;
-    width: 2rem;
-    padding: 4px !important;
-    height: 2rem;
-}
-
 .user-dropdown {
     padding: 0.45rem;
     margin: 0px !important;
-}
-
-.nine-dots::before {
-    content: ".........";
-    width: 1.5rem;
-    font-size: 1.75rem;
-    position: absolute;
-    word-break: break-word;
-    line-height: .4375rem;
-    top: -2px;
-    -webkit-transform: scale(.9);
-    -ms-transform: scale(.9);
-    transform: scale(.9)
 }
 
 .nav-link {
@@ -30015,4 +30017,20 @@ div#navbarDropdownMenu {
     padding: 0;
     margin: 0;
     -webkit-overflow-scrolling: touch;
+}
+
+.dropdown-menu.dropdown-menu-right.show,div#app-dropdown {
+    box-shadow: 0 0 0 1px var(--card-border);
+}
+
+a.d-block.hover-bg-200.px-2.py-3.rounded-3.text-center.text-decoration-none {
+    color: var(--algocloud-body-color);
+}
+
+.dropdown-item{
+    cursor:pointer
+}
+
+.dropdown-item:hover{
+    text-decoration: underline;
 }
