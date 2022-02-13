@@ -60,10 +60,9 @@ const AssetShowPage = () => {
       <div className='row'>
         <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
           <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
-            <h6 className="grow">Liqudity</h6>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-
-              <h5 className='text-info-2'>{formattedNum(asset['liquidity'], true)}</h5>
+            <h6 className="grow">Liqudity</h6>
+              
               <div className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{display: 'flex', alignItems: 'center'}}>
                 <span className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayLiquidityChange'], 2)}
                   {asset['lastDayLiquidityChange'] ? (parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? <span>{'  '}<i
@@ -73,12 +72,15 @@ const AssetShowPage = () => {
                   ></i></span> : ''}
                 </span>
               </div>
+              
             </div>
+            <h5 className='text-info-2'>{formattedNum(asset['liquidity'], true)}</h5>
           </ContentWrapper>
           <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
-            <h6 className="grow">Volume (24hrs)</h6>
+            
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h5 className='text-info-2'>{formattedNum(asset['lastDayVolume'], true)}</h5>
+            <h6 className="grow">Volume (24hrs)</h6>
+              
               <div className={(parseFloat(formatPercent(asset['lastDayVolumeChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{display: 'flex', alignItems: 'center'}}>
                 <span className={(parseFloat(formatPercent(asset['lastDayVolumeChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayVolumeChange'], 2)}
                   {asset['lastDayVolumeChange'] ? (parseFloat(formatPercent(asset['lastDayVolumeChange'], 6)) < 0) ? <span>{'  '}<i
@@ -89,11 +91,13 @@ const AssetShowPage = () => {
                 </span>
               </div>
             </div>
+          <h5 className='text-info-2'>{formattedNum(asset['lastDayVolume'], true)}</h5>
           </ContentWrapper>
           <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
-            <h6 className="grow">Price</h6>
+            
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h5 className='text-info-2'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
+            <h6 className="grow">Price</h6>
+              
               <div className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{display: 'flex', alignItems: 'center'}}>
                 <span className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayPriceChange'], 2)}
                   {asset['lastDayPriceChange'] ? (parseFloat(formatPercent(asset['lastDayPriceChange'], 6)) < 0) ? <span>{'  '}<i
@@ -104,9 +108,10 @@ const AssetShowPage = () => {
                 </span>
               </div>
             </div>
+            <h5 className='text-info-2'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
           </ContentWrapper>
         </div>
-        <div className="col-lg-8 col-sm-12 ">
+        <div className="asset-m0 col-lg-8 col-sm-12 ">
           <AssetChart
             color='--var(algoucloud-primary)'
             assetData={assetData}

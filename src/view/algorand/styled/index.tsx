@@ -60,7 +60,7 @@ export const Divider = styled.div`
 
 export const OptionButtonContainer = styled.div`
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 16px;
 `;
 
 export const OptionButtonBottomContainer = styled.div`

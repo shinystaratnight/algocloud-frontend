@@ -28,7 +28,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className=" card bg-box p-2 rounded">
+            <div className=" bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[0]} />
             </div>
           </div>
@@ -40,7 +40,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="card bg-box p-2 rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[1]} />
             </div>
           </div>
@@ -52,7 +52,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="card bg-box p-2 rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[2]} />
             </div>
           </div>
@@ -65,7 +65,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
           >
-            <div className="card bg-box p-2 rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[3]} />
             </div>
           </div>
@@ -78,7 +78,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
           >
-            <div className="card bg-box p-2 rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[4]} />
             </div>
           </div>
@@ -91,7 +91,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className=" card bg-box p-2 rounded">
+            <div className="  bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[5]} />
             </div>
           </div>
@@ -103,7 +103,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className="card bg-box p-2 rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[6]} />
             </div>
           </div>
@@ -115,7 +115,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className=" card bg-box p-2 rounded">
+            <div className=" bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[7]} />
             </div>
           </div>

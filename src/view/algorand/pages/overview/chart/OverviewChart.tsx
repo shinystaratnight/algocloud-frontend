@@ -75,7 +75,7 @@ function ShowcaseChart() {
       </div>
       <div className="showcase-row-2">
      <ChartWindowWrapper className=" card bg-box rounded  card-hover m-0">
-     <ResponsiveContainer aspect={80 / 36} ref={ref3}>
+     <ResponsiveContainer aspect={110 / 50} ref={ref3}>
        <TradingViewChart
          data={dailyData}
          base={0}

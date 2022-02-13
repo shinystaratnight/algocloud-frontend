@@ -319,9 +319,6 @@ h2.fs-l.fw-bold.flex-1.break-word.lh-tight {
     }
 }
 
-h5.text-info,h5.text-info-2 {
-    font-size: calc(1.02813rem + .701vw)!important
-}
 
 h6.grow {
     font-size: calc(.892813rem + .12vw)!important
@@ -488,10 +485,6 @@ div#stickyTop {
     margin-bottom: 0;
     margin-right: 30px;
     display: inline-block
-}
-
-h5.text-info-2 {
-    font-size: 1.5rem
 }
 
 .card-hover-2:hover,.card-hover:hover,.card.bg-box.rounded:hover {
@@ -29703,6 +29696,99 @@ button.btn-circle:focus,button.btn-circle:hover {
     padding: 1.25rem!important;
     padding-left: 0!important;
     padding-right: 4px!important;
-    padding-bottom: 12px!important;
     text-indent: 1.25rem
+}
+
+@media (min-width:992px) {
+    .asset-m0 {
+        padding-left: 0px;
+    }
+    .flex.col {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: flex-start;
+        flex-wrap: wrap !important;
+        left: 0px;
+    }
+}
+
+.flex.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: center;
+    --algocloud-gutter-x: 0px;
+    margin-left: -10px;
+}
+
+.row.m-0 {
+    left: 0px;
+    margin-left: 0px;
+    padding-left: 0px;
+    --algocloud-gutter-x: 0px;
+}
+
+.row.no-gutter {
+    --algocloud-gutter-x: 0px;
+}
+
+.no-gutter{
+    --algocloud-gutter-x: 0px !important;
+}
+
+@media (max-width: 1400px){
+    .row.m-0 {
+       display:none;
+    }
+    .flex.col {
+        align-items: start;
+    }
+    .row.no-gutter {
+        font-size: 10px !important;
+    }
+}
+
+@media (max-width: 860px){
+    .row.no-gutter {
+        font-size: 8px !important;
+    }
+}
+
+@media (max-width: 800px){
+    .row.no-gutter {
+        font-size: 6px !important;
+    }
+}
+
+@media (max-width: 767px){
+    .row.no-gutter {
+        font-size: 12px !important;
+    }
+}
+
+@media (max-width: 360px){
+    .row.no-gutter {
+        font-size: 9px !important;
+    }
+}
+
+
+
+@media (max-width: 2070px){
+    .row.m-0 {
+        padding-top: 10px;
+    }
+}
+
+h5.text-info-2 {
+    font-size: calc(1.0rem + 1.02vw)!important;
+    margin-bottom: 0px;
+    padding-top: 0.4rem;
+}
+
+h6.grow {
+    font-size: calc(.892813rem + .12vw)!important
 }

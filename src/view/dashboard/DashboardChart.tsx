@@ -38,6 +38,7 @@ export default function DashboardChart(props) {
     <>
       <h4>{asset.unitName}</h4>
       <div className='dashboard-chard-card'>
+        
         {
           loading && (
             <Spinner />
