@@ -22,8 +22,8 @@ const DashboardPage = (props) => {
         <div className="row no-gutters">
           <div
             style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
+              paddingLeft: '6px',
+              paddingRight: '6px',
               paddingBottom: '24px',
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
@@ -34,8 +34,8 @@ const DashboardPage = (props) => {
           </div>
           <div
             style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
+              paddingLeft: '6px',
+              paddingRight: '6px',
               paddingBottom: '24px',
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
@@ -46,8 +46,8 @@ const DashboardPage = (props) => {
           </div>
           <div
             style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
+              paddingLeft: '6px',
+              paddingRight: '6px',
               paddingBottom: '24px',
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
@@ -59,8 +59,8 @@ const DashboardPage = (props) => {
 
           <div
             style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
+              paddingLeft: '6px',
+              paddingRight: '6px',
               paddingBottom: '24px',
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
@@ -72,8 +72,8 @@ const DashboardPage = (props) => {
 
           <div
             style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
+              paddingLeft: '6px',
+              paddingRight: '6px',
               paddingBottom: '24px',
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
@@ -85,8 +85,8 @@ const DashboardPage = (props) => {
 
           <div
             style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
+              paddingLeft: '6px',
+              paddingRight: '6px',
               paddingBottom: '24px',
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
@@ -97,8 +97,8 @@ const DashboardPage = (props) => {
           </div>
           <div
             style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
+              paddingLeft: '6px',
+              paddingRight: '6px',
               paddingBottom: '24px',
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
@@ -109,8 +109,8 @@ const DashboardPage = (props) => {
           </div>
           <div
             style={{
-              paddingLeft: '12px',
-              paddingRight: '12px',
+              paddingLeft: '6px',
+              paddingRight: '6px',
               paddingBottom: '24px',
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
@@ -119,17 +119,17 @@ const DashboardPage = (props) => {
               <DashboardChart asset={defaultTokens[7]} />
             </div>
           </div>
+          <footer className="footer">
+            <div className="algocloud-f1 row g-0 justify-content-between fs--1 mt-4 ">
+              <div className="col-12 col-sm-auto ">
+                <p className="mb-0 text-600">{i18n('dashboard.message')} <span className="d-none d-sm-inline-block">| </span><br className="d-sm-none"/> 2022 © <a href="https://headline-inc.com">HEADLINE</a></p>
+              </div>
+              <div className="algocloud-footer">
+                <p className="mb-0 text-600">v1.0.0</p>
+              </div>
+            </div>
+          </footer>
         </div>
-        <p
-          style={{
-            marginTop: '16px',
-            width: '100%',
-            textAlign: 'center',
-            color: '#bbbbbb',
-          }}
-        >
-          {i18n('dashboard.message')}
-        </p>
       </div>
     </>
   );

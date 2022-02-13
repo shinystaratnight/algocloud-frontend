@@ -61,8 +61,7 @@ const AssetShowPage = () => {
         <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
           <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-            <h6 className="grow">Liqudity</h6>
-              
+            <h6 className="grow">Liqudity</h6>              
               <div className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{display: 'flex', alignItems: 'center'}}>
                 <span className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayLiquidityChange'], 2)}
                   {asset['lastDayLiquidityChange'] ? (parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? <span>{'  '}<i
@@ -71,7 +70,9 @@ const AssetShowPage = () => {
                     className={`fas fa-arrow-up`}
                   ></i></span> : ''}
                 </span>
+                
               </div>
+              
               
             </div>
             <h5 className='text-info-2'>{formattedNum(asset['liquidity'], true)}</h5>
@@ -92,7 +93,7 @@ const AssetShowPage = () => {
               </div>
             </div>
           <h5 className='text-info-2'>{formattedNum(asset['lastDayVolume'], true)}</h5>
-          </ContentWrapper>
+         </ContentWrapper>
           <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
@@ -109,6 +110,7 @@ const AssetShowPage = () => {
               </div>
             </div>
             <h5 className='text-info-2'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
+            <a className="fw-semi-bold fs--1 text-nowrap" href="https://app.tinyman.org/#/swap?asset_in=0">Swap now<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="angle-right" className="svg-inline--fa fa-angle-right fa-w-8 ms-1" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><g transform="translate(128 256)"><g transform="translate(0, 32)  scale(1, 1)  rotate(0 0 0)"><path fill="currentColor" d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" transform="translate(-128 -256)"></path></g></g></svg></a>
           </ContentWrapper>
         </div>
         <div className="asset-m0 col-lg-8 col-sm-12 ">

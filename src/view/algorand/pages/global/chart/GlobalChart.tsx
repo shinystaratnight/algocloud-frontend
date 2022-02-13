@@ -42,9 +42,9 @@ function GlobalChart() {
   }
   return (
     <FlexContainer gap="20px">
-      <ContentWrapper>
+      <ContentWrapper className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 w-50">
         {marketCapData &&
-          <ResponsiveContainer aspect={60 / 28} ref={ref1}>
+          <ResponsiveContainer aspect={60 / 30} ref={ref1}>
             <TradingViewChart
               data={marketCapData}
               base={0}
@@ -57,9 +57,9 @@ function GlobalChart() {
             />
           </ResponsiveContainer>}
       </ContentWrapper>
-      <ContentWrapper>
+      <ContentWrapper className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 w-50">
         {algoPriceData &&
-          <ResponsiveContainer aspect={60 / 28} ref={ref2}>
+          <ResponsiveContainer aspect={60 / 30} ref={ref2}>
             <CandleStickChart
               data={algoPriceData}
               base={0}

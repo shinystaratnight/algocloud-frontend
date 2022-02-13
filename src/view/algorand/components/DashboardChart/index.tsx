@@ -77,7 +77,7 @@ const DashboardAssetChart = (props) => {
 
 
   return (
-    <ChartWindowWrapper className="card-hover-2">
+    <ChartWindowWrapper className="card-hover">
       <RowBetween
         mb={
           chartFilter === ASSET_CHART_VIEW.LIQUIDITY ||
@@ -157,8 +157,8 @@ const DashboardAssetChart = (props) => {
             active={chartFilter === ASSET_CHART_VIEW.LIQUIDITY}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.LIQUIDITY);
-              setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
-              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
             }}
           >
             Liquidity
@@ -167,8 +167,8 @@ const DashboardAssetChart = (props) => {
             active={chartFilter === ASSET_CHART_VIEW.VOLUME}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.VOLUME);
-              setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
-              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
             }}
           >
             Volume
@@ -187,8 +187,8 @@ const DashboardAssetChart = (props) => {
             active={chartFilter === ASSET_CHART_VIEW.MARKETCAP}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.MARKETCAP);
-              setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
-              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
             }}
           >
             Market Cap
