@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    border: 1px solid var(--falcon-form-check-input-border-color);
+    border: 1px solid var(--algocloud-form-check-input-border-color);
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -29913,11 +29913,11 @@ button.app-dropdown.user-dropdown {
 }
 
 .navbar-light .navbar-nav .nav-link:focus,.navbar-light .navbar-nav .nav-link:hover {
-    color: var(--falcon-navbar-light-hover-color)
+    color: var(--algocloud-navbar-light-hover-color)
 }
 
 .navbar-light .navbar-nav .nav-link {
-    color: var(--falcon-navbar-light-color)
+    color: var(--algocloud-navbar-light-color)
 }
 
 .navbar-expand .navbar-nav .nav-link {
