@@ -11,6 +11,28 @@ const MenuWrapper = styled.div`
     background-color: transparent;
   }
 
+
+  .last-updated {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 200px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0a0a0a;
+  }
+
+  .last-updated:before {
+    content: '●';
+    width: 5px;
+    height: 5px;
+    height: 20px;
+    color: green;
+    margin-right: 10px;
+  }
+
   @media (min-width: 576px){
     .menu-nav {
       position: relative !important;
@@ -25,6 +47,11 @@ const MenuWrapper = styled.div`
     .algocloud-fixed{
       width: 200px;
     }
+
+      .last-updated {
+        width: 200px;
+        background-color: #0a0a0a;
+      }
     }
 
     @media (max-width: 575px){
@@ -67,6 +94,10 @@ const MenuWrapper = styled.div`
   }
       .menu-nav {
         z-index: 100000;
+    }
+    .last-updated {
+      width: 300px;
+      background-color: #000000;
     }
     }
   .css-ksc7ic:hover {
@@ -168,6 +199,7 @@ a.algocloud-navbar-brand {
     padding-left: 8px;
     padding-right: 8px;
     padding: .5rem;
+    padding-bottom: 40px;
   }
 
   .menu-li.active i {

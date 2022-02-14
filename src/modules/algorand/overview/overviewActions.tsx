@@ -15,6 +15,7 @@ const overviewActions = {
   ASSET_PAGINATION_CHANGED: `${prefix}_ASSET_PAGINATION_CHANGED`,
   POOL_SORTER_CHANGED: `${prefix}_POOL_SORTER_CHANGED`,
   POOL_PAGINATION_CHANGED: `${prefix}_POOL_PAGINATION_CHANGED`,
+  LAST_UPDATED: `LAST_UPDATED`,
 
   doReset: () => async (dispatch) => {
     dispatch({
@@ -157,6 +158,15 @@ const overviewActions = {
 
     dispatch(overviewActions.doFetch());
   },
+
+  doFetchLastUpdate: () => async (dispatch) => {    
+    const data = await AlgorandService.getLastUpdatedTime();
+    
+    dispatch({
+      type: overviewActions.LAST_UPDATED,
+      payload: data.lastUpdatedTime[0]
+    })
+  }
 };
 
 export default overviewActions;

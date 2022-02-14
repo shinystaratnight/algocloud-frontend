@@ -115,7 +115,7 @@ const DashboardAssetChart = (props) => {
             useWeekly={false}
             utc={true}
             duration={duration}
-            title={title}
+            assetId={title}
           />
         </ResponsiveContainer>
       )}
@@ -131,7 +131,7 @@ const DashboardAssetChart = (props) => {
             useWeekly={false}
             utc={true}
             duration={duration}
-            title={title}
+            assetId={title}
           />
         </ResponsiveContainer>
       )}
@@ -147,7 +147,7 @@ const DashboardAssetChart = (props) => {
             useWeekly={false}
             utc={true}
             duration={duration}
-            title={title}
+            assetId={title}
           />
         </ResponsiveContainer>
       )}
