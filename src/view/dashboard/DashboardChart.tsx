@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import AlgorandService from 'src/modules/algorand/algorandService';
+import overviewSelectors from 'src/modules/algorand/overview/overviewSelectors';
 import DashboardAssetChart from 'src/view/algorand/components/DashboardChart';
 import Spinner from 'src/view/shared/Spinner';
 
@@ -8,11 +10,25 @@ export default function DashboardChart(props) {
   const [assetData, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
+  const [mounted, setMounted] = useState(0);
+
+  const lastUpdated = useSelector(
+    overviewSelectors.selectLastUpdatedTime
+  );
 
   useEffect(() => {
     if (!asset) return;
     getAssetData();
+    setMounted(new Date().getTime() / 1000);
   }, [asset]);
+
+  useEffect(() => {
+    if (mounted) {
+      let diff = new Date().getTime() / 1000 - mounted
+      if (diff > 10)
+        getAssetData();
+    }
+  }, [mounted, lastUpdated])
 
   const getAssetData = async () => {
     setLoading(true);

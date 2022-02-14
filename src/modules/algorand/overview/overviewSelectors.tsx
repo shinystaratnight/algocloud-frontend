@@ -197,6 +197,15 @@ const selectPoolFilter = createSelector(
   }
 );
 
+const selectLastUpdatedTime = createSelector(
+  [selectRaw],
+  (raw) => {
+    const lastUpdated = raw.lastUpdated;
+
+    return lastUpdated
+  }
+);
+
 const overviewSelectors = {
   selectLoading,
   selectDailyData,
@@ -219,6 +228,7 @@ const overviewSelectors = {
   selectFavoriteFilter,
   selectAssetFilter,
   selectPoolFilter,
+  selectLastUpdatedTime,
   selectRaw,
 };
 

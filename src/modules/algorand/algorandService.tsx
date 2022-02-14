@@ -153,4 +153,12 @@ export default class AlgorandService {
 
     return response.data;
   }
+
+  static async getLastUpdatedTime() {
+    const response = await authAxios.get(
+      `/last-updated-time`,
+    );
+
+    return response.data;
+  }
 }

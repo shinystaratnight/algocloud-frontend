@@ -35,12 +35,14 @@ const initialData = {
     },
     sorter: {},
   },
+  lastUpdated: null
 };
 
 export default (state = initialData, { type, payload }) => {
   if (type === actions.RESET) {
     return {
-      ...initialData
+      ...initialData,
+      lastUpdated: state.lastUpdated
     };
   }
 
@@ -148,6 +150,7 @@ export default (state = initialData, { type, payload }) => {
     };
 
     return {
+      ...state,
       loading: false,
       showcase: payload.showcase,
       favorites: payload.favoriteIds,
@@ -162,6 +165,13 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       loading: false
+    };
+  }
+
+  if (type === actions.LAST_UPDATED) {
+    return {
+      ...state,
+      lastUpdated: payload.updatedTime
     };
   }
 
