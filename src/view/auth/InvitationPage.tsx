@@ -50,7 +50,7 @@ function InviationPage() {
     <Wrapper
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/invitation.jpg'
+          backgroundImageUrl || '/images/signin-3.svg'
         })`,
       }}
     >

@@ -25,7 +25,7 @@ function EmptyPermissionsPage() {
       style={{
         backgroundImage: `url(${
           backgroundImageUrl ||
-          '/images/emptyPermissions.jpg'
+          '/images/signin-3.svg'
         })`,
       }}
     >

@@ -96,33 +96,30 @@ const TradingViewChart = ({
             top: topScale,
             bottom: 0
           },
-          borderVisible: false
+          borderVisible: true
         },
         timeScale: {
-          borderVisible: false,
+          borderVisible: true,
           timeVisible: true
         },
         grid: {
           horzLines: {
-            color: 'rgba(197, 203, 206, 0.5)',
+            color: 'rgb(255 255 255 / 5%)',
             visible: false
           },
           vertLines: {
-            color: 'rgba(197, 203, 206, 0.5)',
+            color: 'rgb(255 255 255 / 5%)',
             visible: false
           }
         },
         crosshair: {
           horzLine: {
-            visible: false,
-            labelVisible: false
+            visible: true,
+            labelVisible: true
           },
           vertLine: {
             visible: true,
-            style: 0,
-            width: 2,
-            color: 'rgba(32, 38, 46, 0.1)',
-            labelVisible: false
+            labelVisible: true
           }
         },
         localization: {
@@ -133,7 +130,7 @@ const TradingViewChart = ({
       var series =
         type === CHART_TYPES.BAR
           ? chart.addHistogramSeries({
-            color: '#687dfd',
+            color: '#5855f3',
             priceFormat: {
               type: 'volume'
             },
@@ -152,9 +149,9 @@ const TradingViewChart = ({
               // lineWidth: 3
             }) :
             chart.addAreaSeries({
-              topColor: '#687dfd',
-              bottomColor: 'rgba(112, 82, 64, 0)',
-              lineColor: '#687dfd',
+              topColor: 'rgb(123 120 255 / 40%)',
+              bottomColor: 'rgb(88 85 243 / 10%)',
+              lineColor: '#5855f3',
               lineWidth: 3
             });
 
@@ -190,7 +187,7 @@ const TradingViewChart = ({
         (date ?
           '<div>' +
           date +
-          '</div>'
+          '</div>' 
           : '');
 
       chart.subscribeCrosshairMove(function (param) {

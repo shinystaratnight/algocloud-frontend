@@ -40,9 +40,10 @@ function ShowcaseChart() {
 
   return (
     <FlexContainer gap="20px" className="showcase-row">
-      <ContentWrapper className=" card bg-box rounded
-      card-hover">
-        <ResponsiveContainer aspect={60 / 28} ref={ref1}>
+      <div className="showcase-row-1">
+      <ContentWrapper gap="10px" className=" w-50 w-100 card bg-box rounded
+      card-hover m-0">
+        <ResponsiveContainer aspect={40 / 28} ref={ref1}>
           <TradingViewChart
             data={dailyData}
             base={0}
@@ -56,8 +57,8 @@ function ShowcaseChart() {
         </ResponsiveContainer>
       </ContentWrapper>
 
-      <ChartWindowWrapper className=" card bg-box rounded">
-        <ResponsiveContainer aspect={60 / 28} ref={ref2}>
+      <ChartWindowWrapper gap="10px" className="w-50 w-100 card bg-box rounded card-hover m-0">
+        <ResponsiveContainer aspect={40 / 28} ref={ref2}>
           <TradingViewChart
             data={dailyData}
             base={0}
@@ -71,22 +72,24 @@ function ShowcaseChart() {
           />
         </ResponsiveContainer>
       </ChartWindowWrapper>
-
-      <ChartWindowWrapper className=" card bg-box rounded">
-        <ResponsiveContainer aspect={60 / 28} ref={ref3}>
-          <TradingViewChart
-            data={dailyData}
-            base={0}
-            title={`<a href="/algorand/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Market Cap`}
-            field={'marketCap'}
-            width={width3}
-            type={CHART_TYPES.AREA}
-            timeField='date'
-            useWeekly={false}
-            utc={true}
-          />
-        </ResponsiveContainer>
-      </ChartWindowWrapper>
+      </div>
+      <div className="showcase-row-2">
+     <ChartWindowWrapper className=" card bg-box rounded  card-hover m-0">
+     <ResponsiveContainer aspect={110 / 50} ref={ref3}>
+       <TradingViewChart
+         data={dailyData}
+         base={0}
+         title={`<a href="/algorand/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Market Cap`}
+         field={'marketCap'}
+         width={width3}
+         type={CHART_TYPES.AREA}
+         timeField='date'
+         useWeekly={false}
+         utc={true}
+       />
+     </ResponsiveContainer>
+   </ChartWindowWrapper>
+   </div>
     </FlexContainer>
   )
 }

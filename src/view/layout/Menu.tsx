@@ -21,15 +21,16 @@ function Menu(props) {
   const [mounted, setMounted] = useState(false);
 
   const doToggleMenu = () => {
-    let element1 = document.getElementById("body") || { style: { overflow: "" } }
+    let element1 = document.getElementById("body") || { style: { position: "" } }
     let element2 = document.getElementById("menu-nav") || { style: { position: "" } }
     toggle ? setToggle(false) : setToggle(true)
-    if (toggle) {
-      element1.style["overflow"] = "scroll"
+    if (toggle)
+    if  (window.innerWidth < 575) {
+      element1.style["position"] = "relative"
       element2.style["position"] = "inherit"
     }
     else {
-      element1.style["overflow"] = ""
+      element1.style["position"] = ""
       element2.style["position"] = "inherit"
     }
     dispatch(layoutActions.doToggleMenu());

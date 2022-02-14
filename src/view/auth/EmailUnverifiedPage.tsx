@@ -37,7 +37,7 @@ function EmailUnverifiedPage() {
       style={{
         backgroundImage: `url(${
           backgroundImageUrl ||
-          '/images/emailUnverified.jpg'
+          '/images/signin-3.svg'
         })`,
       }}
     >

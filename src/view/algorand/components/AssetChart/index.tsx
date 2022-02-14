@@ -41,12 +41,13 @@ const AssetChart = (props) => {
   } = props;
 
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
-  const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.DAILY);
-  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.WEEK)
+  const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.HOURLY);
+  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY)
 
+  const below2000 = useMedia('(max-width: 2000px)');
   const below1080 = useMedia('(max-width: 1080px)');
   const below600 = useMedia('(max-width: 600px)');
-  const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22;
+  const aspect = below2000 ? 58 / 28 : below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22;
 
   // const textColor = 'var(--algocloud-body-bg-2)';
   const ref = useRef<HTMLElement>();
@@ -88,7 +89,7 @@ const AssetChart = (props) => {
             active={chartFilter === ASSET_CHART_VIEW.LIQUIDITY}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.LIQUIDITY);
-              setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
             }}
           >
@@ -98,8 +99,8 @@ const AssetChart = (props) => {
             active={chartFilter === ASSET_CHART_VIEW.VOLUME}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.VOLUME);
-              setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
-              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
             }}
           >
             Volume
@@ -118,8 +119,8 @@ const AssetChart = (props) => {
             active={chartFilter === ASSET_CHART_VIEW.MARKETCAP}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.MARKETCAP);
-              setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
-              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
             }}
           >
             Market Cap
@@ -204,7 +205,7 @@ const AssetChart = (props) => {
             </OptionButtonContainer>
           </OptionButtonWrapper>
           <Divider width='2px' />
-          <OptionButtonWrapper right="10px">
+          <OptionButtonWrapper className="align-right" right="10px">
             <OptionButtonContainer>
               <OptionButton
                 active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}

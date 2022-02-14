@@ -72,7 +72,7 @@ function SignupPage() {
     <Wrapper
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/signin.jpg'
+          backgroundImageUrl || '/images/signin-3.svg'
         })`,
       }}
     >

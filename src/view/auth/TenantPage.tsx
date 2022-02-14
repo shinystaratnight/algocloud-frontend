@@ -41,7 +41,7 @@ function TenantPage() {
     <Wrapper
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/images/tenant.jpg'
+          backgroundImageUrl || '/images/signin-3.svg'
         })`,
       }}
     >
