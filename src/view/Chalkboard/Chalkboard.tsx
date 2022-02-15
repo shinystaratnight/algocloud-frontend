@@ -1,14 +1,115 @@
 import React from 'react';
 
-const DashboardPage = (props) => {
+const DashboardPage = (props) => { 
   return (
     <>
+    <div className="row">
+  <div className="col-lg-6">
+    <div className="kanban-items-container border bg-white dark__bg-1000 rounded-2 py-3 mb-3" 
+    style={{maxHeight: "none"}}>
+      <div className="card mb-3 kanban-item shadow-sm dark__bg-1100">
+        <div className="card-body">
+          <p className="fs--1 fw-medium font-sans-serif mb-0">Add a cookie notice which will be shown in the bottom of the page and have a link of &quot;Privacy Policy&quot;</p>
+        </div>
+      </div>
+      <div className="card mb-3 kanban-item shadow-sm dark__bg-1100">
+        <div className="card-body">
+          <p className="fs--1 fw-medium font-sans-serif mb-0">Add a pdf file that describes all the symptoms of COVID-19</p>
+        </div>
+      </div>
+      <div className="card mb-3 kanban-item shadow-sm dark__bg-1100">
+        <div className="card-body">
+          <p className="fs--1 fw-medium font-sans-serif mb-0">Make a Registration form that include Name, Email and a Password input field</p>
+        </div>
+      </div>
+      <div className="card mb-3 kanban-item shadow-sm dark__bg-1100">
+        <div className="card-body">
+          <p className="fs--1 fw-medium font-sans-serif mb-0">Update profile page layout with cover image and user setting menu</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div className="col-lg-6">
+    <div className="kanban-items-container border bg-white dark__bg-1000 rounded-2 py-3 mb-3"
+    style={{maxHeight: "none"}}>
+      <div className="card mb-3 kanban-item shadow-sm dark__bg-1100">
+        <div className="card-body">
+          <p className="fs--1 fw-medium font-sans-serif mb-0">Update all the npm packages and also remove the outdated plugins</p>
+        </div>
+      </div>
+      <div className="card mb-3 kanban-item shadow-sm dark__bg-1100">
+        <div className="card-body">
+          <p className="fs--1 fw-medium font-sans-serif mb-0">Add a getting started page that allows users to see the starting process</p>
+        </div>
+      </div>
+      <div className="card mb-3 kanban-item shadow-sm dark__bg-1100">
+        <div className="card-body">
+          <p className="fs--1 fw-medium font-sans-serif mb-0">Review and test all the task and deploy to the server</p>
+        </div>
+      </div>
+      <div className="card mb-3 kanban-item shadow-sm dark__bg-1100">
+        <div className="card-body">
+          <p className="fs--1 fw-medium font-sans-serif mb-0">Get all the data by API call and show them to the landing page by adding a new section</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div className="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    <div className="alert alert-success border-2 d-flex align-items-center" role="alert">
+  <div className="bg-success me-3 icon-item"><span className="fas fa-check-circle text-white fs-3"></span></div>
+  <p className="mb-0 flex-1">A simple success alert—check it out!</p><button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div className="alert alert-info border-2 d-flex align-items-center" role="alert">
+  <div className="bg-info me-3 icon-item"><span className="fas fa-info-circle text-white fs-3"></span></div>
+  <p className="mb-0 flex-1">A simple info alert—check it out!</p><button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div className="alert alert-warning border-2 d-flex align-items-center" role="alert">
+  <div className="bg-warning me-3 icon-item"><span className="fas fa-exclamation-circle text-white fs-3"></span></div>
+  <p className="mb-0 flex-1">A simple warning alert—check it out!</p><button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<div className="alert alert-danger border-2 d-flex align-items-center" role="alert">
+  <div className="bg-danger me-3 icon-item"><span className="fas fa-times-circle text-white fs-3"></span></div>
+  <p className="mb-0 flex-1">A simple danger alert—check it out!</p><button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+    <div className="crayons-snackbar__item flex" data-testid="snackbar">
+  <div className="crayons-snackbar__body" role="alert">
+    File uploaded successfully
+  </div>
+  <div className="crayons-snackbar__actions"></div>
+</div> 
+<div className="crayons-snackbar__item flex " data-testid="snackbar">
+  <div className="crayons-snackbar__body" role="alert">Changes saved</div>
+  <div className="crayons-snackbar__actions">
+    <button
+      className="crayons-btn crayons-btn--ghost-success crayons-btn--inverted"
+      type="button"
+    >
+      Dismiss
+    </button>
+  </div>
+</div>
+<div className="crayons-notice crayons-notice--success"> 
+  This is Success Notice content.
+</div>
       <div
         style={{
           padding: 0,
         }}
       >
-          <div className="mb-3 card"><div className="bg-holder bg-card"></div><div className="position-relative card-body"><div className="row"><div className="col-lg-8"><h6 className="text-600">Free for 30 days</h6><h2 className="mb-0">For teams of all sizes, in the cloud</h2><p className="mt-2">Get the power, control, and customization you need to manage your</p> <p className="d-none.d-md-block"> team’s and organization’s projects.</p><a className="btn btn-sm btn-link ps-0" href="/pricing/pricing-default#!">Have questions? Chat with us</a></div></div></div></div>
+          <div className="mb-3 card"><div className="bg-holder bg-card"></div><div className="position-relative card-body"><div className="row"><div className="col-lg-8"><h6 className="text-600">Free for 30 days</h6><h2 className="mb-0">For teams of all sizes, in the cloud</h2><p className="mt-2">Get the power, control, and customization you need to manage your</p> <p className="d-none.d-md-block"> team’s and organization’s projects.</p><a className="btn btn-sm btn-link ps-0" href="/pricing/pricing-default#!">Have questions? Chat with us</a><button
+  className="c-pill crayons-tooltip__activator"
+  type="button"
+  aria-disabled="false"
+>
+  Hello world
+  <span data-testid="tooltip" className="crayons-tooltip__content">
+    Tooltip content...
+  </span>
+</button></div></div></div></div>
           <div className="bg-light my-3 card"><div className="p-3 card-body"><p className="fs--1 mb-0"><a href="/dashboard/saas#!">          
           <svg className="svg-inline--fa fa-exchange-alt fa-w-16 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="exchange-alt" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" ><g transform="translate(256 256)"><g transform="translate(0, 0)  scale(1, 1)  rotate(90 0 0)"><path fill="currentColor" d="M0 168v-16c0-13.255 10.745-24 24-24h360V80c0-21.367 25.899-32.042 40.971-16.971l80 80c9.372 9.373 9.372 24.569 0 33.941l-80 80C409.956 271.982 384 261.456 384 240v-48H24c-13.255 0-24-10.745-24-24zm488 152H128v-48c0-21.314-25.862-32.08-40.971-16.971l-80 80c-9.372 9.373-9.372 24.569 0 33.941l80 80C102.057 463.997 128 453.437 128 432v-48h360c13.255 0 24-10.745 24-24v-16c0-13.255-10.745-24-24-24z" transform="translate(-256 -256)"></path></g></g></svg>               A payout for <strong>$921.42 </strong> was deposited 13 days ago.</a> Your next deposit is expected on <strong>Tuesday, March 13.</strong></p></div></div> 
         <div className="row no-gutters">
@@ -98,6 +199,7 @@ const DashboardPage = (props) => {
                   
                   </a>
                 </div>
+                
                 <div className="card-body">
                   <p className="fs--1 text-600">See team members' time worked, activity levels, and progress</p>
                   <div className="progress mb-3 rounded-pill" >
@@ -156,6 +258,7 @@ const DashboardPage = (props) => {
               </div>
             </div>
           </div>
+          
             
             
           <div className="card">
