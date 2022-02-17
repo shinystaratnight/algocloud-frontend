@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algorand/overview/overviewActions';
@@ -8,6 +8,8 @@ import TableWrapper from 'src/view/shared/styles/TableWrapper';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import Pagination from 'src/view/shared/table/Pagination';
 import AssetTable from 'src/view/algorand/components/AssetTable';
+import noteActions from 'src/modules/note/noteActions';
+import noteSelectors from 'src/modules/note/noteSelectors';
 
 function AssetsTable({ assets }) {
 
@@ -47,6 +49,14 @@ function AssetsTable({ assets }) {
   const sorter = useSelector(
     selectors.selectAssertSorter,
   );
+
+  const notes = useSelector(
+    noteSelectors.selectNotes
+  );
+
+  useEffect(() => {
+    dispatch(actions.doFetch(false))
+  }, [notes]);
   
   const toggleFavorite = (assetId) => {
     setAssetIdToToggle(null);

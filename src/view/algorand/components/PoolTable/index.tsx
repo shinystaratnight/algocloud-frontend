@@ -16,7 +16,7 @@ function PoolTable(props) {
   } = props;
 
   return (
-    <div className="table-responsive ">
+    <div className="table-responsive " id='pool-table'>
       <table className="table-hover table table-striped mt-2">
         <thead className="thead">
           <tr>

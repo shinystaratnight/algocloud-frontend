@@ -23,11 +23,13 @@ const overviewActions = {
     });
   },
 
-  doFetch: () => async (dispatch, getState) => {
+  doFetch: (reload=true) => async (dispatch, getState) => {
     try {
-      dispatch({
-        type: overviewActions.FETCH_STARTED,
-      });
+      if (reload) {
+        dispatch({
+          type: overviewActions.FETCH_STARTED,
+        });
+      }
 
       const data = await AlgorandService.getAlgorandOverview(
         selectors.selectFavoriteFilter(getState()),
