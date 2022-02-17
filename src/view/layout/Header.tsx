@@ -376,6 +376,7 @@ function Header(props) {
                   </button>
                 </a>
               )}
+              <div className="dropdown-divider"></div>
               <DarkMode />
               <button
                 onClick={doSignout}
