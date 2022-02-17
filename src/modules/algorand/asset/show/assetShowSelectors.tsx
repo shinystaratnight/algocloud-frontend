@@ -57,6 +57,11 @@ const selectPagination = createSelector(
   },
 );
 
+const selectNotes = createSelector(
+  [selectRaw],
+  (raw) => raw.notes,
+);
+
 const selectOrderBy = createSelector([selectRaw], (raw) => {
   const sorter = raw.pool.sorter;
 
@@ -106,6 +111,7 @@ const assetShowSelectors = {
   selectOffset,
   selectHasRows,
   selectSorter,
+  selectNotes,
   selectRaw,
 };
 

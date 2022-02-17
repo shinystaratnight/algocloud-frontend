@@ -718,6 +718,17 @@ const es = {
   launchpad: {
     menu: 'Launchpad',
   },
+  note: {
+    createText: 'Crear una nota...',
+    name: 'Nombre',
+    description: 'Descripción',
+    modal: {
+      okText: 'Crear nota',
+      cancel: 'Cancelar',
+      delete_title: '¿Estás segura de eliminar esta nota?',
+    },
+    delete: 'Borrar',
+  }
 };
 
 export default es;

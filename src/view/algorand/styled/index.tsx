@@ -167,3 +167,52 @@ export const AlgoexplorerSection = styled.div`
   }
 `;
 
+export const NoteCardContainer = styled.div`
+  margin: 10px;
+  color: var(--algo-body);
+  font-size: 12px;
+  background: var(--algocloud-card-bg-color);
+  padding: 16px;
+  box-shadow: 0 0 0 1px var(--card-border);
+  border: 1px solid var(--accent-warn);
+  border-radius: 10px;
+`;
+
+export const NoteTitle = styled.h5`
+  color: var(--algocloud-body-bg-2);
+  text-transform: capitalize;
+  margin-bottom: 10px;
+  align-items: center;
+  display: flex;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  a {
+    color: var(--algocloud-body-bg-2);
+  }
+`;
+
+export const FormattedDate = styled.span`
+  color: var(--base-50);
+  font-size: 12px;
+`;
+
+export const NoteDescription = styled.h6`
+  color: var(--base-70) !important;
+  text-transform: capitalize;
+  padding-left: 10px;
+`;
+
+export const NoteHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const NoWrapContainer = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: fit-content;
+  white-space: nowrap;
+`;

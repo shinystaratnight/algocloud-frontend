@@ -703,6 +703,17 @@ const en = {
   launchpad: {
     menu: 'Launchpad',
   },
+  note: {
+    createText: 'Create a Note ...',
+    name: 'Name',
+    description: 'Description',
+    modal: {
+      okText: 'Create Note',
+      cancel: 'Cancel',
+      delete_title: 'Are you sure to delete this note?',
+    },
+    delete: 'Delete',
+  }
 };
 
 export default en;
