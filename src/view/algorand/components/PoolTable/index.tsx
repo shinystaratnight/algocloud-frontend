@@ -74,9 +74,7 @@ function PoolTable(props) {
               </td>
             </tr>
           )}
-          {!loading && (pools.length > 0) && pools.map((pool) => {
-            console.log(pool);
-            
+          {!loading && (pools.length > 0) && pools.map((pool) => {            
             let image1 = pool.assetOneId === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${pool.assetOneId}.png`;
             for (let i = 0; i < images.length; i++) {
               const img = images[i];

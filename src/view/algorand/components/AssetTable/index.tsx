@@ -5,7 +5,10 @@ import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import Spinner from 'src/view/shared/Spinner';
 import { images } from 'src/images/images';
-import { NoteModal } from 'src/view/algorand/components/Notes';
+import { NoteList, NoteModal } from 'src/view/algorand/components/Notes';
+import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
+import noteActions from 'src/modules/note/noteActions';
+import { useDispatch } from 'react-redux';
 
 function AssetTable(props) {
   const {
@@ -23,7 +26,11 @@ function AssetTable(props) {
   } = props;
 
   const [openCreateModal, setOpenCreateModal] = useState(false);
+  const [openNoteList, setOpenNoteList] = useState(false);
   const [id, setId] = useState(null);
+  const [currentNote, setCurrentNote] = useState(null);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const dispatch = useDispatch();
 
   const onClickComment = (_id) => {
     setOpenCreateModal(true);
@@ -34,6 +41,33 @@ function AssetTable(props) {
     setOpenCreateModal(false);
   }
 
+  const onClickView = (_id) => {
+    setOpenNoteList(true);
+    setId(_id)
+  }
+
+  const handleCloseNostList = () => {
+    setOpenNoteList(false);
+  }
+
+  const onDeleteNote = (d) => {
+    setCurrentNote(d.id);
+    setShowDeleteModal(true);
+  }
+
+  const onEditNote = (d) => {
+    setCurrentNote(d);
+    setOpenCreateModal(true);
+  }
+
+  const handleDeleteNote = () => {
+    setShowDeleteModal(false);
+    dispatch(noteActions.doDeleteNote(currentNote));
+  }
+
+  const handleCloseDeleteModal = () => {
+    setShowDeleteModal(false);
+  }
 
   return (
     <div className="table-responsive">
@@ -179,9 +213,31 @@ function AssetTable(props) {
                   )}
                 </td>
                 <td>
-                  <button className='btn btn-sm' onClick={() => onClickComment(asset.assetId)}>
-                    <i className='ml-2 fas fa-comment'></i>
+                  <button
+                    className="app-dropdown user-dropdown"
+                    role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                    data-toggle="dropdown"
+                  >
+                    <i className='ml-2 fas fa-ellipsis-v'></i>
                   </button>
+                  <div className="dropdown-menu dropdown-menu-right">
+                    <div className="bg-white dark__bg-1000 rounded-2 py-2 m-25">
+                      <button
+                        className="dropdown-item"
+                        type="button"
+                        onClick={() => onClickComment(asset.assetId)}
+                      >
+                        {i18n('note.create')}
+                      </button>
+                      <button
+                        className="dropdown-item"
+                        type="button"
+                        onClick={() => onClickView(asset.assetId)}
+                      >
+                        {i18n('note.view')}
+                      </button>
+                    </div>
+                  </div>
                 </td>
               </tr>
             )
@@ -196,6 +252,29 @@ function AssetTable(props) {
             cancelText={i18n('note.modal.cancel')}
             okText={i18n('note.modal.okText')}
             assetId={id}
+            note={currentNote}
+          />
+        )
+      }
+      {
+        openNoteList && (
+          <NoteList
+            onClose={handleCloseNostList}
+            cancelText={i18n('note.modal.cancel')}
+            assetId={id}
+            onDelete={onDeleteNote}
+            onEdit={onEditNote}
+          />
+        )
+      }
+{
+        showDeleteModal && (
+          <ConfirmModal
+            title={i18n('note.modal.delete_title')}
+            okText={i18n('note.delete')}
+            cancelText={i18n('note.modal.cancel')}
+            onConfirm={handleDeleteNote}
+            onClose={handleCloseDeleteModal}
           />
         )
       }

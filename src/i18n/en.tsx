@@ -713,8 +713,12 @@ const en = {
       okText: 'Create Note',
       cancel: 'Cancel',
       delete_title: 'Are you sure to delete this note?',
+      edit: 'Edit Note',
     },
     delete: 'Delete',
+    edit: 'Edit',
+    create: 'Create a Note',
+    view: 'View notes',
   }
 };
 

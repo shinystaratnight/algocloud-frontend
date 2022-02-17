@@ -45,6 +45,27 @@ const noteActions = {
       });
     }
   },
+  doEditNote: (note) => async (dispatch) => {
+    try {
+      dispatch({
+        type: noteActions.CREATE_STARTED
+      })
+      const data = await NoteService.editNote(
+        note
+      );
+
+      dispatch({
+        type: noteActions.CREATE_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: noteActions.CREATE_ERROR,
+      });
+    }
+  },
   doDeleteNote: (id) => async (dispatch) => {
     try {
       dispatch({

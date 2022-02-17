@@ -42,10 +42,19 @@ export const NoteModal = (props: any) => {
   const [description, setDescription] = useState('');
   const dispatch = useDispatch();
   const [submitted, setSubmitted] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
+  const [originalNote, setOriginalNote] = useState({});
 
   const loading = useSelector(selector.selectLoading);
 
-
+  useEffect(() => {
+    if (props.note) {
+      setTitle(props.note.title);
+      setDescription(props.note.description);
+      setOriginalNote(props.note);
+      setIsEdit(true);
+    }
+  }, [props])
 
   useEffect(() => {
     (window as any).$(modalRef.current).modal('show');
@@ -90,12 +99,20 @@ export const NoteModal = (props: any) => {
 
   const onSubmit = (values) => {
     setSubmitted(true);
-    const data = {
-      id: uniqueId(),
-      assetId: props.assetId,
-      ...values
-    };
-    dispatch(noteActions.doCreateNote(data));
+    if (isEdit) {
+      const data = {
+        ...originalNote,
+        ...values
+      };      
+      dispatch(noteActions.doEditNote(data));
+    } else {
+      const data = {
+        id: uniqueId(),
+        assetId: props.assetId,
+        ...values
+      };
+      dispatch(noteActions.doCreateNote(data));
+    }
   };
 
   return ReactDOM.createPortal(
@@ -123,6 +140,7 @@ export const NoteModal = (props: any) => {
                       label={i18n('note.name')}
                       required={true}
                       autoFocus
+                      value={title}
                       onChange={handleChangeTitle}
                     />
                   </div>
@@ -131,6 +149,7 @@ export const NoteModal = (props: any) => {
                       name="description"
                       label={i18n('note.description')}
                       required={true}
+                      value={description}
                       onChange={handleChangeDesc}
                     />
                   </div>
@@ -155,7 +174,7 @@ export const NoteModal = (props: any) => {
                         <Spinner style={{ marginTop: 0, marginBottom: 0, display: 'inline', }} color="success" spin="sm" />
                       )
                     }
-                    {props.okText}
+                    {!isEdit ? i18n('note.modal.okText') : i18n('note.modal.edit')}
                   </button>
                 </div>
               </FormProvider>

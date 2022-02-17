@@ -45,7 +45,7 @@ const AssetShowPage = () => {
       break;
     }
   }
-  
+
 
   const handleOpenCreateNoteModal = () => {
     setOpenCreateModal(true);
@@ -66,8 +66,13 @@ const AssetShowPage = () => {
   }
 
   const handleCloseDeleteModal = () => {
-    setShowDeleteModal(false);    
-  }  
+    setShowDeleteModal(false);
+  }
+
+  const onEditNote = (d) => {
+    setCurrentNote(d);
+    setOpenCreateModal(true);
+  }
 
   return (
     <>
@@ -176,7 +181,12 @@ const AssetShowPage = () => {
           ) : (
             notes?.map((note, index) => {
               return (
-                <NoteCard key={`note-${index}`} note={note} onDelete={() => onDeleteNote(note)} />
+                <NoteCard
+                  key={`note-${index}`}
+                  note={note}
+                  onDelete={() => onDeleteNote(note)}
+                  onEdit={() => onEditNote(note)}
+                />
               )
             })
           )
@@ -190,6 +200,7 @@ const AssetShowPage = () => {
             cancelText={i18n('note.modal.cancel')}
             okText={i18n('note.modal.okText')}
             assetId={assetId}
+            note={currentNote}
           />
         )
       }
