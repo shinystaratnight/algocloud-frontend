@@ -12,6 +12,7 @@ import product from 'src/modules/product/productReducers';
 import order from 'src/modules/order/orderReducers';
 import algorand from 'src/modules/algorand/algorandReducers';
 import overview from 'src/modules/algorand/overview/overviewReducers';
+import note from 'src/modules/note/noteReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -29,5 +30,6 @@ export default (history) =>
     product,
     order,
     algorand,
-    overview
+    overview,
+    note
   });

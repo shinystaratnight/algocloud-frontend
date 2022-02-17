@@ -1,6 +1,10 @@
 import React from 'react';
 
-function Spinner() {
+function Spinner(props) {
+  let color = 'primary';
+  let spin = ''
+  if (props.color) color = props.color;
+  if (props.spin) spin = props.spin;
   return (
     <div
       style={{
@@ -11,9 +15,10 @@ function Spinner() {
         justifyContent: 'center',
         alignContent: 'center',
         alignItems: 'center',
+        ...props.style
       }}
     >
-      <div className="spinner-border text-primary"></div>
+      <div className={`spinner-border ${spin ? 'spinner-border-sm' : ''} text-${color}`}></div>
     </div>
   );
 }

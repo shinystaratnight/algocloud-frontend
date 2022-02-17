@@ -697,6 +697,17 @@ const ptBR = {
   launchpad: {
     menu: 'Launchpad',
   },
+  note: {
+    createText: 'Criar uma nota...',
+    name: 'Nome',
+    description: 'Descrição',
+    modal: {
+      okText: 'Criar nota',
+      cancel: 'Cancelar',
+      delete_title: 'Tem certeza de que deseja excluir esta nota?',
+    },
+    delete: 'Excluir',
+  }
 };
 
 export default ptBR;

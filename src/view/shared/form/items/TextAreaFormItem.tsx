@@ -95,6 +95,7 @@ TextAreaFormItem.propTypes = {
   prefix: PropTypes.string,
   placeholder: PropTypes.string,
   externalErrorMessage: PropTypes.string,
+  onChange: PropTypes.any,
 };
 
 export default TextAreaFormItem;

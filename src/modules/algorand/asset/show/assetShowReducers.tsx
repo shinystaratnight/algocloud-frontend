@@ -23,7 +23,8 @@ const initialData = {
       pageSize: 10,
     },
     sorter: {},
-  }
+  },
+  notes: [] as Array<any>
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -53,6 +54,7 @@ export default (state = initialData, { type, payload }) => {
       dailyPrices: payload.dailyPrices,
       dailyAssetData: payload.dailyAssetData,
       hourlyAssetData: payload.hourlyAssetData,
+      notes: payload.notes,
       pool,
     };
   }

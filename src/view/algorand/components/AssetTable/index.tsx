@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import Spinner from 'src/view/shared/Spinner';
 import { images } from 'src/images/images';
+import { NoteModal } from 'src/view/algorand/components/Notes';
 
 function AssetTable(props) {
   const {
@@ -20,6 +21,19 @@ function AssetTable(props) {
     setToogleId,
     setShowcaseId,
   } = props;
+
+  const [openCreateModal, setOpenCreateModal] = useState(false);
+  const [id, setId] = useState(null);
+
+  const onClickComment = (_id) => {
+    setOpenCreateModal(true);
+    setId(_id)
+  }
+
+  const handleCloseCreateModal = () => {
+    setOpenCreateModal(false);
+  }
+
 
   return (
     <div className="table-responsive">
@@ -82,6 +96,11 @@ function AssetTable(props) {
             <TableColumnHeader
               name='showcase'
               label='SHOWCASE'
+            />
+            <TableColumnHeader
+              name='more'
+              label=''
+              align='right'
             />
           </tr>
         </thead>
@@ -159,11 +178,27 @@ function AssetTable(props) {
                     </button>
                   )}
                 </td>
+                <td>
+                  <button className='btn btn-sm' onClick={() => onClickComment(asset.assetId)}>
+                    <i className='ml-2 fas fa-comment'></i>
+                  </button>
+                </td>
               </tr>
             )
           })}
         </tbody>
       </table>
+
+      {
+        openCreateModal && (
+          <NoteModal
+            onClose={handleCloseCreateModal}
+            cancelText={i18n('note.modal.cancel')}
+            okText={i18n('note.modal.okText')}
+            assetId={id}
+          />
+        )
+      }
     </div>
   );
 }
