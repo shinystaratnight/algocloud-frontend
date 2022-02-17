@@ -15,6 +15,7 @@ const ptBR = {
     no: 'Não',
     pause: 'Pausar',
     areYouSure: 'Tem certeza?',
+    confirmAction: 'Confirmar ação',
     view: 'Visualizar',
     destroy: 'Deletar',
     mustSelectARow: 'Selecine uma linha',
@@ -496,7 +497,8 @@ const ptBR = {
   },
   dashboard: {
     menu: 'Inicial',
-    message: `Esta página usa dados falsos apenas para fins de demonstração. Você pode editá-la em frontend/view/dashboard/DashboardPage.ts.`,
+    message: `Copyright © 2022 HEADLINE INC.`,
+    rights: 'Todos os direitos reservados',
     charts: {
       day: 'Dia',
       red: 'Vermelho',

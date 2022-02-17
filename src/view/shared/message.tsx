@@ -15,7 +15,7 @@ export default class Message {
       "progressBar": true,
       "toastClass": "mdc-snackbar__surface",
       "positionClass": "mdc-snackbar",
-      "preventDuplicates": false,
+      "preventDuplicates": true,
       "onclick": null,
       "showDuration": "300",
       "hideDuration": "1000",

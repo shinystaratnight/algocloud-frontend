@@ -84,7 +84,7 @@ function Header(props) {
 
       <div className="last-child" style={{display: 'flex', alignItems: 'center'}}>
                 <span className="i18n-select">
-          <I18nSelect />
+          <I18nSelect  />
         </span>  
 
 <li className="nav-item dropdown">

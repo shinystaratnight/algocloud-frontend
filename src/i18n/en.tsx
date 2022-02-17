@@ -15,6 +15,7 @@ const en = {
     no: 'No',
     pause: 'Pause',
     areYouSure: 'Are you sure?',
+    confirmAction: 'Confirm action',
     view: 'View',
     destroy: 'Delete',
     mustSelectARow: 'Must select a row',
@@ -506,7 +507,8 @@ const en = {
   },
   dashboard: {
     menu: 'Dashboard',
-    message: `Harness the power of AlgoCloud`,
+    message: `Copyright © 2022 HEADLINE INC.`,
+    rights: 'All rights reserved',
     charts: {
       day: 'Day',
       red: 'Red',

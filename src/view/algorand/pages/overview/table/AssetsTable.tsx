@@ -110,7 +110,7 @@ function AssetsTable({ assets }) {
 
       {(assetIdToToggle !== null) && (
         <ConfirmModal
-          title={i18n('common.areYouSure')}
+          title={i18n('common.confirmAction')}
           onConfirm={() => toggleFavorite(assetIdToToggle)}
           onClose={() => setAssetIdToToggle(null)}
           okText={i18n('common.yes')}
@@ -120,7 +120,7 @@ function AssetsTable({ assets }) {
 
       {(assetIdToShowcase !== null) && (
         <ConfirmModal
-          title={i18n('common.areYouSure')}
+          title={i18n('common.confirmAction')}
           onConfirm={() => setShowcase(assetIdToShowcase)}
           onClose={() => setAssetIdToShowcase(null)}
           okText={i18n('common.yes')}

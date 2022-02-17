@@ -9,8 +9,8 @@ function I18nSelect(props) {
 
   return (
     <select
-      style={{ width: '100px', display: 'inline-block' }}
-      className="form-select form-select-sm"
+      style={{ display: 'inline-block' }}
+      className="crayons-select"
       value={getLanguageCode()}
       onChange={(event) =>
         doChangeLanguage(event.target.value)

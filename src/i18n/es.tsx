@@ -16,6 +16,7 @@ const es = {
     no: 'No',
     pause: 'Pausa',
     areYouSure: '¿Estás seguro?',
+    confirmAction: 'Confirmar acción',
     view: 'Ver',
     destroy: 'Eliminar',
     mustSelectARow: 'Debe seleccionar una fila',
@@ -520,7 +521,8 @@ const es = {
   dashboard: {
     menu: 'Tablero',
     message:
-      'Esta página utiliza datos falsos solo con fines de demostración. Puede editarlo en frontend/view/dashboard/DashboardPage.ts.',
+      'Copyright © 2022 HEADLINE INC.',
+      rights: 'Todos los derechos reservados',
     charts: {
       day: 'Día',
       red: 'Rojo',
