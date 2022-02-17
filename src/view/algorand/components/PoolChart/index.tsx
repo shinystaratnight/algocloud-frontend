@@ -56,7 +56,7 @@ const PoolChart = (props) => {
   }, [isClient, width]);
 
   return (
-    <ChartWindowWrapper>
+    <ChartWindowWrapper className="card-hover-2">
       <RowBetween
         mb={
           chartFilter === POOL_CHART_VIEW.LIQUIDITY ||

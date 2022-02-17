@@ -1,76 +1,3 @@
-.form-check-input {
-    width: 1em;
-    height: 1em;
-    margin-top: 0.25em;
-    vertical-align: top;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: 1px solid var(--algocloud-form-check-input-border-color);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
-}
-
-.main.signin {
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23601ecb' fill-opacity='0.2'%3E%3Cpath opacity='.4' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-.bg-shape {
-    position: relative;
-    overflow: hidden;
-    background-color: #01224b99 !important;
-    filter: hue-rotate(37deg) !important;
-}
-
-.bg-shape:after {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23601ecb' fill-opacity='0.2'%3E%3Cpath opacity='.4' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-.bg-circle-shape:after {
-    height: 15.625rem;
-    width: 215%;
-    left: -32% !important;
-}
-
-.bg-shape:after, .bg-shape:before {
-    position: absolute;
-    content: "";
-    border-radius: 0px;
-    width: 2000%;
-    height: 700px;
-    top: -40px;
-    left: 0% !important;
-}
-
-h1.algocloud-brand-login {
-    z-index: 11;
-    font-weight: 600;
-    color: var(--algocloud-black);
-}
-
-.crayons-card--secondary {
-    background: var(--card-secondary-bg);
-    color: var(--card-secondary-color);
-    box-shadow: 0 0 0 1px var(--card-secondary-border);
-}
-
-.crayons-card {
-    border-radius: var(--radius-auto);
-    background: var(--card-bg);
-    color: var(--card-color);
-    box-shadow: 0 0 0 1px var(--card-border);
-    overflow-wrap: anywhere;
-}
-
-
-.table tr td:first-child, .table tr th:first-child {
-    text-indent: 0px;
-}
-
 @-webkit-keyframes progress-bar-stripes {
     0% {
         background-position-x: 1rem
@@ -247,6 +174,972 @@ h1.algocloud-brand-login {
     }
 }
 
+:root {
+    --btn-bg: transparent;
+    --btn-bg-hover: rgba(var(--accent-brand-rgb), 0.1);
+    --btn-color: rgb(var(--grey-800));
+    --btn-color-hover: var(--accent-brand-darker);
+    --btn-current-bg: rgb(var(--grey-200));
+    --btn-current-color: rgb(var(--grey-900));
+    --btn-primary-bg: var(--accent-brand);
+    --btn-primary-bg-hover: var(--accent-brand-darker);
+    --btn-primary-color: rgb(var(--white));
+    --btn-primary-color-hover: rgb(var(--white));
+    --btn-secondary-bg: rgba(var(--accent-brand-rgb), 0.1);
+    --btn-secondary-bg-hover: var(--accent-brand);
+    --btn-secondary-color: var(--accent-brand);
+    --btn-secondary-color-hover: rgb(var(--white));
+    --btn-destructive-bg: transparent;
+    --btn-destructive-bg-hover: rgba(var(--red-600), 0.1);
+    --btn-destructive-color: rgb(var(--red-700));
+    --btn-destructive-color-hover: rgb(var(--red-800));
+    --btn-primary-destructive-bg: rgb(var(--red-600));
+    --btn-primary-destructive-bg-hover: rgb(var(--red-700));
+    --btn-primary-destructive-color: rgb(var(--white));
+    --btn-primary-destructive-color-hover: rgb(var(--white));
+    --link-bg: transparent;
+    --link-bg-hover: rgba(var(--accent-brand-rgb), 0.1);
+    --link-color: rgb(var(--grey-700));
+    --link-color-hover: var(--accent-brand-darker);
+    --link-current-bg: rgb(var(--grey-200));
+    --link-current-color: rgb(var(--grey-900));
+    --link-branded-bg: transparent;
+    --link-branded-bg-hover: rgba(var(--accent-brand-rgb), 0.1);
+    --link-branded-color: var(--accent-brand);
+    --link-branded-color-hover: var(--accent-brand-darker);
+    --cta-bg: transparent;
+    --cta-bg-hover: rgba(var(--accent-brand-rgb), 0.1);
+    --cta-color: rgb(var(--grey-800));
+    --cta-color-hover: var(--accent-brand-darker);
+    --cta-border: rgb(var(--grey-600));
+    --cta-border-hover: var(--accent-brand-darker);
+    --cta-branded-bg: transparent;
+    --cta-branded-bg-hover: var(--accent-brand);
+    --cta-branded-color: var(--accent-brand);
+    --cta-branded-color-hover: rgb(var(--white));
+    --cta-branded-border: var(--accent-brand);
+    --cta-branded-border-hover: var(--accent-brand-darker);
+    --tooltip-bg: rgba(var(--grey-900), 0.9);
+    --tooltip-color: rgb(var(--white));
+    --indicator-bg: rgb(var(--grey-300));
+    --indicator-color: rgb(var(--grey-700));
+    --indicator-success-bg: rgb(var(--green-400));
+    --indicator-success-color: rgb(var(--green-900));
+    --indicator-warning-bg: rgb(var(--yellow-300));
+    --indicator-warning-color: rgb(var(--yellow-900));
+    --indicator-danger-bg: rgb(var(--red-600));
+    --indicator-danger-color: rgb(var(--white));
+    --indicator-info-bg: var(--accent-brand);
+    --indicator-info-color: rgb(var(--white));
+    --list-item-bg-hover: rgb(var(--grey-50));
+    --modal-bg: rgb(var(--white));
+    --modal-backdrop: rgba(var(--black), 0.6);
+    --modal-danger-border-color: rgb(var(--red-500));
+    --color-primary: rgb(var(--grey-900));
+    --color-secondary: rgb(var(--grey-500));
+    --pill-bg: transparent;
+    --pill-bg-hover: rgb(var(--grey-50));
+    --pill-color: rgb(var(--grey-800));
+    --pill-color-hover: rgb(var(--grey-900));
+    --pill-border: rgb(var(--grey-200));
+    --pill-border-hover: rgb(var(--grey-600));
+    --swatch-border-color: rgb(var(--black), 0.2);
+    --divider: rgb(var(--grey-200));
+    --shadow-1: 0 10px 15px -3px rgba(var(--black), 0.1), 0 4px 6px -2px rgba(var(--black), 0.05), 0 0 0 1px rgba(var(--black), 0.1);
+    --shadow-2: 0 20px 25px -5px rgba(var(--black), 0.1), 0 10px 10px -5px rgba(var(--black), 0.05), 0 0 0 1px rgba(var(--black), 0.1);
+    --header-height: 56px;
+    --site-width: 1280px;
+    --su-1: 0.25rem;
+    --su-2: 0.5rem;
+    --su-3: 0.75rem;
+    --su-4: 1rem;
+    --su-5: 1.25rem;
+    --su-6: 1.5rem;
+    --su-7: 2rem;
+    --su-8: 3rem;
+    --su-9: 4rem;
+    --su-10: 8rem;
+    --radius: 0.375rem;
+    --radius-large: 0.75rem;
+    --radius-auto: Max(0px, Min(var(--radius), calc((100vw - 4px - 100%) * 9999))) / var(--radius);
+    --radius-large-auto: Max( 0px, Min(var(--radius-large), calc((100vw - 4px - 100%) * 9999)) ) / var(--radius-large);
+    --transition-func: cubic-bezier(0.17, 0.67, 0.5, 0.71);
+    --transition-time: 100ms;
+    --transition-props: var(--transition-func) var(--transition-time);
+    --focus-ring: 0 0 0 2px var(--base-inverted), 0 0 0 4px var(--focus);
+    --ff-sans-serif: "Inter",-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --ff-monospace: "SF Mono", SFMono-Regular, Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    --ff-serif: Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+    --ff-comic: "Comic Sans MS", cursive, sans-serif;
+    --ff-dyslexic: OpenDyslexic, sans-serif;
+    --fs-xs: 0.75rem;
+    --fs-s: 0.875rem;
+    --fs-base: 1rem;
+    --fs-l: 1.125rem;
+    --fs-xl: 1.25rem;
+    --fs-2xl: 1.5rem;
+    --fs-3xl: 1.875rem;
+    --fs-4xl: 2.25rem;
+    --fs-5xl: 3rem;
+    --fw-normal: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+    --fw-heavy: 800;
+    --lh-tight: 1.25;
+    --lh-base: 1.5;
+    --opacity-0: 0.00001;
+    --opacity-25: 0.25;
+    --opacity-50: 0.5;
+    --opacity-75: 0.75;
+    --opacity-100: 1;
+    --z-negative: -1;
+    --z-elevate: 1;
+    --z-sticky: 100;
+    --z-drawer: 200;
+    --z-dropdown: 400;
+    --z-modal: 500;
+    --z-popover: 500;
+    --white: 255, 255, 255;
+    --black: 0, 0, 0;
+    --grey-50: 250, 250, 250;
+    --grey-100: 245, 245, 245;
+    --grey-200: 229, 229, 229;
+    --grey-300: 212, 212, 212;
+    --grey-400: 163, 163, 163;
+    --grey-500: 115, 115, 115;
+    --grey-600: 82, 82, 82;
+    --grey-700: 64, 64, 64;
+    --grey-800: 38, 38, 38;
+    --grey-900: 23, 23, 23;
+    --red-50: 254, 242, 242;
+    --red-100: 254, 226, 226;
+    --red-200: 254, 202, 202;
+    --red-300: 252, 165, 165;
+    --red-400: 248, 113, 113;
+    --red-500: 239, 68, 68;
+    --red-600: 220, 38, 38;
+    --red-700: 185, 28, 28;
+    --red-800: 153, 27, 27;
+    --red-900: 127, 29, 29;
+    --yellow-50: 255, 251, 235;
+    --yellow-100: 254, 243, 199;
+    --yellow-200: 253, 230, 138;
+    --yellow-300: 252, 211, 77;
+    --yellow-400: 251, 191, 36;
+    --yellow-500: 245, 158, 11;
+    --yellow-600: 217, 119, 6;
+    --yellow-700: 180, 83, 9;
+    --yellow-800: 146, 64, 14;
+    --yellow-900: 120, 53, 15;
+    --green-50: 236, 253, 245;
+    --green-100: 209, 250, 229;
+    --green-200: 167, 243, 208;
+    --green-300: 110, 231, 183;
+    --green-400: 52, 211, 153;
+    --green-500: 16, 185, 129;
+    --green-600: 5, 150, 105;
+    --green-700: 4, 120, 87;
+    --green-800: 6, 95, 70;
+    --green-900: 6, 78, 59;
+    --indigo-50: 238, 242, 255;
+    --indigo-100: 224, 231, 255;
+    --indigo-200: 199, 210, 254;
+    --indigo-300: 165, 180, 252;
+    --indigo-400: 129, 140, 248;
+    --indigo-500: 99, 102, 241;
+    --indigo-600: 79, 70, 229;
+    --indigo-700: 67, 56, 202;
+    --indigo-800: 55, 48, 163;
+    --indigo-900: 49, 46, 129;
+    --algo-body: #575757;
+    --card-border: rgb(9 9 9 / 10%);
+    --algocloud-blue: var(--algocloud-primary);
+    --algocloud-indigo: #727cf5;
+    --algocloud-purple: #6b5eae;
+    --algocloud-pink: #ff679b;
+    --algocloud-red: #d31616;
+    --algocloud-orange: #fd7e14;
+    --algocloud-yellow: #f5803e;
+    --algocloud-green: #26d9ca;
+    --algocloud-teal: #02a8b5;
+    --algocloud-cyan: #27bcfd;
+    --algocloud-gray: #748194;
+    --algocloud-gray-dark: #4d5969;
+    --algocloud-gray-black: #000;
+    --algocloud-gray-100: #f9fafd;
+    --algocloud-gray-200: #edf2f9;
+    --algocloud-gray-300: #d8dbef;
+    --algocloud-gray-400: #b6c1d2;
+    --algocloud-gray-500: #9da9bb;
+    --algocloud-gray-600: #748194;
+    --algocloud-gray-700: #5e6e82;
+    --algocloud-gray-800: #4d5969;
+    --algocloud-gray-900: #3d3d3d;
+    --algocloud-gray-1000: #232e3c;
+    --algocloud-gray-1100: #0b1727;
+    --algocloud-gray-white: #fff;
+    --algocloud-primary-rgb: 99, 121, 253;
+    --primary: #3b49df;
+    --algocloud-colored-link-primary-hover-color: #7b78ff;
+    --algocloud-secondary-rgb: 116, 129, 148;
+    --algocloud-success-rgb: 0, 210, 122;
+    --algocloud-info-rgb: rgb(139 155 253);
+    --algocloud-warning-rgb: 245, 128, 62;
+    --algocloud-danger-rgb: 230, 55, 87;
+    --algocloud-light-rgb: 249, 250, 253;
+    --algocloud-dark-rgb: 11, 23, 39;
+    --algocloud-white-rgb: 255, 255, 255;
+    --algocloud-black-rgb: 0, 0, 0;
+    --algocloud-body-color-rgb: 94, 110, 130;
+    --algocloud-body-bg-2: var(--algocloud-body-color);
+    --algocloud-body-bg-rgb: 237, 242, 249;
+    --algocloud-font-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --algocloud-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    --algocloud-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    --algocloud-body-font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    --algocloud-body-font-size: 1rem;
+    --algocloud-body-font-weight: 400;
+    --algocloud-body-line-height: 1.5;
+    --algocloud-menu-li-hover: rgb(59 73 223 / 10%);
+    --algocloud-menu-li-color-hover: #323ebe;
+    --algocloud-menu-li-bg-active: rgb(59 73 223 / 10%);
+    --algocloud-menu-li-color-active: #232e3c;
+    --algocloud-menu-border-color: #5b616e33;
+    --border-var: #5b616e33;
+    --algocloud-brand-color: #0326f7;
+    --li-active: #000;
+    --li-hover: #323ebe;
+    --algocloud-logo-1: #090909;
+    --algocloud-facebook: #3c5a99;
+    --algocloud-colored-link-facebook-hover-color: #30487a;
+    --algocloud-google-plus: #dd4b39;
+    --algocloud-colored-link-google-plus-hover-color: #b13c2e;
+    --algocloud-twitter: #1da1f2;
+    --algocloud-colored-link-twitter-hover-color: #1781c2;
+    --algocloud-linkedin: #0077b5;
+    --algocloud-colored-link-linkedin-hover-color: #005f91;
+    --algocloud-youtube: #ff0001;
+    --algocloud-colored-link-youtube-hover-color: #cc0001;
+    --algocloud-github: #333333;
+    --algocloud-colored-link-github-hover-color: #292929;
+    --algocloud-black: #000;
+    --algocloud-colored-link-black-hover-color: black;
+    --algocloud-100: #f9fafd;
+    --algocloud-colored-link-100-hover-color: #fafbfd;
+    --algocloud-200: rgb(59 73 223/10%);
+    --algocloud-colored-link-200-hover-color: #f1f5fa;
+    --algocloud-300: #d8dbef;
+    --algocloud-colored-link-300-hover-color: #e0e8f2;
+    --algocloud-400: #b6c1d2;
+    --algocloud-colored-link-400-hover-color: #c5cddb;
+    --algocloud-500: #9da9bb;
+    --algocloud-colored-link-500-hover-color: #7e8796;
+    --algocloud-600: #748194;
+    --algocloud-colored-link-600-hover-color: #5d6776;
+    --algocloud-700: #5e6e82;
+    --algocloud-colored-link-700-hover-color: #4b5868;
+    --algocloud-800: #4d5969;
+    --algocloud-colored-link-800-hover-color: #3e4754;
+    --algocloud-900: #3d3d3d;
+    --algocloud-colored-link-900-hover-color: #2a3340;
+    --algocloud-1000: #232e3c;
+    --algocloud-colored-link-1000-hover-color: #1c2530;
+    --algocloud-1100: #0b1727;
+    --algocloud-colored-link-1100-hover-color: #09121f;
+    --algocloud-white: #fff;
+    --algocloud-colored-link-white-hover-color: white;
+    --algocloud-primary: #3b49df;
+    --algocloud-colored-link-primary-hover-color: #3b49df;
+    --algocloud-secondary: #748194;
+    --algocloud-colored-link-secondary-hover-color: #5d6776;
+    --algocloud-success: #26d9ca;
+    --algocloud-colored-link-success-hover-color: #1ab3a6;
+    --algocloud-info: var(--algocloud-primary);
+    --algocloud-colored-link-info-hover-color: #1f96ca;
+    --algocloud-warning: #f5803e;
+    --algocloud-colored-link-warning-hover-color: #c46632;
+    --algocloud-danger: #d31616;
+    --algocloud-colored-link-danger-hover-color: #b82c46;
+    --algocloud-light: #f9fafd;
+    --algocloud-colored-link-light-hover-color: #fafbfd;
+    --algocloud-dark: #0b1727;
+    --algocloud-colored-link-dark-hover-color: #09121f;
+    --algocloud-soft-primary: #e6effc;
+    --algocloud-soft-secondary: #eef0f2;
+    --algocloud-soft-success: #e0faef;
+    --algocloud-soft-info: #e5f7ff;
+    --algocloud-soft-warning: #fef0e8;
+    --algocloud-soft-danger: #fce7eb;
+    --algocloud-soft-light: #fefeff;
+    --algocloud-soft-dark: #e2e3e5;
+    --algocloud-accordion-border-color: rgba(0, 0, 0, 0.125);
+    --algocloud-accordion-button-active-color: #286fce;
+    --algocloud-accordion-button-active-bg: var(--algocloud-200);
+    --algocloud-btn-reveal-color: dark;
+    --algocloud-btn-reveal-bg: #e6e6e6;
+    --algocloud-btn-reveal-border-color: #dfdfdf;
+    --algocloud-btn-algocloud-background: var(--algocloud-white);
+    --algocloud-btn-disabled-color: #4d5969;
+    --algocloud-btn-algocloud-box-shadow: 0 0 0 1px rgb(9 9 9 / 10%);
+    --algocloud-btn-algocloud-hover-box-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1), 0 2px 5px 0 rgba(43, 45, 80, 0.1), 0 3px 9px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+    --algocloud-btn-algocloud-default-color: #4d5969;
+    --algocloud-btn-algocloud-default-hover-color: #404a57;
+    --algocloud-btn-algocloud-default-active-background: #e6e6e6;
+    --algocloud-btn-algocloud-default-active-border: #404a57;
+    --algocloud-btn-algocloud-primary-color: var(--algocloud-primary);
+    --algocloud-btn-algocloud-primary-hover-color: #4150f5;
+    --algocloud-btn-algocloud-primary-active-background: #d5e5fa;
+    --algocloud-btn-algocloud-primary-active-color: #4150f5;
+    --algocloud-alert-primary-background: #d5e5fa;
+    --algocloud-alert-primary-border-color: #c0d7f7;
+    --algocloud-alert-primary-color: #1a4a89;
+    --algocloud-alert-primary-link-color: #3b49df;
+    --algocloud-list-group-item-primary-background: #d5e5fa;
+    --algocloud-list-group-item-primary-color: #1a4a89;
+    --algocloud-badge-soft-primary-background-color: #d5e5fa;
+    --algocloud-badge-soft-primary-color: #1c4f93;
+    --algocloud-btn-algocloud-secondary-color: var(--algocloud-secondary);
+    --algocloud-btn-algocloud-secondary-hover-color: #606b7b;
+    --algocloud-btn-algocloud-secondary-active-background: #e3e6ea;
+    --algocloud-btn-algocloud-secondary-active-color: #606b7b;
+    --algocloud-alert-secondary-background: #e3e6ea;
+    --algocloud-alert-secondary-border-color: #d5d9df;
+    --algocloud-alert-secondary-color: #464d59;
+    --algocloud-alert-secondary-link-color: #5d6776;
+    --algocloud-list-group-item-secondary-background: #e3e6ea;
+    --algocloud-list-group-item-secondary-color: #464d59;
+    --algocloud-badge-soft-secondary-background-color: #e3e6ea;
+    --algocloud-badge-soft-secondary-color: #7d899b;
+    --algocloud-btn-algocloud-success-color: var(--algocloud-success);
+    --algocloud-btn-algocloud-success-hover-color: #00ae65;
+    --algocloud-btn-algocloud-success-active-background: #ccf6e4;
+    --algocloud-btn-algocloud-success-active-color: #00ae65;
+    --algocloud-alert-success-background: #ccf6e4;
+    --algocloud-alert-success-border-color: #b3f2d7;
+    --algocloud-alert-success-color: #007e49;
+    --algocloud-alert-success-link-color: #1ab3a6;
+    --algocloud-list-group-item-success-background: #ccf6e4;
+    --algocloud-list-group-item-success-color: #007e49;
+    --algocloud-badge-soft-success-background-color: #ccf6e4;
+    --algocloud-badge-soft-success-color: #00864e;
+    --algocloud-btn-algocloud-info-color: var(--algocloud-info);
+    --algocloud-btn-algocloud-info-hover-color: #209cd2;
+    --algocloud-btn-algocloud-info-active-background: rgb(38 217 202 / 10%);
+    --algocloud-btn-algocloud-info-active-color: #209cd2;
+    --algocloud-alert-info-background: rgb(38 217 202 / 10%);
+    --algocloud-alert-info-border-color: #beebfe;
+    --algocloud-alert-info-color: #177198;
+    --algocloud-alert-info-link-color: #1f96ca;
+    --algocloud-list-group-item-info-background: rgb(38 217 202 / 10%);
+    --algocloud-list-group-item-info-color: #177198;
+    --algocloud-badge-soft-info-background-color: rgb(38 217 202 / 10%);
+    --algocloud-badge-soft-info-color: #26d9ca;
+    --algocloud-btn-algocloud-warning-color: var(--algocloud-warning);
+    --algocloud-btn-algocloud-warning-hover-color: #cb6a33;
+    --algocloud-btn-algocloud-warning-active-background: rgb(220 24 24 / 10%);
+    --algocloud-btn-algocloud-warning-active-color: #cb6a33;
+    --algocloud-alert-warning-background: rgb(220 24 24 / 10%);
+    --algocloud-alert-warning-border-color: #fcd9c5;
+    --algocloud-alert-warning-color: #934d25;
+    --algocloud-alert-warning-link-color: #c46632;
+    --algocloud-list-group-item-warning-background: rgb(220 24 24 / 10%);
+    --algocloud-list-group-item-warning-color: #934d25;
+    --algocloud-badge-soft-warning-background-color: rgb(220 24 24 / 10%);
+    --algocloud-badge-soft-warning-color: #9d5228;
+    --algocloud-btn-algocloud-danger-color: var(--algocloud-danger);
+    --algocloud-btn-algocloud-danger-hover-color: #bf2e48;
+    --algocloud-btn-algocloud-danger-active-background: #fad7dd;
+    --algocloud-btn-algocloud-danger-active-color: #bf2e48;
+    --algocloud-alert-danger-background: #fad7dd;
+    --algocloud-alert-danger-border-color: #f8c3cd;
+    --algocloud-alert-danger-color: #8a2134;
+    --algocloud-alert-danger-link-color: #b82c46;
+    --algocloud-list-group-item-danger-background: #fad7dd;
+    --algocloud-list-group-item-danger-color: #8a2134;
+    --algocloud-badge-soft-danger-background-color: #fad7dd;
+    --algocloud-badge-soft-danger-color: #932338;
+    --algocloud-btn-algocloud-light-color: var(--algocloud-light);
+    --algocloud-btn-algocloud-light-hover-color: #cfd0d2;
+    --algocloud-btn-algocloud-light-active-background: #fefeff;
+    --algocloud-btn-algocloud-light-active-color: #cfd0d2;
+    --algocloud-alert-light-background: #fefeff;
+    --algocloud-alert-light-border-color: #fdfefe;
+    --algocloud-alert-light-color: #959698;
+    --algocloud-alert-light-link-color: #c7c8ca;
+    --algocloud-list-group-item-light-background: #fefeff;
+    --algocloud-list-group-item-light-color: #959698;
+    --algocloud-badge-soft-light-background-color: #fefeff;
+    --algocloud-badge-soft-light-color: #9fa0a2;
+    --algocloud-btn-algocloud-dark-color: var(--algocloud-dark);
+    --algocloud-btn-algocloud-dark-hover-color: #091320;
+    --algocloud-btn-algocloud-dark-active-background: #ced1d4;
+    --algocloud-btn-algocloud-dark-active-color: #091320;
+    --algocloud-alert-dark-background: #ced1d4;
+    --algocloud-alert-dark-border-color: #b6b9be;
+    --algocloud-alert-dark-color: #070e17;
+    --algocloud-alert-dark-link-color: #09121f;
+    --algocloud-list-group-item-dark-background: #ced1d4;
+    --algocloud-list-group-item-dark-color: #070e17;
+    --algocloud-badge-soft-dark-background-color: #ced1d4;
+    --algocloud-badge-soft-dark-color: #070f19;
+    --algocloud-transparent-50: rgba(255, 255, 255, 0.5);
+    --algocloud-list-group-bg: #fff;
+    --algocloud-list-group-action-hover-color: #5e6e82;
+    --algocloud-list-group-hover-bg: #f9fafd;
+    --algocloud-body-bg: #efefef;
+    --algocloud-body-color: #3d3d3d;
+    --algocloud-headings-color: #090909;
+    --algocloud-link-color: var(--algocloud-primary);
+    --algocloud-link-hover-color: #3b49df;
+    --algocloud-border-color: #d8dbef;
+    --algocloud-box-shadow: 0 0 0 1px rgb(9 9 9 / 10%);
+    --algocloud-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    --algocloud-box-shadow-lg: 0 1rem 4rem rgba(0, 0, 0, 0.175);
+    --algocloud-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
+    --algocloud-component-active-color: ;--algocloud-component-active-bg:var(--algocloud-primary);
+    --algocloud-text-muted: #748194;
+    --algocloud-blockquote-footer-color: #748194;
+    --algocloud-hr-color: var(--algocloud-border-color);
+    --algocloud-hr-opacity: 0.25;
+    --algocloud-mark-bg: #fcf8e3;
+    --algocloud-input-btn-focus-color: rgba(44, 123, 229, 0.25);
+    --algocloud-btn-link-color: #4862fd;
+    --algocloud-btn-link-hover-color: var(--algocloud-primary);
+    --algocloud-btn-disabled-color: #748194;
+    --algocloud-heading-color: #3d3d3d;
+    --algocloud-input-bg: #fff;
+    --algocloud-input-color: #3d3d3d;
+    --algocloud-input-border-color: #d8dbef;
+    --algocloud-input-focus-border-color: var(--algocloud-primary);
+    --algocloud-input-focus-color: var(--algocloud-input-color);
+    --algocloud-input-placeholder-color: #b6c1d2;
+    --algocloud-input-plaintext-color: #5e6e82;
+    --algocloud-form-check-label-color: ;--algocloud-form-check-input-bg:transparent;
+    --algocloud-form-check-input-border: 1px solid var(--algocloud-form-check-input-border-color);
+    --algocloud-form-check-input-border-color: #b6c1d2;
+    --algocloud-form-check-input-checked-color: #fff;
+    --algocloud-form-check-input-checked-bg-color: var(--algocloud-primary);
+    --algocloud-form-check-input-checked-border-color: var(--algocloud-primary);
+    --algocloud-form-check-input-indeterminate-color: #fff;
+    --algocloud-form-check-input-indeterminate-bg-color: var(--algocloud-primary);
+    --algocloud-form-check-input-indeterminate-border-color: var(--algocloud-primary);
+    --algocloud-form-switch-color: rgba(0, 0, 0, .25);
+    --algocloud-form-switch-focus-color: var(--algocloud-input-focus-border-color);
+    --algocloud-form-switch-checked-color: #fff;
+    --algocloud-input-group-addon-color: var(--algocloud-input-border-color);
+    --algocloud-input-group-addon-bg: #edf2f9;
+    --algocloud-input-group-addon-border-color: var(--algocloud-input-border-color);
+    --algocloud-form-select-color: var(--algocloud-input-color);
+    --algocloud-form-select-disabled-color: #748194;
+    --algocloud-form-select-bg: var(--algocloud-input-bg);
+    --algocloud-form-select-disabled-bg: #edf2f9;
+    --algocloud-form-select-indicator-color: #4d5969;
+    --algocloud-form-select-focus-box-shadow: 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
+    --algocloud-form-select-border-color: var(--algocloud-input-border-color);
+    --algocloud-form-select-focus-border-color: var(--algocloud-input-focus-border-color);
+    --algocloud-form-range-track-bg: #d8dbef;
+    --algocloud-form-range-track-box-shadow: var(--algocloud-box-shadow-inset);
+    --algocloud-form-range-thumb-bg: var(--algocloud-primary);
+    --algocloud-form-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
+    --algocloud-form-range-thumb-focus-box-shadow: 0 0 0 1px #edf2f9, 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
+    --algocloud-form-range-thumb-active-bg: #cbdef9;
+    --algocloud-form-range-thumb-disabled-bg: #9da9bb;
+    --algocloud-form-file-focus-border-color: var(--algocloud-input-focus-border-color);
+    --algocloud-form-file-focus-box-shadow: 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
+    --algocloud-form-file-disabled-bg: var(--algocloud-200);
+    --algocloud-form-file-disabled-border-color: ;--algocloud-form-file-color:var(--algocloud-input-color);
+    --algocloud-form-file-bg: var(--algocloud-input-bg);
+    --algocloud-form-file-border-color: var(--algocloud-input-border-color);
+    --algocloud-form-file-box-shadow: var(--algocloud-box-shadow-inset);
+    --algocloud-form-file-button-bg: var(--algocloud-200);
+    --algocloud-form-feedback-valid-color: #26d9ca;
+    --algocloud-form-feedback-invalid-color: #d31616;
+    --algocloud-form-feedback-icon-valid-color: var(--algocloud-form-feedback-valid-color);
+    --algocloud-form-feedback-icon-invalid-color: var(--algocloud-form-feedback-invalid-color);
+    --algocloud-nav-link-color: null;
+    --algocloud-nav-link-hover-color: null;
+    --algocloud-nav-link-disabled-color: #748194;
+    --algocloud-nav-tabs-border-color: #d8dbef;
+    --algocloud-nav-tabs-link-hover-border-color: #edf2f9 #edf2f9 #d8dbef;
+    --algocloud-nav-tabs-link-active-color: #5e6e82;
+    --algocloud-nav-tabs-link-active-bg: #edf2f9;
+    --algocloud-nav-tabs-link-active-border-color: #d8dbef #d8dbef #edf2f9;
+    --algocloud-bg-navbar-glass: rgba(237, 242, 249, 0.96);
+    --algocloud-nav-pills-link-active-color: #fff;
+    --algocloud-nav-pills-link-active-bg: var(--algocloud-primary);
+    --algocloud-navbar-dark-color: rgba(255, 255, 255, 0.55);
+    --algocloud-navbar-dark-hover-color: rgba(255, 255, 255, 0.75);
+    --algocloud-navbar-dark-active-color: #fff;
+    --algocloud-navbar-dark-disabled-color: rgba(255, 255, 255, 0.25);
+    --algocloud-navbar-dark-toggler-border-color: rgba(255, 255, 255, 0.1);
+    --algocloud-navbar-light-color: rgba(0, 0, 0, 0.55);
+    --algocloud-navbar-light-hover-color: rgba(0, 0, 0, 0.7);
+    --algocloud-navbar-light-active-color: rgba(0, 0, 0, 0.9);
+    --algocloud-navbar-light-disabled-color: rgba(0, 0, 0, 0.3);
+    --algocloud-navbar-light-toggler-border-color: rgba(0, 0, 0, 0.1);
+    --algocloud-navbar-light-brand-color: var(--algocloud-primary);
+    --algocloud-navbar-dark-brand-color: var(--algocloud-primary);
+    --algocloud-navbar-vertical-collapsed-hover-shadow-color: rgba(0, 0, 0, 0.2);
+    --algocloud-navbar-vertical-bg-color: var(--algocloud-bg-navbar-glass);
+    --algocloud-navbar-vertical-link-color: #5e6e82;
+    --algocloud-navbar-vertical-link-hover-color: #232e3c;
+    --algocloud-navbar-vertical-link-active-color: var(--algocloud-primary);
+    --algocloud-navbar-vertical-link-disable-color: #b6c1d2;
+    --algocloud-navbar-vertical-hr-color: rgba(0, 0, 0, 0.08);
+    --algocloud-navbar-vertical-scrollbar-color: rgba(116, 129, 148, 0.3);
+    --algocloud-dropdown-bg: #fff;
+    --algocloud-dropdown-color: #d8dbef;
+    --algocloud-dropdown-border-color: var(--algocloud-border-color);
+    --algocloud-dropdown-box-shadow: var(--algocloud-box-shadow);
+    --algocloud-dropdown-link-color: #3d3d3d;
+    --algocloud-dropdown-link-hover-color: #2a3441;
+    --algocloud-dropdown-link-hover-bg: #f9fafd;
+    --algocloud-dropdown-link-active-color: #fff;
+    --algocloud-dropdown-link-active-bg: var(--algocloud-primary);
+    --algocloud-dropdown-link-disabled-color: #748194;
+    --algocloud-dropdown-header-color: #748194;
+    --algocloud-dropdown-dark-color: #d8dbef;
+    --algocloud-dropdown-dark-bg: #4d5969;
+    --algocloud-dropdown-dark-border-color: var(--algocloud-dropdown-border-color);
+    --algocloud-dropdown-dark-divider-bg: var(--algocloud-dropdown-border-color);
+    --algocloud-dropdown-dark-box-shadow: null;
+    --algocloud-dropdown-dark-link-color: #d8dbef;
+    --algocloud-dropdown-dark-link-hover-color: #fff;
+    --algocloud-dropdown-dark-link-hover-bg: rgba(255, 255, 255, 0.15);
+    --algocloud-dropdown-dark-link-active-color: var(--algocloud-dropdown-link-active-color);
+    --algocloud-dropdown-dark-link-active-bg: var(--algocloud-dropdown-link-active-bg);
+    --algocloud-dropdown-dark-link-disabled-color: #9da9bb;
+    --algocloud-dropdown-dark-header-color: #9da9bb;
+    --algocloud-pagination-color: #000;
+    --algocloud-pagination-bg: #fff;
+    --algocloud-pagination-border-color: #edf2f9;
+    --algocloud-pagination-hover-color: #fff;
+    --algocloud-pagination-hover-bg: var(--algocloud-primary);
+    --algocloud-pagination-hover-border-color: var(--algocloud-primary);
+    --algocloud-pagination-active-color: #fff;
+    --algocloud-pagination-active-bg: var(--algocloud-primary);
+    --algocloud-pagination-active-border-color: var(--algocloud-primary);
+    --algocloud-pagination-disabled-bg: #fff;
+    --algocloud-card-border-color: rgba(0, 0, 0, 0.125);
+    --algocloud-card-cap-bg: rgba(0, 0, 0, 0);
+    --algocloud-card-cap-color: null;
+    --algocloud-card-color: null;
+    --algocloud-card-bg: #fff;
+    --algocloud-card-bg-color: #fff;
+    --algocloud-tooltip-color: #fff;
+    --algocloud-tooltip-bg: #000;
+    --algocloud-tooltip-arrow-color: #000;
+    --algocloud-popover-bg: #fff;
+    --algocloud-popover-border-color: rgba(0, 0, 0, 0.2);
+    --algocloud-popover-box-shadow: var(--algocloud-box-shadow);
+    --algocloud-popover-header-bg: #f9fafd;
+    --algocloud-popover-header-border-bottom-color: #d6d6d6;
+    --algocloud-popover-header-color: var(--algocloud-headings-color);
+    --algocloud-popover-body-color: #5e6e82;
+    --algocloud-popover-arrow-color: #fff;
+    --algocloud-popover-arrow-outer-color: rgba(0, 0, 0, 0.25);
+    --algocloud-toast-color: ;--algocloud-toast-border-color:rgba(0, 0, 0, .1);
+    --algocloud-toast-box-shadow: var(--algocloud-box-shadow);
+    --algocloud-toast-header-color: #748194;
+    --algocloud-toast-header-background-color: rgba(255, 255, 255, 0.85);
+    --algocloud-toast-header-border-color: rgba(0, 0, 0, .05);
+    --algocloud-badge-color: #fff;
+    --algocloud-modal-content-bg: #fff;
+    --algocloud-table-border-color: #edf2f9;
+    --algocloud-table-primary-bg: #d5e5fa;
+    --algocloud-table-primary-color: #4d5969;
+    --algocloud-table-primary-hover-bg: #cbdbef;
+    --algocloud-table-primary-hover-color: #4d5969;
+    --algocloud-table-primary-striped-bg: #cedef3;
+    --algocloud-table-primary-striped-color: #4d5969;
+    --algocloud-table-primary-active-bg: #c7d7ec;
+    --algocloud-table-primary-active-color: #4d5969;
+    --algocloud-table-primary-border-color: #c7d7ec;
+    --algocloud-table-secondary-bg: #e3e6ea;
+    --algocloud-table-secondary-color: #4d5969;
+    --algocloud-table-secondary-hover-bg: #d8dbe0;
+    --algocloud-table-secondary-hover-color: #4d5969;
+    --algocloud-table-secondary-striped-bg: #dcdfe4;
+    --algocloud-table-secondary-striped-color: #4d5969;
+    --algocloud-table-secondary-active-bg: #d4d8dd;
+    --algocloud-table-secondary-active-color: #4d5969;
+    --algocloud-table-secondary-border-color: #d4d8dd;
+    --algocloud-table-success-bg: #ccf6e4;
+    --algocloud-table-success-color: #4d5969;
+    --algocloud-table-success-hover-bg: #c2eadb;
+    --algocloud-table-success-hover-color: #4d5969;
+    --algocloud-table-success-striped-bg: #c6eede;
+    --algocloud-table-success-striped-color: #4d5969;
+    --algocloud-table-success-active-bg: #bfe6d8;
+    --algocloud-table-success-active-color: #4d5969;
+    --algocloud-table-success-border-color: #bfe6d8;
+    --algocloud-table-info-bg: rgb(38 217 202 / 10%);
+    --algocloud-table-info-color: #4d5969;
+    --algocloud-table-info-hover-bg: #cae7f4;
+    --algocloud-table-info-hover-color: #4d5969;
+    --algocloud-table-info-striped-bg: #cdeaf8;
+    --algocloud-table-info-striped-color: #4d5969;
+    --algocloud-table-info-active-bg: #c7e3f0;
+    --algocloud-table-info-active-color: #4d5969;
+    --algocloud-table-info-border-color: #c7e3f0;
+    --algocloud-table-warning-bg: rgb(220 24 24 / 10%);
+    --algocloud-table-warning-color: #4d5969;
+    --algocloud-table-warning-hover-bg: #f0dbd0;
+    --algocloud-table-warning-hover-color: #4d5969;
+    --algocloud-table-warning-striped-bg: #f4dfd2;
+    --algocloud-table-warning-striped-color: #4d5969;
+    --algocloud-table-warning-active-bg: #ebd8cd;
+    --algocloud-table-warning-active-color: #4d5969;
+    --algocloud-table-warning-border-color: #ebd8cd;
+    --algocloud-table-danger-bg: #fad7dd;
+    --algocloud-table-danger-color: #4d5969;
+    --algocloud-table-danger-hover-bg: #edced4;
+    --algocloud-table-danger-hover-color: #4d5969;
+    --algocloud-table-danger-striped-bg: #f1d1d7;
+    --algocloud-table-danger-striped-color: #4d5969;
+    --algocloud-table-danger-active-bg: #e9cad1;
+    --algocloud-table-danger-active-color: #4d5969;
+    --algocloud-table-danger-border-color: #e9cad1;
+    --algocloud-table-light-bg: #f9fafd;
+    --algocloud-table-light-color: #4d5969;
+    --algocloud-table-light-hover-bg: #eceef2;
+    --algocloud-table-light-hover-color: #4d5969;
+    --algocloud-table-light-striped-bg: #f0f2f6;
+    --algocloud-table-light-striped-color: #4d5969;
+    --algocloud-table-light-active-bg: #e8eaee;
+    --algocloud-table-light-active-color: #4d5969;
+    --algocloud-table-light-border-color: #e8eaee;
+    --algocloud-table-dark-bg: #0b1727;
+    --algocloud-table-dark-color: #fff;
+    --algocloud-table-dark-hover-bg: #1d2837;
+    --algocloud-table-dark-hover-color: #fff;
+    --algocloud-table-dark-striped-bg: #172332;
+    --algocloud-table-dark-striped-color: #fff;
+    --algocloud-table-dark-active-bg: #232e3d;
+    --algocloud-table-dark-active-color: #fff;
+    --algocloud-table-dark-border-color: #232e3d;
+    --algocloud-avatar-status-border-color: #fff;
+    --algocloud-avatar-name-bg: #3d3d3d;
+    --algocloud-avatar-button-bg: #b6c1d2;
+    --algocloud-avatar-button-hover-bg: #9da9bb;
+    --algocloud-notification-bg: #f9f9f9;
+    --algocloud-notification-title-bg: #f9fafd;
+    --algocloud-notification-unread-bg: #f9f9f9;
+    --algocloud-notification-unread-hover-bg: #fff;
+    --algocloud-notification-indicator-border-color: #edf2f9;
+    --algocloud-kanban-bg: #f9fafd;
+    --algocloud-kanban-header-bg: var(--algocloud-kanban-bg);
+    --algocloud-kanban-item-bg: #fff;
+    --algocloud-kanban-item-color: #3d3d3d;
+    --algocloud-kanban-btn-add-hover-bg: #edf2f9;
+    --algocloud-kanban-draggable-source-dragging-bg: #edf2f9;
+    --algocloud-kanban-bg-attachment-bg: #d8dbef;
+    --algocloud-kanban-footer-color: #748194;
+    --algocloud-kanban-nav-link-card-details-color: #5e6e82;
+    --algocloud-kanban-nav-link-card-details-hover-bg: #edf2f9;
+    --algocloud-bg-shape-bg: #4695ff;
+    --algocloud-bg-shape-bg-ltd: linear-gradient(-45deg, #4695ff, #1970e2);
+    --algocloud-bg-shape-bg-dtl: linear-gradient(-45deg, #1970e2, #4695ff);
+    --algocloud-line-chart-gradient: linear-gradient(-45deg, #014ba7, #0183d0);
+    --algocloud-card-gradient: linear-gradient(-45deg, #1970e2, #4695ff);
+    --algocloud-progress-gradient: linear-gradient(-45deg, #1970e2, #4695ff);
+    --algocloud-bg-circle-shape: none;
+    --algocloud-bg-circle-shape-bg: #4695ff;
+    --algocloud-modal-shape-header: linear-gradient(-45deg, #1970e2, #4695ff);
+    --algocloud-modal-shape-header-bg: #4494ff;
+    --fc-button-bg-color: #3d3d3d;
+    --fc-button-border-color: #3d3d3d;
+    --fc-button-hover-bg-color: #0b1727;
+    --fc-button-hover-border-color: #0b1727;
+    --fc-button-active-bg-color: #0b1727;
+    --fc-button-active-border-color: #0b1727;
+    --fc-button-list-day-cushion: #fff;
+    --algocloud-flatpickr-calendar-bg: #fff;
+    --algocloud-leaflet-bar-bg: #fff;
+    --algocloud-leaflet-popup-content-wrapper-bg: #fff;
+    --algocloud-choices-item-selectable-highlighted-bg: #fff;
+    --algocloud-choices-item-has-no-choices-bg: #fff;
+    --algocloud-thumbnail-bg: #fff;
+    --algocloud-chat-contact-bg: var(--algocloud-card-bg);
+    --algocloud-tinymce-bg: #fff;
+    --algocloud-swiper-nav-bg: rgba(255, 255, 255, 0.8);
+    --algocloud-star-rating-bg-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFdElEQVR4nO2aXWxURRTH/2dut58Imho1SgStuit+vBo0BkgkRjDog+VBiJEXqJhKK21x+7EdUu5u2W1Uqi8Qo4YQY6gQDQlRn9RENGoMD0a7RCzGRCJGBLRF9mOOD+waKHe7e2f23mt0f4/zceY/Z2fmzJm7QI0aNWr8j6EgBu3sHG9oXHC2gxQvJ/CUhbpUPD5wMggtwv8hmZrmn3mHmF8G4XEm6s5R/kinlPP91xKAA7YN2A8CeHRW8eLmrOjwWwsQgAMYqs+xnLGls3O8wW89vjqgp1/eDWC1YyXhxqYFvz/ppx7AZwcIsnrmbMDUK6X0V5NfA/VJuRDgdWWa3Tmds1b5IqiAf97OUReAunLNCOx4RniFL/eALimvrs+KnwDMq6yHWJq0Bz/3VFRxJD8GabgY4iqcPABWvd6puRzPV4CUsnEmK6YA3OCiG1tKRRIJecwrXUU8XwHTGbEe7iYPAJQXYqsXeq4YyEvjUkoxkxXfAbhDo/uFOrYWxeMDv1Rb16V4ugJmctYa6E0eABpyItdZTT1OeLwFDEMa02YpZeWHpwaeOaBncOQhMJYamrnmvMdJUtXOgI0bd4daW0+25S0rAoV7iLiHgWqkuDkChjik9ibl8EmAuAo2/8G1A7ZKea24IMJkcQRAmJkiBIQBtAGwqiluNgScU4w0EU2CkWZSk8ycnleP76WUf2nadCYajbfmrfwDxIWJgiMAhQG06k7AQxSAEwAmiTnNRJMEMWkxpePx/lNzrRpHB7wwOLJcMR+Cm9vbv5cZAK81h1S3lFLNrnQ8BBVjF/4bkweAZgDPnc+IJ5wqS0QBDnsoKBAYdLtTubMDCF95qiYAhMUfOpY7FSqlOgCc9lSRjzDR86MjsS+d6hwdMBaX3zCrlQDOeKrMBwiIpnYMvVSqvuRNMBWXXwPiYQB/eKLMBxgY3mnHRudqM+dVOGkPfsEKjwCYrqoyHyAgnrKHRipoV57CveAwgCZjZT7AwFjKHuqr5Npc8VW4r3/7ShAdAuD7xwuXjCftoa5KcwZXuUDv4MgqYn4XQEhLmscw8+5UPPaMm4TJVTqc2jF0GERrAeRcq/MceqOlnje7zRa10uHege3tBHobgXxdvhIm7DuRjjw9MbE277av1gRS9vAEwE8BqGpurgVhf0ud2qAz+YvdDegb3L4BTK+b2DCBgffO/np9+549m7K6NoweMD795KOj9y9bcRsB95rY0SRTp+qW7drV/aeJEeM9TMzvm9rQg48mEv2/mVoxP8RYLDa2oYWor4oVYwuEu6qgQwOOtLfvN36DrEIY4yXmNrRobGv79hZTI0YOKPwCEVMRurBFxqvPyAGLw+lbEWBuoBCwAwhB7f/i+GS8/YwcwBzY/i8S7AoILgIUMY8EZluAzZegIY2Fc0gbbQdc9DwHFgGKCFZGP4K2AwoxuFGz+xkCehFSNxHzKoCO6uowjQRl/7dXCs0YnCXmVwWH7Evu8T9LKT+Yzoj1BNggLHRl0fAc0ncAiyVuHl8INKEI0aQdOz67rvDRcm9394sToabpLhBHAVxVkV02c4D2e0DfwMi+Cv76CoCPKEU9Y4nYZ5Xa7pHyOpEVwwA2oXzKfmHqWKRF90FEewVUkAMcZ/C2lB076PadbkzKUwCejUblK3kSO0FYM0fzhkXh9M0AptyMUcQkDJY6AE8D2NIcUktS9vABk7+0JBJyMhmPPcYKywEu9cGWQ3nrnO4Y2g5gYN+sogyIU5mQakvasXEpZUbX9mxSidjHzSG+jxjrAPx4eS29afIwor0FWkJq9HzOOsvMq5n5B0vx2OioPKFrrxyFg/ItKeXBmazoAGMFQEea6/MlP3zWqFGjRo0y/A3lxcMNXfCjjAAAAABJRU5ErkJggg==");
+    --algocloud-toast-background-color: rgba(255, 255, 255, 0.85);
+    --algocloud-theme-wizard-nav-item-circle-bg: #fff;
+    --algocloud-card-span-img-bg: #fff;
+    --algocloud-card-span-img-box-shadow: var(--algocloud-box-shadow-sm);
+    --algocloud-card-span-img-hover-box-shadow: var(--algocloud-box-shadow-lg);
+    --algocloud-setting-toggle-shadow: 0 -7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
+    --algocloud-scrollbar-bg: rgba(182, 193, 210, 0.55);
+    --algocloud-nav-pills-algocloud-active-bg-color: #fff;
+    --algocloud-hover-bg-black: #fff;
+    --algocloud-hover-bg-100: #f9fafd;
+    --algocloud-hover-bg-200: #edf2f9;
+    --algocloud-hover-bg-300: #d8dbef;
+    --algocloud-hover-bg-400: #b6c1d2;
+    --algocloud-hover-bg-500: #9da9bb;
+    --algocloud-hover-bg-600: #748194;
+    --algocloud-hover-bg-700: #5e6e82;
+    --algocloud-hover-bg-800: #4d5969;
+    --algocloud-hover-bg-900: #3d3d3d;
+    --algocloud-hover-bg-1000: #232e3c;
+    --algocloud-hover-bg-1100: #0b1727;
+    --algocloud-hover-bg-white: #fff;
+    --algocloud-btn-disabled-custom-background: rgba(249, 250, 253, 0.65);
+    --algocloud-btn-disabled-custom-color: rgba(11, 23, 39, 0.3);
+    --algocloud-btn-link-color-2: var(--primary)
+    --algocloud-table-striped-bg: #f9fafd
+    --header-height: 56px;
+    --radius-auto: Max(0px, Min(var(--radius), calc((100vw - 4px - 100%) * 9999))) /
+    var(--radius);
+    --radius-large-auto: Max(
+      0px,
+      Min(var(--radius-large), calc((100vw - 4px - 100%) * 9999))
+    ) / var(--radius-large);
+    --ff-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol';
+    --ff-monospace: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
+    Courier, monospace;
+    --ff-serif: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua',
+    Georgia, serif;
+    --ff-comic: 'Comic Sans MS', cursive, sans-serif;
+    --base: #090909;
+    --base-inverted: #fff;
+    --base-100: var(--base);
+    --base-90: #242424;
+    --base-80: #3d3d3d;
+    --base-70: #575757;
+    --base-60: #717171;
+    --base-50: #8a8a8a;
+    --base-40: #a3a3a3;
+    --base-30: #bdbdbd;
+    --base-20: #d6d6d7;
+    --base-10: #efefef;
+    --base-0: #f9f9f9;
+    --base-a90: rgba(9, 9, 9, 0.9);
+    --base-a80: rgba(9, 9, 9, 0.8);
+    --base-a70: rgba(9, 9, 9, 0.7);
+    --base-a60: rgba(9, 9, 9, 0.6);
+    --base-a50: rgba(9, 9, 9, 0.5);
+    --base-a40: rgba(9, 9, 9, 0.4);
+    --base-a30: rgba(9, 9, 9, 0.3);
+    --base-a20: rgba(9, 9, 9, 0.2);
+    --base-a10: rgba(9, 9, 9, 0.1);
+    --base-a5: rgba(9, 9, 9, 0.05);
+    --base-inverted-a90: rgba(255, 255, 255, 0.9);
+    --base-inverted-a80: rgba(255, 255, 255, 0.8);
+    --base-inverted-a70: rgba(255, 255, 255, 0.7);
+    --base-inverted-a60: rgba(255, 255, 255, 0.6);
+    --base-inverted-a50: rgba(255, 255, 255, 0.5);
+    --base-inverted-a40: rgba(255, 255, 255, 0.4);
+    --base-inverted-a30: rgba(255, 255, 255, 0.3);
+    --base-inverted-a20: rgba(255, 255, 255, 0.2);
+    --base-inverted-a10: rgba(255, 255, 255, 0.1);
+    --base-inverted-a5: rgba(255, 255, 255, 0.05);
+    --accent-brand: #3b49df;
+    --accent-brand-darker: #1827ce;
+    --accent-brand-lighter: #8d95f2;
+    --accent-brand-a10: rgba(59, 73, 223, 0.1);
+    --accent-success: #26d9ca;
+    --accent-success-darker: #1ab3a6;
+    --accent-success-lighter: #79ece2;
+    --accent-success-a10: rgba(38, 217, 202, 0.1);
+    --accent-warning: #ffcf4c;
+    --accent-warning-darker: #f5b400;
+    --accent-warning-lighter: #ffe499;
+    --accent-warning-a10: rgba(255, 207, 76, 0.1);
+    --accent-danger: #d31616;
+    --accent-danger-darker: #b90909;
+    --accent-danger-lighter: #ec4646;
+    --accent-danger-a10: rgba(220, 24, 24, 0.1);
+    --body-bg: var(--base-10);
+    --body-color: var(--base-100);
+    --body-color-inverted: var(--base-inverted);
+    --card-bg: var(--base-inverted);
+    --card-color: var(--base-100);
+    --card-color-secondary: var(--base-70);
+    --card-color-tertiary: var(--base-60);
+    --card-secondary-bg: var(--base-0);
+    --card-secondary-color: var(--base-90);
+    --card-headline-color: var(--base-100);
+    --card-border: var(--base-a10);
+    --card-secondary-border: var(--base-a5);
+    --card-hover-bg: var(--base-10);
+    --card-selected-bg: var(--base-20);
+    --header-bg: var(--base-inverted);
+    --header-shadow: rgba(0, 0, 0, 0.1);
+    --footer-bg: var(--base-20);
+    --footer-color: var(--base-80);
+    --link-bg-hover-alt: var(--base-inverted);
+    --link-brand-color: var(--accent-brand);
+    --link-color-current: var(--base-100);
+    --link-color-secondary: var(--base-60);
+    --link-color-secondary-hover: var(--base-70);
+    --link-bg-current: var(--base-inverted);
+    --button-primary-bg: var(--accent-brand);
+    --button-primary-bg-hover: var(--accent-brand-darker);
+    --button-primary-color: var(--base-0);
+    --button-primary-color-hover: var(--base-0);
+    --button-primary-inverted-bg: var(--accent-brand);
+    --button-primary-inverted-bg-hover: var(--accent-brand-darker);
+    --button-primary-inverted-color: var(--base-0);
+    --button-primary-inverted-color-hover: var(--base-0);
+    --button-secondary-bg: var(--base-20);
+    --button-secondary-bg-hover: var(--base-30);
+    --button-secondary-color: var(--base-80);
+    --button-secondary-color-hover: var(--base-100);
+    --button-secondary-inverted-bg: var(--base-70);
+    --button-secondary-inverted-bg-hover: var(--base-60);
+    --button-secondary-inverted-color: var(--base-10);
+    --button-secondary-inverted-color-hover: var(--base-0);
+    --button-outlined-bg: transparent;
+    --button-outlined-bg-hover: rgba(0, 0, 0, 0.035);
+    --button-outlined-border: var(--base-20);
+    --button-outlined-border-hover: var(--base-40);
+    --button-outlined-color: var(--base-80);
+    --button-outlined-color-hover: var(--base-100);
+    --button-outlined-inverted-bg: transparent;
+    --button-outlined-inverted-bg-hover: rgba(255, 255, 255, 0.15);
+    --button-outlined-inverted-border: var(--base-60);
+    --button-outlined-inverted-border-hover: var(--base-40);
+    --button-outlined-inverted-color: var(--base-30);
+    --button-outlined-inverted-color-hover: var(--base-10);
+    --button-ghost-bg: transparent;
+    --button-ghost-bg-hover: rgba(0, 0, 0, 0.035);
+    --button-ghost-color: var(--base-80);
+    --button-ghost-color-hover: var(--base-100);
+    --button-ghost-dimmed-color: var(--base-60);
+    --button-ghost-dimmed-color-hover: var(--base-100);
+    --button-ghost-inverted-bg: transparent;
+    --button-ghost-inverted-bg-hover: rgba(255, 255, 255, 0.15);
+    --button-ghost-inverted-color: var(--base-30);
+    --button-ghost-inverted-color-hover: var(--base-10);
+    --button-ghost-dimmed-inverted-color: var(--base-50);
+    --button-ghost-dimmed-inverted-color-hover: var(--base-100);
+    --form-bg: var(--base-inverted);
+    --form-bg-focus: var(--base-inverted);
+    --form-border: var(--base-20);
+    --form-border-hover: var(--base-40);
+    --form-border-focus: var(--accent-brand);
+    --form-placeholder-color: var(--base-60);
+    --label-primary: var(--base-90);
+    --label-secondary: var(--base-60);
+    --snackbar-bg: var(--base-90);
+    --snackbar-color: var(--body-color-inverted);
+    --indicator-accent-bg: var(--accent-brand);
+    --indicator-accent-color: var(--body-color-inverted);
+    --indicator-critical-bg: var(--accent-danger);
+    --indicator-critical-color: var(--body-color-inverted);
+    --indicator-default-bg: var(--button-secondary-bg);
+    --indicator-default-color: var(--button-secondary-color);
+    --tab-color: var(--base-80);
+    --tab-color-hover: var(--accent-brand);
+    --tab-color-current: var(--base-100);
+    --tab-bg-hover: var(--accent-brand-a10);
+    --tab-bg-current: var(--accent-brand);
+    --tab-muted-color: var(--base-80);
+    --tab-muted-color-hover: var(--base-90);
+    --tab-muted-color-current: var(--base-100);
+    --tab-muted-bg-hover: var(--base-a10);
+    --tab-muted-bg-current: var(--base-20);
+    --tab-pill-color-current: var(--base-inverted);
+    --tag-color: var(--base-60);
+    --tag-color-hover: var(--base-100);
+    --story-comments-bg: 249, 249, 249;
+    --story-comments-bg-top: rgba(var(--story-comments-bg), 0);
+    --story-comments-bg-bottom: rgba(var(--story-comments-bg), 1);
+    --select-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDYgMTBIMThMMTIgMTZaIiBmaWxsPSIjMDgwOTBBIi8+Cjwvc3ZnPg==);
+    --reaction-like-color: var(--accent-danger);
+    --reaction-like-bg: var(--accent-danger-a10);
+    --reaction-custom-color: var(--accent-success);
+    --reaction-custom-bg: var(--accent-success-a10);
+    --reaction-save-color: var(--accent-brand);
+    --reaction-save-bg: var(--accent-brand-a10);
+    --reaction-comment-color: var(--accent-warning);
+    --reaction-comment-bg: var(--accent-warning-a10);
+    --btn-bg-hover: var(--accent-brand-a10);
+    --btn-color: var(--base-80);
+    --btn-current-bg: var(--base-20);
+    --btn-current-color: var(--base-100);
+    --btn-primary-color: var(--base-inverted);
+    --btn-primary-color-hover: var(--base-inverted);
+    --btn-secondary-bg: var(--accent-brand-a10);
+    --btn-secondary-color-hover: var(--base-inverted);
+    --btn-destructive-bg-hover: var(--accent-danger-a10);
+    --btn-destructive-color: var(--accent-danger);
+    --btn-destructive-color-hover: var(--accent-danger-darker);
+    --btn-primary-destructive-bg: var(--accent-danger);
+    --btn-primary-destructive-bg-hover: var(--accent-danger-darker);
+    --btn-primary-destructive-color: var(--base-inverted);
+    --btn-primary-destructive-color-hover: var(--base-inverted);
+    --link-bg-hover: var(--accent-brand-a10);
+    --link-color: var(--base-80);
+    --link-current-bg: var(--base-20);
+    --link-current-color: var(--base-100);
+    --link-branded-bg-hover: var(--accent-brand-a10);
+    --cta-bg-hover: var(--accent-brand-a10);
+    --cta-color: var(--base-80);
+    --cta-border: var(--base-60);
+    --cta-branded-color-hover: var(--base-inverted);
+    --focus: var(--accent-brand);
+    --layout-sidebar-left-display: block;
+    --layout-sidebar-right-display: block;
+    --layout-sidebar-left-width: 100%;
+    --layout-sidebar-right-width: 100%;
+    --layout-sidebar-left-row-end: initial;
+    --layout-content-width: 100%;
+    --layout-drawer-width: 300px;
+    --layout-gap: var(--su-2);
+    --layout-padding: 0;
+    --layout: 100%
+    --syntax-background-color: #08090a;
+    --syntax-text-color: #f8f8f2;
+    --syntax-comment-color: #808080;
+    --syntax-declaration-color: #f39c12;
+    --syntax-literal-color: #dda0dd;
+    --syntax-error-color: #f9690e;
+    --syntax-name-color: #7ed07e;
+    --syntax-string-color: #f2ca27;
+    --algocloud-btn-algocloud-default-active-color: #d8dbef
+}
+
+.main.signin {
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23601ecb' fill-opacity='0.2'%3E%3Cpath opacity='.4' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+}
+
+.bg-shape {
+    background-color: #01224b99!important;
+    filter: hue-rotate(37deg)!important
+}
+
+.bg-shape:after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23601ecb' fill-opacity='0.2'%3E%3Cpath opacity='.4' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")
+}
+
+.bg-circle-shape:after {
+    left: -32%!important
+}
+
+.bg-shape:after,.bg-shape:before {
+    width: 2000%;
+    height: 700px;
+    top: -40px;
+    left: 0!important
+}
+
+h1.algocloud-brand-login {
+    color: var(--algocloud-black);
+    z-index: 11;
+    font-weight: 600;
+    color: #fff
+}
+
+.table tr td:first-child,.table tr th:first-child {
+    text-indent: 0;
+    padding-left: 24px!important
+}
+
 .navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
     color: var(--algocloud-1000);
     --bg: var(--link-bg);
@@ -258,16 +1151,15 @@ h1.algocloud-brand-login {
 
 .menu-li:hover a {
     border-radius: 6px;
-    color: var(--accent-brand) !important;
-    background-color: var(--algocloud-menu-li-hover)!important;
+    color: var(--accent-brand)!important;
+    background-color: var(--algocloud-menu-li-hover)!important
 }
 
 .dropdown-menu {
     padding: .5rem;
     margin-top: .25rem;
     background: #fff;
-    color: #090909;
-    box-shadow: 0 10px 15px -3px rgb(0 0 0/10%),0 4px 6px -2px rgb(0 0 0/5%),0 0 0 1px rgb(9 9 9/10%)
+    color: #090909
 }
 
 div#stickyTop {
@@ -284,16 +1176,16 @@ div#stickyTop {
 }
 
 .row.no-gutter {
-    text-indent: 0px !important;
-    margin: 1.25rem !important;
-    margin-bottom: 5px !important;
-    margin-top: 5px !important;
+    text-indent: 0!important;
+    margin: 1.25rem!important;
+    margin-bottom: 5px!important;
+    margin-top: 5px!important
 }
 
 h5.text-info-2 {
-    font-size: calc(1.0rem + 1.02vw)!important;
-    margin-bottom: 0px;
-    padding-top: 0.4rem;
+    font-size: calc(1rem + 1.02vw)!important;
+    margin-bottom: 0;
+    padding-top: .4rem
 }
 
 h6.grow {
@@ -342,7 +1234,6 @@ h6.text-success.grow {
 }
 
 @media (max-width:480px) {
-
     .btn-close-algocloud {
         cursor: pointer!important;
         position: absolute!important;
@@ -375,7 +1266,8 @@ h6.text-success.grow {
 
 div#stickyTop-2 {
     justify-content: flex-start;
-    width: 100%
+    width: 100%;
+    height: 60px
 }
 
 button.btn-close.btn.menu-close {
@@ -386,23 +1278,22 @@ button.btn-close.btn.menu-close {
 }
 
 .algocloud-fixed {
-
     height: 100%;
     position: fixed;
     overflow: scroll;
-    padding-bottom: 4rem;
+    padding-bottom: 4rem
 }
 
-.navbar-toggler-humburger-icon{
-    color: var(--algocloud-body-bg-2);
+.navbar-toggler-humburger-icon {
+    color: var(--algocloud-body-bg-2)
 }
 
-.btn-algocloud-default, [data-list] .page {
-    color: #7b78ff;
+.btn-algocloud-default {
+    color: #7b78ff
 }
 
 .sortable:hover {
-    opacity: 1 !important;
+    opacity: 1!important;
     color: var(--algocloud-btn-algocloud-primary-color)
 }
 
@@ -437,7 +1328,6 @@ button.btn-close.btn.menu-close {
 }
 
 .showcase-row {
-    width: 100%;
     flex-wrap: wrap
 }
 
@@ -476,7 +1366,7 @@ h2.fs-l.fw-bold.flex-1.break-word.lh-tight {
 }
 
 .dark .table {
-    --algocloud-table-striped-bg: #f9fafd;
+    --algocloud-table-striped-bg: #f9fafd
 }
 
 .dark.emoji-picker {
@@ -1340,7 +2230,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .row-cols-sm-5>*,.row-cols-sm-6>* {
+    .row-cols-sm-5>* {
         width: 20%
     }
 
@@ -1392,7 +2282,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .col-sm-8,.col-sm-9 {
+    .col-sm-8 {
         width: 66.66666667%
     }
 
@@ -1610,7 +2500,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .row-cols-md-5>*,.row-cols-md-6>* {
+    .row-cols-md-5>* {
         width: 20%
     }
 
@@ -1662,7 +2552,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .col-md-8,.col-md-9 {
+    .col-md-8 {
         width: 66.66666667%
     }
 
@@ -1880,7 +2770,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .row-cols-lg-5>*,.row-cols-lg-6>* {
+    .row-cols-lg-5>* {
         width: 20%
     }
 
@@ -1932,7 +2822,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .col-lg-8,.col-lg-9 {
+    .col-lg-8 {
         width: 66.66666667%
     }
 
@@ -2150,7 +3040,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .row-cols-xl-5>*,.row-cols-xl-6>* {
+    .row-cols-xl-5>* {
         width: 20%
     }
 
@@ -2202,7 +3092,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .col-xl-8,.col-xl-9 {
+    .col-xl-8 {
         width: 66.66666667%
     }
 
@@ -2472,7 +3362,7 @@ progress {
         flex: 0 0 auto
     }
 
-    .col-xxl-8,.col-xxl-9 {
+    .col-xxl-8 {
         width: 66.66666667%
     }
 
@@ -2658,7 +3548,7 @@ progress {
     margin-bottom: 1rem;
     color: #5b616e;
     vertical-align: top;
-    border-color: var(--algocloud-table-border-color);
+    border-color: var(--algocloud-table-border-color)
 }
 
 .table-algo-title {
@@ -3207,23 +4097,6 @@ textarea.form-control-lg {
     margin-left: -1.5em
 }
 
-.form-check-input {
-    width: 1em;
-    height: 1em;
-    margin-top: .25em;
-    vertical-align: top;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: 1px solid var(--algocloud-form-check-input-border-color);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact
-}
-
 .form-check-input[type=checkbox] {
     border-radius: .25em
 }
@@ -3245,12 +4118,7 @@ textarea.form-control-lg {
 }
 
 .form-check-input:checked {
-    background-color: var(--algocloud-primary);
     border-color: var(--algocloud-primary)
-}
-
-.form-check-input:checked[type=checkbox] {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3e%3c/svg%3e")
 }
 
 .form-check-input:checked[type=radio] {
@@ -3827,7 +4695,7 @@ textarea.form-control-lg {
 }
 
 .btn,[data-list] .page {
-        color: inherit;
+    color: inherit;
     background-color: transparent
 }
 
@@ -3882,13 +4750,13 @@ textarea.form-control-lg {
     background-color: var(--algocloud-primary);
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.15),0 1px 1px rgba(0,0,0,.075);
-    border-color: transparent;
+    border-color: transparent
 }
 
 .btn-primary:hover,.navbar-vertical .btn-purchase:hover,.tox .tox-dialog__footer .tox-button:hover:last-child,.tox .tox-menu__footer .tox-button:hover:last-child {
     color: #fff;
     background-color: #7b78ff;
-    border-color: transparent;
+    border-color: transparent
 }
 
 .btn-check:focus+.btn-primary,.btn-primary:focus,.navbar-vertical .btn-check:focus+.btn-purchase,.navbar-vertical .btn-purchase:focus,.tox .tox-dialog__footer .btn-check:focus+.tox-button:last-child,.tox .tox-dialog__footer .tox-button:focus:last-child,.tox .tox-menu__footer .btn-check:focus+.tox-button:last-child,.tox .tox-menu__footer .tox-button:focus:last-child {
@@ -3900,7 +4768,7 @@ textarea.form-control-lg {
 
 .btn-check:active+.btn-primary,.btn-check:checked+.btn-primary,.btn-primary.active,.btn-primary:active,.navbar-vertical .active.btn-purchase,.navbar-vertical .btn-check:active+.btn-purchase,.navbar-vertical .btn-check:checked+.btn-purchase,.navbar-vertical .btn-purchase:active,.navbar-vertical .show>.dropdown-toggle.btn-purchase,.show>.btn-primary.dropdown-toggle,.tox .tox-dialog__footer .active.tox-button:last-child,.tox .tox-dialog__footer .btn-check:active+.tox-button:last-child,.tox .tox-dialog__footer .btn-check:checked+.tox-button:last-child,.tox .tox-dialog__footer .show>.dropdown-toggle.tox-button:last-child,.tox .tox-dialog__footer .tox-button:active:last-child,.tox .tox-menu__footer .active.tox-button:last-child,.tox .tox-menu__footer .btn-check:active+.tox-button:last-child,.tox .tox-menu__footer .btn-check:checked+.tox-button:last-child,.tox .tox-menu__footer .show>.dropdown-toggle.tox-button:last-child,.tox .tox-menu__footer .tox-button:active:last-child {
     color: #fff;
-    background-color: #3b49df;
+    background-color: #3b49df
 }
 
 .btn-check:active+.btn-primary:focus,.btn-check:checked+.btn-primary:focus,.btn-primary.active:focus,.btn-primary:active:focus,.navbar-vertical .active.btn-purchase:focus,.navbar-vertical .btn-check:active+.btn-purchase:focus,.navbar-vertical .btn-check:checked+.btn-purchase:focus,.navbar-vertical .btn-purchase:active:focus,.navbar-vertical .show>.dropdown-toggle.btn-purchase:focus,.show>.btn-primary.dropdown-toggle:focus,.tox .tox-dialog__footer .active.tox-button:focus:last-child,.tox .tox-dialog__footer .btn-check:active+.tox-button:focus:last-child,.tox .tox-dialog__footer .btn-check:checked+.tox-button:focus:last-child,.tox .tox-dialog__footer .show>.dropdown-toggle.tox-button:focus:last-child,.tox .tox-dialog__footer .tox-button:active:focus:last-child,.tox .tox-menu__footer .active.tox-button:focus:last-child,.tox .tox-menu__footer .btn-check:active+.tox-button:focus:last-child,.tox .tox-menu__footer .btn-check:checked+.tox-button:focus:last-child,.tox .tox-menu__footer .show>.dropdown-toggle.tox-button:focus:last-child,.tox .tox-menu__footer .tox-button:active:focus:last-child {
@@ -4524,10 +5392,6 @@ textarea.form-control-lg {
     }
 }
 
-.dropdown,.dropend,.dropstart,.dropup {
-    position: relative
-}
-
 .dropdown-toggle {
     white-space: nowrap
 }
@@ -4560,7 +5424,7 @@ textarea.form-control-lg {
     background-clip: padding-box;
     border: 1px solid var(--algocloud-dropdown-border-color);
     -webkit-box-shadow: var(--algocloud-dropdown-box-shadow);
-    box-shadow: var(--algocloud-dropdown-box-shadow)
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05),0 0 0 1px var(--base-a10)
 }
 
 .dropdown-menu[data-bs-popper] {
@@ -4959,14 +5823,6 @@ textarea.form-control-lg {
     padding-left: 0;
     margin-bottom: 0;
     list-style: none
-}
-
-.nav-link {
-    display: block;
-    padding: .5rem 1rem;
-    -webkit-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-    -o-transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
-    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out
 }
 
 @media (prefers-reduced-motion:reduce) {
@@ -5591,11 +6447,6 @@ textarea.form-control-lg {
     position: absolute
 }
 
-.navbar-expand .navbar-nav .nav-link {
-    padding-right: .5rem;
-    padding-left: .5rem
-}
-
 .navbar-expand .navbar-nav-scroll {
     overflow: visible
 }
@@ -5654,14 +6505,6 @@ textarea.form-control-lg {
 
 .navbar-light .navbar-brand:focus,.navbar-light .navbar-brand:hover {
     color: var(--algocloud-navbar-light-brand-color)
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: var(--algocloud-navbar-light-color)
-}
-
-.navbar-light .navbar-nav .nav-link:focus,.navbar-light .navbar-nav .nav-link:hover {
-    color: var(--algocloud-navbar-light-hover-color)
 }
 
 .navbar-light .navbar-nav .nav-link.disabled {
@@ -6433,17 +7276,15 @@ textarea.form-control-lg {
     overflow-y: auto
 }
 
-
-
 .modal-content,.modal-dialog-centered {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    width: 90%;
-    margin: 0 auto;
+    margin: 0 auto
 }
 
 .modal-dialog-centered {
+    width: 90%;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
@@ -6534,7 +7375,7 @@ textarea.form-control-lg {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
     justify-content: flex-end;
-    padding: var(--su-3) !important;
+    padding: var(--su-3)!important;
     border-top: 1px solid var(--algocloud-border-color);
     border-bottom-right-radius: calc(.375rem - 1px);
     border-bottom-left-radius: calc(.375rem - 1px)
@@ -7392,31 +8233,31 @@ button.btn.btn-link.no-padding:hover {
 .showcase-row {
     width: 100%;
     display: flex;
-    flex-direction: column !important;
-    gap: 20px;
+    flex-direction: column!important;
+    gap: 20px
 }
 
 .showcase-row-2 {
-    width: 100%;
+    width: 100%
 }
 
 .showcase-row {
-    margin-top: 20px !important;
+    margin-top: 20px!important
 }
 
-@media(max-width: 767px){
+@media (max-width:767px) {
     .showcase-row-1 {
         width: 100%;
         display: flex;
-        gap: 0px;
-        flex-direction: column;
+        gap: 0;
+        flex-direction: column
     }
 }
 
 .showcase-row-1 {
     width: 100%;
     display: flex;
-    gap: 20px;
+    gap: 20px
 }
 
 .card-hover {
@@ -7424,10 +8265,6 @@ button.btn.btn-link.no-padding:hover {
     padding-left: 0!important;
     padding-right: 4px!important;
     text-indent: 1.25rem
-}
-
-.table tr td:first-child,.table tr th:first-child {
-    padding-left: 24px!important
 }
 
 .sticky-top {
@@ -7440,39 +8277,16 @@ button.btn.btn-link.no-padding:hover {
     display: flex
 }
 
-
-.badge-soft-info {
-    background-color: var(--accent-success-a10);
-    font-size: calc(.8rem + .1rem);
-}
-
 table-algo-title:hover {
-    color: var(--accent-brand);
+    color: var(--accent-brand)
 }
 
-.text-danger {
-    color: var(--accent-danger) !important;
+.badge-soft-warning,.text-danger {
+    color: var(--accent-danger)!important
 }
 
-.badge-soft-warning {
-    color: var(--accent-danger) !important;
-    background-color: var(--accent-danger-a10);
-    font-size: calc(.8rem + .1rem);
-}
-
-.badge-soft-success[href]:focus,.badge-soft-success[href]:hover {
-    text-decoration: none;
-    color: var(--algocloud-badge-soft-success-color)
-}
-
-.badge-soft-info {
-    background-color: var(--accent-success-a10);
-    font-size: calc(.8rem + .1rem);
-}
-
-
-div#stickyTop-2{
-    height: 60px;
+.badge-soft-info,.badge-soft-warning {
+    font-size: calc(.8rem + .1rem)
 }
 
 a.algocloud-navbar-brand:hover {
@@ -9598,7 +10412,7 @@ a.algocloud-navbar-brand:hover {
 }
 
 .text-success {
-    color: var(--accent-success) !important;
+    color: var(--accent-success)!important
 }
 
 .text-info {
@@ -9612,7 +10426,6 @@ a.algocloud-navbar-brand:hover {
 .text-warning {
     color: var(--algocloud-warning)!important
 }
-
 
 .text-light {
     color: var(--algocloud-light)!important
@@ -9980,7 +10793,7 @@ a.algocloud-navbar-brand:hover {
 }
 
 .text-600 {
-    color: #a3a3a3 !important
+    color: #a3a3a3!important
 }
 
 .text-700 {
@@ -19957,7 +20770,6 @@ i.fas.fa-bars {
     box-shadow: 0 .5rem .5rem -.5rem rgba(0,0,0,.2)!important
 }
 
-
 .navbar-dropdown-dots {
     width: 16.7rem;
     height: 21rem
@@ -20004,7 +20816,6 @@ i.fas.fa-bars {
 }
 
 .badge-soft-warning {
-    color: var(--algocloud-badge-soft-warning-color);
     background-color: var(--algocloud-badge-soft-warning-background-color)
 }
 
@@ -20356,21 +21167,18 @@ i.fas.fa-bars {
 .btn-algocloud-default.active,.btn-algocloud-default:active,.btn-check:active+.btn-algocloud-default,.btn-check:checked+.btn-algocloud-default,.show>.btn-algocloud-default.dropdown-toggle,[data-list] .active.page,[data-list] .btn-check:active+.page,[data-list] .btn-check:checked+.page,[data-list] .page:active,[data-list] .show>.dropdown-toggle.page {
     color: var(--algocloud-btn-algocloud-default-color);
     background-color: var(--algocloud-btn-algocloud-default-active-background);
-        border-color: #d8dbef;
+    border-color: #d8dbef
 }
 
 .btn-algocloud-default.disabled,.btn-algocloud-default:disabled,[data-list] .disabled.page,[data-list] .page:disabled {
-    color: var(--algocloud-btn-disabled-color);
     background-color: var(--algocloud-btn-algocloud-background);
-    -webkit-box-shadow: var(--algocloud-btn-algocloud-box-shadow);
-    box-shadow: var(--algocloud-btn-algocloud-box-shadow);
-        color: var(--accent-brand);
-        -webkit-box-shadow: var(--algocloud-btn-algocloud-hover-box-shadow);
-        box-shadow: var(--algocloud-btn-algocloud-hover-box-shadow);
-        border: #80808000;
-        background-color: rgb(59 73 223/10%);
-        color: #323ebe;
-    }
+    color: var(--accent-brand);
+    -webkit-box-shadow: var(--algocloud-btn-algocloud-hover-box-shadow);
+    box-shadow: var(--algocloud-btn-algocloud-hover-box-shadow);
+    border: #80808000;
+    background-color: rgb(59 73 223/10%);
+    color: #323ebe
+}
 
 .btn-outline-facebook {
     color: #3c5a99;
@@ -20802,12 +21610,6 @@ pre[class*=language-] {
     .content {
         padding-bottom: 3.9875rem
     }
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%
 }
 
 .anchorjs-link {
@@ -22574,11 +23376,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
     word-break: break-word
 }
 
-.font-sans-serif {
-    font-family: "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
-}
-
-.font-base {
+.font-base,.font-sans-serif {
     font-family: "Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"
 }
 
@@ -22752,7 +23550,6 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 .bg-circle-shape:after {
     height: 15.625rem;
     width: 115%;
-    left: 32%;
     top: -188%
 }
 
@@ -23031,8 +23828,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 }
 
 .dropdown-menu {
-    font-size: .8333333333rem;
-    border-radius: .375rem
+    font-size: .8333333333rem
 }
 
 .dropdown-indicator {
@@ -24541,7 +25337,7 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
     margin-left: -.625rem
 }
 
-.navbar-top[data-navbar-top=combo] .navbar-collapse {
+.crayons-tabs--wrapped .crayons-tabs__list li,.navbar-top[data-navbar-top=combo] .navbar-collapse {
     width: auto
 }
 
@@ -25197,10 +25993,6 @@ html[dir=rtl] .img-dropdown {
     text-decoration: none
 }
 
-.notification-body {
-    margin-bottom: .25rem
-}
-
 .notification-time {
     margin-bottom: 0;
     color: var(--algocloud-600);
@@ -25250,10 +26042,6 @@ html[dir=rtl] .img-dropdown {
     font-weight: 700
 }
 
-.notification-indicator-primary::before {
-    background-color: var(--algocloud-primary)
-}
-
 .notification-indicator-secondary::before {
     background-color: var(--algocloud-secondary)
 }
@@ -25291,12 +26079,8 @@ html[dir=rtl] .img-dropdown {
     max-width: 5rem
 }
 
-.c-btn--icon-alone {
-    padding: 0.5rem;
-}
-
-.c-btn--icon-alone, .crayons-table td, .crayons-table th {
-    padding: 0.5rem;
+.c-btn--icon-alone,.crayons-table td,.crayons-table th {
+    padding: .5rem
 }
 
 .dropdown-menu-notification .card-footer,.dropdown-menu-notification .card-header {
@@ -25304,20 +26088,12 @@ html[dir=rtl] .img-dropdown {
     padding-bottom: .5rem
 }
 
-.dropdown-menu-notification .list-group-flush .list-group-item {
+.dropdown-menu-notification .list-group-flush .list-group-item,ol[class],ul[class] {
     padding: 0
 }
 
 .dropdown-menu-notification .list-group-flush .list-group-item .notification-flush {
     padding: .5rem 1rem
-}
-
-.dropdown-menu-notification .list-group-flush .list-group-title {
-    background-color: var(--algocloud-notification-title-bg);
-    font-weight: 600;
-    font-size: .6944444444rem;
-    color: var(--algocloud-600);
-    padding: .25rem 1.25rem
 }
 
 @media (min-width:576px) {
@@ -25507,17 +26283,6 @@ html[dir=rtl] .rtl-row-reverse {
     color: #3d3d3d
 }
 
-.center-container {
-    max-width: 350px;
-    text-align: left;
-}
-
-h1.algocloud-brand-login {
-    z-index: 11;
-    font-weight: 600;
-    color: #fff;
-}
-
 .calendar {
     width: 3.125rem;
     line-height: 1;
@@ -25607,10 +26372,6 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 
 .hover-bg-100:hover {
     background-color: var(--algocloud-100)
-}
-
-.hover-bg-200:hover {
-    background-color: var(--algocloud-200)
 }
 
 .hover-bg-300:hover {
@@ -25748,10 +26509,6 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 .icon-item.icon-item-lg {
     height: 2.75rem;
     width: 2.75rem
-}
-
-.fa-icon-wait {
-    opacity: 0
 }
 
 .fontawesome-i2svg-active .fa-icon-wait {
@@ -27038,7 +27795,7 @@ button.btn-circle:focus,button.btn-circle:hover {
     display: none
 }
 
-.theme-wizard .nav-link .nav-item-circle-parent {
+.theme-wizard .nav-link .nav-item-circle-parent,main {
     display: block
 }
 
@@ -27200,12 +27957,6 @@ button.btn-circle:focus,button.btn-circle:hover {
 
 .alert-secondary .alert-link {
     color: var(--algocloud-alert-secondary-link-color)
-}
-
-.alert-success {
-    color: var(--algocloud-alert-success-color);
-    background-color: var(--algocloud-alert-success-background);
-    border-color: var(--algocloud-alert-success-border-color)
 }
 
 .alert-success .alert-link {
@@ -27985,7 +28736,7 @@ button.btn-circle:focus,button.btn-circle:hover {
     color: #0b1727!important
 }
 
-.dark .dark__bg-white {
+.dark .dark__bg-white,a.notification.notification-flush:hover {
     background-color: #fff!important
 }
 
@@ -28378,13 +29129,6 @@ button.btn-circle:focus,button.btn-circle:hover {
     align-items: center
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: #d8d8d8;
-    background-clip: content-box;
-    border: 3px solid transparent;
-    border-radius: 6px
-}
-
 .algocloud-font {
     font-family: var(--algocloud-body-font-family);
     text-transform: lowercase;
@@ -28394,25 +29138,15 @@ button.btn-circle:focus,button.btn-circle:hover {
     font-weight: 700!important
 }
 
-
-::-webkit-scrollbar {
-    width: 0px;
-    height: 12px;
-    background-color: #fff;
-}
-
 .dashboard-chard-card {
     min-height: 300px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: #d8d8d8;
-    background-clip: content-box;
-    border: 3px solid transparent;
-    border-radius: 6px;
+::-webkit-scrollbar {
+    background-color: #efefef
 }
 
 .card-hover-2:hover,.card-hover:hover,.card.bg-box.rounded:hover {
@@ -28600,9 +29334,7 @@ body #main-content {
     :root {
         --content-padding-x: var(--su-9)
     }
-}
 
-@media (min-width:1024px) {
     .crayons-page-header {
         --layout-padding: var(--su-4)
     }
@@ -28612,9 +29344,7 @@ body #main-content {
     .crayons-page-header {
         min-height: unset
     }
-}
 
-@media (min-width:768px) {
     .crayons-layout--header-inside {
         row-gap: var(--layout-gap)
     }
@@ -28937,27 +29667,19 @@ textarea.crayons-textfield.crayons-textfield--ghost {
     .crayons-header__menu {
         perspective: 1000px
     }
-}
 
-@media (min-width:640px) {
     .crayons-subtitle-1,.crayons-subtitle-2,.crayons-subtitle-3,.crayons-title {
         line-height: var(--lh-base)
     }
-}
 
-@media (min-width:640px) {
     .crayons-title {
         font-size: var(--fs-3xl)
     }
-}
 
-@media (min-width:640px) {
     .crayons-subtitle-1 {
         font-size: var(--fs-2xl)
     }
-}
 
-@media (min-width:640px) {
     .crayons-subtitle-2 {
         font-size: var(--fs-xl)
     }
@@ -29008,9 +29730,7 @@ textarea.crayons-textfield.crayons-textfield--ghost {
         height: auto;
         width: 90%
     }
-}
 
-@media (min-width:640px) {
     .crayons-modal--s {
         --modal-max-width: 480px;
         --modal-body-padding: var(--su-6);
@@ -29039,9 +29759,7 @@ textarea.crayons-textfield.crayons-textfield--ghost {
     .series-switcher {
         margin: var(--su-6) auto
     }
-}
 
-@media (min-width:768px) {
     .series-switcher__link {
         font-size: var(--fs-l)
     }
@@ -29056,9 +29774,7 @@ textarea.crayons-textfield.crayons-textfield--ghost {
         bottom: var(--su-6);
         justify-items: flex-start
     }
-}
 
-@media (min-width:640px) {
     .crayons-story {
         --story-padding: var(--su-4);
         --title-font-size: var(--fs-2xl)
@@ -29085,9 +29801,7 @@ textarea.crayons-textfield.crayons-textfield--ghost {
     .crayons-story__indention {
         padding-left: calc(var(--su-7) + var(--su-2))
     }
-}
 
-@media (min-width:768px) {
     .crayons-story__top {
         margin-bottom: var(--su-2)
     }
@@ -29172,9 +29886,7 @@ blockquote pre.highlight code,div.highlight code,li pre.highlight code,pre:not(.
     .crayons-tabs {
         --tab-vertical-padding: var(--su-2)
     }
-}
 
-@media (min-width:640px) {
     .crayons-tabs__item {
         width: auto;
         margin: 0 var(--su-1)
@@ -29192,28 +29904,20 @@ blockquote pre.highlight code,div.highlight code,li pre.highlight code,pre:not(.
         left: var(--tab-horizontal-padding);
         right: var(--tab-horizontal-padding)
     }
-}
 
-@media (min-width:640px) {
     .crayons-tabs--stacked {
         flex-direction: row
     }
-}
 
-@media (min-width:640px) {
     .crayons-tabs--stacked .crayons-tabs__item {
         margin: 0 var(--su-1)
     }
-}
 
-@media (min-width:640px) {
     .crayons-navigation {
         display: block;
         overflow-x: unset
     }
-}
 
-@media (min-width:640px) {
     .crayons-navigation__item {
         display: flex;
         color: var(--base-90);
@@ -29225,9 +29929,7 @@ blockquote pre.highlight code,div.highlight code,li pre.highlight code,pre:not(.
         color: var(--accent-brand);
         background: var(--base-inverted-a50)
     }
-}
 
-@media (min-width:640px) {
     .crayons-navigation__item--current,.crayons-navigation__item--current:hover {
         background: var(--base-inverted)
     }
@@ -29247,20 +29949,8 @@ blockquote pre.highlight code,div.highlight code,li pre.highlight code,pre:not(.
     cursor: pointer
 }
 
-.crayons-tabs--wrapped .crayons-tabs__list li {
-    width: auto
-}
-
-ol[class],ul[class] {
-    padding: 0
-}
-
 body.hidden-shell .crayons-footer,body.hidden-shell .crayons-header {
     display: none
-}
-
-main {
-    display: block
 }
 
 @media (min-width:640px) {
@@ -34795,10 +35485,6 @@ main {
     }
 }
 
-[class^=crayons],[class^=crayons] *,[class^=crayons] ::after,[class^=crayons] ::before,[class^=crayons]::after,[class^=crayons]::before {
-    box-sizing: border-box
-}
-
 .text-styles .fluidvids iframe,.text-styles .table-wrapper-paragraph table,.text-styles figure,blockquote,dd,dl,figcaption,figure,h1,h2,h3,h4,li,ol[class],p,pre,ul[class] {
     margin: 0
 }
@@ -34842,11 +35528,6 @@ button,input,optgroup,select,textarea {
 
 input[type=email],input[type=password],input[type=text],input[type=url],textarea {
     outline: 0
-}
-
-[type=button],[type=reset],[type=submit],button {
-    -webkit-appearance: button;
-    cursor: pointer
 }
 
 fieldset {
@@ -35046,7 +35727,6 @@ a {
 .crayons-icon:not(.crayons-icon--default),.crayons-icon:not(.crayons-icon--default) * {
     fill: currentColor
 }
-
 
 @media (min-width:768px) {
     :root {
@@ -35987,61 +36667,11 @@ body.open-dyslexic-article-body {
     --brand-forem-bg-hover: #05313b;
     --brand-email-bg: #24292e;
     --brand-email-color: #fff;
-    --brand-email-bg-hover: #000;
-    --border-width: 0px;
-    --shadow-color: rgba(0, 0, 0, 0.05);
-    --vertical-padding: var(--su-2);
-    --horizontal-padding: var(--su-4);
-    --font-size: var(--fs-base);
-    --with-icon-padding: var(--su-3);
-    --icon-margin: var(--su-2);
-    position: relative;
-    display: inline-block;
-    padding: calc(var(--vertical-padding) - var(--border-width)) calc(var(--horizontal-padding) - var(--border-width));
-    border-radius: var(--radius);
-    font-family: inherit;
-    font-size: var(--font-size);
-    line-height: var(--su-6);
-    font-weight: var(--fw-medium);
-    text-align: center;
-    text-decoration: none;
-    cursor: pointer;
-    transition: all var(--transition-props);
-    border: var(--border-width) solid;
-    overflow-wrap: normal;
-    --bg: var(--button-primary-bg);
-    --bg-hover: var(--button-primary-bg-hover);
-    --border: transparent;
-    --border-hover: transparent;
-    --color: var(--button-primary-color);
-    --color-hover: var(--button-primary-color-hover);
-    --shadow: 0 1px 3px var(--shadow-color);
-    --shadow-hover: 0 2px 5px var(--shadow-color);
-    --bg-inverted: var(--button-primary-inverted-bg);
-    --bg-inverted-hover: var(--button-primary-inverted-bg-hover);
-    --color-inverted: var(--button-primary-inverted-color);
-    --color-inverted-hover: var(--button-primary-inverted-color-hover);
-    background-color: var(--bg);
-    border-color: var(--border);
-    box-shadow: var(--shadow);
-    color: var(--color)
-}
-
-.crayons-btn:active:enabled,.crayons-btn:hover:enabled,.crayons-btn[href]:focus,.crayons-btn[href]:hover {
-    background-color: var(--bg-hover);
-    border-color: var(--border-hover);
-    box-shadow: var(--shadow-hover);
-    color: var(--color-hover);
-    z-index: var(--z-elevate)
+    --brand-email-bg-hover: #000
 }
 
 .crayons-btn.crayons-btn--inverted {
-    --bg: var(--bg-inverted);
-    --bg-hover: var(--bg-inverted-hover);
-    --border: var(--border-inverted);
-    --border-hover: var(--border-inverted-hover);
-    --color: var(--color-inverted);
-    --color-hover: var(--color-inverted-hover)
+    --bg: var(--bg-inverted)
 }
 
 .crayons-btn[disabled] {
@@ -36157,14 +36787,7 @@ body.open-dyslexic-article-body {
     --color-inverted-hover: var(--accent-ghost-dimmed-inverted-color-hover)
 }
 
-.crayons-btn--ghost-success {
-    --color: var(--accent-success);
-    --color-hover: var(--accent-success-darker);
-    --color-inverted: var(--accent-success);
-    --color-inverted-hover: var(--accent-success-darker)
-}
-
-.crayons-btn--ghost-danger,.crayons-btn--ghost-success,.crayons-btn--ghost-warning {
+.crayons-btn--ghost-danger,.crayons-btn--ghost-warning {
     --bg: var(--button-ghost-bg);
     --bg-hover: var(--button-ghost-bg-hover);
     --shadow: none;
@@ -36645,7 +37268,7 @@ body.open-dyslexic-article-body {
     border-color: var(--form-border-hover)
 }
 
-.c-autocomplete--multi__wrapper:focus-within,.crayons-select:focus,.crayons-textfield:focus {
+.c-autocomplete--multi__wrapper:focus-within {
     background-color: var(--form-bg-focus);
     border-color: var(--focus);
     box-shadow: 0 0 0 1px var(--focus)
@@ -37620,18 +38243,7 @@ body.open-dyslexic-article-body {
 }
 
 .crayons-snackbar__item {
-    border-radius: var(--radius);
-    background: var(--snackbar-bg);
-    color: var(--snackbar-color);
-    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05);
-    display: none;
-    align-items: center;
-    justify-content: space-between;
-    padding: var(--su-2)
-}
-
-.crayons-snackbar__body {
-    padding: 0 var(--su-2)
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05)
 }
 
 .crayons-snackbar__actions {
@@ -38600,33 +39212,8 @@ code {
     color: var(--tag-prefix-hover)
 }
 
-.crayons-tooltip__content {
-    left: 50%;
-    top: 100%
-}
-
 .crayons-hover-tooltip[data-tooltip]:after,.crayons-tooltip__content {
-    position: absolute;
-    transform: translate(-50%,calc(-1*var(--su-1)));
-    background: var(--base-a90);
-    color: var(--base-inverted);
-    font-size: var(--fs-s);
-    font-family: var(--ff-sans-serif);
-    font-weight: var(--fw-normal);
-    line-height: var(--lh-tight);
-    padding: var(--su-2) var(--su-3);
-    transition: all var(--transition-props);
-    transition-delay: 250ms;
-    z-index: var(--z-popover);
-    border-radius: var(--radius);
-    width: max-content;
-    opacity: var(--opacity-0)
-}
-
-.crayons-tooltip__activator:hover .crayons-hover-tooltip[data-tooltip]:not(.crayons-tooltip__suppressed):after,.crayons-tooltip__activator:hover .crayons-tooltip__content:not(.crayons-tooltip__suppressed),.js-focus-visible .crayons-tooltip__activator.focus-visible:focus .crayons-hover-tooltip[data-tooltip]:not(.crayons-tooltip__suppressed):after,.js-focus-visible .crayons-tooltip__activator.focus-visible:focus .crayons-tooltip__content:not(.crayons-tooltip__suppressed) {
-    opacity: 1;
-    transition-delay: 0;
-    transform: translate(-50%,var(--su-1))
+    background: var(--base-a90)
 }
 
 .crayons-hover-tooltip[data-tooltip] {
@@ -38635,11 +39222,8 @@ code {
 
 .crayons-hover-tooltip[data-tooltip]:after {
     content: attr(data-tooltip);
-    left: 0;
     bottom: 100%;
-    top: unset;
-    transform: translateY(var(--su-1));
-    pointer-events: none
+    transform: translateY(var(--su-1))
 }
 
 .crayons-hover-tooltip[data-tooltip]:hover:after {
@@ -38813,11 +39397,11 @@ code {
     background-color: var(--base-40)
 }
 
-.bg-base-30 {
+.bg-base-30,button.btn.btn-light:hover {
     background-color: var(--base-30)
 }
 
-.bg-base-20 {
+.bg-base-20,button.btn.btn-light {
     background-color: var(--base-20)
 }
 
@@ -38921,13 +39505,8 @@ code {
     border-color: var(--accent-danger)
 }
 
-
 .cursor-auto {
     cursor: auto
-}
-
-.cursor-default {
-    cursor: default
 }
 
 .cursor-pointer {
@@ -39363,7 +39942,6 @@ code {
     bottom: unset
 }
 
-
 .bottom-1 {
     bottom: var(--su-1)
 }
@@ -39696,7 +40274,6 @@ code {
     width: 0
 }
 
-
 .w-full {
     width: 100vw
 }
@@ -39720,7 +40297,6 @@ code {
 .h-0 {
     height: 0
 }
-
 
 .h-full {
     height: 100vh
@@ -39769,6 +40345,7 @@ code {
 .max-w-unset {
     max-width: unset
 }
+
 .m-unset {
     margin: unset
 }
@@ -39857,6 +40434,7 @@ code {
     margin-top: unset;
     margin-bottom: unset
 }
+
 .my-1 {
     margin-top: var(--su-1);
     margin-bottom: var(--su-1)
@@ -40149,7 +40727,6 @@ code {
 .mb-unset {
     margin-bottom: unset
 }
-
 
 .mb-1 {
     margin-bottom: var(--su-1)
@@ -40829,7 +41406,7 @@ code {
     list-style-type: decimal
 }
 
-.text-underline {
+.table-algo-title:hover,.text-underline {
     text-decoration: underline
 }
 
@@ -40871,10 +41448,6 @@ code {
 
 .inline-block {
     display: inline-block
-}
-
-.flex {
-    display: flex
 }
 
 .inline-flex {
@@ -46453,885 +47026,59 @@ code {
     }
 }
 
-:root {
-    --algo-body: #575757;
-    --card-border: rgb(9 9 9 / 10%);
-    --algocloud-blue: var(--algocloud-primary);
-    --algocloud-indigo: #727cf5;
-    --algocloud-purple: #6b5eae;
-    --algocloud-pink: #ff679b;
-    --algocloud-red: #d31616;
-    --algocloud-orange: #fd7e14;
-    --algocloud-yellow: #f5803e;
-    --algocloud-green: #26d9ca;
-    --algocloud-teal: #02a8b5;
-    --algocloud-cyan: #27bcfd;
-    --algocloud-gray: #748194;
-    --algocloud-gray-dark: #4d5969;
-    --algocloud-gray-black: #000;
-    --algocloud-gray-100: #f9fafd;
-    --algocloud-gray-200: #edf2f9;
-    --algocloud-gray-300: #d8dbef;
-    --algocloud-gray-400: #b6c1d2;
-    --algocloud-gray-500: #9da9bb;
-    --algocloud-gray-600: #748194;
-    --algocloud-gray-700: #5e6e82;
-    --algocloud-gray-800: #4d5969;
-    --algocloud-gray-900: #3d3d3d;
-    --algocloud-gray-1000: #232e3c;
-    --algocloud-gray-1100: #0b1727;
-    --algocloud-gray-white: #fff;
-    --algocloud-primary-rgb: 99, 121, 253;
-    --primary: #3b49df;
-    --algocloud-colored-link-primary-hover-color: #7b78ff;
-    --algocloud-secondary-rgb: 116, 129, 148;
-    --algocloud-success-rgb: 0, 210, 122;
-    --algocloud-info-rgb: rgb(139 155 253);
-    --algocloud-warning-rgb: 245, 128, 62;
-    --algocloud-danger-rgb: 230, 55, 87;
-    --algocloud-light-rgb: 249, 250, 253;
-    --algocloud-dark-rgb: 11, 23, 39;
-    --algocloud-white-rgb: 255, 255, 255;
-    --algocloud-black-rgb: 0, 0, 0;
-    --algocloud-body-color-rgb: 94, 110, 130;
-    --algocloud-body-bg-2: var(--algocloud-body-color);
-    --algocloud-body-bg-rgb: 237, 242, 249;
-    --algocloud-font-sans-serif: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-    --algocloud-font-monospace: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    --algocloud-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
-    --algocloud-body-font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI","Roboto","Helvetica","Arial",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    --algocloud-body-font-size: 1rem;
-    --algocloud-body-font-weight: 400;
-    --algocloud-body-line-height: 1.5;
-    --algocloud-menu-li-hover: rgb(59 73 223 / 10%);
-    --algocloud-menu-li-color-hover: #323ebe;
-    --algocloud-menu-li-bg-active: var(--link-bg-hover);
-    --algocloud-menu-li-color-active: #232e3c;
-    --algocloud-menu-border-color: #5b616e33;
-    --border-var: #5b616e33;
-    --algocloud-brand-color: #0326f7;
-    --li-active: #000;
-    --li-hover: #323ebe;
-    --algocloud-logo-1: #090909;
-    --algocloud-facebook: #3c5a99;
-    --algocloud-colored-link-facebook-hover-color: #30487a;
-    --algocloud-google-plus: #dd4b39;
-    --algocloud-colored-link-google-plus-hover-color: #b13c2e;
-    --algocloud-twitter: #1da1f2;
-    --algocloud-colored-link-twitter-hover-color: #1781c2;
-    --algocloud-linkedin: #0077b5;
-    --algocloud-colored-link-linkedin-hover-color: #005f91;
-    --algocloud-youtube: #ff0001;
-    --algocloud-colored-link-youtube-hover-color: #cc0001;
-    --algocloud-github: #333333;
-    --algocloud-colored-link-github-hover-color: #292929;
-    --algocloud-black: #000;
-    --algocloud-colored-link-black-hover-color: black;
-    --algocloud-100: #f9fafd;
-    --algocloud-colored-link-100-hover-color: #fafbfd;
-    --algocloud-200: rgb(59 73 223/10%);
-    --algocloud-colored-link-200-hover-color: #f1f5fa;
-    --algocloud-300: #d8dbef;
-    --algocloud-colored-link-300-hover-color: #e0e8f2;
-    --algocloud-400: #b6c1d2;
-    --algocloud-colored-link-400-hover-color: #c5cddb;
-    --algocloud-500: #9da9bb;
-    --algocloud-colored-link-500-hover-color: #7e8796;
-    --algocloud-600: #748194;
-    --algocloud-colored-link-600-hover-color: #5d6776;
-    --algocloud-700: #5e6e82;
-    --algocloud-colored-link-700-hover-color: #4b5868;
-    --algocloud-800: #4d5969;
-    --algocloud-colored-link-800-hover-color: #3e4754;
-    --algocloud-900: #3d3d3d;
-    --algocloud-colored-link-900-hover-color: #2a3340;
-    --algocloud-1000: #232e3c;
-    --algocloud-colored-link-1000-hover-color: #1c2530;
-    --algocloud-1100: #0b1727;
-    --algocloud-colored-link-1100-hover-color: #09121f;
-    --algocloud-white: #fff;
-    --algocloud-colored-link-white-hover-color: white;
-    --algocloud-primary: #3b49df;
-    --algocloud-colored-link-primary-hover-color: #3b49df;
-    --algocloud-secondary: #748194;
-    --algocloud-colored-link-secondary-hover-color: #5d6776;
-    --algocloud-success: #26d9ca;
-    --algocloud-colored-link-success-hover-color: #1ab3a6;
-    --algocloud-info: var(--algocloud-primary);
-    --algocloud-colored-link-info-hover-color: #1f96ca;
-    --algocloud-warning: #f5803e;
-    --algocloud-colored-link-warning-hover-color: #c46632;
-    --algocloud-danger: #d31616;
-    --algocloud-colored-link-danger-hover-color: #b82c46;
-    --algocloud-light: #f9fafd;
-    --algocloud-colored-link-light-hover-color: #fafbfd;
-    --algocloud-dark: #0b1727;
-    --algocloud-colored-link-dark-hover-color: #09121f;
-    --algocloud-soft-primary: #e6effc;
-    --algocloud-soft-secondary: #eef0f2;
-    --algocloud-soft-success: #e0faef;
-    --algocloud-soft-info: #e5f7ff;
-    --algocloud-soft-warning: #fef0e8;
-    --algocloud-soft-danger: #fce7eb;
-    --algocloud-soft-light: #fefeff;
-    --algocloud-soft-dark: #e2e3e5;
-    --algocloud-accordion-border-color: rgba(0, 0, 0, 0.125);
-    --algocloud-accordion-button-active-color: #286fce;
-    --algocloud-accordion-button-active-bg: var(--algocloud-200);
-    --algocloud-btn-reveal-color: dark;
-    --algocloud-btn-reveal-bg: #e6e6e6;
-    --algocloud-btn-reveal-border-color: #dfdfdf;
-    --algocloud-btn-algocloud-background: var(--algocloud-white);
-    --algocloud-btn-disabled-color: #4d5969;
-    --algocloud-btn-algocloud-box-shadow: 0 0 0 1px rgb(9 9 9 / 10%);
-    --algocloud-btn-algocloud-hover-box-shadow: 0 0 0 1px rgba(43, 45, 80, 0.1), 0 2px 5px 0 rgba(43, 45, 80, 0.1), 0 3px 9px 0 rgba(43, 45, 80, 0.08), 0 1px 1.5px 0 rgba(0, 0, 0, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-    --algocloud-btn-algocloud-default-color: #4d5969;
-    --algocloud-btn-algocloud-default-hover-color: #404a57;
-    --algocloud-btn-algocloud-default-active-background: #e6e6e6;
-    --algocloud-btn-algocloud-default-active-border: #404a57;
-    --algocloud-btn-algocloud-primary-color: var(--algocloud-primary);
-    --algocloud-btn-algocloud-primary-hover-color: #4150f5;
-    --algocloud-btn-algocloud-primary-active-background: #d5e5fa;
-    --algocloud-btn-algocloud-primary-active-color: #4150f5;
-    --algocloud-alert-primary-background: #d5e5fa;
-    --algocloud-alert-primary-border-color: #c0d7f7;
-    --algocloud-alert-primary-color: #1a4a89;
-    --algocloud-alert-primary-link-color: #3b49df;
-    --algocloud-list-group-item-primary-background: #d5e5fa;
-    --algocloud-list-group-item-primary-color: #1a4a89;
-    --algocloud-badge-soft-primary-background-color: #d5e5fa;
-    --algocloud-badge-soft-primary-color: #1c4f93;
-    --algocloud-btn-algocloud-secondary-color: var(--algocloud-secondary);
-    --algocloud-btn-algocloud-secondary-hover-color: #606b7b;
-    --algocloud-btn-algocloud-secondary-active-background: #e3e6ea;
-    --algocloud-btn-algocloud-secondary-active-color: #606b7b;
-    --algocloud-alert-secondary-background: #e3e6ea;
-    --algocloud-alert-secondary-border-color: #d5d9df;
-    --algocloud-alert-secondary-color: #464d59;
-    --algocloud-alert-secondary-link-color: #5d6776;
-    --algocloud-list-group-item-secondary-background: #e3e6ea;
-    --algocloud-list-group-item-secondary-color: #464d59;
-    --algocloud-badge-soft-secondary-background-color: #e3e6ea;
-    --algocloud-badge-soft-secondary-color: #7d899b;
-    --algocloud-btn-algocloud-success-color: var(--algocloud-success);
-    --algocloud-btn-algocloud-success-hover-color: #00ae65;
-    --algocloud-btn-algocloud-success-active-background: #ccf6e4;
-    --algocloud-btn-algocloud-success-active-color: #00ae65;
-    --algocloud-alert-success-background: #ccf6e4;
-    --algocloud-alert-success-border-color: #b3f2d7;
-    --algocloud-alert-success-color: #007e49;
-    --algocloud-alert-success-link-color: #1ab3a6;
-    --algocloud-list-group-item-success-background: #ccf6e4;
-    --algocloud-list-group-item-success-color: #007e49;
-    --algocloud-badge-soft-success-background-color: #ccf6e4;
-    --algocloud-badge-soft-success-color: #00864e;
-    --algocloud-btn-algocloud-info-color: var(--algocloud-info);
-    --algocloud-btn-algocloud-info-hover-color: #209cd2;
-    --algocloud-btn-algocloud-info-active-background: rgb(38 217 202 / 10%);
-    --algocloud-btn-algocloud-info-active-color: #209cd2;
-    --algocloud-alert-info-background: rgb(38 217 202 / 10%);
-    --algocloud-alert-info-border-color: #beebfe;
-    --algocloud-alert-info-color: #177198;
-    --algocloud-alert-info-link-color: #1f96ca;
-    --algocloud-list-group-item-info-background: rgb(38 217 202 / 10%);
-    --algocloud-list-group-item-info-color: #177198;
-    --algocloud-badge-soft-info-background-color: rgb(38 217 202 / 10%);
-    --algocloud-badge-soft-info-color: #26d9ca;
-    --algocloud-btn-algocloud-warning-color: var(--algocloud-warning);
-    --algocloud-btn-algocloud-warning-hover-color: #cb6a33;
-    --algocloud-btn-algocloud-warning-active-background: rgb(220 24 24 / 10%);
-    --algocloud-btn-algocloud-warning-active-color: #cb6a33;
-    --algocloud-alert-warning-background: rgb(220 24 24 / 10%);
-    --algocloud-alert-warning-border-color: #fcd9c5;
-    --algocloud-alert-warning-color: #934d25;
-    --algocloud-alert-warning-link-color: #c46632;
-    --algocloud-list-group-item-warning-background: rgb(220 24 24 / 10%);
-    --algocloud-list-group-item-warning-color: #934d25;
-    --algocloud-badge-soft-warning-background-color: rgb(220 24 24 / 10%);
-    --algocloud-badge-soft-warning-color: #9d5228;
-    --algocloud-btn-algocloud-danger-color: var(--algocloud-danger);
-    --algocloud-btn-algocloud-danger-hover-color: #bf2e48;
-    --algocloud-btn-algocloud-danger-active-background: #fad7dd;
-    --algocloud-btn-algocloud-danger-active-color: #bf2e48;
-    --algocloud-alert-danger-background: #fad7dd;
-    --algocloud-alert-danger-border-color: #f8c3cd;
-    --algocloud-alert-danger-color: #8a2134;
-    --algocloud-alert-danger-link-color: #b82c46;
-    --algocloud-list-group-item-danger-background: #fad7dd;
-    --algocloud-list-group-item-danger-color: #8a2134;
-    --algocloud-badge-soft-danger-background-color: #fad7dd;
-    --algocloud-badge-soft-danger-color: #932338;
-    --algocloud-btn-algocloud-light-color: var(--algocloud-light);
-    --algocloud-btn-algocloud-light-hover-color: #cfd0d2;
-    --algocloud-btn-algocloud-light-active-background: #fefeff;
-    --algocloud-btn-algocloud-light-active-color: #cfd0d2;
-    --algocloud-alert-light-background: #fefeff;
-    --algocloud-alert-light-border-color: #fdfefe;
-    --algocloud-alert-light-color: #959698;
-    --algocloud-alert-light-link-color: #c7c8ca;
-    --algocloud-list-group-item-light-background: #fefeff;
-    --algocloud-list-group-item-light-color: #959698;
-    --algocloud-badge-soft-light-background-color: #fefeff;
-    --algocloud-badge-soft-light-color: #9fa0a2;
-    --algocloud-btn-algocloud-dark-color: var(--algocloud-dark);
-    --algocloud-btn-algocloud-dark-hover-color: #091320;
-    --algocloud-btn-algocloud-dark-active-background: #ced1d4;
-    --algocloud-btn-algocloud-dark-active-color: #091320;
-    --algocloud-alert-dark-background: #ced1d4;
-    --algocloud-alert-dark-border-color: #b6b9be;
-    --algocloud-alert-dark-color: #070e17;
-    --algocloud-alert-dark-link-color: #09121f;
-    --algocloud-list-group-item-dark-background: #ced1d4;
-    --algocloud-list-group-item-dark-color: #070e17;
-    --algocloud-badge-soft-dark-background-color: #ced1d4;
-    --algocloud-badge-soft-dark-color: #070f19;
-    --algocloud-transparent-50: rgba(255, 255, 255, 0.5);
-    --algocloud-list-group-bg: #fff;
-    --algocloud-list-group-action-hover-color: #5e6e82;
-    --algocloud-list-group-hover-bg: #f9fafd;
-    --algocloud-body-bg: #efefef;
-    --algocloud-body-color: #3d3d3d;
-    --algocloud-headings-color: #090909;
-    --algocloud-link-color: var(--algocloud-primary);
-    --algocloud-link-hover-color: #3b49df;
-    --algocloud-border-color: #d8dbef;
-    --algocloud-box-shadow: 0 0 0 1px rgb(9 9 9 / 10%);
-    --algocloud-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-    --algocloud-box-shadow-lg: 0 1rem 4rem rgba(0, 0, 0, 0.175);
-    --algocloud-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
-    --algocloud-component-active-color: ;--algocloud-component-active-bg:var(--algocloud-primary);
-    --algocloud-text-muted: #748194;
-    --algocloud-blockquote-footer-color: #748194;
-    --algocloud-hr-color: var(--algocloud-border-color);
-    --algocloud-hr-opacity: 0.25;
-    --algocloud-mark-bg: #fcf8e3;
-    --algocloud-input-btn-focus-color: rgba(44, 123, 229, 0.25);
-    --algocloud-btn-link-color: #4862fd;
-    --algocloud-btn-link-hover-color: var(--algocloud-primary);
-    --algocloud-btn-disabled-color: #748194;
-    --algocloud-heading-color: #3d3d3d;
-    --algocloud-input-bg: #fff;
-    --algocloud-input-color: #3d3d3d;
-    --algocloud-input-border-color: #d8dbef;
-    --algocloud-input-focus-border-color: var(--algocloud-primary);
-    --algocloud-input-focus-color: var(--algocloud-input-color);
-    --algocloud-input-placeholder-color: #b6c1d2;
-    --algocloud-input-plaintext-color: #5e6e82;
-    --algocloud-form-check-label-color: ;--algocloud-form-check-input-bg:transparent;
-    --algocloud-form-check-input-border: 1px solid var(--algocloud-form-check-input-border-color);
-    --algocloud-form-check-input-border-color: #b6c1d2;
-    --algocloud-form-check-input-checked-color: #fff;
-    --algocloud-form-check-input-checked-bg-color: var(--algocloud-primary);
-    --algocloud-form-check-input-checked-border-color: var(--algocloud-primary);
-    --algocloud-form-check-input-indeterminate-color: #fff;
-    --algocloud-form-check-input-indeterminate-bg-color: var(--algocloud-primary);
-    --algocloud-form-check-input-indeterminate-border-color: var(--algocloud-primary);
-    --algocloud-form-switch-color: rgba(0, 0, 0, .25);
-    --algocloud-form-switch-focus-color: var(--algocloud-input-focus-border-color);
-    --algocloud-form-switch-checked-color: #fff;
-    --algocloud-input-group-addon-color: var(--algocloud-input-border-color);
-    --algocloud-input-group-addon-bg: #edf2f9;
-    --algocloud-input-group-addon-border-color: var(--algocloud-input-border-color);
-    --algocloud-form-select-color: var(--algocloud-input-color);
-    --algocloud-form-select-disabled-color: #748194;
-    --algocloud-form-select-bg: var(--algocloud-input-bg);
-    --algocloud-form-select-disabled-bg: #edf2f9;
-    --algocloud-form-select-indicator-color: #4d5969;
-    --algocloud-form-select-focus-box-shadow: 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
-    --algocloud-form-select-border-color: var(--algocloud-input-border-color);
-    --algocloud-form-select-focus-border-color: var(--algocloud-input-focus-border-color);
-    --algocloud-form-range-track-bg: #d8dbef;
-    --algocloud-form-range-track-box-shadow: var(--algocloud-box-shadow-inset);
-    --algocloud-form-range-thumb-bg: var(--algocloud-primary);
-    --algocloud-form-range-thumb-box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.1);
-    --algocloud-form-range-thumb-focus-box-shadow: 0 0 0 1px #edf2f9, 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
-    --algocloud-form-range-thumb-active-bg: #cbdef9;
-    --algocloud-form-range-thumb-disabled-bg: #9da9bb;
-    --algocloud-form-file-focus-border-color: var(--algocloud-input-focus-border-color);
-    --algocloud-form-file-focus-box-shadow: 0 0 0 0.25rem rgba(44, 123, 229, 0.25);
-    --algocloud-form-file-disabled-bg: var(--algocloud-200);
-    --algocloud-form-file-disabled-border-color: ;--algocloud-form-file-color:var(--algocloud-input-color);
-    --algocloud-form-file-bg: var(--algocloud-input-bg);
-    --algocloud-form-file-border-color: var(--algocloud-input-border-color);
-    --algocloud-form-file-box-shadow: var(--algocloud-box-shadow-inset);
-    --algocloud-form-file-button-bg: var(--algocloud-200);
-    --algocloud-form-feedback-valid-color: #26d9ca;
-    --algocloud-form-feedback-invalid-color: #d31616;
-    --algocloud-form-feedback-icon-valid-color: var(--algocloud-form-feedback-valid-color);
-    --algocloud-form-feedback-icon-invalid-color: var(--algocloud-form-feedback-invalid-color);
-    --algocloud-nav-link-color: null;
-    --algocloud-nav-link-hover-color: null;
-    --algocloud-nav-link-disabled-color: #748194;
-    --algocloud-nav-tabs-border-color: #d8dbef;
-    --algocloud-nav-tabs-link-hover-border-color: #edf2f9 #edf2f9 #d8dbef;
-    --algocloud-nav-tabs-link-active-color: #5e6e82;
-    --algocloud-nav-tabs-link-active-bg: #edf2f9;
-    --algocloud-nav-tabs-link-active-border-color: #d8dbef #d8dbef #edf2f9;
-    --algocloud-bg-navbar-glass: rgba(237, 242, 249, 0.96);
-    --algocloud-nav-pills-link-active-color: #fff;
-    --algocloud-nav-pills-link-active-bg: var(--algocloud-primary);
-    --algocloud-navbar-dark-color: rgba(255, 255, 255, 0.55);
-    --algocloud-navbar-dark-hover-color: rgba(255, 255, 255, 0.75);
-    --algocloud-navbar-dark-active-color: #fff;
-    --algocloud-navbar-dark-disabled-color: rgba(255, 255, 255, 0.25);
-    --algocloud-navbar-dark-toggler-border-color: rgba(255, 255, 255, 0.1);
-    --algocloud-navbar-light-color: rgba(0, 0, 0, 0.55);
-    --algocloud-navbar-light-hover-color: rgba(0, 0, 0, 0.7);
-    --algocloud-navbar-light-active-color: rgba(0, 0, 0, 0.9);
-    --algocloud-navbar-light-disabled-color: rgba(0, 0, 0, 0.3);
-    --algocloud-navbar-light-toggler-border-color: rgba(0, 0, 0, 0.1);
-    --algocloud-navbar-light-brand-color: var(--algocloud-primary);
-    --algocloud-navbar-dark-brand-color: var(--algocloud-primary);
-    --algocloud-navbar-vertical-collapsed-hover-shadow-color: rgba(0, 0, 0, 0.2);
-    --algocloud-navbar-vertical-bg-color: var(--algocloud-bg-navbar-glass);
-    --algocloud-navbar-vertical-link-color: #5e6e82;
-    --algocloud-navbar-vertical-link-hover-color: #232e3c;
-    --algocloud-navbar-vertical-link-active-color: var(--algocloud-primary);
-    --algocloud-navbar-vertical-link-disable-color: #b6c1d2;
-    --algocloud-navbar-vertical-hr-color: rgba(0, 0, 0, 0.08);
-    --algocloud-navbar-vertical-scrollbar-color: rgba(116, 129, 148, 0.3);
-    --algocloud-dropdown-bg: #fff;
-    --algocloud-dropdown-color: #d8dbef;
-    --algocloud-dropdown-border-color: var(--algocloud-border-color);
-    --algocloud-dropdown-box-shadow: var(--algocloud-box-shadow);
-    --algocloud-dropdown-link-color: #3d3d3d;
-    --algocloud-dropdown-link-hover-color: #2a3441;
-    --algocloud-dropdown-link-hover-bg: #f9fafd;
-    --algocloud-dropdown-link-active-color: #fff;
-    --algocloud-dropdown-link-active-bg: var(--algocloud-primary);
-    --algocloud-dropdown-link-disabled-color: #748194;
-    --algocloud-dropdown-header-color: #748194;
-    --algocloud-dropdown-dark-color: #d8dbef;
-    --algocloud-dropdown-dark-bg: #4d5969;
-    --algocloud-dropdown-dark-border-color: var(--algocloud-dropdown-border-color);
-    --algocloud-dropdown-dark-divider-bg: var(--algocloud-dropdown-border-color);
-    --algocloud-dropdown-dark-box-shadow: null;
-    --algocloud-dropdown-dark-link-color: #d8dbef;
-    --algocloud-dropdown-dark-link-hover-color: #fff;
-    --algocloud-dropdown-dark-link-hover-bg: rgba(255, 255, 255, 0.15);
-    --algocloud-dropdown-dark-link-active-color: var(--algocloud-dropdown-link-active-color);
-    --algocloud-dropdown-dark-link-active-bg: var(--algocloud-dropdown-link-active-bg);
-    --algocloud-dropdown-dark-link-disabled-color: #9da9bb;
-    --algocloud-dropdown-dark-header-color: #9da9bb;
-    --algocloud-pagination-color: #000;
-    --algocloud-pagination-bg: #fff;
-    --algocloud-pagination-border-color: #edf2f9;
-    --algocloud-pagination-hover-color: #fff;
-    --algocloud-pagination-hover-bg: var(--algocloud-primary);
-    --algocloud-pagination-hover-border-color: var(--algocloud-primary);
-    --algocloud-pagination-active-color: #fff;
-    --algocloud-pagination-active-bg: var(--algocloud-primary);
-    --algocloud-pagination-active-border-color: var(--algocloud-primary);
-    --algocloud-pagination-disabled-bg: #fff;
-    --algocloud-card-border-color: rgba(0, 0, 0, 0.125);
-    --algocloud-card-cap-bg: rgba(0, 0, 0, 0);
-    --algocloud-card-cap-color: null;
-    --algocloud-card-color: null;
-    --algocloud-card-bg: #fff;
-    --algocloud-card-bg-color: #fff;
-    --algocloud-tooltip-color: #fff;
-    --algocloud-tooltip-bg: #000;
-    --algocloud-tooltip-arrow-color: #000;
-    --algocloud-popover-bg: #fff;
-    --algocloud-popover-border-color: rgba(0, 0, 0, 0.2);
-    --algocloud-popover-box-shadow: var(--algocloud-box-shadow);
-    --algocloud-popover-header-bg: #f9fafd;
-    --algocloud-popover-header-border-bottom-color: #d6d6d6;
-    --algocloud-popover-header-color: var(--algocloud-headings-color);
-    --algocloud-popover-body-color: #5e6e82;
-    --algocloud-popover-arrow-color: #fff;
-    --algocloud-popover-arrow-outer-color: rgba(0, 0, 0, 0.25);
-    --algocloud-toast-color: ;--algocloud-toast-border-color:rgba(0, 0, 0, .1);
-    --algocloud-toast-box-shadow: var(--algocloud-box-shadow);
-    --algocloud-toast-header-color: #748194;
-    --algocloud-toast-header-background-color: rgba(255, 255, 255, 0.85);
-    --algocloud-toast-header-border-color: rgba(0, 0, 0, .05);
-    --algocloud-badge-color: #fff;
-    --algocloud-modal-content-bg: #fff;
-    --algocloud-table-border-color: #edf2f9;
-    --algocloud-table-primary-bg: #d5e5fa;
-    --algocloud-table-primary-color: #4d5969;
-    --algocloud-table-primary-hover-bg: #cbdbef;
-    --algocloud-table-primary-hover-color: #4d5969;
-    --algocloud-table-primary-striped-bg: #cedef3;
-    --algocloud-table-primary-striped-color: #4d5969;
-    --algocloud-table-primary-active-bg: #c7d7ec;
-    --algocloud-table-primary-active-color: #4d5969;
-    --algocloud-table-primary-border-color: #c7d7ec;
-    --algocloud-table-secondary-bg: #e3e6ea;
-    --algocloud-table-secondary-color: #4d5969;
-    --algocloud-table-secondary-hover-bg: #d8dbe0;
-    --algocloud-table-secondary-hover-color: #4d5969;
-    --algocloud-table-secondary-striped-bg: #dcdfe4;
-    --algocloud-table-secondary-striped-color: #4d5969;
-    --algocloud-table-secondary-active-bg: #d4d8dd;
-    --algocloud-table-secondary-active-color: #4d5969;
-    --algocloud-table-secondary-border-color: #d4d8dd;
-    --algocloud-table-success-bg: #ccf6e4;
-    --algocloud-table-success-color: #4d5969;
-    --algocloud-table-success-hover-bg: #c2eadb;
-    --algocloud-table-success-hover-color: #4d5969;
-    --algocloud-table-success-striped-bg: #c6eede;
-    --algocloud-table-success-striped-color: #4d5969;
-    --algocloud-table-success-active-bg: #bfe6d8;
-    --algocloud-table-success-active-color: #4d5969;
-    --algocloud-table-success-border-color: #bfe6d8;
-    --algocloud-table-info-bg: rgb(38 217 202 / 10%);
-    --algocloud-table-info-color: #4d5969;
-    --algocloud-table-info-hover-bg: #cae7f4;
-    --algocloud-table-info-hover-color: #4d5969;
-    --algocloud-table-info-striped-bg: #cdeaf8;
-    --algocloud-table-info-striped-color: #4d5969;
-    --algocloud-table-info-active-bg: #c7e3f0;
-    --algocloud-table-info-active-color: #4d5969;
-    --algocloud-table-info-border-color: #c7e3f0;
-    --algocloud-table-warning-bg: rgb(220 24 24 / 10%);
-    --algocloud-table-warning-color: #4d5969;
-    --algocloud-table-warning-hover-bg: #f0dbd0;
-    --algocloud-table-warning-hover-color: #4d5969;
-    --algocloud-table-warning-striped-bg: #f4dfd2;
-    --algocloud-table-warning-striped-color: #4d5969;
-    --algocloud-table-warning-active-bg: #ebd8cd;
-    --algocloud-table-warning-active-color: #4d5969;
-    --algocloud-table-warning-border-color: #ebd8cd;
-    --algocloud-table-danger-bg: #fad7dd;
-    --algocloud-table-danger-color: #4d5969;
-    --algocloud-table-danger-hover-bg: #edced4;
-    --algocloud-table-danger-hover-color: #4d5969;
-    --algocloud-table-danger-striped-bg: #f1d1d7;
-    --algocloud-table-danger-striped-color: #4d5969;
-    --algocloud-table-danger-active-bg: #e9cad1;
-    --algocloud-table-danger-active-color: #4d5969;
-    --algocloud-table-danger-border-color: #e9cad1;
-    --algocloud-table-light-bg: #f9fafd;
-    --algocloud-table-light-color: #4d5969;
-    --algocloud-table-light-hover-bg: #eceef2;
-    --algocloud-table-light-hover-color: #4d5969;
-    --algocloud-table-light-striped-bg: #f0f2f6;
-    --algocloud-table-light-striped-color: #4d5969;
-    --algocloud-table-light-active-bg: #e8eaee;
-    --algocloud-table-light-active-color: #4d5969;
-    --algocloud-table-light-border-color: #e8eaee;
-    --algocloud-table-dark-bg: #0b1727;
-    --algocloud-table-dark-color: #fff;
-    --algocloud-table-dark-hover-bg: #1d2837;
-    --algocloud-table-dark-hover-color: #fff;
-    --algocloud-table-dark-striped-bg: #172332;
-    --algocloud-table-dark-striped-color: #fff;
-    --algocloud-table-dark-active-bg: #232e3d;
-    --algocloud-table-dark-active-color: #fff;
-    --algocloud-table-dark-border-color: #232e3d;
-    --algocloud-avatar-status-border-color: #fff;
-    --algocloud-avatar-name-bg: #3d3d3d;
-    --algocloud-avatar-button-bg: #b6c1d2;
-    --algocloud-avatar-button-hover-bg: #9da9bb;
-    --algocloud-notification-bg: #fff;
-    --algocloud-notification-title-bg: #f9fafd;
-    --algocloud-notification-unread-bg: #edf2f9;
-    --algocloud-notification-unread-hover-bg: #dae4f3;
-    --algocloud-notification-indicator-border-color: #edf2f9;
-    --algocloud-kanban-bg: #f9fafd;
-    --algocloud-kanban-header-bg: var(--algocloud-kanban-bg);
-    --algocloud-kanban-item-bg: #fff;
-    --algocloud-kanban-item-color: #3d3d3d;
-    --algocloud-kanban-btn-add-hover-bg: #edf2f9;
-    --algocloud-kanban-draggable-source-dragging-bg: #edf2f9;
-    --algocloud-kanban-bg-attachment-bg: #d8dbef;
-    --algocloud-kanban-footer-color: #748194;
-    --algocloud-kanban-nav-link-card-details-color: #5e6e82;
-    --algocloud-kanban-nav-link-card-details-hover-bg: #edf2f9;
-    --algocloud-bg-shape-bg: #4695ff;
-    --algocloud-bg-shape-bg-ltd: linear-gradient(-45deg, #4695ff, #1970e2);
-    --algocloud-bg-shape-bg-dtl: linear-gradient(-45deg, #1970e2, #4695ff);
-    --algocloud-line-chart-gradient: linear-gradient(-45deg, #014ba7, #0183d0);
-    --algocloud-card-gradient: linear-gradient(-45deg, #1970e2, #4695ff);
-    --algocloud-progress-gradient: linear-gradient(-45deg, #1970e2, #4695ff);
-    --algocloud-bg-circle-shape: none;
-    --algocloud-bg-circle-shape-bg: #4695ff;
-    --algocloud-modal-shape-header: linear-gradient(-45deg, #1970e2, #4695ff);
-    --algocloud-modal-shape-header-bg: #4494ff;
-    --fc-button-bg-color: #3d3d3d;
-    --fc-button-border-color: #3d3d3d;
-    --fc-button-hover-bg-color: #0b1727;
-    --fc-button-hover-border-color: #0b1727;
-    --fc-button-active-bg-color: #0b1727;
-    --fc-button-active-border-color: #0b1727;
-    --fc-button-list-day-cushion: #fff;
-    --algocloud-flatpickr-calendar-bg: #fff;
-    --algocloud-leaflet-bar-bg: #fff;
-    --algocloud-leaflet-popup-content-wrapper-bg: #fff;
-    --algocloud-choices-item-selectable-highlighted-bg: #fff;
-    --algocloud-choices-item-has-no-choices-bg: #fff;
-    --algocloud-thumbnail-bg: #fff;
-    --algocloud-chat-contact-bg: var(--algocloud-card-bg);
-    --algocloud-tinymce-bg: #fff;
-    --algocloud-swiper-nav-bg: rgba(255, 255, 255, 0.8);
-    --algocloud-star-rating-bg-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFdElEQVR4nO2aXWxURRTH/2dut58Imho1SgStuit+vBo0BkgkRjDog+VBiJEXqJhKK21x+7EdUu5u2W1Uqi8Qo4YQY6gQDQlRn9RENGoMD0a7RCzGRCJGBLRF9mOOD+waKHe7e2f23mt0f4/zceY/Z2fmzJm7QI0aNWr8j6EgBu3sHG9oXHC2gxQvJ/CUhbpUPD5wMggtwv8hmZrmn3mHmF8G4XEm6s5R/kinlPP91xKAA7YN2A8CeHRW8eLmrOjwWwsQgAMYqs+xnLGls3O8wW89vjqgp1/eDWC1YyXhxqYFvz/ppx7AZwcIsnrmbMDUK6X0V5NfA/VJuRDgdWWa3Tmds1b5IqiAf97OUReAunLNCOx4RniFL/eALimvrs+KnwDMq6yHWJq0Bz/3VFRxJD8GabgY4iqcPABWvd6puRzPV4CUsnEmK6YA3OCiG1tKRRIJecwrXUU8XwHTGbEe7iYPAJQXYqsXeq4YyEvjUkoxkxXfAbhDo/uFOrYWxeMDv1Rb16V4ugJmctYa6E0eABpyItdZTT1OeLwFDEMa02YpZeWHpwaeOaBncOQhMJYamrnmvMdJUtXOgI0bd4daW0+25S0rAoV7iLiHgWqkuDkChjik9ibl8EmAuAo2/8G1A7ZKea24IMJkcQRAmJkiBIQBtAGwqiluNgScU4w0EU2CkWZSk8ycnleP76WUf2nadCYajbfmrfwDxIWJgiMAhQG06k7AQxSAEwAmiTnNRJMEMWkxpePx/lNzrRpHB7wwOLJcMR+Cm9vbv5cZAK81h1S3lFLNrnQ8BBVjF/4bkweAZgDPnc+IJ5wqS0QBDnsoKBAYdLtTubMDCF95qiYAhMUfOpY7FSqlOgCc9lSRjzDR86MjsS+d6hwdMBaX3zCrlQDOeKrMBwiIpnYMvVSqvuRNMBWXXwPiYQB/eKLMBxgY3mnHRudqM+dVOGkPfsEKjwCYrqoyHyAgnrKHRipoV57CveAwgCZjZT7AwFjKHuqr5Npc8VW4r3/7ShAdAuD7xwuXjCftoa5KcwZXuUDv4MgqYn4XQEhLmscw8+5UPPaMm4TJVTqc2jF0GERrAeRcq/MceqOlnje7zRa10uHege3tBHobgXxdvhIm7DuRjjw9MbE277av1gRS9vAEwE8BqGpurgVhf0ud2qAz+YvdDegb3L4BTK+b2DCBgffO/np9+549m7K6NoweMD795KOj9y9bcRsB95rY0SRTp+qW7drV/aeJEeM9TMzvm9rQg48mEv2/mVoxP8RYLDa2oYWor4oVYwuEu6qgQwOOtLfvN36DrEIY4yXmNrRobGv79hZTI0YOKPwCEVMRurBFxqvPyAGLw+lbEWBuoBCwAwhB7f/i+GS8/YwcwBzY/i8S7AoILgIUMY8EZluAzZegIY2Fc0gbbQdc9DwHFgGKCFZGP4K2AwoxuFGz+xkCehFSNxHzKoCO6uowjQRl/7dXCs0YnCXmVwWH7Evu8T9LKT+Yzoj1BNggLHRl0fAc0ncAiyVuHl8INKEI0aQdOz67rvDRcm9394sToabpLhBHAVxVkV02c4D2e0DfwMi+Cv76CoCPKEU9Y4nYZ5Xa7pHyOpEVwwA2oXzKfmHqWKRF90FEewVUkAMcZ/C2lB076PadbkzKUwCejUblK3kSO0FYM0fzhkXh9M0AptyMUcQkDJY6AE8D2NIcUktS9vABk7+0JBJyMhmPPcYKywEu9cGWQ3nrnO4Y2g5gYN+sogyIU5mQakvasXEpZUbX9mxSidjHzSG+jxjrAPx4eS29afIwor0FWkJq9HzOOsvMq5n5B0vx2OioPKFrrxyFg/ItKeXBmazoAGMFQEea6/MlP3zWqFGjRo0y/A3lxcMNXfCjjAAAAABJRU5ErkJggg==");
-    --algocloud-toast-background-color: rgba(255, 255, 255, 0.85);
-    --algocloud-theme-wizard-nav-item-circle-bg: #fff;
-    --algocloud-card-span-img-bg: #fff;
-    --algocloud-card-span-img-box-shadow: var(--algocloud-box-shadow-sm);
-    --algocloud-card-span-img-hover-box-shadow: var(--algocloud-box-shadow-lg);
-    --algocloud-setting-toggle-shadow: 0 -7px 14px 0 rgba(65, 69, 88, 0.1), 0 3px 6px 0 rgba(0, 0, 0, 0.07);
-    --algocloud-scrollbar-bg: rgba(182, 193, 210, 0.55);
-    --algocloud-nav-pills-algocloud-active-bg-color: #fff;
-    --algocloud-hover-bg-black: #fff;
-    --algocloud-hover-bg-100: #f9fafd;
-    --algocloud-hover-bg-200: #edf2f9;
-    --algocloud-hover-bg-300: #d8dbef;
-    --algocloud-hover-bg-400: #b6c1d2;
-    --algocloud-hover-bg-500: #9da9bb;
-    --algocloud-hover-bg-600: #748194;
-    --algocloud-hover-bg-700: #5e6e82;
-    --algocloud-hover-bg-800: #4d5969;
-    --algocloud-hover-bg-900: #3d3d3d;
-    --algocloud-hover-bg-1000: #232e3c;
-    --algocloud-hover-bg-1100: #0b1727;
-    --algocloud-hover-bg-white: #fff;
-    --algocloud-btn-disabled-custom-background: rgba(249, 250, 253, 0.65);
-    --algocloud-btn-disabled-custom-color: rgba(11, 23, 39, 0.3);
-    --algocloud-btn-link-color-2: var(--primary)
-    --algocloud-table-striped-bg: #f9fafd
-    --header-height: 56px;
-    --site-width: 1280px;
-    --su-1: 0.25rem;
-    --su-2: 0.5rem;
-    --su-3: 0.75rem;
-    --su-4: 1rem;
-    --su-5: 1.25rem;
-    --su-6: 1.5rem;
-    --su-7: 2rem;
-    --su-8: 3rem;
-    --su-9: 4rem;
-    --su-10: 8rem;
-    --radius: 0.375rem;
-    --radius-large: 0.75rem;
-    --radius-auto: Max(0px, Min(var(--radius), calc((100vw - 4px - 100%) * 9999))) /
-    var(--radius);
-    --radius-large-auto: Max(
-      0px,
-      Min(var(--radius-large), calc((100vw - 4px - 100%) * 9999))
-    ) / var(--radius-large);
-    --transition-func: cubic-bezier(0.17, 0.67, 0.5, 0.71);
-    --transition-time: 100ms;
-    --transition-props: var(--transition-func) var(--transition-time);
-    --focus-ring: 0 0 0 2px var(--base-inverted), 0 0 0 4px var(--focus);
-    --ff-sans-serif: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-    'Segoe UI Symbol';
-    --ff-monospace: 'SF Mono', SFMono-Regular, Consolas, 'Liberation Mono', Menlo,
-    Courier, monospace;
-    --ff-serif: Palatino, 'Palatino Linotype', 'Palatino LT STD', 'Book Antiqua',
-    Georgia, serif;
-    --ff-comic: 'Comic Sans MS', cursive, sans-serif;
-    --ff-dyslexic: OpenDyslexic, sans-serif;
-    --fs-xs: 0.75rem;
-    --fs-s: 0.875rem;
-    --fs-base: 1rem;
-    --fs-l: 1.125rem;
-    --fs-xl: 1.25rem;
-    --fs-2xl: 1.5rem;
-    --fs-3xl: 1.875rem;
-    --fs-4xl: 2.25rem;
-    --fs-5xl: 3rem;
-    --fw-normal: 400;
-    --fw-medium: 500;
-    --fw-bold: 700;
-    --fw-heavy: 800;
-    --lh-tight: 1.25;
-    --lh-base: 1.5;
-    --opacity-0: 0.00001;
-    --opacity-25: 0.25;
-    --opacity-50: 0.5;
-    --opacity-75: 0.75;
-    --opacity-100: 1;
-    --z-negative: -1;
-    --z-elevate: 1;
-    --z-sticky: 100;
-    --z-drawer: 200;
-    --z-dropdown: 400;
-    --z-modal: 500;
-    --z-popover: 500;
-    --base: #090909;
-    --base-inverted: #fff;
-    --base-100: var(--base);
-    --base-90: #242424;
-    --base-80: #3d3d3d;
-    --base-70: #575757;
-    --base-60: #717171;
-    --base-50: #8a8a8a;
-    --base-40: #a3a3a3;
-    --base-30: #bdbdbd;
-    --base-20: #d6d6d7;
-    --base-10: #efefef;
-    --base-0: #f9f9f9;
-    --base-a90: rgba(9, 9, 9, 0.9);
-    --base-a80: rgba(9, 9, 9, 0.8);
-    --base-a70: rgba(9, 9, 9, 0.7);
-    --base-a60: rgba(9, 9, 9, 0.6);
-    --base-a50: rgba(9, 9, 9, 0.5);
-    --base-a40: rgba(9, 9, 9, 0.4);
-    --base-a30: rgba(9, 9, 9, 0.3);
-    --base-a20: rgba(9, 9, 9, 0.2);
-    --base-a10: rgba(9, 9, 9, 0.1);
-    --base-a5: rgba(9, 9, 9, 0.05);
-    --base-inverted-a90: rgba(255, 255, 255, 0.9);
-    --base-inverted-a80: rgba(255, 255, 255, 0.8);
-    --base-inverted-a70: rgba(255, 255, 255, 0.7);
-    --base-inverted-a60: rgba(255, 255, 255, 0.6);
-    --base-inverted-a50: rgba(255, 255, 255, 0.5);
-    --base-inverted-a40: rgba(255, 255, 255, 0.4);
-    --base-inverted-a30: rgba(255, 255, 255, 0.3);
-    --base-inverted-a20: rgba(255, 255, 255, 0.2);
-    --base-inverted-a10: rgba(255, 255, 255, 0.1);
-    --base-inverted-a5: rgba(255, 255, 255, 0.05);
-    --accent-brand: #3b49df;
-    --accent-brand-darker: #1827ce;
-    --accent-brand-lighter: #8d95f2;
-    --accent-brand-a10: rgba(59, 73, 223, 0.1);
-    --accent-success: #26d9ca;
-    --accent-success-darker: #1ab3a6;
-    --accent-success-lighter: #79ece2;
-    --accent-success-a10: rgba(38, 217, 202, 0.1);
-    --accent-warning: #ffcf4c;
-    --accent-warning-darker: #f5b400;
-    --accent-warning-lighter: #ffe499;
-    --accent-warning-a10: rgba(255, 207, 76, 0.1);
-    --accent-danger: #d31616;
-    --accent-danger-darker: #b90909;
-    --accent-danger-lighter: #ec4646;
-    --accent-danger-a10: rgba(220, 24, 24, 0.1);
-    --body-bg: var(--base-10);
-    --body-color: var(--base-100);
-    --body-color-inverted: var(--base-inverted);
-    --card-bg: var(--base-inverted);
-    --card-color: var(--base-100);
-    --card-color-secondary: var(--base-70);
-    --card-color-tertiary: var(--base-60);
-    --card-secondary-bg: var(--base-0);
-    --card-secondary-color: var(--base-90);
-    --card-headline-color: var(--base-100);
-    --card-border: var(--base-a10);
-    --card-secondary-border: var(--base-a5);
-    --card-hover-bg: var(--base-10);
-    --card-selected-bg: var(--base-20);
-    --header-bg: var(--base-inverted);
-    --header-shadow: rgba(0, 0, 0, 0.1);
-    --footer-bg: var(--base-20);
-    --footer-color: var(--base-80);
-    --link-bg-hover-alt: var(--base-inverted);
-    --link-brand-color: var(--accent-brand);
-    --link-color-current: var(--base-100);
-    --link-color-secondary: var(--base-60);
-    --link-color-secondary-hover: var(--base-70);
-    --link-bg-current: var(--base-inverted);
-    --button-primary-bg: var(--accent-brand);
-    --button-primary-bg-hover: var(--accent-brand-darker);
-    --button-primary-color: var(--base-0);
-    --button-primary-color-hover: var(--base-0);
-    --button-primary-inverted-bg: var(--accent-brand);
-    --button-primary-inverted-bg-hover: var(--accent-brand-darker);
-    --button-primary-inverted-color: var(--base-0);
-    --button-primary-inverted-color-hover: var(--base-0);
-    --button-secondary-bg: var(--base-20);
-    --button-secondary-bg-hover: var(--base-30);
-    --button-secondary-color: var(--base-80);
-    --button-secondary-color-hover: var(--base-100);
-    --button-secondary-inverted-bg: var(--base-70);
-    --button-secondary-inverted-bg-hover: var(--base-60);
-    --button-secondary-inverted-color: var(--base-10);
-    --button-secondary-inverted-color-hover: var(--base-0);
-    --button-outlined-bg: transparent;
-    --button-outlined-bg-hover: rgba(0, 0, 0, 0.035);
-    --button-outlined-border: var(--base-20);
-    --button-outlined-border-hover: var(--base-40);
-    --button-outlined-color: var(--base-80);
-    --button-outlined-color-hover: var(--base-100);
-    --button-outlined-inverted-bg: transparent;
-    --button-outlined-inverted-bg-hover: rgba(255, 255, 255, 0.15);
-    --button-outlined-inverted-border: var(--base-60);
-    --button-outlined-inverted-border-hover: var(--base-40);
-    --button-outlined-inverted-color: var(--base-30);
-    --button-outlined-inverted-color-hover: var(--base-10);
-    --button-ghost-bg: transparent;
-    --button-ghost-bg-hover: rgba(0, 0, 0, 0.035);
-    --button-ghost-color: var(--base-80);
-    --button-ghost-color-hover: var(--base-100);
-    --button-ghost-dimmed-color: var(--base-60);
-    --button-ghost-dimmed-color-hover: var(--base-100);
-    --button-ghost-inverted-bg: transparent;
-    --button-ghost-inverted-bg-hover: rgba(255, 255, 255, 0.15);
-    --button-ghost-inverted-color: var(--base-30);
-    --button-ghost-inverted-color-hover: var(--base-10);
-    --button-ghost-dimmed-inverted-color: var(--base-50);
-    --button-ghost-dimmed-inverted-color-hover: var(--base-100);
-    --form-bg: var(--base-inverted);
-    --form-bg-focus: var(--base-inverted);
-    --form-border: var(--base-20);
-    --form-border-hover: var(--base-40);
-    --form-border-focus: var(--accent-brand);
-    --form-placeholder-color: var(--base-60);
-    --label-primary: var(--base-90);
-    --label-secondary: var(--base-60);
-    --snackbar-bg: var(--base-90);
-    --snackbar-color: var(--body-color-inverted);
-    --indicator-accent-bg: var(--accent-brand);
-    --indicator-accent-color: var(--body-color-inverted);
-    --indicator-critical-bg: var(--accent-danger);
-    --indicator-critical-color: var(--body-color-inverted);
-    --indicator-default-bg: var(--button-secondary-bg);
-    --indicator-default-color: var(--button-secondary-color);
-    --tab-color: var(--base-80);
-    --tab-color-hover: var(--accent-brand);
-    --tab-color-current: var(--base-100);
-    --tab-bg-hover: var(--accent-brand-a10);
-    --tab-bg-current: var(--accent-brand);
-    --tab-muted-color: var(--base-80);
-    --tab-muted-color-hover: var(--base-90);
-    --tab-muted-color-current: var(--base-100);
-    --tab-muted-bg-hover: var(--base-a10);
-    --tab-muted-bg-current: var(--base-20);
-    --tab-pill-color-current: var(--base-inverted);
-    --tag-color: var(--base-60);
-    --tag-color-hover: var(--base-100);
-    --story-comments-bg: 249, 249, 249;
-    --story-comments-bg-top: rgba(var(--story-comments-bg), 0);
-    --story-comments-bg-bottom: rgba(var(--story-comments-bg), 1);
-    --select-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDYgMTBIMThMMTIgMTZaIiBmaWxsPSIjMDgwOTBBIi8+Cjwvc3ZnPg==);
-    --reaction-like-color: var(--accent-danger);
-    --reaction-like-bg: var(--accent-danger-a10);
-    --reaction-custom-color: var(--accent-success);
-    --reaction-custom-bg: var(--accent-success-a10);
-    --reaction-save-color: var(--accent-brand);
-    --reaction-save-bg: var(--accent-brand-a10);
-    --reaction-comment-color: var(--accent-warning);
-    --reaction-comment-bg: var(--accent-warning-a10);
-    --btn-bg: transparent;
-    --btn-bg-hover: var(--accent-brand-a10);
-    --btn-color: var(--base-80);
-    --btn-color-hover: var(--accent-brand-darker);
-    --btn-current-bg: var(--base-20);
-    --btn-current-color: var(--base-100);
-    --btn-primary-bg: var(--accent-brand);
-    --btn-primary-bg-hover: var(--accent-brand-darker);
-    --btn-primary-color: var(--base-inverted);
-    --btn-primary-color-hover: var(--base-inverted);
-    --btn-secondary-bg: var(--accent-brand-a10);
-    --btn-secondary-bg-hover: var(--accent-brand);
-    --btn-secondary-color: var(--accent-brand);
-    --btn-secondary-color-hover: var(--base-inverted);
-    --btn-destructive-bg: transparent;
-    --btn-destructive-bg-hover: var(--accent-danger-a10);
-    --btn-destructive-color: var(--accent-danger);
-    --btn-destructive-color-hover: var(--accent-danger-darker);
-    --btn-primary-destructive-bg: var(--accent-danger);
-    --btn-primary-destructive-bg-hover: var(--accent-danger-darker);
-    --btn-primary-destructive-color: var(--base-inverted);
-    --btn-primary-destructive-color-hover: var(--base-inverted);
-    --link-bg: transparent;
-    --link-bg-hover: var(--accent-brand-a10);
-    --link-color: var(--base-80);
-    --link-color-hover: var(--accent-brand-darker);
-    --link-current-bg: var(--base-20);
-    --link-current-color: var(--base-100);
-    --link-branded-bg: transparent;
-    --link-branded-bg-hover: var(--accent-brand-a10);
-    --link-branded-color: var(--accent-brand);
-    --link-branded-color-hover: var(--accent-brand-darker);
-    --cta-bg: transparent;
-    --cta-bg-hover: var(--accent-brand-a10);
-    --cta-color: var(--base-80);
-    --cta-color-hover: var(--accent-brand-darker);
-    --cta-border: var(--base-60);
-    --cta-border-hover: var(--accent-brand-darker);
-    --cta-branded-bg: transparent;
-    --cta-branded-bg-hover: var(--accent-brand);
-    --cta-branded-color: var(--accent-brand);
-    --cta-branded-color-hover: var(--base-inverted);
-    --cta-branded-border: var(--accent-brand);
-    --cta-branded-border-hover: var(--accent-brand-darker);
-    --focus: var(--accent-brand)
-    --layout-sidebar-left-display: block;
-    --layout-sidebar-right-display: block;
-    --layout-sidebar-left-width: 100%;
-    --layout-sidebar-right-width: 100%;
-    --layout-sidebar-left-row-end: initial;
-    --layout-content-width: 100%;
-    --layout-drawer-width: 300px;
-    --layout-gap: var(--su-2);
-    --layout-padding: 0;
-    --layout: 100%
-    --syntax-background-color: #08090a;
-    --syntax-text-color: #f8f8f2;
-    --syntax-comment-color: #808080;
-    --syntax-declaration-color: #f39c12;
-    --syntax-literal-color: #dda0dd;
-    --syntax-error-color: #f9690e;
-    --syntax-name-color: #7ed07e;
-    --syntax-string-color: #f2ca27;
-    --algocloud-btn-algocloud-default-active-color: #d8dbef;
-}
-
-.table-algo-title:hover{
-    color: var(--accent-brand);
-    text-decoration: underline;
+.table-algo-title:hover {
+    color: var(--accent-brand)
 }
 
 button.btn.btn-light {
     border: 1px solid var(--base-20);
-    background-color: var(--base-20);
     color: var(--base-80);
-    box-shadow: 0 1px 3px var(--shadow-color);
+    box-shadow: 0 1px 3px var(--shadow-color)
 }
 
 button.btn.btn-light:hover {
-    background-color: var(--base-30);
     border-color: transparent;
-    box-shadow: 0 2px 5px rgb(0 0 0 / 5%);
+    box-shadow: 0 2px 5px rgb(0 0 0/5%);
     color: var(--base-100);
-    z-index: 1;
+    z-index: 1
 }
 
 @media (max-width:768px) {
-
     .center-container-2 {
-        display: none;
+        display: none
     }
 }
 
 .center-container-2 {
     padding: 2rem;
+    max-width: 350px
 }
-
 
 .main.signin {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
     align-content: center;
-    flex-wrap: nowrap;
-}
-
-.center-container-2 {
-    max-width: 350px;
+    flex-wrap: nowrap
 }
 
 .center-container {
     max-width: 350px;
-    text-align: left;
+    text-align: left
 }
 
 @media (min-width:992px) {
     .asset-m0 {
-        padding-left: 0px;
+        padding-left: 0
     }
+
     .flex.col {
         display: flex;
-        flex-direction: row !important;
-        justify-content: space-between !important;
+        flex-direction: row!important;
+        justify-content: space-between!important;
         align-items: flex-start;
-        flex-wrap: wrap !important;
-        left: 0px;
+        flex-wrap: wrap!important;
+        left: 0
     }
 }
 
@@ -47339,73 +47086,67 @@ button.btn.btn-light:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
     flex-wrap: wrap;
     align-items: center;
     --algocloud-gutter-x: 0px;
-    margin-left: -10px;
+    margin-left: -10px
 }
 
 .row.m-0 {
-    left: 0px;
-    margin-left: 0px;
-    padding-left: 0px;
-    --algocloud-gutter-x: 0px;
+    left: 0;
+    margin-left: 0;
+    padding-left: 0
 }
 
-.row.no-gutter {
-    --algocloud-gutter-x: 0px;
+.row.m-0,.row.no-gutter {
+    --algocloud-gutter-x: 0px
 }
 
-.no-gutter{
-    --algocloud-gutter-x: 0px !important;
+.no-gutter {
+    --algocloud-gutter-x: 0px!important
 }
 
-@media (max-width: 1400px){
+@media (max-width:1400px) {
     .row.m-0 {
-       display:none;
+        display: none
     }
+
     .flex.col {
-        align-items: start;
+        align-items: start
     }
+
     .row.no-gutter {
-        font-size: 10px !important;
+        font-size: 10px!important
     }
 }
 
-@media (max-width: 860px){
+@media (max-width:860px) {
     .row.no-gutter {
-        font-size: 8px !important;
+        font-size: 8px!important
     }
 }
 
-@media (max-width: 800px){
+@media (max-width:800px) {
     .row.no-gutter {
-        font-size: 6px !important;
+        font-size: 6px!important
     }
 }
 
-@media (max-width: 767px){
+@media (max-width:767px) {
     .row.no-gutter {
-        font-size: 12px !important;
+        font-size: 12px!important
     }
 }
 
-@media (max-width: 360px){
+@media (max-width:360px) {
     .row.no-gutter {
-        font-size: 9px !important;
+        font-size: 9px!important
     }
 }
 
-.text-600 {
-    color: #a3a3a3;
-}
-
-
-
-@media (max-width: 2070px){
+@media (max-width:2070px) {
     .row.m-0 {
-        padding-top: 10px;
+        padding-top: 10px
     }
 }
 
@@ -47414,20 +47155,7 @@ button.btn.btn-light:hover {
     bottom: 0;
     width: 100%;
     padding-top: 20px;
-    padding-right: 34px;
-}
-
-
-.text-500 {
-    color: var(--base-60);
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding-top: 20px;
-    padding-right: 34px;
+    padding-right: 34px
 }
 
 .algocloud-footer {
@@ -47435,38 +47163,34 @@ button.btn.btn-light:hover {
     flex: 0 0 auto;
     -webkit-box-flex: 0;
     position: absolute;
-    right: 34px;
+    right: 34px
 }
 
-.algocloud-f1.row.g-0.justify-content-between.fs--1.mt-4 {
-    margin-right: 3rem !important;
-}
-
-@media(max-width: 305px){
-    .algocloud-footer{
-        display: none;
+@media (max-width:305px) {
+    .algocloud-footer {
+        display: none
     }
 }
 
-@media (max-width: 320px){
-.row.no-gutter {
-    font-size: 7px !important;
-}}
+@media (max-width:320px) {
+    .row.no-gutter {
+        font-size: 7px!important
+    }
+}
 
-
-.custom-control-input:hover,.form-check-input:hover{
-    cursor:pointer;
-    border-color:var(--algocloud-input-focus-border-color);
+.custom-control-input:hover,.form-check-input:hover {
+    cursor: pointer;
+    border-color: var(--algocloud-input-focus-border-color)
 }
 
 .custom-control-input,.form-check-input {
     width: 1em;
     height: 1em;
-    margin-top: 0.25em;
+    margin-top: .25em;
     vertical-align: top;
     background-color: transparent;
     background-repeat: no-repeat;
-    cursor:pointer;
+    cursor: pointer;
     background-position: center;
     background-size: contain;
     border: 1px solid var(--algocloud-form-check-input-border-color);
@@ -47475,45 +47199,33 @@ button.btn.btn-light:hover {
     appearance: none;
     -webkit-print-color-adjust: exact;
     color-adjust: exact;
-    border-radius: 0.25em;
+    border-radius: .25em
 }
 
 .custom-control-input:focus {
     border-color: #9c96f2;
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgb(55 44 229 / 25%);
-    box-shadow: 0 0 0 0.25rem rgb(55 44 229 / 25%);
+    -webkit-box-shadow: 0 0 0 .25rem rgb(55 44 229/25%);
+    box-shadow: 0 0 0 .25rem rgb(55 44 229/25%)
 }
 
-.form-check-input:checked[type=checkbox],.custom-control-input:checked[type=checkbox] {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3E%3C/svg%3E");
+.custom-control-input:checked[type=checkbox],.form-check-input:checked[type=checkbox] {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10l3 3l6-6'/%3E%3C/svg%3E")
 }
 
-.form-check-input:checked, .custom-control-input:checked {
+.custom-control-input:checked,.form-check-input:checked {
     background-color: var(--accent-brand);
-    border-color: #3b49df;
-}
-
-.rc-pagination-simple .rc-pagination-simple-pager input {
-    margin: 0px;
-    box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 6px;
-    border: 0px;
-    outline: none;
-    padding: 0px;
-    width: 8px;
-    min-height: 8px;
+    border-color: #3b49df
 }
 
 .fa-icon-wait {
     opacity: 1
 }
 
-button.app-dropdown.user-dropdown {
+button#navbarDropdownNotification,button.app-dropdown.user-dropdown {
     height: 2.5rem;
     width: 2.5rem;
-    padding: 0.3125rem;
+    padding: .3125rem;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -47523,9 +47235,12 @@ button.app-dropdown.user-dropdown {
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
+    background-color: #ffffff00;
+    color: var(--algocloud-body-bg-2)!important;
+    border: 0
 }
 
-.dropdown,.dropend,.dropstart,.dropup {
+.dropdown,.dropend,.dropstart,.dropup,.scrollbar-overlay.os-host.os-theme-dark.os-host-resize-disabled.os-host-scrollbar-horizontal-hidden.os-host-scrollbar-vertical-hidden.os-host-transition.notification-body {
     position: relative
 }
 
@@ -47546,33 +47261,18 @@ span.i18n-select {
     margin-right: .8rem
 }
 
-.nav-link {
-    padding: 0.5rem 1rem;
-}
-
-button.app-dropdown.user-dropdown:hover {
-    background-color: rgb(59 73 223/10%) !important;
-    color: #323ebe !important;
+button#navbarDropdownNotification:hover,button.app-dropdown.user-dropdown:hover {
+    background-color: rgb(59 73 223/10%)!important;
+    color: #323ebe!important;
     border: 0;
-    border-radius: .375rem;
-}
-
-button.app-dropdown.user-dropdown {
-    background-color: #ffffff00;
-    color: var(--algo-body) !important;
-    border: 0;
+    border-radius: .375rem
 }
 
 .user-dropdown {
-    padding: 0.45rem;
-    margin: 0px !important;
     min-width: 2rem;
     min-height: 1.5rem;
-}
-
-.user-dropdown {
-    padding: 0.45rem;
-    margin: 0px !important;
+    padding: .45rem;
+    margin: 0!important
 }
 
 .nav-link {
@@ -47583,12 +47283,12 @@ button.app-dropdown.user-dropdown {
     transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out
 }
 
-.avatar-dropdown.dropdown {
-    margin-left: .5rem;
+.avatar-dropdown.dropdown,button#navbarDropdownMenu {
+    margin-left: .25rem!important
 }
 
-.os-viewport-native-scrollbars-invisible#os-dummy-scrollbar-size, .os-viewport-native-scrollbars-invisible.os-viewport {
-    scrollbar-width: none!important;
+.os-viewport-native-scrollbars-invisible#os-dummy-scrollbar-size,.os-viewport-native-scrollbars-invisible.os-viewport {
+    scrollbar-width: none!important
 }
 
 .os-content {
@@ -47598,12 +47298,10 @@ button.app-dropdown.user-dropdown {
     display: block;
     height: 100%;
     width: 100%;
-    height: 100%;
-    width: 100%;
     visibility: visible;
     overflow-y: scroll;
-    margin-bottom: 0px;
-    padding-bottom: 0px !important;
+    margin-bottom: 0;
+    padding-bottom: 0!important
 }
 
 .os-viewport {
@@ -47619,31 +47317,742 @@ button.app-dropdown.user-dropdown {
     right: 0;
     padding: 0;
     margin: 0;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch
 }
 
 .dropdown-menu.dropdown-menu-right.show,div#app-dropdown {
-    box-shadow: 0 0 0 1px var(--card-border);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05),0 0 0 1px var(--base-a10)
 }
 
 a.d-block.hover-bg-200.px-2.py-3.rounded-3.text-center.text-decoration-none {
-    color: var(--algocloud-body-color);
+    color: var(--algocloud-body-color)
 }
 
 .hover-bg-200:hover {
     background-color: var(--algocloud-200);
-    color: #7b78ff !important;
+    color: #7b78ff!important
 }
 
-.dropdown-item{
-    cursor:pointer
+.dropdown-item,button.toast-close-button,select.crayons-select {
+    cursor: pointer
 }
 
-.dropdown-item:hover{
-    text-decoration: underline;
+.dropdown-item:hover {
+    text-decoration: underline
 }
 
 .m-25 {
-    margin-left: 0.25rem;
-    margin-right: 0.25rem;
+    margin-left: .25rem;
+    margin-right: .25rem
+}
+
+.notification-indicator-primary::before {
+    background-color: var(--accent-danger)!important
+}
+
+.crayons-tooltip__activator:hover .crayons-hover-tooltip[data-tooltip]:not(.crayons-tooltip__suppressed):after,.crayons-tooltip__activator:hover .crayons-tooltip__content:not(.crayons-tooltip__suppressed),.js-focus-visible .crayons-tooltip__activator.focus-visible:focus .crayons-hover-tooltip[data-tooltip]:not(.crayons-tooltip__suppressed):after,.js-focus-visible .crayons-tooltip__activator.focus-visible:focus .crayons-tooltip__content:not(.crayons-tooltip__suppressed) {
+    opacity: 1;
+    transition-delay: 0;
+    transform: translate(-50%,var(--su-1))
+}
+
+.crayons-hover-tooltip[data-tooltip]:after,.crayons-tooltip__content,span.crayons-tooltip__content:after {
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    transform: translate(-50%,calc(-1*var(--su-1)));
+    background: var(--tooltip-bg);
+    color: var(--tooltip-color);
+    font-size: var(--fs-s);
+    font-family: var(--ff-sans-serif);
+    font-weight: var(--fw-normal);
+    line-height: var(--lh-tight);
+    padding: var(--su-2) var(--su-3);
+    transition: all var(--transition-props);
+    transition-delay: 250ms;
+    z-index: var(--z-popover);
+    border-radius: var(--radius);
+    width: max-content;
+    opacity: var(--opacity-0);
+    pointer-events: none
+}
+
+.cursor-help {
+    cursor: help!important
+}
+
+.cursor-default {
+    cursor: default!important
+}
+
+.c-pill {
+    --border: var(--pill-border);
+    --bg: var(--pill-bg);
+    --color: var(--pill-color);
+    --action-icon-color: var(--color-secondary);
+    position: relative;
+    display: inline-flex;
+    text-align: left;
+    align-items: center;
+    border-radius: var(--radius);
+    font: inherit;
+    outline: 0;
+    text-decoration: none;
+    padding: calc(var(--su-2) - 1px) var(--su-3);
+    color: var(--color);
+    border: 1px solid var(--border);
+    background: var(--bg)
+}
+
+[type=button],[type=reset],[type=submit],button {
+    -webkit-appearance: button;
+    cursor: pointer
+}
+
+.c-pill:hover:not([aria-disabled=true]),.js-focus-visible .c-pill.focus-visible:focus:not([aria-disabled=true]) {
+    --color: var(--pill-color-hover);
+    --border: var(--pill-border-hover);
+    --bg: var(--pill-bg-hover);
+    --action-icon-color: var(--pill-color-hover);
+    z-index: var(--z-elevate)
+}
+
+.dropdown-menu {
+    border-radius: .375rem!important
+}
+
+.os-content-2 {
+    direction: inherit;
+    box-sizing: border-box!important;
+    position: relative!important;
+    display: block;
+    height: 100%;
+    width: 100%;
+    visibility: visible;
+    overflow-y: scroll;
+    margin-bottom: 0;
+    padding-bottom: 0!important
+}
+
+.dropdown-menu.dropdown-menu-right.show {
+    margin-top: -2px!important
+}
+
+.dropdown-menu-notification.show {
+    margin-right: -5.7rem
+}
+
+div#app-dropdown {
+    margin-right: -3rem
+}
+
+.dropdown-menu-notification .card-header {
+    background-color: #fff;
+    z-index: 1
+}
+
+.notification-unread,notification {
+    background-color: #f9f9f9
+}
+
+.dropdown-menu-notification .card-footer {
+    background-color: #fff;
+    z-index: 1;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-color: var(--pill-border)
+}
+
+.dropdown-menu-notification .card-header {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: var(--pill-border)
+}
+
+.dropdown-menu-notification .list-group-flush .list-group-title {
+    background-color: #efefef;
+    background-color: var(--button-outlined-inverted-color-hover);
+    font-weight: 600;
+    font-size: .6944444444rem;
+    color: var(--algo-body);
+    padding: .25rem 1.25rem;
+    border-top: 1px solid var(--pill-border)!important;
+    border-bottom: 1px solid var(--pill-border)!important
+}
+
+.last-updated {
+    background-color: var(--algocloud-body-bg)!important;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: var(--algocloud-input-border-color)
+}
+
+.notification-body {
+    margin-bottom: 0
+}
+
+.flex {
+    display: flex!important
+}
+
+.crayons-snackbar__item {
+    border-radius: var(--radius);
+    background: var(--snackbar-bg);
+    color: var(--snackbar-color);
+    box-shadow: 0 10px 15px -3px rgb(0 0 0/10%),0 4px 6px -2px rgb(0 0 0/5%);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--su-2)
+}
+
+.fa-check-circle-2:before {
+    content: "";
+    background-color: var(--algocloud-success)!important;
+    border-radius: 50px;
+    padding: 6px;
+    z-index: 1000;
+    margin-right: .75rem;
+    color: var(--algocloud-white)
+}
+
+.alert-success {
+    color: var(--algocloud-alert-success-color);
+    background-color: var(--algocloud-alert-success-background)!important;
+    border-color: var(--algocloud-alert-success-border-color)!important
+}
+
+::-webkit-scrollbar-thumb {
+    background-clip: content-box;
+    border: 3px solid transparent;
+    border-radius: 6px;
+    width: 12px
+}
+
+::-webkit-scrollbar {
+    width: auto;
+    height: auto
+}
+
+@media (min-width:576px) {
+    .last-updated {
+        width: 200px;
+        background-color: var(--body-bg)
+    }
+
+    .algocloud-fixed::-webkit-scrollbar {
+        width: 0!important;
+        opacity: 0
+    }
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #cacaca
+}
+
+.crayons-snackbar__body {
+    padding: 0 var(--su-2)
+}
+
+[class^=crayons],[class^=crayons] *,[class^=crayons] ::after,[class^=crayons] ::before,[class^=crayons]::after,[class^=crayons]::before {
+    box-sizing: border-box
+}
+
+.toast-title {
+    font-weight: 700
+}
+
+.toast-message {
+    -ms-word-wrap: break-word;
+    word-wrap: break-word
+}
+
+.toast-message a,.toast-message label {
+    color: #fff
+}
+
+.toast-message a:hover {
+    color: #ccc;
+    text-decoration: none
+}
+
+.toast-close-button {
+    position: relative;
+    float: right;
+    opacity: .8;
+    line-height: 1
+}
+
+.crayons-btn--ghost-success {
+    --bg: var(--button-ghost-bg);
+    --bg-hover: var(--button-ghost-bg-hover);
+    --color: var(--accent-success);
+    --color-hover: var(--accent-success-darker);
+    --shadow: none;
+    --shadow-hover: none;
+    --bg-inverted: var(--button-ghost-inverted-bg);
+    --bg-inverted-hover: var(--button-ghost-inverted-bg-hover);
+    --color-inverted: var(--accent-success);
+    --color-inverted-hover: var(--accent-success-darker)
+}
+
+.crayons-btn:active:enabled,.crayons-btn:hover:enabled,.crayons-btn[href]:focus,.crayons-btn[href]:hover {
+    background-color: var(--bg-hover);
+    border-color: var(--border-hover);
+    box-shadow: var(--shadow-hover);
+    color: var(--color-hover);
+    z-index: var(--z-elevate)
+}
+
+.mdc-snackbar {
+    z-index: 8;
+    margin: 8px;
+    display: none;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    pointer-events: none;
+    -webkit-tap-highlight-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+    max-width: 640px;
+    min-height: 52px;
+    padding: 8px 52px 8px 24px
+}
+
+.toast-message {
+    font-weight: 400;
+    font-family: "Inter";
+    font-size: .875rem;
+    line-height: initial
+}
+
+.mdc-snackbar--open .mdc-snackbar__surface {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
+    -webkit-transition: opacity .15s cubic-bezier(0,0,.2,1) 0ms,-webkit-transform .15s cubic-bezier(0,0,.2,1) 0ms;
+    -o-transition: opacity .15s 0ms cubic-bezier(0,0,.2,1),transform .15s 0ms cubic-bezier(0,0,.2,1);
+    transition: opacity .15s cubic-bezier(0,0,.2,1) 0ms,transform .15s cubic-bezier(0,0,.2,1) 0ms;
+    transition: opacity .15s cubic-bezier(0,0,.2,1) 0ms,transform .15s cubic-bezier(0,0,.2,1) 0ms,-webkit-transform .15s cubic-bezier(0,0,.2,1) 0ms
+}
+
+.mdc-snackbar__surface {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-transform: scale(.8);
+    -ms-transform: scale(.8);
+    transform: scale(.8);
+    opacity: 0;
+    max-width: 672px;
+    -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0/20%),0 6px 10px 0 rgb(0 0 0/14%),0 1px 18px 0 rgb(0 0 0/12%);
+    box-shadow: 0 3px 5px -1px rgb(0 0 0/20%),0 6px 10px 0 rgb(0 0 0/14%),0 1px 18px 0 rgb(0 0 0/12%);
+    border-radius: 4px;
+    min-width: 344px;
+    background-color: #333
+}
+
+.mdc-snackbar__action+.mdc-snackbar__dismiss {
+    margin-left: 8px;
+    margin-right: 0
+}
+
+.mdc-snackbar__dismiss {
+    color: rgba(255,255,255,.87)
+}
+
+#toast-container>div,.mdc-icon-button {
+    position: relative;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.mdc-icon-button {
+    --mdc-ripple-fg-size: 0;
+    --mdc-ripple-left: 0;
+    --mdc-ripple-top: 0;
+    --mdc-ripple-fg-scale: 1;
+    --mdc-ripple-fg-translate-end: 0;
+    --mdc-ripple-fg-translate-start: 0;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    background-color: transparent;
+    fill: currentColor;
+    color: inherit;
+    font-size: 24px;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 48px;
+    height: 48px;
+    padding: 12px
+}
+
+.crayons-btn.crayons-btn--inverted {
+    --bg: #7b78ff00;
+    --bg-hover: var(--bg-inverted-hover);
+    --border: var(--border-inverted);
+    --border-hover: var(--border-inverted-hover);
+    --color: var(--color-inverted);
+    --color-hover: var(--color-inverted-hover);
+    box-shadow: none
+}
+
+.rtl .toast-close-button {
+    left: -.3em;
+    float: left;
+    right: .3em
+}
+
+.toast-top-center {
+    top: 0;
+    right: 0;
+    width: 100%
+}
+
+.toast-bottom-center {
+    bottom: 0;
+    right: 0;
+    width: 100%
+}
+
+.toast-top-full-width {
+    top: 0;
+    right: 0;
+    width: 100%
+}
+
+.toast-bottom-full-width {
+    bottom: 0;
+    right: 0;
+    width: 100%
+}
+
+.toast-top-left {
+    top: 12px;
+    left: 12px
+}
+
+.toast-top-right {
+    top: 12px;
+    right: 12px
+}
+
+.toast-bottom-right {
+    right: 12px;
+    bottom: 12px
+}
+
+.toast-bottom-left {
+    bottom: 24px;
+    left: 24px
+}
+
+#toast-container>div {
+    pointer-events: auto;
+    overflow: hidden;
+    margin: 0 0 6px;
+    background-position: 15px center;
+    background-repeat: no-repeat;
+    color: #fff;
+    opacity: .9;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-transform: scale(.8);
+    -ms-transform: scale(.8);
+    transform: scale(.8);
+    max-width: 672px;
+    -webkit-box-shadow: 0 3px 5px -1px rgb(0 0 0/20%),0 6px 10px 0 rgb(0 0 0/14%),0 1px 18px 0 rgb(0 0 0/12%);
+    box-shadow: 0 3px 5px -1px rgb(0 0 0/20%),0 6px 10px 0 rgb(0 0 0/14%),0 1px 18px 0 rgb(0 0 0/12%);
+    border-radius: 4px;
+    min-width: 344px;
+    background-color: #333;
+    padding: 15px 20px 15px 60px;
+    width: 25em;
+    flex-direction: row-reverse
+}
+
+.mdc-snackbar__dismiss:after,.mdc-snackbar__dismiss:before {
+    background-color: rgba(255,255,255,.87)
+}
+
+.mdc-icon-button:after,.mdc-icon-button:before {
+    background-color: #000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%
+}
+
+.mdc-icon-button:before {
+    -webkit-transition: opacity 15ms linear,background-color 15ms linear;
+    -o-transition: opacity 15ms linear,background-color 15ms linear;
+    transition: opacity 15ms linear,background-color 15ms linear;
+    z-index: 1
+}
+
+.mdc-icon-button:after,.mdc-icon-button:before {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    content: ""
+}
+
+.mdc-snackbar__dismiss.mdc-snackbar__dismiss {
+    width: 24px;
+    height: 24px;
+    padding: 9px;
+    font-size: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' height='24px' viewBox='0 0 24 24' width='24px' fill='currerntColor'%3E%3Cpath d='M0 0h24v24H0V0z' fill='none'/%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    align-items: center;
+    vertical-align: middle
+}
+
+.toast-message {
+    color: var(--snackbar-color)!important
+}
+
+.mdc-snackbar__surface {
+    background-color: var(--snackbar-bg)!important
+}
+
+#toast-container>div.rtl {
+    direction: rtl;
+    padding: 15px 50px 15px 15px;
+    background-position: right 15px center
+}
+
+.toast-message>button {
+    background-color: green
+}
+
+#toast-container>div:hover {
+    -moz-box-shadow: 0 0 12px #000;
+    -webkit-box-shadow: 0 0 12px #000;
+    box-shadow: 0 0 12px #000;
+    opacity: 1;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: alpha(opacity=100);
+    cursor: pointer
+}
+
+#toast-container>.toast-info {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGwSURBVEhLtZa9SgNBEMc9sUxxRcoUKSzSWIhXpFMhhYWFhaBg4yPYiWCXZxBLERsLRS3EQkEfwCKdjWJAwSKCgoKCcudv4O5YLrt7EzgXhiU3/4+b2ckmwVjJSpKkQ6wAi4gwhT+z3wRBcEz0yjSseUTrcRyfsHsXmD0AmbHOC9Ii8VImnuXBPglHpQ5wwSVM7sNnTG7Za4JwDdCjxyAiH3nyA2mtaTJufiDZ5dCaqlItILh1NHatfN5skvjx9Z38m69CgzuXmZgVrPIGE763Jx9qKsRozWYw6xOHdER+nn2KkO+Bb+UV5CBN6WC6QtBgbRVozrahAbmm6HtUsgtPC19tFdxXZYBOfkbmFJ1VaHA1VAHjd0pp70oTZzvR+EVrx2Ygfdsq6eu55BHYR8hlcki+n+kERUFG8BrA0BwjeAv2M8WLQBtcy+SD6fNsmnB3AlBLrgTtVW1c2QN4bVWLATaIS60J2Du5y1TiJgjSBvFVZgTmwCU+dAZFoPxGEEs8nyHC9Bwe2GvEJv2WXZb0vjdyFT4Cxk3e/kIqlOGoVLwwPevpYHT+00T+hWwXDf4AJAOUqWcDhbwAAAAASUVORK5CYII=)!important
+}
+
+#toast-container>.toast-error {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHOSURBVEhLrZa/SgNBEMZzh0WKCClSCKaIYOED+AAKeQQLG8HWztLCImBrYadgIdY+gIKNYkBFSwu7CAoqCgkkoGBI/E28PdbLZmeDLgzZzcx83/zZ2SSXC1j9fr+I1Hq93g2yxH4iwM1vkoBWAdxCmpzTxfkN2RcyZNaHFIkSo10+8kgxkXIURV5HGxTmFuc75B2RfQkpxHG8aAgaAFa0tAHqYFfQ7Iwe2yhODk8+J4C7yAoRTWI3w/4klGRgR4lO7Rpn9+gvMyWp+uxFh8+H+ARlgN1nJuJuQAYvNkEnwGFck18Er4q3egEc/oO+mhLdKgRyhdNFiacC0rlOCbhNVz4H9FnAYgDBvU3QIioZlJFLJtsoHYRDfiZoUyIxqCtRpVlANq0EU4dApjrtgezPFad5S19Wgjkc0hNVnuF4HjVA6C7QrSIbylB+oZe3aHgBsqlNqKYH48jXyJKMuAbiyVJ8KzaB3eRc0pg9VwQ4niFryI68qiOi3AbjwdsfnAtk0bCjTLJKr6mrD9g8iq/S/B81hguOMlQTnVyG40wAcjnmgsCNESDrjme7wfftP4P7SP4N3CJZdvzoNyGq2c/HWOXJGsvVg+RA/k2MC/wN6I2YA2Pt8GkAAAAASUVORK5CYII=)!important
+}
+
+#toast-container>.toast-success {
+    background-image: url("data:image/svg+xml,%3Csvg class='svg-inline--fa fa-check-circle fa-w-16 text-white fs-3' aria-hidden='true' focusable='false' width='30px' height='30px' data-prefix='fas' data-icon='check-circle' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' data-fa-i2svg=''%3E%3Cpath fill='%2379ece2' d='M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z'%3E%3C/path%3E%3C/svg%3E")!important
+}
+
+#toast-container>.toast-warning {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGYSURBVEhL5ZSvTsNQFMbXZGICMYGYmJhAQIJAICYQPAACiSDB8AiICQQJT4CqQEwgJvYASAQCiZiYmJhAIBATCARJy+9rTsldd8sKu1M0+dLb057v6/lbq/2rK0mS/TRNj9cWNAKPYIJII7gIxCcQ51cvqID+GIEX8ASG4B1bK5gIZFeQfoJdEXOfgX4QAQg7kH2A65yQ87lyxb27sggkAzAuFhbbg1K2kgCkB1bVwyIR9m2L7PRPIhDUIXgGtyKw575yz3lTNs6X4JXnjV+LKM/m3MydnTbtOKIjtz6VhCBq4vSm3ncdrD2lk0VgUXSVKjVDJXJzijW1RQdsU7F77He8u68koNZTz8Oz5yGa6J3H3lZ0xYgXBK2QymlWWA+RWnYhskLBv2vmE+hBMCtbA7KX5drWyRT/2JsqZ2IvfB9Y4bWDNMFbJRFmC9E74SoS0CqulwjkC0+5bpcV1CZ8NMej4pjy0U+doDQsGyo1hzVJttIjhQ7GnBtRFN1UarUlH8F3xict+HY07rEzoUGPlWcjRFRr4/gChZgc3ZL2d8oAAAAASUVORK5CYII=)!important
+}
+
+#toast-container.toast-bottom-center>div,#toast-container.toast-top-center>div {
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#toast-container.toast-bottom-full-width>div,#toast-container.toast-top-full-width>div {
+    width: 96%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.toast {
+    background-color: #030303
+}
+
+.toast-error {
+    background-color: #bd362f
+}
+
+.toast-info {
+    background-color: #2f96b4
+}
+
+.toast-warning {
+    background-color: #f89406
+}
+
+.toast-progress {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    background-color: var(--accent-success);
+    opacity: .8;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
+    filter: alpha(opacity=40)
+}
+
+@media all and (max-width:240px) {
+    #toast-container>div {
+        padding: 8px 8px 8px 50px;
+        width: 11em
+    }
+
+    #toast-container>div.rtl {
+        padding: 8px 50px 8px 8px
+    }
+
+    #toast-container .toast-close-button {
+        right: -.2em;
+        top: -.2em
+    }
+
+    #toast-container .rtl .toast-close-button {
+        left: -.2em;
+        right: .2em
+    }
+}
+
+@media all and (min-width:241px) and (max-width:480px) {
+    #toast-container>div {
+        padding: 15px 20px 15px 60px;
+        width: 25em
+    }
+
+    #toast-container>div.rtl {
+        padding: 8px 50px 8px 8px
+    }
+
+    #toast-container .toast-close-button {
+        right: -.2em;
+        top: -.2em
+    }
+
+    #toast-container .rtl .toast-close-button {
+        left: -.2em;
+        right: .2em
+    }
+}
+
+@media all and (min-width:481px) and (max-width:768px) {
+    #toast-container>div {
+        padding: 15px 20px 15px 60px;
+        width: 25em
+    }
+
+    #toast-container>div.rtl {
+        padding: 15px 50px 15px 15px
+    }
+}
+
+.crayons-btn {
+    --border-width: 0px;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+    --vertical-padding: var(--su-2);
+    --horizontal-padding: var(--su-4);
+    --font-size: var(--fs-base);
+    --with-icon-padding: var(--su-3);
+    --icon-margin: var(--su-2);
+    position: relative;
+    display: inline-block;
+    padding: calc(var(--vertical-padding) - var(--border-width)) calc(var(--horizontal-padding) - var(--border-width));
+    border-radius: var(--radius);
+    font-family: inherit;
+    font-size: var(--font-size);
+    line-height: var(--su-6);
+    font-weight: var(--fw-medium);
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all var(--transition-props);
+    border: var(--border-width) solid;
+    overflow-wrap: normal;
+    --bg: var(--button-primary-bg);
+    --bg-hover: var(--button-primary-bg-hover);
+    --border: transparent;
+    --border-hover: transparent;
+    --color: var(--button-primary-color);
+    --color-hover: var(--button-primary-color-hover);
+    --shadow: 0 1px 3px var(--shadow-color);
+    --shadow-hover: 0 2px 5px var(--shadow-color);
+    --bg-inverted: var(--button-primary-inverted-bg);
+    --bg-inverted-hover: var(--button-primary-inverted-bg-hover);
+    --color-inverted: var(--button-primary-inverted-color);
+    --color-inverted-hover: var(--button-primary-inverted-color-hover);
+    background-color: var(--bg);
+    border-color: var(--border);
+    box-shadow: var(--shadow);
+    color: var(--color)
+}
+
+.algocloud-f1.row.g-0.justify-content-between.fs--1.mt-4 {
+    margin-right: 3rem!important;
+    margin-bottom: .75rem
+}
+
+.i18-mobile {
+    display: flex
+}
+
+.i18-mobile-2 {
+    margin-left: 4px
+}
+
+@media (max-width:750px) {
+    .i18-mobile-2 {
+        display: none
+    }
+}
+
+.avatar-dropdown.dropdown {
+    margin-right: 4px
+}
+
+.c-indicator--info {
+    --bg: var(--indicator-info-bg);
+    --color: var(--indicator-info-color)
+}
+
+.c-indicator {
+    --bg: var(--indicator-bg);
+    --color: var(--indicator-color);
+    padding: var(--su-1);
+    text-align: center;
+    line-height: 1;
+    font-size: var(--fs-s);
+    border-radius: var(--radius);
+    display: inline-block;
+    background: var(--bg);
+    color: var(--color);
+    min-width: var(--su-2)
+}
+
+.c-autocomplete--multi__wrapper-border:focus-within,.crayons-select:focus,.crayons-textfield:focus {
+    background-color: var(--form-bg-focus);
+    border-color: var(--focus);
+    box-shadow: 0 0 0 1px var(--focus)
 }

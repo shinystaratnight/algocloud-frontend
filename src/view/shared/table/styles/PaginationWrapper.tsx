@@ -239,6 +239,18 @@ const PaginationWrapper = styled.div`
   .rc-pagination-options-quick-jumper input:hover {
     border-color: var(--primary);
   }
+  .rc-pagination-simple .rc-pagination-simple-pager input {
+    min-height: 0;
+    width: 8px;
+    border-radius: 0px;
+    border: 0px;
+    min-width: 0;
+    background-color: #0000;
+    margin: 0px;
+    box-sizing: border-box;
+    outline: 0px;
+    padding: 0px;
+  }
   .rc-pagination-options-quick-jumper button {
     display: inline-block;
     margin: 0 8px;
@@ -282,23 +294,14 @@ const PaginationWrapper = styled.div`
   }
   .rc-pagination-simple .rc-pagination-simple-pager {
     float: left;
-    margin-right: 8px;
+    margin-right: 6px;
+    margin-left: 6px;
     list-style: none;
   }
   .rc-pagination-simple
     .rc-pagination-simple-pager
     .rc-pagination-slash {
     margin: 0 10px;
-  }
-  .rc-pagination-simple .rc-pagination-simple-pager input {
-    margin: 0 8px;
-    box-sizing: border-box;
-    background-color: #fff;
-    border-radius: 6px;
-    border: 1px solid #d9d9d9;
-    outline: none;
-    padding: 5px 8px;
-    min-height: 20px;
   }
   .rc-pagination-simple
     .rc-pagination-simple-pager
