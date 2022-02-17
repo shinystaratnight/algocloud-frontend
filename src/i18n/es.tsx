@@ -728,8 +728,12 @@ const es = {
       okText: 'Crear nota',
       cancel: 'Cancelar',
       delete_title: '¿Estás segura de eliminar esta nota?',
+      edit: 'Editar nota',
     },
     delete: 'Borrar',
+    edit: 'Editar',
+    create: 'Crear una nota',
+    view: 'Ver notas',
   }
 };
 

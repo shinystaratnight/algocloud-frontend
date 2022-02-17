@@ -92,7 +92,7 @@ function Header(props) {
                 id="navbarDropdownNotification" 
                 role="button" 
                 data-bs-toggle="dropdown" 
-                aria-hasPopup="true" 
+                aria-haspopup="true" 
                 data-hide-on-body-scroll="data-hide-on-body-scroll"
                 aria-expanded="true"
                 data-toggle="dropdown"

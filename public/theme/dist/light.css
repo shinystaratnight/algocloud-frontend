@@ -5433,6 +5433,10 @@ textarea.form-control-lg {
     margin-top: .125rem
 }
 
+.show {
+    display: block;
+}
+
 .dropdown-menu-start {
     --bs-position: start
 }

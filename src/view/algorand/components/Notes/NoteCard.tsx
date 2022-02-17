@@ -41,13 +41,21 @@ export const NoteCard = (props) => {
                         <div className="avatar-dropdown dropdown">
                             <button
                                 className="app-dropdown user-dropdown"
-                                id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                                role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
                                 data-toggle="dropdown"
                             >
                                 <i className='fas fa-ellipsis-v'></i>
                             </button>
                             <div className="dropdown-menu dropdown-menu-right">
                                 <div className="bg-white dark__bg-1000 rounded-2 py-2 m-25">
+                                    <button
+                                        className="dropdown-item"
+                                        type="button"
+                                        onClick={props.onEdit}
+                                    >
+                                        <i className="fas fa-edit" /> &emsp;
+                                        {i18n('note.edit')}
+                                    </button>
                                     <button
                                         className="dropdown-item"
                                         type="button"

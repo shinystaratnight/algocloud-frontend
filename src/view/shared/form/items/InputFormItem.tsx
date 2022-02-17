@@ -16,6 +16,7 @@ export function InputFormItem(props) {
     externalErrorMessage,
     disabled,
     endAdornment,
+    value,
   } = props;
 
   const {
@@ -60,6 +61,7 @@ export function InputFormItem(props) {
           placeholder={placeholder || undefined}
           autoFocus={autoFocus || undefined}
           autoComplete={autoComplete || undefined}
+          value={value || undefined}
           disabled={disabled}
           className={`form-control ${
             errorMessage ? 'is-invalid' : ''
@@ -102,6 +104,7 @@ InputFormItem.propTypes = {
   externalErrorMessage: PropTypes.string,
   endAdornment: PropTypes.any,
   onChange: PropTypes.any,
+  value: PropTypes.string,
 };
 
 export default InputFormItem;

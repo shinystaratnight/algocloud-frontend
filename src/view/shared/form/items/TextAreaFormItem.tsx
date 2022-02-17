@@ -14,6 +14,7 @@ function TextAreaFormItem(props) {
     autoComplete,
     externalErrorMessage,
     required,
+    value,
   } = props;
 
   const sizeLabelClassName =
@@ -68,6 +69,7 @@ function TextAreaFormItem(props) {
         placeholder={placeholder || undefined}
         autoFocus={autoFocus || undefined}
         autoComplete={autoComplete || undefined}
+        value={value || undefined}
         className={`form-control ${sizeInputClassName} ${
           errorMessage ? 'is-invalid' : ''
         }`}
@@ -96,6 +98,7 @@ TextAreaFormItem.propTypes = {
   placeholder: PropTypes.string,
   externalErrorMessage: PropTypes.string,
   onChange: PropTypes.any,
+  value: PropTypes.string,
 };
 
 export default TextAreaFormItem;

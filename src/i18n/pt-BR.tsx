@@ -705,8 +705,12 @@ const ptBR = {
       okText: 'Criar nota',
       cancel: 'Cancelar',
       delete_title: 'Tem certeza de que deseja excluir esta nota?',
+      edit: 'Editar nota',
     },
     delete: 'Excluir',
+    edit: 'Editar',
+    create: 'Criar uma nota',
+    view: 'Ver notas',
   }
 };
 

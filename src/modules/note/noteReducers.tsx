@@ -43,14 +43,16 @@ export default (state = initialData, { type, payload }) => {
   if (type === actions.FETCH_SUCCESS) {
     return {
       ...state,
-      notes: payload
+      notes: payload,
+      loading: false,
     };
   }
 
   if (type === actions.DELETE_SUCCESS) {
     return {
       ...state,
-      notes: payload
+      notes: payload,
+      loading: false,
     };
   }
   return state;

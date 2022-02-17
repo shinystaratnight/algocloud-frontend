@@ -13,6 +13,16 @@ export default class PlanService {
     return response.data;
   }
 
+  static async editNote(data) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.put(
+      `/tenant/${tenantId}/note/edit`, data
+    );
+
+    return response.data;
+  }
+
   static async getNotes(assetId) {
     const tenantId = AuthCurrentTenant.get();
 
