@@ -22,7 +22,6 @@ const schema = yup.object().shape({
     i18n('note.name'),
     {
       "required": true,
-      "min": 2,
       "max": 1024
     },
   ),
@@ -30,7 +29,6 @@ const schema = yup.object().shape({
     i18n('note.description'),
     {
       "required": true,
-      "min": 2,
       "max": 2083
     },
   ),
