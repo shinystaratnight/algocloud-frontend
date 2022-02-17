@@ -4,6 +4,7 @@ import { i18n } from 'src/i18n';
 import { formatNumber } from 'src/modules/algorand/utils';
 import Spinner from 'src/view/shared/Spinner';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
+import { images } from 'src/images/images';
 
 function PoolTable(props) {
   const {
@@ -13,7 +14,7 @@ function PoolTable(props) {
     sorter,
     doChangeSort,
   } = props;
-  
+
   return (
     <div className="table-responsive ">
       <table className="table-hover table table-striped mt-2">
@@ -73,19 +74,43 @@ function PoolTable(props) {
               </td>
             </tr>
           )}
-          {!loading && (pools.length > 0) && pools.map((pool) => (
-            <tr key={pool.id}>
-              <td>
-                <Link to={`/algorand/pools/${pool.address}`}>
-                  <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
-                </Link>
-              </td>
-              <td>{formatNumber(pool.liquidity)}</td>
-              <td>{formatNumber(pool.lastDayVolume)}</td>
-              <td>{formatNumber(pool.lastWeekVolume)}</td>
-              <td>{formatNumber(pool.lastDayFees)}</td>
-            </tr>
-          ))}
+          {!loading && (pools.length > 0) && pools.map((pool) => {
+            console.log(pool);
+            
+            let image1 = pool.assetOneId === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${pool.assetOneId}.png`;
+            for (let i = 0; i < images.length; i++) {
+              const img = images[i];
+              let id = parseInt(img.split('-')[1]);
+              if (id == pool.assetOneId) {
+                image1 = `/assets/asa-list/${img}/icon.png`;
+                break;
+              }
+            }
+            let image2 = pool.assetTwoId === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${pool.assetTwoId}.png`;
+            for (let i = 0; i < images.length; i++) {
+              const img = images[i];
+              let id = parseInt(img.split('-')[1]);
+              if (id == pool.assetTwoId) {
+                image2 = `/assets/asa-list/${img}/icon.png`;
+                break;
+              }
+            }
+            return (
+              <tr key={pool.id}>
+                <td>
+                  <Link to={`/algorand/pools/${pool.address}`}>
+                    <img src={image1} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                    <img src={image2} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                    <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
+                  </Link>
+                </td>
+                <td>{formatNumber(pool.liquidity)}</td>
+                <td>{formatNumber(pool.lastDayVolume)}</td>
+                <td>{formatNumber(pool.lastWeekVolume)}</td>
+                <td>{formatNumber(pool.lastDayFees)}</td>
+              </tr>
+            )
+          })}
         </tbody>
       </table>
     </div>
