@@ -97,9 +97,9 @@ function PoolTable(props) {
               <tr key={pool.id}>
                 <td>
                   <Link to={`/algorand/pools/${pool.address}`}>
-                    <img src={image1} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
-                    <img src={image2} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
-                    <h6>{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6>
+                    <img className="pool-token-1 token" src={image1} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                    <img className="pool-token-2 token" src={image2} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                    <td><h6 className="pools-ticker">{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6></td>
                   </Link>
                 </td>
                 <td>{formatNumber(pool.liquidity)}</td>

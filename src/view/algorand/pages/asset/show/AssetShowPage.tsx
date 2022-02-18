@@ -86,7 +86,7 @@ const AssetShowPage = () => {
       />
       <div className='row' style={{ paddingTop: 20 }}>
         <div className='col-sm-12 flex-row' style={{ display: 'flex', alignItems: 'center' }}>
-          <img src={image} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
+          <img className='token' src={image} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
 
           <h3 style={{ marginRight: 20 }}>{asset['unitName']}</h3>
           <h5 className='text-info' style={{ marginRight: 20 }}>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
