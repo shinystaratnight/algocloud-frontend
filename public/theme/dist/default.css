@@ -1,3 +1,42 @@
+.text-white-2 {
+    color: var(--algocloud-body-color);
+}
+
+.navbar-glass-shadow {
+    -webkit-box-shadow: 0 0.5rem 0.5rem -0.5rem rgb(0 0 0 / 20%) !important;
+    box-shadow: 0 0.5rem 0.5rem -0.5rem rgb(0 0 0 / 20%) !important;
+}
+
+nav.navbar.navbar-standard.navbar-expand-lg.fixed-top.navbar-dark.navbar-glass-shadow {
+    background-color: var(--algocloud-card-bg);
+}
+
+button.nav-link.c-pill.crayons-tooltip__activator {
+    border-width: 0px;
+    padding: 0.5rem !important;
+}
+
+button.nav-link.c-pill.crayons-tooltip__activator:hover {
+    background-color: #fff0;
+}
+
+.main-signin {
+    display: block !important;
+    width: 100% !important;
+}
+
+.main.signin {
+    width: 100% !important;
+    min-height: 100vh;
+    height: 100vh;
+    display: block !important;
+    display: unset !important;
+    display: unset;
+    -webkit-box-pack: unset;
+    -webkit-justify-content: unset;
+    -ms-flex-pack: unset !important;
+}
+
 @-webkit-keyframes progress-bar-stripes {
     0% {
         background-position-x: 1rem
