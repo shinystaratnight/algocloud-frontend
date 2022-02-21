@@ -15,7 +15,10 @@ import { uniqueId } from 'lodash';
 import noteActions from 'src/modules/note/noteActions';
 import { useDispatch, useSelector } from 'react-redux';
 import selector from 'src/modules/note/noteSelectors';
-import { SectionTitle, SectionTitleBar } from 'src/view/algorand/styled';
+import {
+  SectionTitle,
+  SectionTitleBar,
+} from 'src/view/algorand/styled';
 import { NoNotes } from 'src/view/algorand/components/Notes/NoNotes';
 import { NoteCard } from 'src/view/algorand/components/Notes';
 
@@ -30,10 +33,14 @@ export const NoteList = (props: any) => {
 
   useEffect(() => {
     dispatch({
-      type: noteActions.LOAD_START
-    })
-    dispatch(noteActions.doFetch(props.assetId));
-  }, [])
+      type: noteActions.LOAD_START,
+    });
+    if (props.isPoolNote) {
+      dispatch(noteActions.doPoolFetch(props.assetId));
+    } else {
+      dispatch(noteActions.doFetch(props.assetId));
+    }
+  }, []);
 
   useEffect(() => {
     (window as any).$(modalRef.current).modal('show');
@@ -58,27 +65,23 @@ export const NoteList = (props: any) => {
               <span></span>
             </button>
           </div>
-          <div className='modal-body'>
-            {
-              loading ? (
-                <Spinner />
-              ) : (
-                notes?.length === 0 ? (
-                  <NoNotes />
-                ) : (
-                  notes?.map((note, index) => {
-                    return (
-                      <NoteCard
-                        key={`note-${index}`}
-                        note={note}
-                        onEdit={() => props.onEdit(note)}
-                        onDelete={() => props.onDelete(note)}
-                      />
-                    )
-                  })
-                )
-              )
-            }
+          <div className="modal-body">
+            {loading ? (
+              <Spinner />
+            ) : notes?.length === 0 ? (
+              <NoNotes />
+            ) : (
+              notes?.map((note, index) => {
+                return (
+                  <NoteCard
+                    key={`note-${index}`}
+                    note={note}
+                    onEdit={() => props.onEdit(note)}
+                    onDelete={() => props.onDelete(note)}
+                  />
+                );
+              })
+            )}
           </div>
         </div>
       </div>
@@ -86,4 +89,3 @@ export const NoteList = (props: any) => {
     (document as any).getElementById('modal-root'),
   );
 };
-
