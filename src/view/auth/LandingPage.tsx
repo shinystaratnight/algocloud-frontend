@@ -289,7 +289,125 @@ return (
          aria-expanded="true"
          data-toggle="dropdown" >Login</a>
                                <div className="dropdown-menu dropdown-menu-end dropdown-menu-card " aria-labelledby="navbarDropdownNotification">
-                  <div className="navbar-card-login shadow-none card"><div className="fs--1 fw-normal p-4 card-body"><div className="d-flex justify-content-between align-items-center mb-2"><h5>Log in</h5><p className="fs--1 text-600 mb-0">or <a href="/authentication/simple/register">Create an account</a></p></div><form className=""><div className="mb-3"><input placeholder="Email address" name="email" type="email" className="form-control" value=""/></div><div className="mb-3"><input placeholder="Password" name="password" type="password" className="form-control" value=""/></div><div className="justify-content-between align-items-center row"><div className="col-auto"><div className="form-check"><input name="remember" type="checkbox" id="rememberMe" className="form-check-input"/><label className="ms-2 mb-0 form-check-label">Remember Me</label></div></div><div className="col-auto"><a className="fs--1 mb-0" href="/authentication/simple/forgot-password">Forget Password?</a></div></div><div><button type="submit" color="primary" className="mt-3 w-100 btn btn-primary">Log in</button></div><div className="w-100 position-relative text-center mt-4"><hr className="text-300"/><div className="divider-content-center">or log in with</div></div><div className="mb-0"><div className="row"><div className="pe-sm-1 col-sm-6"><button type="button" className="btn-outline-google-plus mt-2 w-100 btn btn-sm"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google-plus-g" className="svg-inline--fa fa-google-plus-g fa-w-20 me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style={{transformOrigin: "0.625em 0.5em"}}><g transform="translate(320 256)"><g transform="translate(0, 0)  scale(1.5, 1.5)  rotate(0 0 0)"><path fill="currentColor" d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z" transform="translate(-320 -256)"></path></g></g></svg> google</button></div><div className="ps-sm-1 col-sm-6"><button type="button" className="btn-outline-facebook mt-2 w-100 btn btn-sm"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" className="svg-inline--fa fa-facebook-square fa-w-14 me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style={{transformOrigin: "0.4375em 0.5em"}}><g transform="translate(224 256)"><g transform="translate(0, 0)  scale(1.5, 1.5)  rotate(0 0 0)"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" transform="translate(-224 -256)"></path></g></g></svg> facebook</button></div></div></div></form></div>
+                  <div className="navbar-card-login shadow-none card">
+                  <Content style={{ padding: '0px'}}>
+            <Logo style={{ marginBottom: '1rem', marginTop: '1rem', borderBottomStyle: "solid", borderBottomWidth: "1px", borderColor: "rgba(255, 255, 255, 0.15)" }}>
+             <a className="font-sans-serif fw-bolder fs-4 z-index-1 position-relative link-light light" href="."></a>
+          {logoUrl ? (
+            <img
+              src={logoUrl}
+              width="240px"
+              alt={i18n('app.title')}
+            />
+          ) : (
+            <h3 className="algocloud-brand-login">algocloud</h3> 
+          )}
+        </Logo>
+
+                     
+                     <div className="fs--1 fw-normal p-4 card-body"><div className="d-flex justify-content-between align-items-center mb-2"><h5>Log in</h5>
+                     <p className="fs--1 text-600 mb-0" style={{display: "flex"}}>or <OtherActions style={{marginTop: "0px",marginLeft: ".5rem" }}>
+              <Link style={{marginTop: "0px"}}
+                
+                to="/auth/signup"
+              >
+                {i18n('auth.createAnAccount')}
+              </Link>
+            </OtherActions></p></div>
+            <FormProvider {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)}>
+                <div className="mb-3"><label className="form-label">Email address</label>            
+                <InputFormItem 
+              name="email"
+              placeholder={i18n('user.fields.email')}
+              autoComplete="email"
+              autoFocus
+              externalErrorMessage={externalErrorMessage}
+            /></div>
+                <div className="mb-3">
+                  <div className="d-flex justify-content-between"><label className="form-label" >Password</label></div>            <InputFormItem
+              name="password"
+              placeholder={i18n('user.fields.password')}
+              autoComplete="password"
+              type="password"
+            />
+                </div>
+                <div className="row flex-between-center">
+                  <div className="col-auto">
+                    <div className="form-check mb-0">                
+                    <input
+                  className=""
+
+                  type="checkbox"
+                  id={'rememberMe'}
+                  name={'rememberMe'}
+                  ref={form.register}
+                />                <label
+                className="form-check-label mb-0"
+                htmlFor={'rememberMe'}
+                style={{ paddingLeft: '0px !important' }}
+              >
+                {i18n('user.fields.rememberMe')}
+              </label></div>
+                  </div>
+                  <div className="col-auto">               
+                  <Link
+                  className="fs--1"
+                  style={{ paddingLeft: '0px' }}
+                  to="/auth/forgot-password"
+                >
+                  {i18n('auth.forgotPassword')}
+                </Link></div>
+                </div>
+                <div className="mb-3">            <button
+              className="btn btn-primary d-block w-100 mt-3"
+              type="submit"
+              disabled={loading}
+            >
+              <ButtonIcon loading={loading} />{' '}
+              {i18n('auth.signin')}
+            </button></div>
+              </form>
+              <div className="position-relative mt-4">
+                <hr className="bg-300"/>
+                <div className="divider-content-center">or log in with</div>
+              </div>
+          <form >
+        <SocialButtons className="row g-2 mt-2">
+        <div className="row g-2 mt-2">
+        <div className="col-sm-6">
+              <a className="btn btn-outline-facebook btn-sm d-block w-100"
+                href={`${config.backendUrl}/auth/social/facebook`}
+              >
+<svg className="svg-inline--fa fa-facebook-square fa-w-14 me-2" data-fa-transform="grow-8" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" ><g transform="translate(224 256)"><g transform="translate(0, 0)  scale(1.5, 1.5)  rotate(0 0 0)"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" transform="translate(-224 -256)"></path></g></g></svg>
+facebook
+              </a>
+              </div>
+              <div className="col-sm-6">
+              <a className="btn btn-outline-google-plus btn-sm d-block w-100"
+                href={`${config.backendUrl}/auth/social/google`}
+              >
+<svg className="svg-inline--fa fa-google-plus-g fa-w-20 me-2" data-fa-transform="grow-8" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google-plus-g" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><g transform="translate(320 256)"><g transform="translate(0, 0)  scale(1.5, 1.5)  rotate(0 0 0)"><path fill="currentColor" d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z" transform="translate(-320 -256)"></path></g></g></svg>
+google
+              </a>
+              </div>
+              </div>
+            </SocialButtons>
+
+
+
+          </form>
+            <div className=""><I18nFlags className="built-by-flags"/></div>
+          
+        </FormProvider>
+                     <form className=""><div className="mb-3"><input placeholder="Email address" name="email" type="email" className="form-control" value=""/></div>
+                     <div className="mb-3"><input placeholder="Password" name="password" type="password" className="form-control" value=""/></div><div className="justify-content-between align-items-center row"><div className="col-auto">
+                        <div className="form-check"><input name="remember" type="checkbox" id="rememberMe" className="form-check-input"/><label className="ms-2 mb-0 form-check-label">Remember Me</label></div></div>
+                        <div className="col-auto"><a className="fs--1 mb-0" href="/authentication/simple/forgot-password">Forget Password?</a></div></div><div><button type="submit" color="primary" className="mt-3 w-100 btn btn-primary">Log in</button></div>
+                        <div className="w-100 position-relative text-center mt-4"><hr className="text-300"/><div className="divider-content-center">or log in with</div></div><div className="mb-0"><div className="row"><div className="pe-sm-1 col-sm-6"><button type="button" className="btn-outline-google-plus mt-2 w-100 btn btn-sm">
+                           <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google-plus-g" className="svg-inline--fa fa-google-plus-g fa-w-20 me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style={{transformOrigin: "0.625em 0.5em"}}><g transform="translate(320 256)"><g transform="translate(0, 0)  scale(1.5, 1.5)  rotate(0 0 0)"><path fill="currentColor" d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z" transform="translate(-320 -256)"></path></g></g></svg> google</button></div><div className="ps-sm-1 col-sm-6"><button type="button" className="btn-outline-facebook mt-2 w-100 btn btn-sm"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" className="svg-inline--fa fa-facebook-square fa-w-14 me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" style={{transformOrigin: "0.4375em 0.5em"}}><g transform="translate(224 256)"><g transform="translate(0, 0)  scale(1.5, 1.5)  rotate(0 0 0)"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z" transform="translate(-224 -256)"></path></g></g></svg> facebook</button></div></div></div>
+                     </form></div>
+                     </Content>
                         <div className="nav-item dropdown">                                  
                         
                         
