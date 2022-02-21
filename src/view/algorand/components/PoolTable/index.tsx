@@ -147,12 +147,9 @@ function PoolTable(props) {
                   break;
                 }
               }
-
-              let iconColor =
-                parseInt(pool.noteCount) == 0
-                  ? '#7b78ff'
-                  : '#ed3434';
-
+              let rootb = document.getElementById("root")!;
+              let styleb = window.getComputedStyle(rootb); 
+              let iconColor = styleb.getPropertyValue(parseInt(pool.noteCount) == 0 ? ('--accent-warning-lighter') : ('--accent-success'));
               return (
                 <tr key={pool.id}>
                   <td>

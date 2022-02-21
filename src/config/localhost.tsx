@@ -1,10 +1,10 @@
 // Place the URL here with the /api suffix.
 // Ex.:`https://domain.com/api`;
-const backendUrl = `http://localhost:8080/api`;
+const backendUrl = `http://localhost:8000/api`;
 
 // SwaggerUI Documentation URL
 // Leave black if documentation should be hidden
-const apiDocumentationUrl = `http://localhost:8080/documentation`;
+const apiDocumentationUrl = `http://localhost:8000/documentation`;
 
 /**
  * Frontend Url.
