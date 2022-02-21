@@ -163,13 +163,15 @@ function AssetTable(props) {
                 image = `/assets/asa-list/${img}/icon.png`;
                 break;
               }
-            }            
-            let iconColor = parseInt(asset.noteCount) == 0 ? '#7b78ff' : '#ed3434'
+            }
+            let rootb = document.getElementById("root")!;
+            let styleb = window.getComputedStyle(rootb);            
+            let iconColor = styleb.getPropertyValue(parseInt(asset.noteCount) == 0 ? ('--accent-warning-lighter') : ('--accent-success'));
             return (
               <tr key={asset.id}>
                 <td>
                   <Link to={`/algorand/assets/${asset.assetId}`}>
-                    <img src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                    <img className="token" src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
                     <h6 className='table-algo-title'>{asset.name}</h6>
                   </Link>
                 </td>

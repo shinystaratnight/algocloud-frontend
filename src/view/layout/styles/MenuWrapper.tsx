@@ -24,15 +24,6 @@ const MenuWrapper = styled.div`
     background-color: #0a0a0a;
   }
 
-  .last-updated:before {
-    content: '●';
-    width: 5px;
-    height: 5px;
-    height: 20px;
-    color: green;
-    margin-right: 10px;
-  }
-
   @media (min-width: 576px){
     .menu-nav {
       position: relative !important;

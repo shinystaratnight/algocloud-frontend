@@ -147,6 +147,7 @@ function PoolTable(props) {
                   break;
                 }
               }
+
               let iconColor =
                 parseInt(pool.noteCount) == 0
                   ? '#7b78ff'
@@ -155,40 +156,15 @@ function PoolTable(props) {
               return (
                 <tr key={pool.id}>
                   <td>
-                    <Link
-                      to={`/algorand/pools/${pool.address}`}
-                    >
-                      <img
-                        src={image1}
-                        style={{
-                          width: 25,
-                          marginRight: 10,
-                          objectFit: 'contain',
-                          float: 'left',
-                        }}
-                      ></img>
-                      <img
-                        src={image2}
-                        style={{
-                          width: 25,
-                          marginRight: 10,
-                          objectFit: 'contain',
-                          float: 'left',
-                        }}
-                      ></img>
-                      <h6>
-                        {pool.assetOneUnitName}-
-                        {pool.assetTwoUnitName}
-                      </h6>
+                    <Link to={`/algorand/pools/${pool.address}`}>
+                      <img className="pool-token-1 token" src={image1} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                      <img className="pool-token-2 token" src={image2} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                      <td><h6 className="pools-ticker">{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6></td>
                     </Link>
                   </td>
                   <td>{formatNumber(pool.liquidity)}</td>
-                  <td>
-                    {formatNumber(pool.lastDayVolume)}
-                  </td>
-                  <td>
-                    {formatNumber(pool.lastWeekVolume)}
-                  </td>
+                  <td>{formatNumber(pool.lastDayVolume)}</td>
+                  <td>{formatNumber(pool.lastWeekVolume)}</td>
                   <td>{formatNumber(pool.lastDayFees)}</td>
                   <td>
                     <button
@@ -302,6 +278,7 @@ function PoolTable(props) {
                 </tr>
               );
             })}
+
         </tbody>
       </table>
       {openCreateModal && (
