@@ -10,7 +10,6 @@ import DashboardMixChartOne from 'src/view/dashboard/DashboardMixChartOne';
 import DashboardMixChartTwo from 'src/view/dashboard/DashboardMixChartTwo';
 import DashboardPolarChart from 'src/view/dashboard/DashboardPolarChart';
 import DashboardRadarChart from 'src/view/dashboard/DashboardRadarChart';
-import defaultTokens from 'src/view/dashboard/DefaultTokens';
 import selectors from 'src/modules/algorand/overview/overviewSelectors';
 import actions from 'src/modules/algorand/overview/overviewActions';
 
@@ -24,7 +23,6 @@ const DashboardPage = (props) => {
   }, [dispatch]);
 
   const favorites = useSelector(selectors.selectFavorites);
-  console.log("favorites: ", favorites);
   
   return (
     <>
@@ -34,105 +32,25 @@ const DashboardPage = (props) => {
         }}
       >
         <div className="row no-gutters">
-          <div
-            style={{
-              paddingLeft: '6px',
-              paddingRight: '6px',
-              paddingBottom: '24px',
-            }}
-            className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
-          >
-            <div className="bg-box p-2 rounded">
-              <DashboardChart asset={defaultTokens[0]} />
-            </div>
-          </div>
-          <div
-            style={{
-              paddingLeft: '6px',
-              paddingRight: '6px',
-              paddingBottom: '24px',
-            }}
-            className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
-          >
-            <div className="bg-box p-2 rounded">
-              <DashboardChart asset={defaultTokens[1]} />
-            </div>
-          </div>
-          <div
-            style={{
-              paddingLeft: '6px',
-              paddingRight: '6px',
-              paddingBottom: '24px',
-            }}
-            className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
-          >
-            <div className="bg-box p-2 rounded">
-              <DashboardChart asset={defaultTokens[2]} />
-            </div>
-          </div>
-
-          <div
-            style={{
-              paddingLeft: '6px',
-              paddingRight: '6px',
-              paddingBottom: '24px',
-            }}
-            className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
-          >
-            <div className="bg-box p-2 rounded">
-              <DashboardChart asset={defaultTokens[3]} />
-            </div>
-          </div>
-
-          <div
-            style={{
-              paddingLeft: '6px',
-              paddingRight: '6px',
-              paddingBottom: '24px',
-            }}
-            className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6"
-          >
-            <div className="bg-box p-2 rounded">
-              <DashboardChart asset={defaultTokens[4]} />
-            </div>
-          </div>
-
-          <div
-            style={{
-              paddingLeft: '6px',
-              paddingRight: '6px',
-              paddingBottom: '24px',
-            }}
-            className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
-          >
-            <div className="  bg-box p-2 rounded">
-              <DashboardChart asset={defaultTokens[5]} />
-            </div>
-          </div>
-          <div
-            style={{
-              paddingLeft: '6px',
-              paddingRight: '6px',
-              paddingBottom: '24px',
-            }}
-            className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
-          >
-            <div className="bg-box p-2 rounded">
-              <DashboardChart asset={defaultTokens[6]} />
-            </div>
-          </div>
-          <div
-            style={{
-              paddingLeft: '6px',
-              paddingRight: '6px',
-              paddingBottom: '24px',
-            }}
-            className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
-          >
-            <div className=" bg-box p-2 rounded">
-              <DashboardChart asset={defaultTokens[7]} />
-            </div>
-          </div>
+          {
+            favorites && Array.isArray(favorites) && favorites.length > 0 &&
+            favorites.map(favorite => {
+              return (
+                <div
+                  style={{
+                    paddingLeft: '6px',
+                    paddingRight: '6px',
+                    paddingBottom: '24px',
+                  }}
+                  className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
+                >
+                  <div className="bg-box p-2 rounded">
+                    <DashboardChart asset={favorite} />
+                  </div>
+                </div>
+              );
+            })
+          }
           <footer className="footer">
             <div className="algocloud-f1 i18-mobile-1 row g-0 justify-content-between fs--1 mt-4 ">
               <div className="col-12 col-sm-auto ">
