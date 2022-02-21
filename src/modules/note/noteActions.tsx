@@ -93,6 +93,7 @@ const noteActions = {
   },
 
   doCreatePoolNote: (note) => async (dispatch) => {
+    console.log('doCreatePoolNote: ', note);
     try {
       dispatch({
         type: noteActions.CREATE_STARTED,
