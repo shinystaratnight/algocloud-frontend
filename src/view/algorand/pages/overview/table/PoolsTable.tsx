@@ -44,7 +44,7 @@ function PoolsTable({ pools }) {
   };
 
   return (
-    <div className=" top-assets-table">
+    <div className="top-assets-table">
       <TableWrapper >
         <PoolTable
           loading={loading}
