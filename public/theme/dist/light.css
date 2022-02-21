@@ -1,3 +1,11 @@
+svg.tinyman-logo {
+    border-radius: 360px;
+} 
+
+section.bg-dark-2.py-0.text-center.fs--1.light {
+    box-shadow: 0 0 0 1px var(--card-border);
+}
+
 .navbar-glass-shadow {
     -webkit-box-shadow: 0 0.5rem 0.5rem -0.5rem rgb(0 0 0 / 20%) !important;
     box-shadow: 0 0.5rem 0.5rem -0.5rem rgb(0 0 0 / 20%) !important;
@@ -12,7 +20,7 @@
 }
 
 .text-white-2 {
-    color: var(--algocloud-body-color) !important;
+    color: var(--algocloud-white)!important;
 }
 
 .navbar-dark .navbar-nav .nav-link {
