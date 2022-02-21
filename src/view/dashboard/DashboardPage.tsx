@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import DashboardBarChart from 'src/view/dashboard/DashboardBarChart';
 import DashboardChart from 'src/view/dashboard/DashboardChart';
@@ -10,8 +11,21 @@ import DashboardMixChartTwo from 'src/view/dashboard/DashboardMixChartTwo';
 import DashboardPolarChart from 'src/view/dashboard/DashboardPolarChart';
 import DashboardRadarChart from 'src/view/dashboard/DashboardRadarChart';
 import defaultTokens from 'src/view/dashboard/DefaultTokens';
+import selectors from 'src/modules/algorand/overview/overviewSelectors';
+import actions from 'src/modules/algorand/overview/overviewActions';
 
-const DashboardPage = (props) => {  
+const DashboardPage = (props) => {
+  
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(actions.doReset());
+    dispatch(actions.doFetch());
+  }, [dispatch]);
+
+  const favorites = useSelector(selectors.selectFavorites);
+  console.log("favorites: ", favorites);
+  
   return (
     <>
       <div
@@ -28,7 +42,7 @@ const DashboardPage = (props) => {
             }}
             className="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-4"
           >
-            <div className=" bg-box p-2 rounded">
+            <div className="bg-box p-2 rounded">
               <DashboardChart asset={defaultTokens[0]} />
             </div>
           </div>
