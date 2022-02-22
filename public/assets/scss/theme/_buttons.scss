@@ -17,7 +17,7 @@
     }
 
     .btn-reveal-sm {
-      box-shadow: var(--falcon-box-shadow-sm);
+      box-shadow: var(--algocloud-box-shadow-sm);
     }
   }
   .btn-reveal {
@@ -39,9 +39,9 @@
 }
 
 /*-----------------------------------------------
-|   Falcon buttons
+|   AlgoCloud buttons
 -----------------------------------------------*/
-$theme-falcon-btn-colors: (
+$theme-algocloud-btn-colors: (
   'primary': $primary,
   'success': $success,
   'info': $info,
@@ -50,9 +50,9 @@ $theme-falcon-btn-colors: (
   'default': $dark
 );
 
-@each $color, $value in $theme-falcon-btn-colors {
-  .btn-falcon-#{$color} {
-    @include falcon-button-variant($color);
+@each $color, $value in $theme-algocloud-btn-colors {
+  .btn-algocloud-#{$color} {
+    @include algocloud-button-variant($color);
   }
 }
 
@@ -102,7 +102,7 @@ $theme-falcon-btn-colors: (
 
 // Close Button
 
-.btn-close-falcon {
+.btn-close-algocloud {
   cursor: pointer;
   position: relative;
   // width: 100%;

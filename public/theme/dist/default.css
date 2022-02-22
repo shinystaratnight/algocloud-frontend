@@ -1,3 +1,42 @@
+.btn-outline-facebook {
+    color: #3c5a99 !important;
+    border-color: #3c5a99 !important;
+}
+
+.btn-outline-facebook:hover {
+    color: #fff !important;
+    border-color: #3c5a99 !important;
+}
+
+.btn-outline-google-plus {
+    color: #dd4b39 !important;
+}
+
+.btn-outline-google-plus:hover {
+    color: #fff !important;
+    background-color: #dd4b39 !important;
+    border-color: #dd4b39 !important;
+}
+
+img.login-header-img {
+    width: 40px;
+}
+
+.form-check.form-check-label.pl-0.mb-0 {
+    display: flex;
+    align-items: center;
+}
+
+.login-header {
+    margin: 0px !important;
+}
+
+.login-header {
+    margin: 0px;
+    padding: 1rem;
+    box-shadow: 0 0 0 1px var(--card-border);
+}
+
 svg.tinyman-logo {
     border-radius: 360px;
 }

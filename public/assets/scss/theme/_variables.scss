@@ -1,7 +1,7 @@
 /* prettier-ignore */
 @use 'sass:math';
 @import 'colors';
-$variable-prefix: 'falcon-';
+$variable-prefix: 'algocloud-';
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
@@ -266,11 +266,11 @@ $table-group-separator-color: inherit !default;
 //*-----------------------------------------------
 //|   Buttons
 //-----------------------------------------------*/
-$btn-falcon-box-shadow: var(
-  --#{$variable-prefix}btn-falcon-box-shadow
+$btn-algocloud-box-shadow: var(
+  --#{$variable-prefix}btn-algocloud-box-shadow
 ) !default;
-$btn-falcon-hover-box-shadow: var(
-  --#{$variable-prefix}btn-falcon-hover-box-shadow
+$btn-algocloud-hover-box-shadow: var(
+  --#{$variable-prefix}btn-algocloud-hover-box-shadow
 ) !default;
 
 //*-----------------------------------------------
@@ -561,7 +561,7 @@ $treeview-row-bg-even: var(--#{$variable-prefix}100) !default;
 $treeview-text-color: var(--#{$variable-prefix}600) !default;
 
 //*=============================================
-//|   Falcon Specific
+//|   AlgoCloud Specific
 //=============================================
 
 //*-----------------------------------------------

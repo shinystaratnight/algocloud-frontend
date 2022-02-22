@@ -1,3 +1,42 @@
+.btn-outline-facebook {
+    color: #3c5a99 !important;
+    border-color: #3c5a99 !important;
+}
+
+.btn-outline-facebook:hover {
+    color: #fff !important;
+    border-color: #3c5a99 !important;
+}
+
+.btn-outline-google-plus {
+    color: #dd4b39 !important;
+}
+
+.btn-outline-google-plus:hover {
+    color: #fff !important;
+    background-color: #dd4b39 !important;
+    border-color: #dd4b39 !important;
+}
+
+img.login-header-img {
+    width: 40px;
+}
+
+.form-check.form-check-label.pl-0.mb-0 {
+    display: flex;
+    align-items: center;
+}
+
+.login-header {
+    margin: 0px !important;
+}
+
+.login-header {
+    margin: 0px;
+    padding: 1rem;
+    box-shadow: 0 0 0 1px var(--card-border);
+}
+
 svg.tinyman-logo {
     border-radius: 360px;
 } 
@@ -12,7 +51,7 @@ section.bg-dark-2.py-0.text-center.fs--1.light {
 }
 
 .navbar-dark .navbar-nav .nav-link {
-    color: var(--algocloud-navbar-light-color) !important;
+    color: var(--algocloud-body-bg-2)!important;
 }
 
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover {
@@ -737,7 +776,7 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
     --algocloud-navbar-light-active-color: rgba(0, 0, 0, 0.9);
     --algocloud-navbar-light-disabled-color: rgba(0, 0, 0, 0.3);
     --algocloud-navbar-light-toggler-border-color: rgba(0, 0, 0, 0.1);
-    --algocloud-navbar-light-brand-color: var(--algocloud-primary);
+    --algocloud-navbar-light-brand-color: var(--algocloud-logo-1);
     --algocloud-navbar-dark-brand-color: var(--algocloud-primary);
     --algocloud-navbar-vertical-collapsed-hover-shadow-color: rgba(0, 0, 0, 0.2);
     --algocloud-navbar-vertical-bg-color: var(--algocloud-bg-navbar-glass);
@@ -6571,7 +6610,7 @@ textarea.form-control-lg {
 }
 
 .navbar-dark .navbar-brand {
-    color: var(--algocloud-navbar-dark-brand-color)
+    color: var(--algocloud-logo-1);
 }
 
 .navbar-dark .navbar-brand:focus,.navbar-dark .navbar-brand:hover {
@@ -26616,7 +26655,7 @@ a[href].bg-200:focus,a[href].bg-200:hover {
 }
 
 .btn-back-to-top {
-    background-color: #0b1727;
+    background-color: var(--card-bg);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

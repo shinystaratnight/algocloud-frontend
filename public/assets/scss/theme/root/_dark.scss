@@ -181,47 +181,47 @@
   --#{$variable-prefix}btn-reveal-bg: #{shade-color($dark, 10%)};
   --#{$variable-prefix}btn-reveal-border-color: #{shade-color($dark, 12.5%)};
 
-  /* ------------------------------ Falcon Button ----------------------------- */
+  /* ------------------------------ algocloud Button ----------------------------- */
 
-  --#{$variable-prefix}btn-falcon-background: var(--#{$variable-prefix}body-bg);
+  --#{$variable-prefix}btn-algocloud-background: var(--#{$variable-prefix}body-bg);
   --#{$variable-prefix}btn-disabled-color: #4d5969;
-  --#{$variable-prefix}btn-falcon-box-shadow: #{0 0 0 1px rgba(0, 8, 19, 0.3),
+  --#{$variable-prefix}btn-algocloud-box-shadow: #{0 0 0 1px rgba(0, 8, 19, 0.3),
     0 2px 5px 0 rgba(0, 13, 33, 0.5), 0 1px 1.5px 0 rgba(0, 8, 1, 0.48),
     0 1px 2px 0 rgba(0, 8, 1, 0.4)};
-  --#{$variable-prefix}btn-falcon-hover-box-shadow: #{0 0 0 1px
+  --#{$variable-prefix}btn-algocloud-hover-box-shadow: #{0 0 0 1px
       rgba(0, 8, 19, 0.3),
     0 3px 7px 0 rgba(0, 13, 33, 0.8), 0 1px 1.5px 0 #000801,
     0 1px 2px 0 #000801};
 
-  --#{$variable-prefix}btn-falcon-default-color: #{map-get($dark-grays, '800')};
-  --#{$variable-prefix}btn-falcon-default-hover-color: #{shift-color(
+  --#{$variable-prefix}btn-algocloud-default-color: #{map-get($dark-grays, '800')};
+  --#{$variable-prefix}btn-algocloud-default-hover-color: #{shift-color(
       map-get($dark-grays, '800'),
       -17%
     )};
-  --#{$variable-prefix}btn-falcon-default-active-background: #{shade-color(
+  --#{$variable-prefix}btn-algocloud-default-active-background: #{shade-color(
       $dark,
       10%
     )};
-  --#{$variable-prefix}btn-falcon-default-active-border: #{shift-color(
+  --#{$variable-prefix}btn-algocloud-default-active-border: #{shift-color(
       map-get($dark-grays, '800'),
       -17%
     )};
 
   @each $color, $value in $theme-dark-colors {
-    /* ------------------------------ Falcon button ----------------------------- */
+    /* ------------------------------ algocloud button ----------------------------- */
 
-    --#{$variable-prefix}btn-falcon-#{$color}-color: var(
+    --#{$variable-prefix}btn-algocloud-#{$color}-color: var(
       --#{$variable-prefix}#{$color}
     );
-    --#{$variable-prefix}btn-falcon-#{$color}-hover-color: #{shift-color(
+    --#{$variable-prefix}btn-algocloud-#{$color}-hover-color: #{shift-color(
         $value,
         -17%
       )};
-    --#{$variable-prefix}btn-falcon-#{$color}-active-background: #{shade-color(
+    --#{$variable-prefix}btn-algocloud-#{$color}-active-background: #{shade-color(
         $dark,
         40%
       )};
-    --#{$variable-prefix}btn-falcon-#{$color}-active-color: #{shift-color(
+    --#{$variable-prefix}btn-algocloud-#{$color}-active-color: #{shift-color(
         $value,
         -17%
       )};
@@ -497,8 +497,8 @@
   /* -------------------------------- Scrollbar ------------------------------- */
   --#{$variable-prefix}scrollbar-bg: #{rgba($gray-900, 0.6)};
 
-  /* ------------------------------- Falcon Pill ------------------------------ */
-  --#{$variable-prefix}nav-pills-falcon-active-bg-color: #{map-get(
+  /* ------------------------------- algocloud Pill ------------------------------ */
+  --#{$variable-prefix}nav-pills-algocloud-active-bg-color: #{map-get(
       $dark-grays,
       '100'
     )};
