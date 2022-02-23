@@ -43,7 +43,9 @@ const tenantInvitationActions = {
 
       if (!isSignedIn) {
         AuthInvitationToken.set(token);
-        getHistory().push('/auth/signup');
+        // const history = getHistory();
+        // history.push('/auth/signup');
+        window.location.href = "/auth/signup";
         return;
       }
 
