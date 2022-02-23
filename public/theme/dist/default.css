@@ -1,3 +1,12 @@
+.container.show {
+    background-color: black !important;
+    width: 100% !important;
+    min-width: 100vh !important;
+    margin: 0px !important;
+    padding-left: 3rem;
+    padding-top: 1.5rem;
+}
+
 .btn-outline-facebook {
     color: #3c5a99 !important;
     border-color: #3c5a99 !important;
@@ -30298,7 +30307,8 @@ button,input,optgroup,select,textarea {
     --algocloud-logo-1: #f9fafd;
     --algocloud-btn-link-color-2: #fff;
     --algocloud-hover-bg-black: #000;
-    --algocloud-btn-link-color: var(--accent-brand)
+    --algocloud-btn-link-color: var(--accent-brand);
+    --algocloud-dashboard-landing: url(/assets/dashboard-darkMode.png);
 }
 
 .pool-token-1{
