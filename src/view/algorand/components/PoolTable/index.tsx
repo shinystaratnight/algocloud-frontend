@@ -153,7 +153,7 @@ function PoolTable(props) {
               return (
                 <tr key={pool.id}>
                   <td>
-                    <Link to={{ pathname: `/algorand/pools/${pool.address}`, query: { poolId: pool.id}}}>
+                    <Link to={{ pathname: `/algorand/pools/${pool.address}`, query: { poolId: pool.id }}}>
                       <img className="pool-token-1 token" src={image1} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
                       <img className="pool-token-2 token" src={image2} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
                       <td><h6 className="pools-ticker">{pool.assetOneUnitName}-{pool.assetTwoUnitName}</h6></td>

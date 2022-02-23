@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { useRouteMatch, useLocation } from 'react-router-dom';
+import { useRouteMatch, useLocation, useHistory } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import { formattedNum } from 'src/modules/algorand/utils';
 import actions from 'src/modules/algorand/pool/show/poolShowActions';
@@ -18,9 +18,6 @@ const PoolShowPage = () => {
   const dispatch = useDispatch();
   const match = useRouteMatch();
   const address = match.params.address;
-  const location = useLocation();
-  const poolId = location.query.poolId;
-  console.log('pooldId: ', poolId);
 
   const [openCreateModal, setOpenCreateModal] = useState(false);
   const [currentNote, setCurrentNote] = useState(null);
@@ -28,7 +25,6 @@ const PoolShowPage = () => {
   
   useEffect(() => {
     dispatch(actions.doFetch(address));
-    dispatch(noteActions.doPoolFetch(poolId));
   }, [dispatch, address]);
   
   const loading = useSelector(selectors.selectLoading);
@@ -38,6 +34,10 @@ const PoolShowPage = () => {
   const rateOneData = useSelector(selectors.selectHourlyOneRates);
   const rateTwoData = useSelector(selectors.selectHourlyTwoRates);
   const notes = useSelector(noteSelectors.selectNotes);
+
+  useEffect(() => {
+    dispatch(noteActions.doPoolFetch(pool.id));
+  }, [dispatch, pool]);
 
   const handleOpenCreateNoteModal = () => {
     setOpenCreateModal(true);
@@ -144,7 +144,7 @@ const PoolShowPage = () => {
             onClose={handleCloseCreateModal}
             cancelText={i18n('note.modal.cancel')}
             okText={i18n('note.modal.okText')}
-            assetId={poolId}
+            assetId={pool.id}
             note={currentNote}
             isPoolNote={true}
           />
