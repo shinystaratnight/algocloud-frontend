@@ -1,3 +1,30 @@
+.text-white-footer{
+    color: #fff;
+}
+
+.landing-faq {
+    text-align: left;
+}
+
+@media(max-width: 760px){
+
+.forum-cta {
+    display: none !important;
+}
+
+.col-sm-auto.col-12.footer-auto {
+    width: auto !important;
+}
+
+br.d-sm-none{
+    display:none; 
+}
+
+.img-landing-banner, .img-showcase-banner {
+    margin-bottom: -20rem !important;
+}
+}
+
 .container.show {
     background-color: black !important;
     width: 100% !important;
@@ -99,7 +126,7 @@ nav.navbar.navbar-standard.navbar-expand-lg.fixed-top.navbar-dark.navbar-glass-s
 }
 
 .text-white-2 {
-    color: var(--algocloud-body-color);
+        color: #fff;
 }
 
 .navbar-glass-shadow {
@@ -28522,6 +28549,7 @@ button.btn-circle:focus,button.btn-circle:hover {
 }
 
 :root {
+    --slider-poster: url(/assets/light-bg-01.png);
     --btn-color-hover: var(--accent-brand-lighter);
     --btn-primary-bg-hover: var(--accent-brand-lighter);
     --btn-primary-destructive-bg-hover: var(--accent-danger-lighter);
@@ -28608,7 +28636,7 @@ button.btn-circle:focus,button.btn-circle:hover {
     --footer-bg: var(--base-inverted);
     --footer-color: var(--base-60);
     --link-bg-hover-alt: var(--base-inverted);
-    --link-brand-color: #17a1f6;
+    --link-brand-color: #8b9bfd;
     --link-color-current: var(--base-100);
     --link-color-secondary: var(--base-70);
     --link-color-secondary-hover: var(--base-80);
