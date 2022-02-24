@@ -247,7 +247,7 @@ class Permissions {
       },
       algorandRead: {
         id: 'algorandRead',
-        allowedRoles: [roles.admin, roles.custom],
+        allowedRoles: [roles.admin, roles.custom, roles.beta],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       algorandToggle: {
