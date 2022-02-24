@@ -294,6 +294,10 @@ const en = {
       label: 'Custom Role',
       description: 'Custom role access',
     },
+    beta: {
+      label: 'Beta User',
+      description: 'Beta User access',
+    },
   },
 
   user: {

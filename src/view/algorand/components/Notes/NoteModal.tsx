@@ -16,20 +16,16 @@ import noteActions from 'src/modules/note/noteActions';
 import { useDispatch, useSelector } from 'react-redux';
 import selector from 'src/modules/note/noteSelectors';
 
-
 const schema = yup.object().shape({
-  title: yupFormSchemas.string(
-    i18n('note.name'),
-    {
-      "required": true,
-      "max": 1024
-    },
-  ),
+  title: yupFormSchemas.string(i18n('note.name'), {
+    required: true,
+    max: 1024,
+  }),
   description: yupFormSchemas.string(
     i18n('note.description'),
     {
-      "required": true,
-      "max": 2083
+      required: true,
+      max: 2083,
     },
   ),
 });
@@ -52,7 +48,7 @@ export const NoteModal = (props: any) => {
       setOriginalNote(props.note);
       setIsEdit(true);
     }
-  }, [props])
+  }, [props]);
 
   useEffect(() => {
     (window as any).$(modalRef.current).modal('show');
@@ -67,7 +63,7 @@ export const NoteModal = (props: any) => {
       (window as any).$(modalRef.current).modal('hide');
       props.onClose();
     }
-  }, [loading])
+  }, [loading]);
 
   const onConfirm = () => {
     (window as any).$(modalRef.current).modal('hide');
@@ -77,7 +73,7 @@ export const NoteModal = (props: any) => {
   const [initialValues] = useState(() => {
     return {
       title: '',
-      description: ''
+      description: '',
     };
   });
 
@@ -89,27 +85,44 @@ export const NoteModal = (props: any) => {
 
   const handleChangeTitle = (t) => {
     setTitle(t);
-  }
+  };
 
   const handleChangeDesc = (t) => {
     setDescription(t);
-  }
+  };
 
   const onSubmit = (values) => {
     setSubmitted(true);
     if (isEdit) {
-      const data = {
-        ...originalNote,
-        ...values
-      };      
-      dispatch(noteActions.doEditNote(data));
+      if (props.isPoolNote) {
+        const data = {
+          ...originalNote,
+          ...values,
+        };
+        dispatch(noteActions.doEditPoolNote(data));
+      } else {
+        const data = {
+          ...originalNote,
+          ...values,
+        };
+        dispatch(noteActions.doEditNote(data));
+      }
     } else {
-      const data = {
-        id: uniqueId(),
-        assetId: props.assetId,
-        ...values
-      };
-      dispatch(noteActions.doCreateNote(data));
+      if (props.isPoolNote) {
+        const data = {
+          id: uniqueId(),
+          poolId: props.assetId,
+          ...values,
+        };
+        dispatch(noteActions.doCreatePoolNote(data));
+      } else {
+        const data = {
+          id: uniqueId(),
+          assetId: props.assetId,
+          ...values,
+        };
+        dispatch(noteActions.doCreateNote(data));
+      }
     }
   };
 
@@ -118,7 +131,9 @@ export const NoteModal = (props: any) => {
       <div className="modal-dialog modal-sm modal-lg modal-dialog-centered">
         <div className="modal-content">
           <div className="modal-header">
-            <h5 className="modal-title">Create a Note ...</h5>
+            <h5 className="modal-title">
+              Create a Note ...
+            </h5>
             <button
               type="button"
               className="btn-close btn"
@@ -128,10 +143,10 @@ export const NoteModal = (props: any) => {
               <span></span>
             </button>
           </div>
-          <div className='modal-body'>
+          <div className="modal-body">
             <FormWrapper>
               <FormProvider {...form}>
-                <div className='row'>
+                <div className="row">
                   <div className="col-12">
                     <InputFormItem
                       name="title"
@@ -167,12 +182,20 @@ export const NoteModal = (props: any) => {
                     className="btn btn-primary btn-sm"
                     disabled={loading}
                   >
-                    {
-                      loading && (
-                        <Spinner style={{ marginTop: 0, marginBottom: 0, display: 'inline', }} color="success" spin="sm" />
-                      )
-                    }
-                    {!isEdit ? i18n('note.modal.okText') : i18n('note.modal.edit')}
+                    {loading && (
+                      <Spinner
+                        style={{
+                          marginTop: 0,
+                          marginBottom: 0,
+                          display: 'inline',
+                        }}
+                        color="success"
+                        spin="sm"
+                      />
+                    )}
+                    {!isEdit
+                      ? i18n('note.modal.okText')
+                      : i18n('note.modal.edit')}
                   </button>
                 </div>
               </FormProvider>
@@ -184,4 +207,3 @@ export const NoteModal = (props: any) => {
     (document as any).getElementById('modal-root'),
   );
 };
-

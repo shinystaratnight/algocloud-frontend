@@ -43,4 +43,44 @@ export default class PlanService {
     return response.data;
   }
 
+  static async createPoolNote(data) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.post(
+      `/tenant/${tenantId}/poolnote`, data
+    );
+
+    return response.data;
+  }
+
+  static async editPoolNote(data) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.put(
+      `/tenant/${tenantId}/poolnote/edit`, data
+    );
+
+    return response.data;
+  }
+
+  static async getPoolNotes(poolId) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.get(
+      `/tenant/${tenantId}/poolnote/pool/${poolId}`
+    );
+
+    return response.data;
+  }
+
+  static async deletePoolNote(id) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.delete(
+      `/tenant/${tenantId}/poolnote/${id}`,
+    );
+
+    return response.data;
+  }
+
 }
