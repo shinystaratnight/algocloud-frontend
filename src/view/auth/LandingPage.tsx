@@ -98,7 +98,7 @@ return (
                            <a className="nav-link fw-semi-bold dropdown-toggle" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/">Contact</a>
                            <div aria-labelledby="react-aria3374201582-20" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 card">
-                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/">Default</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/analytics">Analytics</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/crm">CRM</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/e-commerce">E Commerce</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/project-management">Management</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/saas">SaaS</a></div>
+                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="mailto:contact@headline-inc.com">Admin Email</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://twitter.com/headline_crypto">Twitter (DM)</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://forum.ax">FORUM</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://www.headline-inc.com/contact/enterprise-hotline">Inv. Enquiry</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://discord.gg/qDcfQWny3H">(Discord DM)</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://t.me/headline_crypto">Group Help</a></div>
                               </div>
                            </div>
                         </div> 
@@ -106,7 +106,7 @@ return (
                            <a className="nav-link fw-semi-bold dropdown-toggle" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/">Press</a>
                            <div aria-labelledby="react-aria3374201582-20" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 card">
-                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/">Crypto Slate</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/analytics">Analytics</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/crm">CRM</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/e-commerce">E Commerce</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/project-management">Management</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/saas">SaaS</a></div>
+                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://cryptoslate.com/worlds-first-embeddable-dex-algoswap-launches-on-algorand">Crypto Slate</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://www.benzinga.com/pressreleases/22/01/g25287521/dolphin-defenders-algorand-start-up-headline-inc-makes-a-splash-with-a-new-csr-initiative">Benzinga</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://www.fxleaders.com/news/2021/10/26/algorand-algo-getting-ready-to-break-past-2/">FXLeaders</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://finance.yahoo.com/news/headline-x-ledger-partnership-confirmed-182600722.html">Yahoo Finance</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://algorand.foundation/news/headline-inc-development-award">Algorand Foundation</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://algonaut.space/headline-algorand">Algonaut Space</a></div>
                               </div>
                            </div>
                         </div>
@@ -120,38 +120,38 @@ return (
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
                                              <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">DeFi Projects</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/login">Yieldly</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/logout">TinyMan</a>              
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/register">AlgoMint</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/forgot-password">AlgoFi</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/confirm-mail">PactFi</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/reset-password">Folks Financed</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/lock-screen">C3 Protocol</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://yieldly.finance">Yieldly</a><a className="fw-medium py-1 link-600 nav-link" href="https://tinyman.org">TinyMan</a>              
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://algomint.io">AlgoMint</a><a className="fw-medium py-1 link-600 nav-link" href="https://www.algofi.org">AlgoFi</a><a className="fw-medium py-1 link-600 nav-link" href="https://www.pact.fi">PactFi</a><a className="fw-medium py-1 link-600 nav-link" href="https://c3.io">C3 Protocol</a>
                                           </div>
                                        </div>
 
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
-
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
                                           <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Analytics</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/user/profile">TinyChart</a>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/pricing/pricing-default">TinyHero</a>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/pricing/pricing-alt">ASA Stats</a>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/errors/404">Algogator</a>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/user/settings">AlgoCharts</a>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/pages/starter">ASAlytic</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://tinychart.org">TinyChart</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://www.tinyhero.app">TinyHero</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://www.asastats.com">ASA Stats</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://algogator.finance">Algogator</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://algocharts.net">AlgoCharts</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://www.asalytic.app">ASAlytic</a>
                                           </div>
                                        </div>
                                     </div>
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
                                              <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">NFT Marketplaces</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/login">AlgoGems</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/logout">AB2 Gallery</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/register">Rand Gallery</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/forgot-password">NFT Explorer</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/confirm-mail">Dartroom</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/reset-password">Zest Bloom</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://algogems.io">AlgoGems</a><a className="fw-medium py-1 link-600 nav-link" href="https://ab2.gallery">AB2 Gallery</a><a className="fw-medium py-1 link-600 nav-link" href="https://www.randgallery.com">Rand Gallery</a><a className="fw-medium py-1 link-600 nav-link" href="https://www.nftexplorer.app">NFT Explorer</a><a className="fw-medium py-1 link-600 nav-link" href="https://dartroom.xyz">Dartroom</a><a className="fw-medium py-1 link-600 nav-link" href="https://zestbloom.com">Zest Bloom</a>
                                           </div>
                                        </div>
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
                                              <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">DAOs</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/wizard">XBacked</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication-modal">AlgodMonitor</a>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/miscellaneous/associations">AlgoDAO</a><a className="fw-medium py-1 link-600 nav-link" href="/miscellaneous/invite-people">Acorn</a> 
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://www.xbacked.io">XBacked</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://algod.network">AlgodMonitor</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://algodao.fi">AlgoDAO</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://acorntoken.xyz">Acorn</a> 
+                                             <a className="fw-medium py-1 link-600 nav-link" href="https://www.coffeedao.dev">CoffeeDAO</a> 
                                           </div>
                                        </div>
                                     </div>
@@ -423,10 +423,10 @@ return (
                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="object-ungroup" className="svg-inline--fa fa-object-ungroup fa-w-18 me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                               <path fill="currentColor" d="M564 224c6.627 0 12-5.373 12-12v-72c0-6.627-5.373-12-12-12h-72c-6.627 0-12 5.373-12 12v12h-88v-24h12c6.627 0 12-5.373 12-12V44c0-6.627-5.373-12-12-12h-72c-6.627 0-12 5.373-12 12v12H96V44c0-6.627-5.373-12-12-12H12C5.373 32 0 37.373 0 44v72c0 6.627 5.373 12 12 12h12v160H12c-6.627 0-12 5.373-12 12v72c0 6.627 5.373 12 12 12h72c6.627 0 12-5.373 12-12v-12h88v24h-12c-6.627 0-12 5.373-12 12v72c0 6.627 5.373 12 12 12h72c6.627 0 12-5.373 12-12v-12h224v12c0 6.627 5.373 12 12 12h72c6.627 0 12-5.373 12-12v-72c0-6.627-5.373-12-12-12h-12V224h12zM352 64h32v32h-32V64zm0 256h32v32h-32v-32zM64 352H32v-32h32v32zm0-256H32V64h32v32zm32 216v-12c0-6.627-5.373-12-12-12H72V128h12c6.627 0 12-5.373 12-12v-12h224v12c0 6.627 5.373 12 12 12h12v160h-12c-6.627 0-12 5.373-12 12v12H96zm128 136h-32v-32h32v32zm280-64h-12c-6.627 0-12 5.373-12 12v12H256v-12c0-6.627-5.373-12-12-12h-12v-24h88v12c0 6.627 5.373 12 12 12h72c6.627 0 12-5.373 12-12v-72c0-6.627-5.373-12-12-12h-12v-88h88v12c0 6.627 5.373 12 12 12h12v160zm40 64h-32v-32h32v32zm0-256h-32v-32h32v32z"></path>
                            </svg>
-                           INTEGRATION
+                           Symbiosis
                         </h5>
                         <h3>DeFi + Insights</h3>
-                        <p>Web 3 plugins available on AlgoCloud integrate with our servers to deliver a personalized and highly customizable DeFi experience.</p>
+                        <p>Web 3 plugins available on AlgoCloud interact with our servers to deliver a personalized and highly customizable DeFi experience.</p>
                      </div>
                   </div>
                   <div className="flex-center mt-7 row">
@@ -437,7 +437,7 @@ return (
                         SCALABILITY
                         </h5>
                         <h3>Crypto-native Cloud</h3>
-                        <p>From IE to iOS, rigorously tested and optimized AlgoCloud will give the near perfect finishing to your webapp; from the landing page to the logout screen.</p>
+                        <p>From the Proof-of-Stake sign-on through every consecutive screen; AlgoCloud is designed for optimal blockchain connectivity and constant on-chain interaction.</p>
                      </div>
                   </div>
                </div>

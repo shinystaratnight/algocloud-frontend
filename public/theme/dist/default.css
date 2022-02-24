@@ -30467,3 +30467,11 @@ p.fw-medium.text-500.text-700.mb-0.fw-bold.nav-link.text-info {
 p.fw-medium.text-500.text-700.mb-0.fw-bold.nav-link.sj-color {
     padding-left: 1rem !important;
 }
+
+a.fw-medium.py-1.link-600.nav-link:hover {
+    border-radius: 0.375rem;
+    color: #9896ff!important;
+    background: var(--algocloud-menu-li-hover)!important;
+    z-index: 1;
+    text-decoration: underline;
+}
