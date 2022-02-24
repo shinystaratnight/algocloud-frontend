@@ -6,7 +6,7 @@ const permissions = Permissions.values;
 
 export default [
   {
-    path: '/',
+    path: '/dashboard',
     exact: true,
     icon: 'fas fa-th-large',
     label: i18n('dashboard.menu'),
