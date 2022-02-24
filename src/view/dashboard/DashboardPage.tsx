@@ -37,6 +37,7 @@ const DashboardPage = (props) => {
             favorites.map(favorite => {
               return (
                 <div
+                  key={favorite.id}
                   style={{
                     paddingLeft: '6px',
                     paddingRight: '6px',
