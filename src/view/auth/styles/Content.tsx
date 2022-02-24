@@ -24,9 +24,8 @@ const Content = styled.div`
     font-size: 1.25em;
   }
 
-  a,
-  a:hover {
-    color: white;
+  a{
+    color: var(--link-color);
   }
 
   .btn-link,
