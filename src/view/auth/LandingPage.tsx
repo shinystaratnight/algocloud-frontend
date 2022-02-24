@@ -87,22 +87,23 @@ rememberMe,
 };
 return (
 <Wrapper className="main-signin">
-         <main className="main" id="main">
-         <nav className="navbar navbar-standard navbar-expand-lg fixed-top navbar-dark navbar-glass-shadow" data-navbar-darken-on-scroll="data-navbar-darken-on-scroll" >
-               <div className="container">
-                  <a className="algocloud-font dark__text-white-2 navbar-brand" href="/">algocloud</a><button type="button" aria-label="Toggle navigation" className="navbar-toggler collapsed"><span className="navbar-toggler-icon"></span></button>
-                  <div className="scrollbar navbar-collapse collapse">
-                     <div className="navbar-nav">
+         <main className="main" id="main"> 
+<nav className="navbar navbar-inverse navbar navbar-standard navbar-expand-lg fixed-top navbar-dark navbar-glass-shadow" data-navbar-darken-on-scroll="data-navbar-darken-on-scroll" >
+               <div className="container-fluid">
+                  <a className="algocloud-font dark__text-white-2 navbar-brand" href="/">algocloud</a><button type="button" className="nav-link landing-mobile-btn dropdown-toggle navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavBar"><span className="navbar-toggler-icon"></span></button>
+                   
+                  <div  id="mainNavBar" className="collapse navbar-collapse" > 
+                     <div className="nav navbar-nav">
                         <div className="dropdown">
-                           <a className="nav-link fw-semi-bold dropdown-toggle" id="react-aria3374201582-20" aria-expanded="false" href="/landing#!">Dashboard</a>
+                           <a className="nav-link fw-semi-bold dropdown-toggle" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/">Contact</a>
                            <div aria-labelledby="react-aria3374201582-20" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 card">
-                                 <div className="scrollbar max-h-dropdown p-0 py-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/">Default</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/analytics">Analytics</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/crm">CRM</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/e-commerce">E Commerce</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/project-management">Management</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/saas">SaaS</a></div>
+                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/">Default</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/analytics">Analytics</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/crm">CRM</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/e-commerce">E Commerce</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/project-management">Management</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/saas">SaaS</a></div>
                               </div>
                            </div>
                         </div> 
                         <div className="dropdown">
-                           <a className="nav-link fw-semi-bold dropdown-toggle" id="react-aria3374201582-22" aria-expanded="false" href="/landing#!">App</a>
+                           <a className="nav-link fw-semi-bold dropdown-toggle"aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/">Press</a>
                            <div aria-labelledby="react-aria3374201582-22" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 navbar-card-app card">
                                  <div className="scrollbar max-h-dropdown card-body">
@@ -129,7 +130,7 @@ return (
                            </div>
                         </div>
                         <div className="dropdown">
-                           <a className="nav-link fw-semi-bold dropdown-toggle" id="react-aria3374201582-24" aria-expanded="false" href="/landing#!">Pages</a>
+                           <a className="nav-link fw-semi-bold dropdown-toggle" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/landing#!">Ecosystem</a>
                            <div aria-labelledby="react-aria3374201582-24" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 navbar-card-pages card">
                                  <div className="scrollbar max-h-dropdown card-body">
@@ -138,7 +139,8 @@ return (
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
                                              <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Simple Auth</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/login">Login</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/logout">Logout</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/register">Register</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/forgot-password">Forgot password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/confirm-mail">Confirm mail</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/reset-password">Reset password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/lock-screen">Lock screen</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/login">Login</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/logout">Logout</a>              
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/register">Register</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/forgot-password">Forgot password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/confirm-mail">Confirm mail</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/reset-password">Reset password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/lock-screen">Lock screen</a>
                                           </div>
                                        </div>
                                        <div className="col-xxl-3 col-6">
@@ -193,7 +195,7 @@ return (
                            </div>
                         </div>
                         <div className="dropdown">
-                           <a className="nav-link fw-semi-bold dropdown-toggle" id="react-aria3374201582-26" aria-expanded="false" href="/landing#!">Modules</a>
+                           <a className="nav-link fw-semi-bold dropdown-toggle" role="button" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false"  href="/landing#!">HEADLINE</a>
                            <div aria-labelledby="react-aria3374201582-26" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 navbar-card-components card">
                                  <div className="scrollbar max-h-dropdown card-body">
@@ -201,7 +203,7 @@ return (
                                     <div className="row">
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Components</p>
+                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Projects</p>
                                              <a className="fw-medium py-1 link-600 nav-link" href="/components/alerts">Alerts</a><a className="fw-medium py-1 link-600 nav-link" href="/components/accordion">Accordion</a><a className="fw-medium py-1 link-600 nav-link" href="/components/animated-icons">Animated icons</a><a className="fw-medium py-1 link-600 nav-link" href="/components/background">Background</a><a className="fw-medium py-1 link-600 nav-link" href="/components/badges">Badges</a><a className="fw-medium py-1 link-600 nav-link" href="/components/breadcrumb">Breadcrumbs</a><a className="fw-medium py-1 link-600 nav-link" href="/components/buttons">Buttons</a><a className="fw-medium py-1 link-600 nav-link" href="/components/calendar">Calendar</a><a className="fw-medium py-1 link-600 nav-link" href="/components/cards">Cards</a><a className="fw-medium py-1 link-600 nav-link" href="/components/carousel/bootstrap">Bootstrap</a><a className="fw-medium py-1 link-600 nav-link" href="/components/carousel/slick">Slick</a>
                                           </div>
                                        </div>
@@ -224,7 +226,7 @@ return (
                                        </div>
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Tabels</p>
+                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Social Media</p>
                                              <a className="fw-medium py-1 link-600 nav-link" href="/tables/basic-tables">Basic tables</a><a className="fw-medium py-1 link-600 nav-link" href="/tables/advance-tables">Advance tables</a>
                                              <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Charts</p>
                                              <a className="fw-medium py-1 link-600 nav-link" href="/charts/chartjs">Chartjs</a>
@@ -252,10 +254,10 @@ return (
                            </div>
                         </div>
                         <div className="dropdown">
-                           <a className="nav-link fw-semi-bold dropdown-toggle" id="react-aria3374201582-28" aria-expanded="false" href="/landing#!">Documentation</a>
+                           <a className="nav-link fw-semi-bold dropdown-toggle" role="button" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/landing#!">Algorand</a>
                            <div aria-labelledby="react-aria3374201582-28" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 card">
-                                 <div className="scrollbar max-h-dropdown p-0 py-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/getting-started">Getting started</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/configuration">Configuration</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/styling">Styling</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/dark-mode">Dark mode</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/plugin">Plugin</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/design-file">Design file</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/changelog">Changelog</a></div>
+                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/getting-started">Algorand Foundation</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/configuration">Algorand Inc</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/styling">Developer Portal</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/dark-mode">CoinMarketCap</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/plugin">GitHub</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/design-file">Twitter</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/changelog">YouTube</a></div>
                               </div>
                            </div>
                         </div>
@@ -291,8 +293,8 @@ return (
          data-toggle="dropdown" >Login</a>
                                <div className="dropdown-menu dropdown-menu-end dropdown-menu-card " aria-labelledby="navbarDropdownNotification">
                   <div className="navbar-card-login shadow-none card">
-                  <Content style={{ padding: '0px'}}>
-            <Logo className="login-header">
+                  <Content className="mobile-login-card" style={{ padding: '0px'}}>
+            <Logo className="login-header" >
              <a className="font-sans-serif fw-bolder fs-4 z-index-1 position-relative link-light light" href="."></a>
           {logoUrl ? ( 
             <img 
@@ -400,7 +402,14 @@ return (
                   </div></div> 
  
                   </li>
-                  <li className="nav-item"><a className="nav-link" href="#!" data-bs-toggle="modal" data-bs-target="#exampleModal">Register</a></li>
+                  <li className="nav-link">
+                  <Link 
+                
+                to="/auth/signup"
+              >
+                {i18n('Register')}
+              </Link>
+              </li>
 
                   </div>
                   </div>
@@ -408,7 +417,7 @@ return (
                   </div> 
                   
             </nav>
-            <section className="py-0 overflow-hidden light" id="banner">
+                     <section className="py-0 overflow-hidden light" id="banner">
                <div className="bg-holder overlay" style={{backgroundImage: "url(/assets/light-bg-01.png)", backgroundPosition: "centerBottom"}}></div>
                <div className="container">
                   <div className="justify-content-center align-items-center pt-8 pb-lg-9 pt-lg-9 pb-xl-0 row">
@@ -584,22 +593,29 @@ return (
                 <div className="col-lg-6">
                   <h5 className="fs-0">How does Falcon's pricing work?</h5>
                   <p className="fs--1">The free version of Falcon is available for teams of up to 15 people. Our Falcon Premium plans of 15 or fewer qualify for a small team discount. As your team grows to 20 users or more and gets more value out of Falcon, you'll get closer to our standard monthly price per seat. The price of a paid Falcon plan is tiered, starting in groups of 5 and 10 users, based on the number of people you have in your Team or Organization.</p>
+                  <hr className="my-3"></hr>
                   <h5 className="fs-0">What forms of payment do you accept?</h5>
                   <p className="fs--1">You can purchase Falcon with any major credit card. For annual subscriptions, we can issue an invoice payable by bank transfer or check. Please contact us to arrange an invoice purchase. Monthly purchases must be paid for by credit card.</p>
+                  <hr className="my-3"></hr>
                   <h5 className="fs-0">We need to add more people to our team. How will that be billed?</h5>
                   <p className="fs--1">You can add as many new teammates as you need before changing your subscription. We will subsequently ask you to correct your subscription to cover current usage.</p>
+                  <hr className="my-3"></hr>
                   <h5 className="fs-0">How secure is Falcon?</h5>
                   <p className="fs--1">Protecting the data you trust to Falcon is our first priority. Falcon uses physical, procedural, and technical safeguards to preserve the integrity and security of your information. We regularly back up your data to prevent data loss and aid in recovery. Additionally, we host data in secure SSAE 16 / SOC1 certified data centers, implement firewalls and access restrictions on our servers to better protect your information, and work with third party security researchers to ensure our practices are secure.</p>
                 </div>
                 <div className="col-lg-6">
                   <h5 className="fs-0">Will I be charged sales tax?</h5>
                   <p className="fs--1">As of May 2016, state and local sales tax will be applied to fees charged to customers with a billing address in the State of New York.</p>
+                  <hr className="my-3"></hr>
                   <h5 className="fs-0">Do you offer discounts?</h5>
                   <p className="fs--1">We've built in discounts at each tier for teams smaller than 15 members. We also offer two months for free in exchange for an annual subscription.</p>
+                  <hr className="my-3"></hr>
                   <h5 className="fs-0">Do you offer academic pricing?</h5>
                   <p className="fs--1">We're happy to work with student groups using Falcon. Contact Us</p>
+                  <hr className="my-3"></hr>
                   <h5 className="fs-0">Is there an on-premise version of Falcon?</h5>
                   <p className="fs--1">We are passionate about the web. We don't plan to offer an internally hosted version of Falcon. We hope you trust us to provide a robust and secure service so you can do the work only your team can do.</p>
+                  <hr className="my-3"></hr>
                   <h5 className="fs-0">What is your refund policy?</h5>
                   <p className="fs--1">We do not offer refunds apart from exceptions listed below. If you cancel your plan before the next renewal cycle, you will retain access to paid features until the end of your subscription period. When your subscription expires, you will lose access to paid features and all data associated with those features. Exceptions to our refund policy: canceling within 48 hours of initial charge will result in a full refund. If you cancel within this timeframe, you will lose access to paid features and associated data immediately upon canceling.</p>
                 </div>
@@ -747,7 +763,7 @@ return (
                <div className="container py-3">
                   <div className="justify-content-between row">
                      <div className="col-sm-auto col-12 footer-auto">
-                        <p className="mb-0 text-600"><span className="d-none d-sm-inline-block">Thank you for creating with AlgoCloud  | </span><br className="d-sm-none"/> 2022 © <a className="text-white-2 opacity-85" href="https://headline-inc.com" target="_blank" rel="noopener noreferrer">HEADLINE INC</a></p>
+                        <p className="mb-0 text-600"><span className="d-none d-sm-inline-block">👷 AlgoCloud is in Beta. Please wear a hardhat! | </span><br className="d-sm-none"/> 2022 © <a className="text-white-2 opacity-85" href="https://headline-inc.com" target="_blank" rel="noopener noreferrer">HEADLINE INC</a></p>
                      </div>
                      <div className="col-sm-auto col-12 footer-auto">
                         <p className="mb-0 text-600">v0.0.8</p>
