@@ -349,7 +349,7 @@ return (
                         <h1 className="text-white-2 fw-light">
             Bring
             <Typed
-              strings={['power', 'performance', 'speed', 'perfection']}
+              strings={['power', 'performance', 'speed', 'rocket fuel']}
               typeSpeed={40}
               backSpeed={50}
               className="fw-bold ps-2"
@@ -360,7 +360,7 @@ return (
           </h1>
                         <p className="lead text-white-2 opacity-90">With the unlimited horsepower of AlgoCloud, you can now navigate the Algorand DeFi ecosystem like never before. Pilot your own ship, the stars are the limit!</p>
                         <a role="button" href="/landing#!" className="border-2 rounded-pill mt-4 fs-0 py-2 btn btn-outline-light btn-lg">
-                           Start building on AlgoCloud
+                           Launch AlgoCloud
                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" className="svg-inline--fa fa-play fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" 
                            style={{transformOrigin: '0.75em 0.5625em'}}>
                               <g transform="translate(224 256)">
@@ -423,7 +423,7 @@ return (
                            <svg aria-hidden="true" focusable="false" data-prefix="far" data-icon="object-ungroup" className="svg-inline--fa fa-object-ungroup fa-w-18 me-2" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                               <path fill="currentColor" d="M564 224c6.627 0 12-5.373 12-12v-72c0-6.627-5.373-12-12-12h-72c-6.627 0-12 5.373-12 12v12h-88v-24h12c6.627 0 12-5.373 12-12V44c0-6.627-5.373-12-12-12h-72c-6.627 0-12 5.373-12 12v12H96V44c0-6.627-5.373-12-12-12H12C5.373 32 0 37.373 0 44v72c0 6.627 5.373 12 12 12h12v160H12c-6.627 0-12 5.373-12 12v72c0 6.627 5.373 12 12 12h72c6.627 0 12-5.373 12-12v-12h88v24h-12c-6.627 0-12 5.373-12 12v72c0 6.627 5.373 12 12 12h72c6.627 0 12-5.373 12-12v-12h224v12c0 6.627 5.373 12 12 12h72c6.627 0 12-5.373 12-12v-72c0-6.627-5.373-12-12-12h-12V224h12zM352 64h32v32h-32V64zm0 256h32v32h-32v-32zM64 352H32v-32h32v32zm0-256H32V64h32v32zm32 216v-12c0-6.627-5.373-12-12-12H72V128h12c6.627 0 12-5.373 12-12v-12h224v12c0 6.627 5.373 12 12 12h12v160h-12c-6.627 0-12 5.373-12 12v12H96zm128 136h-32v-32h32v32zm280-64h-12c-6.627 0-12 5.373-12 12v12H256v-12c0-6.627-5.373-12-12-12h-12v-24h88v12c0 6.627 5.373 12 12 12h72c6.627 0 12-5.373 12-12v-72c0-6.627-5.373-12-12-12h-12v-88h88v12c0 6.627 5.373 12 12 12h12v160zm40 64h-32v-32h32v32zm0-256h-32v-32h32v32z"></path>
                            </svg>
-                           Symbiosis
+                           Refraction
                         </h5>
                         <h3>DeFi + Insights</h3>
                         <p>Web 3 plugins available on AlgoCloud interact with our servers to deliver a personalized and highly customizable DeFi experience.</p>
@@ -437,7 +437,7 @@ return (
                         SCALABILITY
                         </h5>
                         <h3>Crypto-native Cloud</h3>
-                        <p>From the Proof-of-Stake sign-on through every consecutive screen; AlgoCloud is designed for optimal blockchain connectivity and constant on-chain interaction.</p>
+                        <p>From Proof-of-Stake sign-on through every consecutive screen, AlgoCloud is designed for optimal blockchain connectivity and constant on-chain interaction.</p>
                      </div>
                   </div>
                </div>
@@ -446,7 +446,7 @@ return (
                <div className="container">
                   <div className="justify-content-center text-center row">
                      <div className="col-xxl-6 col-xxl-6 col-xl-7 col-lg-8">
-                        <h1 className="fs-2 fs-sm-4 fs-md-5">Here's what's waiting for you</h1>
+                        <h1 className="fs-2 fs-sm-4 fs-md-5">Here's what's waiting for you!</h1>
                         <p className="lead">Things HDL holders will get right out of the box with AlgoCloud.</p>
                      </div>
                   </div>
@@ -461,7 +461,8 @@ return (
                            </div>
                            <div className="pt-6 pb-4 card-body">
                               <h5 className="mb-2">Algorand Hub</h5>
-                              <p>Build your webapp with the world's most popular front-end component library along with AlgoCloud's 32 sets of carefully designed elements.</p>
+                              <p>AlgoCloud will be the ultimate Algorand portal. AlgoCloud users will have the oppurtunity to beta test new apps
+                                 that showcase the latest Algorand innovation.  </p>
                            </div>
                         </div>
                      </div>
@@ -478,7 +479,7 @@ return (
                            </div>
                            <div className="pt-6 pb-4 card-body">
                               <h5 className="mb-2">HEADLINE DeFi</h5>
-                              <p>With your purchased copy of AlgoCloud, you will get all the uncompressed &amp; documented SCSS and Javascript source code files.</p>
+                              <p>HEADLINE-native DeFi solutions will be available alongside DeFi aggregators, giving AlgoCloud users an unparalled range of options that cover the risk tollerance spectrum of risk tollerances. </p>
                            </div>
                         </div>
                      </div>
@@ -498,7 +499,8 @@ return (
                            </div>
                            <div className="pt-6 pb-4 card-body">
                               <h5 className="mb-2">TinyMan Analytics</h5>
-                              <p>All the painful or time-consuming tasks in your development workflow such as compiling the SCSS or transpiring the JS are automated.</p>
+                              <p>What beta testers currently have access too. A wealth of live and historical data on the Algorand ecosystem. 
+                                 AlgoCloud APIs deliver blazing fast analytics on the TinyMan AMM.</p>
                            </div>
                         </div>
                      </div>
@@ -514,17 +516,17 @@ return (
             <div className="card-body bg-light pb-0">
               <div className="row">
                 <div className="col-lg-6">
-                  <h5 className="fs-0">How does Falcon's pricing work?</h5>
-                  <p className="fs--1">The free version of Falcon is available for teams of up to 15 people. Our Falcon Premium plans of 15 or fewer qualify for a small team discount. As your team grows to 20 users or more and gets more value out of Falcon, you'll get closer to our standard monthly price per seat. The price of a paid Falcon plan is tiered, starting in groups of 5 and 10 users, based on the number of people you have in your Team or Organization.</p>
+                  <h5 className="fs-0">How does algocloud's pricing work?</h5>
+                  <p className="fs--1">The free version of algocloud is available for teams of up to 15 people. Our algocloud Premium plans of 15 or fewer qualify for a small team discount. As your team grows to 20 users or more and gets more value out of algocloud, you'll get closer to our standard monthly price per seat. The price of a paid algocloud plan is tiered, starting in groups of 5 and 10 users, based on the number of people you have in your Team or Organization.</p>
                   <hr className="my-3"></hr>
                   <h5 className="fs-0">What forms of payment do you accept?</h5>
-                  <p className="fs--1">You can purchase Falcon with any major credit card. For annual subscriptions, we can issue an invoice payable by bank transfer or check. Please contact us to arrange an invoice purchase. Monthly purchases must be paid for by credit card.</p>
+                  <p className="fs--1">You can purchase algocloud with any major credit card. For annual subscriptions, we can issue an invoice payable by bank transfer or check. Please contact us to arrange an invoice purchase. Monthly purchases must be paid for by credit card.</p>
                   <hr className="my-3"></hr>
                   <h5 className="fs-0">We need to add more people to our team. How will that be billed?</h5>
                   <p className="fs--1">You can add as many new teammates as you need before changing your subscription. We will subsequently ask you to correct your subscription to cover current usage.</p>
                   <hr className="my-3"></hr>
-                  <h5 className="fs-0">How secure is Falcon?</h5>
-                  <p className="fs--1">Protecting the data you trust to Falcon is our first priority. Falcon uses physical, procedural, and technical safeguards to preserve the integrity and security of your information. We regularly back up your data to prevent data loss and aid in recovery. Additionally, we host data in secure SSAE 16 / SOC1 certified data centers, implement firewalls and access restrictions on our servers to better protect your information, and work with third party security researchers to ensure our practices are secure.</p>
+                  <h5 className="fs-0">How secure is algocloud?</h5>
+                  <p className="fs--1">Protecting the data you trust to algocloud is our first priority. algocloud uses physical, procedural, and technical safeguards to preserve the integrity and security of your information. We regularly back up your data to prevent data loss and aid in recovery. Additionally, we host data in secure SSAE 16 / SOC1 certified data centers, implement firewalls and access restrictions on our servers to better protect your information, and work with third party security researchers to ensure our practices are secure.</p>
                 </div>
                 <div className="col-lg-6">
                   <h5 className="fs-0">Will I be charged sales tax?</h5>
@@ -534,10 +536,10 @@ return (
                   <p className="fs--1">We've built in discounts at each tier for teams smaller than 15 members. We also offer two months for free in exchange for an annual subscription.</p>
                   <hr className="my-3"></hr>
                   <h5 className="fs-0">Do you offer academic pricing?</h5>
-                  <p className="fs--1">We're happy to work with student groups using Falcon. Contact Us</p>
+                  <p className="fs--1">We're happy to work with student groups using algocloud. Contact Us</p>
                   <hr className="my-3"></hr>
-                  <h5 className="fs-0">Is there an on-premise version of Falcon?</h5>
-                  <p className="fs--1">We are passionate about the web. We don't plan to offer an internally hosted version of Falcon. We hope you trust us to provide a robust and secure service so you can do the work only your team can do.</p>
+                  <h5 className="fs-0">Is there an on-premise version of algocloud?</h5>
+                  <p className="fs--1">We are passionate about the web. We don't plan to offer an internally hosted version of algocloud. We hope you trust us to provide a robust and secure service so you can do the work only your team can do.</p>
                   <hr className="my-3"></hr>
                   <h5 className="fs-0">What is your refund policy?</h5>
                   <p className="fs--1">We do not offer refunds apart from exceptions listed below. If you cancel your plan before the next renewal cycle, you will retain access to paid features until the end of your subscription period. When your subscription expires, you will lose access to paid features and all data associated with those features. Exceptions to our refund policy: canceling within 48 hours of initial charge will result in a full refund. If you cancel within this timeframe, you will lose access to paid features and associated data immediately upon canceling.</p>

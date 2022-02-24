@@ -127,8 +127,8 @@
 }
 
 .navbar-dark button.nav-link.landing-mobile-btn.dropdown-toggle.navbar-toggle.collapsed {
-    color: var(--falcon-navbar-dark-color);
-    border-color: var(--falcon-navbar-dark-toggler-border-color)
+    color: var(--algocloud-navbar-dark-color);
+    border-color: var(--algocloud-navbar-dark-toggler-border-color)
 }
 
 .dropdown-menu-card .card {
@@ -26823,6 +26823,17 @@ input[type=file].form-control-lg {
         flex: 0 0 21.88rem;
         max-width: 21.88rem
     }
+}
+
+.sub-h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.emphasis {
+    text-decoration: underline;
+    text-indent: 0.8rem;
+    font-weight: bold;
 }
 
 .safari .contacts-list {
