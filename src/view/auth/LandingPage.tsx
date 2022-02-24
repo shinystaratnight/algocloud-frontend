@@ -737,7 +737,6 @@ return (
          </div>
       </section>
    </main>
-   <script src="assets/react-typed.js"></script>
 </Wrapper>
 );
 }
