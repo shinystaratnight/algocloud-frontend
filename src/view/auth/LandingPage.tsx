@@ -103,29 +103,10 @@ return (
                            </div>
                         </div> 
                         <div className="dropdown">
-                           <a className="nav-link fw-semi-bold dropdown-toggle"aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/">Press</a>
-                           <div aria-labelledby="react-aria3374201582-22" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
-                              <div className="shadow-none dark__bg-1000 navbar-card-app card">
-                                 <div className="scrollbar max-h-dropdown card-body">
-                                    <img src="/assets/img/nav-icons/authentication-corner.f8e7f312.png" alt="" className="img-dropdown" width="130"/>
-                                    <div className="row">
-                                       <div className="col-md-5">
-                                          <div className="flex-column navbar-nav">
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/app/calendar">Calendar</a><a className="fw-medium py-1 link-600 nav-link" href="/app/chat">Chat</a><a className="fw-medium py-1 link-600 nav-link" href="/app/kanban">Kanban</a>
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Email</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/email/inbox">Inbox</a><a className="fw-medium py-1 link-600 nav-link" href="/email/email-detail">Email detail</a><a className="fw-medium py-1 link-600 nav-link" href="/email/compose">Compose</a>
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Events</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/events/create-an-event">Create an event</a><a className="fw-medium py-1 link-600 nav-link" href="/events/event-detail">Event detail</a><a className="fw-medium py-1 link-600 nav-link" href="/events/event-list">Event list</a>
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Social</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/social/feed">Feed</a><a className="fw-medium py-1 link-600 nav-link" href="/social/activity-log">Activity log</a><a className="fw-medium py-1 link-600 nav-link" href="/social/notifications">Notifications</a><a className="fw-medium py-1 link-600 nav-link" href="/social/followers">Followers</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-md-5">
-                                          <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">E Commerce</p>
-                                          <a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/product/product-list">Product list</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/product/product-grid">Product grid</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/product/product-details">Product details</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/orders/order-list">Order list</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/orders/order-details">Order details</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/customers">Customers</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/customer-details">Customer details</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/shopping-cart">Shopping cart</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/checkout">Checkout</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/billing">Billing</a><a className="fw-medium py-1 link-600 nav-link" href="/e-commerce/invoice">Invoice</a>
-                                       </div>
-                                    </div>
-                                 </div>
+                           <a className="nav-link fw-semi-bold dropdown-toggle" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/">Press</a>
+                           <div aria-labelledby="react-aria3374201582-20" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
+                              <div className="shadow-none dark__bg-1000 card">
+                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/">Crypto Slate</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/analytics">Analytics</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/crm">CRM</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/e-commerce">E Commerce</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/project-management">Management</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/dashboard/saas">SaaS</a></div>
                               </div>
                            </div>
                         </div>
@@ -138,126 +119,68 @@ return (
                                     <div className="row">
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Simple Auth</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/login">Login</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/logout">Logout</a>              
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/register">Register</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/forgot-password">Forgot password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/confirm-mail">Confirm mail</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/reset-password">Reset password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/lock-screen">Lock screen</a>
+                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">DeFi Projects</p>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/login">Yieldly</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/logout">TinyMan</a>              
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/register">AlgoMint</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/forgot-password">AlgoFi</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/confirm-mail">PactFi</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/reset-password">Folks Financed</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/simple/lock-screen">C3 Protocol</a>
                                           </div>
+                                       </div>
+
+                                       <div className="col-xxl-3 col-6">
+                                          <div className="flex-column navbar-nav">
+
                                        </div>
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Card Auth</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/card/login">Login</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/card/logout">Logout</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/card/register">Register</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/card/forgot-password">Forgot password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/card/confirm-mail">Confirm mail</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/card/reset-password">Reset password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/card/lock-screen">Lock screen</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Split Auth</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/login">Login</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/logout">Logout</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/register">Register</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/forgot-password">Forgot password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/confirm-mail">Confirm mail</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/reset-password">Reset password</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/lock-screen">Lock screen</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Other Auth</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/wizard">Wizard</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication-modal">Modal</a>
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Miscellaneous</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/miscellaneous/associations">Associations</a><a className="fw-medium py-1 link-600 nav-link" href="/miscellaneous/invite-people">Invite people</a><a className="fw-medium py-1 link-600 nav-link" href="/miscellaneous/privacy-policy">Privacy policy</a>
+                                          <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Analytics</p>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/user/profile">TinyChart</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/pricing/pricing-default">TinyHero</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/pricing/pricing-alt">ASA Stats</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/errors/404">Algogator</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/user/settings">AlgoCharts</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/pages/starter">ASAlytic</a>
                                           </div>
                                        </div>
                                     </div>
-                                    <div className="row">
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">User</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/user/profile">Profile</a><a className="fw-medium py-1 link-600 nav-link" href="/user/settings">Settings</a>
+                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">NFT Marketplaces</p>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/login">AlgoGems</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/logout">AB2 Gallery</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/register">Rand Gallery</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/forgot-password">NFT Explorer</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/confirm-mail">Dartroom</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication/split/reset-password">Zest Bloom</a>
                                           </div>
                                        </div>
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Pricing</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/pricing/pricing-default">Pricing default</a><a className="fw-medium py-1 link-600 nav-link" href="/pricing/pricing-alt">Pricing alt</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Errors</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/errors/404">404</a><a className="fw-medium py-1 link-600 nav-link" href="/errors/500">500</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Others</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/pages/starter">Starter</a><a className="fw-medium py-1 link-600 nav-link" href="/landing">Landing</a>
+                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">DAOs</p>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/authentication/wizard">XBacked</a><a className="fw-medium py-1 link-600 nav-link" href="/authentication-modal">AlgodMonitor</a>
+                                             <a className="fw-medium py-1 link-600 nav-link" href="/miscellaneous/associations">AlgoDAO</a><a className="fw-medium py-1 link-600 nav-link" href="/miscellaneous/invite-people">Acorn</a> 
                                           </div>
                                        </div>
                                     </div>
+                                    
                                  </div>
                               </div>
                            </div>
                         </div>
                         <div className="dropdown">
-                           <a className="nav-link fw-semi-bold dropdown-toggle" role="button" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false"  href="/landing#!">HEADLINE</a>
-                           <div aria-labelledby="react-aria3374201582-26" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
-                              <div className="shadow-none dark__bg-1000 navbar-card-components card">
-                                 <div className="scrollbar max-h-dropdown card-body">
-                                    <img src="/assets/img/nav-icons/authentication-corner.f8e7f312.png" alt="" className="img-dropdown" width="130"/>
-                                    <div className="row">
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Projects</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/components/alerts">Alerts</a><a className="fw-medium py-1 link-600 nav-link" href="/components/accordion">Accordion</a><a className="fw-medium py-1 link-600 nav-link" href="/components/animated-icons">Animated icons</a><a className="fw-medium py-1 link-600 nav-link" href="/components/background">Background</a><a className="fw-medium py-1 link-600 nav-link" href="/components/badges">Badges</a><a className="fw-medium py-1 link-600 nav-link" href="/components/breadcrumb">Breadcrumbs</a><a className="fw-medium py-1 link-600 nav-link" href="/components/buttons">Buttons</a><a className="fw-medium py-1 link-600 nav-link" href="/components/calendar">Calendar</a><a className="fw-medium py-1 link-600 nav-link" href="/components/cards">Cards</a><a className="fw-medium py-1 link-600 nav-link" href="/components/carousel/bootstrap">Bootstrap</a><a className="fw-medium py-1 link-600 nav-link" href="/components/carousel/slick">Slick</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column mt-4 navbar-nav"><a className="fw-medium py-1 link-600 nav-link" href="/components/collapse">Collapse</a><a className="fw-medium py-1 link-600 nav-link" href="/components/cookie-notice">Cookie notice</a><a className="fw-medium py-1 link-600 nav-link" href="/components/countup">Countup</a><a className="fw-medium py-1 link-600 nav-link" href="/components/draggable">Draggable</a><a className="fw-medium py-1 link-600 nav-link" href="/components/dropdowns">Dropdowns</a><a className="fw-medium py-1 link-600 nav-link" href="/components/list-group">List group</a><a className="fw-medium py-1 link-600 nav-link" href="/components/modals">Modals</a><a className="fw-medium py-1 link-600 nav-link" href="/components/offcanvas">Offcanvas</a><a className="fw-medium py-1 link-600 nav-link" href="/components/navs-and-tabs/navs">Navs</a><a className="fw-medium py-1 link-600 nav-link" href="/components/navs-and-tabs/navbar">Navbar</a><a className="fw-medium py-1 link-600 nav-link" href="/components/navs-and-tabs/vertical-navbar">Vertical navbar</a></div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column mt-xxl-4 navbar-nav"><a className="fw-medium py-1 link-600 nav-link" href="/components/navs-and-tabs/top-navbar">Top navbar</a><a className="fw-medium py-1 link-600 nav-link" href="/components/navs-and-tabs/combo-navbar">Combo navbar</a><a className="fw-medium py-1 link-600 nav-link" href="/components/navs-and-tabs/tabs">Tabs</a><a className="fw-medium py-1 link-600 nav-link" href="/components/pictures/avatar">Avatar</a><a className="fw-medium py-1 link-600 nav-link" href="/components/pictures/images">Images</a><a className="fw-medium py-1 link-600 nav-link" href="/components/pictures/figures">Figures</a><a className="fw-medium py-1 link-600 nav-link" href="/components/pictures/hoverbox">Hoverbox</a><a className="fw-medium py-1 link-600 nav-link" href="/components/pictures/lightbox">Lightbox</a><a className="fw-medium py-1 link-600 nav-link" href="/components/progress-bar">Progress Bar</a><a className="fw-medium py-1 link-600 nav-link" href="/components/pagination">Pagination</a><a className="fw-medium py-1 link-600 nav-link" href="/components/placeholder">Placeholder</a></div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column mt-xxl-4 navbar-nav"><a className="fw-medium py-1 link-600 nav-link" href="/components/popovers">Popovers</a><a className="fw-medium py-1 link-600 nav-link" href="/components/scrollspy">Scrollspy</a><a className="fw-medium py-1 link-600 nav-link" href="/components/search">Search</a><a className="fw-medium py-1 link-600 nav-link" href="/components/spinners">Spinners</a><a className="fw-medium py-1 link-600 nav-link" href="/components/toasts">Toasts</a><a className="fw-medium py-1 link-600 nav-link" href="/components/tooltips">Tooltips</a><a className="fw-medium py-1 link-600 nav-link" href="/components/treeview">Treeview</a><a className="fw-medium py-1 link-600 nav-link" href="/components/typed-text">Typed text</a><a className="fw-medium py-1 link-600 nav-link" href="/components/videos/embed">Embed</a><a className="fw-medium py-1 link-600 nav-link" href="/components/videos/react-player">React Player</a></div>
-                                       </div>
+                           <a className="nav-link fw-semi-bold dropdown-toggle" role="button" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/landing#!">HEADLINE</a>
+                           <div aria-labelledby="react-aria3374201582-28" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
+                              <div className="shadow-none dark__bg-1000 card sj-col">
+                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body sj-col-2">
+                                 <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link sj-color">Projects</p>
+                                    <a className="link-600 dropdown-item" href="https://www.pipeline-ui.com">PIPELINE-UI</a><a className="link-600 dropdown-item" href="https://algopay.finance">AlgoPay</a><a className="link-600 dropdown-item" href="https://algo-glyph.vercel.app">AlgoGlyph</a><a className="link-600 dropdown-item" href="https://forum.ax/">FORUM</a><a className="link-600 dropdown-item" href="https://daotools.org">DAO Tools</a><a className="link-600 dropdown-item" href="https://algopay.finance/algoswap">AlgoSwap</a><a className="link-600 dropdown-item" href="https://algoastros.com/">AlgoAstros</a><a className="link-600 dropdown-item" href="https://www.libra-network.com">Libra Network</a><a className="link-600 dropdown-item" href="https://www.libra-network.com/bias-barometer">Bias Barometer</a><a className="link-600 dropdown-item" href="https://algocloud.org">AlgoCloud</a>
                                     </div>
-                                    <div className="row">
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Forms</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/forms/basic/form-control">Form control</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/basic/input-group">Input group</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/basic/select">Select</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/basic/checks">Checks</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/basic/range">Range</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/basic/layout">Layout</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/advance/advance-select">Advance select</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/advance/date-picker">Date picker</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/advance/editor">Editor</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/advance/emoji-button">Emoji button</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/advance/file-uploader">File uploader</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/advance/rating">Rating</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/floating-labels">Floating labels</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/wizard">Wizard</a><a className="fw-medium py-1 link-600 nav-link" href="/forms/validation">Validation</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Social Media</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/tables/basic-tables">Basic tables</a><a className="fw-medium py-1 link-600 nav-link" href="/tables/advance-tables">Advance tables</a>
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Charts</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/charts/chartjs">Chartjs</a>
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">ECharts</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/how-to-use">How to use</a><a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/line-charts">Line charts</a><a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/bar-charts">Bar charts</a><a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/candlestick-charts">Candlestick charts</a><a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/geo-map">Geo map</a><a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/scatter-charts">Scatter charts</a><a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/pie-charts">Pie charts</a><a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/radar-charts">Radar charts</a><a className="fw-medium py-1 link-600 nav-link" href="/charts/echarts/heatmap-charts">Heatmap charts</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Utilities</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/utilities/borders">Borders</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/colors">Colors</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/colored-links">Colored links</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/display">Display</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/flex">Flex</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/float">Float</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/grid">Grid</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/scroll-bar">Scroll Bar</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/position">Position</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/spacing">Spacing</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/sizing">Sizing</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/stretched-link">Stretched link</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/text-truncation">Text truncation</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/typography">Typography</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/vertical-align">Vertical align</a><a className="fw-medium py-1 link-600 nav-link" href="/utilities/visibility">Visibility</a>
-                                          </div>
-                                       </div>
-                                       <div className="col-xxl-3 col-6">
-                                          <div className="flex-column navbar-nav">
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Icons</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/icons/font-awesome">Font awesome</a><a className="fw-medium py-1 link-600 nav-link" href="/icons/react-icons">React icons</a>
-                                             <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link">Maps</p>
-                                             <a className="fw-medium py-1 link-600 nav-link" href="/maps/google-map">Google map</a><a className="fw-medium py-1 link-600 nav-link" href="/maps/leaflet-map">Leaflet map</a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </div>
+                                    <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body sj-col-2">
+                                    <p className="fw-medium text-500 text-700 mb-0 fw-bold nav-link sj-color">Social</p>
+                                                                              <a className="link-600 dropdown-item" href="https://t.me/headline_crypto">Telegram</a><a className="link-600 dropdown-item" href="https://www.reddit.com/r/HEADLINECrypto">Reddit</a><a className="link-600 dropdown-item" href="https://twitter.com/headline_crypto">Twitter</a><a className="link-600 dropdown-item" href="https://www.getrevue.co/profile/headline_crypto">Dispatch</a><a className="link-600 dropdown-item" href="https://discord.gg/qDcfQWny3H">Discord</a><a className="link-600 dropdown-item" href="https://forum.ax">FORUM</a><a className="link-600 dropdown-item" href="#">AlgoChat</a>
+</div>   
                               </div>
+                              
                            </div>
                         </div>
                         <div className="dropdown">
                            <a className="nav-link fw-semi-bold dropdown-toggle" role="button" aria-haspopup="true" data-bs-toggle="dropdown" data-hide-on-body-scroll="data-hide-on-body-scroll" data-toggle="dropdown" aria-expanded="false" href="/landing#!">Algorand</a>
                            <div aria-labelledby="react-aria3374201582-28" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 card">
-                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/getting-started">Algorand Foundation</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/configuration">Algorand Inc</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/styling">Developer Portal</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/dark-mode">CoinMarketCap</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/plugin">GitHub</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/documentation/design-file">Twitter</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="/changelog">YouTube</a></div>
+                                 <div className="scrollbar max-h-dropdown p-0 py-2 px-2 card-body"><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://algorand.foundation">Algorand Foundation</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://www.algorand.com">Algorand Inc</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://developer.algorand.org">Developer Portal</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://coinmarketcap.com/currencies/algorand">CoinMarketCap</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://github.com/algorand">GitHub</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://twitter.com/algorand">Twitter</a><a data-rr-ui-dropdown-item="" className="link-600 dropdown-item" href="https://www.youtube.com/channel/UCYqAUajjZd0PuHyHslY_8Ww">YouTube</a></div>
                               </div>
                            </div>
                         </div>
@@ -333,9 +256,9 @@ return (
               autoComplete="password"
               type="password"
             /></div><div className="justify-content-between align-items-center row"><div className="col-auto">
-               <div className="form-check mb-0">                
+               <div className="form-check mb-0 text-600">                
                     <input
-                  className={"form-check-input"}
+                  className={"form-check-input "}
 
                   type={"checkbox"}
                   id={'rememberMe'}
@@ -367,7 +290,7 @@ return (
               <ButtonIcon loading={loading} />{' '}
               {i18n('auth.signin')}
             </button></div></div>
-                        <div className="w-100 position-relative text-center mt-4"><hr className="text-300"/><div className="divider-content-center">or log in with</div></div><div className="mb-0">
+                        <div className="w-100 position-relative text-center mt-4"><hr className="text-300"/><div className="divider-content-center text-600">or log in with</div></div><div className="mb-0">
                            <div className="row">
                         <SocialButtons className="mt-0">
         <div className="row g-2 mt-2 w-100">
@@ -654,8 +577,14 @@ return (
                <div className="container">
                   <div className="justify-content-center text-center row">
                      <div className="col-lg-8">
-                        <p className="fs-3 fs-sm-4 text-white-footer">Join our community of 20,000+ developers and content creators on their mission to build better sites and apps.</p>
-                        <button type="button" className="border-2 rounded-pill mt-4 fs-0 py-2 btn btn-outline-light btn-lg">Start your journey</button>
+                        <p className="fs-3 fs-sm-4 text-white-footer">Join our HDL Algorand community of 20,000+ developers, degens, and creators on their mission to build the future of finance.</p>
+                        <Link className="border-2 rounded-pill mt-4 fs-0 py-2 btn btn-outline btn-lg btn-primary"
+                
+                to="/auth/signup"
+              >
+                {i18n('Start your journey')}
+              </Link>
+              
                      </div>
                   </div>
                </div>
@@ -678,27 +607,27 @@ return (
                         <h5 className="text-uppercase text-white-2 opacity-85 mb-3">Our Mission</h5>
                         <p className="text-600">AlgoCloud enables front end developers to build custom streamlined user interfaces in a matter of hours, while it gives backend developers all the UI elements they need to develop their web app.And it's rich design can be easily integrated with backends whether your app is based on ruby on rails, laravel, express or any other server side system.</p>
                         <div className="icon-group mt-4">
-                           <a className="icon-item bg-white text-facebook" href="#!">
+                           <a className="icon-item bg-white text-facebook" href="https://twitter.com/headline_crypto">
                               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" className="svg-inline--fa fa-facebook-f fa-w-10 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
                                  <path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"></path>
                               </svg>
                            </a>
-                           <a className="icon-item bg-white text-twitter" href="#!">
+                           <a className="icon-item bg-white text-twitter" href="https://twitter.com/headline_crypto">
                               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="twitter" className="svg-inline--fa fa-twitter fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                  <path fill="currentColor" d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path>
                               </svg>
                            </a>
-                           <a className="icon-item bg-white text-google-plus" href="#!">
+                           <a className="icon-item bg-white text-google-plus" href="https://twitter.com/headline_crypto">
                               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google-plus-g" className="svg-inline--fa fa-google-plus-g fa-w-20 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
                                  <path fill="currentColor" d="M386.061 228.496c1.834 9.692 3.143 19.384 3.143 31.956C389.204 370.205 315.599 448 204.8 448c-106.084 0-192-85.915-192-192s85.916-192 192-192c51.864 0 95.083 18.859 128.611 50.292l-52.126 50.03c-14.145-13.621-39.028-29.599-76.485-29.599-65.484 0-118.92 54.221-118.92 121.277 0 67.056 53.436 121.277 118.92 121.277 75.961 0 104.513-54.745 108.965-82.773H204.8v-66.009h181.261zm185.406 6.437V179.2h-56.001v55.733h-55.733v56.001h55.733v55.733h56.001v-55.733H627.2v-56.001h-55.733z"></path>
                               </svg>
                            </a>
-                           <a className="icon-item bg-white text-linkedin" href="#!">
+                           <a className="icon-item bg-white text-linkedin" href="https://www.linkedin.com/company/hdlne">
                               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="linkedin-in" className="svg-inline--fa fa-linkedin-in fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                                  <path fill="currentColor" d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path>
                               </svg>
                            </a>
-                           <a className="icon-item bg-white text-700" href="#!">
+                           <a className="icon-item bg-white text-700" href="https://twitter.com/headline_crypto">
                               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="medium-m" className="svg-inline--fa fa-medium-m fa-w-16 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                  <path fill="currentColor" d="M71.5 142.3c.6-5.9-1.7-11.8-6.1-15.8L20.3 72.1V64h140.2l108.4 237.7L364.2 64h133.7v8.1l-38.6 37c-3.3 2.5-5 6.7-4.3 10.8v272c-.7 4.1 1 8.3 4.3 10.8l37.7 37v8.1H307.3v-8.1l39.1-37.9c3.8-3.8 3.8-5 3.8-10.8V171.2L241.5 447.1h-14.7L100.4 171.2v184.9c-1.1 7.8 1.5 15.6 7 21.2l50.8 61.6v8.1h-144v-8L65 377.3c5.4-5.6 7.9-13.5 6.5-21.2V142.3z"></path>
                               </svg>
@@ -710,46 +639,45 @@ return (
                            <div className="col-md-3 col-6">
                               <h5 className="text-uppercase text-white-2 opacity-85 mb-3">Company</h5>
                               <ul className="list-unstyled">
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">About</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Contact</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Careers</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Blog</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Terms</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Privacy</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Imprint</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://www.headline-inc.com/history/overview">About</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://www.headline-inc.com/contact/community-landline">Contact</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://www.headline-inc.com/organization/team">Careers</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">Blog</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://www.headline-inc.com/terms-of-use/">Terms</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://www.headline-inc.com/help/privacy">Privacy</a></li>
                               </ul>
                            </div>
                            <div className="col-md-3 col-6">
                               <h5 className="text-uppercase text-white-2 opacity-85 mb-3">Product</h5>
                               <ul className="list-unstyled">
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Features</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Roadmap</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Changelog</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Pricing</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Docs</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">System Status</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Agencies</a></li>
-                                 <li className="mb-1"><a className="text-600" href="/landing#!">Enterprise</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">Features</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">Roadmap</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">Changelog</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">Pricing</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">Docs</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">System Status</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">Agencies</a></li>
+                                 <li className="mb-1"><a className="text-600" href="https://twitter.com/headline_crypto">Enterprise</a></li>
                               </ul>
                            </div>
                            <div className="mt-5 mt-md-0 col">
-                              <h5 className="text-uppercase text-white-2 opacity-85 mb-3">From the Blog</h5>
+                              <h5 className="text-uppercase text-white-2 opacity-85 mb-3">In the News</h5>
                               <ul className="list-unstyled">
                                  <li>
-                                    <h5 className="fs-0 mb-0"><a className="text-600" href="/landing#!">Interactive graphs and charts</a></h5>
-                                    <p className="text-600 opacity-50">Jan 15 • 8min read </p>
+                                    <h5 className="fs-0 mb-0"><a className="text-600" href="https://cryptoslate.com/worlds-first-embeddable-dex-algoswap-launches-on-algorand">"World's First Embeddable DEX"</a></h5>
+                                    <p className="text-600 opacity-50">Jan 15 • 2min read <span>★</span></p>
                                  </li>
                                  <li>
-                                    <h5 className="fs-0 mb-0"><a className="text-600" href="/landing#!">Lifetime free updates</a></h5>
-                                    <p className="text-600 opacity-50">Jan 5 • 3min read <span>★</span></p>
+                                    <h5 className="fs-0 mb-0"><a className="text-600" href="https://algonaut.space/headline-algorand">"Algorand's Ecosystem Builder"</a></h5>
+                                    <p className="text-600 opacity-50">Jan 5 • 8min read </p>
                                  </li>
                                  <li>
-                                    <h5 className="fs-0 mb-0"><a className="text-600" href="/landing#!">Merry Christmas From us</a></h5>
-                                    <p className="text-600 opacity-50">Dec 25 • 2min read </p>
+                                    <h5 className="fs-0 mb-0"><a className="text-600" href="https://algorand.foundation/news/headline-inc-development-award">"Groundbreaking On-Ramp Solution"</a></h5>
+                                    <p className="text-600 opacity-50">Dec 25 • 4min read </p>
                                  </li>
                                  <li>
-                                    <h5 className="fs-0 mb-0"><a className="text-600" href="/landing#!">The AlgoCloud Experience</a></h5>
-                                    <p className="text-600 opacity-50">Dec 23 • 10min read </p>
+                                    <h5 className="fs-0 mb-0"><a className="text-600" href="https://www.benzinga.com/pressreleases/22/01/g25287521/dolphin-defenders-algorand-start-up-headline-inc-makes-a-splash-with-a-new-csr-initiative">"Dolphin Defenders"</a></h5>
+                                    <p className="text-600 opacity-50">Dec 23 • 6min read </p>
                                  </li>
                               </ul>
                            </div>

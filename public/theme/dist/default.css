@@ -20977,7 +20977,6 @@ pre[class*=language-] {
     padding-right: .5rem;
     background-color: var(--algocloud-card-bg);
     font-size: .8333333333rem;
-    color: var(--algocloud-500);
     white-space: nowrap
 }
 
@@ -30337,7 +30336,8 @@ button,input,optgroup,select,textarea {
     --algocloud-btn-link-color-2: #fff;
     --algocloud-hover-bg-black: #000;
     --algocloud-btn-link-color: var(--accent-brand);
-    --algocloud-dashboard-landing: url(/assets/dashboard-darkMode.png)
+    --algocloud-dashboard-landing: url(/assets/dashboard-darkMode.png);
+    --algocloud-text-600: color: #a3a3a3;
 }
 
 .pool-token-1,.pool-token-2 {
@@ -30447,4 +30447,23 @@ svg.signal-icon {
 
 .position-absolute.btn-back-to-top.cursor-pointer.bg-dark-2:hover {
     background-color: var(--accent-brand-darker) !important;
+} 
+
+p.fw-medium.text-500.text-700.mb-0.fw-bold.nav-link.text-info {
+    color: var(--accent-brand-darker) !important;
+    text-decoration: underline;
+}
+
+.shadow-none.dark__bg-1000.card.sj-col {
+    display: flex;
+    flex-direction: row;
+}
+
+.sj-col-2 {
+    min-width: 8rem !important;
+    padding-bottom: 1rem !important;
+}
+
+p.fw-medium.text-500.text-700.mb-0.fw-bold.nav-link.sj-color {
+    padding-left: 1rem !important;
 }
