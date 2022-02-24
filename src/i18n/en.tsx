@@ -231,8 +231,8 @@ const en = {
     },
     createAnAccount: 'Create an account',
     rememberMe: 'Remember me',
-    forgotPassword: 'Forgot password',
-    signin: 'Sign in',
+    forgotPassword: 'Forget password?',
+    signin: 'Log in',
     signup: 'Sign up',
     signout: 'Sign out',
     alreadyHaveAnAccount:

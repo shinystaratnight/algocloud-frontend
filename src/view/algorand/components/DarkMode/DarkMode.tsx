@@ -61,8 +61,8 @@ const DarkMode = () => {
             <div className="darkmode-toggle" 
                               style={{
                                 display: 'none',}}
-                              ><i className="fas fa-moon"></i> Darkmode</div>
-            <div className="lightmode-toggle"><i className="fas fa-sun"></i> Lightmode</div>
+                              ><i id="moon" className="fas fa-moon"></i> Darkmode</div>
+            <div className="lightmode-toggle"><i id="sun" className="fas fa-sun"></i> Lightmode</div>
                 <input
                     type="checkbox"
                     id="checkbox"
