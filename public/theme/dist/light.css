@@ -1,3 +1,21 @@
+.auth-page {
+    width: unset !important;
+    height: unset !important;
+    min-height: unset !important;
+    overflow-y: unset !important;
+    z-index: unset !important;
+    position: unset !important;
+    display: unset !important;
+    display: unset !important;
+    display: unset !important;
+    display: unset !important;
+    -webkit-flex-direction: unset !important;
+    -ms-flex-direction: unset !important;
+    flex-direction: unset !important;
+    padding: unset !important;
+    position: unset !important;
+}
+
 .btn-outline-facebook {
     color: #3c5a99 !important;
     border-color: #3c5a99 !important;
