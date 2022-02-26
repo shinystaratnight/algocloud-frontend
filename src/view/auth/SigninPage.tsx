@@ -105,12 +105,12 @@ backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
 <Content className="auth-page">
    <main className="main" id="main">
       <div className="container-fluid" style={{overflow: "hidden"}}>
-      <div className="min-vh-100 row" style={{backgroundColor: "var(--algocloud-modal-content-bg) "}}>
-      <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--body-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
+      <div className="min-vh-100 row" style={{backgroundColor: "var(--auth-login-pane) "}}>
+      <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--auth-login-pane-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
       </div>
       <div className="px-sm-0 align-self-center mx-auto py-0 col-sm-10 col-md-6">
          <div className="justify-content-center no-gutters row">
-            <div className="col-xxl-6 col-lg-9 col-xl-8">
+            <div className="col-xxl-6 col-lg-9 col-xl-9">
                <div className="card-2">
                   <div className="card-header text-center p-2">
                      <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}>
@@ -212,7 +212,7 @@ backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
                            </div>
                            <div className="position-relative mt-4">
                               <hr className="bg-300" />
-                              <div className="divider-content-center text-600" style={{backgroundColor: "var(--algocloud-modal-content-bg) "}} >or log in with
+                              <div className="divider-content-center text-600" style={{backgroundColor: "var(--auth-login-pane) "}} >or log in with
                            </div>
                   </div>
                   <form >

@@ -57,23 +57,23 @@ const DashboardPage = (props) => {
 </div>
     <div className="alert alert-warning alert-dismissible fade show" role="alert">
   <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-  <button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+  <button className="btn-close" type="button" data-dismiss="alert" aria-label="Close"></button>
 </div>
     <div className="alert alert-success border-2 d-flex align-items-center" role="alert">
   <div className="bg-success me-3 icon-item"><span className="fas fa-check-circle text-white fs-3"></span></div>
-  <p className="mb-0 flex-1">A simple success alert—check it out!</p><button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+  <p className="mb-0 flex-1">A simple success alert—check it out!</p><button className="btn-close" type="button" data-dismiss="alert" aria-label="Close"></button>
 </div>
 <div className="alert alert-info border-2 d-flex align-items-center" role="alert">
   <div className="bg-info me-3 icon-item"><span className="fas fa-info-circle text-white fs-3"></span></div>
-  <p className="mb-0 flex-1">A simple info alert—check it out!</p><button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+  <p className="mb-0 flex-1">A simple info alert—check it out!</p><button className="btn-close" type="button" data-dismiss="alert" aria-label="Close"></button>
 </div>
 <div className="alert alert-warning border-2 d-flex align-items-center" role="alert">
   <div className="bg-warning me-3 icon-item"><span className="fas fa-exclamation-circle text-white fs-3"></span></div>
-  <p className="mb-0 flex-1">A simple warning alert—check it out!</p><button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+  <p className="mb-0 flex-1">A simple warning alert—check it out!</p><button className="btn-close" type="button" data-dismiss="alert" aria-label="Close"></button>
 </div>
 <div className="alert alert-danger border-2 d-flex align-items-center" role="alert">
   <div className="bg-danger me-3 icon-item"><span className="fas fa-times-circle text-white fs-3"></span></div>
-  <p className="mb-0 flex-1">A simple danger alert—check it out!</p><button className="btn-close" type="button" data-bs-dismiss="alert" aria-label="Close"></button>
+  <p className="mb-0 flex-1">A simple danger alert—check it out!</p><button className="btn-close" type="button" data-dismiss="alert" aria-label="Close"></button>
 </div>
     <div className="crayons-snackbar__item flex" data-testid="snackbar">
   <div className="crayons-snackbar__body" role="alert">

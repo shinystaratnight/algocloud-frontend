@@ -61,19 +61,19 @@ return (
 
 <Wrapper className="main signin"
 style={{
-backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
+backgroundImage: `url(${backgroundImageUrl || '/'
 })`,
 }}
 >
 <Content className="auth-page">
 <main className="main" id="main">
    <div className="container-fluid" style={{overflow: "hidden"}}>
-      <div className="min-vh-100 row" style={{backgroundColor: "var(--algocloud-modal-content-bg) "}}>
-         <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--body-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
+      <div className="min-vh-100 row" style={{backgroundColor: "var(--auth-login-pane) "}}>
+         <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--auth-login-pane-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
          </div>
          <div className="px-sm-0 align-self-center mx-auto py-0 col-sm-10 col-md-6">
             <div className="justify-content-center no-gutters row">
-               <div className="col-xxl-6 col-lg-9 col-xl-8">
+               <div className="col-xxl-6 col-lg-9 col-xl-9">
                <div className="card-2">
       <div className="card-header text-center p-2">
          <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}>
@@ -129,9 +129,12 @@ backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
                </div>
                <OtherActions>
                   <Link
-                     className="c-link c-link--branded c-link--block w-100"
+                     className="c-link c-link--branded c-link--block w-100 align-items-center"
                      to="/auth/signin"
                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left-circle m-1" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+        </svg>
                   {i18n('auth.alreadyHaveAnAccount')}
                   </Link>
                </OtherActions>

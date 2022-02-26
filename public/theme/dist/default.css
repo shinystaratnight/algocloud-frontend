@@ -1,160 +1,3 @@
-.auth-page {
-    width: unset !important;
-    height: unset !important;
-    min-height: unset !important;
-    overflow-y: unset !important;
-    z-index: unset !important;
-    position: unset !important;
-    display: unset !important;
-    display: unset !important;
-    display: unset !important;
-    display: unset !important;
-    -webkit-flex-direction: unset !important;
-    -ms-flex-direction: unset !important;
-    flex-direction: unset !important;
-    padding: unset !important;
-    position: unset !important;
-}
-
-.crayons-field--checkbox .crayons-field__label, .crayons-field--radio .crayons-field__label {
-    margin-top: 0;
-    padding-right: var(--su-2);
-}
-.crayons-field--checkbox .crayons-field__label, .crayons-field--radio .crayons-field__label {
-    margin-top: 0;
-    padding-right: var(--su-2);
-}
-.crayons-field>*+* {
-    margin-top: var(--su-2);
-}
-.crayons-field__label {
-    color: var(--label-primary);
-    font-weight: var(--fw-medium);
-    cursor: pointer;
-}
-
-.crayons-field.crayons-field--checkbox {
-    align-items: center;
-}
-
-.crayons-field.crayons-field--checkbox.crayons-block {
-    cursor: pointer;
-}
-
-.crayons-field .crayons-checkbox, .crayons-field .crayons-radio {
-    margin: 0.1875em;
-    justify-self: center;
-}
-
-.crayons-field .crayons-checkbox, .crayons-field .crayons-radio {
-    margin: 0.1875em;
-    justify-self: center;
-}
-textarea, input:not([type=hidden]), button {
-    outline: 0;
-}
-.crayons-checkbox, .crayons-radio {
-    width: 1.125em;
-    height: 1.125em;
-    cursor: pointer;
-    background-position: center center;
-    vertical-align: middle;
-    flex-shrink: 0;
-}
-.crayons-textfield, .crayons-checkbox, .crayons-radio, .crayons-select, .crayons-color-selector {
-    --border-width: 1px;
-    background-color: var(--form-bg);
-    border: var(--border-width) solid var(--form-border);
-    color: var(--body-color);
-    appearance: none;
-    -webkit-appearance: none;
-    border-radius: var(--radius);
-    transition: all var(--transition-props);
-    cursor: pointer;
-}
-
-.crayons-field .crayons-checkbox, .crayons-field .crayons-radio {
-    margin: 0.1875em;
-    justify-self: center;
-}
-
-.crayons-checkbox--checked, .crayons-checkbox:checked, .crayons-radio--checked, .crayons-radio:checked {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.157.933a.75.75 0 01.077 1.058L4.817 9.407a.75.75 0 01-1.134 0L.766 6.037a.75.75 0 011.135-.982L4.25 7.77l5.85-6.76a.75.75 0 011.057-.077z' fill='%23fff'/%3E%3C/svg%3E");
-}
-.crayons-checkbox--checked, .crayons-checkbox:checked, .crayons-radio--checked, .crayons-radio:checked {
-    background-color: var(--form-border-focus);
-    border-color: var(--form-border-focus);
-    color: var(--form-bg-focus);
-    background-position: center center;
-    background-repeat: no-repeat;
-}
-
-.crayons-field--checkbox:hover, .crayons-field--radio:hover {
-    background: var(--body-bg);
-    box-shadow: 0 0 0 var(--su-1) var(--body-bg);
-}
-
-.crayons-field--checkbox:hover, .crayons-field--radio:hover {
-    background: var(--body-bg);
-    box-shadow: 0 0 0 var(--su-1) var(--body-bg);
-}
-.crayons-field--checkbox, .crayons-field--radio {
-    display: grid;
-    grid-template-columns: 1.5em 1fr;
-    grid-gap: var(--su-2);
-    border-radius: var(--radius);
-    transition: all var(--transition-props);
-}
-
-.c-link--block {
-    display: flex !important;
-    padding: var(--su-2) var(--su-4);
-    overflow-wrap: normal;
-    background-color: var(--bg);
-}
-
-.c-link--branded {
-    --bg: var(--link-branded-bg);
-    --bg-hover: var(--link-branded-bg-hover);
-    --color: var(--link-branded-color);
-    --color-hover: var(--link-branded-color-hover);
-}
-
-.c-link:hover, .js-focus-visible .c-link.focus-visible:focus {
-    color: var(--color-hover);
-    z-index: var(--z-elevate);
-    text-decoration: underline;
-}
-
-.c-link--block:hover {
-    background-color: var(--bg-hover);
-}
-.c-link--branded {
-    --bg: var(--link-branded-bg);
-    --bg-hover: var(--link-branded-bg-hover);
-    --color: var(--link-branded-color);
-    --color-hover: var(--link-branded-color-hover);
-}
-
-.c-link {
-    --bg: var(--link-bg);
-    --bg-hover: var(--link-bg-hover);
-    --color: var(--link-color);
-    --color-hover: var(--link-branded-color-hover);
-}
-
-.c-link {
-    position: relative;
-    display: inline-block;
-    border-radius: var(--radius);
-    font: inherit;
-    cursor: pointer;
-    outline: 0;
-    text-decoration: none;
-    color: var(--color);
-}
-
-
 @-webkit-keyframes progress-bar-stripes {
     0% {
         background-position-x: 1rem
@@ -283,6 +126,132 @@ textarea, input:not([type=hidden]), button {
     }
 }
 
+.auth-page {
+    width: unset!important;
+    height: unset!important;
+    min-height: unset!important;
+    overflow-y: unset!important;
+    z-index: unset!important;
+    display: unset!important;
+    -webkit-flex-direction: unset!important;
+    -ms-flex-direction: unset!important;
+    flex-direction: unset!important;
+    padding: unset!important;
+    position: unset!important
+}
+
+.c-btn--secondary {
+    --bg: var(--btn-secondary-bg);
+    --bg-hover: var(--btn-secondary-bg-hover);
+    --color: var(--btn-secondary-color);
+    --color-hover: var(--btn-secondary-color-hover)
+}
+
+.c-btn {
+    --color: var(--btn-color)
+}
+
+.crayons-notice {
+    padding: var(--su-4);
+    background: var(--card-bg);
+    color: var(--card-color);
+    border-radius: var(--radius-auto);
+    font-size: small
+}
+
+.crayons-field--checkbox .crayons-field__label,.crayons-field--radio .crayons-field__label {
+    margin-top: 0;
+    padding-right: var(--su-2)
+}
+
+.crayons-field>*+* {
+    margin-top: var(--su-2)
+}
+
+.crayons-field__label {
+    color: var(--label-primary);
+    font-weight: var(--fw-medium);
+    cursor: pointer
+}
+
+.crayons-field.crayons-field--checkbox {
+    align-items: center
+}
+
+.crayons-field .crayons-checkbox,.crayons-field .crayons-radio {
+    margin: .1875em;
+    justify-self: center
+}
+
+.crayons-checkbox,.crayons-radio {
+    width: 1.125em;
+    height: 1.125em;
+    background-position: center center;
+    vertical-align: middle;
+    flex-shrink: 0
+}
+
+.crayons-checkbox,.crayons-color-selector,.crayons-field.crayons-field--checkbox.crayons-block,.crayons-radio,.crayons-select,.crayons-textfield {
+    cursor: pointer
+}
+
+.crayons-checkbox--checked,.crayons-checkbox:checked,.crayons-radio--checked,.crayons-radio:checked {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='10' fill='none'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.157.933a.75.75 0 01.077 1.058L4.817 9.407a.75.75 0 01-1.134 0L.766 6.037a.75.75 0 011.135-.982L4.25 7.77l5.85-6.76a.75.75 0 011.057-.077z' fill='%23fff'/%3E%3C/svg%3E");
+    background-color: var(--form-border-focus);
+    border-color: var(--form-border-focus);
+    color: var(--form-bg-focus);
+    background-position: center center;
+    background-repeat: no-repeat
+}
+
+.crayons-field--checkbox:hover,.crayons-field--radio:hover {
+    background: var(--body-bg);
+    box-shadow: 0 0 0 var(--su-1) var(--body-bg)
+}
+
+.crayons-field--checkbox,.crayons-field--radio {
+    display: grid;
+    grid-template-columns: 1.5em 1fr;
+    grid-gap: var(--su-2);
+    border-radius: var(--radius);
+    transition: all var(--transition-props)
+}
+
+.c-link--block {
+    display: flex!important;
+    padding: var(--su-2) var(--su-4);
+    overflow-wrap: normal;
+    background-color: var(--bg)
+}
+
+.c-link--branded {
+    --bg: var(--link-branded-bg);
+    --bg-hover: var(--link-branded-bg-hover);
+    --color: var(--link-branded-color);
+    --color-hover: var(--link-branded-color-hover)
+}
+
+.c-link:hover,.js-focus-visible .c-link.focus-visible:focus {
+    color: var(--color-hover);
+    z-index: var(--z-elevate);
+    text-decoration: underline
+}
+
+.c-link--block:hover {
+    background-color: var(--bg-hover)
+}
+
+.c-link {
+    position: relative;
+    display: inline-block;
+    border-radius: var(--radius);
+    font: inherit;
+    cursor: pointer;
+    outline: 0;
+    text-decoration: none;
+    color: var(--color)
+}
+
 .navbar-dark button.nav-link.landing-mobile-btn.dropdown-toggle.navbar-toggle.collapsed {
     color: var(--algocloud-navbar-dark-color);
     border-color: var(--algocloud-navbar-dark-toggler-border-color)
@@ -368,14 +337,13 @@ textarea, input:not([type=hidden]), button {
     }
 }
 
-.btn-outline-facebook {
+.btn-outline-facebook,.btn-outline-facebook:hover {
     color: #3c5a99!important;
     border-color: #3c5a99!important
 }
 
 .btn-outline-facebook:hover {
-    color: #fff!important;
-    border-color: #3c5a99!important
+    color: #fff!important
 }
 
 .btn-outline-google-plus {
@@ -459,13 +427,12 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
     background-color: #fff0
 }
 
-.main-signin {
+.main-signin,.main.signin {
     display: block!important;
     width: 100%!important
 }
 
 .main.signin {
-    width: 100%!important;
     min-height: 100vh;
     height: 100vh;
     display: unset!important;
@@ -4363,17 +4330,6 @@ textarea.form-control-lg {
     color: #fff;
     background-color: #7b78ff;
     border-color: #5855f3
-}
-
-.crayons-textfield:focus, .crayons-select:focus, .c-autocomplete--multi__wrapper-border:focus-within {
-    background-color: var(--form-bg-focus);
-    border-color: var(--focus);
-    box-shadow: 0 0 0 1px var(--focus);
-}
-.c-autocomplete--multi__wrapper-border:focus-within, .crayons-select:focus, .crayons-textfield:focus {
-    background-color: var(--form-bg-focus);
-    border-color: var(--focus);
-    box-shadow: 0 0 0 1px var(--focus);
 }
 
 .btn-check:focus+.btn-primary,.btn-primary:focus,.navbar-vertical .btn-check:focus+.btn-purchase,.navbar-vertical .btn-purchase:focus,.tox .tox-dialog__footer .btn-check:focus+.tox-button:last-child,.tox .tox-dialog__footer .tox-button:focus:last-child,.tox .tox-menu__footer .btn-check:focus+.tox-button:last-child,.tox .tox-menu__footer .tox-button:focus:last-child {
@@ -10364,10 +10320,6 @@ div#app-dropdown {
 
 .text-1100 {
     color: var(--algocloud-1100)!important
-}
-
-.text-white {
-    color: var(--algocloud-white)!important
 }
 
 .max-vh-25 {
@@ -20792,7 +20744,6 @@ code,kbd,pre,samp {
     border-color: #dd4b39
 }
 
-
 .btn-check:focus+.btn-outline-google-plus,.btn-outline-google-plus:focus {
     -webkit-box-shadow: 0 0 0 0 rgba(221,75,57,.5);
     box-shadow: 0 0 0 0 rgba(221,75,57,.5)
@@ -26981,13 +26932,13 @@ input[type=file].form-control-lg {
 
 .sub-h1 {
     display: flex;
-    justify-content: center;
+    justify-content: center
 }
 
 .emphasis {
     text-decoration: underline;
-    text-indent: 0.8rem;
-    font-weight: bold;
+    text-indent: .8rem;
+    font-weight: 700
 }
 
 .safari .contacts-list {
@@ -30503,10 +30454,8 @@ button,input,optgroup,select,textarea {
     --algocloud-btn-link-color: var(--accent-brand);
     --algocloud-dashboard-landing: url(/assets/dashboard-darkMode.png);
     --algocloud-text-600: color: #a3a3a3;
-}
-
-.pool-token-1,.pool-token-2 {
-    position: relative
+    --auth-login-pane: #000;
+    --auth-login-pane-bg: #090909
 }
 
 .token {
@@ -30611,36 +30560,36 @@ svg.signal-icon {
 }
 
 .position-absolute.btn-back-to-top.cursor-pointer.bg-dark-2:hover {
-    background-color: var(--accent-brand-darker) !important;
-} 
+    background-color: var(--accent-brand-darker)!important
+}
 
 p.fw-medium.text-500.text-700.mb-0.fw-bold.nav-link.text-info {
-    color: var(--accent-brand-darker) !important;
-    text-decoration: underline;
+    color: var(--accent-brand-darker)!important;
+    text-decoration: underline
 }
 
 .shadow-none.dark__bg-1000.card.sj-col {
     display: flex;
-    flex-direction: row;
+    flex-direction: row
 }
 
 .sj-col-2 {
-    min-width: 8rem !important;
-    padding-bottom: 1rem !important;
+    min-width: 8rem!important;
+    padding-bottom: 1rem!important
 }
 
 p.fw-medium.text-500.text-700.mb-0.fw-bold.nav-link.sj-color {
-    padding-left: 1rem !important;
+    padding-left: 1rem!important
 }
 
 a.fw-medium.py-1.link-600.nav-link:hover {
-    border-radius: 0.375rem;
+    border-radius: .375rem;
     color: #9896ff!important;
     background: var(--algocloud-menu-li-hover)!important;
     z-index: 1;
-    text-decoration: underline;
+    text-decoration: underline
 }
 
 .text-white {
-    color: var(--algocloud-text-600) !important;
+    color: var(--algocloud-text-600)!important
 }

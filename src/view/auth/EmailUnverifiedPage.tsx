@@ -34,34 +34,53 @@ function EmailUnverifiedPage() {
 
   return (
     <Wrapper
+    className="auth-page"
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl ||
-          '/images/signin-3.svg'
+          backgroundImageUrl || ''
         })`,
       }}
     >
-      <Content>
-        <Logo>
-          {logoUrl ? (
-            <img
-              src={logoUrl}
-              width="240px"
-              alt={i18n('app.title')}
+      <Content className="auth-page">
+        
+<main className="main" id="main">
+   <div className="container-fluid" style={{overflow: "hidden"}}>
+      <div className="min-vh-100 row" style={{backgroundColor: "var(--auth-login-pane) "}}>
+         <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--auth-login-pane-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
+         </div>
+         <div className="px-sm-0 align-self-center mx-auto py-0 col-sm-10 col-md-6">
+            <div className="justify-content-center no-gutters row">
+               <div className="col-xxl-6 col-lg-9 col-xl-9">
+               <div className="card-2">
+      <div className="card-header text-center p-2">
+         <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}>
+         {logoUrl ? (
+         <img
+            src={logoUrl("/assets/brand-assets/logo.svg")}
+            width="240px"
+            alt={i18n('app.title')}
             />
-          ) : (
-            <h1>{i18n('app.title')}</h1>
-          )}
-        </Logo>
+         ) : (
+         <img style={{width: "60px"}} src="/assets/brand-assets/logo.svg" />
+         )}
+         </Logo>
+      </div>
+      <div className="card-body p-2 pt-3">
+         <div className="row justify-content-start mb-1">
+            <div className="col-auto">
+               <h3>Confirm Email</h3>
+            </div>
+         </div>
+         </div>
+      <div className="card-body p-2">
 
-        <h4 style={{ textAlign: 'center' }}>
-          {i18nHtml('auth.emailUnverified.message', email)}
-        </h4>
-
+      <div className="crayons-notice crayons-notice--warning fade show" role="alert">
+  {i18nHtml('auth.emailUnverified.message', email)}
+</div>
         <button
           style={{ marginTop: '24px' }}
           type="submit"
-          className="btn btn-block btn-primary"
+          className="btn btn-block btn-primary w-100 crayons-btn"
           disabled={loading}
           onClick={doSubmit}
         >
@@ -70,14 +89,25 @@ function EmailUnverifiedPage() {
         </button>
 
         <OtherActions>
-          <button
-            className="btn btn-sm btn-link"
+          <a
+            className="c-link c-link--branded c-link--block w-100 align-items-center"
             type="button"
             onClick={doSignout}
-          >
+          ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-arrow-left-circle m-1" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"/>
+        </svg>
             {i18n('auth.signinWithAnotherAccount')}
-          </button>
+          </a> 
         </OtherActions>
+      </div>
+   </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</main>
+
       </Content>
     </Wrapper>
   );
