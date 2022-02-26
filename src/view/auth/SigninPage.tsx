@@ -95,18 +95,42 @@ function SigninPage() {
       );
    };
 
-   return (
-      <Wrapper className="main signin"
-         style={{
-            backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
-               })`,
-         }}
-      >
-         <Content className="auth-page">
-            <main className="main" id="main">
-               <div className="container-fluid" style={{ overflow: "hidden" }}>
-                  <div className="min-vh-100 row" style={{ backgroundColor: "var(--auth-login-pane) " }}>
-                     <div className="d-none d-lg-block col-6" style={{ backgroundColor: "var(--auth-login-pane-bg)", boxShadow: "0 0 0 1px var(--card-border)" }}>
+  return (
+    <Wrapper className="main signin"
+style={{
+backgroundImage: `url(${backgroundImageUrl || ''
+})`,
+}}
+>
+<Content className="auth-page">
+   <main className="main" id="main">
+      <div className="container-fluid" style={{overflow: "hidden"}}>
+      <div className="min-vh-100 row" style={{backgroundColor: "var(--auth-login-pane) "}}>
+      <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--auth-login-pane-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
+      </div>
+      <div className="px-sm-0 align-self-center mx-auto py-0 col-sm-10 col-md-6">
+         <div className="justify-content-center no-gutters row">
+            <div className="col-xxl-6 col-lg-9 col-xl-9">
+               <div className="card-2">
+                  <div className="card-header text-center p-2">
+                     <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}
+                     className="logo-margin">
+                     {logoUrl ? (
+                     <img
+                        src={logoUrl("/assets/brand-assets/logo.svg")}
+                        width="240px"
+                        alt={i18n('app.title')}
+                        />
+                     ) : (
+                     <img style={{width: "60px"}} src="/assets/brand-assets/logo.svg" />
+                     )}
+                     </Logo>
+                  </div>
+                  <div className="card-body p-4">
+                     <div className="row flex-between-center mb-3">
+                        <div className="col-auto">
+                           <h3>Login</h3>
+                        </div>
                      </div>
                      <div className="px-sm-0 align-self-center mx-auto py-0 col-sm-10 col-md-6">
                         <div className="justify-content-center no-gutters row">

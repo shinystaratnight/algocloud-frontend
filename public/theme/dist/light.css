@@ -48218,3 +48218,18 @@ svg.signal-icon {
     position: absolute;
     left: 20px
 }
+
+.mobile-login-card {
+    width: auto !important;
+}
+
+@media (max-width:991px) {
+    .logo-margin {
+        margin: 0rem !important;
+    }
+
+    li#register-link {
+        display: none;
+    }
+
+}

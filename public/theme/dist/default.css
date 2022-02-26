@@ -271,9 +271,21 @@
     }
 }
 
-@media (max-width:992px) {
+.mobile-login-card {
+    width: auto !important;
+}
+
+@media (max-width:991px) {
     button.nav-link.c-pill.crayons-tooltip__activator {
         display: none
+    }
+
+    .logo-margin {
+        margin: 0rem !important;
+    }
+
+    li#register-link {
+        display: none;
     }
 
     .link-600 {
