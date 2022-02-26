@@ -41,10 +41,9 @@ function VerifyEmailPage() {
   return (
     <Wrapper
       style={{
-        backgroundImage: `url(${
-          backgroundImageUrl ||
+        backgroundImage: `url(${backgroundImageUrl ||
           '/images/signin-3.svg'
-        })`,
+          })`,
       }}
     >
       <Content>

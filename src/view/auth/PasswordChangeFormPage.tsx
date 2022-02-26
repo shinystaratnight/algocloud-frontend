@@ -22,7 +22,7 @@ function PasswordChangeFormPage(props) {
         </PageTitle>
 
         <PasswordChangeForm
-          onCancel={() => getHistory().push('/')}
+          onCancel={() => getHistory().goBack()}
         />
       </ContentWrapper>
     </>

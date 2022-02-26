@@ -361,7 +361,7 @@ const authActions = {
     AuthCurrentTenant.set(tenant);
     await dispatch(authActions.doRefreshCurrentUser());
     SettingsService.applyThemeFromTenant();
-    getHistory().push('/');
+    getHistory().push('/tenant');
   },
 };
 

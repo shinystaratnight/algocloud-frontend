@@ -20,7 +20,7 @@ function ProfileFormPage() {
         <PageTitle>{i18n('auth.profile.title')}</PageTitle>
 
         <ProfileForm
-          onCancel={() => getHistory().push('/')}
+          onCancel={() => getHistory().goBack()}
         />
       </ContentWrapper>
     </>
