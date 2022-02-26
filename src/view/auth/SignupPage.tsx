@@ -69,7 +69,7 @@ backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
 <main className="main" id="main">
    <div className="container-fluid" style={{overflow: "hidden"}}>
       <div className="min-vh-100 row" style={{backgroundColor: "var(--algocloud-modal-content-bg) "}}>
-         <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--algocloud-body-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
+         <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--body-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
          </div>
          <div className="px-sm-0 align-self-center mx-auto py-0 col-sm-10 col-md-6">
             <div className="justify-content-center no-gutters row">
@@ -129,7 +129,7 @@ backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
                </div>
                <OtherActions>
                   <Link
-                     className="btn btn-sm btn-link"
+                     className="c-link c-link--branded c-link--block w-100"
                      to="/auth/signin"
                      >
                   {i18n('auth.alreadyHaveAnAccount')}
@@ -145,8 +145,8 @@ backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
       </div>
    </div>
 </main>
-
 </Content>
+
 </Wrapper>
 );
 }
