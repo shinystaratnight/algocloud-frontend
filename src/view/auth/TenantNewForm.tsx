@@ -94,7 +94,7 @@ function TenantNewForm(props) {
         <button
           style={{ marginTop: '16px' }}
           type="submit"
-          className="btn btn-primary btn-block"
+          className="btn btn-primary btn-block crayons-btn"
           disabled={loading}
         >
           {i18n('tenant.create.button')}

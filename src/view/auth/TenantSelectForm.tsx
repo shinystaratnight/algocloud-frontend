@@ -62,18 +62,18 @@ function TenantSelectForm(props) {
         />
 
         <button
-          style={{ marginTop: '16px' }}
+          style={{ marginTop: '16px', width: '100%'  }}
           type="submit"
-          className="btn btn-primary btn-block"
+          className="btn btn-primary btn-block crayons-btn"
           disabled={loading}
         >
           {i18n('tenant.invitation.accept')}
         </button>
 
         <button
-          style={{ marginTop: '16px' }}
+          style={{ marginTop: '16px', width: '100%' }}
           type="button"
-          className="btn btn-light btn-block"
+          className="btn btn-light btn-block c-btn c-btn--secondary"
           onClick={props.onViewToggle}
         >
           {i18n('tenant.new.title')}

@@ -63,7 +63,7 @@ export function InputFormItem(props) {
           autoComplete={autoComplete || undefined}
           value={value || undefined}
           disabled={disabled}
-          className={`form-control ${
+          className={`crayons-textfield form-control ${
             errorMessage ? 'is-invalid' : ''
           }`}
         />
@@ -104,6 +104,7 @@ InputFormItem.propTypes = {
   externalErrorMessage: PropTypes.string,
   endAdornment: PropTypes.any,
   onChange: PropTypes.any,
+  className: PropTypes.string,
   value: PropTypes.string,
 };
 

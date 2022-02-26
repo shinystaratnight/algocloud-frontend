@@ -374,8 +374,10 @@ function LandingPage() {
                            to your Algorand DeFi experience
                         </h1>
                         <p className="lead text-white-2 opacity-90">With the unlimited horsepower of AlgoCloud, you can now navigate the Algorand DeFi ecosystem like never before. Pilot your own ship, the stars are the limit!</p>
-                        <a role="button" href="/landing#!" className="border-2 rounded-pill mt-4 fs-0 py-2 btn btn-outline-light btn-lg">
-                           Launch AlgoCloud
+                        <Link role="button" className="border-2 rounded-pill mt-4 fs-0 py-2 btn btn-outline-light btn-lg"
+                           to="/auth/signup"
+                        >
+                           {i18n('Start your journey')}
                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="play" className="svg-inline--fa fa-play fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
                               style={{ transformOrigin: '0.75em 0.5625em' }}>
                               <g transform="translate(224 256)">
@@ -384,7 +386,7 @@ function LandingPage() {
                                  </g>
                               </g>
                            </svg>
-                        </a>
+                        </Link>
                      </div>
                      <div className="align-self-end mt-4 mt-xl-0 col-xl-7 offset-xl-1"><a className="img-landing-banner" href="/"><img className="img-fluid" src="/assets/dashboard-darkMode.png" alt="" /></a></div>
                   </div>
