@@ -3,13 +3,19 @@ import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
 
 export default class SettingsService {
   static applyThemeFromTenant() {
-    const currentSettings = AuthCurrentTenant.getSettings();
+    // const currentSettings = AuthCurrentTenant.getSettings();
 
-    if (currentSettings) {
-      return this.applyTheme(currentSettings.theme);
+    // if (currentSettings) {
+    //   return this.applyTheme(currentSettings.theme);
+    // }
+
+    const theme = localStorage.getItem("theme");
+
+    if (theme && theme === "light") {
+      this.applyTheme(theme);
+    } else {
+      this.applyTheme('default');
     }
-
-    this.applyTheme('default');
   }
 
   static async find() {
