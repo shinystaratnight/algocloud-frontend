@@ -53,7 +53,6 @@ export default (state = initialData, { type, payload }) => {
   }
 
   if (type === actions.AUTH_SUCCESS) {
-    console.log('Here: ');
     return {
       ...state,
       currentUser: payload.currentUser || null,

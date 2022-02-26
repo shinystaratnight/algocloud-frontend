@@ -9,7 +9,7 @@ class Roles {
     return {
       admin: 'admin',
       custom: 'custom',
-      beta: 'beta',
+      // beta: 'beta',
     };
   }
 
