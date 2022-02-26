@@ -40,7 +40,7 @@ function UserNewPage(props) {
         <UserNewForm
           saveLoading={saveLoading}
           onSubmit={doSubmit}
-          onCancel={() => getHistory().push('/user')}
+          onCancel={() => getHistory().goBack()}
         />
       </ContentWrapper>
     </>

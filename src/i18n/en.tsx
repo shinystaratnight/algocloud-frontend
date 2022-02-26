@@ -372,6 +372,7 @@ const en = {
       userNotFound: 'User not found',
       revokingOwnPermission: `You can't revoke your own admin permission`,
     },
+    delete: 'Delete'
   },
 
   tenant: {

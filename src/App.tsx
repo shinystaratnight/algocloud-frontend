@@ -9,6 +9,7 @@ import RoutesComponent from 'src/view/shared/routes/RoutesComponent';
 import jQuery from 'jquery';
 import 'bootstrap/dist/js/bootstrap';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { Route, Switch, BrowserRouter, Router } from 'react-router-dom';
 
 (window as any).$ = (window as any).jQuery = jQuery;
 
@@ -17,9 +18,9 @@ const store = configureStore();
 const App = (props) => {
   return (
     <Provider store={store}>
-      <ConnectedRouter history={getHistory()}>
+      <Router history={getHistory()}>
         <RoutesComponent />
-      </ConnectedRouter>
+      </Router>
     </Provider>
   );
 };

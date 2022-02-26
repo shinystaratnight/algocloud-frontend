@@ -103,7 +103,7 @@ function TenantListTable() {
   return (
     <TableWrapper>
       <div className="table-responsive">
-        <table className="table table-striped     mt-2">
+        <table className="table table-striped mt-2">
           <thead className="thead">
             <tr>
               <TableColumnHeader
@@ -163,11 +163,10 @@ function TenantListTable() {
                   {config.isPlanEnabled && (
                     <td>
                       <span
-                        className={`badge ${
-                          row.plan === Plans.values.free
-                            ? 'badge-secondary'
-                            : 'badge-warning'
-                        }`}
+                        className={`badge ${row.plan === Plans.values.free
+                          ? 'badge-secondary'
+                          : 'badge-warning'
+                          }`}
                       >
                         {i18n(`plan.${row.plan}.label`)}
                       </span>

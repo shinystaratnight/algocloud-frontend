@@ -54,6 +54,10 @@ function UserTable() {
     dispatch(actions.doChangePagination(pagination));
   };
 
+  const onDeleteUser = (id) => {
+
+  }
+
   return (
     <>
       <TableWrapper>
@@ -120,6 +124,18 @@ function UserTable() {
                         >
                           {row.active && i18n('user.freeze')}
                           {!row.active && i18n('user.activate')}
+                        </button>
+                      )}
+                    </td>
+                    <td className="td-actions">
+                      {hasPermissionToUpdateUser && (
+                        <button
+                          className="btn btn-link"
+                          onClick={() =>
+                            onDeleteUser(row.id)
+                          }
+                        >
+                          {i18n('user.delete')}
                         </button>
                       )}
                     </td>

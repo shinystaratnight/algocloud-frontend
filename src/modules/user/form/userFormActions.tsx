@@ -63,7 +63,7 @@ const userFormActions = {
 
       Message.success(i18n('user.doAddSuccess'));
 
-      getHistory().push('/user');
+      getHistory().goBack();
     } catch (error) {
       Errors.handle(error);
 

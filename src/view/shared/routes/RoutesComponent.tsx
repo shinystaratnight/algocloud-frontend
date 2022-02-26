@@ -48,7 +48,6 @@ function RoutesComponent(props) {
   }
 
   return (
-    <BrowserRouter>
     <Switch>
       {routes.publicRoutes.map((route) => (
         <PublicRoute
@@ -153,7 +152,6 @@ function RoutesComponent(props) {
         />
       ))}
     </Switch>
-    </BrowserRouter>
   );
 }
 

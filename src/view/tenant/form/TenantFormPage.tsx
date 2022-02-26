@@ -11,10 +11,18 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouteMatch, Redirect } from 'react-router-dom';
 import authSelectors from 'src/modules/auth/authSelectors';
 import Spinner from 'src/view/shared/Spinner';
+import PermissionChecker from 'src/modules/auth/permissionChecker';
 
 function TenantFormPage() {
   const currentUserIsSuperadmin = useSelector(
     authSelectors.selectCurrentUserSuperadmin
+  );
+
+  const currentUser = useSelector(
+    authSelectors.selectCurrentUser,
+  );
+  const currentTenant = useSelector(
+    authSelectors.selectCurrentTenant,
   );
 
   const dispatch = useDispatch();
@@ -40,6 +48,13 @@ function TenantFormPage() {
     if (isEditing) {
       dispatch(actions.doUpdate(id, data));
     } else {
+      const permissionChecker = new PermissionChecker(
+        currentTenant,
+        currentUser,
+      );
+      if (permissionChecker.rolesMatchOneOf("custom")) {
+        data.role = "custom"
+      }
       dispatch(actions.doCreate(data));
     }
   };
@@ -67,7 +82,7 @@ function TenantFormPage() {
             record={record}
             isEditing={isEditing}
             onSubmit={doSubmit}
-            onCancel={() => getHistory().push('/tenant')}
+            onCancel={() => getHistory().goBack()}
           />
         )}
       </ContentWrapper>
