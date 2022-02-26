@@ -98,7 +98,7 @@ function SigninPage() {
   return (
     <Wrapper className="main signin"
 style={{
-backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
+backgroundImage: `url(${backgroundImageUrl || ''
 })`,
 }}
 >
@@ -113,7 +113,8 @@ backgroundImage: `url(${backgroundImageUrl || '/images/signin-3.svg'
             <div className="col-xxl-6 col-lg-9 col-xl-9">
                <div className="card-2">
                   <div className="card-header text-center p-2">
-                     <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}>
+                     <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}
+                     className="logo-margin">
                      {logoUrl ? (
                      <img
                         src={logoUrl("/assets/brand-assets/logo.svg")}
