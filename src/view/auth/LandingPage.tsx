@@ -114,7 +114,6 @@ function LandingPage() {
                            <div aria-labelledby="react-aria3374201582-24" data-bs-popper="static" className="dropdown-menu-card mt-0 dropdown-menu">
                               <div className="shadow-none dark__bg-1000 navbar-card-pages card">
                                  <div className="scrollbar max-h-dropdown card-body">
-                                    <img src="/assets/img/nav-icons/authentication-corner.f8e7f312.png" alt="" className="img-dropdown" width="130" />
                                     <div className="row">
                                        <div className="col-xxl-3 col-6">
                                           <div className="flex-column navbar-nav">
@@ -344,7 +343,7 @@ function LandingPage() {
                               </div>
                            </div>
                         </li>
-                        <li className="nav-link">
+                        <li id="register-link" className="nav-link">
                            <Link
                               to="/auth/signup"
                            >

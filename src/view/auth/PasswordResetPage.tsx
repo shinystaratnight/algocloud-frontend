@@ -58,7 +58,7 @@ function PasswordResetPage() {
     <Wrapper
       style={{
         backgroundImage: `url(${
-          backgroundImageUrl || '/signin-3.svg'
+          backgroundImageUrl || ''
         })`,
       }}
     >
@@ -86,7 +86,7 @@ function PasswordResetPage() {
 
             <button
               type="submit"
-              className="btn btn-block btn-primary"
+              className="btn btn-block btn-primary crayons-btn w-100"
               disabled={loading}
             >
               <ButtonIcon loading={loading} />{' '}
