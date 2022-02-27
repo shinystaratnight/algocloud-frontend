@@ -13,6 +13,10 @@ const userActions = {
   UPDATE_SUCCESS: `${prefix}_UPDATE_SUCCESS`,
   UPDATE_ERROR: `${prefix}_UPDATE_ERROR`,
 
+  DELETE_STARTED: `${prefix}_DELETE_STARTED`,
+  DELETE_SUCCESS: `${prefix}_DELETE_SUCCESS`,
+  DELETE_ERROR: `${prefix}_DELETE_ERROR`,
+
   RESETED: `${prefix}_RESETED`,
   PAGINATION_CHANGED: `${prefix}_PAGINATION_CHANGED`,
   SORTER_CHANGED: `${prefix}_SORTER_CHANGED`,
@@ -43,6 +47,28 @@ const userActions = {
 
       dispatch({
         type: userActions.UPDATE_ERROR,
+      });
+    }
+  },
+
+  doDelete: (id) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: userActions.DELETE_STARTED,
+      });
+
+      await SuperadminService.deleteUser(id);
+
+      dispatch({
+        type: userActions.DELETE_SUCCESS,
+      })
+
+      dispatch(userActions.doFetchCurrentFilter());
+    } catch (error) {
+      Errors.handle(error);
+
+      dispatch({
+        type: userActions.DELETE_ERROR,
       });
     }
   },
