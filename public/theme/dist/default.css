@@ -272,20 +272,16 @@
 }
 
 .mobile-login-card {
-    width: auto !important;
+    width: auto!important
 }
 
 @media (max-width:991px) {
-    button.nav-link.c-pill.crayons-tooltip__activator {
+    button.nav-link.c-pill.crayons-tooltip__activator,li#register-link {
         display: none
     }
 
     .logo-margin {
-        margin: 0rem !important;
-    }
-
-    li#register-link {
-        display: none;
+        margin: 0!important
     }
 
     .link-600 {
@@ -349,12 +345,15 @@
     }
 }
 
+.btn-outline-facebook {
+    color: #3c5a99!important
+}
+
 .btn-outline-facebook,.btn-outline-facebook:hover {
-    color: #3c5a99!important;
     border-color: #3c5a99!important
 }
 
-.btn-outline-facebook:hover {
+#pill-tab1 .nav-link.active,#pill-tab2 .nav-link.active,.btn-outline-facebook:hover {
     color: #fff!important
 }
 
@@ -26321,10 +26320,6 @@ input[type=file].form-control-lg {
     line-height: 1.813rem
 }
 
-#pill-tab1 .nav-link.active,#pill-tab2 .nav-link.active {
-    color: #fff!important
-}
-
 .radio-select .form-check-label {
     cursor: pointer
 }
@@ -30604,4 +30599,9 @@ a.fw-medium.py-1.link-600.nav-link:hover {
 
 .text-white {
     color: var(--algocloud-text-600)!important
+}
+
+a.fw-medium.py-1.link-600.nav-link,p.fw-medium.text-500.text-700.mb-0.fw-bold.nav-link {
+    padding-left: 1rem;
+    padding-right: .5rem
 }

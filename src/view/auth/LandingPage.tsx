@@ -537,42 +537,36 @@ function LandingPage() {
                <div className="container">
                   <div className="card landing-faq">
                      <div className="card-header">
-                        <h5 className="mb-0">Frequently asked questions</h5>
+                        <h3 className="mb-0">Frequently asked questions</h3>
                      </div>
-                     <div className="card-body bg-light pb-0">
+                     <div className="card-body bg-light pb-3">
                         <div className="row">
                            <div className="col-lg-6">
-                              <h5 className="fs-0">How much does it cost to signup for AlgoCloud?</h5>
+                              <h5 className="fs-1">How much does it cost to signup for AlgoCloud?</h5>
                               <p className="fs--1">Signing up for the AlgoCloud platform is 100% free for HDL token holders who have access to at least 500 HDL tokens. AlgoCloud is part of HEADLINE's POS (Proof-of-Stake) application suite. HDL tokens are essentially keys that allow users to access these platforms - FORUM (100 HDL tokens) and AlgoCloud (500 HDL tokens). We do not custody your tokens and you can use the same tokens to access any number of HEADLINE POS platforms.</p>
-                              <hr className="my-3">
-                              </hr>
-                              <h5 className="fs-0">Do I have to pay to use the service on AlgoCloud? </h5>
+
+                              <h5 className="fs-1">Do I have to pay to use the service on AlgoCloud? </h5>
                               <p className="fs--1">Many DeFi protocols have a fee pool, so DeFi aggregator applications on AlgoCloud will have the parent fee pool. Additionally, over time we may add fee pools to any number of native DeFi or aggregator apps on AlgoCloud, but as is the case with many decisions HEADLINE makes, we tend let the community have a prominent voice in the discussion. Apart from the DeFi apps, other AlgoCloud apps may have additional fees. One feature of AlgoCloud, however will always be free: Analytics.</p>
-                              <hr className="my-3">
-                              </hr>
-                              <h5 className="fs-0">Analytics will always be free to AlgoCloud users?</h5>
+
+                              <h5 className="fs-1">Analytics will always be free to AlgoCloud users?</h5>
                               <p className="fs--1">Yes! We are committed to providing the Algorand HDL community with free customizable analytics in perpetuity. Not only that, but we are committed to expending significant capital to make the AlgoCloud analytics suite one of the most robust, comprehensive data tools in the blockchain industry. We believe that data is one of the most valuable commodities in the blockchain ecosystem. While smart contract protocols can be forked and replicated, a serious data operation is extremely difficult to reproduce, even in cursory fashion. That is why our first core product on AlgoCloud is analytics. And that is why analytics will always be free to HDL holders. </p>
-                              <hr className="my-3">
-                              </hr>
-                              <h5 className="fs-0">Speaking of data, what information do you store on users?</h5>
+
+                              <h5 className="fs-1">Speaking of data, what information do you store on users?</h5>
                               <p className="fs--1">That is a great question and a serious point of focus for HEADLINE. We make every effort possible to protect the anonymity and privacy of our users. We are so committed to this endeavor, in fact, that some of our most popular open source tools have absolutely no tracking.
                                  Regarding AlgoCloud, we will have the platform carefully audited before the beta is over to address any security issues and ensure that every effort is made to respect users privacy. During the beta, we encourage testers to to use the platform with caution.
                               </p>
                            </div>
                            <div className="col-lg-6">
-                              <h5 className="fs-0">If AlgoCloud is free, how does HEADLINE pay for it?</h5>
+                              <h5 className="fs-1">If AlgoCloud is free, how does HEADLINE pay for it?</h5>
                               <p className="fs--1">At HEADLINE, we believe trust is the most valuable asset within a community. The higher the level of relative trust, the stronger the community. We build free tools for the HDL community and larger Algorand ecosystem, because it provides real value to people. When you constantly deliver real value, it directly correlates to the strength of your community. But getting back to the original question, our NFT sales and ongoing software services work pay for the development of AlgoCloud and other free applications we build. In the near future, the framework of AlgoCloud (not the analytics and DeFi suite) will have paid subscription tiers for business owners and enterprise clients. We will have several blockchain-native templates made for hedge funds, NFT Artists, software teams, etc that will allow people to white label the AlgoCloud framework to run their business on. All with built-in Algorand functionality. </p>
-                              <hr className="my-3">
-                              </hr>
-                              <h5 className="fs-0">What is the time frame to add AlgoCloud features?</h5>
+
+                              <h5 className="fs-1">What is the time frame to add AlgoCloud features?</h5>
                               <p className="fs--1">We will begin adding applications to AlgoCloud as soon as we feel confident that any security, privacy, efficiency, UI/UX, database concerns, etc have been addressed. We are also going to be getting smart contracts audited for 4 different HEADLINE DeFi applications as well as a full audit of our Algorand SDK. While all of that is getting finalized, we will continue to build out all of the analytics, insights, UI/UX, etc. </p>
-                              <hr className="my-3">
-                              </hr>
-                              <h5 className="fs-0">Where do I sign up?</h5>
+
+                              <h5 className="fs-1">Where do I sign up?</h5>
                               <p className="fs--1">AlgoCloud is currently in a closed beta while we chase down bugs and harden the security. We will create a form here on AlgoCloud for HDL holders to request access/join the waiting list.</p>
-                              <hr className="my-3">
-                              </hr>
-                              <h5 className="fs-0">Why isn't AlgoCloud fully decentralized?</h5>
+
+                              <h5 className="fs-1">Why isn't AlgoCloud fully decentralized?</h5>
                               <p className="fs--1 mb-0">While we at HEADLINE believe in the spirit of Web 3 and decentralization, practical implementation is a lot messier. Moxie Marlinspike, the creator of Signal, wrote a scathing<a href="https://moxie.org/2022/01/07/web3-first-impressions.html"> article </a>about the current state of Web 3 and decentralization. Essentially what he is arguing is that while many blockchain protocols and practices may appear to be decentralized, they are in fact much more centralized than you may think. We agree with Moxie 100%. And while we work tirelessly to build fully decentralized applications that can make the dream of Web 3 a reality, we aren't going to sacrifice user experience on the altar of perceived innovation.  </p>
                            </div>
                         </div>
@@ -643,7 +637,7 @@ function LandingPage() {
                   <div className="row">
                      <div className="col-lg-4">
                         <h5 className="text-uppercase text-white-2 opacity-85 mb-3">Our Mission</h5>
-                        <p className="text-600">AlgoCloud enables front end developers to build custom streamlined user interfaces in a matter of hours, while it gives backend developers all the UI elements they need to develop their web app.And it's rich design can be easily integrated with backends whether your app is based on ruby on rails, laravel, express or any other server side system.</p>
+                        <p className="text-600">AlgoCloud is a core application suite from HEADLINE, a fintech startup and Algorand development team.</p>
                         <div className="icon-group mt-4">
                            <a className="icon-item bg-white text-facebook" href="https://twitter.com/headline_crypto">
                               <svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-f" className="svg-inline--fa fa-facebook-f fa-w-10 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
