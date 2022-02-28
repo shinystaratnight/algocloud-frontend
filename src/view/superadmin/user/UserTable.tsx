@@ -23,7 +23,7 @@ function UserTable() {
   const pagination = useSelector(
     selectors.selectPagination,
   );
-  
+
   const hasRows = useSelector(selectors.selectHasRows);
   const sorter = useSelector(selectors.selectSorter);
 
@@ -55,7 +55,7 @@ function UserTable() {
   };
 
   const onDeleteUser = (id) => {
-
+    dispatch(actions.doDelete(id));
   }
 
   return (

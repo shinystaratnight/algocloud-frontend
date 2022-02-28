@@ -60,6 +60,27 @@ export default (state = initialData, { type, payload }) => {
       loading: false,
     };
   }
+
+  if (type === actions.DELETE_STARTED) {
+    return {
+      ...state,
+      loading: true,
+    };
+  }
+
+  if (type === actions.DELETE_SUCCESS) {
+    return {
+      ...state,
+      loading: false,
+    };
+  }
+
+  if (type === actions.DELETE_ERROR) {
+    return {
+      ...state,
+      loading: false,
+    };
+  }
   
   if (type === actions.FETCH_STARTED) {
     return {

@@ -28,6 +28,15 @@ export default class SuperadminService {
     return response.data;
   }
 
+  static async deleteUser(id) {
+    const response = await authAxios.delete(
+      `/superadmin/user/${id}`,
+      {},
+    );
+
+    return response.data;
+  }
+
   static async fetchTenants(filter, orderBy, limit, offset) {
     const params = {
       filter,
