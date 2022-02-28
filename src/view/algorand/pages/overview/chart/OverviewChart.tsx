@@ -1,10 +1,13 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ResponsiveContainer } from 'recharts';
-import { useSelector } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import selectors from 'src/modules/algorand/overview/overviewSelectors';
 import { CHART_TYPES } from 'src/modules/algorand/constants';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
-import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
+import TradingViewChart from 'src/view/algorand/components/TradingViewChart'
+import { formatPercent, formattedNum } from 'src/modules/algorand/utils';
+import { Link } from 'react-router-dom';
+import { images } from 'src/images/images';
 import {
   FlexContainer,
   ChartWindowWrapper,
@@ -22,6 +25,15 @@ function ShowcaseChart() {
 
   const showcase = useSelector(selectors.selectShowcase);
   const dailyData = useSelector(selectors.selectDailyData);
+  let image = showcase['assetId'] === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${showcase['assetId']}.png`;
+  for (let i = 0; i < images?.length; i++) {
+      const img = images[i];
+      let id = parseInt(img.split('-')[1]);
+      if (id == showcase['assetId']) {
+          image = `/assets/asa-list/${img}/icon.png`;
+          break;
+      }
+  }
 
   useEffect(() => {
     if (ref1.current) {
@@ -38,8 +50,56 @@ function ShowcaseChart() {
     }
   }, [ref1, ref2, ref3])
 
-  return (
+  return ( 
     <FlexContainer gap="20px" className="showcase-row">
+                  <div className="container w-50 w-100 card bg-box rounded card-hover-3 m-0 p-0">
+                <div className="ol" style={{ maxWidth: "100%", alignItems: "center" }}> <div className="p-3 token-card" style={{ width: "min-content" }}><img className='token card-token' src={image} style={{ width: 60}}></img></div>
+                <div className="p-2  col-sm w-130">
+                      <h5 className="banner-ticker" >{showcase['unitName']}</h5>
+                    <Link to={`/algorand/assets/${showcase.assetId}`}>
+ 
+                    <h6 className='ww'>{showcase.name}</h6></Link> 
+
+                  </div>
+                <div className="p-2  col-sm w-130">
+                        <h5 className='text-info banner-ticker' >{(showcase.price)?.toFixed(4) || ''}</h5>
+                        <h6 className="ww">Price (Live)</h6></div>
+                <div className="p-2  col-sm w-130">
+                        <h5 className={showcase.lastDayPriceChange ? 'text-danger ww' : 'text-success ww'}> {(showcase.lastDayPriceChange) ? (parseFloat(formatPercent(showcase.lastDayPriceChange)) < 0) ? <span className="ww-1">{'  '}<div  >{(showcase.lastDayPriceChange)?.toFixed(3)  || ''}</div><i
+                            className={`fas fa-arrow-down pl-2`}
+                        ></i></span> : <span>{'  '}<i
+                            className={`fas fa-arrow-up pl-2`}
+                        ></i></span> : ''}</h5>
+                        <h6 className="ww">Price (24hrs)</h6></div>
+                <div className="p-2  col-sm w-130">
+                        <h5 className={showcase.lastDayLiquidityChange ? 'text-danger ww' : 'text-success ww'}> {(showcase.lastDayLiquidityChange) ? (parseFloat(formatPercent(showcase.llastDayLiquidityChange)) < 0) ? <span className="ww-1">{'  '}<div  >{(showcase.lastDayLiquidityChange)?.toFixed(3)  || ''}</div><i
+                            className={`fas fa-arrow-down pl-2`}
+                        ></i></span> : <span>{'  '}<i
+                            className={`fas fa-arrow-up pl-2`}
+                        ></i></span> : ''}</h5>
+                        <h6 className="ww">Liquidity (24hrs)</h6></div>
+                <div className="p-2  col-sm w-130">
+                        <h5 className={showcase.lastDayVolumeChange ? 'text-danger ww' : 'text-success ww'}> {(showcase.lastDayVolumeChange) ? (parseFloat(formatPercent(showcase.lastDayVolumeChange)) < 0) ? <span className="ww-1">{'  '}<div  >{(showcase.lastDayVolumeChange)?.toFixed(3)  || ''}</div><i
+                            className={`fas fa-arrow-down pl-2`}
+                        ></i></span> : <span>{'  '}<i
+                            className={`fas fa-arrow-up pl-2`}
+                        ></i></span> : ''}</h5>
+                        <h6 className="ww">Volume (24hrs)</h6></div>
+                        </div></div>
+                 
+
+                    
+
+
+
+
+
+                    
+                    
+                    
+      
+     
+                      
       <div className="showcase-row-1">
       <ContentWrapper gap="10px" className=" w-50 w-100 card bg-box rounded
       card-hover m-0">
