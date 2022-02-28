@@ -1,3 +1,69 @@
+span.ww-1 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.w-130 {
+    max-width: 160px !important;
+}
+
+.p-3.token-card {
+    padding-left: 1.5rem !important;
+}
+
+h5.text-danger.ww, h5.text-success.ww {
+    margin-right: 20px;
+}
+
+@media(max-width: 900px){
+    .p-3.token-card {
+        padding-left: 1rem !important;
+    }
+    
+    .ol {
+
+        padding: 1rem;
+        padding-top: 0.3rem;
+        padding-left: 0.3rem;
+        padding-right: 0px;
+    }
+    h5.text-info.banner-ticker,h5.text-success.ww,h5.text-danger.ww,.banner-ticker  {
+        font-size: 1.3rem !important;
+    }
+    h5.text-danger.ww, h5.text-success.ww,h5.text-info.banner-ticker {
+        margin-right: 5px;
+    }
+
+}
+
+h5.text-info.banner-ticker,h5.text-success.ww,h5.text-danger.ww,.banner-ticker  {
+    font-size: calc(.75rem + .9vw);
+}
+
+
+
+.ol {
+    display: flex;
+    align-items: center !important;
+    justify-content: space-between !important;
+    overflow: overlay;
+    overflow-x: overlay;
+    overflow-y: hidden !important;
+    flex-wrap: nowrap;
+}
+
+h5.text-danger.ww, h5.text-success.ww, h6.ww {
+    white-space: nowrap;
+}
+
+h6.ww {
+    margin-bottom: 0px !important;
+}
+
+
 @-webkit-keyframes progress-bar-stripes {
     0% {
         background-position-x: 1rem
@@ -278,6 +344,7 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
     display: unset!important;
     -webkit-box-pack: unset;
     -webkit-justify-content: unset;
+    justify-content: unset;
     -ms-flex-pack: unset!important
 }
 
@@ -4458,7 +4525,8 @@ textarea.form-control-lg {
 }
 
 .form-floating>.form-control:not(:-ms-input-placeholder)~label {
-    -ms-transform: scale(.85) translateY(-.5rem) translateX(.15rem)
+    -ms-transform: scale(.85) translateY(-.5rem) translateX(.15rem);
+    transform: scale(.85) translateY(-.5rem) translateX(.15rem)
 }
 
 .form-floating>.form-control:focus~label,.form-floating>.form-control:not(:placeholder-shown)~label,.form-floating>.form-select~label {
@@ -23690,7 +23758,8 @@ html[dir=rtl] .googlemap .gm-style-iw.gm-style-iw-c button[title=Close] {
 
 .flex-1 {
     -webkit-box-flex: 1;
-    -ms-flex: 1
+    -ms-flex: 1;
+    flex: 1
 }
 
 .link-primary {
@@ -35754,7 +35823,8 @@ a {
 
 .crayons-icon {
     vertical-align: bottom;
-    -moz-transform: rotate(360deg)
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg)
 }
 
 .crayons-icon:not(.crayons-icon--default),.crayons-icon:not(.crayons-icon--default) * {
