@@ -7,6 +7,11 @@ const selectLoading = createSelector(
   (raw) => Boolean(raw.loading),
 );
 
+const selectHourlyPrices = createSelector(
+  [selectRaw],
+  (raw) => raw.stats.hourlyPrices,
+);
+
 const selectDailyData = createSelector(
   [selectRaw],
   (raw) => raw.stats.daily,
@@ -209,6 +214,7 @@ const selectLastUpdatedTime = createSelector(
 const overviewSelectors = {
   selectLoading,
   selectDailyData,
+  selectHourlyPrices,
   selectWeeklyData,
   selectAssets,
   selectPools,

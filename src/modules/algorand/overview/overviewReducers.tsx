@@ -5,6 +5,7 @@ const initialData = {
   showcase: {},
   favorites: [] as Array<any>,
   stats: {
+    hourlyPrices: [] as Array<any>,
     daily: [] as Array<any>,
     weekly: [] as Array<any>,
   },
@@ -127,6 +128,7 @@ export default (state = initialData, { type, payload }) => {
 
   if (type === actions.FETCH_SUCCESS) {
     const stats = {
+      hourlyPrices: payload.hourlyPrices,
       daily: payload.dailyData,
       weekly: payload.weeklyData,
     };
