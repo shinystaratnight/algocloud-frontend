@@ -42,7 +42,7 @@ const AssetChart = (props) => {
 
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
   const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.HOURLY);
-  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY)
+  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY);
 
   const below2000 = useMedia('(max-width: 2000px)');
   const below1080 = useMedia('(max-width: 1080px)');
@@ -72,7 +72,6 @@ const AssetChart = (props) => {
   const handleChangeDuration = (d: string) => {
     setDuration(d);
   }
-
 
   return (
     <ChartWindowWrapper className="card-hover-2">
@@ -194,13 +193,13 @@ const AssetChart = (props) => {
                 active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
                 onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.DAILY)}
               >
-                D
+                1D
               </OptionButton>
               <OptionButton
                 active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
                 onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)}
               >
-                H
+                1H
               </OptionButton>
             </OptionButtonContainer>
           </OptionButtonWrapper>

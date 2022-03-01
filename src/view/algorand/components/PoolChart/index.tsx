@@ -12,13 +12,16 @@ import {
   Tooltip,
 } from 'recharts';
 
-import { POOL_CHART_VIEW } from 'src/modules/algorand/constants';
+import { POOL_CHART_VIEW, ASSET_CHART_VIEW_DURATION, ASSET_CHART_VIEW_FRAME, CHART_TYPES } from 'src/modules/algorand/constants';
 import { toK, toNiceDate, toNiceDateYear, formattedNum } from 'src/modules/algorand/utils';
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
 import {
   ChartWindowWrapper,
+  Divider,
   OptionButton,
+  OptionButtonBottomContainer,
   OptionButtonContainer,
+  OptionButtonWrapper,
   RowBetween
 } from 'src/view/algorand/styled';
 
@@ -32,12 +35,15 @@ const PoolChart = (props) => {
     rateTwoData,
   } = props;
 
-  const [chartFilter, setChartFilter] = useState(POOL_CHART_VIEW.LIQUIDITY)
-  // const textColor = 'var(--algocloud-body-bg-2)';
+  const [chartFilter, setChartFilter] = useState(POOL_CHART_VIEW.LIQUIDITY);
+  const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.HOURLY);
+  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY);
+
+  const below2000 = useMedia('(max-width: 2000px)');
   const below1080 = useMedia('(max-width: 1080px)')
   const below600 = useMedia('(max-width: 600px)')
 
-  const aspect = below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22
+  const aspect = below2000 ? 58 / 28 : below1080 ? 60 / 32 : below600 ? 60 / 42 : 60 / 22;
 
   const ref = useRef<HTMLElement>()
   const isClient = typeof window === 'object'
@@ -55,27 +61,39 @@ const PoolChart = (props) => {
     return () => window.removeEventListener('resize', handleResize)
   }, [isClient, width]);
 
+  const handleChangeDuration = (d: string) => {
+    setDuration(d);
+  }
+
   return (
     <ChartWindowWrapper className="card-hover-2">
       <RowBetween
         mb={
           chartFilter === POOL_CHART_VIEW.LIQUIDITY ||
-          chartFilter === POOL_CHART_VIEW.VOLUME ||
-          chartFilter === POOL_CHART_VIEW.RATE_ONE ||
-          chartFilter === POOL_CHART_VIEW.RATE_TWO ? 40 : 0
+            chartFilter === POOL_CHART_VIEW.VOLUME ||
+            chartFilter === POOL_CHART_VIEW.RATE_ONE ||
+            chartFilter === POOL_CHART_VIEW.RATE_TWO ? 40 : 0
         }
         align="flex-start"
       >
         <OptionButtonContainer>
           <OptionButton
             active={chartFilter === POOL_CHART_VIEW.LIQUIDITY}
-            onClick={() => setChartFilter(POOL_CHART_VIEW.LIQUIDITY)}
+            onClick={() => {
+              setChartFilter(POOL_CHART_VIEW.LIQUIDITY);
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+            }}
           >
             Liquidity
           </OptionButton>
           <OptionButton
             active={chartFilter === POOL_CHART_VIEW.VOLUME}
-            onClick={() => setChartFilter(POOL_CHART_VIEW.VOLUME)}
+            onClick={() => {
+              setChartFilter(POOL_CHART_VIEW.VOLUME);
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
+            }}
           >
             Volume
           </OptionButton>
@@ -83,7 +101,11 @@ const PoolChart = (props) => {
           {!loading && (
             <OptionButton
               active={chartFilter === POOL_CHART_VIEW.RATE_ONE}
-              onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_ONE)}
+              onClick={() => {
+                setChartFilter(POOL_CHART_VIEW.RATE_ONE);
+                setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+                setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
+              }}
             >
               {`${pool['assetOneUnitName']}/${pool['assetTwoUnitName']}`}
             </OptionButton>
@@ -92,14 +114,18 @@ const PoolChart = (props) => {
           {!loading && (
             <OptionButton
               active={chartFilter === POOL_CHART_VIEW.RATE_TWO}
-              onClick={() => setChartFilter(POOL_CHART_VIEW.RATE_TWO)}
+              onClick={() => {
+                setChartFilter(POOL_CHART_VIEW.RATE_TWO);
+                setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
+              }}
             >
               {`${pool['assetTwoUnitName']}/${pool['assetOneUnitName']}`}
             </OptionButton>
           )}
         </OptionButtonContainer>
       </RowBetween>
-      
+
       {chartFilter === POOL_CHART_VIEW.RATE_ONE && rateOneData && (
         <ResponsiveContainer aspect={aspect} ref={ref}>
           <CandleStickChart
@@ -108,6 +134,7 @@ const PoolChart = (props) => {
             base={0}
             paddingTop='0'
             valueFormatter={(val) => val?.toFixed(4)}
+            duration={duration}
           />
         </ResponsiveContainer>
       )}
@@ -120,6 +147,7 @@ const PoolChart = (props) => {
             base={0}
             paddingTop='0'
             valueFormatter={(val) => val?.toFixed(4)}
+            duration={duration}
           />
         </ResponsiveContainer>
       )}
@@ -135,7 +163,7 @@ const PoolChart = (props) => {
               tickMargin={14}
               tickFormatter={tick => toNiceDate(tick)}
               dataKey="date"
-              tick={{ fill:'var(--algocloud-body-bg-2)' }}
+              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
               type={'number'}
               domain={['dataMin', 'dataMax']}
             />
@@ -194,7 +222,7 @@ const PoolChart = (props) => {
               minTickGap={120}
               tickFormatter={tick => toNiceDate(tick)}
               dataKey="date"
-              tick={{ fill:'var(--algocloud-body-bg-2)' }}
+              tick={{ fill: 'var(--algocloud-body-bg-2)' }}
               type={'number'}
               domain={['dataMin', 'dataMax']}
             />
@@ -237,6 +265,55 @@ const PoolChart = (props) => {
           </AreaChart>
         </ResponsiveContainer>
       )}
+      <OptionButtonBottomContainer>
+        <OptionButtonContainer>
+          <OptionButtonWrapper right="180px">
+            <OptionButtonContainer>
+              <OptionButton
+                active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
+                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.DAILY)}
+              >
+                1D
+              </OptionButton>
+              <OptionButton
+                active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
+                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)}
+              >
+                1H
+              </OptionButton>
+            </OptionButtonContainer>
+          </OptionButtonWrapper>
+          <Divider width='2px' />
+          <OptionButtonWrapper className="align-right" right="10px">
+            <OptionButtonContainer>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.THREEDAY)}
+              >
+                3D
+              </OptionButton>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.WEEK}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.WEEK)}
+              >
+                1W
+              </OptionButton>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.MONTH}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.MONTH)}
+              >
+                1M
+              </OptionButton>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.ALL}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.ALL)}
+              >
+                ALL
+              </OptionButton>
+            </OptionButtonContainer>
+          </OptionButtonWrapper>
+        </OptionButtonContainer>
+      </OptionButtonBottomContainer>
     </ChartWindowWrapper>
   );
 }

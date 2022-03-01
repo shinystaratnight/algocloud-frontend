@@ -74,6 +74,8 @@ const AssetShowPage = () => {
     setOpenCreateModal(true);
   }
 
+  console.log('asset: ', asset);
+
   return (
     <>
       <Breadcrumb
@@ -98,6 +100,7 @@ const AssetShowPage = () => {
           <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <h6 className="grow">Liqudity</h6>
+              
               <div className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
                 <span className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayLiquidityChange'], 2)}
                   {asset['lastDayLiquidityChange'] ? (parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? <span>{'  '}<i
@@ -106,15 +109,11 @@ const AssetShowPage = () => {
                     className={`fas fa-arrow-up`}
                   ></i></span> : ''}
                 </span>
-
               </div>
-
-
             </div>
             <h5 className='text-info-2'>{formattedNum(asset['liquidity'], true)}</h5>
           </ContentWrapper>
           <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
-
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <h6 className="grow">Volume (24hrs)</h6>
 

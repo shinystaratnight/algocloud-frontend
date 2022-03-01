@@ -10,6 +10,9 @@ const initialData = {
     'liquidity': '',
     'lastDayVolume': '',
     'lastWeekVolume': '',
+    'lastDayLiquidityChange': 0,
+    'lastDayVolumeChange': 0,
+    'lastWeekVolumeChange': 0
   },
   hourlyOneRates: [] as Array<any>,
   hourlyTwoRates: [] as Array<any>,
