@@ -1,3 +1,7 @@
+.container.w-50.w-100.card.bg-box.rounded.card-hover-3.m-0.p-0 {
+    max-width: 5000px !important;
+}
+
 h6.ww-2.m-0 {
     flex-flow: nowrap !important;
     white-space: nowrap;
