@@ -166,7 +166,7 @@ function AssetTable(props) {
             }
             let rootb = document.getElementById("root")!;
             let styleb = window.getComputedStyle(rootb);            
-            let iconColor = styleb.getPropertyValue(parseInt(asset.noteCount) == 0 ? ('--accent-warning-lighter') : ('--accent-success'));
+            let iconColor = styleb.getPropertyValue(parseInt(asset.noteCount) == 0 ? ('--accent-warning-lighter-2') : ('--accent-success'));
             return (
               <tr key={asset.id}>
                 <td>

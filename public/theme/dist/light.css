@@ -1,3 +1,59 @@
+h6.ww-2.m-0 {
+    flex-flow: nowrap !important;
+    white-space: nowrap;
+    max-width: 110px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ol-2::-webkit-scrollbar {
+    width: 0!important;
+    opacity: 0;
+    height: 0px;
+}
+
+.ol-2 {
+    margin-bottom: -0.5rem;
+}
+
+
+element.style {
+    max-width: 100%;
+    align-items: center;
+}
+.ol-2 {
+    display: flex;
+    align-items: center !important;
+    overflow: hidden;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    flex-wrap: nowrap;
+}
+
+h5.text-success.ww-2,h5.text-danger.ww-2 {
+    display: flex !important;
+    justify-content: center;
+    flex-direction: row;
+}
+
+span.ww-2-1 {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+}
+
+.dropdown-item{
+    border-radius: .375rem !important;
+}
+
+.dropdown-item:hover {
+    text-decoration: underline;
+    background-color: var(--algocloud-menu-li-bg-active)!important;
+    color: #323ebe!important;
+}
+
 span.ww-1 {
     display: flex;
     justify-content: flex-start;
@@ -1122,6 +1178,7 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
     --accent-warning: #ffcf4c;
     --accent-warning-darker: #f5b400;
     --accent-warning-lighter: #ffe499;
+    --accent-warning-lighter-2: #ffcf4c;
     --accent-warning-a10: rgba(255, 207, 76, 0.1);
     --accent-danger: #d31616;
     --accent-danger-darker: #b90909;
