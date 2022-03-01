@@ -158,7 +158,7 @@ const PriceStickChart = ({
       // get the title of the chart
       toolTip.innerHTML =
         `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">${title}</div>` + 
-        (price ? `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >` + valueFormatter(price) + '</div>' : `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >` + valueFormatter(0) + '</div>') +
+        (price ? `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >$` + valueFormatter(price) + '</div>' : `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >$` + valueFormatter(0) + '</div>') +
         (date ?
           `<div style="color: #7b78ff">` +
           date +
@@ -185,15 +185,15 @@ const PriceStickChart = ({
 
           const ts = param.time as UTCTimestamp;
           var price = (param.seriesPrices.get(candleSeries) as BarPrices).close;
-          const time = dayjs.unix(ts).format('MM/DD h:mm A');
-          // toolTip.innerHTML =
-          // `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">${title}</div>` +
-          // `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >` + (price ? valueFormatter(price) : valueFormatter(0)) + '</div>' +
-          // '<div>' + `<span style="font-size: 12px; margin: 4px 6px; color: ${textColor}>` +
-          // time +
-          // ' UTC' +
-          // '</span>' +
-          // '</div>';
+          const time = dayjs.unix(ts).format('MMMM D, YYYY');
+          toolTip.innerHTML =
+          `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">${title}</div>` +
+          (price ? `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >$` + valueFormatter(price) + '</div>' : `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >$` + valueFormatter(0) + '</div>') +
+          (time ?
+          `<div style="color: #7b78ff">` +
+          time +
+          '</div>' 
+          : '');
         }
       });
 
