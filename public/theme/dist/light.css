@@ -1,3 +1,36 @@
+.chart-rack {
+    flex-wrap: nowrap;
+    margin-top: 0px;
+    padding: 8px;
+    box-shadow: 0 0 0 1px var(--card-border);
+    border-radius: 0.375rem;
+    margin: 1rem;
+    color: var(--body-color);
+    margin-bottom: 0rem;
+    display: flex;
+    justify-content: flex-start;
+    background-color: rgb(var(--grey-100))!important;
+    overflow-x: scroll;
+}
+
+.time-button, .chart-button {
+    border: 0px !important;
+}
+
+@media(max-width: 1200px){
+    .time-buttons, .chart-buttons {
+        font-size: 11px;
+    }
+}
+
+
+@media(max-width: 350px){
+    .chart-buttons {
+        font-size: 10px;
+    }
+}
+
+
 .container.w-50.w-100.card.bg-box.rounded.card-hover-3.m-0.p-0 {
     max-width: 5000px !important;
 }
@@ -15,6 +48,13 @@ h6.ww-2.m-0 {
     opacity: 0;
     height: 0px;
 }
+
+.chart-rack::-webkit-scrollbar {
+   
+    height: 12px;
+}
+
+
 
 .ol-2 {
     margin-bottom: -0.5rem;
@@ -409,6 +449,7 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
 }
 
 :root {
+    --algocloud-body: #0909091a;
     --btn-bg: transparent;
     --btn-bg-hover: rgba(var(--accent-brand-rgb), 0.1);
     --btn-color: rgb(var(--grey-800));
