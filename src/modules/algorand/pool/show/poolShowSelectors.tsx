@@ -37,6 +37,11 @@ const selectHourlyTwoRates = createSelector(
   (raw) => raw.hourlyTwoRates,
 );
 
+const selectHourlyPoolData = createSelector(
+  [selectRaw],
+  (raw) => raw.hourlyPoolData,
+);
+
 const selectDailyPoolData = createSelector(
   [selectRaw],
   (raw) => raw.dailyPoolData,
@@ -50,6 +55,7 @@ const poolShowSelectors = {
   selectDailyTwoRates,
   selectHourlyOneRates,
   selectHourlyTwoRates,
+  selectHourlyPoolData,
   selectDailyPoolData,
   selectRaw,
 };

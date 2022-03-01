@@ -18,6 +18,7 @@ const initialData = {
   hourlyTwoRates: [] as Array<any>,
   dailyOneRates: [] as Array<any>,
   dailyTwoRates: [] as Array<any>,
+  hourlyPoolData: [] as Array<any>,
   dailyPoolData: [] as Array<any>,
 };
 
@@ -42,6 +43,7 @@ export default (state = initialData, { type, payload }) => {
       hourlyTwoRates: payload.hourlyTwoRates,
       dailyOneRates: payload.dailyOneRates,
       dailyTwoRates: payload.dailyTwoRates,
+      hourlyPoolData: payload.hourlyPoolData,
       dailyPoolData: payload.dailyPoolData,
     };
   }
