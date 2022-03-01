@@ -5,7 +5,7 @@ import selectors from 'src/modules/algorand/overview/overviewSelectors';
 import { CHART_TYPES } from 'src/modules/algorand/constants';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import TradingViewChart from 'src/view/algorand/components/TradingViewChart';
-import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
+import PriceStickChart from 'src/view/algorand/components/PriceStickChart';
 import { formatPercent, formattedNum } from 'src/modules/algorand/utils';
 import { Link } from 'react-router-dom';
 import { images } from 'src/images/images';
@@ -133,10 +133,12 @@ function ShowcaseChart() {
       <div className="showcase-row-1">
         <ChartWindowWrapper gap="10px" className="w-50 w-100 card bg-box rounded card-hover m-0">
           <ResponsiveContainer aspect={40 / 28} ref={ref3}>
-            <CandleStickChart
+            <PriceStickChart
               data={priceData}
               width={width3}
+              type={CHART_TYPES.BAR}
               base={0}
+              title={`<a href="/algorand/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Price`}
               paddingTop='0'
               valueFormatter={(val) => val?.toFixed(4)}
             // duration={duration}
