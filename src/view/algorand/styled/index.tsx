@@ -54,7 +54,7 @@ export const Divider = styled.div`
   zIndex: 10;
   width: ${(props) => props.width ? props.width : '1px'};
   height: 33px;
-  background-color: grey;
+  background-color: var(--algocloud-body);
   margin-left: 10px;
 `;
 
