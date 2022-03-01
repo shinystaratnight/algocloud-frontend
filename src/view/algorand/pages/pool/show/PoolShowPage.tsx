@@ -22,11 +22,11 @@ const PoolShowPage = () => {
   const [openCreateModal, setOpenCreateModal] = useState(false);
   const [currentNote, setCurrentNote] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
-  
+
   useEffect(() => {
     dispatch(actions.doFetch(address));
   }, [dispatch, address]);
-  
+
   const loading = useSelector(selectors.selectLoading);
   const pool = useSelector(selectors.selectPool);
   const poolName = useSelector(selectors.selectPoolName);
@@ -86,17 +86,17 @@ const PoolShowPage = () => {
 
       <div className='row'>
         <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
-          <ContentWrapper style={{flex: 1}} className="card-hover">
+          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             <h6 className="grow">Liqudity</h6>
-            <h5 className='text-info'>{formattedNum(pool['liquidity'], true)}</h5>
+            <h5 className='text-info-2'>{formattedNum(pool['liquidity'], true)}</h5>
           </ContentWrapper>
-          <ContentWrapper style={{flex: 1}} className="card-hover">
+          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             <h6 className="grow">Volume (24hrs)</h6>
-            <h5 className='text-info'>{formattedNum(pool['lastDayVolume'], true)}</h5>
+            <h5 className='text-info-2'>{formattedNum(pool['lastDayVolume'], true)}</h5>
           </ContentWrapper>
-          <ContentWrapper style={{flex: 1}} className="card-hover">
+          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
             <h6 className="grow">Volume (7days)</h6>
-            <h5 className='text-info'>{formattedNum(pool['lastWeekVolume'], true)}</h5>
+            <h5 className='text-info-2'>{formattedNum(pool['lastWeekVolume'], true)}</h5>
           </ContentWrapper>
           {/* <ContentWrapper style={{flex: 1}}>
             <h6>{`${pool['assetOneReserves']} ${pool['assetOneUnitName']}`}</h6>
@@ -104,14 +104,14 @@ const PoolShowPage = () => {
           </ContentWrapper> */}
         </div>
         <div className="col-lg-8 col-sm-12">
-        <PoolChart
-          color='#687dfd'
-          loading={loading}
-          pool={pool}
-          chartData={chartData}
-          rateOneData={rateOneData}
-          rateTwoData={rateTwoData}
-        />
+          <PoolChart
+            color='#687dfd'
+            loading={loading}
+            pool={pool}
+            chartData={chartData}
+            rateOneData={rateOneData}
+            rateTwoData={rateTwoData}
+          />
         </div>
       </div>
       <ContentWrapper className="card-hover">
