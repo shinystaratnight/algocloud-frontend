@@ -67,6 +67,7 @@ const PoolChart = (props) => {
   const chartData = useSelector(frame === ASSET_CHART_VIEW_FRAME.DAILY ? selectors.selectDailyPoolData : selectors.selectHourlyPoolData);
   const rateOneData = useSelector(frame === ASSET_CHART_VIEW_FRAME.DAILY ? selectors.selectDailyOneRates : selectors.selectHourlyOneRates);
   const rateTwoData = useSelector(frame === ASSET_CHART_VIEW_FRAME.DAILY ? selectors.selectDailyTwoRates : selectors.selectHourlyTwoRates);
+  console.log('rateTwoData: ', rateTwoData);
   const handleChangeDuration = (d: string) => {
     setDuration(d);
   }
