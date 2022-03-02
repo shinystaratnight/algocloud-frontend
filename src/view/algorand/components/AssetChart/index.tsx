@@ -42,7 +42,7 @@ const AssetChart = (props) => {
 
   const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
   const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.HOURLY);
-  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY)
+  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY);
 
   const below2000 = useMedia('(max-width: 2000px)');
   const below1080 = useMedia('(max-width: 1080px)');
@@ -73,7 +73,6 @@ const AssetChart = (props) => {
     setDuration(d);
   }
 
-
   return (
     <ChartWindowWrapper className="card-hover">
       <RowBetween
@@ -84,7 +83,7 @@ const AssetChart = (props) => {
         }
         align="flex-start"
       >
-        
+
       </RowBetween>
 
       {chartFilter === ASSET_CHART_VIEW.PRICE && priceData && (
@@ -145,10 +144,10 @@ const AssetChart = (props) => {
           />
         </ResponsiveContainer>
       )}
-      
+
       <OptionButtonBottomContainer className="chart-rack" >
-      <OptionButtonContainer className="chart-buttons" style={{textIndent: "0px"}}>
-          <OptionButton className="chart-button" 
+        <OptionButtonContainer className="chart-buttons" style={{ textIndent: "0px" }}>
+          <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.LIQUIDITY}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.LIQUIDITY);
@@ -158,7 +157,7 @@ const AssetChart = (props) => {
           >
             Liquidity
           </OptionButton>
-          <OptionButton className="chart-button" 
+          <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.VOLUME}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.VOLUME);
@@ -168,7 +167,7 @@ const AssetChart = (props) => {
           >
             Volume
           </OptionButton>
-          <OptionButton className="chart-button" 
+          <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.PRICE}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.PRICE);
@@ -178,7 +177,7 @@ const AssetChart = (props) => {
           >
             Price
           </OptionButton>
-          <OptionButton className="chart-button" 
+          <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.MARKETCAP}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.MARKETCAP);
@@ -189,63 +188,63 @@ const AssetChart = (props) => {
             Market Cap
           </OptionButton>
 
-         
+
 
         </OptionButtonContainer>
-        
-            
-            <OptionButtonContainer className="time-buttons" style={{textIndent: "0px"}}>
-            <Divider width='1px' backgroundColor="black" />
-            
-            <OptionButton className="time-button" 
-                active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
-                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)}
-              >
-                1H
-              </OptionButton>
-              <OptionButton className="time-button" 
-                active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
-                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.DAILY)}
-              >
-                1D
-              </OptionButton>
-
-              <Divider width='1px' />
 
 
-              <OptionButton className="time-button" 
-                active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}
-                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.THREEDAY)}
-              >
-                3D
-              </OptionButton>
-              <OptionButton className="time-button" 
-                active={duration === ASSET_CHART_VIEW_DURATION.WEEK}
-                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.WEEK)}
-              >
-                1W
-              </OptionButton>
-              <OptionButton className="time-button" 
-                active={duration === ASSET_CHART_VIEW_DURATION.MONTH}
-                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.MONTH)}
-              >
-                1M
-              </OptionButton>
-              <OptionButton className="time-button" 
-                active={duration === ASSET_CHART_VIEW_DURATION.ALL}
-                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.ALL)}
-              >
-                ALL
-              </OptionButton>
-              
+        <OptionButtonContainer className="time-buttons" style={{ textIndent: "0px" }}>
+          <Divider width='1px' backgroundColor="black" />
 
-              
-           
-           
-            </OptionButtonContainer>
-            <OptionButtonContainer>
-            </OptionButtonContainer>
-            
+          <OptionButton className="time-button"
+            active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
+            onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)}
+          >
+            1H
+          </OptionButton>
+          <OptionButton className="time-button"
+            active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
+            onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.DAILY)}
+          >
+            1D
+          </OptionButton>
+
+          <Divider width='1px' />
+
+
+          <OptionButton className="time-button"
+            active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}
+            onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.THREEDAY)}
+          >
+            3D
+          </OptionButton>
+          <OptionButton className="time-button"
+            active={duration === ASSET_CHART_VIEW_DURATION.WEEK}
+            onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.WEEK)}
+          >
+            1W
+          </OptionButton>
+          <OptionButton className="time-button"
+            active={duration === ASSET_CHART_VIEW_DURATION.MONTH}
+            onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.MONTH)}
+          >
+            1M
+          </OptionButton>
+          <OptionButton className="time-button"
+            active={duration === ASSET_CHART_VIEW_DURATION.ALL}
+            onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.ALL)}
+          >
+            ALL
+          </OptionButton>
+
+
+
+
+
+        </OptionButtonContainer>
+        <OptionButtonContainer>
+        </OptionButtonContainer>
+
 
       </OptionButtonBottomContainer>
     </ChartWindowWrapper>
