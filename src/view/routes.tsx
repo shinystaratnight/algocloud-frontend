@@ -187,9 +187,9 @@ const privateRoutes = [
     exact: true,
   },
   {
-    path: '/chalkboard',
+    path: '/portfolio',
     loader: () =>
-      import('src/view/Chalkboard/Chalkboard'),
+      import('src/view/Portfolio/Portfolio'),
     permissionRequired: permissions.orderRead,
     exact: true,
   },
