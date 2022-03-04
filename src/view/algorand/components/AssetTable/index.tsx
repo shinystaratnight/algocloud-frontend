@@ -9,7 +9,8 @@ import { NoteList, NoteModal } from 'src/view/algorand/components/Notes';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import noteActions from 'src/modules/note/noteActions';
 import overViewActions from 'src/modules/algorand/overview/overviewActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import authSelectors from 'src/modules/auth/authSelectors';
 
 function AssetTable(props) {
   const {
@@ -33,6 +34,10 @@ function AssetTable(props) {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [updating, setUpdating] = useState(false);
   const dispatch = useDispatch();
+
+  const currentUser = useSelector(
+    authSelectors.selectCurrentUser,
+  );
 
   useEffect(() => {
     setUpdating(false);
@@ -84,8 +89,6 @@ function AssetTable(props) {
     }
     dispatch(overViewActions.doAssetUpdate(assetId, body));
   }
-
-  console.log('assets: ', assets);
 
   return (
     <div className="table-responsive">
@@ -218,7 +221,11 @@ function AssetTable(props) {
                         </div>
                       </div>
                     </Link>
-                    <i className={`fas fa-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></i>
+                    {
+                      currentUser.superadmin === true ?
+                      <i className={`fas fa-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></i>
+                      : asset.isVerified && <i className={`fas fa-check text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></i>
+                    }
                   </div>
                 </td>
                 <td>{formatNumber(asset.price)}</td>
