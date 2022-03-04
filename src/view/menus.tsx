@@ -27,10 +27,10 @@ export default [
     icon: 'fas fa-user-plus',
   },
   {
-    path: '/chalkboard',
-    permissionRequired: permissions.chalkboardRead,
+    path: '/portfolio',
+    permissionRequired: permissions.portfolioRead,
     icon: 'fas fa-file',
-    label: i18n('entities.chalkboard.menu'),
+    label: i18n('entities.portfolio.menu'),
   },
 
   {
