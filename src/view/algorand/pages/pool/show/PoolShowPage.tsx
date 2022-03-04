@@ -92,8 +92,6 @@ const PoolShowPage = () => {
     setOpenCreateModal(true);
   }
 
-  console.log('pool: ', pool);
-
   return (
     <>
       <Breadcrumb

@@ -74,8 +74,6 @@ const AssetShowPage = () => {
     setOpenCreateModal(true);
   }
 
-  console.log('asset: ', asset);
-
   return (
     <>
       <Breadcrumb

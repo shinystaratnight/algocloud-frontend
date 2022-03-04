@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
@@ -8,6 +8,7 @@ import { images } from 'src/images/images';
 import { NoteList, NoteModal } from 'src/view/algorand/components/Notes';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import noteActions from 'src/modules/note/noteActions';
+import overViewActions from 'src/modules/algorand/overview/overviewActions';
 import { useDispatch } from 'react-redux';
 
 function AssetTable(props) {
@@ -30,7 +31,12 @@ function AssetTable(props) {
   const [id, setId] = useState(null);
   const [currentNote, setCurrentNote] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
+  const [updating, setUpdating] = useState(false);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    setUpdating(false);
+  }, [assets]);
 
   const onClickComment = (_id) => {
     setOpenCreateModal(true);
@@ -69,6 +75,18 @@ function AssetTable(props) {
     setShowDeleteModal(false);
   }
 
+  const handleVerifyAsset = (assetId, isVerified) => {
+    setUpdating(true);
+    const body = {
+      data: {
+        isVerified: !isVerified
+      }
+    }
+    dispatch(overViewActions.doAssetUpdate(assetId, body));
+  }
+
+  console.log('assets: ', assets);
+
   return (
     <div className="table-responsive">
       <table className="table table-hover table-striped mt-2">
@@ -85,9 +103,23 @@ function AssetTable(props) {
               onSort={doChangeSort}
               hasRows={hasRows}
               sorter={sorter}
+              name='price'
+              label='PRICE'
+            />
+            <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
+              name='lastDayPriceChange'
+              label='24H %'
+            />
+            {/* <TableColumnHeader
+              onSort={doChangeSort}
+              hasRows={hasRows}
+              sorter={sorter}
               name='unitName'
               label='SYMBOL'
-            />
+            /> */}
             <TableColumnHeader
               onSort={doChangeSort}
               hasRows={hasRows}
@@ -109,20 +141,7 @@ function AssetTable(props) {
               name='lastDayVolume'
               label='VOL[24H]'
             />
-            <TableColumnHeader
-              onSort={doChangeSort}
-              hasRows={hasRows}
-              sorter={sorter}
-              name='price'
-              label='PRICE'
-            />
-            <TableColumnHeader
-              onSort={doChangeSort}
-              hasRows={hasRows}
-              sorter={sorter}
-              name='lastDayPriceChange'
-              label='24H %'
-            />
+
             <TableColumnHeader
               name='favorite'
               label='FAVORITE'
@@ -139,6 +158,13 @@ function AssetTable(props) {
         </thead>
         <tbody>
           {loading && (
+            <tr>
+              <td colSpan={100}>
+                <Spinner />
+              </td>
+            </tr>
+          )}
+          {updating && (
             <tr>
               <td colSpan={100}>
                 <Spinner />
@@ -165,20 +191,36 @@ function AssetTable(props) {
               }
             }
             let rootb = document.getElementById("root")!;
-            let styleb = window.getComputedStyle(rootb);            
+            let styleb = window.getComputedStyle(rootb);
             let iconColor = styleb.getPropertyValue(parseInt(asset.noteCount) == 0 ? ('--accent-warning-lighter-2') : ('--accent-success'));
             return (
               <tr key={asset.id}>
                 <td>
-                  <Link to={`/algorand/assets/${asset.assetId}`}>
-                    <img className="token" src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
-                    <h6 className='table-algo-title'>{asset.name}</h6>
-                  </Link>
+                  <div className='d-flex'>
+                    <Link to={`/algorand/assets/${asset.assetId}`}>
+                      <img className="token" src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                      <div>
+                        <div className='d-flex'>
+                          <h6 className='table-algo-title'>{asset.name}</h6>
+                          {/* <button
+                          className="btn"
+                          onClick={(e) =>
+                            console.log('event: ', e)
+                            // e.preventDefault()
+                          }
+                        > */}
+
+                          {/* </button> */}
+                        </div>
+                        <div>
+                          <span style={{ color: 'white' }}>{asset.unitName}</span>
+                          <span style={{ color: 'grey' }}>{' '}{asset.id}</span>
+                        </div>
+                      </div>
+                    </Link>
+                    <i className={`fas fa-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></i>
+                  </div>
                 </td>
-                <td><b>{asset.unitName}</b></td>
-                <td>{formatNumber(asset.marketCap)}</td>
-                <td>{formatNumber(asset.liquidity)}</td>
-                <td>{formatNumber(asset.lastDayVolume)}</td>
                 <td>{formatNumber(asset.price)}</td>
                 <td>
                   <span className={(parseFloat(formatPercent(asset.lastDayPriceChange)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset.lastDayPriceChange)}
@@ -189,6 +231,10 @@ function AssetTable(props) {
                     ></i></span> : ''}
                   </span>
                 </td>
+                {/* <td><b>{asset.unitName}</b></td> */}
+                <td>{formatNumber(asset.marketCap)}</td>
+                <td>{formatNumber(asset.liquidity)}</td>
+                <td>{formatNumber(asset.lastDayVolume)}</td>
                 <td>
                   {togglePermission && (
                     <button

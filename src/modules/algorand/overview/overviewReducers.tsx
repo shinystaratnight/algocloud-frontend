@@ -177,5 +177,12 @@ export default (state = initialData, { type, payload }) => {
     };
   }
 
+  if (type === actions.ASSET_UPDATED) {
+    return {
+      ...state,
+      assetUpdated: payload
+    };
+  }
+
   return state;
 };

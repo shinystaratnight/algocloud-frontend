@@ -69,13 +69,6 @@ export default [
   },
 
   {
-    path: '/algorand',
-    permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-chart-bar',
-    label: i18n('entities.algorand.menu'),
-  },
-  
-  {
     path: '/superadmin/user',
     label: i18n('user.menu'),
     permissionRequired: permissions.userReadSuperadmin,
@@ -102,6 +95,19 @@ export default [
     permissionRequired: permissions.settingsReadSuperadmin,
     icon: 'fas fa-chart-bar',
   },
+
+  {
+    path: '/algorand',
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-chart-bar',
+    label: i18n('entities.algorand.menu'),
+  },
+  // {
+  //   path: '/superadmin/algorand',
+  //   permissionRequired: permissions.algorandReadSuperadmin,
+  //   icon: 'fas fa-chart-bar',
+  //   label: i18n('entities.algorand.menu'),
+  // },
   {
     path: '#',
     label: i18n('trade.menu'),
