@@ -161,4 +161,15 @@ export default class AlgorandService {
 
     return response.data;
   }
+
+  static async updateAsset(assetId, data) {
+    const tenantId = AuthCurrentTenant.get();
+
+    const response = await authAxios.put(
+      `/tenant/${tenantId}/algorand/asset/${assetId}`,
+      data
+    );
+
+    return response.data;
+  }
 }

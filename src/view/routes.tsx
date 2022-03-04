@@ -379,6 +379,12 @@ const superadminRoutes = [
     permissionRequired: permissions.userReadSuperadmin,
     exact: true,
   },
+  // {
+  //   path: '/superadmin/algorand',
+  //   loader: () => import('src/view/algorand/pages/overview/view/OverviewPage'),
+  //   permissionRequired: permissions.algorandReadSuperadmin,
+  //   exact: true,
+  // },
 ].filter(Boolean);
 
 export default {

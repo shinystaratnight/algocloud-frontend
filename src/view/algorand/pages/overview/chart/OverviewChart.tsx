@@ -82,7 +82,7 @@ function ShowcaseChart() {
             <h6 className="ww">Price (24hrs)</h6>
           </div>
           <div className="p-2  col-sm w-130">
-            <h5 className={showcase.lastDayLiquidityChange ? 'text-danger ww' : 'text-success ww'}> {(showcase.lastDayLiquidityChange) ? (parseFloat(formatPercent(showcase.llastDayLiquidityChange)) < 0) ? <span className="ww-1">{'  '}<div  >{(showcase.lastDayLiquidityChange)?.toFixed(3) || ''}</div><i
+            <h5 className={showcase.lastDayLiquidityChange ? 'text-danger ww' : 'text-success ww'}> {(showcase.lastDayLiquidityChange) ? (parseFloat(formatPercent(showcase.lastDayLiquidityChange)) < 0) ? <span className="ww-1">{'  '}<div  >{(showcase.lastDayLiquidityChange)?.toFixed(3) || ''}</div><i
               className={`fas fa-arrow-down pl-2`}
             ></i></span> : <span>{'  '}<i
               className={`fas fa-arrow-up pl-2`}

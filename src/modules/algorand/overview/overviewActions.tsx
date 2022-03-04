@@ -16,6 +16,7 @@ const overviewActions = {
   POOL_SORTER_CHANGED: `${prefix}_POOL_SORTER_CHANGED`,
   POOL_PAGINATION_CHANGED: `${prefix}_POOL_PAGINATION_CHANGED`,
   LAST_UPDATED: `LAST_UPDATED`,
+  ASSET_UPDATED: `ASSET_UPDATED`,
 
   doReset: () => async (dispatch) => {
     dispatch({
@@ -23,7 +24,7 @@ const overviewActions = {
     });
   },
 
-  doFetch: (reload=true) => async (dispatch, getState) => {
+  doFetch: (reload = true) => async (dispatch, getState) => {
     try {
       if (reload) {
         dispatch({
@@ -161,13 +162,33 @@ const overviewActions = {
     dispatch(overviewActions.doFetch());
   },
 
-  doFetchLastUpdate: () => async (dispatch) => {    
+  doFetchLastUpdate: () => async (dispatch) => {
     const data = await AlgorandService.getLastUpdatedTime();
-    
+
     dispatch({
       type: overviewActions.LAST_UPDATED,
       payload: data.lastUpdatedTime[0]
     })
+  },
+
+  doAssetUpdate: (assetId, body) => async (dispatch, getState) => {
+    const asset = await AlgorandService.updateAsset(assetId, body);
+
+    dispatch({
+      type: overviewActions.ASSET_UPDATED,
+      payload: asset
+    })
+
+    const data = await AlgorandService.getAlgorandOverview(
+      selectors.selectFavoriteFilter(getState()),
+      selectors.selectAssetFilter(getState()),
+      selectors.selectPoolFilter(getState()),
+    );
+
+    dispatch({
+      type: overviewActions.FETCH_SUCCESS,
+      payload: data,
+    });
   }
 };
 
