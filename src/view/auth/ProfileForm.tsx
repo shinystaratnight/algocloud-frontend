@@ -86,6 +86,14 @@ function ProfileFormPage(props) {
           <div className="row">
             <div className="col-lg-7 col-md-8 col-12">
               <div className="form-group">
+              <div className="col-lg-7 col-md-8 col-12">
+              <ImagesFormItem
+                name="avatars"
+                label={i18n('user.fields.avatars')}
+                storage={Storage.values.userAvatarsProfiles}
+                max={1}
+              />
+            </div>
                 <label
                   className="col-form-label"
                   htmlFor="email"
@@ -128,15 +136,27 @@ function ProfileFormPage(props) {
                 prefix="+"
               />
             </div>
-
+            <h1 className="pt-4 pb-1">Algo Portfolio</h1>
+<div className="dropdown-divider">            </div>
             <div className="col-lg-7 col-md-8 col-12">
-              <ImagesFormItem
-                name="avatars"
-                label={i18n('user.fields.avatars')}
-                storage={Storage.values.userAvatarsProfiles}
-                max={1}
-              />
+              <InputFormItem
+                name="Algo Portfolio"
+                label={i18n('Algorand Address #1')}
+              disabled/>
             </div>
+            <div className="col-lg-7 col-md-8 col-12">
+              <InputFormItem
+                name="Algo Portfolio"
+                label={i18n('Algorand Address #2')}
+              disabled/>
+            </div>
+            <div className="col-lg-7 col-md-8 col-12">
+              <InputFormItem
+                name="Algo Portfolio"
+                label={i18n('Algorand Address #3')}
+              disabled/>
+            </div>
+
           </div>
 
           <div className="form-buttons">

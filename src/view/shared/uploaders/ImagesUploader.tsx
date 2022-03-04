@@ -117,7 +117,7 @@ function ImagesUploader(props) {
             return (
               <div
                 className="mr-2 mb-2 img-card"
-                style={{ height: '100px' }}
+                style={{ height: '150px' }}
                 key={item.id}
               >
                 <img
@@ -125,8 +125,8 @@ function ImagesUploader(props) {
                   src={item.downloadUrl}
                   className="img-thumbnail"
                   style={{
-                    width: '100px',
-                    height: '100px',
+                    width: '150px',
+                    height: '150px',
                     objectFit: 'cover',
                   }}
                 />
