@@ -11,6 +11,7 @@ import Avatar from 'src/view/shared/Avatar';
 import config from 'src/config';
 import { Link } from 'react-router-dom';
 import DarkMode from 'src/view/algorand/components/DarkMode/DarkMode';
+import PipeConnect from 'src/view/Portfolio/components/PipeConnect';
 
 
 function Header(props) {
@@ -81,10 +82,9 @@ function Header(props) {
       </button>
       <a className="algocloud-navbar-brand" href="."><div className="algocloud-font ">AlgoCloud</div></a>
 
-
       <div className="last-child" style={{display: 'flex', alignItems: 'center'}}>
                 <span className="i18n-select">
-          <I18nSelect  />
+          <PipeConnect  />
         </span>  
 
 <li className="nav-item dropdown">

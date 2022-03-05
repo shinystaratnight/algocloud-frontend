@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Pipeline from "@pipeline-ui-2/pipeline"; //change to import Pipeline from 'Pipeline for realtime editing Pipeline index.js, and dependency to: "Pipeline": "file:..",
 import { sendTxns } from "@pipeline-ui-2/pipeline/utils";
 import algosdk from "algosdk";
-import "./style.css";
+import { fetchDetails } from "../Portfolio/components/PipeConnect";
 var asset = parseInt(71185554);
 var refresh = false;
 var ready = false;
@@ -11,13 +11,7 @@ const myAlgoWallet = Pipeline.init();
 Pipeline.main = false;
 var mynet = Pipeline.main ? "MainNet" : "TestNet";
 const tealNames = ["daoDeposit"];
-function toggle(id = "", on = true) {
-  if (on) {
-    document.getElementById(id).style.display = "block";
-  } else {
-    document.getElementById(id).style.display = "none";
-  }
-}
+
 function toggleFlex(id = "", on = true) {
   if (on) {
     document.getElementById(id).style.display = "flex";
@@ -90,10 +84,6 @@ class PortfolioPage extends Component {
     Pipeline.connect(myAlgoWallet).then((data) => {
       this.setState({ myAddress: data });
       setInterval(() => this.fetchBalance(this.state.myAddress), 5000);
-      document.getElementById("wallet-connect-2").style.display = "none";
-      document.getElementById("wallet-connected").style.display = "block";
-      toggle("modal-root-1", false);
-      toggle("modal-root-2", false);
     });
   };
   switchConnector = (event) => {
@@ -127,7 +117,7 @@ class PortfolioPage extends Component {
     let txn = algosdk.makeApplicationClearStateTxn(
       this.state.myAddress,
       params,
-      appId   
+      appId
     );
     let signedTxn = await Pipeline.sign(txn, false);
     let txid = await sendTxns(signedTxn, transServer, false, "", true);
@@ -141,7 +131,7 @@ class PortfolioPage extends Component {
     this.setState({ level: (balance / (this.state.goal / 1000000)) * 100 });
     this.setState({ fundAmount: balance });
     this.readLocalState(Pipeline.main, this.state.myAddress, appId).then(
-      () => {} 
+      () => { }
     );
   };
   optIn = async () => {
@@ -203,7 +193,7 @@ class PortfolioPage extends Component {
       (data) => {
         this.setState({ txID: data });
 
-        
+
       }
     );
   };
@@ -242,7 +232,7 @@ class PortfolioPage extends Component {
       }
     );
   };
-  
+
   readLocalState = async (net, addr, appIndex) => {
     try {
       let url = "";
@@ -303,12 +293,24 @@ class PortfolioPage extends Component {
   };
   render() {
     return (
+
       <div align="center">
+        <div id="table-div" style={{display: "none"}}></div>
+        <button
+          id="disconnect-me"
+         onClick = {()=> {
+           fetchDetails("NIN73GEWDWBU3HHEPGWGIQZMOITN4PU3YVTKMR3ESI7DCH5ME4E5TLB4XU")
+           document.getElementById("table-div").style.display = "block"
+         }}
+          className="btn btn--transparent btn--warning"
+        >
+          Disconnect
+        </button>
         <select onClick={this.setNet}>
-        <option>MainNet</option>
+          <option>MainNet</option>
           <option>TestNet</option>
         </select>
-       
+
         <h5>{this.state.net}
         </h5>
 
@@ -317,19 +319,7 @@ class PortfolioPage extends Component {
             <header className="header">
               <div>
                 <div>
-                  <button
-                    className="crayons-btn crayons-btn--secondary"
-                    id="wallet-connect-2"
-                    onClick={() => {
-                      document.getElementById(
-                        "modal-root-2"
-                      ).style.display = "block"
-                      document.getElementById(
-                        "modal-root-1"
-                      ).style.display = "block";
-                    ;
-                    }}
-                  >
+                  
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width={16}
@@ -341,146 +331,74 @@ class PortfolioPage extends Component {
                       <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z" />
                     </svg>
                     <span className="count__title-2">Connect Wallet</span>
-                  </button>
-                  <div id="wallet-connected" style={{ display: "none" }}>
-                    <div className="crayons-select flex">
-                      <div id="my-balance" className="own-balance">
-                        <p style={{marginBottom: "0px"}}>{this.state.balance + " Algo"}</p>
-                        <span className="currency" />
-                      </div>
-                      <div className="dropdown">
-                        <button id="own-address" className="own-address">
-                          {this.state.myAddress}
-                        </button>
-                        <div className="dropdown__content dropdown__content-wallet">
-                          <button className="btn btn--transparent">
-                            <div className="copyable">
-                              <div className="copyable__text">copy address</div>
-                              <span className="copy" />
-                            </div>
-                          </button>
-                          <a
-                            className="btn btn--transparent"
-                            id="algoexplorer"
-                            target="_blank"
-                            rel="noreferrer"
-                            href={
-                              "https://algoexplorer.io/address/" +
-                              this.state.myAddress
-                            }
-                          >
-                            AlgoExplorer
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width={16}
-                              height={16}
-                              fill="currentColor"
-                              className="bi bi-box-arrow-up-right"
-                              viewBox="0 0 16 16"
-                            >
-                              
-                              <path
-                                fillRule="evenodd"
-                                d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z"
-                              />
-                              <path
-                                fillRule="evenodd"
-                                d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z"
-                              />
-                            </svg>
-                          </a>
-                          <button
-                            id="disconnect-me"
-                            className="btn btn--transparent btn--warning"
-                          >
-                            Disconnect
-                          </button>
-                          
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  
                 </div>
                 <div />
               </div>
             </header>
-            <div id="modal-root-1" class="modal-backdrop show"  style={{ display: "none" }} ></div>
-            <div
-                  id="modal-root-2"
-                  className="fade modal show"
-                  style={{ display: "none" }}
-                  >
-                    
-                  <div className="modal-dialog modal-sm modal-lg modal-dialog-centered">
-                    <div className="modal-content">
-                      <div className="modal-header">
-                        <h2 className="modal-title">Algo Wallets</h2>
-                        <button
-                          id="wallet-connect-close"
-                          className="btn-close btn"
-                          onClick={() => {
-                            document.getElementById(
-                              "modal-root-1"
-                            ).style.display = "none"
-                            document.getElementById(
-                              "modal-root-2"
-                            ).style.display = "none";
-                          }}
-                        >
-                          <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M7.75732 7.75732L16.2426 16.2426" />
-                            <path d="M7.75739 16.2426L16.2427 7.75732" />
-                          </svg>
-                        </button>
-                      </div>
-                      <div className="modal-body">
-                      <button
-                          id="WalletConnect"
-                          className="crayons-btn w-100"
-                          onClick={() => {
-                            Pipeline.pipeConnector = "WalletConnect";
-                            this.handleConnect();
-                          }}
-                        >
-                          
-                          WalletConnect
-                        </button>
-                        <button
-                          id="AlgoSigner"
-                          className="crayons-btn w-100"
-                          onClick={() => {
-                            Pipeline.pipeConnector = "AlgoSigner";
-                            this.handleConnect();
-                          }}
-                        >
-                          
-                          AlgoSigner
-                        </button>
-                        <button
-                          id="myAlgoWallet"
-                          className="crayons-btn w-100"
-                          onClick={() => {
-                            Pipeline.pipeConnector = "myAlgoWallet";
-                            this.handleConnect();
-                          }}
-                        >
-                          
-                          MyAlgoWallet
-                        </button>
-                        
-                      </div>
-                    </div>
-                    
+            <div id="modal-root-1" class="modal-backdrop show" style={{ display: "none" }} ></div>
+
+              <div className="modal-dialog modal-sm modal-lg modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h2 className="modal-title">Algo Wallets</h2>
+                    <button
+                      id="wallet-connect-close"
+                      className="btn-close btn"
+                    >
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M7.75732 7.75732L16.2426 16.2426" />
+                        <path d="M7.75739 16.2426L16.2427 7.75732" />
+                      </svg>
+                    </button>
+                  </div>
+                  <div className="modal-body">
+                    <button
+                      id="WalletConnect"
+                      className="crayons-btn w-100"
+                      onClick={() => {
+                        Pipeline.pipeConnector = "WalletConnect";
+                        this.handleConnect();
+                      }}
+                    >
+
+                      WalletConnect
+                    </button>
+                    <button
+                      id="AlgoSigner"
+                      className="crayons-btn w-100"
+                      onClick={() => {
+                        Pipeline.pipeConnector = "AlgoSigner";
+                        this.handleConnect();
+                      }}
+                    >
+
+                      AlgoSigner
+                    </button>
+                    <button
+                      id="myAlgoWallet"
+                      className="crayons-btn w-100"
+                      onClick={() => {
+                        Pipeline.pipeConnector = "myAlgoWallet";
+                        this.handleConnect();
+                      }}
+                    >
+
+                      MyAlgoWallet
+                    </button>
+
                   </div>
                 </div>
-               
+
+              </div>
+            </div>
+
           </div>
         </div>
-      </div>
     );
   }
 }
