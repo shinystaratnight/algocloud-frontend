@@ -356,42 +356,9 @@ class PortfolioPage extends Component {
                       </svg>
                     </button>
                   </div>
-                  <div className="modal-body">
-                    <button
-                      id="WalletConnect"
-                      className="crayons-btn w-100"
-                      onClick={() => {
-                        Pipeline.pipeConnector = "WalletConnect";
-                        this.handleConnect();
-                      }}
-                    >
+                 
 
-                      WalletConnect
-                    </button>
-                    <button
-                      id="AlgoSigner"
-                      className="crayons-btn w-100"
-                      onClick={() => {
-                        Pipeline.pipeConnector = "AlgoSigner";
-                        this.handleConnect();
-                      }}
-                    >
-
-                      AlgoSigner
-                    </button>
-                    <button
-                      id="myAlgoWallet"
-                      className="crayons-btn w-100"
-                      onClick={() => {
-                        Pipeline.pipeConnector = "myAlgoWallet";
-                        this.handleConnect();
-                      }}
-                    >
-
-                      MyAlgoWallet
-                    </button>
-
-                  </div>
+     
                 </div>
 
               </div>
