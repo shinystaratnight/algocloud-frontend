@@ -17,6 +17,19 @@
     min-width: var(--su-2)
 }
 
+.dropdown__content.dropdown__content-wallet {
+    box-shadow: 0 0 0 1px var(--card-border) !important;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    color: var(--algocloud-dropdown-color);
+    text-align: left;
+    list-style: none;
+    background-color: var(--algocloud-dropdown-bg);
+    background-clip: padding-box;
+    border: 1px solid var(--algocloud-dropdown-border-color);
+}
+
 svg.bi.bi-box-arrow-up-right {
     margin-left: 5px
 }
@@ -90,7 +103,7 @@ a#algoexplorer {
 }
 
 a#algoexplorer,button#disconnect-me,button.btn.btn--transparent {
-    padding: .25rem 1rem!important;
+    padding: 0.25rem 0.5rem!important;
     font-size: 13px;
     justify-content: flex-start
 }
@@ -134,12 +147,9 @@ a#algoexplorer,button#disconnect-me,button.btn.btn--transparent {
 }
 
 div#wallet-connected {
-    color: var(--algocloud-body-color);
-    text-align: left;
-    list-style: none;
+
     background-color: var(--algocloud-dropdown-bg);
-    background-clip: padding-box;
-    border: 1px solid var(--algocloud-card-border-color)
+
 }
 
 .own-address,.own-balance {
