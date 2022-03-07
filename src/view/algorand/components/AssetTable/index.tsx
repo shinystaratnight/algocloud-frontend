@@ -223,8 +223,8 @@ function AssetTable(props) {
                     </Link>
                     {
                       currentUser.superadmin === true ?
-                      <i className={`fas fa-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></i>
-                      : asset.isVerified && <i className={`fas fa-check text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></i>
+                      <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
+                      : asset.isVerified && <div className={`bi bi-shield-check-checked text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></div>
                     }
                   </div>
                 </td>

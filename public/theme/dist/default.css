@@ -1,3 +1,514 @@
+.algocloud-font-logo {
+    width: 0px;
+    height: 0px;
+    display: none;
+}
+
+svg.svg-inline--fa.fa-wallet {
+    font-size: 18px;
+    margin-right: 0.4rem;
+}
+
+button#wallet-connect-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+
+@media (max-width: 576px){
+
+    div#stickyTop-2 {
+        justify-content: flex-start;
+        width: 100%;
+        height: 60px;
+        top: 0px;
+    }
+
+    button#own-address {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        width: 240px !important;
+        max-width: 350px !important;
+        display: block;
+        overflow: hidden;
+        color: var(--body-color)!important;
+        left: 0px;
+    }
+    
+    button#wallet-connect-2{
+        display: flex !important;
+    }
+
+    .algocloud-font{
+        display: none;
+    }
+
+    svg.svg-inline--fa.fa-wallet {
+        font-size: 18px;
+        margin-right: 0px;
+    }
+
+    svg#algocloud-font-logo {
+        width: 33px;
+        height: 33px;
+    color: var(--algocloud-body-color);
+        display: block;
+    }
+
+
+    
+
+    .i18n-select {
+        display: flex !important;
+    }
+
+    span.count__title-2 {
+        display: none;
+    }
+
+    svg.svg-inline--fa.fa-wallet {
+        font-size: 18px !important;
+    }
+button#wallet-connected{
+    height: 34px !important;
+    position: fixed;
+    top: 60px;
+    min-width: -webkit-fill-available;
+    justify-content: center;
+    left: 0px;
+    right: 0px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    background-color: var(--base-0);
+}
+
+div#wallet-connected{
+    justify-content: flex-start !important;
+}
+    
+button#wallet-connect-2 {
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: 0.3125rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background-color: #ffffff00;
+    color: var(--algocloud-body-bg-2)!important;
+    border: 0;
+    box-shadow: none;
+
+}
+
+button#wallet-connect-2:hover{
+background-color: rgb(59 73 223/10%)!important;
+    color: #323ebe!important;
+    border: 0;
+    border-radius: 0.375rem;
+}
+
+div#wallet-connected {
+    display: flex;
+    position: fixed;
+    top: 60px;
+    height: 34px !important;
+    width: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    top: 60px;
+    min-width: -webkit-fill-available;
+    align-items: center;
+    justify-content: center;
+    left: 0px;
+    right: 0px;
+    border-radius: 0px;
+    border-bottom-right-radius: 0.375rem !important;
+    border-bottom-left-radius: 0.375rem !important;
+    background-color: var(--base-0) !important;
+}
+
+    span.i18n-select{
+        margin-right: 0px !important;
+    }
+    .dropdown__content.dropdown__content-wallet {
+        margin-right: 0px !important
+    }
+
+    .navbar-toggler-humburger-icon {
+        margin-right: 0.4rem !important;
+    }
+
+    .modal.fade .modal-dialog {
+        transform: translate(0,50px) !important;
+    }
+
+    .crayons-select-2 {
+        line-height: var(--lh-base);
+        padding: calc(0.5em - var(--border-width)) 0.5em;
+        padding-right: 0.5em !important;
+        font-family: inherit;
+        font-size: var(--fs-base);
+        width: 100%;
+        position: relative;
+        outline: 0;
+        background-image: var(--select-icon);
+        background-position: calc(100% - var(--su-2)) calc(50% - 1px);
+        background-repeat: no-repeat;
+        background-color: var(--algocloud-card-bg-color);
+    }
+}
+nav.navbar.fixed-bottom.navbar-light.bg-light {
+background-color: var(--body-bg);
+}
+
+
+.c-indicator--warning {
+    --bg: var(--indicator-warning-bg);
+    --color: var(--indicator-warning-color)
+}
+
+.c-indicator {
+    --bg: var(--indicator-bg);
+    --color: var(--indicator-color);
+    padding: var(--su-1);
+    text-align: center;
+    line-height: 1;
+    font-size: var(--fs-s);
+    border-radius: var(--radius);
+    display: inline-block;
+    background: var(--bg);
+    color: var(--color);
+    min-width: var(--su-2)
+}
+
+.dropdown__content.dropdown__content-wallet {
+    box-shadow: 0 0 0 1px var(--card-border) !important;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+    color: var(--algocloud-dropdown-color);
+    text-align: left;
+    list-style: none;
+    background-color: var(--algocloud-dropdown-bg);
+    background-clip: padding-box;
+    border: 1px solid var(--algocloud-dropdown-border-color);
+}
+
+svg.bi.bi-box-arrow-up-right {
+    margin-left: 5px
+}
+
+@media (max-width:575px) {
+    div#my-balance {
+        display: none!important
+    }
+}
+
+button#wallet-connect-2 {
+    --bg: var(--button-secondary-bg);
+    --bg-hover: var(--button-secondary-bg-hover);
+    --color: var(--button-secondary-color);
+    --color-hover: var(--button-secondary-color-hover);
+    --bg-inverted: var(--button-secondary-inverted-bg);
+    --bg-inverted-hover: var(--button-secondary-inverted-bg-hover);
+    --color-inverted: var(--button-secondary-inverted-color);
+    --color-inverted-hover: var(--button-secondary-inverted-color-hover)
+}
+
+button#own-address {
+    max-width: 140px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 160px;
+    display: block;
+    overflow: hidden;
+    color: var(--body-color)!important
+}
+
+.own-address {
+    transition: border-color .2s ease-in-out;
+    display: flex
+}
+
+button#deposit,button#options-btn,button#options-btn-2 {
+    transition: border-color .2s ease-in-out;
+    color: var(--clr-text-1)
+}
+
+.btn-close:focus {
+    outline: 0;
+    -webkit-box-shadow: 0 0 0 0.25rem rgb(104 125 253 / 25%);
+    box-shadow: unset;
+    opacity: 1;
+    background-color: var(--accent-brand-a10);
+}
+
+
+@media (max-width:330px) {
+    button#check,button#delete {
+        font-size: 12px
+    }
+
+    svg.bi.bi-wallet {
+        display: none
+    }
+
+    .count__title-2 {
+        margin-left: 0!important
+    }
+}
+
+a#algoexplorer {
+    align-items: center
+}
+
+.own-balance {
+    height: 30px!important
+}
+
+a#algoexplorer,button#disconnect-me,button.btn.btn--transparent {
+    padding: 0.25rem 0.5rem!important;
+    font-size: 13px;
+    justify-content: flex-start
+}
+
+.dropdown__content.dropdown__content-wallet {
+    min-width: 14rem;
+    padding: .5rem;
+    text-align: left;
+    list-style: none;
+    background-color: var(--algocloud-dropdown-bg);
+    background-clip: padding-box;
+    border: 1px solid var(--algocloud-dropdown-border-color);
+    -webkit-box-shadow: var(--algocloud-dropdown-box-shadow);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05),0 0 0 1px var(--base-a10)
+}
+
+.dropdown__content {
+    right: -3px;
+    grid-gap: 0!important;
+    box-shadow: 0 8px 28px #0c0e14;
+    border: 1px solid;
+    border-color: var(--border);
+    box-shadow: rgb(0 0 0/12%)0 5px 10px 0
+}
+
+.dropdown:focus .dropdown__content,.dropdown:focus-within .dropdown__content,.dropdown:hover .dropdown__content {
+    display: flex
+}
+
+.own-balance {
+    border-right: solid;
+    padding-right: 16px;
+    border-right-style: solid;
+    border-right-width: 1px
+}
+
+.actions,.own-balance {
+    align-content: space-between;
+    flex-direction: row;
+    justify-content: center
+}
+
+div#wallet-connected {
+
+    background-color: var(--algocloud-dropdown-bg);
+
+}
+
+.own-address,.own-balance {
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--algocloud-dropdown-link-color)
+}
+
+.own-balance {
+    padding-left: .6rem
+}
+
+.actions {
+    height: 26px
+}
+
+.actions,.own-balance {
+    border-color: var(--algocloud-body-color)!important
+}
+
+.own-address {
+    background-color: #26273000;
+    height: 40px;
+    align-items: center;
+    grid-gap: 12px;
+    gap: 12px;
+    border: 0;
+    border-radius: 4px;
+    font-family: inherit
+}
+
+.own-balance .currency svg {
+    display: block;
+    width: 12px;
+    height: 12px
+}
+
+svg.bi.bi-wallet {
+    margin-right: 10px
+}
+
+button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,input#candidatea,input#candidateb {
+    margin-bottom: 0.5rem;
+    height: 50px;
+    font-size: 16px;
+}
+
+div[class*=pipeline-select]>div:hover {
+    color: #1c1ce1!important;
+    border: 1px solid #1c1ce1!important;
+    box-shadow: 4px 4px 0 0#d2d2f9!important;
+    background-color: #fff
+}
+
+.pipeline-select {
+    border-radius: 4px!important;
+    box-shadow: none!important;
+    border: 1px solid #ccc!important;
+    position: relative!important;
+    margin-bottom: .5rem
+}
+
+@media screen and (max-width:800px) {
+    .grid.footer-columns {
+        grid-template-columns: 1fr 1fr
+    }
+
+    a.footer-columns {
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px
+    }
+}
+
+@media (max-width:410px) {
+    .logo {
+        max-height: 40%
+    }
+
+    .logo-svg,svg.bi.bi-file-bar-graph,svg.bi.bi-trash {
+        display: none
+    }
+
+    .count__title-3 {
+        margin-left: 0!important
+    }
+}
+
+.actions,.own-balance {
+    max-width: 250px
+}
+
+@media (max-width:650px) {
+    div#my-balance {
+        display: none
+    }
+}
+
+.dropdown__content.dropdown__content-wallet {
+    margin-right: -2rem
+}
+
+div#wallet-connected {
+    max-width: fit-content;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    height: 44px
+}
+
+a#algoexplorer,button#disconnect-me,button.btn.btn--transparent {
+    padding: 8px 8px 8px 6px;
+    display: flex
+}
+
+.dropdown__content-wallet {
+    position: absolute;
+    min-width: 260px;
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    background: var(--algocloud-dropdown-bg)!important;
+    border-radius: 4px;
+    z-index: 10
+}
+
+.own-address {
+    padding: 0 8px 0 16px
+}
+
+@media only screen and (min-width:480px) {
+    .header {
+        padding: 0 15px
+    }
+}
+
+.actions {
+    background-color: var(--clr-bg-lighter);
+    border-radius: 6px;
+    padding: 3px
+}
+
+.btn--transparent:hover {
+    background-color: var(--wallet-1)
+}
+
+.address-field,.vote-container {
+    display: flex;
+    flex-direction: column
+}
+
+.address-field label,.calculated-amount .amount {
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fbfbff
+}
+
+.actions,.own-balance {
+    grid-gap: 0;
+    gap: 0;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    flex-wrap: nowrap
+}
+
+.btn--connect-wallet {
+    padding: 13px 20px;
+    font-weight: 700;
+    color: var(--primary-color-lightest);
+    background: rgba(46,147,247,.08);
+    border-radius: 4px
+}
+
+.bi.bi-shield-check,.bi.bi-shield-check.text-primary {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='grey' class='bi bi-shield-check' viewBox='0 0 16 16'%3E%3Cpath d='M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z'%3E%3C/path%3E%3Cpath d='M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z'%3E%3C/path%3E%3C/svg%3E");
+    width: 20px;
+    height: 20px;
+    display: block
+}
+
+.bi.bi-shield-check.text-primary {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='%2326d9ca' class='bi bi-shield-check' viewBox='0 0 16 16'%3E%3Cpath d='M5.338 1.59a61.44 61.44 0 0 0-2.837.856.481.481 0 0 0-.328.39c-.554 4.157.726 7.19 2.253 9.188a10.725 10.725 0 0 0 2.287 2.233c.346.244.652.42.893.533.12.057.218.095.293.118a.55.55 0 0 0 .101.025.615.615 0 0 0 .1-.025c.076-.023.174-.061.294-.118.24-.113.547-.29.893-.533a10.726 10.726 0 0 0 2.287-2.233c1.527-1.997 2.807-5.031 2.253-9.188a.48.48 0 0 0-.328-.39c-.651-.213-1.75-.56-2.837-.855C9.552 1.29 8.531 1.067 8 1.067c-.53 0-1.552.223-2.662.524zM5.072.56C6.157.265 7.31 0 8 0s1.843.265 2.928.56c1.11.3 2.229.655 2.887.87a1.54 1.54 0 0 1 1.044 1.262c.596 4.477-.787 7.795-2.465 9.99a11.775 11.775 0 0 1-2.517 2.453 7.159 7.159 0 0 1-1.048.625c-.28.132-.581.24-.829.24s-.548-.108-.829-.24a7.158 7.158 0 0 1-1.048-.625 11.777 11.777 0 0 1-2.517-2.453C1.928 10.487.545 7.169 1.141 2.692A1.54 1.54 0 0 1 2.185 1.43 62.456 62.456 0 0 1 5.072.56z'%3E%3C/path%3E%3Cpath d='M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z'%3E%3C/path%3E%3C/svg%3E")
+}
+
 .chart-rack {
     flex-wrap: nowrap;
     margin-top: 0px;
@@ -372,7 +883,7 @@ h6.ww {
     flex-shrink: 0
 }
 
-.crayons-checkbox,.crayons-color-selector,.crayons-field.crayons-field--checkbox.crayons-block,.crayons-radio,.crayons-select,.crayons-textfield {
+.crayons-checkbox,.crayons-color-selector,.crayons-field.crayons-field--checkbox.crayons-block,.crayons-radio,.crayons-select,.crayons-select-2,.crayons-textfield {
     cursor: pointer
 }
 
@@ -839,8 +1350,7 @@ h6.text-success.grow {
 }
 
 .btn-close {
-    filter: invert(1);
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3E%3Cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3E%3C/svg%3E")
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='grey'%3E%3Cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3E%3C/svg%3E")
 }
 
 .btn-close-algocloud:after,.btn-close-algocloud:before {
@@ -29022,6 +29532,7 @@ button.btn-circle:focus,button.btn-circle:hover {
     --story-comments-bg: 21, 30, 42;
     --story-comments-bg-top: rgba(var(--story-comments-bg), 0);
     --story-comments-bg-bottom: rgba(var(--story-comments-bg), 1);
+    --select-icon-2:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' height='24' width='24'%3E%3Cpath d='M6 0L0 6h12z' fill='%2308090a'/%3E%3C/svg%3E");
     --select-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDYgMTBIMThMMTIgMTZaIiBmaWxsPSIjYzJjNmNhIi8+Cjwvc3ZnPg==);
     --reaction-like-color: var(--accent-danger);
     --reaction-like-bg: var(--accent-danger-a10);
@@ -29253,7 +29764,7 @@ h5.text-info-2 {
     opacity: 1
 }
 
-button#navbarDropdownNotification,button.app-dropdown.user-dropdown {
+button#navbarDropdownNotification,button.app-dropdown.user-dropdown, button#wallet-connect-2 {
     height: 2.5rem;
     width: 2.5rem;
     padding: .3125rem;
@@ -29299,7 +29810,7 @@ span.i18n-select {
     margin-right: .8rem
 }
 
-button#navbarDropdownNotification:hover,button.app-dropdown.user-dropdown:hover {
+button#navbarDropdownNotification:hover,button.app-dropdown.user-dropdown:hover, button.app-dropdown.user-dropdown:hover,button#wallet-connect-2:hover{
     border-radius: .375rem;
     background-color: rgb(123 120 255/25%)!important;
     color: #9896ff!important;
@@ -29375,7 +29886,7 @@ a.d-block.hover-bg-200.px-2.py-3.rounded-3.text-center.text-decoration-none {
     color: var(--algocloud-body-color)
 }
 
-.dropdown-item,button.toast-close-button,select.crayons-select {
+.dropdown-item,button.toast-close-button,select.crayons-select,select.crayons-select-2 {
     cursor: pointer
 }
 
@@ -30217,11 +30728,25 @@ button,input,optgroup,select,textarea {
     background-repeat: no-repeat
 }
 
+.crayons-select-2 {
+    line-height: var(--lh-base);
+    padding: calc(.5em - var(--border-width)) .5em;
+    padding-right: var(--su-7);
+    font-family: inherit;
+    font-size: var(--fs-base);
+    width: 100%;
+    position: relative;
+    outline: 0;
+    background-image: var(--select-icon);
+    background-position: calc(100% - var(--su-2)) calc(50% - 1px);
+    background-repeat: no-repeat
+}
+
 .avatar-dropdown.dropdown {
     margin-right: 4px
 }
 
-.crayons-checkbox,.crayons-color-selector,.crayons-radio,.crayons-select,.crayons-textfield {
+.crayons-checkbox,.crayons-color-selector,.crayons-radio,.crayons-select,.crayons-select-2,.crayons-textfield {
     --border-width: 1px;
     background-color: var(--form-bg);
     border: var(--border-width) solid var(--form-border);
@@ -30232,7 +30757,7 @@ button,input,optgroup,select,textarea {
     transition: all var(--transition-props)
 }
 
-.c-autocomplete--multi__wrapper-border:focus-within,.crayons-select:focus,.crayons-textfield:focus {
+.c-autocomplete--multi__wrapper-border:focus-within,.crayons-select:focus,.crayons-select-2:focus.crayons-textfield:focus {
     background-color: var(--form-bg-focus);
     border-color: var(--focus);
     box-shadow: 0 0 0 1px var(--focus)

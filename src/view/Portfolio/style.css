@@ -1,4 +1,24 @@
+.c-indicator--warning {
+  --bg: var(--indicator-warning-bg);
+  --color: var(--indicator-warning-color);
+}
+.c-indicator {
+  --bg: var(--indicator-bg);
+  --color: var(--indicator-color);
+  padding: var(--su-1);
+  text-align: center;
+  line-height: 1;
+  font-size: var(--fs-s);
+  border-radius: var(--radius);
+  display: inline-block;
+  background: var(--bg);
+  color: var(--color);
+  min-width: var(--su-2);
+}
 
+svg.bi.bi-box-arrow-up-right {
+  margin-left: 5px;
+}
 
 @media (max-width:575px) {
   div#my-balance {
@@ -149,7 +169,7 @@ svg.bi.bi-wallet {
 }
 
 
-button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,input#candidatea,input#candidateb {
+button#AlgoSigner, button#WalletConnect, button#myAlgoWallet, input#candidatea, input#candidateb {
   border: 1px solid #2e2f36;
   border: var(--border-2);
   background-color: var(--clr-bg);
@@ -157,9 +177,11 @@ button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,input#candidatea,inpu
   font-weight: 600;
   transition: border-color .2s ease-in-out;
   border-radius: 8px;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
   border-width: 1px;
-  border-style: solid
+  border-style: solid;
+  height: 50px;
+  font-size: 16px;
 }
 
 
@@ -205,6 +227,8 @@ div[class*=pipeline-select]>div:hover {
       margin-left: 0!important
   }
 }
+
+
 
 
 .actions, .own-balance {
