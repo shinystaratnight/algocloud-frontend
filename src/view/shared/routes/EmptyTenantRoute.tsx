@@ -21,7 +21,7 @@ function EmptyTenantRoute({
           return (
             <Redirect
               to={{
-                pathname: '/auth/signin',
+                pathname: '/',
               }}
             />
           );

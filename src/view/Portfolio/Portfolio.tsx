@@ -404,7 +404,7 @@ class PortfolioPage extends Component {
                 <div />
               </div>
             </header>
-            <div id="modal-root-1" class="modal-backdrop show"  style={{ display: "none" }} ></div>
+            <div id="modal-root-1" className="modal-backdrop show"  style={{ display: "none" }} ></div>
             <div
                   id="modal-root-2"
                   className="fade modal show"

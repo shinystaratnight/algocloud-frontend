@@ -14,7 +14,7 @@ import selectors from 'src/modules/algorand/overview/overviewSelectors';
 import actions from 'src/modules/algorand/overview/overviewActions';
 
 const DashboardPage = (props) => {
-  
+
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -23,7 +23,7 @@ const DashboardPage = (props) => {
   }, [dispatch]);
 
   const favorites = useSelector(selectors.selectFavorites);
-  
+
   return (
     <>
       <div
@@ -55,7 +55,9 @@ const DashboardPage = (props) => {
           <footer className="footer">
             <div className="algocloud-f1 i18-mobile-1 row g-0 justify-content-between fs--1 mt-4 ">
               <div className="col-12 col-sm-auto ">
-                <p className="mb-0 text-600"><div className="i18-mobile">{i18n('dashboard.message')} <div className="i18-mobile-2">{i18n('dashboard.rights')}</div></div></p>
+                <div className="i18-mobile mb-0 text-600">{i18n('dashboard.message')}
+                  <div className="i18-mobile-2">{i18n('dashboard.rights')}</div>
+                </div>
               </div>
               <div className="algocloud-footer">
                 <p className="mb-0 text-600">v1.0.0</p>
