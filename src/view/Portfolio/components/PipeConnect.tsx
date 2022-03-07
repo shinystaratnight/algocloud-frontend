@@ -146,7 +146,7 @@ class PipeConnect extends Component<IProps, IState> {
         </div>
 
         
-        <button className="crayons-btn crayons-btn--secondary" id="wallet-connect-2"
+        <button className="crayons-btn crayons-btn--secondary " id="wallet-connect-2"
           aria-haspopup="true" data-toggle="modal" data-target="modal-root-1" aria-expanded="true"
           onClick={() => {
             document.getElementById(
@@ -158,19 +158,10 @@ class PipeConnect extends Component<IProps, IState> {
             ;
           }}
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width={16}
-            height={16}
-            fill="currentColor"
-            className="bi bi-wallet"
-            viewBox="0 0 16 16"
-          >
-            <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z" />
-          </svg>
+          <svg className="svg-inline--fa fa-wallet " aria-hidden="true" focusable="false" data-prefix="fas" data-icon="wallet" role="img" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M461.2 128H80c-8.84 0-16-7.16-16-16s7.16-16 16-16h384c8.84 0 16-7.16 16-16 0-26.51-21.49-48-48-48H64C28.65 32 0 60.65 0 96v320c0 35.35 28.65 64 64 64h397.2c28.02 0 50.8-21.53 50.8-48V176c0-26.47-22.78-48-50.8-48zM416 336c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"></path></svg>
           <span className="count__title-2">Connect Wallet</span>
         </button>
-        <div id="wallet-connected" className="crayons-select" style={{ display: "none" }}>
+        <div id="wallet-connected" className="crayons-select-2" style={{ display: "none" }}>
 
           <div id="my-balance" className="own-balance">
             <p style={{ marginBottom: "0px" }}>{this.state.walletBalance + " Algo"}</p>
