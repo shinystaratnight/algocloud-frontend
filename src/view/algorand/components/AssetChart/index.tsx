@@ -36,16 +36,13 @@ import { useSelector } from 'react-redux';
 const AssetChart = (props) => {
   const {
     color,
-    data,
     __,
-    _
+    _,
   } = props;
 
-  const togglePosition = data ? JSON.parse(localStorage.getItem(data.assetId)) : null;
-
-  const [chartFilter, setChartFilter] = useState(togglePosition === null ? ASSET_CHART_VIEW.LIQUIDITY : togglePosition.chartFilter);
-  const [frame, setFrame] = useState(togglePosition === null ? ASSET_CHART_VIEW_FRAME.HOURLY : togglePosition.frame);
-  const [duration, setDuration] = useState(togglePosition === null ? ASSET_CHART_VIEW_DURATION.THREEDAY : togglePosition.duration);
+  const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
+  const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.HOURLY);
+  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY);
 
   const below2000 = useMedia('(max-width: 2000px)');
   const below1080 = useMedia('(max-width: 1080px)');
@@ -74,12 +71,6 @@ const AssetChart = (props) => {
 
   const handleChangeDuration = (d: string) => {
     setDuration(d);
-    let togglePosition = {
-      chartFilter: chartFilter,
-      frame: frame,
-      duration: d
-    };
-    localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
   }
 
   return (
@@ -162,12 +153,6 @@ const AssetChart = (props) => {
               setChartFilter(ASSET_CHART_VIEW.LIQUIDITY);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.LIQUIDITY,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: ASSET_CHART_VIEW_DURATION.WEEK
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Liquidity
@@ -178,12 +163,6 @@ const AssetChart = (props) => {
               setChartFilter(ASSET_CHART_VIEW.VOLUME);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.VOLUME,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Volume
@@ -194,12 +173,6 @@ const AssetChart = (props) => {
               setChartFilter(ASSET_CHART_VIEW.PRICE);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.PRICE,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Price
@@ -210,45 +183,28 @@ const AssetChart = (props) => {
               setChartFilter(ASSET_CHART_VIEW.MARKETCAP);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.MARKETCAP,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Market Cap
           </OptionButton>
+
+
+
         </OptionButtonContainer>
+
+
         <OptionButtonContainer className="time-buttons" style={{ textIndent: "0px" }}>
           <Divider width='1px' backgroundColor="black" />
 
           <OptionButton className="time-button"
             active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
-            onClick={() => {
-              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
-              let togglePosition = {
-                chartFilter: chartFilter,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: duration
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
-            }}
+            onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)}
           >
             1H
           </OptionButton>
           <OptionButton className="time-button"
             active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
-            onClick={() => {
-              setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
-              let togglePosition = {
-                chartFilter: chartFilter,
-                frame: ASSET_CHART_VIEW_FRAME.DAILY,
-                duration: duration
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
-            }}
+            onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.DAILY)}
           >
             1D
           </OptionButton>

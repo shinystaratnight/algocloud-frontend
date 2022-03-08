@@ -21,7 +21,7 @@ function EmailUnverifiedRoute({
           return (
             <Redirect
               to={{
-                pathname: '/',
+                pathname: '/auth/signin',
               }}
             />
           );

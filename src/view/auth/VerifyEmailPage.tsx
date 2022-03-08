@@ -96,7 +96,7 @@ function VerifyEmailPage() {
         )}
         {!loading && !errorMessage && !signedIn && (
           <Link
-            to="/"
+            to="/auth/signin"
             className="btn btn-block btn-primary"
           >
             {i18n('auth.signin')}
