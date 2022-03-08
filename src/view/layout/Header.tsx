@@ -211,7 +211,7 @@ function Header(props) {
                     <div className="card-footer text-center border-top"><a className="card-link d-block" href="../../app/social/notifications.html">View all</a></div>
                   </div>
                 </div>
-        </li>
+        </li>  
      <div className="dropdown app-dropdown">
        
           <button 
@@ -228,7 +228,7 @@ function Header(props) {
                           <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="/profile" target="_blank">
                               <div className="avatar avatar-2xl"> <Avatar
                   size="large"
-                  src={userAvatar || undefined}
+                  src={userAvatar || undefined} 
                   alt="avatar"
                   className="rounded-circle"
                 /></div>
