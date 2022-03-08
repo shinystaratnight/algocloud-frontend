@@ -25,20 +25,47 @@ button#wallet-connect-2 {
         top: 0px;
     }
 
+    .walled-connected-mi {
+        color: var(--algocloud-body-color) !important;
+    }
+
+    .dropdown__content.dropdown__content-wallet {
+        left: auto;
+        margin-right: -8.7rem !important;
+        margin-top: 0.35rem !important;
+        min-width: 300px !important;
+    }
+
+    div#wallet-connected {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-right: 0.25rem;
+    }
+
+    .form-check.form-switch.dropdown-item {
+        margin-top: 0.2rem;
+    }
+
+    div#wallet-connected:hover {
+        border-color: var(--form-border-hover);
+    }
+
     button#own-address {
+        max-width: 70px !important;
         white-space: nowrap;
-        text-overflow: ellipsis;
-        width: 240px !important;
-        max-width: 350px !important;
+        font-size: 0px;
+        width: 70px;
         display: block;
         overflow: hidden;
         color: var(--body-color)!important;
-        left: 0px;
+        position: unset;
+        top: 0px;
+        margin-left: -28px !important;
+        margin: 0px;
+        padding: 0px;
     }
     
-    button#wallet-connect-2{
-        display: flex !important;
-    }
 
     .algocloud-font{
         display: none;
@@ -52,7 +79,7 @@ button#wallet-connect-2 {
     svg#algocloud-font-logo {
         width: 33px;
         height: 33px;
-    color: var(--algocloud-body-color);
+        color: var(--algocloud-body-color);
         display: block;
     }
 
@@ -70,12 +97,12 @@ button#wallet-connect-2 {
     svg.svg-inline--fa.fa-wallet {
         font-size: 18px !important;
     }
+
 button#wallet-connected{
     height: 34px !important;
     position: fixed;
     top: 60px;
     min-width: -webkit-fill-available;
-    justify-content: center;
     left: 0px;
     right: 0px;
     border-top-left-radius: 0px;
@@ -83,10 +110,6 @@ button#wallet-connected{
     background-color: var(--base-0);
 }
 
-div#wallet-connected{
-    justify-content: flex-start !important;
-}
-    
 button#wallet-connect-2 {
     height: 2.5rem;
     width: 2.5rem;
@@ -101,7 +124,7 @@ button#wallet-connect-2 {
     -ms-flex-align: center;
     align-items: center;
     background-color: #ffffff00;
-    color: var(--algocloud-body-bg-2)!important;
+    color: var(--algocloud-body-color) !important;
     border: 0;
     box-shadow: none;
 
@@ -115,32 +138,20 @@ background-color: rgb(59 73 223/10%)!important;
 }
 
 div#wallet-connected {
+    height: 40px !important;
+    width: 70px !important;
+    color: #fff0;
+    z-index: 10;
+    background-color: #ffffff00;
     display: flex;
-    position: fixed;
-    top: 60px;
-    height: 34px !important;
-    width: 100vh;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    position: fixed;
-    top: 60px;
-    min-width: -webkit-fill-available;
-    align-items: center;
-    justify-content: center;
-    left: 0px;
-    right: 0px;
-    border-radius: 0px;
-    border-bottom-right-radius: 0.375rem !important;
-    border-bottom-left-radius: 0.375rem !important;
-    background-color: var(--base-0) !important;
+}
+
+.walled-connected-mi {
+    display: block !important;
 }
 
     span.i18n-select{
         margin-right: 0px !important;
-    }
-    .dropdown__content.dropdown__content-wallet {
-        margin-right: 0px !important
     }
 
     .navbar-toggler-humburger-icon {
@@ -207,7 +218,7 @@ svg.bi.bi-box-arrow-up-right {
     margin-left: 5px
 }
 
-@media (max-width:575px) {
+@media (max-width:710px) {
     div#my-balance {
         display: none!important
     }
@@ -7639,7 +7650,7 @@ div#app-dropdown {
 
 .modal-header .btn-close {
     padding: .5rem;
-    margin: -.5rem -.5rem -.5rem auto
+    margin: unset;
 }
 
 .modal-title {
@@ -29764,7 +29775,8 @@ h5.text-info-2 {
     opacity: 1
 }
 
-button#navbarDropdownNotification,button.app-dropdown.user-dropdown, button#wallet-connect-2 {
+
+button#navbarDropdownNotification,button.app-dropdown.user-dropdown{
     height: 2.5rem;
     width: 2.5rem;
     padding: .3125rem;

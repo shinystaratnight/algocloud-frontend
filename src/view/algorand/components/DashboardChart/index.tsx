@@ -151,91 +151,132 @@ const DashboardAssetChart = (props) => {
           />
         </ResponsiveContainer>
       )}
-      <OptionButtonBottomContainer className="flex col">
-        <OptionButtonContainer className="row no-gutter">
-          <OptionButton
+      <OptionButtonBottomContainer className="chart-rack" >
+        <OptionButtonContainer className="chart-buttons" style={{ textIndent: "0px" }}>
+          <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.LIQUIDITY}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.LIQUIDITY);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
-              setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
+              setDuration(ASSET_CHART_VIEW_DURATION.WEEK);
+              let togglePosition = {
+                chartFilter: ASSET_CHART_VIEW.LIQUIDITY,
+                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
+                duration: ASSET_CHART_VIEW_DURATION.WEEK
+              };
+              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Liquidity
           </OptionButton>
-          <OptionButton
+          <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.VOLUME}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.VOLUME);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
+              let togglePosition = {
+                chartFilter: ASSET_CHART_VIEW.VOLUME,
+                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
+                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
+              };
+              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Volume
           </OptionButton>
-          <OptionButton
+          <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.PRICE}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.PRICE);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
+              let togglePosition = {
+                chartFilter: ASSET_CHART_VIEW.PRICE,
+                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
+                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
+              };
+              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Price
           </OptionButton>
-          <OptionButton
+          <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.MARKETCAP}
             onClick={() => {
               setChartFilter(ASSET_CHART_VIEW.MARKETCAP);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
+              let togglePosition = {
+                chartFilter: ASSET_CHART_VIEW.MARKETCAP,
+                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
+                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
+              };
+              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Market Cap
           </OptionButton>
         </OptionButtonContainer>
-          <OptionButtonWrapper className="row m-0 no-gutter">
-            <OptionButtonContainer > 
-              <OptionButton
-                active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
-                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.DAILY)}
-              >
-                D
-              </OptionButton>
-              <OptionButton
-                active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
-                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)}
-              >
-                H
-              </OptionButton>
-              <Divider width="2px" />
-              <OptionButton
-                active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}
-                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.THREEDAY)}
-              >
-                
-                3D
-              </OptionButton>
-              <OptionButton
-                active={duration === ASSET_CHART_VIEW_DURATION.WEEK}
-                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.WEEK)}
-              >
-                1W
-              </OptionButton>
-              <OptionButton
-                active={duration === ASSET_CHART_VIEW_DURATION.MONTH}
-                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.MONTH)}
-              >
-                1M
-              </OptionButton>
-              <OptionButton
-                active={duration === ASSET_CHART_VIEW_DURATION.ALL}
-                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.ALL)}
-              >
-                ALL
-              </OptionButton>
-            </OptionButtonContainer>
-            </OptionButtonWrapper>
+        <OptionButtonContainer className="time-buttons" style={{ textIndent: "0px" }}>
+          <Divider width='1px' backgroundColor="black" />
+
+          <OptionButton className="time-button"
+            active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
+            onClick={() => {
+              setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
+              let togglePosition = {
+                chartFilter: chartFilter,
+                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
+                duration: duration
+              };
+              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
+            }}
+          >
+            1H
+          </OptionButton>
+          <OptionButton className="time-button"
+            active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
+            onClick={() => {
+              setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
+              let togglePosition = {
+                chartFilter: chartFilter,
+                frame: ASSET_CHART_VIEW_FRAME.DAILY,
+                duration: duration
+              };
+              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
+            }}
+          >
+            1D
+          </OptionButton>
+          <Divider width='1px' />
+          <OptionButton className="time-button"
+            active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}
+            onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.THREEDAY)}
+          >
+            3D
+          </OptionButton>
+          <OptionButton className="time-button"
+            active={duration === ASSET_CHART_VIEW_DURATION.WEEK}
+            onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.WEEK)}
+          >
+            1W
+          </OptionButton>
+          <OptionButton className="time-button"
+            active={duration === ASSET_CHART_VIEW_DURATION.MONTH}
+            onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.MONTH)}
+          >
+            1M
+          </OptionButton>
+          <OptionButton className="time-button"
+            active={duration === ASSET_CHART_VIEW_DURATION.ALL}
+            onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.ALL)}
+          >
+            ALL
+          </OptionButton>
+        </OptionButtonContainer>
+        <OptionButtonContainer>
+        </OptionButtonContainer>
       </OptionButtonBottomContainer>
     </ChartWindowWrapper>
   );
