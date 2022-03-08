@@ -25,6 +25,48 @@ button#wallet-connect-2 {
         top: 0px;
     }
 
+    h6.grow {
+        font-size: calc(.892813rem + .12vw)!important;
+        color: var(--base-70) !important;
+    }
+
+    h5.text-info-2.mobile {
+        padding-bottom: 0.3rem;
+    }
+
+    .assets-mobile-card.card-hover-2 {
+        padding: 0.5rem !important;
+        margin: 0.5rem;
+    }
+
+    .badge-soft-info, .badge-soft-warning {
+        background-color: rgb(38 217 202 / 0%) !important;
+        font-size: calc(.8rem + .1rem);
+        border: 0px;
+    }
+
+
+    .assets-mobile.col-lg-4.col-sm-12.d-flex.flex-column.justify-content-between {
+        display: flex;
+        flex-direction: row !important;
+        width: -webkit-fill-available;
+        overflow: auto;
+        margin: 18px;
+        flex-wrap: nowrap;
+        margin-top: .3rem !important;
+        padding: 8px;
+        box-shadow: 0 0 0 1px var(--card-border);
+        border-radius: 0.375rem;
+        margin: 1rem;
+        color: var(--body-color);
+        margin-bottom: 0rem;
+        display: flex;
+        justify-content: flex-start;
+        background-color: var(--algocloud-badge-soft-light-background-color)!important;
+        overflow-x: scroll;
+
+    }
+
     .dropdown__content.dropdown__content-wallet {
         left: auto;
         margin-right: -8.7rem !important;

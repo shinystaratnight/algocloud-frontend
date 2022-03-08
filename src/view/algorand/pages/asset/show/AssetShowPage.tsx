@@ -89,13 +89,13 @@ const AssetShowPage = () => {
           <img className='token' src={image} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
 
           <h3 style={{ marginRight: 20 }}>{asset['unitName']}</h3>
-          <h5 className='text-info' style={{ marginRight: 20 }}>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
+          <h5 className='text-info mobile' style={{ marginRight: 20 }}>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
           <h6 className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 3)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayPriceChange'], 2)}</h6>
         </div>
       </div>
       <div className='row'>
-        <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
-          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
+        <div className="assets-mobile col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
+          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2">
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <h6 className="grow">Liqudity</h6>
 
@@ -109,14 +109,13 @@ const AssetShowPage = () => {
                 </span>
               </div>
             </div>
-            <h5 className='text-info-2'>{formattedNum(asset['liquidity'], true)}</h5>
+            <h5 className='text-info-2 mobile'>{formattedNum(asset['liquidity'], true)}</h5>
           </ContentWrapper>
-          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
+          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2">
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h6 className="grow">Volume (24hrs)</h6>
+              <h6 className="grow">Volume</h6>
 
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <h6 className="grow">Volume</h6>
 
                 <div className={(parseFloat(formatPercent(asset['lastDayVolumeChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
                   <span className={(parseFloat(formatPercent(asset['lastDayVolumeChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayVolumeChange'], 2)}
@@ -129,9 +128,9 @@ const AssetShowPage = () => {
                 </div>
               </div>
             </div>
-            <h5 className='text-info-2'>{formattedNum(asset['lastDayVolume'], true)}</h5>
+            <h5 className='text-info-2 mobile'>{formattedNum(asset['lastDayVolume'], true)}</h5>
           </ContentWrapper>
-          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
+          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2">
 
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <h6 className="grow">Price</h6>
@@ -146,7 +145,7 @@ const AssetShowPage = () => {
                 </span>
               </div>
             </div>
-            <h5 className='text-info-2'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
+            <h5 className='text-info-2 mobile'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
           </ContentWrapper>
         </div>
         <div className="asset-m0 col-lg-8 col-sm-12 ">
