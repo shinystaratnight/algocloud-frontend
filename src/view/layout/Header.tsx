@@ -298,19 +298,20 @@ function Header(props) {
                             </a>
                           </div>
                         </div>
-                      </div></div></div><div className="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle"
-                        style={{ transform: "translate(0px, 0px)", float: "left", maxHeight: "19rem" }}>
-                      </div></div></div>
-                  <div className="os-scrollbar os-scrollbar-vertical os-scrollbar-unusable os-scrollbar-auto-hidden">
-                    <div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle"
-                      style={{ transform: "translate(0px, 0px)" }}>
-                    </div></div></div><div className="os-scrollbar-corner"></div></div>
-                <div className="card-footer text-center border-top"><a className="card-link d-block" href="../../app/social/notifications.html">View all</a></div>
-              </div>
+                      </div>
+                    </div></div></div><div className="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle"
+                      style={{ transform: "translate(0px, 0px)", float: "left", maxHeight: "19rem" }}>
+                    </div></div></div>
+                <div className="os-scrollbar os-scrollbar-vertical os-scrollbar-unusable os-scrollbar-auto-hidden">
+                  <div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle"
+                    style={{ transform: "translate(0px, 0px)" }}>
+                  </div></div></div><div className="os-scrollbar-corner"></div></div>
+              <div className="card-footer text-center border-top"><a className="card-link d-block" href="../../app/social/notifications.html">View all</a></div>
             </div>
-          </li>
+          </li >
 
           <div className="dropdown app-dropdown">
+
             <button
               className="app-dropdown user-dropdown"
               id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
@@ -364,41 +365,123 @@ function Header(props) {
                       <div className="col-12">
                         <hr className="my-3 mx-n3 bg-200" />
                       </div>
-                      <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/linkedin.png" alt="" width="40" height="40" />
-                        <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Linkedin</p>
-                      </a></div>
-                      <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/twitter.png" alt="" width="40" height="40" />
-                        <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Twitter</p>
-                      </a></div>
-                      <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/facebook.png" alt="" width="40" height="40" />
-                        <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Facebook</p>
-                      </a></div>
-                      <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/instagram.png" alt="" width="40" height="40" />
-                        <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Instagram</p>
-                      </a></div>
-                      <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/pinterest.png" alt="" width="40" height="40" />
-                        <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Pinterest</p>
-                      </a></div>
-                      <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/slack.png" alt="" width="40" height="40" />
-                        <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Slack</p>
-                      </a></div>
-                      <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/deviantart.png" alt="" width="40" height="40" />
-                        <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Deviantart</p>
-                      </a></div>
-                      <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../../app/events/event-detail.html" target="_blank">
-                        <div className="avatar avatar-2xl">
-                          <div className="avatar-name rounded-circle bg-soft-primary text-primary"><span className="fs-2">E</span></div>
-                        </div>
-                        <p className="mb-0 fw-medium  text-truncate fs--2">Events</p>
-                      </a></div>
-                      <div className="col-12"><a className="btn btn-outline-primary btn-sm mt-4" href="#!">Show more</a></div>
+                      <div className="list-group-item">
+                        <a className="border-bottom-0 notification notification-flush" href="#!">
+                          <div className="notification-avatar">
+                            <div className="avatar avatar-xl me-3">
+                              <img className="rounded-circle" src="../../images/Astro-2.jpg" alt="" />
+                            </div>
+                          </div>
+                          <div className="notification-body">
+                            <p className="mb-1"><strong>Jim Cameron</strong> invited to join the group: Tres Comas Tequila for Prez</p>
+                            <span className="notification-time"><span className="me-2" role="img" aria-label="Emoji">🙋&zwj;</span>2d</span>
+                          </div>
+                        </a>
+                      </div>
                     </div>
-                  </div>
-                </div></div></div><div className="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle" ></div></div></div><div className="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden"><div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle" ></div></div></div><div className="os-scrollbar-corner"></div></div>
+                  </div></div></div><div className="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle"
+                    style={{ transform: "translate(0px, 0px)", float: "left", maxHeight: "19rem" }}>
+                  </div></div></div>
+                  <div className="os-scrollbar os-scrollbar-vertical os-scrollbar-unusable os-scrollbar-auto-hidden">
+                    <div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle"
+                      style={{ transform: "translate(0px, 0px)" }}>
+                    </div></div></div><div className="os-scrollbar-corner"></div></div>
+                  <div className="card-footer text-center border-top"><a className="card-link d-block" href="../../app/social/notifications.html">View all</a></div>
+                </div>
               </div>
+
+              <div className="dropdown app-dropdown">
+                <button
+                  className="app-dropdown user-dropdown"
+                  id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+                  data-toggle="dropdown">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="18" height="18" viewBox="0 0 276.167 276.167"><path d="M33.144 2.471C15.336 2.471.85 16.958.85 34.765s14.48 32.293 32.294 32.293 32.294-14.486 32.294-32.293S50.951 2.471 33.144 2.471zm104.519 0c-17.807 0-32.294 14.487-32.294 32.294s14.487 32.293 32.294 32.293 32.297-14.486 32.297-32.293-14.483-32.294-32.297-32.294zm106.21 64.588c17.804 0 32.294-14.486 32.294-32.293S261.689 2.471 243.873 2.471s-32.294 14.487-32.294 32.294 14.489 32.294 32.294 32.294zM32.3 170.539c17.807 0 32.297-14.483 32.297-32.293s-14.49-32.297-32.297-32.297S0 120.436 0 138.246s14.493 32.293 32.3 32.293zm104.519 0c17.804 0 32.294-14.483 32.294-32.293s-14.478-32.297-32.294-32.297-32.294 14.486-32.294 32.297 14.487 32.293 32.294 32.293zm106.219 0c17.811 0 32.294-14.483 32.294-32.293s-14.483-32.297-32.294-32.297-32.306 14.486-32.306 32.297 14.49 32.293 32.306 32.293zM33.039 209.108c-17.807 0-32.3 14.483-32.3 32.294 0 17.804 14.493 32.293 32.3 32.293s32.293-14.482 32.293-32.293-14.486-32.294-32.293-32.294zm104.525 0c-17.808 0-32.3 14.483-32.3 32.294 0 17.804 14.487 32.293 32.3 32.293 17.804 0 32.293-14.482 32.293-32.293s-14.489-32.294-32.293-32.294zm106.207 0c-17.804 0-32.294 14.483-32.294 32.294 0 17.804 14.49 32.293 32.294 32.293 17.811 0 32.294-14.482 32.294-32.293s-14.49-32.294-32.294-32.294z" /></svg>
+                </button>
+                <div id="app-dropdown" className="dropdown-menu dropdown-menu-end dropdown-menu-card" aria-labelledby="navbarDropdownMenu" data-bs-popper="none">
+                  <div className="card shadow-none">
+                    <div className="scrollbar-overlay navbar-dropdown-dots os-host os-theme-dark os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-transition os-host-overflow os-host-overflow-y" style={{ overflow: 'scroll !important', overflowY: 'scroll' }}><div className="os-resize-observer-host observed"><div className="os-resize-observer" ></div></div><div className="os-size-auto-observer observed" ><div className="os-resize-observer"></div></div><div className="os-content-glue" ></div><div className="os-padding"><div className="os-viewport os-viewport-native-scrollbars-invisible" ><div className="os-content" >
+                      <div className="card-body px-3">
+                        <div className="row text-center gx-0 gy-0">
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="/profile" target="_blank">
+                            <div className="avatar avatar-2xl"> <Avatar
+                              size="large"
+                              src={userAvatar || undefined}
+                              alt="avatar"
+                              className="rounded-circle"
+                            /></div>
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Account</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="https://algorand.com/" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/algorand-logo.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Algorand</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="https://mailbluster.com/" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/mailbluster.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Mailbluster</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/google.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Google</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/spotify.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Spotify</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/steam.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Steam</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/github-light.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Github</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/discord.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Discord</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/xbox.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">xbox</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/trello.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Kanban</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/hp.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Hp</p>
+                          </a></div>
+                          <div className="col-12">
+                            <hr className="my-3 mx-n3 bg-200" />
+                          </div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/linkedin.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Linkedin</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/twitter.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Twitter</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/facebook.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Facebook</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/instagram.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Instagram</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/pinterest.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Pinterest</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/slack.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Slack</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="#!" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/deviantart.png" alt="" width="40" height="40" />
+                            <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Deviantart</p>
+                          </a></div>
+                          <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="../../app/events/event-detail.html" target="_blank">
+                            <div className="avatar avatar-2xl">
+                              <div className="avatar-name rounded-circle bg-soft-primary text-primary"><span className="fs-2">E</span></div>
+                            </div>
+                            <p className="mb-0 fw-medium  text-truncate fs--2">Events</p>
+                          </a></div>
+                          <div className="col-12"><a className="btn btn-outline-primary btn-sm mt-4" href="#!">Show more</a></div>
+                        </div>
+                      </div>
+                    </div></div></div><div className="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle" ></div></div></div><div className="os-scrollbar os-scrollbar-vertical os-scrollbar-auto-hidden"><div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle" ></div></div></div><div className="os-scrollbar-corner"></div></div>
+                  </div>
+                </div>
+              </div>
+
+
             </div>
           </div>
-
           <div className="avatar-dropdown dropdown">
             <span
               className="user-dropdown"
@@ -521,7 +604,7 @@ function Header(props) {
           </div>
         </div>
       </div>
-    </HeaderWrapper>
+    </HeaderWrapper >
   );
 }
 
