@@ -33,12 +33,12 @@ button#wallet-connect-2 {
     h5.text-info-2.mobile {
         padding-bottom: 0.3rem;
     }
-
     .assets-mobile-card.card-hover-2 {
-        padding: 0.5rem !important;
+        padding: 0.8rem !important;
+        background-color: #242424b0 !important;
         margin: 0.5rem;
     }
-
+    
     .badge-soft-info, .badge-soft-warning {
         background-color: rgb(38 217 202 / 0%) !important;
         font-size: calc(.8rem + .1rem);

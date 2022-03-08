@@ -35,7 +35,7 @@ button#wallet-connect-2 {
     }
 
     .assets-mobile-card.card-hover-2 {
-        padding: 0.5rem !important;
+        padding: 0.8rem !important;
         margin: 0.5rem;
     }
 
@@ -62,7 +62,7 @@ button#wallet-connect-2 {
         margin-bottom: 0rem;
         display: flex;
         justify-content: flex-start;
-        background-color: var(--algocloud-badge-soft-light-background-color)!important;
+        background-color: rgb(var(--grey-100))!important;
         overflow-x: scroll;
 
     }
