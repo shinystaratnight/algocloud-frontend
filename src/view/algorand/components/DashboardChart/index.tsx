@@ -37,12 +37,14 @@ const DashboardAssetChart = (props) => {
   const {
     color,
     data,
-    title=''
+    title = ''
   } = props;
 
-  const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
-  const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.HOURLY);
-  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY)
+  const togglePosition = JSON.parse(localStorage.getItem(data.data.assetId));
+
+  const [chartFilter, setChartFilter] = useState(togglePosition === null ? ASSET_CHART_VIEW.LIQUIDITY : togglePosition.chartFilter);
+  const [frame, setFrame] = useState(togglePosition === null ? ASSET_CHART_VIEW_FRAME.HOURLY : togglePosition.frame);
+  const [duration, setDuration] = useState(togglePosition === null ? ASSET_CHART_VIEW_DURATION.THREEDAY : togglePosition.duration);
 
   const below2000 = useMedia('(max-width: 2000px)');
   const below1080 = useMedia('(max-width: 1080px)');
@@ -73,8 +75,13 @@ const DashboardAssetChart = (props) => {
 
   const handleChangeDuration = (d: string) => {
     setDuration(d);
+    let togglePosition = {
+      chartFilter: chartFilter,
+      frame: frame,
+      duration: d
+    };
+    localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
   }
-
 
   return (
     <ChartWindowWrapper className="card-hover">
@@ -86,7 +93,7 @@ const DashboardAssetChart = (props) => {
         }
         align="flex-start"
       >
-        
+
       </RowBetween>
 
       {chartFilter === ASSET_CHART_VIEW.PRICE && priceData && (
@@ -126,7 +133,7 @@ const DashboardAssetChart = (props) => {
             base={0}
             field={'liquidity'}
             width={width}
-            type={'area'}
+            type={CHART_TYPES.AREA}
             timeField='date'
             useWeekly={false}
             utc={true}
