@@ -31369,3 +31369,8 @@ a.fw-medium.py-1.link-600.nav-link,p.fw-medium.text-500.text-700.mb-0.fw-bold.na
     padding-left: 1rem;
     padding-right: .5rem
 }
+
+.assets-mobile.col-lg-4.col-sm-12.d-flex.flex-column.justify-content-between::-webkit-scrollbar,.chart-rack::-webkit-scrollbar {
+    border-bottom-left-radius: 0.375rem !important;
+    border-bottom-right-radius: 0.375rem!important;
+}
