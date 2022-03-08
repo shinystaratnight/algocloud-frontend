@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, useLayoutEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { i18n } from 'src/i18n';
 import authActions from 'src/modules/auth/authActions';
@@ -38,6 +38,25 @@ function Header(props) {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [wrapperRef]);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      let searchBox = document.getElementById("search-box");
+      if (window.innerWidth > 575) {
+        searchBox.style["position"] = "relative";
+        searchBox.style["display"] = "block";
+        searchBox.style["margin-right"] = "2rem";
+        searchBox.style["width"] = "30rem";
+        searchBox.style["top"] = "0px";
+        searchBox.style["left"] = "0px";
+      } else {
+        searchBox.style["display"] = "none";
+      }
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+    return () => window.removeEventListener('resize', updateSize);
+  }, []);
 
   const doToggleMenu = () => {
     let element1 = document.getElementById("main") || { style: { margin: "" } }
@@ -104,6 +123,18 @@ function Header(props) {
     inputValue === '' ? setIsSearched(false) : setIsSearched(true);
   }
 
+  const showSearchBox = () => {
+    let searchBox = document.getElementById("search-box");
+    if (window.innerWidth < 575) {
+      searchBox.style["position"] = "fixed";
+      searchBox.style["display"] = "block";
+      searchBox.style["top"] = "65px";
+      searchBox.style["left"] = "10px";
+      searchBox.style["right"] = "10px";
+      searchBox.style["width"] = `${window.innerWidth - 20}px`;
+    }
+  }
+
   return (
     <HeaderWrapper id="stickyTop" >
       <div id="stickyTop-2" className="navbar sticky-top">
@@ -120,7 +151,7 @@ function Header(props) {
         </a>
 
         <div className="last-child" style={{ display: 'flex', alignItems: 'center' }}>
-          <div className='search-box' style={{ marginRight: '2rem', width: '30rem' }}>
+          <div id='search-box' className='search-box'>
             <div className='d-flex'>
               <input ref={wrapperRef} type='search' className='search-input border border-dark' placeholder='Search by Asset Name/Asset ID/Asset Unit'
                 onMouseUp={() => handleSearch()}
@@ -148,6 +179,11 @@ function Header(props) {
               </div>
             }
           </div>
+
+          <button className='border border-dark rounded-circle mobile-search' onClick={() => showSearchBox()}>
+            <i className='fas fa-search'></i>
+          </button>
+
           <span className="i18n-select">
             <PipeConnect />
           </span>
@@ -273,8 +309,8 @@ function Header(props) {
               </div>
             </div>
           </li>
-          <div className="dropdown app-dropdown">
 
+          <div className="dropdown app-dropdown">
             <button
               className="app-dropdown user-dropdown"
               id="navbarDropdownMenu" role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
@@ -420,10 +456,72 @@ function Header(props) {
                 </span>
               </div>
             </span>
+            <div className="dropdown-menu dropdown-menu-right">
+              <div className="bg-white dark__bg-1000 rounded-2 py-2 m-25">
+                <Link to='/profile'>
+                  <button
+                    className="dropdown-item"
+                    type="button"
+                  >
+                    <i className="fas fa-user" />{' '}
+                    {i18n('auth.profile.title')}
+                  </button>
+                </Link>
+                <Link to="/password-change">
+                  <button
+                    className="dropdown-item"
+                    type="button"
+                  >
+                    <i className="fas fa-lock" />{' '}
+                    {i18n('auth.passwordChange.title')}
+                  </button>
+                </Link>
+                {!currentUserIsSuperadmin && ['multi', 'multi-with-subdomain'].includes(
+                  config.tenantMode,
+                ) && (
+                    <Link to="/tenant">
+                      <button
+                        className="dropdown-item"
+                        type="button"
+                      >
+                        <i className="fas fa-th-large" />{' '}
+                        {i18n('auth.tenants')}
+                      </button>
+                    </Link>
+                  )}
+                {config.apiDocumentationUrl && (
+                  <a
+                    href={config.apiDocumentationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    <button
+                      onClick={doSignout}
+                      className="dropdown-item"
+                      type="button"
+                    >
+                      <i className="fas fa-code" />{' '}
+                      {i18n('api.menu')}
+                    </button>
+                  </a>
+                )}
+                <div className="dropdown-divider"></div>
+                <DarkMode />
+                <button
+                  onClick={doSignout}
+                  className="dropdown-item"
+                  type="button"
+                >
+                  <i className="fas fa-sign-out-alt" />{' '}
+                  {i18n('auth.signout')}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </HeaderWrapper >
+    </HeaderWrapper>
   );
 }
 

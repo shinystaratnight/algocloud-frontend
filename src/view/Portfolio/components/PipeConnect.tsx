@@ -39,7 +39,7 @@ class PipeConnect extends Component<IProps, IState> {
     this.state = {
       myAddress: "",
       walletBalance: 0,
-      checked:true,
+      checked: true,
       labelNet: "MainNet",
     }
   }
@@ -51,8 +51,6 @@ class PipeConnect extends Component<IProps, IState> {
       Pipeline.main = true;
     }
   };
-
-
 
   switchWallet = (event) => {
     Pipeline.pipeConnector = event.target.id
@@ -72,14 +70,15 @@ class PipeConnect extends Component<IProps, IState> {
 
   switchNet = (event) => {
     Pipeline.main = event.target.checked
-    this.setState({checked:!this.state.checked})
+    this.setState({ checked: !this.state.checked })
     let message1 = "MainNet"
     let message2 = "Testnet"
-    if 
-    (Pipeline.main){
-      this.setState({ labelNet: message1 })}
+    if
+      (Pipeline.main) {
+      this.setState({ labelNet: message1 })
+    }
     else
-      this.setState({ labelNet: message2})
+      this.setState({ labelNet: message2 })
   }
 
   refresh = () => {
@@ -89,24 +88,13 @@ class PipeConnect extends Component<IProps, IState> {
       .then(data3 => { this.setState({ walletBalance: data3 }) })
   }
 
-
   render() {
     return (
-
-
-
-
       <div>
-
-      
-
-       
         <div id="modal-root-2" className="modal-backdrop show" style={{ display: "none" }}></div>
         <div
           id="modal-root-1" className="modal fade show"
-
           tabIndex={-1}
-
           aria-labelledby="exampleModalLabel"
           aria-modal="true"
           role="dialog"
@@ -128,7 +116,8 @@ class PipeConnect extends Component<IProps, IState> {
                       "modal-root-1"
                     ).style.display = "none";
                     ;
-                  }}></button>
+                  }}>
+                </button>
               </div>
               <div className="modal-body">
                 <button id="WalletConnect" className="crayons-btn w-100" onClick={this.switchWallet}>
@@ -144,8 +133,6 @@ class PipeConnect extends Component<IProps, IState> {
             </div>
           </div>
         </div>
-
-        
         <button className="crayons-btn crayons-btn--secondary " id="wallet-connect-2"
           aria-haspopup="true" data-toggle="modal" data-target="modal-root-1" aria-expanded="true"
           onClick={() => {
@@ -162,7 +149,6 @@ class PipeConnect extends Component<IProps, IState> {
           <span className="count__title-2">Connect Wallet</span>
         </button>
         <div id="wallet-connected" className="crayons-select-2" style={{ display: "none" }}>
-
           <div id="my-balance" className="own-balance">
             <p style={{ marginBottom: "0px" }}>{this.state.walletBalance + " Algo"}</p>
             <span className="currency" />
@@ -175,12 +161,12 @@ class PipeConnect extends Component<IProps, IState> {
               <button className="copyable-1 dropdown-item">
                 <div className="copyable">
                   <div className="copyable__text">
-                  <svg xmlns="http://www.w3.org/2000/svg"
-                    width={16}
-                    height={16} 
-                    className="copy-icon"
-                    fill="currentColor"
-                    viewBox="0 0 512 512"><path d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z"/></svg>copy address</div>
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                      width={16}
+                      height={16}
+                      className="copy-icon"
+                      fill="currentColor"
+                      viewBox="0 0 512 512"><path d="M384 96L384 0h-112c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48H464c26.51 0 48-21.49 48-48V128h-95.1C398.4 128 384 113.6 384 96zM416 0v96h96L416 0zM192 352V128h-144c-26.51 0-48 21.49-48 48v288c0 26.51 21.49 48 48 48h192c26.51 0 48-21.49 48-48L288 416h-32C220.7 416 192 387.3 192 352z" /></svg>copy address</div>
                   <span className="copy" />
                 </div>
               </button>
@@ -194,15 +180,15 @@ class PipeConnect extends Component<IProps, IState> {
                   this.state.myAddress
                 }
               ><svg
-  xmlns="http://www.w3.org/2000/svg"
-  viewBox="0 0 512 512"
-  width={16}
-  height={16}
-  className="external-link-icon"
-  fill="currentColor"
->
-  <path d="M384 320c-17.67 0-32 14.33-32 32v96H64V160h96c17.67 0 32-14.32 32-32s-14.33-32-32-32L64 96c-35.35 0-64 28.65-64 64V448c0 35.34 28.65 64 64 64h288c35.35 0 64-28.66 64-64v-96C416 334.3 401.7 320 384 320zM488 0H352c-12.94 0-24.62 7.797-29.56 19.75c-4.969 11.97-2.219 25.72 6.938 34.88L370.8 96L169.4 297.4c-12.5 12.5-12.5 32.75 0 45.25C175.6 348.9 183.8 352 192 352s16.38-3.125 22.62-9.375L416 141.3l41.38 41.38c9.156 9.141 22.88 11.84 34.88 6.938C504.2 184.6 512 172.9 512 160V24C512 10.74 501.3 0 488 0z" />
-</svg>
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                width={16}
+                height={16}
+                className="external-link-icon"
+                fill="currentColor"
+              >
+                  <path d="M384 320c-17.67 0-32 14.33-32 32v96H64V160h96c17.67 0 32-14.32 32-32s-14.33-32-32-32L64 96c-35.35 0-64 28.65-64 64V448c0 35.34 28.65 64 64 64h288c35.35 0 64-28.66 64-64v-96C416 334.3 401.7 320 384 320zM488 0H352c-12.94 0-24.62 7.797-29.56 19.75c-4.969 11.97-2.219 25.72 6.938 34.88L370.8 96L169.4 297.4c-12.5 12.5-12.5 32.75 0 45.25C175.6 348.9 183.8 352 192 352s16.38-3.125 22.62-9.375L416 141.3l41.38 41.38c9.156 9.141 22.88 11.84 34.88 6.938C504.2 184.6 512 172.9 512 160V24C512 10.74 501.3 0 488 0z" />
+                </svg>
 
                 AlgoExplorer
               </a>
@@ -213,32 +199,25 @@ class PipeConnect extends Component<IProps, IState> {
                 Disconnect
               </button>
               <div className="form-check form-switch dropdown-item crayons-select">
-               
-  <input
-    className="form-check-input"
-    type="checkbox"
-    id="flexSwitchCheckChecked"
-    defaultChecked= {true}
-     onChange={this.switchNet} 
-     checked={this.state.checked}
-  ></input>
-  <span> {this.state.labelNet}</span>
-  <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
-  </label>
-  
-</div>
-
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="flexSwitchCheckChecked"
+                  // defaultChecked={true}
+                  onChange={this.switchNet}
+                  checked={this.state.checked}
+                ></input>
+                <span> {this.state.labelNet}</span>
+                <label className="form-check-label" htmlFor="flexSwitchCheckChecked">
+                </label>
+              </div>
             </div>
           </div>
         </div>
-        
         <div id="table"></div>
       </div>
-      
     )
   }
-
 }
-
 
 export default PipeConnect
