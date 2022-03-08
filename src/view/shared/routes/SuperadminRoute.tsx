@@ -28,7 +28,7 @@ function SuperadminRoute({
           return (
             <Redirect
               to={{
-                pathname: '/',
+                pathname: '/auth/signin',
                 state: { from: location },
               }}
             />

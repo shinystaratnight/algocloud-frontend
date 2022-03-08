@@ -342,14 +342,9 @@ const simpleRoutes = [
       import('src/view/shared/errors/Error500Page'),
   },
   {
-    path: '/404',
+    path: '**',
     loader: () =>
       import('src/view/shared/errors/Error404Page'),
-  },
-  {
-    path: '/search-error',
-    loader: () =>
-      import('src/view/shared/errors/SearchErrorPage'),
   },
 ].filter(Boolean);
 

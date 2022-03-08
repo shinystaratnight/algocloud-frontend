@@ -37,14 +37,12 @@ const DashboardAssetChart = (props) => {
   const {
     color,
     data,
-    title = ''
+    title=''
   } = props;
 
-  const togglePosition = JSON.parse(localStorage.getItem(data.data.assetId));
-
-  const [chartFilter, setChartFilter] = useState(togglePosition === null ? ASSET_CHART_VIEW.LIQUIDITY : togglePosition.chartFilter);
-  const [frame, setFrame] = useState(togglePosition === null ? ASSET_CHART_VIEW_FRAME.HOURLY : togglePosition.frame);
-  const [duration, setDuration] = useState(togglePosition === null ? ASSET_CHART_VIEW_DURATION.THREEDAY : togglePosition.duration);
+  const [chartFilter, setChartFilter] = useState(ASSET_CHART_VIEW.LIQUIDITY);
+  const [frame, setFrame] = useState(ASSET_CHART_VIEW_FRAME.HOURLY);
+  const [duration, setDuration] = useState(ASSET_CHART_VIEW_DURATION.THREEDAY)
 
   const below2000 = useMedia('(max-width: 2000px)');
   const below1080 = useMedia('(max-width: 1080px)');
@@ -75,13 +73,8 @@ const DashboardAssetChart = (props) => {
 
   const handleChangeDuration = (d: string) => {
     setDuration(d);
-    let togglePosition = {
-      chartFilter: chartFilter,
-      frame: frame,
-      duration: d
-    };
-    localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
   }
+
 
   return (
     <ChartWindowWrapper className="card-hover">
@@ -93,7 +86,7 @@ const DashboardAssetChart = (props) => {
         }
         align="flex-start"
       >
-
+        
       </RowBetween>
 
       {chartFilter === ASSET_CHART_VIEW.PRICE && priceData && (
@@ -133,7 +126,7 @@ const DashboardAssetChart = (props) => {
             base={0}
             field={'liquidity'}
             width={width}
-            type={CHART_TYPES.AREA}
+            type={'area'}
             timeField='date'
             useWeekly={false}
             utc={true}
@@ -166,12 +159,6 @@ const DashboardAssetChart = (props) => {
               setChartFilter(ASSET_CHART_VIEW.LIQUIDITY);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.LIQUIDITY,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
-              };
-              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Liquidity
@@ -182,12 +169,6 @@ const DashboardAssetChart = (props) => {
               setChartFilter(ASSET_CHART_VIEW.VOLUME);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.VOLUME,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
-              };
-              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Volume
@@ -198,12 +179,6 @@ const DashboardAssetChart = (props) => {
               setChartFilter(ASSET_CHART_VIEW.PRICE);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.PRICE,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
-              };
-              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Price
@@ -214,75 +189,53 @@ const DashboardAssetChart = (props) => {
               setChartFilter(ASSET_CHART_VIEW.MARKETCAP);
               setFrame(ASSET_CHART_VIEW_FRAME.HOURLY);
               setDuration(ASSET_CHART_VIEW_DURATION.THREEDAY);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.MARKETCAP,
-                frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                duration: ASSET_CHART_VIEW_DURATION.THREEDAY
-              };
-              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Market Cap
           </OptionButton>
         </OptionButtonContainer>
-        <OptionButtonWrapper className="row m-0 no-gutter">
-          <OptionButtonContainer >
-            <OptionButton
-              active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
-              onClick={() => {
-                setFrame(ASSET_CHART_VIEW_FRAME.DAILY);
-                let togglePosition = {
-                  chartFilter: chartFilter,
-                  frame: ASSET_CHART_VIEW_FRAME.DAILY,
-                  duration: duration
-                };
-                localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
-              }}
-            >
-              D
-            </OptionButton>
-            <OptionButton
-              active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
-              onClick={() => {
-                setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)
-                let togglePosition = {
-                  chartFilter: chartFilter,
-                  frame: ASSET_CHART_VIEW_FRAME.HOURLY,
-                  duration: duration
-                };
-                localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
-              }}
-            >
-              H
-            </OptionButton>
-            <Divider width="2px" />
-            <OptionButton
-              active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}
-              onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.THREEDAY)}
-            >
-
-              3D
-            </OptionButton>
-            <OptionButton
-              active={duration === ASSET_CHART_VIEW_DURATION.WEEK}
-              onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.WEEK)}
-            >
-              1W
-            </OptionButton>
-            <OptionButton
-              active={duration === ASSET_CHART_VIEW_DURATION.MONTH}
-              onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.MONTH)}
-            >
-              1M
-            </OptionButton>
-            <OptionButton
-              active={duration === ASSET_CHART_VIEW_DURATION.ALL}
-              onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.ALL)}
-            >
-              ALL
-            </OptionButton>
-          </OptionButtonContainer>
-        </OptionButtonWrapper>
+          <OptionButtonWrapper className="row m-0 no-gutter">
+            <OptionButtonContainer > 
+              <OptionButton
+                active={frame === ASSET_CHART_VIEW_FRAME.DAILY}
+                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.DAILY)}
+              >
+                D
+              </OptionButton>
+              <OptionButton
+                active={frame === ASSET_CHART_VIEW_FRAME.HOURLY}
+                onClick={() => setFrame(ASSET_CHART_VIEW_FRAME.HOURLY)}
+              >
+                H
+              </OptionButton>
+              <Divider width="2px" />
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.THREEDAY}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.THREEDAY)}
+              >
+                
+                3D
+              </OptionButton>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.WEEK}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.WEEK)}
+              >
+                1W
+              </OptionButton>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.MONTH}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.MONTH)}
+              >
+                1M
+              </OptionButton>
+              <OptionButton
+                active={duration === ASSET_CHART_VIEW_DURATION.ALL}
+                onClick={() => handleChangeDuration(ASSET_CHART_VIEW_DURATION.ALL)}
+              >
+                ALL
+              </OptionButton>
+            </OptionButtonContainer>
+            </OptionButtonWrapper>
       </OptionButtonBottomContainer>
     </ChartWindowWrapper>
   );

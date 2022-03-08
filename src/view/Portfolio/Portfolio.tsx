@@ -295,13 +295,13 @@ class PortfolioPage extends Component {
     return (
 
       <div align="center">
-        <div id="table-div" style={{ display: "none" }}></div>
+        <div id="table-div" style={{display: "none"}}></div>
         <button
           id="disconnect-me"
-          onClick={() => {
-            fetchDetails("NIN73GEWDWBU3HHEPGWGIQZMOITN4PU3YVTKMR3ESI7DCH5ME4E5TLB4XU")
-            document.getElementById("table-div").style.display = "block"
-          }}
+         onClick = {()=> {
+           fetchDetails("NIN73GEWDWBU3HHEPGWGIQZMOITN4PU3YVTKMR3ESI7DCH5ME4E5TLB4XU")
+           document.getElementById("table-div").style.display = "block"
+         }}
           className="btn btn--transparent btn--warning"
         >
           Disconnect
@@ -319,53 +319,53 @@ class PortfolioPage extends Component {
             <header className="header">
               <div>
                 <div>
-
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={16}
-                    height={16}
-                    fill="currentColor"
-                    className="bi bi-wallet"
-                    viewBox="0 0 16 16"
-                  >
-                    <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z" />
-                  </svg>
-                  <span className="count__title-2">Connect Wallet</span>
-
+                  
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={16}
+                      height={16}
+                      fill="currentColor"
+                      className="bi bi-wallet"
+                      viewBox="0 0 16 16"
+                    >
+                      <path d="M0 3a2 2 0 0 1 2-2h13.5a.5.5 0 0 1 0 1H15v2a1 1 0 0 1 1 1v8.5a1.5 1.5 0 0 1-1.5 1.5h-12A2.5 2.5 0 0 1 0 12.5V3zm1 1.732V12.5A1.5 1.5 0 0 0 2.5 14h12a.5.5 0 0 0 .5-.5V5H2a1.99 1.99 0 0 1-1-.268zM1 3a1 1 0 0 0 1 1h12V2H2a1 1 0 0 0-1 1z" />
+                    </svg>
+                    <span className="count__title-2">Connect Wallet</span>
+                  
                 </div>
                 <div />
               </div>
             </header>
             <div id="modal-root-1" class="modal-backdrop show" style={{ display: "none" }} ></div>
 
-            <div className="modal-dialog modal-sm modal-lg modal-dialog-centered">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h2 className="modal-title">Algo Wallets</h2>
-                  <button
-                    id="wallet-connect-close"
-                    className="btn-close btn"
-                  >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
+              <div className="modal-dialog modal-sm modal-lg modal-dialog-centered">
+                <div className="modal-content">
+                  <div className="modal-header">
+                    <h2 className="modal-title">Algo Wallets</h2>
+                    <button
+                      id="wallet-connect-close"
+                      className="btn-close btn"
                     >
-                      <path d="M7.75732 7.75732L16.2426 16.2426" />
-                      <path d="M7.75739 16.2426L16.2427 7.75732" />
-                    </svg>
-                  </button>
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M7.75732 7.75732L16.2426 16.2426" />
+                        <path d="M7.75739 16.2426L16.2427 7.75732" />
+                      </svg>
+                    </button>
+                  </div>
+                 
+
+     
                 </div>
 
-
-
               </div>
-
             </div>
-          </div>
 
+          </div>
         </div>
-      </div>
     );
   }
 }

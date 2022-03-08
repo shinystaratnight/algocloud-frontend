@@ -21,7 +21,7 @@ function InactiveUserRoute({
           return (
             <Redirect
               to={{
-                pathname: '/',
+                pathname: '/auth/signin',
               }}
             />
           );

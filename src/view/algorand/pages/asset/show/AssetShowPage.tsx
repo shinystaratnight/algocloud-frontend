@@ -152,7 +152,6 @@ const AssetShowPage = () => {
         <div className="asset-m0 col-lg-8 col-sm-12 ">
           <AssetChart
             color='--var(algoucloud-primary)'
-            data={asset}
             assetData={assetData}
             priceData={priceData}
           />
