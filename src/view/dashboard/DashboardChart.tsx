@@ -23,14 +23,18 @@ export default function DashboardChart(props) {
     if (!asset) return;
     getAssetData();
     setMounted(new Date().getTime() / 1000);
+    return () => { }
   }, [asset]);
 
   useEffect(() => {
     if (mounted) {
       let diff = new Date().getTime() / 1000 - mounted
-      if (diff > 10)
+      if (diff > 10) {
         getAssetData();
+        console.log(diff, lastUpdated);
+      }
     }
+    return () => { }
   }, [mounted, lastUpdated])
 
   let image = asset['assetId'] === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${asset['assetId']}.png`;
@@ -44,23 +48,28 @@ export default function DashboardChart(props) {
   }
 
   const getAssetData = async () => {
-    setLoading(true);
-    const data = await AlgorandService.getAlgorandAsset(
-      asset.assetId,
-      'id',
-      10,
-      0,
-    );
+    try {
+      setLoading(true);
+      const data = await AlgorandService.getAlgorandAsset(
+        asset.assetId,
+        'id',
+        10,
+        0,
+      );
 
-    if (data.count) {
-      setData(data);
-    } else {
-      if (data.error) {
-        setError(true);
+      if (data.count) {
+        setData(data);
+      } else {
+        if (data.error) {
+          setError(true);
+        }
       }
-    }
 
-    setLoading(false);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      setError(true);
+    }
   }
 
   return (
