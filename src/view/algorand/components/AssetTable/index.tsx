@@ -217,14 +217,14 @@ function AssetTable(props) {
                         </div>
                         <div>
                           <span style={{ color: 'white' }}>{asset.unitName}</span>
-                          <span style={{ color: 'grey' }}>{' '}{asset.id}</span>
+                          <span style={{ color: 'grey' }}>{' '}{asset.assetId}</span>
                         </div>
                       </div>
                     </Link>
                     {
                       currentUser.superadmin === true ?
                       <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
-                      : asset.isVerified && <div className={`bi bi-shield-check-checked text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></div>
+                      : asset.isVerified && <div className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></div>
                     }
                   </div>
                 </td>

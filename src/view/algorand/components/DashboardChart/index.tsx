@@ -171,7 +171,7 @@ const DashboardAssetChart = (props) => {
                 frame: ASSET_CHART_VIEW_FRAME.HOURLY,
                 duration: ASSET_CHART_VIEW_DURATION.WEEK
               };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
+              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Liquidity
@@ -187,7 +187,7 @@ const DashboardAssetChart = (props) => {
                 frame: ASSET_CHART_VIEW_FRAME.HOURLY,
                 duration: ASSET_CHART_VIEW_DURATION.THREEDAY
               };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
+              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Volume
@@ -203,7 +203,7 @@ const DashboardAssetChart = (props) => {
                 frame: ASSET_CHART_VIEW_FRAME.HOURLY,
                 duration: ASSET_CHART_VIEW_DURATION.THREEDAY
               };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
+              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Price
@@ -219,7 +219,7 @@ const DashboardAssetChart = (props) => {
                 frame: ASSET_CHART_VIEW_FRAME.HOURLY,
                 duration: ASSET_CHART_VIEW_DURATION.THREEDAY
               };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
+              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             Market Cap
@@ -237,7 +237,7 @@ const DashboardAssetChart = (props) => {
                 frame: ASSET_CHART_VIEW_FRAME.HOURLY,
                 duration: duration
               };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
+              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             1H
@@ -251,7 +251,7 @@ const DashboardAssetChart = (props) => {
                 frame: ASSET_CHART_VIEW_FRAME.DAILY,
                 duration: duration
               };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
+              localStorage.setItem(data.data.assetId, JSON.stringify(togglePosition));
             }}
           >
             1D

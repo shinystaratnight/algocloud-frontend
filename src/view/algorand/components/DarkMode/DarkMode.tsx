@@ -8,7 +8,7 @@ import SettingsService from 'src/modules/settings/settingsService';
 const DarkMode = () => {
     const dispatch = useDispatch();
     const settings = useSelector(selectors.selectSettings);
-    
+
     const [theme, setTheme] = useState("dark");
 
     useEffect(() => {
@@ -40,9 +40,10 @@ const DarkMode = () => {
     //     setDark();
     // }
 
-    const toggleTheme: ChangeEventHandler<HTMLInputElement> = (e) => {
+    const toggleTheme = (e) => {
         // let theme = ''
-        if (e.target.checked) {
+        const storedTheme = localStorage.getItem("theme");
+        if (storedTheme === "light" || storedTheme === null) {
             // theme = 'default';
             setDark();
             setTheme("dark")
@@ -63,18 +64,18 @@ const DarkMode = () => {
         <div className="toggle-theme-wrapper">
             <label className="dropdown-item" htmlFor="checkbox">
                 {
-                    theme === "dark" ? <div className="lightmode-toggle">
+                    theme === "dark" ? <div className="lightmode-toggle" onClick={toggleTheme}>
                         <i id="sun" className="fas fa-sun"></i> Lightmode
-                    </div> : <div className="darkmode-toggle">
+                    </div> : <div className="darkmode-toggle" onClick={toggleTheme}>
                         <i id="moon" className="fas fa-moon"></i> Darkmode
                     </div>
                 }
-                <input
+                {/* <input
                     type="checkbox"
                     id="checkbox"
                     onChange={toggleTheme}
                     // defaultChecked={defaultDark}
-                />
+                /> */}
             </label>
         </div>
     );
