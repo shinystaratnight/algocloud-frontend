@@ -9,7 +9,7 @@ import { images } from 'src/images/images';
 import { formatPercent, formattedNum } from 'src/modules/algorand/utils';
 
 export default function DashboardChart(props) {
-  const asset = props.asset;
+  const { asset } = props;
   const [assetData, setData] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
@@ -23,7 +23,7 @@ export default function DashboardChart(props) {
     if (!asset) return;
     getAssetData();
     setMounted(new Date().getTime() / 1000);
-    return () => { }
+    return () => { setLoading(false) }
   }, [asset]);
 
   useEffect(() => {
@@ -31,10 +31,9 @@ export default function DashboardChart(props) {
       let diff = new Date().getTime() / 1000 - mounted
       if (diff > 10) {
         getAssetData();
-        console.log(diff, lastUpdated);
       }
     }
-    return () => { }
+    return () => { setLoading(false) }
   }, [mounted, lastUpdated])
 
   let image = asset['assetId'] === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${asset['assetId']}.png`;
