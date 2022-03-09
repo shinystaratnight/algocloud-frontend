@@ -22,6 +22,8 @@ import { useLocation } from 'react-router-dom';
 import queryString from 'query-string';
 import Message from 'src/view/shared/message';
 import { urlfy } from 'src/view/shared/urlfy';
+import PipeLogin from 'src/view/Portfolio/components/PipeLogin';
+
 const schema = yup.object().shape({
    email: yupFormSchemas.string(i18n('user.fields.email'), {
       required: true,
@@ -282,6 +284,10 @@ function LandingPage() {
                                              </div>
                                              <div>
                                                 <div className="mb-3">
+                                                <div className="mb-3 mt-3" >
+
+                                                <PipeLogin></PipeLogin>
+                                                    </div>
                                                    <button
                                                       className="btn btn-primary d-block w-100 mt-3"
                                                       type="submit"
