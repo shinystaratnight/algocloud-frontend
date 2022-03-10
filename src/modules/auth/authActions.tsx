@@ -133,6 +133,7 @@ const authActions = {
     email,
     password,
     rememberMe,
+    address
   ) => async (dispatch) => {
     try {
       dispatch({ type: authActions.AUTH_START });
@@ -142,6 +143,7 @@ const authActions = {
       const token = await service.signinWithEmailAndPassword(
         email,
         password,
+        address
       );
 
       AuthToken.set(token, rememberMe);
