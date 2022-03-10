@@ -73,7 +73,11 @@ function LandingPage() {
       password: '',
       rememberMe: true,
    });
+   const [email, setEmail] = useState('');
+   const [password, setPassword] = useState('');
+   const [rememberMe, setRememberMe] = useState(true);
    const [address, setAddress] = useState('');
+   
    const form = useForm({
       resolver: yupResolver(schema),
       mode: 'onSubmit',
@@ -91,9 +95,28 @@ function LandingPage() {
    };
 
    const checkAll = (address) => {
-      console.log("checkAll: ", address);
       setAddress(address);
+      dispatch(
+         actions.doSigninWithEmailAndPassword(
+            email,
+            password,
+            rememberMe,
+            address
+         ),
+      );
    };
+
+   const handleEmailChange = (email) => {
+      setEmail(email);
+   }
+
+   const handlePasswordChange = (password) => {
+      setPassword(password);
+   }
+
+   const handleRememberMe = (e) => {
+      setRememberMe(e.target.checked);
+   }
 
    return (
       <Wrapper className="main-signin">
@@ -252,6 +275,7 @@ function LandingPage() {
                                                    autoComplete="email"
                                                    autoFocus
                                                    externalErrorMessage={externalErrorMessage}
+                                                   onChange={handleEmailChange}
                                                 />
                                              </div>
                                              <div className="mb-3">
@@ -260,6 +284,7 @@ function LandingPage() {
                                                    placeholder={i18n('user.fields.password')}
                                                    autoComplete="password"
                                                    type="password"
+                                                   onChange={handlePasswordChange}
                                                 />
                                              </div>
                                              <div className="justify-content-between align-items-center row">
@@ -271,7 +296,9 @@ function LandingPage() {
                                                          id={'rememberMe'}
                                                          name={'rememberMe'}
                                                          ref={form.register}
-                                                      />                <label
+                                                         onChange={handleRememberMe}
+                                                      />
+                                                      <label
                                                          className="form-check-label mb-0"
                                                          htmlFor={'rememberMe'}
                                                          style={{ paddingLeft: '0px !important' }}
@@ -293,7 +320,6 @@ function LandingPage() {
                                              <div>
                                                 <div className="mb-3">
                                                    <div className="mb-3 mt-3" >
-
                                                       <PipeLogin checkAll={checkAll}></PipeLogin>
                                                    </div>
                                                    {/* <button
