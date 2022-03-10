@@ -23,7 +23,7 @@ export default function DashboardChart(props) {
     if (!asset) return;
     getAssetData();
     setMounted(new Date().getTime() / 1000);
-    return () => { setLoading(false) }
+    return () => { setLoading(true) }
   }, [asset]);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ export default function DashboardChart(props) {
         getAssetData();
       }
     }
-    return () => { setLoading(false) }
+    return () => { setLoading(true) }
   }, [mounted, lastUpdated])
 
   let image = asset['assetId'] === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${asset['assetId']}.png`;

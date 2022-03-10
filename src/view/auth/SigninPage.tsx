@@ -56,6 +56,8 @@ function SigninPage() {
   );
   const logoUrl = useSelector(selectors.selectLogoUrl);
 
+  const [address, setAddress] = useState('');
+
   useEffect(() => {
     dispatch(actions.doClearErrorMessage());
   }, [dispatch]);
@@ -91,6 +93,7 @@ function SigninPage() {
         email,
         password,
         rememberMe,
+        address,
       ),
     );
   };

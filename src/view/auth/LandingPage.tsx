@@ -73,6 +73,7 @@ function LandingPage() {
       password: '',
       rememberMe: true,
    });
+   const [address, setAddress] = useState('');
    const form = useForm({
       resolver: yupResolver(schema),
       mode: 'onSubmit',
@@ -84,9 +85,16 @@ function LandingPage() {
             email,
             password,
             rememberMe,
+            address
          ),
       );
    };
+
+   const checkAll = (address) => {
+      console.log("checkAll: ", address);
+      setAddress(address);
+   };
+
    return (
       <Wrapper className="main-signin">
          <main className="main" id="main">
@@ -284,11 +292,11 @@ function LandingPage() {
                                              </div>
                                              <div>
                                                 <div className="mb-3">
-                                                <div className="mb-3 mt-3" >
+                                                   <div className="mb-3 mt-3" >
 
-                                                <PipeLogin></PipeLogin>
-                                                    </div>
-                                                   <button
+                                                      <PipeLogin checkAll={checkAll}></PipeLogin>
+                                                   </div>
+                                                   {/* <button
                                                       className="btn btn-primary d-block w-100 mt-3"
                                                       type="submit"
                                                       disabled={loading}
@@ -296,7 +304,7 @@ function LandingPage() {
                                                       <ButtonIcon loading={loading} />
                                                       {' '}
                                                       {i18n('auth.signin')}
-                                                   </button>
+                                                   </button> */}
                                                 </div>
                                              </div>
                                              <div className="w-100 position-relative text-center mt-4">
