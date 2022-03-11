@@ -53,9 +53,11 @@ function LandingPage() {
       selectors.selectBackgroundImageUrl,
    );
    const logoUrl = useSelector(selectors.selectLogoUrl);
+
    useEffect(() => {
       dispatch(actions.doClearErrorMessage());
    }, [dispatch]);
+
    useEffect(() => {
       if (socialErrorCode) {
          if (socialErrorCode === 'generic') {
@@ -68,6 +70,7 @@ function LandingPage() {
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
+
    const [initialValues] = useState({
       email: '',
       password: '',
@@ -83,6 +86,7 @@ function LandingPage() {
       mode: 'onSubmit',
       defaultValues: initialValues,
    });
+   
    const onSubmit = ({ email, password, rememberMe }) => {
       dispatch(
          actions.doSigninWithEmailAndPassword(
