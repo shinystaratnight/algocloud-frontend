@@ -25,13 +25,16 @@ const CandleStickChart = ({
   paddingTop = '',
   margin = true,
   valueFormatter = val => formattedNum(val, true),
-  duration = ASSET_CHART_VIEW_DURATION.THREEDAY
+  duration = ASSET_CHART_VIEW_DURATION.THREEDAY,
+  showToolTip = true,
+  showGrid = true,
+  showPlayIcon = true
 }) => {
   dayjs.extend(utc);
 
   const ref = useRef<HTMLDivElement>(null);
 
-  const formattedData = data?.map(entry => {    
+  const formattedData = data?.map(entry => {
     let utcTime = typeof entry.timestamp === 'number' ? toLocalTime(entry.timestamp) : entry.timestamp;
     return {
       time: utcTime,
@@ -89,10 +92,12 @@ const CandleStickChart = ({
         },
         grid: {
           vertLines: {
-            color: 'rgba(197, 203, 206, 0.5)'
+            color: 'rgba(197, 203, 206, 0.5)',
+            visible: showGrid
           },
           horzLines: {
-            color: 'rgba(197, 203, 206, 0.5)'
+            color: 'rgba(197, 203, 206, 0.5)',
+            visible: showGrid
           }
         },
         crosshair: {
@@ -100,12 +105,12 @@ const CandleStickChart = ({
         },
         rightPriceScale: {
           borderColor: 'rgba(197, 203, 206, 0.8)',
-          visible: true
+          visible: showGrid && true
         },
         timeScale: {
           borderColor: 'rgba(197, 203, 206, 0.8)',
-          visible: true,
-          timeVisible: true,
+          visible: showGrid && true,
+          timeVisible: showGrid && true,
         },
         localization: {
           priceFormatter: val => formattedNum(val)
@@ -123,28 +128,31 @@ const CandleStickChart = ({
 
       candleSeries.setData(formattedData);
 
-      var toolTip = document.createElement('div');
-      toolTip.setAttribute('id', 'tooltip-id-' + title);
-      toolTip.className = 'three-line-legend';
-      ref.current.appendChild(toolTip);
-      toolTip.style.display = 'block';
-      toolTip.style.left = (margin ? 16 : 10) + 'px';
-      toolTip.style.top = 5 + 'px';
-      toolTip.style.backgroundColor = 'transparent';
-      toolTip.style.position = 'absolute';
+      if (showToolTip) {
+        var toolTip = document.createElement('div');
+        toolTip.setAttribute('id', 'tooltip-id-' + title);
+        toolTip.className = 'three-line-legend';
+        ref.current.appendChild(toolTip);
+        toolTip.style.display = 'block';
+        toolTip.style.left = (margin ? 16 : 10) + 'px';
+        toolTip.style.top = 5 + 'px';
+        toolTip.style.backgroundColor = 'transparent';
+        toolTip.style.position = 'absolute';
 
-      let price = base;
-      let time: UTCTimestamp;
-      let date: string = '';
-      if (formattedData && formattedData.length > 0) {
-        price = formattedData[formattedData.length - 1].close;
-        time = formattedData[formattedData.length - 1].time;
-        date = dayjs.unix(time).format('MM/DD h:mm A');
+        let price = base;
+        let time: UTCTimestamp;
+        let date: string = '';
+        if (formattedData && formattedData.length > 0) {
+          price = formattedData[formattedData.length - 1].close;
+          time = formattedData[formattedData.length - 1].time;
+          date = dayjs.unix(time).format('MM/DD h:mm A');
+        }
+        // get the title of the chart
+
+        toolTip.innerHTML = price
+          ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(price) + '</div>'
+          : `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(0) + '</div>';
       }
-      // get the title of the chart
-      toolTip.innerHTML = price
-        ? `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(price) + '</div>'
-        : `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` + valueFormatter(0) + '</div>';
 
       // update the title when hovering on the chart
       chart.subscribeCrosshairMove(function (param) {
@@ -167,7 +175,8 @@ const CandleStickChart = ({
           const ts = param.time as UTCTimestamp;
           var price = (param.seriesPrices.get(candleSeries) as BarPrices).close;
           const time = dayjs.unix(ts).format('MM/DD h:mm A');
-          toolTip.innerHTML =
+          if (showToolTip) {
+            toolTip.innerHTML =
             `<div style="font-size: 18px; margin: 4px 0px; color: ${textColor}">` +
             valueFormatter(price) +
             `<span style="font-size: 12px; margin: 4px 6px; color: ${textColor}>` +
@@ -175,6 +184,7 @@ const CandleStickChart = ({
             ' UTC' +
             '</span>' +
             '</div>';
+          }
         }
       });
 
@@ -213,17 +223,19 @@ const CandleStickChart = ({
         (formattedData && formattedData.length > 0) ? (
           ''
         ) : (
-          <div style={{position: 'absolute', top: '40%', left: '45%'}}>
+          <div style={{ position: 'absolute', top: '40%', left: '45%' }}>
             <Spinner />
           </div>
         )
       }
       <IconWrapper>
-        <Play
-          onClick={() => {
-            chartCreated && chartCreated.timeScale().fitContent()
-          }}
-        />
+        {
+          showPlayIcon && <Play
+            onClick={() => {
+              chartCreated && chartCreated.timeScale().fitContent()
+            }}
+          />
+        }
       </IconWrapper>
     </GraphWrapper>
   );
