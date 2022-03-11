@@ -248,7 +248,7 @@ function SigninPage() {
                                                 {i18n('auth.signin')}
                                              </button> */}
                                           </div>
-                                          <div className="position-relative mt-4">
+                                          {/* <div className="position-relative mt-4">
                                              <hr className="bg-300" />
                                              <div className="divider-content-center text-600" style={{ backgroundColor: "var(--auth-login-pane) " }} >or log in with
                                              </div>
@@ -276,7 +276,7 @@ function SigninPage() {
                                                    </div>
                                                 </div>
                                              </SocialButtons>
-                                          </form>
+                                          </form> */}
                                           <OtherActions>
                                              <div>
                                                 <I18nSelect />

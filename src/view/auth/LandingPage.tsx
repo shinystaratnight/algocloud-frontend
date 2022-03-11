@@ -337,7 +337,7 @@ function LandingPage() {
                                                    </button> */}
                                                 </div>
                                              </div>
-                                             <div className="w-100 position-relative text-center mt-4">
+                                             {/* <div className="w-100 position-relative text-center mt-4">
                                                 <hr className="text-300" />
                                                 <div className="divider-content-center text-600">or log in with</div>
                                              </div>
@@ -374,7 +374,7 @@ function LandingPage() {
                                                       </div>
                                                    </SocialButtons>
                                                 </div>
-                                             </div>
+                                             </div> */}
                                           </form>
                                           <div className="">
                                              <I18nFlags className="built-by-flags" />
