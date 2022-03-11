@@ -53,9 +53,11 @@ function LandingPage() {
       selectors.selectBackgroundImageUrl,
    );
    const logoUrl = useSelector(selectors.selectLogoUrl);
+
    useEffect(() => {
       dispatch(actions.doClearErrorMessage());
    }, [dispatch]);
+
    useEffect(() => {
       if (socialErrorCode) {
          if (socialErrorCode === 'generic') {
@@ -68,6 +70,7 @@ function LandingPage() {
       }
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, []);
+
    const [initialValues] = useState({
       email: '',
       password: '',
@@ -83,6 +86,7 @@ function LandingPage() {
       mode: 'onSubmit',
       defaultValues: initialValues,
    });
+   
    const onSubmit = ({ email, password, rememberMe }) => {
       dispatch(
          actions.doSigninWithEmailAndPassword(
@@ -333,7 +337,7 @@ function LandingPage() {
                                                    </button> */}
                                                 </div>
                                              </div>
-                                             <div className="w-100 position-relative text-center mt-4">
+                                             {/* <div className="w-100 position-relative text-center mt-4">
                                                 <hr className="text-300" />
                                                 <div className="divider-content-center text-600">or log in with</div>
                                              </div>
@@ -370,7 +374,7 @@ function LandingPage() {
                                                       </div>
                                                    </SocialButtons>
                                                 </div>
-                                             </div>
+                                             </div> */}
                                           </form>
                                           <div className="">
                                              <I18nFlags className="built-by-flags" />
