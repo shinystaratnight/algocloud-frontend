@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import { formatNumber, formatPercent } from 'src/modules/algorand/utils';
+import { formatNumber, formatPercent, formatPrice } from 'src/modules/algorand/utils';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import Spinner from 'src/view/shared/Spinner';
 import { images } from 'src/images/images';
@@ -11,6 +11,8 @@ import noteActions from 'src/modules/note/noteActions';
 import overViewActions from 'src/modules/algorand/overview/overviewActions';
 import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from 'src/modules/auth/authSelectors';
+import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
+import { ASSET_CHART_VIEW_DURATION } from 'src/modules/algorand/constants';
 
 function AssetTable(props) {
   const {
@@ -38,6 +40,8 @@ function AssetTable(props) {
   const currentUser = useSelector(
     authSelectors.selectCurrentUser,
   );
+
+  console.log('assets: ', assets);
 
   useEffect(() => {
     setUpdating(false);
@@ -157,6 +161,11 @@ function AssetTable(props) {
               name='more'
               label='NOTES'
             />
+            <TableColumnHeader
+              name='last7days'
+              label='Last 7 Days'
+              align={'center'}
+            />
           </tr>
         </thead>
         <tbody>
@@ -223,12 +232,12 @@ function AssetTable(props) {
                     </Link>
                     {
                       currentUser.superadmin === true ?
-                      <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
-                      : asset.isVerified && <div className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></div>
+                        <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
+                        : asset.isVerified && <div className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></div>
                     }
                   </div>
                 </td>
-                <td>{formatNumber(asset.price)}</td>
+                <td>{formatPrice(asset.price)}</td>
                 <td>
                   <span className={(parseFloat(formatPercent(asset.lastDayPriceChange)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset.lastDayPriceChange)}
                     {asset.lastDayPriceChange ? (parseFloat(formatPercent(asset.lastDayPriceChange)) < 0) ? <span>{'  '}<i
@@ -316,6 +325,24 @@ function AssetTable(props) {
                       </button>
                     </div>
                   </div>
+                </td>
+                <td>
+                  <Link to={`/algorand/assets/${asset.assetId}`}>
+                    {
+                      asset.hourlyPrices && <CandleStickChart
+                        data={asset.hourlyPrices}
+                        width={200}
+                        height={100}
+                        base={0}
+                        paddingTop='0'
+                        valueFormatter={(val) => val?.toFixed(4)}
+                        duration={ASSET_CHART_VIEW_DURATION.WEEK}
+                        showToolTip={false}
+                        showGrid={false}
+                        showPlayIcon={false}
+                      />
+                    }
+                  </Link>
                 </td>
               </tr>
             )

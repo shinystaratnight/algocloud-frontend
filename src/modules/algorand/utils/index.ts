@@ -16,6 +16,13 @@ export const formatNumber = (_volume) => {
   return '$' + volume.toFixed(2);
 };
 
+export const formatPrice = (_volume) => {
+  let volume = _volume;
+  if (_volume === null) volume = 0;
+  if (typeof _volume === 'string') volume = parseFloat(volume);
+  return '$' + volume.toFixed(3);
+};
+
 export const formatPercent = (_volume, decimals=2) => {
   let volume = _volume;
   if (_volume === null) volume = 0;
