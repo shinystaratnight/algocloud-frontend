@@ -45,8 +45,8 @@ function Header(props) {
       if (window.innerWidth > 575) {
         searchBox.style["position"] = "relative";
         searchBox.style["display"] = "block";
-        searchBox.style["margin-right"] = "2rem";
-        searchBox.style["width"] = "30rem";
+        searchBox.style["margin-right"] = "1rem";
+        searchBox.style["max-width"] = "20rem";
         searchBox.style["top"] = "0px";
         searchBox.style["left"] = "0px";
       } else {
@@ -125,7 +125,7 @@ function Header(props) {
 
   const showSearchBox = () => {
     let searchBox = document.getElementById("search-box");
-    if (window.innerWidth < 575) {
+    if (window.innerWidth < 825) {
       searchBox.style["position"] = "fixed";
       searchBox.style["display"] = "block";
       searchBox.style["top"] = "65px";
@@ -149,24 +149,24 @@ function Header(props) {
           <div className="algocloud-font ">AlgoCloud</div>
           <svg className="algocloud-font-logo" xmlns="http://www.w3.org/2000/svg" id="algocloud-font-logo" data-name="Layer 1" viewBox="0 0 230 230"><path d="M120.38942,116.97445q-4.12061.81445-8.23974,1.43652-4.12134.624-7.47413,1.10254A50.50469,50.50469,0,0,0,92.1238,122.867a20.24693,20.24693,0,0,0-8.33594,6.17969,15.37525,15.37525,0,0,0-2.97022,9.62988q0,8.335,6.08448,12.69531,6.08349,4.36084,15.47412,4.35938a33.942,33.942,0,0,0,15.90527-3.59278,27.81533,27.81533,0,0,0,10.82715-9.72558,25.1984,25.1984,0,0,0,3.92871-13.89356V112.90218a20.87085,20.87085,0,0,1-5.22217,2.251A76.457,76.457,0,0,1,120.38942,116.97445Z" fill="currentColor" /><path d="M114.9,5.14529a110,110,0,1,0,110,110A110,110,0,0,0,114.9,5.14529Zm58.66712,175.9776H134.85768V160.71371h-1.14941a40.93579,40.93579,0,0,1-9.48584,12.12109,42.77205,42.77205,0,0,1-14.27686,8.14453,58.15417,58.15417,0,0,1-19.25879,2.92188,60.81052,60.81052,0,0,1-25.104-4.93457,39.67133,39.67133,0,0,1-17.39062-14.65918q-6.37355-9.72363-6.37159-24.29,0-12.26367,4.50342-20.60059a36.46676,36.46676,0,0,1,12.26416-13.41357,59.42139,59.42139,0,0,1,17.67822-7.66553,133.236,133.236,0,0,1,20.83985-3.64111q12.83862-1.34034,20.69629-2.53906,7.85522-1.19679,11.40234-3.59327a8.00139,8.00139,0,0,0,3.54492-7.09033v-.57471q0-9.1018-5.70117-14.085-5.70117-4.9812-16.14453-4.98242-11.02,0-17.53467,4.83887a22.706,22.706,0,0,0-8.62353,12.1206L46.9944,75.72494A51.63992,51.63992,0,0,1,58.30055,52.48959,54.84107,54.84107,0,0,1,80.09889,37.35091Q93.4656,32.0328,111.09548,32.033a94.73173,94.73173,0,0,1,23.52295,2.87452,62.04052,62.04052,0,0,1,20.02539,8.91064,43.61658,43.61658,0,0,1,13.8457,15.47461q5.07788,9.43872,5.07764,22.56445Z" fill="currentColor" /></svg>
         </a>
-
-        <div className="last-child" style={{ display: 'flex', alignItems: 'center' }}>
-          <div id='search-box' className='search-box'>
+        
+        <div className="last-child" style={{ display: 'flex', alignItems: 'center', justifyContent: "flex-end" }}>
+        <div id='search-box' className='search-box'>
             <div className='d-flex'>
-              <input ref={wrapperRef} type='search' className='search-input border border-dark' placeholder='Search by Asset Name/Asset ID/Asset Unit'
+              <input ref={wrapperRef} type='search' className='crayons-header--search-input crayons-textfield' placeholder='Search by Asset Name/Asset ID/Asset Unit'
                 onMouseUp={() => handleSearch()}
                 onKeyUp={() => handleSearch()}
                 onChange={evt => updateInputValue(evt)}
                 style={{ width: '100%', paddingLeft: '1rem', paddingRight: '1rem', lineHeight: '2.2', borderTopLeftRadius: `${isSearched ? '1.2rem' : '50rem'}`, borderBottomLeftRadius: `${isSearched ? '0rem' : '50rem'}`, borderTopRightRadius: '0rem', borderBottomRightRadius: '0rem' }} />
-              <button className='border border-dark' onClick={() => handleSearch()}
-                style={{ borderTopRightRadius: '50rem', borderBottomRightRadius: '50rem', width: '4rem' }}>
+              <button className='c-btn c-btn--icon-alone absolute inset-px left-auto mt-0 py-0' onClick={() => handleSearch()}
+                style={{}}>
                 <i className='fas fa-search'></i>
               </button>
             </div>
             {
               isSearched &&
               <div className='dropdown-content d-flex flex-column border border-dark'
-                style={{ position: 'absolute', backgroundColor: '#f6f6f6', width: '26.4rem', height: '180px', overflowY: 'auto' }}>
+                style={{ position: 'absolute', marginTop: ".5rem" , borderRadius: ".375rem" , boxShadow: "var(--algocloud-card-span-img-box-shadow)!important", border: "0px",  backgroundColor: 'var(--header-bg)', width: '100%', height: '180px', overflowY: 'auto' }}>
                 {
                   filtered.map((asset, index) => {
                     return (
@@ -180,9 +180,10 @@ function Header(props) {
             }
           </div>
 
-          <button className='border border-dark rounded-circle mobile-search' onClick={() => showSearchBox()}>
+          <button className='c-link c-link--icon-alone c-link--block m:hidden  mobile-search' onClick={() => showSearchBox()}>
             <i className='fas fa-search'></i>
           </button>
+          
 
           <span className="i18n-select">
             <PipeConnect />

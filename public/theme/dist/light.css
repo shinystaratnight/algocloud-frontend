@@ -1,3 +1,132 @@
+button#wallet-connect-2 {
+    white-space: nowrap;
+}
+
+.mobile-search {
+    margin-right: 1rem;
+    display: none;
+    background: #ffffff0a;
+    border: #0000;
+    color: var(--algocloud-body-color);
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button.mobile-search.crayons-btn.crayons-btn--secondary:hover {
+    border-radius: 0.375rem;
+    background-color: rgb(123 120 255/25%)!important;
+    color: #9896ff!important;
+    border: 0;
+}
+
+input.crayons-textfield {
+    border-radius: var(--radius) !important;
+    line-height: normal !important;
+}
+
+.crayons-header--search {
+    margin: 0 var(--su-4);
+    display: block;
+}
+
+.crayons-header--search {
+    max-width: 420px;
+    flex: 1 auto !important;
+    margin: 0 var(--su-2);
+}
+
+.crayons-fields--horizontal {
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.crayons-fields {
+    display: flex;
+    flex-flow: column;
+}
+.crayons-fields--horizontal {
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.crayons-fields {
+    display: flex;
+    flex-flow: column;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex-1 {
+    flex: 1 1 0%;
+}
+.crayons-field {
+    display: flex;
+    flex-flow: column;
+    font-size: var(--fs-base);
+}
+.crayons-field {
+    display: flex;
+    flex-flow: column;
+    font-size: var(--fs-base);
+}
+
+.crayons-textfield:focus, .crayons-select:focus, .c-autocomplete--multi__wrapper:focus-within {
+    background-color: var(--form-bg-focus);
+    border-color: var(--focus);
+    box-shadow: 0 0 0 1px var(--focus);
+}
+
+.crayons-textfield:hover, .crayons-checkbox:hover, .crayons-radio:hover, .crayons-select:hover {
+    border-color: var(--form-border-hover);
+}
+
+button.c-btn.c-btn--icon-alone.absolute.inset-px.left-auto.mt-0.py-0 {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    padding: 0.5rem;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    width: 40px;
+}
+
+button,input:not([type=hidden]),textarea {
+    outline: 0
+}
+
+.crayons-textfield {
+    line-height: var(--lh-base);
+    padding: calc(.5em - var(--border-width)) .5em;
+    font-family: inherit;
+    font-size: var(--fs-base);
+    width: 100%;
+    resize: vertical
+}
+
+.crayons-checkbox,.crayons-color-selector,.crayons-radio,.crayons-select,.crayons-textfield {
+    --border-width: 1px;
+    background-color: var(--form-bg);
+    border: var(--border-width) solid var(--form-border);
+    color: var(--body-color);
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: var(--radius);
+    transition: all var(--transition-props)
+}
+
+
+.assets-mobile.col-lg-4.col-sm-12.d-flex.flex-column.justify-content-between::-webkit-scrollbar,.chart-rack::-webkit-scrollbar {
+    border-bottom-left-radius: 0.375rem !important;
+    border-bottom-right-radius: 0.375rem!important;
+}
+
 .algocloud-font-logo {
     width: 0px;
     height: 0px;
