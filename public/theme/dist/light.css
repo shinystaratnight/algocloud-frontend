@@ -178,6 +178,10 @@ button#wallet-connect-2 {
         margin-right: 0px;
     }
 
+    .dropdown-content.d-flex.flex-column {
+        box-shadow: 0 0 0 1px var(--card-border) !important;
+    }
+
     .ms-2.badge.badge-soft-info.rounded-pill {
         margin-left: unset !important;
     }

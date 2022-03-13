@@ -165,8 +165,8 @@ function Header(props) {
             </div>
             {
               isSearched &&
-              <div className='dropdown-content d-flex flex-column border border-dark'
-                style={{ position: 'absolute', marginTop: ".5rem" , borderRadius: ".375rem" , boxShadow: "var(--algocloud-card-span-img-box-shadow)!important", border: "0px",  backgroundColor: 'var(--header-bg)', width: '100%', height: '180px', overflowY: 'auto' }}>
+              <div className='dropdown-content d-flex flex-column '
+                style={{ position: 'absolute', marginTop: ".5rem" , borderRadius: ".375rem", border: "0px",  backgroundColor: 'var(--header-bg)', width: '100%', height: '180px', overflowY: 'auto' }}>
                 {
                   filtered.map((asset, index) => {
                     return (
