@@ -46,7 +46,7 @@ function Header(props) {
         searchBox.style["position"] = "relative";
         searchBox.style["display"] = "block";
         searchBox.style["margin-right"] = "1rem";
-        searchBox.style["max-width"] = "20rem";
+        searchBox.style["max-width"] = "100%";
         searchBox.style["top"] = "0px";
         searchBox.style["left"] = "0px";
       } else {
