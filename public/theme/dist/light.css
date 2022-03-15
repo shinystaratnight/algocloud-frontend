@@ -178,10 +178,6 @@ button#wallet-connect-2 {
         margin-right: 0px;
     }
 
-    .dropdown-content.d-flex.flex-column {
-        box-shadow: 0 0 0 1px var(--card-border) !important;
-    }
-
     .ms-2.badge.badge-soft-info.rounded-pill {
         margin-left: unset !important;
     }
@@ -1480,7 +1476,7 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
     --algocloud-colored-link-white-hover-color: white;
     --algocloud-primary: #3b49df;
     --algocloud-colored-link-primary-hover-color: #3b49df;
-    --algocloud-secondary: #748194;
+    --algocloud-secondary: var(--algocloud-body-color);
     --algocloud-colored-link-secondary-hover-color: #5d6776;
     --algocloud-success: #26d9ca;
     --algocloud-colored-link-success-hover-color: #1ab3a6;
@@ -7520,7 +7516,7 @@ textarea.form-control-lg {
 }
 
 .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%239da9bb' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E")
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23d6d6d7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E");
 }
 
 .navbar-light .navbar-text {
@@ -7549,12 +7545,21 @@ textarea.form-control-lg {
 
 .navbar-dark .navbar-toggler,.navbar-dark button.nav-link.landing-mobile-btn.dropdown-toggle.navbar-toggle.collapsed {
     color: var(--algocloud-navbar-dark-color);
-    border-color: var(--algocloud-navbar-dark-toggler-border-color)
+    border-color: var(--algocloud-navbar-dark-toggler-border-color);
+    --border-width: 1px;
+    background-color: var(--form-bg);
+    border: var(--border-width) solid var(--form-border);
+    color: var(--body-color);
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: var(--radius);
+    transition: all var(--transition-props);
 }
 
 .navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%239da9bb' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E")
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%233d3d3d' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E");
 }
+
 
 .navbar-dark .navbar-text {
     color: var(--algocloud-navbar-dark-color)
@@ -49117,8 +49122,11 @@ svg.signal-icon {
         color: var(--algocloud-body-color)!important
     }
 
-    .landing-mobile-btn:hover {
-        background-color: var(--algocloud-menu-li-hover)!important
+    .landing-mobile-btn:hover,.landing-mobile-btn:focus {
+            background-color: var(--algocloud-menu-li-hover)!important;
+            background-color: var(--form-bg-focus);
+            border-color: var(--focus);
+            box-shadow: 0 0 0 1px var(--focus);
     }
 
     .mobile-login-card {
@@ -49140,12 +49148,18 @@ svg.signal-icon {
 }
 
 .landing-mobile-btn {
-    outline: 0;
-    background-color: transparent;
-    border: 0;
     font-size: 18px;
-    border-radius: .375rem;
-    box-shadow: var(--algocloud-card-span-img-box-shadow)
+    color: var(--algocloud-navbar-dark-color);
+    border-color: var(--algocloud-navbar-dark-toggler-border-color);
+    --border-width: 1px;
+    background-color: var(--form-bg);
+    border: var(--border-width) solid var(--form-border);
+    color: var(--body-color);
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: var(--radius);
+    transition: all var(--transition-props);
+
 }
 
 .c-link {

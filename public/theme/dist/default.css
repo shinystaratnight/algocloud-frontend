@@ -1183,11 +1183,6 @@ h6.ww {
     color: var(--color)
 }
 
-.navbar-dark button.nav-link.landing-mobile-btn.dropdown-toggle.navbar-toggle.collapsed {
-    color: var(--algocloud-navbar-dark-color);
-    border-color: var(--algocloud-navbar-dark-toggler-border-color)
-}
-
 .dropdown-menu-card .card {
     box-shadow: var(--algocloud-card-span-img-box-shadow)!important
 }
@@ -1219,9 +1214,12 @@ h6.ww {
         color: var(--algocloud-body-color)!important
     }
 
-    .landing-mobile-btn:hover {
-        background-color: var(--algocloud-menu-li-hover)!important
-    }
+    .landing-mobile-btn:hover,.landing-mobile-btn:focus {
+        background-color: var(--algocloud-menu-li-hover)!important;
+        background-color: var(--form-bg-focus);
+        border-color: var(--focus);
+        box-shadow: 0 0 0 1px var(--focus);
+}
 
     .mobile-login-card {
         width: auto
@@ -1242,12 +1240,17 @@ h6.ww {
 }
 
 .landing-mobile-btn {
-    outline: 0;
-    background-color: transparent;
-    border: 0;
     font-size: 18px;
-    border-radius: .375rem;
-    box-shadow: var(--algocloud-card-span-img-box-shadow)
+    border-color: var(--algocloud-navbar-dark-toggler-border-color);
+    --border-width: 1px;
+    background-color: var(--form-bg);
+    border: var(--border-width) solid var(--form-border);
+    color: var(--body-color) !important;
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: var(--radius);
+    transition: all var(--transition-props);
+
 }
 
 .text-white-footer {
@@ -7058,7 +7061,7 @@ div#app-dropdown {
 }
 
 .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%239da9bb' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E")
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23d6d6d7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E");
 }
 
 .navbar-light .navbar-text {
@@ -31083,7 +31086,7 @@ button,input,optgroup,select,textarea {
     --algocloud-1100: #f9fafd;
     --algocloud-white: #242424;
     --algocloud-primary: #7b78ff;
-    --algocloud-secondary: #748194;
+    --algocloud-secondary: var(--algocloud-body-color);
     --algocloud-success: #26d9ca;
     --algocloud-info: #8b9bfd;
     --algocloud-warning: #f5803e;

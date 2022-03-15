@@ -157,7 +157,7 @@ function Header(props) {
                 onMouseUp={() => handleSearch()}
                 onKeyUp={() => handleSearch()}
                 onChange={evt => updateInputValue(evt)}
-                style={{ width: '100%', paddingLeft: '1rem', paddingRight: '1rem', lineHeight: '2.2', borderTopLeftRadius: `${isSearched ? '1.2rem' : '50rem'}`, borderBottomLeftRadius: `${isSearched ? '0rem' : '50rem'}`, borderTopRightRadius: '0rem', borderBottomRightRadius: '0rem' }} />
+                style={{     height: '40px', textOverflow: 'ellipsis', width: '100%', paddingLeft: '1rem', paddingRight: '1rem', lineHeight: '2.2', borderTopLeftRadius: `${isSearched ? '1.2rem' : '50rem'}`, borderBottomLeftRadius: `${isSearched ? '0rem' : '50rem'}`, borderTopRightRadius: '0rem', borderBottomRightRadius: '0rem' }} />
               <button className='c-btn c-btn--icon-alone absolute inset-px left-auto mt-0 py-0' onClick={() => handleSearch()}
                 style={{}}>
                 <i className='fas fa-search'></i>
@@ -166,7 +166,7 @@ function Header(props) {
             {
               isSearched &&
               <div className='dropdown-content d-flex flex-column '
-                style={{ position: 'absolute', marginTop: ".5rem" , borderRadius: ".375rem", border: "0px",  backgroundColor: 'var(--header-bg)', width: '100%', height: '180px', overflowY: 'auto' }}>
+                style={{ position: 'absolute', padding: '1rem', paddingTop: '.5rem', marginTop: ".5rem" , borderRadius: ".375rem", border: "0px",  backgroundColor: 'var(--header-bg)', width: '100%', height: '180px', overflowY: 'auto', boxShadow: '0 10px 15px -3px rgba(0,0,0,.1),0 4px 6px -2px rgba(0,0,0,.05),0 0 0 1px var(--base-a10)' }}>
                 {
                   filtered.map((asset, index) => {
                     return (
