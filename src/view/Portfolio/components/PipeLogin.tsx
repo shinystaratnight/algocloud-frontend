@@ -39,7 +39,7 @@ class PipeLogin extends Component<IProps, IState> {
 
     checkAll = async () => {
         let address;
-        if (Pipeline.pipeConnector == "myAlgoWallet") {
+        if (Pipeline.pipeConnector === "myAlgoWallet") {
             const wallet = Pipeline.init();
             address = await Pipeline.connect(wallet);
         } else {
