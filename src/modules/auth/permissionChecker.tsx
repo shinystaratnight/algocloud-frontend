@@ -132,6 +132,8 @@ export default class PermissionChecker {
       return true;
     }
 
+    console.log(this.currentUser);
+
     if (!this.currentUser.tenants) {
       return true;
     }

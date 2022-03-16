@@ -39,65 +39,64 @@ function TenantPage() {
 
   return (
     <Wrapper
-    className="auth-page"
+      className="auth-page"
       style={{
-        backgroundImage: `url(${
-          backgroundImageUrl || ''
-        })`,
+        backgroundImage: `url(${backgroundImageUrl || ''
+          })`,
       }}
     >
       <Content className="auth-page">
-<main className="main" id="main">
-   <div className="container-fluid" style={{overflow: "hidden"}}>
-      <div className="min-vh-100 row" style={{backgroundColor: "var(--auth-login-pane) "}}>
-         <div className="d-none d-lg-block col-6" style={{backgroundColor: "var(--auth-login-pane-bg)", boxShadow: "0 0 0 1px var(--card-border)"}}>
-         </div>
-         <div className="px-sm-0 align-self-center mx-auto py-0 col-sm-10 col-md-6">
-            <div className="justify-content-center no-gutters row">
-               <div className="col-xxl-6 col-lg-9 col-xl-9">
-               <div className="card-2">
-      <div className="card-header text-center p-2">
-         <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}>
-         {logoUrl ? (
-         <img
-            src={logoUrl("/assets/brand-assets/logo.svg")}
-            width="240px"
-            alt={i18n('app.title')}
-            />
-         ) : (
-         <img style={{width: "60px"}} src="/assets/brand-assets/logo.svg" />
-         )}
-         </Logo>
-      </div>
-   </div>
+        <main className="main" id="main">
+          <div className="container-fluid" style={{ overflow: "hidden" }}>
+            <div className="min-vh-100 row" style={{ backgroundColor: "var(--auth-login-pane) " }}>
+              <div className="d-none d-lg-block col-6" style={{ backgroundColor: "var(--auth-login-pane-bg)", boxShadow: "0 0 0 1px var(--card-border)" }}>
+              </div>
+              <div className="px-sm-0 align-self-center mx-auto py-0 col-sm-10 col-md-6">
+                <div className="justify-content-center no-gutters row">
+                  <div className="col-xxl-6 col-lg-9 col-xl-9">
+                    <div className="card-2">
+                      <div className="card-header text-center p-2">
+                        <Logo style={{ marginBottom: '1rem', marginTop: '1rem' }}>
+                          {logoUrl ? (
+                            <img
+                              src={logoUrl("/assets/brand-assets/logo.svg")}
+                              width="240px"
+                              alt={i18n('app.title')}
+                            />
+                          ) : (
+                            <img style={{ width: "60px" }} src="/assets/brand-assets/logo.svg" />
+                          )}
+                        </Logo>
+                      </div>
+                    </div>
 
 
 
 
-        {view === 'form' ? (
-          <TenantNewForm 
-          onViewToggle={doToggleView} 
-          />
-        ) : (
-          <TenantSelectForm
-          onViewToggle={doToggleView} />
-        )}
+                    {view === 'form' ? (
+                      <TenantNewForm
+                        onViewToggle={doToggleView}
+                      />
+                    ) : (
+                      <TenantSelectForm
+                        onViewToggle={doToggleView} />
+                    )}
 
-        <OtherActions>
-          <button
-            className="c-pill"
-            type="button"
-            onClick={doSignout}
-          >
-            {i18n('auth.signout')}
-          </button>
-        </OtherActions>
-        </div>
+                    <OtherActions>
+                      <button
+                        className="c-pill"
+                        type="button"
+                        onClick={doSignout}
+                      >
+                        {i18n('auth.signout')}
+                      </button>
+                    </OtherActions>
+                  </div>
+                </div>
+              </div>
             </div>
-         </div>
-      </div>
-   </div>
-</main>
+          </div>
+        </main>
       </Content>
     </Wrapper>
   );
