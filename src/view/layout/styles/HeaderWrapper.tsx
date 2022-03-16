@@ -16,21 +16,26 @@ const HeaderWrapper = styled.div`
 }
 
   @media (max-width: 576px) {
+    .search-box {
+      display: none ;
+    }
     .i18n-select {
       display: none;
     }
-    .search-box {
-      display: none;
-    }
+  }
+
+  @media (min-width: 576px) {
+
     .mobile-search {
-      margin-right: 1rem;
-      display: block !important;
+      margin-right: 0rem !important;
+      display: none !important;
+      font-size: 18px
     }
   }
 
   .search-box {
     margin-right: 2rem;
-    width: 30rem;
+    maxWidth: 20rem;
     position: relative;
   }
 
@@ -38,10 +43,13 @@ const HeaderWrapper = styled.div`
     margin-right: 1rem;
     display: none;
   }
-
   .dropdown {
     display: inline-block;
   }
+
+  .last-child {
+    left: 220px;
+}
 
   .user-dropdown {
     padding: 0.45rem;

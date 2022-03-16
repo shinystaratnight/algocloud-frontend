@@ -1,3 +1,141 @@
+
+
+.c-link--block {
+    display: flex!important;
+    padding: var(--su-2) var(--su-4);
+    overflow-wrap: normal;
+    background-color: var(--bg);
+}
+
+button#wallet-connect-2 {
+    white-space: nowrap;
+}
+
+.mobile-search {
+    margin-right: 1rem;
+    display: none;
+    background: #ffffff0a;
+    border: #0000;
+    color: var(--algocloud-body-color);
+    font-size: 18px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+button.mobile-search.crayons-btn.crayons-btn--secondary:hover {
+    border-radius: 0.375rem;
+    background-color: rgb(123 120 255/25%)!important;
+    color: #9896ff!important;
+    border: 0;
+}
+
+input.crayons-textfield {
+    border-radius: var(--radius) !important;
+    line-height: normal !important;
+}
+
+.crayons-header--search {
+    margin: 0 var(--su-4);
+    display: block;
+}
+
+.crayons-header--search {
+    max-width: 420px;
+    flex: 1 auto !important;
+    margin: 0 var(--su-2);
+}
+
+.crayons-fields--horizontal {
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+
+.crayons-fields {
+    display: flex;
+    flex-flow: column;
+}
+.crayons-fields--horizontal {
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.crayons-fields {
+    display: flex;
+    flex-flow: column;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex-1 {
+    flex: 1 1 0%;
+}
+.crayons-field {
+    display: flex;
+    flex-flow: column;
+    font-size: var(--fs-base);
+}
+.crayons-field {
+    display: flex;
+    flex-flow: column;
+    font-size: var(--fs-base);
+}
+
+.crayons-textfield:focus, .crayons-select:focus, .c-autocomplete--multi__wrapper:focus-within {
+    background-color: var(--form-bg-focus);
+    border-color: var(--focus);
+    box-shadow: 0 0 0 1px var(--focus);
+}
+
+.crayons-textfield:hover, .crayons-checkbox:hover, .crayons-radio:hover, .crayons-select:hover {
+    border-color: var(--form-border-hover);
+}
+
+button.c-btn.c-btn--icon-alone.absolute.inset-px.left-auto.mt-0.py-0 {
+    position: absolute;
+    right: 0px;
+    height: 100%;
+    padding: 0.5rem;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    width: 40px;
+}
+
+button,input:not([type=hidden]),textarea {
+    outline: 0
+}
+
+.crayons-textfield {
+    line-height: var(--lh-base);
+    padding: calc(.5em - var(--border-width)) .5em;
+    font-family: inherit;
+    font-size: var(--fs-base);
+    width: 100%;
+    resize: vertical
+}
+
+.crayons-checkbox,.crayons-color-selector,.crayons-radio,.crayons-select,.crayons-textfield {
+    --border-width: 1px;
+    background-color: var(--form-bg);
+    border: var(--border-width) solid var(--form-border);
+    color: var(--body-color);
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: var(--radius);
+    transition: all var(--transition-props)
+}
+
+
+.assets-mobile.col-lg-4.col-sm-12.d-flex.flex-column.justify-content-between::-webkit-scrollbar,.chart-rack::-webkit-scrollbar {
+    border-bottom-left-radius: 0.375rem !important;
+    border-bottom-right-radius: 0.375rem!important;
+}
+
 .algocloud-font-logo {
     width: 0px;
     height: 0px;
@@ -32,6 +170,12 @@ button#wallet-connect-2 {
             padding: 0px !important;
             align-items: baseline;
             line-height: 1.6rem;
+    }
+
+    button.c-link.c-link--icon-alone.c-link--block.m\:hidden.mobile-search {
+        font-size: 18px !important;
+        text-decoration: none !important;
+        margin-right: 0px;
     }
 
     .ms-2.badge.badge-soft-info.rounded-pill {
@@ -1332,7 +1476,7 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
     --algocloud-colored-link-white-hover-color: white;
     --algocloud-primary: #3b49df;
     --algocloud-colored-link-primary-hover-color: #3b49df;
-    --algocloud-secondary: #748194;
+    --algocloud-secondary: var(--algocloud-body-color);
     --algocloud-colored-link-secondary-hover-color: #5d6776;
     --algocloud-success: #26d9ca;
     --algocloud-colored-link-success-hover-color: #1ab3a6;
@@ -7372,7 +7516,7 @@ textarea.form-control-lg {
 }
 
 .navbar-light .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%239da9bb' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E")
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%23d6d6d7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E");
 }
 
 .navbar-light .navbar-text {
@@ -7401,12 +7545,21 @@ textarea.form-control-lg {
 
 .navbar-dark .navbar-toggler,.navbar-dark button.nav-link.landing-mobile-btn.dropdown-toggle.navbar-toggle.collapsed {
     color: var(--algocloud-navbar-dark-color);
-    border-color: var(--algocloud-navbar-dark-toggler-border-color)
+    border-color: var(--algocloud-navbar-dark-toggler-border-color);
+    --border-width: 1px;
+    background-color: var(--form-bg);
+    border: var(--border-width) solid var(--form-border);
+    color: var(--body-color);
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: var(--radius);
+    transition: all var(--transition-props);
 }
 
 .navbar-dark .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%239da9bb' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E")
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%233d3d3d' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M0 6h30M0 14h30M0 22h30'/%3E%3C/svg%3E");
 }
+
 
 .navbar-dark .navbar-text {
     color: var(--algocloud-navbar-dark-color)
@@ -48969,8 +49122,11 @@ svg.signal-icon {
         color: var(--algocloud-body-color)!important
     }
 
-    .landing-mobile-btn:hover {
-        background-color: var(--algocloud-menu-li-hover)!important
+    .landing-mobile-btn:hover,.landing-mobile-btn:focus {
+            background-color: var(--algocloud-menu-li-hover)!important;
+            background-color: var(--form-bg-focus);
+            border-color: var(--focus);
+            box-shadow: 0 0 0 1px var(--focus);
     }
 
     .mobile-login-card {
@@ -48992,12 +49148,18 @@ svg.signal-icon {
 }
 
 .landing-mobile-btn {
-    outline: 0;
-    background-color: transparent;
-    border: 0;
     font-size: 18px;
-    border-radius: .375rem;
-    box-shadow: var(--algocloud-card-span-img-box-shadow)
+    color: var(--algocloud-navbar-dark-color);
+    border-color: var(--algocloud-navbar-dark-toggler-border-color);
+    --border-width: 1px;
+    background-color: var(--form-bg);
+    border: var(--border-width) solid var(--form-border);
+    color: var(--body-color);
+    appearance: none;
+    -webkit-appearance: none;
+    border-radius: var(--radius);
+    transition: all var(--transition-props);
+
 }
 
 .c-link {
