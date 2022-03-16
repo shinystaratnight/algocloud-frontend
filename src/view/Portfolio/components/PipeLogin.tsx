@@ -38,18 +38,24 @@ class PipeLogin extends Component<IProps, IState> {
     }
 
     checkAll = async () => {
-        const wallet = Pipeline.init()
-        let address = await Pipeline.connect(wallet)
+        let address;
+        if (Pipeline.pipeConnector == "myAlgoWallet") {
+            const wallet = Pipeline.init();
+            address = await Pipeline.connect(wallet);
+        } else {
+            address = await Pipeline.connect();
+        }
+        
         this.props.checkAll(address);
-    
+
         // try {
-    
+
         //     let url = "https://algoindexer.algoexplorerapi.io"
-    
-    
+
+
         //     let appData = await fetch(url + '/v2/accounts/' + address)
         //     let appJSON = await appData.json()
-    
+
         //     appJSON.account.assets.forEach(element => {
         //         switch (element["asset-id"]) {
         //             case HDL:
@@ -62,9 +68,9 @@ class PipeLogin extends Component<IProps, IState> {
         //                 break;
         //         }
         //     })
-    
+
         //     let appIds = [HDLyieldy]
-    
+
         //     let AppStates = await appJSON.account["apps-local-state"]
         //     AppStates.forEach(async (state) => {
         //         if (appIds.includes(state.id)) {
@@ -82,15 +88,15 @@ class PipeLogin extends Component<IProps, IState> {
         //         }
         //     })
         //     let params = await Pipeline.getParams()
-    
+
         //     let note = Math.random().toString()
-    
+
         //     let txnTest = Pipeline.makeTransfer(address, 0, note, 0, params)
-    
+
         //     let signed = await Pipeline.sign(txnTest)
-    
+
         //     return [signed.toString(), address]
-    
+
         // }
         // catch (error) { console.log(error) }
     }
