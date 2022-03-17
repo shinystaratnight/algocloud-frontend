@@ -314,13 +314,18 @@ const authActions = {
 
       await service.verifyEmail(token);
 
-      await dispatch(authActions.doRefreshCurrentUser());
-
+      // await dispatch(authActions.doRefreshCurrentUser());
+      // new added
+      await service.signout();
+      //
       dispatch({
         type: authActions.EMAIL_VERIFY_SUCCESS,
       });
 
-      getHistory().push('/');
+      console.log('Here');
+
+      // getHistory().push('/');
+      window.location.href = '/';
     } catch (error) {
       dispatch({
         type: authActions.EMAIL_VERIFY_ERROR,
