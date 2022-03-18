@@ -220,6 +220,12 @@ const en = {
       name: 'algorand',
       label: 'Algorand',
       menu: 'Algorand',
+    },
+
+    algocloudhq: {
+      name: 'algocloudhq',
+      label: 'AlgoCloudHQ',
+      menu: 'AlgoCloudHQ',
     }
   },
 
@@ -543,6 +549,9 @@ const en = {
   },
   algorand: {
     menu: 'Algorand',
+  },
+  algocloudhq: {
+    menu: 'AlgoCloudHQ',
   },
   errors: {
     backToHome: 'Back to home',

@@ -16,7 +16,7 @@ export default class AlgorandService {
       favoriteFilter,
       assetFilter,
       poolFilter,
-      type: 1
+      type: 2
     };
 
     const tenantId = AuthCurrentTenant.get();
@@ -50,9 +50,9 @@ export default class AlgorandService {
     const tenantId = AuthCurrentTenant.get();
     const body = {
       data: {
-        type: 1
+        type: 2
       }
-    }
+    }  
 
     const response = await authAxios.put(
       `/tenant/${tenantId}/algorand/favorite/${assetId}`,
@@ -64,12 +64,11 @@ export default class AlgorandService {
 
   static async putAlgorandShowcase(assetId) {
     const tenantId = AuthCurrentTenant.get();
-
     const body = {
       data: {
-        type: 1
+        type: 2
       }
-    }
+    }    
 
     const response = await authAxios.put(
       `/tenant/${tenantId}/algorand/showcase/${assetId}`,
@@ -84,7 +83,7 @@ export default class AlgorandService {
       orderBy,
       limit,
       offset,
-      type: 1
+      type: 2
     };
 
     const tenantId = AuthCurrentTenant.get();
@@ -104,7 +103,7 @@ export default class AlgorandService {
       orderBy,
       limit,
       offset,
-      type: 1
+      type:2
     };
 
     const tenantId = AuthCurrentTenant.get();

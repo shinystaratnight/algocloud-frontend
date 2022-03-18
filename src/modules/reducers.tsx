@@ -13,6 +13,7 @@ import order from 'src/modules/order/orderReducers';
 import algorand from 'src/modules/algorand/algorandReducers';
 import overview from 'src/modules/algorand/overview/overviewReducers';
 import note from 'src/modules/note/noteReducers';
+import algocloudhq from 'src/modules/algocloudhq/algorandReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -31,5 +32,6 @@ export default (history) =>
     order,
     algorand,
     overview,
-    note
+    note,
+    algocloudhq
   });

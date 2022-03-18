@@ -102,6 +102,12 @@ export default [
     icon: 'fas fa-chart-bar',
     label: i18n('entities.algorand.menu'),
   },
+  {
+    path: '/algocloudhq',
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-chart-bar',
+    label: i18n('entities.algocloudhq.menu'),
+  },
   // {
   //   path: '/superadmin/algorand',
   //   permissionRequired: permissions.algorandReadSuperadmin,
