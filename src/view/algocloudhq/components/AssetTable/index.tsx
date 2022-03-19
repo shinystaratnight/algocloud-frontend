@@ -1,18 +1,18 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { i18n } from 'src/i18n';
-import { formatNumber, formatPercent, formatPrice } from 'src/modules/algorand/utils';
+import { formatNumber, formatPercent, formatPrice } from 'src/modules/algocloudhq/utils';
 import TableColumnHeader from 'src/view/shared/table/TableColumnHeader';
 import Spinner from 'src/view/shared/Spinner';
 import { images } from 'src/images/images';
-import { NoteList, NoteModal } from 'src/view/algorand/components/Notes';
+import { NoteList, NoteModal } from 'src/view/algocloudhq/components/Notes';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import noteActions from 'src/modules/note/noteActions';
-import overViewActions from 'src/modules/algorand/overview/overviewActions';
+import overViewActions from 'src/modules/algocloudhq/overview/overviewActions';
 import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from 'src/modules/auth/authSelectors';
-import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
-import { ASSET_CHART_VIEW_DURATION } from 'src/modules/algorand/constants';
+import CandleStickChart from 'src/view/algocloudhq/components/CandleStickChart';
+import { ASSET_CHART_VIEW_DURATION } from 'src/modules/algocloudhq/constants';
 
 function AssetTable(props) {
   const {
@@ -146,19 +146,26 @@ function AssetTable(props) {
               name='lastDayVolume'
               label='VOL[24H]'
             />
+            {
+              togglePermission && currentUser.superadmin === true &&
+              <TableColumnHeader
+                name='favorite'
+                label='FAVORITE'
+              />
+            }
 
-            <TableColumnHeader
-              name='favorite'
-              label='FAVORITE'
-            />
-            <TableColumnHeader
-              name='showcase'
-              label='SHOWCASE'
-            />
-            <TableColumnHeader
+            {
+              showcasePermission && currentUser.superadmin === true &&
+              <TableColumnHeader
+                name='showcase'
+                label='SHOWCASE'
+              />
+            }
+            {/* <TableColumnHeader
               name='more'
               label='NOTES'
-            />
+            /> */}
+
             <TableColumnHeader
               name='last7days'
               label='Last 7 Days'
@@ -207,18 +214,11 @@ function AssetTable(props) {
               <tr key={asset.id}>
                 <td>
                   <div className='d-flex'>
-                    <Link to={`/algorand/assets/${asset.assetId}`}>
-                      <img className="token" src={image} style={{ width: 33, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                    <Link to={`/algocloudhq/assets/${asset.assetId}`}>
+                      <img className="token" src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
                       <div>
                         <div className='d-flex'>
-                          <h6 className='table-algo-title flex'>{asset.name}                 </h6>
-                          {
-                      currentUser.superadmin === true ?
-                        <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
-                        : asset.isVerified && <div className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', width: '17px', height: '17px',
-                        marginLeft: '4px',
-                        marginTop: '-2px'}}></div>
-                    }
+                          <h6 className='table-algo-title'>{asset.name}</h6>
                           {/* <button
                           className="btn"
                           onClick={(e) =>
@@ -230,12 +230,16 @@ function AssetTable(props) {
                           {/* </button> */}
                         </div>
                         <div>
-                          <span style={{ fontWeight: "bold", color: 'var(--button-secondary-color)', opacity:'.8' }}>{asset.unitName}</span>
-                          <span style={{ color: 'grey', fontSize: '10px' }}>{' '}{asset.assetId}</span>
+                          <span style={{ color: 'white' }}>{asset.unitName}</span>
+                          <span style={{ color: 'grey' }}>{' '}{asset.assetId}</span>
                         </div>
                       </div>
                     </Link>
-  
+                    {
+                      currentUser.superadmin === true ?
+                        <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
+                        : asset.isVerified && <div className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></div>
+                    }
                   </div>
                 </td>
                 <td>{formatPrice(asset.price)}</td>
@@ -252,8 +256,9 @@ function AssetTable(props) {
                 <td>{formatNumber(asset.marketCap)}</td>
                 <td>{formatNumber(asset.liquidity)}</td>
                 <td>{formatNumber(asset.lastDayVolume)}</td>
-                <td>
-                  {togglePermission && (
+                {
+                  togglePermission && currentUser.superadmin === true &&
+                  <td>
                     <button
                       className="btn btn-algocloud-default me-1 mb-1"
                       onClick={() =>
@@ -262,10 +267,11 @@ function AssetTable(props) {
                     >
                       <b>{favoriteIds.includes(asset.assetId) ? <div><svg className="svg-inline--fa fa-minus fa-w-14 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="minus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>Unfavorite</div> : <div><svg className="svg-inline--fa fa-plus fa-w-14 me-2" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plus" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"></path></svg>Favorite</div>}</b>
                     </button>
-                  )}
-                </td>
-                <td>
-                  {showcasePermission && (
+                  </td>
+                }
+                {
+                  showcasePermission && currentUser.superadmin === true &&
+                  <td>
                     <button
                       className="btn btn-algocloud-default me-1 mb-1"
                       disabled={asset.assetId === showcaseId}
@@ -275,9 +281,9 @@ function AssetTable(props) {
                     >
                       <b>{asset.assetId === showcaseId ? 'Currently Set' : 'Set As Main'}</b>
                     </button>
-                  )}
-                </td>
-                <td>
+                  </td>
+                }
+                {/* <td>
                   <button
                     className="app-dropdown user-dropdown"
                     role="button" data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
@@ -326,14 +332,14 @@ function AssetTable(props) {
                       </button>
                     </div>
                   </div>
-                </td>
-                <td>
-                  <Link to={`/algorand/assets/${asset.assetId}`}>
+                </td> */}
+                <td className='d-flex justify-content-center'>
+                  <Link to={`/algocloudhq/assets/${asset.assetId}`}>
                     {
                       asset.hourlyPrices && <CandleStickChart
                         data={asset.hourlyPrices}
-                        width={160}
-                        height={60}
+                        width={200}
+                        height={100}
                         base={0}
                         paddingTop='0'
                         valueFormatter={(val) => val?.toFixed(4)}

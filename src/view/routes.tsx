@@ -265,6 +265,48 @@ const privateRoutes = [
     permissionRequired: permissions.algorandRead,
     exact: true,
   },
+  {
+    path: '/algocloudhq',
+    loader: () => import('src/view/algocloudhq/pages/overview/view/OverviewPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algocloudhq/global',
+    loader: () => import('src/view/algocloudhq/pages/global/view/GlobalPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algocloudhq/favorites',
+    loader: () => import('src/view/algocloudhq/pages/favorite/FavoriteListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algocloudhq/assets',
+    loader: () => import('src/view/algocloudhq/pages/asset/list/AssetListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algocloudhq/pools',
+    loader: () => import('src/view/algocloudhq/pages/pool/list/PoolListPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algocloudhq/assets/:assetId',
+    loader: () => import('src/view/algocloudhq/pages/asset/show/AssetShowPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
+  {
+    path: '/algocloudhq/pools/:address',
+    loader: () => import('src/view/algocloudhq/pages/pool/show/PoolShowPage'),
+    permissionRequired: permissions.algorandRead,
+    exact: true,
+  },
 ].filter(Boolean);
 
 const publicRoutes = [

@@ -252,12 +252,12 @@ class Permissions {
       },
       algorandToggle: {
         id: 'algorandToggle',
-        allowedRoles: [roles.admin, roles.custom],
+        allowedRoles: [Roles.superadmin, roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
       algorandShowcase: {
         id: 'algorandShowcase',
-        allowedRoles: [roles.admin, roles.custom],
+        allowedRoles: [Roles.superadmin, roles.admin, roles.custom],
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
