@@ -157,9 +157,9 @@ function Header(props) {
                 onMouseUp={() => handleSearch()}
                 onKeyUp={() => handleSearch()}
                 onChange={evt => updateInputValue(evt)}
-                style={{     height: '40px', zIndex: '1', textOverflow: 'ellipsis', width: '100%', paddingLeft: '1rem', paddingRight: '40px', lineHeight: '2.2', borderTopLeftRadius: `${isSearched ? '1.2rem' : '50rem'}`, borderBottomLeftRadius: `${isSearched ? '0rem' : '50rem'}`, borderTopRightRadius: '0rem', borderBottomRightRadius: '0rem' }} />
+                style={{     height: '40px', textOverflow: 'ellipsis', width: '100%', paddingLeft: '1rem', paddingRight: '40px', lineHeight: '2.2', borderTopLeftRadius: `${isSearched ? '1.2rem' : '50rem'}`, borderBottomLeftRadius: `${isSearched ? '0rem' : '50rem'}`, borderTopRightRadius: '0rem', borderBottomRightRadius: '0rem' }} />
               <button className='c-btn c-btn--icon-alone absolute inset-px left-auto mt-0 py-0' onClick={() => handleSearch()}
-                style={{zIndex: '2', fontSize: "16px"}}>
+                style={{fontSize: "16px"}}>
                 <i className='fas fa-search'></i>
               </button>
             </div>
