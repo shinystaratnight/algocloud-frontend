@@ -1697,7 +1697,6 @@ div#stickyTop {
     text-overflow: ellipsis;
     font-weight: 700;
     margin-bottom: 1px;
-    margin-right: 30px;
     display: inline-block
 }
 
@@ -31485,7 +31484,6 @@ h6.pools-ticker {
     font-weight: 700;
     line-height: 1.2rem;
     margin-bottom: 0;
-    margin-right: 30px;
     display: inline-block
 }
 

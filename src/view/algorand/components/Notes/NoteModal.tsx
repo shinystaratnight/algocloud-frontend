@@ -136,7 +136,7 @@ export const NoteModal = (props: any) => {
             </h5>
             <button
               type="button"
-              className="btn-close btn"
+              className="btn-close btn-close-white text-white"
               data-dismiss="modal"
               disabled={loading}
             >

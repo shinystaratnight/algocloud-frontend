@@ -88,12 +88,13 @@ const AssetShowPage = () => {
         <div className='col-sm-12 flex-row' style={{ display: 'flex', alignItems: 'center' }}>
           <img className='token' src={image} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
 
-          <h3 style={{ marginRight: 20 }}>{asset['unitName']}</h3>
+          <h3 style={{ marginRight: 10, display: 'flex' }}>{asset['unitName']}          {
+            asset.isVerified && <div className='bi bi-shield-check text-primary' style={{ fontSize: "22px", cursor: 'pointer', marginTop: '-6px', marginLeft: '2px' }}></div>
+          }</h3>
+
           <h5 className='text-info mobile' style={{ marginRight: 20 }}>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
           <h6 className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 3)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayPriceChange'], 2)}</h6>
-          {
-            asset.isVerified && <div className='bi bi-shield-check text-primary' style={{ cursor: 'pointer', marginTop: '-8px', marginLeft: '8px' }}></div>
-          }
+         
         </div>
       </div>
       <div className='row'>

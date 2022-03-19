@@ -208,10 +208,17 @@ function AssetTable(props) {
                 <td>
                   <div className='d-flex'>
                     <Link to={`/algorand/assets/${asset.assetId}`}>
-                      <img className="token" src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                      <img className="token" src={image} style={{ width: 33, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
                       <div>
                         <div className='d-flex'>
-                          <h6 className='table-algo-title'>{asset.name}</h6>
+                          <h6 className='table-algo-title flex'>{asset.name}                 </h6>
+                          {
+                      currentUser.superadmin === true ?
+                        <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
+                        : asset.isVerified && <div className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', width: '17px', height: '17px',
+                        marginLeft: '4px',
+                        marginTop: '-2px'}}></div>
+                    }
                           {/* <button
                           className="btn"
                           onClick={(e) =>
@@ -223,16 +230,12 @@ function AssetTable(props) {
                           {/* </button> */}
                         </div>
                         <div>
-                          <span style={{ color: 'white' }}>{asset.unitName}</span>
-                          <span style={{ color: 'grey' }}>{' '}{asset.assetId}</span>
+                          <span style={{ fontWeight: "bold", color: 'var(--button-secondary-color)', opacity:'.8' }}>{asset.unitName}</span>
+                          <span style={{ color: 'grey', fontSize: '10px' }}>{' '}{asset.assetId}</span>
                         </div>
                       </div>
                     </Link>
-                    {
-                      currentUser.superadmin === true ?
-                        <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
-                        : asset.isVerified && <div className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', marginTop: '3px' }}></div>
-                    }
+  
                   </div>
                 </td>
                 <td>{formatPrice(asset.price)}</td>
@@ -329,8 +332,8 @@ function AssetTable(props) {
                     {
                       asset.hourlyPrices && <CandleStickChart
                         data={asset.hourlyPrices}
-                        width={200}
-                        height={100}
+                        width={160}
+                        height={60}
                         base={0}
                         paddingTop='0'
                         valueFormatter={(val) => val?.toFixed(4)}

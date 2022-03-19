@@ -25,7 +25,7 @@ const ConfirmModal = (props) => {
             <h5 className="modal-title">{props.title}</h5>
             <button
               type="button"
-              className="btn-close btn"
+              className="btn-close btn-close-white text-white"
               data-dismiss="modal"
             >
               <span></span>
