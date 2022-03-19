@@ -344,7 +344,7 @@ class PortfolioPage extends Component {
                   <h2 className="modal-title">Algo Wallets</h2>
                   <button
                     id="wallet-connect-close"
-                    className="btn-close btn"
+                    className="btn-close btn-close-white text-white"
                   >
                     <svg
                       viewBox="0 0 24 24"
