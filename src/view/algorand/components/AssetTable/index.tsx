@@ -232,7 +232,7 @@ function AssetTable(props) {
                           {/* </button> */}
                         </div>
                         <div>
-                          <span style={{ fontWeight: "600", color: 'var(--button-secondary-color)', opacity:'.8' }}>{asset.unitName}</span>
+                          <span style={{ fontWeight: "bold", color: 'var(--button-secondary-color)', opacity:'.8' }}>{asset.unitName}</span>
                           <span style={{ color: 'grey', fontSize: '10px' }}>{' '}{asset.assetId}</span>
                         </div>
                       </div>
