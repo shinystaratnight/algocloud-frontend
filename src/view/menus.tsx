@@ -8,7 +8,7 @@ export default [
   {
     path: '/dashboard',
     exact: true,
-    icon: 'fas fa-th-large',
+    icon: 'fa-solid fa-table-columns',
     label: i18n('dashboard.menu'),
     permissionRequired: null,
   },
@@ -99,13 +99,13 @@ export default [
   {
     path: '/algorand',
     permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-chart-bar',
-    label: i18n('entities.algorand.menu'),
+    icon: 'fas fa-chart-line',
+    label: i18n('entities.analytics.menu'),
   },
   {
     path: '/algocloudhq',
     permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-chart-bar',
+    icon: 'fas fa-layer-group',
     label: i18n('entities.algocloudhq.menu'),
   },
   // {
@@ -116,9 +116,10 @@ export default [
   // },
   {
     path: '#',
-    label: i18n('trade.menu'),
+    label: i18n('hdx.menu'),
     permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-chart-bar',
+    icon: 'fas fa-superscript', 
+    style: 'fontSize: 26px',
   },
   {
     path: '#',
@@ -136,13 +137,13 @@ export default [
     path: '#',
     label: i18n('farm.menu'),
     permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-chart-bar',
+    icon: 'fas fa-tractor',
   },
   {
     path: '#',
     label: i18n('lending.menu'),
     permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-chart-bar',
+    icon: 'fa-solid fa-building-columns',
   },
   {
     path: '#',

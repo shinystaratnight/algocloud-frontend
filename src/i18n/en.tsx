@@ -217,10 +217,10 @@ const en = {
       menu: 'Portfolio',
     },
 
-    algorand: {
-      name: 'algorand',
-      label: 'Algorand',
-      menu: 'Algorand',
+    analytics: {
+      name: 'analytics',
+      label: 'Analytics',
+      menu: 'Analytics',
     },
 
     algocloudhq: {
@@ -702,8 +702,8 @@ const en = {
     prev_3: 'Previous 3 Pages',
     next_3: 'Next 3 Pages',
   },
-  trade: {
-    menu: 'Trade',
+  hdx: {
+    menu: 'HDX',
   },
   pool: {
     menu: 'Pool',

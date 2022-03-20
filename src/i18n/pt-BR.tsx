@@ -679,8 +679,8 @@ const ptBR = {
     prev_3: '3 páginas anteriores',
     next_3: '3 próximas páginas',
   },
-  trade: {
-    menu: 'Trade',
+  hdx: {
+    menu: 'HDX',
   },
   pool: {
     menu: 'Pool',

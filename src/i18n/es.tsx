@@ -702,8 +702,8 @@ const es = {
     prev_3: '3 páginas anteriores',
     next_3: 'Siguientes 3 páginas',
   },
-  trade: {
-    menu: 'Trade',
+  hdx: {
+    menu: 'HDX',
   },
   pool: {
     menu: 'Pool',
