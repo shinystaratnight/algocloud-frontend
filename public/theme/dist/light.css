@@ -1,4 +1,6 @@
-
+div#shield-verified-help-tooltip {
+    margin-top: -10px;
+}
 
 .c-link--block {
     display: flex!important;
@@ -98,7 +100,7 @@ input.crayons-textfield {
 
 button.c-btn.c-btn--icon-alone.absolute.inset-px.left-auto.mt-0.py-0 {
     position: absolute;
-    right: 0px;
+    left: 0px;
     height: 100%;
     padding: 0.5rem;
     padding-top: 0.5rem !important;
@@ -1889,6 +1891,7 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
     --algocloud-chat-contact-bg: var(--algocloud-card-bg);
     --algocloud-tinymce-bg: #fff;
     --algocloud-swiper-nav-bg: rgba(255, 255, 255, 0.8);
+    --cancel-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%233d3d3d' viewBox='0 0 512 512'%3E%3Cpath d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/%3E%3C/svg%3E");
     --algocloud-star-rating-bg-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFdElEQVR4nO2aXWxURRTH/2dut58Imho1SgStuit+vBo0BkgkRjDog+VBiJEXqJhKK21x+7EdUu5u2W1Uqi8Qo4YQY6gQDQlRn9RENGoMD0a7RCzGRCJGBLRF9mOOD+waKHe7e2f23mt0f4/zceY/Z2fmzJm7QI0aNWr8j6EgBu3sHG9oXHC2gxQvJ/CUhbpUPD5wMggtwv8hmZrmn3mHmF8G4XEm6s5R/kinlPP91xKAA7YN2A8CeHRW8eLmrOjwWwsQgAMYqs+xnLGls3O8wW89vjqgp1/eDWC1YyXhxqYFvz/ppx7AZwcIsnrmbMDUK6X0V5NfA/VJuRDgdWWa3Tmds1b5IqiAf97OUReAunLNCOx4RniFL/eALimvrs+KnwDMq6yHWJq0Bz/3VFRxJD8GabgY4iqcPABWvd6puRzPV4CUsnEmK6YA3OCiG1tKRRIJecwrXUU8XwHTGbEe7iYPAJQXYqsXeq4YyEvjUkoxkxXfAbhDo/uFOrYWxeMDv1Rb16V4ugJmctYa6E0eABpyItdZTT1OeLwFDEMa02YpZeWHpwaeOaBncOQhMJYamrnmvMdJUtXOgI0bd4daW0+25S0rAoV7iLiHgWqkuDkChjik9ibl8EmAuAo2/8G1A7ZKea24IMJkcQRAmJkiBIQBtAGwqiluNgScU4w0EU2CkWZSk8ycnleP76WUf2nadCYajbfmrfwDxIWJgiMAhQG06k7AQxSAEwAmiTnNRJMEMWkxpePx/lNzrRpHB7wwOLJcMR+Cm9vbv5cZAK81h1S3lFLNrnQ8BBVjF/4bkweAZgDPnc+IJ5wqS0QBDnsoKBAYdLtTubMDCF95qiYAhMUfOpY7FSqlOgCc9lSRjzDR86MjsS+d6hwdMBaX3zCrlQDOeKrMBwiIpnYMvVSqvuRNMBWXXwPiYQB/eKLMBxgY3mnHRudqM+dVOGkPfsEKjwCYrqoyHyAgnrKHRipoV57CveAwgCZjZT7AwFjKHuqr5Npc8VW4r3/7ShAdAuD7xwuXjCftoa5KcwZXuUDv4MgqYn4XQEhLmscw8+5UPPaMm4TJVTqc2jF0GERrAeRcq/MceqOlnje7zRa10uHege3tBHobgXxdvhIm7DuRjjw9MbE277av1gRS9vAEwE8BqGpurgVhf0ud2qAz+YvdDegb3L4BTK+b2DCBgffO/np9+549m7K6NoweMD795KOj9y9bcRsB95rY0SRTp+qW7drV/aeJEeM9TMzvm9rQg48mEv2/mVoxP8RYLDa2oYWor4oVYwuEu6qgQwOOtLfvN36DrEIY4yXmNrRobGv79hZTI0YOKPwCEVMRurBFxqvPyAGLw+lbEWBuoBCwAwhB7f/i+GS8/YwcwBzY/i8S7AoILgIUMY8EZluAzZegIY2Fc0gbbQdc9DwHFgGKCFZGP4K2AwoxuFGz+xkCehFSNxHzKoCO6uowjQRl/7dXCs0YnCXmVwWH7Evu8T9LKT+Yzoj1BNggLHRl0fAc0ncAiyVuHl8INKEI0aQdOz67rvDRcm9394sToabpLhBHAVxVkV02c4D2e0DfwMi+Cv76CoCPKEU9Y4nYZ5Xa7pHyOpEVwwA2oXzKfmHqWKRF90FEewVUkAMcZ/C2lB076PadbkzKUwCejUblK3kSO0FYM0fzhkXh9M0AptyMUcQkDJY6AE8D2NIcUktS9vABk7+0JBJyMhmPPcYKywEu9cGWQ3nrnO4Y2g5gYN+sogyIU5mQakvasXEpZUbX9mxSidjHzSG+jxjrAPx4eS29afIwor0FWkJq9HzOOsvMq5n5B0vx2OioPKFrrxyFg/ItKeXBmazoAGMFQEea6/MlP3zWqFGjRo0y/A3lxcMNXfCjjAAAAABJRU5ErkJggg==");
     --algocloud-toast-background-color: rgba(255, 255, 255, 0.85);
     --algocloud-theme-wizard-nav-item-circle-bg: #fff;
@@ -2144,13 +2147,25 @@ button.nav-link.c-pill.crayons-tooltip__activator:hover {
     padding-left: 24px!important
 }
 
-.navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
+.navbar .dropdown-item:focus,.navbar .dropdown-item:hover,.navbar .dropdown-item:hover{
     color: var(--algocloud-1000);
     --bg: var(--link-bg);
     --bg-hover: var(--link-bg-hover);
     --color: var(--link-color);
     --color-hover: var(--link-branded-color-hover);
     border-radius: var(--radius)
+}
+
+h6#seach-item:hover, h6#seach-item:focus {
+    border-radius: 0.375rem;
+    color: var(--accent-brand-darker) !important;
+    background: var(--algocloud-menu-li-hover)!important;
+    z-index: 1;
+    text-decoration: underline !important;
+}
+
+h6#seach-item {
+    padding: 0.5rem 0.75rem;
 }
 
 .menu-li:hover a {
@@ -21662,7 +21677,7 @@ code,kbd,pre,samp {
     font-weight: 500
 }
 
-.navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
+.navbar .dropdown-item:focus,.navbar .dropdown-item:hover,.navbar .dropdown-item:hover,a.search-menu.dropdown-item:hover,a.search-menu.dropdown-item:focus {
     background-color: var(--algocloud-menu-li-bg-active)!important;
     color: #323ebe!important
 }

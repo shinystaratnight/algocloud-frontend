@@ -19,6 +19,7 @@ const en = {
     view: 'View',
     destroy: 'Delete',
     mustSelectARow: 'Must select a row',
+    headlineVerified: 'Verified by HEADLINE',
     start: 'Start',
     end: 'End',
     select: 'Select',

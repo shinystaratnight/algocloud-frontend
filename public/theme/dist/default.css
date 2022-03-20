@@ -1,3 +1,7 @@
+div#shield-verified-help-tooltip {
+    margin-top: -10px;
+}
+
 .dropdown-content.d-flex.flex-column {
     box-shadow: 0 0 0 1px var(--card-border) !important;
 }
@@ -100,7 +104,7 @@ input.crayons-textfield {
 
 button.c-btn.c-btn--icon-alone.absolute.inset-px.left-auto.mt-0.py-0 {
     position: absolute;
-    right: 0px;
+    left: 0px;
     height: 100%;
     padding: 0.5rem;
     padding-top: 0.5rem !important;
@@ -1441,7 +1445,7 @@ h1.algocloud-brand-login {
     color: #fff!important
 }
 
-.dropdown-item:focus,.dropdown-item:hover,.navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
+.dropdown-item:focus,.dropdown-item:hover,.navbar .dropdown-item:focus,.navbar .dropdown-item:hover,a.search-menu.dropdown-item:hover,a.search-menu.dropdown-item:focus {
     --bg: var(--link-bg);
     --bg-hover: var(--link-bg-hover);
     --color: var(--link-color);
@@ -1477,12 +1481,25 @@ h1.algocloud-brand-login {
     box-shadow: 0 10px 15px -3px rgb(0 0 0/10%),0 4px 6px -2px rgb(0 0 0/5%),0 0 0 1px rgb(9 9 9/10%)
 }
 
-.dropdown-item:focus,.dropdown-item:hover,.navbar .dropdown-item:focus,.navbar .dropdown-item:hover {
+.dropdown-item:focus,.dropdown-item:hover,.navbar .dropdown-item:focus,.navbar .dropdown-item:hover,.navbar .dropdown-item:hover{
     border-radius: .375rem;
     color: #9896ff!important;
     background: var(--algocloud-menu-li-hover)!important;
     z-index: 1
 }
+
+h6#seach-item:hover, h6#seach-item:focus {
+    border-radius: 0.375rem;
+    color: #9896ff!important;
+    background: var(--algocloud-menu-li-hover)!important;
+    z-index: 1;
+    text-decoration: underline !important;
+}
+
+h6#seach-item {
+    padding: 0.5rem 0.75rem;
+}
+
 
 .hamburger__content__header {
     min-height: var(--header-height);
@@ -26051,7 +26068,8 @@ html[dir=rtl] .img-dropdown {
 
 .search-box {
     position: relative;
-    font-size: .8333333333rem
+    font-size: .8333333333rem;
+        width: 21rem;
 }
 
 .search-box .search-box-icon {
@@ -29772,6 +29790,7 @@ button.btn-circle:focus,button.btn-circle:hover {
     --story-comments-bg: 21, 30, 42;
     --story-comments-bg-top: rgba(var(--story-comments-bg), 0);
     --story-comments-bg-bottom: rgba(var(--story-comments-bg), 1);
+    --cancel-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23D6D6D7' viewBox='0 0 512 512'%3E%3Cpath d='M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z'/%3E%3C/svg%3E");
     --select-icon-2:  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' height='24' width='24'%3E%3Cpath d='M6 0L0 6h12z' fill='%2308090a'/%3E%3C/svg%3E");
     --select-icon: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDE2TDYgMTBIMThMMTIgMTZaIiBmaWxsPSIjYzJjNmNhIi8+Cjwvc3ZnPg==);
     --reaction-like-color: var(--accent-danger);

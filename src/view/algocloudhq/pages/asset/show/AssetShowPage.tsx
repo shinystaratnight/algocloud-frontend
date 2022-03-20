@@ -15,6 +15,7 @@ import { images } from 'src/images/images';
 import NoNotes, { NoteCard, NoteModal } from 'src/view/algocloudhq/components/Notes';
 import noteActions from 'src/modules/note/noteActions';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
+import ReactTooltip from 'react-tooltip';
 
 const AssetShowPage = () => {
   const match = useRouteMatch();
@@ -92,7 +93,16 @@ const AssetShowPage = () => {
           <h5 className='text-info mobile' style={{ marginRight: 20 }}>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
           <h6 className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 3)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayPriceChange'], 2)}</h6>
           {
-            asset.isVerified && <div className='bi bi-shield-check text-primary' style={{ cursor: 'pointer', marginTop: '-8px', marginLeft: '8px' }}></div>
+            asset.isVerified && <span
+            data-tip={i18n('common.headlineVerified')}
+            data-for="shield-verified-help-tooltip"
+            data-html={true}
+          >
+            <div  style={{ fontSize: "22px", cursor: 'pointer', marginTop: '-6px', marginLeft: '2px' }}
+              className="bi bi-shield-check text-primary"
+            />
+            <ReactTooltip id="shield-verified-help-tooltip" />
+          </span>
           }
         </div>
       </div>

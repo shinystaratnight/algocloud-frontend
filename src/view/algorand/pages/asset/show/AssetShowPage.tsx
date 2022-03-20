@@ -15,6 +15,7 @@ import { images } from 'src/images/images';
 import NoNotes, { NoteCard, NoteModal } from 'src/view/algorand/components/Notes';
 import noteActions from 'src/modules/note/noteActions';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
+import ReactTooltip from 'react-tooltip';
 
 const AssetShowPage = () => {
   const match = useRouteMatch();
@@ -89,7 +90,17 @@ const AssetShowPage = () => {
           <img className='token' src={image} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
 
           <h3 style={{ marginRight: 10, display: 'flex' }}>{asset['unitName']}          {
-            asset.isVerified && <div className='bi bi-shield-check text-primary' style={{ fontSize: "22px", cursor: 'pointer', marginTop: '-6px', marginLeft: '2px' }}></div>
+            asset.isVerified && 
+                   <span
+                data-tip={i18n('common.headlineVerified')}
+                data-for="shield-verified-help-tooltip"
+                data-html={true}
+              >
+                <div  style={{ fontSize: "22px", cursor: 'pointer', marginTop: '-6px', marginLeft: '2px' }}
+                  className="bi bi-shield-check text-primary"
+                />
+                <ReactTooltip id="shield-verified-help-tooltip" />
+              </span>
           }</h3>
 
           <h5 className='text-info mobile' style={{ marginRight: 20 }}>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>

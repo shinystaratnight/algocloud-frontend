@@ -35,7 +35,6 @@ const HeaderWrapper = styled.div`
 
   .search-box {
     margin-right: 2rem;
-    maxWidth: 20rem;
     position: relative;
   }
 
@@ -143,6 +142,38 @@ const HeaderWrapper = styled.div`
     &:hover {
       color: var(--primary-color);
     }
+  }
+  
+  input[type="search"].dark {
+    background: #222;
+    color: #fff;
+  }
+  
+  input[type="search"].light {
+    background: #fff;
+    color: #222;
+  }
+  
+  input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 1em;
+    width: 1em;
+    border-radius: 50em;
+    background-image: var(--cancel-icon);
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  input[type="search"]:focus::-webkit-search-cancel-button {
+    opacity: .6;
+    pointer-events: all;
+  }
+  
+  input[type="search"].dark::-webkit-search-cancel-button {
+    filter: invert(1);
   }
 `;
 

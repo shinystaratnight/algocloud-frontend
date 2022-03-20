@@ -13,6 +13,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import authSelectors from 'src/modules/auth/authSelectors';
 import CandleStickChart from 'src/view/algorand/components/CandleStickChart';
 import { ASSET_CHART_VIEW_DURATION } from 'src/modules/algorand/constants';
+import ReactTooltip from 'react-tooltip';
+
 
 function AssetTable(props) {
   const {
@@ -215,9 +217,19 @@ function AssetTable(props) {
                           {
                       currentUser.superadmin === true ?
                         <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
-                        : asset.isVerified && <div className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', width: '17px', height: '17px',
+                        : asset.isVerified && 
+                        <span
+                data-tip={i18n('common.headlineVerified')}
+                data-for="shield-verified-help-tooltip"
+                data-html={true}
+              >
+                <div  className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', width: '17px', height: '17px',
                         marginLeft: '4px',
-                        marginTop: '-2px'}}></div>
+                        marginTop: '-2px'}}
+                />
+                <ReactTooltip id="shield-verified-help-tooltip" />
+              </span>
+                        
                     }
                           {/* <button
                           className="btn"
