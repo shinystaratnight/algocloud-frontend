@@ -162,6 +162,12 @@ const AssetShowPage = () => {
             </div>
             <h5 className='text-info-2 mobile'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
           </ContentWrapper>
+          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2">
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <h6 className="grow">Market Cap</h6>
+            </div>
+            <h5 className='text-info-2 mobile'>{formattedNum(asset['marketCap'], true)}</h5>
+          </ContentWrapper>
         </div>
         <div className="asset-m0 col-lg-8 col-sm-12 ">
           <AssetChart
