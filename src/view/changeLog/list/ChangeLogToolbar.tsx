@@ -40,7 +40,7 @@ function ChangeLogToolbar(props) {
         type="button"
         onClick={doDestroyAllSelected}
       >
-        <ButtonIcon iconClass="fas fa-user-minus" />{' '}
+        <ButtonIcon iconClass="fas fa-trash" />{' '}
         {i18n('common.destroy')}
       </button>
     );
@@ -67,7 +67,7 @@ function ChangeLogToolbar(props) {
     <Toolbar>
       <Link to="/change-logs/new">
         <button className="btn btn-primary" type="button">
-          <ButtonIcon iconClass="fas fa-user-plus" />{' '}
+          <ButtonIcon iconClass="fas fa-plus" />{' '}
           {i18n('common.new')}
         </button>
       </Link>
