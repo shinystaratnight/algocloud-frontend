@@ -14,6 +14,7 @@ import algorand from 'src/modules/algorand/algorandReducers';
 import overview from 'src/modules/algorand/overview/overviewReducers';
 import note from 'src/modules/note/noteReducers';
 import algocloudhq from 'src/modules/algocloudhq/algorandReducers';
+import changeLog from 'src/modules/changeLog/changeLogReducers';
 import { combineReducers } from 'redux';
 
 export default (history) =>
@@ -33,5 +34,6 @@ export default (history) =>
     algorand,
     overview,
     note,
-    algocloudhq
+    algocloudhq,
+    changeLog
   });
