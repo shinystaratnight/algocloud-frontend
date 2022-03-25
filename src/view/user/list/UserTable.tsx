@@ -146,7 +146,7 @@ function UserTable() {
               {!loading &&
                 rows.map((row) => (
                   <tr key={row.id}>
-                    <th className="th-checkbox" scope="row">
+                    <td className="th-checkbox" scope="row">
                       <div className="custom-control custom-checkbox">
                         <input
                           type="checkbox"
@@ -166,7 +166,7 @@ function UserTable() {
                           &#160;
                         </label>
                       </div>
-                    </th>
+                    </td>
                     <td className="text-center">
                       <Avatar
                         src={

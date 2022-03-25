@@ -261,6 +261,18 @@ class Permissions {
         allowedPlans: [plans.free, plans.growth, plans.enterprise],
       },
 
+      changeLogRead: {
+        id: 'changeLogRead',
+        allowedRoles: [Roles.superadmin, roles.admin, roles.custom],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
+
+      changeLogEdit: {
+        id: 'changeLogEdit',
+        allowedRoles: [Roles.superadmin],
+        allowedPlans: [plans.free, plans.growth, plans.enterprise],
+      },
+
       userReadSuperadmin: {
         id: 'userReadSuperadmin',
         allowedRoles: [Roles.superadmin],

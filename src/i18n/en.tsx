@@ -734,7 +734,28 @@ const en = {
     edit: 'Edit',
     create: 'Create a Note',
     view: 'View notes',
-  }
+  },
+  changeLog: {
+    menu: 'Change Logs',
+    title: 'Change Logs',
+    description: 'Description',
+    new: {
+      title: 'Add New Log',
+      titleModal: 'Add New Log'
+    },
+    fields: {
+      description: 'description',
+      date: 'date'
+    },
+    edit: {
+      title: 'Edit Log',
+    },
+    doAddSuccess: 'Log successfully saved',
+    doUpdateSuccess: 'Log successfully updated',
+    doDestroySuccess: 'Log successfully deleted',
+    doDestroyAllSelectedSuccess:
+      'Logs successfully deleted',
+  },
 };
 
 export default en;

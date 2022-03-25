@@ -97,6 +97,27 @@ const privateRoutes = [
   },
 
   {
+    path: '/change-logs',
+    loader: () => import('src/view/changeLog/list/ChangeLogPage'),
+    permissionRequired: permissions.changeLogRead,
+    exact: true,
+  },
+
+  {
+    path: '/change-logs/new',
+    loader: () => import('src/view/changeLog/new/ChangeLogNewPage'),
+    permissionRequired: permissions.changeLogEdit,
+    exact: true,
+  },
+
+  {
+    path: '/change-logs/:id/edit',
+    loader: () => import('src/view/changeLog/edit/ChangeLogEditPage'),
+    permissionRequired: permissions.changeLogEdit,
+    exact: true,
+  },
+
+  {
     path: '/settings',
     loader: () =>
       import('src/view/settings/SettingsFormPage'),

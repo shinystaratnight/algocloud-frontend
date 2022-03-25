@@ -149,8 +149,6 @@ const authActions = {
       AuthToken.set(token, rememberMe);
       currentUser = await service.fetchMe();
 
-      console.log('currentUser: ', currentUser);
-
       dispatch({
         type: authActions.AUTH_SUCCESS,
         payload: {
