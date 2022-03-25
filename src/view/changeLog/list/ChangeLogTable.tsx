@@ -168,7 +168,7 @@ function ChangeLogTable(props) {
                         'YYYY-MM-DD',
                       )}
                     </td>
-                    <td>{row.description}</td>
+                    <td style={{ whiteSpace: 'pre-wrap'}}>{row.description}</td>
                     {
                       hasPermissionToEdit &&
                       <td className="td-actions">

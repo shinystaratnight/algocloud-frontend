@@ -1,7 +1,7 @@
 import { useForm, FormProvider } from 'react-hook-form';
 import { i18n } from 'src/i18n';
 import React, { useState } from 'react';
-import InputFormItem from 'src/view/shared/form/items/InputFormItem';
+import TextAreaFormItem from 'src/view/shared/form/items/TextAreaFormItem';
 import FormWrapper from 'src/view/shared/styles/FormWrapper';
 import ButtonIcon from 'src/view/shared/ButtonIcon';
 import * as yup from 'yup';
@@ -59,7 +59,7 @@ function ChangeLogNewForm(props) {
               />
             </div>
             <div className="col-lg-7 col-md-8 col-12">
-              <InputFormItem
+              <TextAreaFormItem
                 name="description"
                 label={i18n('changeLog.fields.description')}
                 required={true}

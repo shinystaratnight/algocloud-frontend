@@ -48753,7 +48753,8 @@ div#app-dropdown {
     background-color: #333;
     padding: 15px 20px 15px 60px;
     width: 25em;
-    flex-direction: row-reverse
+    flex-direction: row-reverse;
+    justify-content: space-between;
 }
 
 .mdc-snackbar__dismiss:after,.mdc-snackbar__dismiss:before {
