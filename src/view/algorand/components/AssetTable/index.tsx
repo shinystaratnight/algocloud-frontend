@@ -88,7 +88,8 @@ function AssetTable(props) {
     setUpdating(true);
     const body = {
       data: {
-        isVerified: !isVerified
+        isVerified: !isVerified,
+        type: 1
       }
     }
     dispatch(overViewActions.doAssetUpdate(assetId, body));
@@ -211,26 +212,9 @@ function AssetTable(props) {
                   <div className='d-flex'>
                     <Link to={`/algorand/assets/${asset.assetId}`}>
                       <img className="token" src={image} style={{ width: 33, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
-                      <div>
+                      <div style={{ marginRight: '4px' }}>
                         <div className='d-flex'>
-                          <h6 className='table-algo-title flex'>{asset.name}                 </h6>
-                          {
-                      currentUser.superadmin === true ?
-                        <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
-                        : asset.isVerified && 
-                        <span
-                data-tip={i18n('common.headlineVerified')}
-                data-for="shield-verified-help-tooltip"
-                data-html={true}
-              >
-                <div  className={`bi bi-shield-check text-primary`} style={{ cursor: 'pointer', width: '17px', height: '17px',
-                        marginLeft: '4px',
-                        marginTop: '-2px'}}
-                />
-                <ReactTooltip id="shield-verified-help-tooltip" />
-              </span>
-                        
-                    }
+                          <h6 className='table-algo-title flex'>{asset.name}</h6>
                           {/* <button
                           className="btn"
                           onClick={(e) =>
@@ -242,12 +226,30 @@ function AssetTable(props) {
                           {/* </button> */}
                         </div>
                         <div>
-                          <span style={{ fontWeight: "bold", color: 'var(--button-secondary-color)', opacity:'.8' }}>{asset.unitName}</span>
-                          <span style={{ color: 'grey', fontSize: '10px' }}>{' '}{asset.assetId}</span>
+                          <span style={{ color: 'white' }}>{asset.unitName}</span>
+                          <span style={{ color: 'grey' }}>{' '}{asset.assetId}</span>
                         </div>
                       </div>
                     </Link>
-  
+                    {
+                      currentUser.superadmin === true ?
+                        <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
+                        : asset.isVerified &&
+                        <span
+                          data-tip={i18n('common.headlineVerified')}
+                          data-for="shield-verified-help-tooltip"
+                          data-html={true}
+                        >
+                          <div className={`bi bi-shield-check text-primary`} style={{
+                            cursor: 'pointer', width: '17px', height: '17px',
+                            marginLeft: '4px',
+                            marginTop: '-2px'
+                          }}
+                          />
+                          <ReactTooltip id="shield-verified-help-tooltip" />
+                        </span>
+
+                    }
                   </div>
                 </td>
                 <td>{formatPrice(asset.price)}</td>

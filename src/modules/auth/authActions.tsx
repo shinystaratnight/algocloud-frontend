@@ -320,8 +320,6 @@ const authActions = {
         type: authActions.EMAIL_VERIFY_SUCCESS,
       });
 
-      console.log('Here');
-
       // getHistory().push('/');
       window.location.href = '/';
     } catch (error) {

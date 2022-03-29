@@ -151,6 +151,8 @@ export default (state = initialData, { type, payload }) => {
       ...state,
       loading: false,
       selectedKeys: [],
+      rows: payload.rows,
+      count: payload.count,
     };
   }
 
