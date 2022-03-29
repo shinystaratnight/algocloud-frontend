@@ -19,6 +19,12 @@ export default [
     icon: 'fas fa-credit-card',
     label: i18n('plan.menu'),
   },
+  {
+    path: '/algorand',
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-chart-line',
+    label: i18n('entities.charts.menu'),
+  },
 
   {
     path: '/user',
@@ -29,7 +35,7 @@ export default [
   {
     path: '/portfolio',
     permissionRequired: permissions.portfolioRead,
-    icon: 'fas fa-file',
+    icon: 'fa-solid fa-coins',
     label: i18n('entities.portfolio.menu'),
   },
 
@@ -46,28 +52,6 @@ export default [
     label: i18n('settings.menu'),
     permissionRequired: permissions.settingsEdit,
   },
-
-  {
-    path: '/customer',
-    permissionRequired: permissions.customerRead,
-    icon: 'fas fa-chevron-right',
-    label: i18n('entities.customer.menu'),
-  },
-
-  {
-    path: '/product',
-    permissionRequired: permissions.productRead,
-    icon: 'fas fa-chevron-right',
-    label: i18n('entities.product.menu'),
-  },
-
-  {
-    path: '/order',
-    permissionRequired: permissions.orderRead,
-    icon: 'fas fa-chevron-right',
-    label: i18n('entities.order.menu'),
-  },
-
   {
     path: '/superadmin/user',
     label: i18n('user.menu'),
@@ -94,19 +78,6 @@ export default [
     label: i18n('analytics.menu'),
     permissionRequired: permissions.settingsReadSuperadmin,
     icon: 'fas fa-chart-bar',
-  },
-
-  {
-    path: '/algorand',
-    permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-chart-line',
-    label: i18n('entities.analytics.menu'),
-  },
-  {
-    path: '/algocloudhq',
-    permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-layer-group',
-    label: i18n('entities.algocloudhq.menu'),
   },
   // {
   //   path: '/superadmin/algorand',
@@ -150,5 +121,31 @@ export default [
     label: i18n('launchpad.menu'),
     permissionRequired: permissions.algorandRead,
     icon: 'fas fa-rocket',
+  },
+  {
+    path: '/algocloudhq',
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-layer-group',
+    label: i18n('entities.algocloudhq.menu'),
+  },
+  {
+    path: '/customer',
+    permissionRequired: permissions.customerRead,
+    icon: 'fas fa-chevron-right',
+    label: i18n('entities.customer.menu'),
+  },
+
+  {
+    path: '/product',
+    permissionRequired: permissions.productRead,
+    icon: 'fas fa-chevron-right',
+    label: i18n('entities.product.menu'),
+  },
+
+  {
+    path: '/order',
+    permissionRequired: permissions.orderRead,
+    icon: 'fas fa-chevron-right',
+    label: i18n('entities.order.menu'),
   },
 ].filter(Boolean);

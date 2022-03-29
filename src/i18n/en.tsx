@@ -217,10 +217,10 @@ const en = {
       menu: 'Portfolio',
     },
 
-    analytics: {
-      name: 'analytics',
-      label: 'Analytics',
-      menu: 'Analytics',
+    charts: {
+      name: 'Charts',
+      label: 'Charts',
+      menu: 'Charts',
     },
 
     algocloudhq: {
