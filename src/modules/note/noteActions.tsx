@@ -1,4 +1,3 @@
-import config from 'src/config';
 import Errors from 'src/modules/shared/error/errors';
 import NoteService from './noteService';
 
@@ -93,7 +92,6 @@ const noteActions = {
   },
 
   doCreatePoolNote: (note) => async (dispatch) => {
-    console.log('doCreatePoolNote: ', note);
     try {
       dispatch({
         type: noteActions.CREATE_STARTED,

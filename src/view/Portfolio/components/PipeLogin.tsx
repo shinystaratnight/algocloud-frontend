@@ -45,7 +45,7 @@ class PipeLogin extends Component<IProps, IState> {
         } else {
             address = await Pipeline.connect();
         }
-        
+
         this.props.checkAll(address);
 
         // try {

@@ -87,7 +87,8 @@ function AssetTable(props) {
     setUpdating(true);
     const body = {
       data: {
-        isVerified: !isVerified
+        isVerified: !isVerified,
+        type: 2
       }
     }
     dispatch(overViewActions.doAssetUpdate(assetId, body));
@@ -217,7 +218,7 @@ function AssetTable(props) {
                   <div className='d-flex'>
                     <Link to={`/algocloudhq/assets/${asset.assetId}`}>
                       <img className="token" src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
-                      <div>
+                      <div style={{ marginRight: '4px' }}>
                         <div className='d-flex'>
                           <h6 className='table-algo-title'>{asset.name}</h6>
                           {/* <button
@@ -240,15 +241,15 @@ function AssetTable(props) {
                       currentUser.superadmin === true ?
                         <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
                         : asset.isVerified && <span
-                data-tip={i18n('common.headlineVerified')}
-                data-for="shield-verified-help-tooltip"
-                data-html={true}
-              >
-                <div  style={{ cursor: 'pointer', marginTop: '3px' }}
-                  className="bi bi-shield-check text-primary"
-                />
-                <ReactTooltip id="shield-verified-help-tooltip" />
-              </span>
+                          data-tip={i18n('common.headlineVerified')}
+                          data-for="shield-verified-help-tooltip"
+                          data-html={true}
+                        >
+                          <div style={{ cursor: 'pointer' }}
+                            className="bi bi-shield-check text-primary"
+                          />
+                          <ReactTooltip id="shield-verified-help-tooltip" />
+                        </span>
                     }
                   </div>
                 </td>

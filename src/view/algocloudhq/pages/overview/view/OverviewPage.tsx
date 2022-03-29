@@ -30,8 +30,6 @@ function OverviewPage() {
   const pools = useSelector(selectors.selectPools);
   const favorites = useSelector(selectors.selectFavorites);
 
-  console.log('assets: ', assets);
-
   return (
     <>
       <Breadcrumb

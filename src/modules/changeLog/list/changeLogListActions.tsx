@@ -4,6 +4,8 @@ import { i18n } from 'src/i18n';
 import Errors from 'src/modules/shared/error/errors';
 import Message from 'src/view/shared/message';
 
+import { getHistory } from 'src/modules/store';
+
 const prefix = 'CHANGELOG_LIST';
 
 const changeLogListActions = {
@@ -51,7 +53,7 @@ const changeLogListActions = {
       type: changeLogListActions.RESETED,
     });
 
-    dispatch(changeLogListActions.doFetch());
+    // dispatch(changeLogListActions.doFetch());
   },
 
   doChangePagination: (pagination) => async (
@@ -108,14 +110,20 @@ const changeLogListActions = {
         type: changeLogListActions.DESTROY_STARTED,
       });
 
-      await ChangeLogService.destroy([id]);
+      const response = await ChangeLogService.destroy([id]);
 
       dispatch({
         type: changeLogListActions.DESTROY_SUCCESS,
+        payload: {
+          rows: response.rows,
+          count: response.count,
+        },
       });
 
       Message.success(i18n('changeLog.doDestroySuccess'));
-      dispatch(changeLogListActions.doFetch());
+
+      getHistory().push('/change-logs');
+      
     } catch (error) {
       Errors.handle(error);
 
@@ -123,8 +131,7 @@ const changeLogListActions = {
         type: changeLogListActions.DESTROY_ERROR,
       });
 
-      dispatch(changeLogListActions.doFetch());
-
+      getHistory().push('/change-logs');
     }
   },
 
@@ -153,7 +160,7 @@ const changeLogListActions = {
         i18n('changeLog.doDestroyAllSelectedSuccess'),
       );
 
-      dispatch(changeLogListActions.doFetch());
+      getHistory().push('/change-logs');
     } catch (error) {
       Errors.handle(error);
 
@@ -161,7 +168,7 @@ const changeLogListActions = {
         type: changeLogListActions.DESTROY_ALL_SELECTED_ERROR,
       });
 
-      dispatch(changeLogListActions.doFetch());
+      getHistory().push('/change-logs');
     }
   },
 };

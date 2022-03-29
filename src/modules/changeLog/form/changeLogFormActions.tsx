@@ -3,8 +3,6 @@ import Message from 'src/view/shared/message';
 import ChangeLogService from 'src/modules/changeLog/changeLogService';
 import { getHistory } from 'src/modules/store';
 import { i18n } from 'src/i18n';
-import authSelectors from 'src/modules/auth/authSelectors';
-import authActions from 'src/modules/auth/authActions';
 
 const prefix = 'CHANGELOG_FORM';
 
@@ -64,7 +62,7 @@ const changeLogFormActions = {
 
       Message.success(i18n('changeLog.doAddSuccess'));
 
-      getHistory().goBack();
+      getHistory().push('/change-logs');
     } catch (error) {
       Errors.handle(error);
 
@@ -88,13 +86,15 @@ const changeLogFormActions = {
 
       Message.success(i18n('changeLog.doUpdateSuccess'));
 
-      getHistory().goBack();
+      getHistory().push('/change-logs');
     } catch (error) {
       Errors.handle(error);
 
       dispatch({
         type: changeLogFormActions.UPDATE_ERROR,
       });
+
+      getHistory().push('/change-logs');
     }
   },
 };

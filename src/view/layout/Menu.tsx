@@ -61,7 +61,7 @@ function Menu(props) {
       dispatch(overviewActions.doFetchLastUpdate());
       setMounted(true);
     }
-  }, [mounted])
+  }, [mounted, dispatch])
 
   useLayoutEffect(() => {
     const toggleMenuOnResize = () => {
@@ -89,7 +89,7 @@ function Menu(props) {
     return () => {
       clearInterval(newInterval)
     }
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     const newTimer = setInterval(() => {

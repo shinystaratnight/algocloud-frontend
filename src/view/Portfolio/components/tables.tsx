@@ -1,9 +1,9 @@
-const renderTable = (data,headers) => {
+const renderTable = (data, headers) => {
     let tableHtml = "<table><thead>"
-headers.forEach(header =>{
-    tableHtml += "<td>"+header+ "</td>"
-})
-tableHtml += "</thead>"
+    headers.forEach(header => {
+        tableHtml += "<td>" + header + "</td>"
+    })
+    tableHtml += "</thead>"
     data.forEach(row => {
         tableHtml += "<tr>"
         row.forEach(item => {
