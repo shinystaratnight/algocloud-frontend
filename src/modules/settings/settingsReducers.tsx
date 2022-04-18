@@ -3,7 +3,9 @@ import actions from 'src/modules/settings/settingsActions';
 const initialData = {
   initLoading: false,
   saveLoading: false,
+  changeLoading: false,
   settings: null,
+  theme: null
 };
 
 export default (state = initialData, { type, payload }) => {
@@ -49,6 +51,28 @@ export default (state = initialData, { type, payload }) => {
     return {
       ...state,
       saveLoading: false,
+    };
+  }
+
+  if (type === actions.CHANGE_THEME_STARTED) {
+    return {
+      ...state,
+      changeLoading: true,
+    };
+  }
+
+  if (type === actions.CHANGE_THEME_SUCCESS) {
+    return {
+      ...state,
+      theme: payload,
+      changeLoading: false,
+    };
+  }
+
+  if (type === actions.CHANGE_THEME_ERROR) {
+    return {
+      ...state,
+      changeLoading: false,
     };
   }
 

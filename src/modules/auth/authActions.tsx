@@ -8,6 +8,10 @@ import AuthCurrentTenant from 'src/modules/auth/authCurrentTenant';
 import selectors from 'src/modules/auth/authSelectors';
 import { tenantSubdomain } from '../tenant/tenantSubdomain';
 import SettingsService from '../settings/settingsService';
+import { StreamChat } from 'stream-chat';
+import config from 'src/config';
+
+const apiKey = config.STREAM_API_KEY;
 
 const prefix = 'AUTH';
 
@@ -173,7 +177,11 @@ const authActions = {
     try {
       dispatch({ type: authActions.AUTH_START });
       await service.signout();
-
+      const client = StreamChat.getInstance(apiKey, {
+        enableInsights: true,
+        enableWSFallback: true,
+      });
+      await client.disconnectUser();
       dispatch({
         type: authActions.AUTH_SUCCESS,
         payload: {

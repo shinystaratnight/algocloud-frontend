@@ -27,6 +27,8 @@ const tenantMode = 'multi';
  */
 const isPlanEnabled = true;
 const stripePublishableKey = 'pk_test_51JpIyQLnyNFZ6q7AEmHZJN6WgBTYMH6vuKmAgXxUPirX9TFm6YbiUH2GmeRh5xGcSpMaD3DNm8iDYxNIxObigfWt00alQ3BPmS';
+const STREAM_API_KEY='q7xasuw4uf5k'
+const STREAM_SECRET_KEY='84gayfm9sbx6zuy5j78a8y8daykdggv5hpytkb6b3bp2z8zg9vnzjs62d54su6xx'
 
 export default {
   frontendUrl,
@@ -34,5 +36,7 @@ export default {
   apiDocumentationUrl,
   tenantMode,
   isPlanEnabled,
-  stripePublishableKey
+  stripePublishableKey,
+  STREAM_API_KEY,
+  STREAM_SECRET_KEY
 };

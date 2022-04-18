@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { useRouteMatch } from 'react-router-dom';
 import { i18n } from 'src/i18n';
 import actions from 'src/modules/algocloudhq/asset/show/assetShowActions';
 import selectors from 'src/modules/algocloudhq/asset/show/assetShowSelectors';
 import noteSelectors from 'src/modules/note/noteSelectors';
+import authSelectors from 'src/modules/auth/authSelectors';
+import settingsSelectors from 'src/modules/settings/settingsSelectors';
 import { formatPercent, formattedNum } from 'src/modules/algocloudhq/utils';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
@@ -16,6 +18,22 @@ import NoNotes, { NoteCard, NoteModal } from 'src/view/algocloudhq/components/No
 import noteActions from 'src/modules/note/noteActions';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import ReactTooltip from 'react-tooltip';
+import { StreamChat } from 'stream-chat';
+import { Chat, Channel, ChannelHeader, MessageInput, MessageList, Thread, Window, CustomStyles, CustomClasses, ChannelHeaderProps, useChannelStateContext, Avatar } from 'stream-chat-react';
+import config from 'src/config';
+import Spinner from 'src/view/shared/Spinner';
+
+import 'stream-chat-react/dist/css/index.css';
+
+const apiKey = config.STREAM_API_KEY;
+
+const options = { state: true, watch: true, presence: true, limit: 8 };
+
+const sort = {
+  last_message_at: -1,
+  updated_at: -1,
+  cid: 1,
+};
 
 const AssetShowPage = () => {
   const match = useRouteMatch();
@@ -25,12 +43,25 @@ const AssetShowPage = () => {
   const [currentNote, setCurrentNote] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  const [chatClient, setChatClient] = useState(null);
+  const [channel, setChannel] = useState(null);
+  const selectTheme = useSelector(settingsSelectors.selectTheme);
+  const [theme, setTheme] = useState('dark');
+  const [count, setCount] = useState(0);
+
   useEffect(() => {
     dispatch(actions.doReset());
     dispatch(actions.doFetch(assetId));
-    dispatch(noteActions.doFetch(assetId))
+    dispatch(noteActions.doFetch(assetId));
   }, [dispatch, assetId]);
 
+  const currentUser = useSelector(
+    authSelectors.selectCurrentUser,
+  );
+  const userAvatar = useSelector(
+    authSelectors.selectCurrentUserAvatar,
+  );
+  const loading = useSelector(selectors.selectLoading);
   const asset = useSelector(selectors.selectAsset);
   const pools = useSelector(selectors.selectPools);
   const assetName = useSelector(selectors.selectAssetName);
@@ -41,11 +72,68 @@ const AssetShowPage = () => {
   for (let i = 0; i < images?.length; i++) {
     const img = images[i];
     let id = parseInt(img.split('-')[1]);
-    if (id == asset['assetId']) {
+    if (id === asset['assetId']) {
       image = `/assets/asa-list/${img}/icon.png`;
       break;
     }
   }
+
+  const userToConnect = { id: currentUser.id, name: currentUser.fullName, image: userAvatar };
+  useEffect(() => {
+    const initChat = async () => {
+      const client = StreamChat.getInstance(apiKey, {
+        enableInsights: true,
+        enableWSFallback: true,
+      });
+      const userToken = client.devToken(userToConnect.id);
+      // await client.disconnect();
+      await client.connectUser(userToConnect, userToken);
+      const channel = client.channel('messaging', assetId, {
+        image: image,
+        name: assetName,
+      });
+      await channel.watch();
+      await channel.addMembers([userToConnect.id]);
+      setChatClient(client);
+      setChannel(channel);
+    };
+    setCount(count + 1);
+    if (!loading) {
+      setTimeout(() => {
+        if (count === 2) {
+          setCount(0);
+          initChat();
+        }
+      }, 500);
+    }
+
+    return () => chatClient?.disconnectUser();
+  }, [loading]);
+
+  useEffect(() => {
+    console.log('selectTheme: ', selectTheme);
+    if (selectTheme === "dark" || selectTheme === null) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }, [selectTheme]);
+
+  useEffect(() => {
+    /*
+     * Get the actual rendered window height to set the container size properly.
+     * In some browsers (like Safari) the nav bar can override the app.
+     */
+    const setAppHeight = () => {
+      const doc = document.documentElement;
+      doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+    };
+
+    setAppHeight();
+
+    window.addEventListener('resize', setAppHeight);
+    return () => window.removeEventListener('resize', setAppHeight);
+  }, []);
 
 
   const handleOpenCreateNoteModal = () => {
@@ -75,6 +163,48 @@ const AssetShowPage = () => {
     setOpenCreateModal(true);
   }
 
+  const customStyles: CustomStyles = {
+    '--bg-gradient-end': '#ffffff',
+    '--bg-gradient-start': '#070a0d',
+    '--black': '#ffffff',
+    '--blue-alice': '#00193d',
+    '--border': '#141924',
+    '--button-background': '#ffffff',
+    '--button-text': '#005fff',
+    '--grey': '#7a7a7a',
+    '--grey-gainsboro': '#2d2f2f',
+    '--grey-whisper': '#1c1e22',
+    '--modal-shadow': '#000000',
+    '--overlay': '#00000066',
+    '--overlay-dark': '#ffffffcc',
+    '--shadow-icon': '#00000080',
+    '--targetedMessageBackground': '#302d22',
+    '--transparent': 'transparent',
+    '--white': '#101418',
+    '--white-smoke': '#13151b',
+    '--white-snow': '#070a0d',
+  };
+
+  const customClasses: CustomClasses = {
+    chat: 'custom-chat',
+    thread: 'custom-thread',
+    // messageList: 'custom-message-list'
+  };
+
+  const CustomChannelHeader = (props: ChannelHeaderProps) => {
+    const { title } = props;
+
+    const { channel } = useChannelStateContext();
+    const { name, image, member_count } = channel.data || {};
+
+    return (
+      <div className='d-flex align-items-center channel-header'>
+        <Avatar image={image} name={name} shape='rounded' size={35} />
+        <div>{title || name} {member_count} online</div>
+      </div>
+    );
+  };
+
   return (
     <>
       <Breadcrumb
@@ -86,32 +216,37 @@ const AssetShowPage = () => {
         ]}
       />
       <div className='row' style={{ paddingTop: 20 }}>
-        <div className='col-sm-12 flex-row' style={{ display: 'flex', alignItems: 'center' }}>
-          <img className='token' src={image} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
+        <div className="ol" style={{ maxWidth: "100%", alignItems: "center" }}>
+          <div className="token-card" style={{ width: "min-content" }}>
+            <img className='token card-token' src={image} style={{ width: 60 }}></img>
+          </div>
+          <div className="col-sm w-130">
+            <div className='d-flex align-items-center'>
+              <h5 className="banner-ticker mr-2" >{asset['unitName']}</h5>
+              {/* <h6 className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 3)) < 0) ? 'text-danger' : 'text-success'}
+                style={{ marginLeft: '5px' }}
+              >
+                {formatPercent(asset['lastDayPriceChange'], 2)}
+              </h6> */}
+              {
+                asset.isVerified && <span
+                  data-tip={i18n('common.headlineVerified')}
+                  data-for="shield-verified-help-tooltip"
+                  data-html={true}
+                >
+                  <div style={{ fontSize: "22px", cursor: 'pointer', marginTop: '-5px', marginLeft: '2px' }}
+                    className="bi bi-shield-check text-primary"
+                  />
+                  <ReactTooltip id="shield-verified-help-tooltip" />
+                </span>
+              }
+            </div>
 
-          <h3 style={{ marginRight: 20 }}>{asset['unitName']}</h3>
-          <h5 className='text-info mobile' style={{ marginRight: 20 }}>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
-          <h6 className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 3)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayPriceChange'], 2)}</h6>
-          {
-            asset.isVerified && <span
-            data-tip={i18n('common.headlineVerified')}
-            data-for="shield-verified-help-tooltip"
-            data-html={true}
-          >
-            <div  style={{ fontSize: "22px", cursor: 'pointer', marginTop: '-6px', marginLeft: '2px' }}
-              className="bi bi-shield-check text-primary"
-            />
-            <ReactTooltip id="shield-verified-help-tooltip" />
-          </span>
-          }
-        </div>
-      </div>
-      <div className='row'>
-        <div className="assets-mobile col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
-          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h6 className="grow">Liqudity</h6>
-
+            <h6 className='ww'>{asset.name}</h6>
+          </div>
+          <div className="p-2 col-sm w-130">
+            <div className='d-flex align-items-center'>
+              <h6 className="ww">Liquidity</h6>
               <div className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
                 <span className={(parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayLiquidityChange'], 2)}
                   {asset['lastDayLiquidityChange'] ? (parseFloat(formatPercent(asset['lastDayLiquidityChange'], 6)) < 0) ? <span>{'  '}<i
@@ -122,12 +257,12 @@ const AssetShowPage = () => {
                 </span>
               </div>
             </div>
-            <h5 className='text-info-2 mobile'>{formattedNum(asset['liquidity'], true)}</h5>
-          </ContentWrapper>
-          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h6 className="grow">Volume</h6>
 
+            <h5 className="banner-ticker" >{formattedNum(asset['liquidity'], true)}</h5>
+          </div>
+          <div className="p-2 col-sm w-130">
+            <div className='d-flex align-items-center'>
+              <h6 className="ww">Volume</h6>
               <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
                 <div className={(parseFloat(formatPercent(asset['lastDayVolumeChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
@@ -141,13 +276,12 @@ const AssetShowPage = () => {
                 </div>
               </div>
             </div>
-            <h5 className='text-info-2 mobile'>{formattedNum(asset['lastDayVolume'], true)}</h5>
-          </ContentWrapper>
-          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2">
+            <h5 className='banner-ticker'>{formattedNum(asset['lastDayVolume'], true)}</h5>
 
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h6 className="grow">Price</h6>
-
+          </div>
+          <div className="p-2 col-sm w-130">
+            <div className='d-flex align-items-center'>
+              <h6 className="ww">Price</h6>
               <div className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
                 <span className={(parseFloat(formatPercent(asset['lastDayPriceChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(asset['lastDayPriceChange'], 2)}
                   {asset['lastDayPriceChange'] ? (parseFloat(formatPercent(asset['lastDayPriceChange'], 6)) < 0) ? <span>{'  '}<i
@@ -158,16 +292,43 @@ const AssetShowPage = () => {
                 </span>
               </div>
             </div>
-            <h5 className='text-info-2 mobile'>{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
-          </ContentWrapper>
+            <h5 className='banner-ticker ' >{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
+          </div>
         </div>
-        <div className="asset-m0 col-lg-8 col-sm-12 ">
+        {/* </div> */}
+      </div>
+      <div className='row'>
+        <div className="assets-mobile col-lg-8 col-sm-12 ">
           <AssetChart
             color='--var(algoucloud-primary)'
             data={asset}
             assetData={assetData}
             priceData={priceData}
           />
+        </div>
+        <div className="asset-m0 col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
+
+          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2 chat-mobile-card">
+            {
+              loading && <Spinner />
+            }
+            {
+              !loading && chatClient &&
+              <Chat client={chatClient}
+                customClasses={customClasses}
+                customStyles={customStyles}
+                theme={`messaging ${theme}`}>
+                <Channel channel={channel}>
+                  <Window>
+                    <CustomChannelHeader />
+                    <MessageList />
+                    <MessageInput />
+                    <Thread />
+                  </Window>
+                </Channel>
+              </Chat>
+            }
+          </ContentWrapper>
         </div>
       </div>
 
@@ -180,31 +341,6 @@ const AssetShowPage = () => {
           pools={pools}
         />
       </ContentWrapper>
-
-      {/* <ContentWrapper className="card-hover">
-        <SectionTitleBar className="table-header">
-          <SectionTitle>Notes</SectionTitle>
-          <button role='button' className='btn btn-primary btn-rounded' onClick={handleOpenCreateNoteModal}>
-            <i className='fas fa-plus'></i>
-          </button>
-        </SectionTitleBar>
-        {
-          notes?.length === 0 ? (
-            <NoNotes />
-          ) : (
-            notes?.map((note, index) => {
-              return (
-                <NoteCard
-                  key={`note-${index}`}
-                  note={note}
-                  onDelete={() => onDeleteNote(note)}
-                  onEdit={() => onEditNote(note)}
-                />
-              )
-            })
-          )
-        }
-      </ContentWrapper> */}
 
       {
         openCreateModal && (
