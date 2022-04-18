@@ -41,14 +41,14 @@ const DarkMode = () => {
     // }
 
     const toggleTheme = (e) => {
-        // let theme = ''
+        let theme = ''
         const storedTheme = localStorage.getItem("theme");
         if (storedTheme === "light" || storedTheme === null) {
-            // theme = 'default';
+            theme = 'dark';
             setDark();
             setTheme("dark")
         } else {
-            // theme = 'light';
+            theme = 'light';
             setLight();
             setTheme("light")
         }
@@ -58,7 +58,8 @@ const DarkMode = () => {
         //     theme: theme
         // }
         // dispatch(actions.doSave(values));
-        SettingsService.applyThemeFromTenant();
+        
+        dispatch(actions.doChangeTheme(theme));
     };
     return (
         <div className="toggle-theme-wrapper">

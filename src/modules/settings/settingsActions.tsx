@@ -17,6 +17,10 @@ const settingsActions = {
   SAVE_SUCCESS: `${prefix}_SAVE_SUCCESS`,
   SAVE_ERROR: `${prefix}_SAVE_ERROR`,
 
+  CHANGE_THEME_STARTED: `${prefix}_CHANGE_THEME_STARTED`,
+  CHANGE_THEME_SUCCESS: `${prefix}_CHANGE_THEME_SUCCESS`,
+  CHANGE_THEME_ERROR: `${prefix}_CHANGE_THEME_ERROR`,
+
   doInit: () => async (dispatch, getState) => {
     try {
       if (
@@ -79,6 +83,23 @@ const settingsActions = {
 
       dispatch({
         type: settingsActions.SAVE_ERROR,
+      });
+    }
+  },
+
+  doChangeTheme: (theme) => async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: settingsActions.CHANGE_THEME_STARTED,
+      });
+      await SettingsService.applyThemeFromTenant();
+      dispatch({
+        type: settingsActions.SAVE_SUCCESS,
+        payload: theme,
+      });
+    } catch (error) {
+      dispatch({
+        type: settingsActions.CHANGE_THEME_ERROR,
       });
     }
   },

@@ -3,3 +3,4 @@ build/
 .eslintcache
 package-lock.json
 *.log
+.env

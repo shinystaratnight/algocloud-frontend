@@ -14,7 +14,6 @@ import { Link } from 'react-router-dom';
 import DarkMode from 'src/view/algorand/components/DarkMode/DarkMode';
 import PipeConnect from 'src/view/Portfolio/components/PipeConnect';
 
-
 function Header(props) {
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
