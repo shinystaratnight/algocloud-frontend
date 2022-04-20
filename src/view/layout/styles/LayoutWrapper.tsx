@@ -4,12 +4,8 @@ const LayoutWrapper = styled.div`
   color: var(--algocloud-body-color);
   display: flex;
   font-size: 13px;
-  // width: 100%;
-  // max-width: 1400px;
-  // padding-right: 16px;
-  // padding-left: 16px;
-  // margin: 0 auto;
-
+  max-width: 1400px;
+  margin: 0 auto;
   button {
     font-size: 13px;
   }

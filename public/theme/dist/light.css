@@ -892,12 +892,6 @@ h5.text-danger.ww, h5.text-success.ww {
 
 }
 
-h5.text-info.banner-ticker,h5.text-success.ww,h5.text-danger.ww,.banner-ticker  {
-    font-size: calc(.75rem + .9vw);
-}
-
-
-
 .ol {
     display: flex;
     align-items: center !important;
