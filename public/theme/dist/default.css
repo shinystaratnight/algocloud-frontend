@@ -539,7 +539,7 @@ a#algoexplorer,button#disconnect-me,button.btn.btn--transparent {
     box-shadow: 0 8px 28px #0c0e14;
     border: 1px solid;
     border-color: var(--border);
-    box-shadow: rgb(0 0 0/12%)0 5px 10px 0
+    box-shadow: rgb(0 0 0/12%) 0 5px 10px 0
 }
 
 .dropdown:focus .dropdown__content,.dropdown:focus-within .dropdown__content,.dropdown:hover .dropdown__content {
@@ -613,7 +613,7 @@ button#AlgoSigner,button#WalletConnect,button#myAlgoWallet,input#candidatea,inpu
 div[class*=pipeline-select]>div:hover {
     color: #1c1ce1!important;
     border: 1px solid #1c1ce1!important;
-    box-shadow: 4px 4px 0 0#d2d2f9!important;
+    box-shadow: 4px 4px 0 0 #d2d2f9!important;
     background-color: #fff
 }
 
@@ -760,7 +760,7 @@ a#algoexplorer,button#disconnect-me,button.btn.btn--transparent {
     margin-bottom: 0rem;
     display: flex;
     justify-content: flex-start;
-    background-color: var(--algocloud-badge-soft-light-background-color)!important;
+    background-color: var(--button-secondary-bg);
     overflow-x: scroll;
 }
 
@@ -906,12 +906,6 @@ h5.text-danger.ww, h5.text-success.ww {
 
 }
 
-h5.text-info.banner-ticker,h5.text-success.ww,h5.text-danger.ww,.banner-ticker  {
-    font-size: calc(.75rem + .9vw);
-}
-
-
-
 .ol {
     display: flex;
     align-items: center !important;
@@ -996,15 +990,15 @@ h6.ww {
 
 @-webkit-keyframes placeholder-wave {
     to {
-        -webkit-mask-position: -200%0;
-        mask-position: -200%0
+        -webkit-mask-position: -200% 0;
+        mask-position: -200% 0
     }
 }
 
 @keyframes placeholder-wave {
     to {
-        -webkit-mask-position: -200%0;
-        mask-position: -200%0
+        -webkit-mask-position: -200% 0;
+        mask-position: -200% 0
     }
 }
 
@@ -1505,7 +1499,7 @@ h6#seach-item {
     min-height: var(--header-height);
     display: flex;
     align-items: center;
-    padding: 0 var(--su-2)0 var(--su-4);
+    padding: 0 var(--su-2) 0 var(--su-4);
     justify-content: space-between;
     border-bottom: 1px solid var(--base-a10)
 }
@@ -1662,7 +1656,8 @@ div#stickyTop-2 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 100%
+    width: 100%;
+    background: var(--header-bg);
 }
 
 button.btn-close.btn.menu-close {
@@ -1769,7 +1764,10 @@ button.btn.btn-link.no-padding {
 }
 
 .card-hover-2 {
-    padding: 1.25rem!important
+    padding: 1.25rem;
+    background: rgba(249, 249, 249, 0.05);
+    color: #efefef;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 10%);
 }
 
 .algocloud-navbar-brand-1:hover {
@@ -1810,7 +1808,6 @@ button.btn.btn-link.no-padding {
 
 :root .light .table,:root .table,:root.light .table {
     --algocloud-table-striped-bg: #242424;
-    --algocloud-table-striped-bg: #000000
 }
 
 .table,.table-header {
@@ -7207,7 +7204,7 @@ div#app-dropdown {
 }
 
 .card-header:first-child {
-    border-radius: calc(.375rem - 0px) calc(.375rem - 0px)0 0
+    border-radius: calc(.375rem - 0px) calc(.375rem - 0px) 0 0
 }
 
 .card-footer {
@@ -7674,7 +7671,7 @@ div#app-dropdown {
     height: 1em;
     padding: .25em;
     color: #000;
-    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e")center/1em auto no-repeat;
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23000'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
     border: 0;
     border-radius: .25rem;
     opacity: .5
@@ -11024,7 +11021,7 @@ div#app-dropdown {
 }
 
 .bg-white {
-    background-color: #000!important
+    background-color: var(--algocloud-dropdown-bg);
 }
 
 .bg-primary {
@@ -21327,7 +21324,6 @@ code,kbd,pre,samp {
 .card {
     -webkit-box-shadow: var(--algocloud-box-shadow);
     box-shadow: var(--algocloud-box-shadow);
-    background-color: #000!important
 }
 
 .card-link,.card-title {
@@ -29847,7 +29843,18 @@ button.btn-circle:focus,button.btn-circle:hover {
     padding: 1.25rem!important;
     padding-left: 0!important;
     padding-right: 4px!important;
-    text-indent: 1.25rem
+    text-indent: 1.25rem;
+    padding: 1.25rem!important;
+    padding-left: 0!important;
+    padding-right: 4px!important;
+    text-indent: 1.25rem;
+    background: #242424;
+    box-shadow: 0 0 0 1px rgb(255 255 255 / 15%);
+    margin: 0 0 var(--su-2);
+    position: relative;
+    border-radius: var(--radius-auto);
+    margin-top: 16px;
+    padding: 1.25rem;
 }
 
 @media (min-width:992px) {
@@ -30403,14 +30410,14 @@ button,input,optgroup,select,textarea {
 }
 
 .dropdown-menu-notification .card-header {
-    background-color: #000;
+    background-color: #242424;
     z-index: 1;
     border-bottom-color: var(--algocloud-table-border-color)!important;
     border-bottom: 1px solid
 }
 
 .dropdown-menu-notification .card-footer {
-    background-color: #000;
+    background-color: #242424;
     z-index: 1;
     border-top-color: var(--algocloud-table-border-color)!important;
     border-top: 1px solid
@@ -30422,7 +30429,7 @@ button,input,optgroup,select,textarea {
     color: var(--algocloud-input-color);
     padding: .25rem 1.25rem;
     border-color: #313131!important;
-    background-color: rgb(0 0 0)!important;
+    background-color: #242424;
     border-bottom-style: solid!important;
     border-width: 1px!important
 }
@@ -30443,7 +30450,7 @@ button,input,optgroup,select,textarea {
 }
 
 .notification,.notification-unread {
-    background-color: #000!important
+    background-color: #242424!important
 }
 
 .flex {
@@ -31094,7 +31101,7 @@ button,input,optgroup,select,textarea {
     --algocloud-body-bg-2: #9da9bb;
     --algocloud-body-color: #D6D6D7;
     --algocloud-headings-color: #D6D6D7;
-    --algocloud-card-bg-color: #000;
+    --algocloud-card-bg-color: #242424;
     --algocloud-border-color: rgba(255, 255, 255, 0.05);
     --algocloud-box-shadow: 0 7px 14px 0 rgba(3, 12, 51, 0.15), 0 3px 6px 0 rgba(0, 0, 0, 0.2);
     --algocloud-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
@@ -31161,7 +31168,7 @@ button,input,optgroup,select,textarea {
     --algocloud-navbar-vertical-link-disable-color: #4d5969;
     --algocloud-navbar-vertical-hr-color: rgba(255, 255, 255, 0.08);
     --algocloud-navbar-vertical-scrollbar-color: rgba(116, 129, 148, 0.3);
-    --algocloud-dropdown-bg: #000;
+    --algocloud-dropdown-bg: #242424;
     --algocloud-dropdown-color: #3d3d3d;
     --algocloud-dropdown-box-shadow: var(--algocloud-box-shadow);
     --algocloud-dropdown-link-color: #D6D6D7;

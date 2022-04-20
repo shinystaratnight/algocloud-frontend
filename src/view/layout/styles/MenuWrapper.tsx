@@ -11,9 +11,12 @@ const MenuWrapper = styled.div`
     background-color: transparent;
   }
 
-
+  @media (max-width: 1400px){
+    .last-updated {
+      position: fixed;
+  }
+}
   .last-updated {
-    position: fixed;
     bottom: 0px;
     left: 0px;
     width: 200px;
