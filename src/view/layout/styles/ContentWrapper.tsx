@@ -9,11 +9,6 @@ const ContentWrapper = styled.div`
   width: 100%;
   border-radius: 5px;
 
-
-  .chat-mobile-card {
-    padding: 0;
-  }
-
   .chat-mobile-card card-hover {
     padding: 0;
   }
@@ -21,12 +16,27 @@ const ContentWrapper = styled.div`
   .chat-mobile-card.card-hover:hover {
     background: #fff0;
     box-shadow: 0 0 0 1px rgb(9 9 9 / 0%) !important;
-}
+  }
+
+  .chat-mobile-card {
+    padding: 0;
+    height: 100%;
+  }
 
   .custom-chat {
-    background: #fff0;
-    height: auto;
+    background: var(--algocloud-card-bg-color);
+    height: 100%;
     box-shadow: 0 0 0 1px rgb(9 9 9 / 0%) !important;
+  }
+
+  @media (min-width: 992px) {
+    .custom-chat {
+      height: 650px;
+    }
+
+    .pool-custom-chat {
+      height: 600px;
+    }
   }
 
   .channel-header {

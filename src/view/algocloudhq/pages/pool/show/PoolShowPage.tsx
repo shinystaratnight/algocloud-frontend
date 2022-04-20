@@ -6,6 +6,8 @@ import { formatPercent, formattedNum } from 'src/modules/algocloudhq/utils';
 import actions from 'src/modules/algocloudhq/pool/show/poolShowActions';
 import selectors from 'src/modules/algocloudhq/pool/show/poolShowSelectors';
 import noteSelectors from 'src/modules/note/noteSelectors';
+import authSelectors from 'src/modules/auth/authSelectors';
+import settingsSelectors from 'src/modules/settings/settingsSelectors';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import Breadcrumb from 'src/view/shared/Breadcrumb';
 import PoolChart from 'src/view/algocloudhq/components/PoolChart';
@@ -14,6 +16,15 @@ import NoNotes, { NoteCard, NoteModal } from 'src/view/algocloudhq/components/No
 import noteActions from 'src/modules/note/noteActions';
 import ConfirmModal from 'src/view/shared/modals/ConfirmModal';
 import { images } from 'src/images/images';
+import ReactTooltip from 'react-tooltip';
+import { StreamChat } from 'stream-chat';
+import { Chat, Channel, ChannelHeader, MessageInput, MessageList, Thread, Window, CustomStyles, CustomClasses, ChannelHeaderProps, useChannelStateContext, Avatar } from 'stream-chat-react';
+import config from 'src/config';
+import Spinner from 'src/view/shared/Spinner';
+
+import 'stream-chat-react/dist/css/index.css';
+
+const apiKey = config.STREAM_API_KEY;
 
 const PoolShowPage = () => {
   const dispatch = useDispatch();
@@ -24,9 +35,22 @@ const PoolShowPage = () => {
   const [currentNote, setCurrentNote] = useState(null);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
+  const [chatClient, setChatClient] = useState(null);
+  const [channel, setChannel] = useState(null);
+  const selectTheme = useSelector(settingsSelectors.selectTheme);
+  const [theme, setTheme] = useState('dark');
+  const [count, setCount] = useState(0);
+
   useEffect(() => {
     dispatch(actions.doFetch(address));
   }, [dispatch, address]);
+
+  const currentUser = useSelector(
+    authSelectors.selectCurrentUser,
+  );
+  const userAvatar = useSelector(
+    authSelectors.selectCurrentUserAvatar,
+  );
 
   const loading = useSelector(selectors.selectLoading);
   const pool = useSelector(selectors.selectPool);
@@ -65,6 +89,47 @@ const PoolShowPage = () => {
     dispatch(noteActions.doPoolFetch(pool.id));
   }, [dispatch, pool]);
 
+  const userToConnect = { id: currentUser.id, name: currentUser.fullName, image: userAvatar };
+  useEffect(() => {
+    const initChat = async () => {
+      const client = StreamChat.getInstance(apiKey, {
+        enableInsights: true,
+        enableWSFallback: true,
+      });
+      const userToken = client.devToken(userToConnect.id);
+      // await client.disconnect();
+      await client.connectUser(userToConnect, userToken);
+      const channel = client.channel('messaging', address, {
+        image: image1,
+        name: poolName,
+      });
+      await channel.watch();
+      await channel.addMembers([userToConnect.id]);
+      setChatClient(client);
+      setChannel(channel);
+    };
+    setCount(count + 1);
+    if (!loading) {
+      setTimeout(() => {
+        if (count === 2) {
+          setCount(0);
+          initChat();
+        }
+      }, 500);
+    }
+
+    return () => chatClient?.disconnectUser();
+  }, [loading]);
+
+  useEffect(() => {
+    console.log('selectTheme: ', selectTheme);
+    if (selectTheme === "dark" || selectTheme === null) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  }, [selectTheme]);
+
   const handleOpenCreateNoteModal = () => {
     setOpenCreateModal(true);
   }
@@ -92,6 +157,49 @@ const PoolShowPage = () => {
     setOpenCreateModal(true);
   }
 
+  const customStyles: CustomStyles = {
+    '--bg-gradient-end': '#ffffff',
+    '--bg-gradient-start': '#070a0d',
+    '--black': '#ffffff',
+    '--blue-alice': '#00193d',
+    '--border': '#141924',
+    '--button-background': '#ffffff',
+    '--button-text': '#005fff',
+    '--grey': '#7a7a7a',
+    '--grey-gainsboro': '#2d2f2f',
+    '--grey-whisper': '#1c1e22',
+    '--modal-shadow': '#000000',
+    '--overlay': '#00000066',
+    '--overlay-dark': '#ffffffcc',
+    '--shadow-icon': '#00000080',
+    '--targetedMessageBackground': '#302d22',
+    '--transparent': 'transparent',
+    '--white': '#101418',
+    '--white-smoke': '#13151b',
+    '--white-snow': '#070a0d',
+  };
+
+  const customClasses: CustomClasses = {
+    chat: 'pool-custom-chat',
+    thread: 'custom-thread',
+    // messageList: 'custom-message-list'
+  };
+
+  const CustomChannelHeader = (props: ChannelHeaderProps) => {
+    const { title } = props;
+
+    const { channel } = useChannelStateContext();
+    const { name, image, member_count } = channel.data || {};
+
+    return (
+      <div className='d-flex align-items-center channel-header'>
+        <Avatar image={image1} name={name} shape='rounded' size={35} />
+        <Avatar image={image2} name={name} shape='rounded' size={35} />
+        <div>{title || name} {member_count} online</div>
+      </div>
+    );
+  };
+
   return (
     <>
       <Breadcrumb
@@ -102,29 +210,18 @@ const PoolShowPage = () => {
           [`Pool (${poolName})`]
         ]}
       />
-
-      {/* <ContentWrapper className="card-hover">
-        <PageTitle>
-          {loading && 'Pool'}
-          {!loading && `Pool (${pool['assetOneUnitName']}-${pool['assetTwoUnitName']})`}
-        </PageTitle>
-      </ContentWrapper> */}
       <div className='row' style={{ paddingTop: 20 }}>
-        <div className='col-sm-12 flex-row' style={{ display: 'flex', alignItems: 'center' }}>
-          <img className='token' src={image1} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
-          <img className='token' src={image2} style={{ width: 40, marginRight: 10, objectFit: 'contain', float: 'left', marginBottom: 8 }}></img>
-          <h3 style={{ marginRight: 20 }}>{poolName}</h3>
-          <h5 className='text-info' style={{ marginRight: 20 }}>{formattedNum(pool['lastDayVolume'], true)}</h5>
-          <h6 className={(parseFloat(formatPercent(pool['lastDayVolumeChange'], 3)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(pool['lastDayVolumeChange'], 2)}</h6>
-        </div>
-      </div>
-
-      <div className='row'>
-        <div className="col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
-          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h6 className="grow">Liqudity</h6>
-
+        <div className="ol" style={{ maxWidth: "100%", alignItems: "center" }}>
+          <div className="d-flex token-card" style={{ width: "min-content" }}>
+            <img className='token card-token' alt="" src={image1} style={{ width: 60, marginRight: 10 }}></img>
+            <img className='token card-token' alt="" src={image2} style={{ width: 60, marginRight: 10 }}></img>
+          </div>
+          <div className="col-sm w-100">
+            <h3 className='ww'>{poolName}</h3>
+          </div>
+          <div className="p-2 col-sm w-100">
+            <div className='d-flex align-items-center'>
+              <h6 className="ww">Liquidity</h6>
               <div className={(parseFloat(formatPercent(pool['lastDayLiquidityChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
                 <span className={(parseFloat(formatPercent(pool['lastDayLiquidityChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(pool['lastDayLiquidityChange'], 2)}
                   {pool['lastDayLiquidityChange'] ? (parseFloat(formatPercent(pool['lastDayLiquidityChange'], 6)) < 0) ? <span>{'  '}<i
@@ -136,28 +233,30 @@ const PoolShowPage = () => {
               </div>
             </div>
 
-            <h5 className='text-info-2'>{formattedNum(pool['liquidity'], true)}</h5>
-          </ContentWrapper>
-          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h6 className="grow">Volume (24hrs)</h6>
+            <h5 className="banner-ticker" >{formattedNum(pool['liquidity'], true)}</h5>
+          </div>
+          <div className="p-2 col-sm w-100">
+            <div className='d-flex align-items-center'>
+              <h6 className="ww">Volume (24hrs)</h6>
+              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
 
-              <div className={(parseFloat(formatPercent(pool['lastDayVolumeChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
-                <span className={(parseFloat(formatPercent(pool['lastDayVolumeChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(pool['lastDayVolumeChange'], 2)}
-                  {pool['lastDayVolumeChange'] ? (parseFloat(formatPercent(pool['lastDayVolumeChange'], 6)) < 0) ? <span>{'  '}<i
-                    className={`fas fa-arrow-down`}
-                  ></i></span> : <span>{'  '}<i
-                    className={`fas fa-arrow-up`}
-                  ></i></span> : ''}
-                </span>
+                <div className={(parseFloat(formatPercent(pool['lastDayVolumeChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
+                  <span className={(parseFloat(formatPercent(pool['lastDayVolumeChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(pool['lastDayVolumeChange'], 2)}
+                    {pool['lastDayVolumeChange'] ? (parseFloat(formatPercent(pool['lastDayVolumeChange'], 6)) < 0) ? <span>{'  '}<i
+                      className={`fas fa-arrow-down`}
+                    ></i></span> : <span>{'  '}<i
+                      className={`fas fa-arrow-up`}
+                    ></i></span> : ''}
+                  </span>
+                </div>
               </div>
             </div>
-            <h5 className='text-info-2'>{formattedNum(pool['lastDayVolume'], true)}</h5>
-          </ContentWrapper>
-          <ContentWrapper style={{ flex: 1 }} className="card-hover-2">
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <h6 className="grow">Volume (7days)</h6>
+            <h5 className='banner-ticker'>{formattedNum(pool['lastDayVolume'], true)}</h5>
 
+          </div>
+          <div className="p-2 col-sm w-100">
+            <div className='d-flex align-items-center'>
+              <h6 className="ww">Volume (7days)</h6>
               <div className={(parseFloat(formatPercent(pool['lastWeekVolumeChange'], 6)) < 0) ? 'ms-2 badge badge-soft-warning rounded-pill' : 'ms-2 badge badge-soft-info rounded-pill'} style={{ display: 'flex', alignItems: 'center' }}>
                 <span className={(parseFloat(formatPercent(pool['lastWeekVolumeChange'], 6)) < 0) ? 'text-danger' : 'text-success'}>{formatPercent(pool['lastWeekVolumeChange'], 2)}
                   {pool['lastWeekVolumeChange'] ? (parseFloat(formatPercent(pool['lastWeekVolumeChange'], 6)) < 0) ? <span>{'  '}<i
@@ -168,14 +267,12 @@ const PoolShowPage = () => {
                 </span>
               </div>
             </div>
-
-            <h5 className='text-info-2'>{formattedNum(pool['lastWeekVolume'], true)}</h5>
-          </ContentWrapper>
-          {/* <ContentWrapper style={{flex: 1}}>
-            <h6>{`${pool['assetOneReserves']} ${pool['assetOneUnitName']}`}</h6>
-            <h6>{`${pool['assetTwoReserves']} ${pool['assetTwoUnitName']}`}</h6>
-          </ContentWrapper> */}
+            <h5 className='banner-ticker' >{formattedNum(pool['lastWeekVolume'], true)}</h5>
+          </div>
         </div>
+      </div>
+
+      <div className='row'>
         <div className="asset-m0 col-lg-8 col-sm-12">
           <PoolChart
             color='#687dfd'
@@ -185,6 +282,30 @@ const PoolShowPage = () => {
             rateOneData={rateOneData}
             rateTwoData={rateTwoData}
           />
+        </div>
+        <div className="asset-m0 chat-section col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
+
+          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2 chat-mobile-card">
+            {
+              loading && <Spinner />
+            }
+            {
+              !loading && chatClient &&
+              <Chat client={chatClient}
+                customClasses={customClasses}
+                customStyles={customStyles}
+                theme={`messaging ${theme}`}>
+                <Channel channel={channel}>
+                  <Window>
+                    <CustomChannelHeader />
+                    <MessageList />
+                    <MessageInput />
+                    <Thread />
+                  </Window>
+                </Channel>
+              </Chat>
+            }
+          </ContentWrapper>
         </div>
       </div>
       {/* <ContentWrapper className="card-hover">

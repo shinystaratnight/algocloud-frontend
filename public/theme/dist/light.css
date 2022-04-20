@@ -48024,7 +48024,16 @@ button.btn.btn-light:hover {
 
 @media (min-width:992px) {
     .asset-m0 {
-        padding-left: 0
+        padding-left: 0;
+    }
+
+    /* .asset-m0.chat-section {
+        height: 720px;
+        max-height: 720px;
+    } */
+
+    .chat-mobile-card {
+        height: 720px;
     }
 
     .flex.col {

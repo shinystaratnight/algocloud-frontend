@@ -6,7 +6,6 @@ const LayoutWrapper = styled.div`
   font-size: 13px;
   max-width: 1400px;
   margin: 0 auto;
-
   button {
     font-size: 13px;
   }
