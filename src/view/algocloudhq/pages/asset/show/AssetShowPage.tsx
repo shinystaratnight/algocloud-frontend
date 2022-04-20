@@ -24,6 +24,7 @@ import config from 'src/config';
 import Spinner from 'src/view/shared/Spinner';
 
 import 'stream-chat-react/dist/css/index.css';
+import '@stream-io/stream-chat-css/dist/css/index.css';
 
 const apiKey = config.STREAM_API_KEY;
 
@@ -308,13 +309,13 @@ const AssetShowPage = () => {
         </div>
         <div className="asset-m0 col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
 
-          <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2 chat-mobile-card">
+          <ContentWrapper style={{ flex: 1, maxHeight: 525, padding: 0}} className="assets-mobile-card card-hover-2 chat-mobile-card">
             {
               loading && <Spinner />
             }
             {
               !loading && chatClient &&
-              <Chat client={chatClient}
+              <Chat  client={chatClient}
                 customClasses={customClasses}
                 customStyles={customStyles}
                 theme={`messaging ${theme}`}>
