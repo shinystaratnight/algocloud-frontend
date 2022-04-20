@@ -32,6 +32,8 @@ const overviewActions = {
         });
       }
 
+      console.log('OverviewAction doFetch: ', selectors.selectAssetFilter(getState()));
+
       const data = await AlgorandService.getAlgorandOverview(
         selectors.selectFavoriteFilter(getState()),
         selectors.selectAssetFilter(getState()),

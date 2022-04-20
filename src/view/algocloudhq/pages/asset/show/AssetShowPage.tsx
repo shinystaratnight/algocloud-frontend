@@ -218,7 +218,7 @@ const AssetShowPage = () => {
       <div className='row' style={{ paddingTop: 20 }}>
         <div className="ol" style={{ maxWidth: "100%", alignItems: "center" }}>
           <div className="token-card" style={{ width: "min-content" }}>
-            <img className='token card-token' src={image} style={{ width: 60 }}></img>
+            <img className='token card-token' alt="" src={image} style={{ width: 60 }}></img>
           </div>
           <div className="col-sm w-130">
             <div className='d-flex align-items-center'>
@@ -295,7 +295,6 @@ const AssetShowPage = () => {
             <h5 className='banner-ticker ' >{priceData.length > 0 ? formattedNum(priceData[priceData.length - 1]['close'], true) : formattedNum(0)}</h5>
           </div>
         </div>
-        {/* </div> */}
       </div>
       <div className='row'>
         <div className="assets-mobile col-lg-8 col-sm-12 ">
@@ -306,7 +305,7 @@ const AssetShowPage = () => {
             priceData={priceData}
           />
         </div>
-        <div className="asset-m0 col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
+        <div className="asset-m0 chat-section col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
 
           <ContentWrapper style={{ flex: 1 }} className="assets-mobile-card card-hover-2 chat-mobile-card">
             {
