@@ -2,6 +2,8 @@ import React, { useEffect, useState, useRef } from 'react';
 import { ResponsiveContainer } from 'recharts';
 import { useDispatch, useSelector } from 'react-redux';
 import selectors from 'src/modules/algocloudhq/overview/overviewSelectors';
+import authSelectors from 'src/modules/auth/authSelectors';
+import settingsSelectors from 'src/modules/settings/settingsSelectors';
 import { CHART_TYPES } from 'src/modules/algocloudhq/constants';
 import ContentWrapper from 'src/view/layout/styles/ContentWrapper';
 import TradingViewChart from 'src/view/algocloudhq/components/TradingViewChart';
@@ -13,19 +15,34 @@ import {
   FlexContainer,
   ChartWindowWrapper,
 } from 'src/view/algocloudhq/styled';
+import AssetChart from 'src/view/algocloudhq/components/AssetChart';
 import Spinner from 'src/view/shared/Spinner';
+import { StreamChat } from 'stream-chat';
+import { Chat, Channel, ChannelHeader, MessageInput, MessageList, Thread, Window, CustomStyles, CustomClasses, ChannelHeaderProps, useChannelStateContext, Avatar } from 'stream-chat-react';
+import config from 'src/config';
+
+import 'stream-chat-react/dist/css/index.css';
+import '@stream-io/stream-chat-css/dist/css/index.css';
+
+const apiKey = config.STREAM_API_KEY;
 
 
 function ShowcaseChart() {
-  const ref1 = useRef(null);
-  const ref2 = useRef(null);
-  const ref3 = useRef(null);
-  const ref4 = useRef(null);
-  const [width1, setWidth1] = useState(0);
-  const [width2, setWidth2] = useState(0);
-  const [width3, setWidth3] = useState(0);
-  const [width4, setWidth4] = useState(0);
 
+  const [chatClient, setChatClient] = useState(null);
+  const [channel, setChannel] = useState(null);
+  const selectTheme = useSelector(settingsSelectors.selectTheme);
+  const [theme, setTheme] = useState('dark');
+  const [count, setCount] = useState(0);
+
+  const currentUser = useSelector(
+    authSelectors.selectCurrentUser,
+  );
+  const userAvatar = useSelector(
+    authSelectors.selectCurrentUserAvatar,
+  );
+
+  const loading = useSelector(selectors.selectLoading);
   const showcase = useSelector(selectors.selectShowcase);
   const dailyData = useSelector(selectors.selectDailyData);
   const priceData = useSelector(selectors.selectHourlyPrices);
@@ -33,135 +50,129 @@ function ShowcaseChart() {
   for (let i = 0; i < images?.length; i++) {
     const img = images[i];
     let id = parseInt(img.split('-')[1]);
-    if (id == showcase['assetId']) {
+    if (id === showcase['assetId']) {
       image = `/assets/asa-list/${img}/icon.png`;
       break;
     }
   }
 
+  const userToConnect = { id: currentUser.id, name: currentUser.fullName, image: userAvatar };
   useEffect(() => {
-    if (ref1.current) {
-      const current: any = ref1.current;
-      setWidth1(Math.max(current.clientWidth, 400));
+    const initChat = async () => {
+      const client = StreamChat.getInstance(apiKey, {
+        enableInsights: true,
+        enableWSFallback: true,
+      });
+      const userToken = client.devToken(userToConnect.id);
+      // await client.disconnect();
+      await client.connectUser(userToConnect, userToken);
+      const channel = client.channel('messaging', 'AlgoCloudHQ', {
+        image: image,
+        name: 'AlgoCloudHQ',
+      });
+      await channel.watch();
+      await channel.addMembers([userToConnect.id]);
+      setChatClient(client);
+      setChannel(channel);
+    };
+    setCount(count + 1);
+    if (!loading) {
+      setTimeout(() => {
+        if (count === 2) {
+          setCount(0);
+          initChat();
+        }
+      }, 500);
     }
-    if (ref2.current) {
-      const current: any = ref2.current;
-      setWidth2(Math.max(current.clientWidth, 400));
+
+    return () => chatClient?.disconnectUser();
+  }, [loading]);
+
+  useEffect(() => {
+    console.log('selectTheme: ', selectTheme);
+    if (selectTheme === "dark" || selectTheme === null) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
     }
-    if (ref3.current) {
-      const current: any = ref3.current;
-      setWidth3(Math.max(current.clientWidth, 400));
-    }
-    if (ref4.current) {
-      const current: any = ref4.current;
-      setWidth4(Math.max(current.clientWidth, 400));
-    }
-  }, [ref1, ref2, ref3, ref4])
+  }, [selectTheme]);
+
+  const customStyles: CustomStyles = {
+    '--bg-gradient-end': '#ffffff',
+    '--bg-gradient-start': '#070a0d',
+    '--black': '#ffffff',
+    '--blue-alice': '#00193d',
+    '--border': '#141924',
+    '--button-background': '#ffffff',
+    '--button-text': '#005fff',
+    '--grey': '#7a7a7a',
+    '--grey-gainsboro': '#2d2f2f',
+    '--grey-whisper': '#1c1e22',
+    '--modal-shadow': '#000000',
+    '--overlay': '#00000066',
+    '--overlay-dark': '#ffffffcc',
+    '--shadow-icon': '#00000080',
+    '--targetedMessageBackground': '#302d22',
+    '--transparent': 'transparent',
+    '--white': '#101418',
+    '--white-smoke': '#13151b',
+    '--white-snow': '#070a0d',
+  };
+
+  const customClasses: CustomClasses = {
+    chat: 'custom-chat',
+    thread: 'custom-thread',
+    // messageList: 'custom-message-list'
+  };
+
+  const CustomChannelHeader = (props: ChannelHeaderProps) => {
+    const { title } = props;
+
+    const { channel } = useChannelStateContext();
+    const { name, image, member_count } = channel.data || {};
+
+    return (
+      <div className='d-flex align-items-center channel-header'>
+        <Avatar image={image} name={name} shape='rounded' size={35} />
+        <div>{title || name} {member_count} online</div>
+      </div>
+    );
+  };
 
   return (
-    <FlexContainer gap="20px" className="showcase-row">
-      <div className="container w-50 w-100 card bg-box rounded card-hover-3 m-0 p-0">
-        <div className="ol" style={{ maxWidth: "100%", alignItems: "center" }}> <div className="p-3 token-card" style={{ width: "min-content" }}><img className='token card-token' src={image} style={{ width: 60 }}></img></div>
-          <div className="p-2  col-sm w-130">
-            <h5 className="banner-ticker" >{showcase['unitName']}</h5>
-            <Link to={`/algocloudhq/assets/${showcase.assetId}`}>
-
-              <h6 className='ww'>{showcase.name}</h6></Link>
-
-          </div>
-          <div className="p-2  col-sm w-130">
-            <h5 className='text-info banner-ticker' >{(showcase.price)?.toFixed(4) || ''}</h5>
-            <h6 className="ww">Price (Live)</h6>
-          </div>
-          <div className="p-2  col-sm w-130">
-            <h5 className={showcase.lastDayPriceChange ? 'text-danger ww' : 'text-success ww'}> {(showcase.lastDayPriceChange) ? (parseFloat(formatPercent(showcase.lastDayPriceChange)) < 0) ? <span className="ww-1">{'  '}<div  >{(showcase.lastDayPriceChange)?.toFixed(3) || ''}</div><i
-              className={`fas fa-arrow-down pl-2`}
-            ></i></span> : <span>{'  '}<i
-              className={`fas fa-arrow-up pl-2`}
-            ></i></span> : ''}</h5>
-            <h6 className="ww">Price (24hrs)</h6>
-          </div>
-          <div className="p-2  col-sm w-130">
-            <h5 className={showcase.lastDayLiquidityChange ? 'text-danger ww' : 'text-success ww'}> {(showcase.lastDayLiquidityChange) ? (parseFloat(formatPercent(showcase.lastDayLiquidityChange)) < 0) ? <span className="ww-1">{'  '}<div  >{(showcase.lastDayLiquidityChange)?.toFixed(3) || ''}</div><i
-              className={`fas fa-arrow-down pl-2`}
-            ></i></span> : <span>{'  '}<i
-              className={`fas fa-arrow-up pl-2`}
-            ></i></span> : ''}</h5>
-            <h6 className="ww">Liquidity (24hrs)</h6>
-          </div>
-          <div className="p-2  col-sm w-130">
-            <h5 className={showcase.lastDayVolumeChange ? 'text-danger ww' : 'text-success ww'}> {(showcase.lastDayVolumeChange) ? (parseFloat(formatPercent(showcase.lastDayVolumeChange)) < 0) ? <span className="ww-1">{'  '}<div  >{(showcase.lastDayVolumeChange)?.toFixed(3) || ''}</div><i
-              className={`fas fa-arrow-down pl-2`}
-            ></i></span> : <span>{'  '}<i
-              className={`fas fa-arrow-up pl-2`}
-            ></i></span> : ''}</h5>
-            <h6 className="ww">Volume (24hrs)</h6>
-          </div>
-        </div>
+    <div className='row'>
+      <div className="assets-mobile col-lg-8 col-sm-12 ">
+        <AssetChart
+          color='--var(algoucloud-primary)'
+          data={showcase}
+          assetData={dailyData}
+          priceData={priceData}
+        />
       </div>
-      <div className="showcase-row-1">
-        <ContentWrapper gap="10px" className="w-50 w-100 card bg-box rounded card-hover m-0">
-          <ResponsiveContainer aspect={40 / 28} ref={ref1}>
-            <TradingViewChart
-              data={dailyData}
-              base={0}
-              title={`<a href="/algocloudhq/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Liquidity`}
-              field="liquidity"
-              width={width1}
-              type='area'
-              utc={true}
-              timeField='date'
-            />
-          </ResponsiveContainer>
-        </ContentWrapper>
-        <ChartWindowWrapper gap="10px" className="w-50 w-100 card bg-box rounded card-hover m-0">
-          <ResponsiveContainer aspect={40 / 28} ref={ref2}>
-            <TradingViewChart
-              data={dailyData}
-              base={0}
-              title={`<a href="/algocloudhq/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Volume (24hr)`}
-              field={'lastDayVolume'}
-              width={width2}
-              type={CHART_TYPES.BAR}
-              timeField='date'
-              useWeekly={false}
-              utc={true}
-            />
-          </ResponsiveContainer>
-        </ChartWindowWrapper>
-      </div>
-      <div className="showcase-row-1">
-        <ChartWindowWrapper gap="10px" className="w-50 w-100 card bg-box rounded card-hover m-0">
-          <ResponsiveContainer aspect={40 / 28} ref={ref3}>
-            <PriceStickChart
-              data={priceData}
-              width={width3}
-              type={CHART_TYPES.BAR}
-              base={0}
-              title={`<a href="/algocloudhq/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Price`}
-              paddingTop='0'
-              valueFormatter={(val) => val?.toFixed(4)}
-            // duration={duration}
-            />
-          </ResponsiveContainer>
-        </ChartWindowWrapper>
-        <ContentWrapper gap="10px" className="w-50 w-100 card bg-box rounded card-hover m-0">
-          <ResponsiveContainer aspect={40 / 28} ref={ref4}>
-            <TradingViewChart
-              data={dailyData}
-              base={0}
-              title={`<a href="/algocloudhq/assets/${showcase.assetId}">${showcase.unitName || ''}</a> Market Cap`}
-              field={'marketCap'}
-              width={width4}
-              type={CHART_TYPES.AREA}
-              timeField='date'
-              useWeekly={false}
-              utc={true}
-            />
-          </ResponsiveContainer>
+      <div className="asset-m0 chat-section col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
+        <ContentWrapper style={{ flex: 1, maxHeight: 525, padding: 0 }} className="assets-mobile-card card-hover-2 chat-mobile-card">
+          {
+            loading && <Spinner />
+          }
+          {
+            !loading && chatClient &&
+            <Chat client={chatClient}
+              customClasses={customClasses}
+              customStyles={customStyles}
+              theme={`messaging ${theme}`}>
+              <Channel channel={channel}>
+                <Window>
+                  <CustomChannelHeader />
+                  <MessageList />
+                  <MessageInput />
+                  <Thread />
+                </Window>
+              </Channel>
+            </Chat>
+          }
         </ContentWrapper>
       </div>
-    </FlexContainer>
+    </div>
   )
 }
 

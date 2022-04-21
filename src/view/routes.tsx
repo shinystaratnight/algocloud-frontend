@@ -5,6 +5,13 @@ const permissions = Permissions.values;
 
 const privateRoutes = [
   {
+    path: '/overview',
+    loader: () =>
+      import('src/view/overview/OverviewPage'),
+    permissionRequired: null,
+    exact: true,
+  },
+  {
     path: '/dashboard',
     loader: () =>
       import('src/view/dashboard/DashboardPage'),

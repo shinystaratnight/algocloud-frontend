@@ -39,6 +39,24 @@ const schema = yup.object().shape({
       max: 1,
     },
   ),
+  address1: yupFormSchemas.string(
+    i18n('user.fields.address1'),
+    {
+      max: 175,
+    },
+  ),
+  address2: yupFormSchemas.string(
+    i18n('user.fields.address2'),
+    {
+      max: 175,
+    },
+  ),
+  address3: yupFormSchemas.string(
+    i18n('user.fields.address3'),
+    {
+      max: 175,
+    },
+  ),
 });
 
 function ProfileFormPage(props) {
@@ -54,12 +72,16 @@ function ProfileFormPage(props) {
 
   const [initialValues] = useState(() => {
     const record = currentUser || {};
+    console.log('currentUser: ', currentUser);
 
     return {
       firstName: record.firstName,
       lastName: record.lastName,
       phoneNumber: record.phoneNumber,
       avatars: record.avatars || [],
+      address1: record.address1 || '',
+      address2: record.address2 || '',
+      address3: record.address3 || '',
     };
   });
 
@@ -86,14 +108,14 @@ function ProfileFormPage(props) {
           <div className="row">
             <div className="col-lg-7 col-md-8 col-12">
               <div className="form-group">
-              <div className="col-lg-7 col-md-8 col-12">
-              <ImagesFormItem
-                name="avatars"
-                label={i18n('user.fields.avatars')}
-                storage={Storage.values.userAvatarsProfiles}
-                max={1}
-              />
-            </div>
+                <div className="col-lg-7 col-md-8 col-12">
+                  <ImagesFormItem
+                    name="avatars"
+                    label={i18n('user.fields.avatars')}
+                    storage={Storage.values.userAvatarsProfiles}
+                    max={1}
+                  />
+                </div>
                 <label
                   className="col-form-label"
                   htmlFor="email"
@@ -137,24 +159,24 @@ function ProfileFormPage(props) {
               />
             </div>
             <h1 className="pt-4 pb-1">Algo Portfolio</h1>
-<div className="dropdown-divider">            </div>
+            <div className="dropdown-divider">            </div>
             <div className="col-lg-7 col-md-8 col-12">
               <InputFormItem
-                name="Algo Portfolio"
-                label={i18n('Algorand Address #1')}
-              disabled/>
+                name="address1"
+                label={i18n('user.fields.address1')}
+              />
             </div>
             <div className="col-lg-7 col-md-8 col-12">
               <InputFormItem
-                name="Algo Portfolio"
-                label={i18n('Algorand Address #2')}
-              disabled/>
+                name="address2"
+                label={i18n('user.fields.address2')}
+              />
             </div>
             <div className="col-lg-7 col-md-8 col-12">
               <InputFormItem
-                name="Algo Portfolio"
-                label={i18n('Algorand Address #3')}
-              disabled/>
+                name="address3"
+                label={i18n('user.fields.address3')}
+              />
             </div>
 
           </div>
