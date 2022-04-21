@@ -29,13 +29,29 @@ const ContentWrapper = styled.div`
     box-shadow: 0 0 0 1px rgb(9 9 9 / 0%) !important;
   }
 
-  @media (min-width: 992px) {
+  .pool-custom-chat {
+    background: var(--algocloud-card-bg-color);
+    height: 100%;
+    box-shadow: 0 0 0 1px rgb(9 9 9 / 0%) !important;
+  }
+
+  @media (max-width: 576px) {
     .custom-chat {
-      height: 650px;
+      height: 400px;
     }
 
     .pool-custom-chat {
-      height: 600px;
+      height: 400px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .custom-chat {
+      // height: 650px;
+    }
+
+    .pool-custom-chat {
+      // height: 600px;
     }
   }
 

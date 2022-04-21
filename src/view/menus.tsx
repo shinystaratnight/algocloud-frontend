@@ -6,6 +6,13 @@ const permissions = Permissions.values;
 
 export default [
   {
+    path: '/overview',
+    exact: true,
+    icon: 'fa-solid fa-table-columns',
+    label: i18n('overview.menu'),
+    permissionRequired: null,
+  },
+  {
     path: '/dashboard',
     exact: true,
     icon: 'fa-solid fa-table-columns',
