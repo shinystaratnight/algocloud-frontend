@@ -14,12 +14,23 @@ import { Link } from 'react-router-dom';
 import DarkMode from 'src/view/algorand/components/DarkMode/DarkMode';
 import PipeConnect from 'src/view/Portfolio/components/PipeConnect';
 
+import { StreamChat } from 'stream-chat';
+
+import 'stream-chat-react/dist/css/index.css';
+import '@stream-io/stream-chat-css/dist/css/index.css';
+
+const apiKey = config.STREAM_API_KEY;
+
 function Header(props) {
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
   const [isSearched, setIsSearched] = useState(false);
   const [filtered, setFiltered] = useState([]);
   const [inputValue, setInputValue] = useState('');
+
+  const [chatClient, setChatClient] = useState(null);
+
+  const [messages, setMessages] = useState([]);
 
   const wrapperRef = useRef(null);
 
@@ -79,6 +90,10 @@ function Header(props) {
     dispatch(layoutActions.doToggleMenu());
   };
 
+  const currentUser = useSelector(
+    authSelectors.selectCurrentUser,
+  );
+
   const userText = useSelector(
     authSelectors.selectCurrentUserNameOrEmailPrefix,
   );
@@ -93,6 +108,62 @@ function Header(props) {
   );
 
   const assets = useSelector(assetListSelectors.selectAssets);
+
+  const filter = { type: 'messaging' };
+  const sort = [{ last_message_at: -1 }];
+  const userToConnect = { id: currentUser.id, name: currentUser.fullName, image: userAvatar };
+  useEffect(() => {
+    const initChat = async () => {
+      const client = StreamChat.getInstance(apiKey, {
+        enableInsights: true,
+        enableWSFallback: true,
+      });
+      const userToken = client.devToken(userToConnect.id);
+      // await client.disconnect();
+      await client.connectUser(userToConnect, userToken);
+      client.on(event => {
+        if (event.total_unread_count !== undefined) {
+          console.log("event.total_unread_count", event.total_unread_count);
+          setMessages([]);
+        }
+
+        if (event.unread_channels !== undefined) {
+          console.log("event.unread_channels", event.unread_channels);
+          setMessages([]);
+        }
+      });
+      setChatClient(client);
+    };
+
+    initChat();
+
+    return () => chatClient?.disconnectUser();
+  }, [currentUser]);
+
+  useEffect(() => {
+    if (chatClient) {
+      getChannels();
+    }
+  }, [chatClient]);
+
+  const getChannels = async () => {
+    const channels = await chatClient.queryChannels(filter, sort, {
+      watch: true, // this is the default 
+      state: true,
+    });
+
+    const unread: any[] = await Promise.all(
+      channels.map(async (channel) => {
+        const messages = await channel.query();
+        const lastRead = messages.read.filter(message => message.unread_messages > 0 && message.user.id === userToConnect.id);
+        const unreadMessages = messages.messages.filter(message => lastRead && lastRead.length > 0 && Date.parse(message.created_at) > Date.parse(lastRead[0].last_read));
+        return { channel: messages.channel, unreadMessages: unreadMessages }
+      })
+    );
+    const filtered = unread.filter(item => item.unreadMessages.length > 0);
+
+    setMessages(filtered);
+  }
 
   const doSignout = () => {
     dispatch(authActions.doSignout());
@@ -134,6 +205,37 @@ function Header(props) {
     }
   }
 
+  const markAll = async (e) => {
+    e.preventDefault();
+    if (chatClient) {
+      await chatClient.markAllRead();
+    }
+  }
+
+  const newMessages = () => {
+    return messages.map(message => {
+      return message.unreadMessages.map((unreadMessage, index) => {
+        return (
+          <div key={index}>
+            <div className="list-group-item">
+              <a className="notification notification-flush notification-unread" href="#!">
+                <div className="notification-avatar">
+                  <div className="avatar avatar-2xl me-3">
+                    <img className="rounded-circle" src={unreadMessage.user.image} alt="avatar" />
+                  </div>
+                </div>
+                <div className="notification-body">
+                  <p className="mb-1"><strong>{unreadMessage.user.name}</strong> sent to your {message.channel.name} : {unreadMessage.text}</p>
+                  {/* <span className="notification-time"><span className="me-2" role="img" aria-label="Emoji">💬</span>Just now</span> */}
+                </div>
+              </a>
+            </div>
+          </div>
+        )
+      });
+    });
+  }
+
   return (
     <HeaderWrapper id="stickyTop" >
       <div id="stickyTop-2" className="navbar sticky-top">
@@ -145,7 +247,7 @@ function Header(props) {
           <i className="fas fa-bars" />
         </button>
         <a className="algocloud-navbar-brand" href=".">
-          <div className="algocloud-font ">AlgoCloud</div>
+          <div className="algocloud-font">AlgoCloud</div>
           <svg className="algocloud-font-logo" xmlns="http://www.w3.org/2000/svg" id="algocloud-font-logo" data-name="Layer 1" viewBox="0 0 230 230"><path d="M120.38942,116.97445q-4.12061.81445-8.23974,1.43652-4.12134.624-7.47413,1.10254A50.50469,50.50469,0,0,0,92.1238,122.867a20.24693,20.24693,0,0,0-8.33594,6.17969,15.37525,15.37525,0,0,0-2.97022,9.62988q0,8.335,6.08448,12.69531,6.08349,4.36084,15.47412,4.35938a33.942,33.942,0,0,0,15.90527-3.59278,27.81533,27.81533,0,0,0,10.82715-9.72558,25.1984,25.1984,0,0,0,3.92871-13.89356V112.90218a20.87085,20.87085,0,0,1-5.22217,2.251A76.457,76.457,0,0,1,120.38942,116.97445Z" fill="currentColor" /><path d="M114.9,5.14529a110,110,0,1,0,110,110A110,110,0,0,0,114.9,5.14529Zm58.66712,175.9776H134.85768V160.71371h-1.14941a40.93579,40.93579,0,0,1-9.48584,12.12109,42.77205,42.77205,0,0,1-14.27686,8.14453,58.15417,58.15417,0,0,1-19.25879,2.92188,60.81052,60.81052,0,0,1-25.104-4.93457,39.67133,39.67133,0,0,1-17.39062-14.65918q-6.37355-9.72363-6.37159-24.29,0-12.26367,4.50342-20.60059a36.46676,36.46676,0,0,1,12.26416-13.41357,59.42139,59.42139,0,0,1,17.67822-7.66553,133.236,133.236,0,0,1,20.83985-3.64111q12.83862-1.34034,20.69629-2.53906,7.85522-1.19679,11.40234-3.59327a8.00139,8.00139,0,0,0,3.54492-7.09033v-.57471q0-9.1018-5.70117-14.085-5.70117-4.9812-16.14453-4.98242-11.02,0-17.53467,4.83887a22.706,22.706,0,0,0-8.62353,12.1206L46.9944,75.72494A51.63992,51.63992,0,0,1,58.30055,52.48959,54.84107,54.84107,0,0,1,80.09889,37.35091Q93.4656,32.0328,111.09548,32.033a94.73173,94.73173,0,0,1,23.52295,2.87452,62.04052,62.04052,0,0,1,20.02539,8.91064,43.61658,43.61658,0,0,1,13.8457,15.47461q5.07788,9.43872,5.07764,22.56445Z" fill="currentColor" /></svg>
         </a>
 
@@ -183,7 +285,6 @@ function Header(props) {
             <i className='fas fa-search'></i>
           </button>
 
-
           <span className="i18n-select">
             <PipeConnect />
           </span>
@@ -212,7 +313,7 @@ function Header(props) {
                     <div className="col-auto">
                       <h6 className="card-header-title mb-0">Notifications</h6>
                     </div>
-                    <div className="col-auto ps-0 ps-sm-3"><a className="card-link fw-normal" href="#">Mark all as read</a></div>
+                    <div className="col-auto ps-0 ps-sm-3"><a className="card-link fw-normal" href="#" onClick={markAll}>Mark all as read</a></div>
                   </div>
                 </div>
                 <div className="scrollbar-overlay os-host os-theme-dark os-host-resize-disabled os-host-scrollbar-horizontal-hidden os-host-scrollbar-vertical-hidden os-host-transition notification-body"
@@ -230,7 +331,11 @@ function Header(props) {
                       <div className="os-content-2"
                         style={{ padding: "0px", height: "100%", width: "100%" }} >
                         <div className="list-group list-group-flush fw-normal fs--1">
-                          <div className="list-group-title border-bottom">NEW</div>
+                          <div className="list-group-title border-bottom">NEW MESSAGES</div>
+                          {
+                            newMessages()
+                          }
+                          {/* <div className="list-group-title border-bottom">NEW</div>
                           <div className="list-group-item">
                             <a className="notification notification-flush notification-unread" href="#!">
                               <div className="notification-avatar">
@@ -256,7 +361,7 @@ function Header(props) {
                                 <span className="notification-time"><svg className="svg-inline--fa fa-gratipay fa-w-16 me-2 text-danger" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="gratipay" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512" data-fa-i2svg=""><path fill="currentColor" d="M248 8C111.1 8 0 119.1 0 256s111.1 248 248 248 248-111.1 248-248S384.9 8 248 8zm114.6 226.4l-113 152.7-112.7-152.7c-8.7-11.9-19.1-50.4 13.6-72 28.1-18.1 54.6-4.2 68.5 11.9 15.9 17.9 46.6 16.9 61.7 0 13.9-16.1 40.4-30 68.1-11.9 32.9 21.6 22.6 60 13.8 72z"></path></svg><span className="me-2 fab fa-gratipay text-danger"></span>9hr</span>
                               </div>
                             </a>
-                          </div>
+                          </div> */}
                           <div className="list-group-title border-top border-bottom">EARLIER</div>
                           <div className="list-group-item">
                             <a className="notification notification-flush" href="#!">
@@ -324,12 +429,14 @@ function Header(props) {
                   <div className="card-body px-3">
                     <div className="row text-center gx-0 gy-0">
                       <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="/profile" target="_blank">
-                        <div className="avatar avatar-2xl"> <Avatar
-                          size="large"
-                          src={userAvatar || undefined}
-                          alt="avatar"
-                          className="rounded-circle"
-                        /></div>
+                        <div className="avatar avatar-2xl">
+                          <Avatar
+                            size="large"
+                            src={userAvatar || undefined}
+                            alt="avatar"
+                            className="rounded-circle"
+                          />
+                        </div>
                         <p className="mb-0 fw-medium  text-truncate fs--2 pt-1">Account</p>
                       </a></div>
                       <div className="col-4"><a className="d-block hover-bg-200 px-2 py-3 rounded-3 text-center text-decoration-none" href="https://algorand.com/" target="_blank"><img className="rounded" src="../../assets/img/nav-icons/algorand-logo.png" alt="" width="40" height="40" />

@@ -1,6 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { ResponsiveContainer } from 'recharts';
 import { useDispatch, useSelector } from 'react-redux';
+import actions from 'src/modules/algocloudhq/asset/show/assetShowActions';
+import assetShowSelectors from 'src/modules/algorand/asset/show/assetShowSelectors';
 import selectors from 'src/modules/algocloudhq/overview/overviewSelectors';
 import authSelectors from 'src/modules/auth/authSelectors';
 import settingsSelectors from 'src/modules/settings/settingsSelectors';
@@ -44,8 +46,8 @@ function ShowcaseChart() {
 
   const loading = useSelector(selectors.selectLoading);
   const showcase = useSelector(selectors.selectShowcase);
-  const dailyData = useSelector(selectors.selectDailyData);
-  const priceData = useSelector(selectors.selectHourlyPrices);
+  // const dailyData = useSelector(selectors.selectDailyData);
+  // const priceData = useSelector(selectors.selectHourlyPrices);
   let image = showcase['assetId'] === 0 ? '/assets/asa-list/ALGO/icon.png' : `https://algoexplorer.io/images/assets/big/light/${showcase['assetId']}.png`;
   for (let i = 0; i < images?.length; i++) {
     const img = images[i];
@@ -97,6 +99,16 @@ function ShowcaseChart() {
     }
   }, [selectTheme]);
 
+  const dispatch = useDispatch();
+  const assetId = showcase.assetId;
+  useEffect(() => {
+    dispatch(actions.doReset());
+    dispatch(actions.doFetch(assetId));
+  }, [dispatch, assetId]);
+
+  const assetData = useSelector(assetShowSelectors.selectDailyAssetData);
+  const priceData = useSelector(assetShowSelectors.selectHourlyPrices);
+
   const customStyles: CustomStyles = {
     '--bg-gradient-end': '#ffffff',
     '--bg-gradient-start': '#070a0d',
@@ -145,7 +157,7 @@ function ShowcaseChart() {
         <AssetChart
           color='--var(algoucloud-primary)'
           data={showcase}
-          assetData={dailyData}
+          assetData={assetData}
           priceData={priceData}
         />
       </div>

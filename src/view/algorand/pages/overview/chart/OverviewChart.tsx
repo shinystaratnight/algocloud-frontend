@@ -33,7 +33,7 @@ function ShowcaseChart() {
   for (let i = 0; i < images?.length; i++) {
     const img = images[i];
     let id = parseInt(img.split('-')[1]);
-    if (id == showcase['assetId']) {
+    if (id === showcase['assetId']) {
       image = `/assets/asa-list/${img}/icon.png`;
       break;
     }

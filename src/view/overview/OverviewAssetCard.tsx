@@ -95,7 +95,7 @@ const OverviewAssetCard = (props) => {
         </ResponsiveContainer>
       )}
       <div style={{ height: '60px' }}></div>
-      <OptionButtonBottomContainer className="chart-rack" >
+      <OptionButtonBottomContainer className="chart-rack">
         <OptionButtonContainer className="chart-buttons" style={{ textIndent: "0px" }}>
           <OptionButton className="chart-button"
             active={chartFilter === ASSET_CHART_VIEW.LIQUIDITY}
