@@ -41,7 +41,7 @@ const AssetShowPage = () => {
   for (let i = 0; i < images?.length; i++) {
     const img = images[i];
     let id = parseInt(img.split('-')[1]);
-    if (id == asset['assetId']) {
+    if (id === asset['assetId']) {
       image = `/assets/asa-list/${img}/icon.png`;
       break;
     }
