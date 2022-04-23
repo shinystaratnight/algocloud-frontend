@@ -31603,3 +31603,36 @@ a.fw-medium.py-1.link-600.nav-link,p.fw-medium.text-500.text-700.mb-0.fw-bold.na
     z-index: var(--z-elevate);
     color: var(--color-hover) !important;
 }
+
+
+textarea.rta__textarea.str-chat__textarea__textarea {
+    color: var(--algocloud-body-color);
+}
+
+.str-chat__input-flat .str-chat__textarea>textarea:focus {
+    border: none;
+    color: var(--algocloud-body-color);
+}
+
+.gEa-DpE .str-chat__message--me .str-chat__message-text-inner, .gEa-DpE .str-chat__message-simple--me .str-chat__message-text-inner {
+    background: rgb(29, 155, 240);
+    color: #fff;
+   
+}
+
+.str-chat__li--single .str-chat__message-text-inner{
+ padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 15px;
+}
+
+.str-chat__date-separator {
+    display: none;
+}
+
+.str-chat__avatar-fallback {
+    background-color: var(--algocloud-btn-link-color);
+    color: white;
+}

@@ -70,6 +70,20 @@ const ContentWrapper = styled.div`
       min-height: 60px;
   }
 
+  .str-chat__message-text-inner, .str-chat__message-simple-text-inner {
+    position: relative;
+    display: block;
+    min-height: 32px;
+    color: var(--algocloud-body-color);
+    background: var(--accent-brand-a10);
+    border: 0px;
+    margin-left: 0;
+}
+
+  .str-chat__date-separator {
+    display: none;
+}
+
   .str-chat__date-separator-date {
     font-size: 14px;
     font-size: var(--md-font);
@@ -77,6 +91,7 @@ const ContentWrapper = styled.div`
     font-weight: var(--font-weight-bold);
     color: #00000099;
     color: var(--algo-body);
+    display:none
   }
 
   time.str-chat__message-simple-timestamp {
@@ -137,8 +152,9 @@ const ContentWrapper = styled.div`
   padding-top: 0px;
 }
 
-.str-chat__message--me .str-chat__message-text-inner, .str-chat__message-simple--me .str-chat__message-text-inner {
-  background: var(--button-secondary-bg);
+.str-chat__message-simple--me .str-chat__message-text-inner {
+  background: var(--accent-brand-lighter);
+  color: var(--algocloud-100);
 }
 
 .str-chat__reverse-infinite-scroll {
