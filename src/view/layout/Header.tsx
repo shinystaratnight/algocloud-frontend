@@ -16,9 +16,6 @@ import PipeConnect from 'src/view/Portfolio/components/PipeConnect';
 
 import { StreamChat } from 'stream-chat';
 
-import 'stream-chat-react/dist/css/index.css';
-import '@stream-io/stream-chat-css/dist/css/index.css';
-
 const apiKey = config.STREAM_API_KEY;
 
 function Header(props) {

@@ -211,7 +211,7 @@ const PoolShowPage = () => {
         ]}
       />
       <div className='row' style={{ paddingTop: 20 }}>
-        <div className="ol" style={{ maxWidth: "100%", alignItems: "center" }}>
+        <div className="ol-token-card" style={{ maxWidth: "100%", alignItems: "center" }}>
           <div className="d-flex token-card" style={{ width: "min-content" }}>
             <img className='token card-token' alt="" src={image1} style={{ width: 60, marginRight: 10 }}></img>
             <img className='token card-token' alt="" src={image2} style={{ width: 60, marginRight: 10 }}></img>

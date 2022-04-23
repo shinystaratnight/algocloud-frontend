@@ -23,7 +23,6 @@ import { StreamChat } from 'stream-chat';
 import { Chat, Channel, ChannelHeader, MessageInput, MessageList, Thread, Window, CustomStyles, CustomClasses, ChannelHeaderProps, useChannelStateContext, Avatar } from 'stream-chat-react';
 import config from 'src/config';
 
-import 'stream-chat-react/dist/css/index.css';
 import '@stream-io/stream-chat-css/dist/css/index.css';
 
 const apiKey = config.STREAM_API_KEY;
@@ -110,25 +109,7 @@ function ShowcaseChart() {
   const priceData = useSelector(assetShowSelectors.selectHourlyPrices);
 
   const customStyles: CustomStyles = {
-    '--bg-gradient-end': '#ffffff',
-    '--bg-gradient-start': '#070a0d',
-    '--black': '#ffffff',
-    '--blue-alice': '#00193d',
-    '--border': '#141924',
-    '--button-background': '#ffffff',
-    '--button-text': '#005fff',
-    '--grey': '#7a7a7a',
-    '--grey-gainsboro': '#2d2f2f',
-    '--grey-whisper': '#1c1e22',
-    '--modal-shadow': '#000000',
-    '--overlay': '#00000066',
-    '--overlay-dark': '#ffffffcc',
-    '--shadow-icon': '#00000080',
-    '--targetedMessageBackground': '#302d22',
-    '--transparent': 'transparent',
-    '--white': '#101418',
-    '--white-smoke': '#13151b',
-    '--white-snow': '#070a0d',
+    '--border': '',
   };
 
   const customClasses: CustomClasses = {
@@ -174,7 +155,7 @@ function ShowcaseChart() {
               theme={`messaging ${theme}`}>
               <Channel channel={channel}>
                 <Window>
-                  <CustomChannelHeader />
+                  <ChannelHeader />
                   <MessageList />
                   <MessageInput />
                   <Thread />

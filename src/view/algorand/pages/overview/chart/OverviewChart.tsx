@@ -61,7 +61,7 @@ function ShowcaseChart() {
   return (
     <FlexContainer gap="20px" className="showcase-row">
       <div className="container w-50 w-100 card bg-box rounded card-hover-3 m-0 p-0">
-        <div className="ol" style={{ maxWidth: "100%", alignItems: "center" }}> <div className="p-3 token-card" style={{ width: "min-content" }}><img className='token card-token' src={image} style={{ width: 60 }}></img></div>
+        <div className="ol-token-card" style={{ maxWidth: "100%", alignItems: "center" }}> <div className="p-3 token-card" style={{ width: "min-content" }}><img className='token card-token' src={image} style={{ width: 60 }}></img></div>
           <div className="p-2  col-sm w-130">
             <h5 className="banner-ticker" >{showcase['unitName']}</h5>
             <Link to={`/algorand/assets/${showcase.assetId}`}>
