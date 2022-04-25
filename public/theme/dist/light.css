@@ -198,6 +198,10 @@ button#wallet-connect-2 {
         border-radius: 5px;
     }
 
+    .assets-mobile-card.card-hover-2.chat-mobile-card {
+        padding: 0 !important;
+    }
+
     .badge-soft-info, .badge-soft-warning {
         background-color: rgb(38 217 202 / 0%) !important;
         font-size: calc(.8rem + .1rem);

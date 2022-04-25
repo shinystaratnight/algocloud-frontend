@@ -16,6 +16,15 @@ import {
   RowBetween
 } from 'src/view/algorand/styled';
 import OverviewContent from 'src/view/overview/OverviewContent';
+import moment from 'moment';
+
+export const toLocalTime = (time: number) => {
+  let utcDate = new Date(time * 1000).toString();
+  let arr = utcDate.split('GMT');
+  utcDate = arr[0] + 'UTC'
+  let localDate = new Date(utcDate).getTime() / 1000;
+  return localDate
+}
 
 const OverviewAssetCard = (props) => {
   const {
@@ -36,6 +45,21 @@ const OverviewAssetCard = (props) => {
   const ref = useRef<HTMLElement>();
   const isClient = typeof window === 'object';
   const [width, setWidth] = useState(ref?.current?.clientWidth);
+
+  let createdDate = new Date(data.createdDate)
+
+  const formattedData = {
+    time: toLocalTime(createdDate.getTime() / 1000),
+    value: parseFloat(data['liquidity'])
+  }
+
+  let time: number;
+  let date: string = '';
+
+  if (formattedData) {
+    time = formattedData.time;
+    date = moment(time * 1000).format('MMMM D, YYYY');
+  }
 
   useEffect(() => {
     if (!isClient) {
@@ -61,80 +85,46 @@ const OverviewAssetCard = (props) => {
 
       </RowBetween>
 
-      {chartFilter === ASSET_CHART_VIEW.VOLUME && data && (
+      {date && <div className='var-color mb-2'>{date}</div>}
+
+      <div style={{ height: '50px' }}>
         <ResponsiveContainer aspect={aspect}>
           <OverviewContent
             data={data}
             base={0}
-            field={'lastDayVolume'}
-            width={width}
-            assetId={title}
-          />
-        </ResponsiveContainer>
-      )}
-      {chartFilter === ASSET_CHART_VIEW.LIQUIDITY && data && (
-        <ResponsiveContainer aspect={aspect}>
-          <OverviewContent
-            data={data}
-            base={0}
+            title={'Liquidity'}
             field={'liquidity'}
             width={width}
             assetId={title}
           />
         </ResponsiveContainer>
-      )}
-      {chartFilter === ASSET_CHART_VIEW.MARKETCAP && data && (
+      </div>
+
+      <div style={{ height: '50px' }}>
         <ResponsiveContainer aspect={aspect}>
           <OverviewContent
             data={data}
             base={0}
+            title={'Volume'}
+            field={'lastDayVolume'}
+            width={width}
+            assetId={title}
+          />
+        </ResponsiveContainer>
+      </div>
+
+      <div style={{ height: '50px' }}>
+        <ResponsiveContainer aspect={aspect}>
+          <OverviewContent
+            data={data}
+            base={0}
+            title={'Market Cap'}
             field={'marketCap'}
             width={width}
             assetId={title}
           />
         </ResponsiveContainer>
-      )}
-      <div style={{ height: '60px' }}></div>
-      <OptionButtonBottomContainer className="chart-rack">
-        <OptionButtonContainer className="chart-buttons" style={{ textIndent: "0px" }}>
-          <OptionButton className="chart-button"
-            active={chartFilter === ASSET_CHART_VIEW.LIQUIDITY}
-            onClick={() => {
-              setChartFilter(ASSET_CHART_VIEW.LIQUIDITY);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.LIQUIDITY,
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
-            }}
-          >
-            Liquidity
-          </OptionButton>
-          <OptionButton className="chart-button"
-            active={chartFilter === ASSET_CHART_VIEW.VOLUME}
-            onClick={() => {
-              setChartFilter(ASSET_CHART_VIEW.VOLUME);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.VOLUME,
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
-            }}
-          >
-            Volume
-          </OptionButton>
-          <OptionButton className="chart-button"
-            active={chartFilter === ASSET_CHART_VIEW.MARKETCAP}
-            onClick={() => {
-              setChartFilter(ASSET_CHART_VIEW.MARKETCAP);
-              let togglePosition = {
-                chartFilter: ASSET_CHART_VIEW.MARKETCAP,
-              };
-              localStorage.setItem(data.assetId, JSON.stringify(togglePosition));
-            }}
-          >
-            Market Cap
-          </OptionButton>
-        </OptionButtonContainer>
-      </OptionButtonBottomContainer>
+      </div>
     </ChartWindowWrapper>
   );
 }

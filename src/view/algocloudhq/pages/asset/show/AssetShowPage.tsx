@@ -108,7 +108,7 @@ const AssetShowPage = () => {
       }, 500);
     }
 
-    return () => chatClient?.disconnectUser();
+    // return () => chatClient?.disconnectUser();
   }, [loading]);
 
   useEffect(() => {
@@ -166,7 +166,7 @@ const AssetShowPage = () => {
 
   const customStyles: CustomStyles = {
     '--border': '#141924',
-    
+
   };
 
   const customClasses: CustomClasses = {
@@ -291,13 +291,13 @@ const AssetShowPage = () => {
         </div>
         <div className="asset-m0 chat-section col-lg-4 col-sm-12 d-flex flex-column justify-content-between">
 
-          <ContentWrapper style={{ flex: 1, maxHeight: 525, padding: 0}} className="assets-mobile-card card-hover-2 chat-mobile-card">
+          <ContentWrapper style={{ flex: 1, maxHeight: 525, padding: 0 }} className="assets-mobile-card card-hover-2 chat-mobile-card">
             {
               loading && <Spinner />
             }
             {
               !loading && chatClient &&
-              <Chat  client={chatClient}
+              <Chat client={chatClient}
                 customClasses={customClasses}
                 customStyles={customStyles}
                 theme={`messaging ${theme}`}>

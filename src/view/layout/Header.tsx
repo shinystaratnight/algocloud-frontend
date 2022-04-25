@@ -119,12 +119,12 @@ function Header(props) {
       // await client.disconnect();
       await client.connectUser(userToConnect, userToken);
       client.on(event => {
-        if (event.total_unread_count !== undefined) {
+        if (event.total_unread_count !== undefined && event.total_unread_count === 0) {
           console.log("event.total_unread_count", event.total_unread_count);
           setMessages([]);
         }
 
-        if (event.unread_channels !== undefined) {
+        if (event.unread_channels !== undefined && event.unread_channels === 0) {
           console.log("event.unread_channels", event.unread_channels);
           setMessages([]);
         }
@@ -134,7 +134,7 @@ function Header(props) {
 
     initChat();
 
-    return () => chatClient?.disconnectUser();
+    // return () => chatClient?.disconnectUser();
   }, [currentUser]);
 
   useEffect(() => {
@@ -214,6 +214,7 @@ function Header(props) {
       return message.unreadMessages.map((unreadMessage, index) => {
         return (
           <div key={index}>
+            <div className="list-group-title border-bottom">{message.channel.name}</div>
             <div className="list-group-item">
               <a className="notification notification-flush notification-unread" href="#!">
                 <div className="notification-avatar">
@@ -287,22 +288,50 @@ function Header(props) {
           </span>
 
           <li className="nav-item dropdown">
-            <button className="nav-link notification-indicator notification-indicator-primary px-0 fa-icon-wait user-dropdown"
-              id="navbarDropdownNotification"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-haspopup="true"
-              data-hide-on-body-scroll="data-hide-on-body-scroll"
-              aria-expanded="true"
-              data-toggle="dropdown"
-            >
-              <svg className="svg-inline--fa fa-bell fa-w-14" data-fa-transform="shrink-6"
-                style={{ fontSize: '33px', transformOrigin: "0.4375em 0.5em" }}
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="bell" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" fill="currentColor"><g transform="translate(224 256)"><g transform="translate(0, 0)  scale(0.625, 0.625)  rotate(0 0 0)"><path fill="currentColor" d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z" transform="translate(-224 -256)"></path></g></g></svg>
-            </button>
+            {
+              messages.length > 0 ?
+                <button className="nav-link notification-indicator notification-indicator-primary px-0 fa-icon-wait user-dropdown"
+                  id="navbarDropdownNotification"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  data-hide-on-body-scroll="data-hide-on-body-scroll"
+                  aria-expanded="true"
+                  data-toggle="dropdown"
+                >
+                  <svg className="svg-inline--fa fa-bell fa-w-14" data-fa-transform="shrink-6"
+                    style={{ fontSize: '33px', transformOrigin: "0.4375em 0.5em" }}
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="bell" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" fill="currentColor">
+                    <g transform="translate(224 256)">
+                      <g transform="translate(0, 0)  scale(0.625, 0.625)  rotate(0 0 0)"><path fill="currentColor" d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z" transform="translate(-224 -256)"></path></g>
+                    </g>
+                  </svg>
+                </button>
+                :
+                <button className="nav-link px-0 fa-icon-wait user-dropdown"
+                  id="navbarDropdownNotification"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-haspopup="true"
+                  data-hide-on-body-scroll="data-hide-on-body-scroll"
+                  aria-expanded="true"
+                  data-toggle="dropdown"
+                >
+                  <svg className="svg-inline--fa fa-bell fa-w-14" data-fa-transform="shrink-6"
+                    style={{ fontSize: '33px', transformOrigin: "0.4375em 0.5em" }}
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="fas"
+                    data-icon="bell" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg="" fill="currentColor">
+                    <g transform="translate(224 256)">
+                      <g transform="translate(0, 0)  scale(0.625, 0.625)  rotate(0 0 0)"><path fill="currentColor" d="M224 512c35.32 0 63.97-28.65 63.97-64H160.03c0 35.35 28.65 64 63.97 64zm215.39-149.71c-19.32-20.76-55.47-51.99-55.47-154.29 0-77.7-54.48-139.9-127.94-155.16V32c0-17.67-14.32-32-31.98-32s-31.98 14.33-31.98 32v20.84C118.56 68.1 64.08 130.3 64.08 208c0 102.3-36.15 133.53-55.47 154.29-6 6.45-8.66 14.16-8.61 21.71.11 16.4 12.98 32 32.1 32h383.8c19.12 0 32-15.6 32.1-32 .05-7.55-2.61-15.27-8.61-21.71z" transform="translate(-224 -256)"></path></g>
+                    </g>
+                  </svg>
+                </button>
+            }
             <div className="dropdown-menu dropdown-menu-end dropdown-menu-card dropdown-menu-notification" aria-labelledby="navbarDropdownNotification">
               <div className="card card-notification shadow-none">
                 <div className="card-header">
@@ -328,7 +357,6 @@ function Header(props) {
                       <div className="os-content-2"
                         style={{ padding: "0px", height: "100%", width: "100%" }} >
                         <div className="list-group list-group-flush fw-normal fs--1">
-                          <div className="list-group-title border-bottom">NEW MESSAGES</div>
                           {
                             newMessages()
                           }
@@ -359,7 +387,7 @@ function Header(props) {
                               </div>
                             </a>
                           </div> */}
-                          <div className="list-group-title border-top border-bottom">EARLIER</div>
+                          {/* <div className="list-group-title border-top border-bottom">EARLIER</div>
                           <div className="list-group-item">
                             <a className="notification notification-flush" href="#!">
                               <div className="notification-avatar">
@@ -398,7 +426,7 @@ function Header(props) {
                                 <span className="notification-time"><span className="me-2" role="img" aria-label="Emoji">🙋&zwj;</span>2d</span>
                               </div>
                             </a>
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                     </div></div></div><div className="os-scrollbar os-scrollbar-horizontal os-scrollbar-unusable os-scrollbar-auto-hidden"><div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle"
@@ -407,8 +435,11 @@ function Header(props) {
                 <div className="os-scrollbar os-scrollbar-vertical os-scrollbar-unusable os-scrollbar-auto-hidden">
                   <div className="os-scrollbar-track os-scrollbar-track-off"><div className="os-scrollbar-handle"
                     style={{ transform: "translate(0px, 0px)" }}>
-                  </div></div></div><div className="os-scrollbar-corner"></div></div>
-              <div className="card-footer text-center border-top"><a className="card-link d-block" href="../../app/social/notifications.html">View all</a></div>
+                  </div></div></div><div className="os-scrollbar-corner"></div>
+              </div>
+              <div className="card-footer text-center border-top">
+                <a className="card-link d-block" href="../../app/social/notifications.html">View all</a>
+              </div>
             </div>
           </li >
 

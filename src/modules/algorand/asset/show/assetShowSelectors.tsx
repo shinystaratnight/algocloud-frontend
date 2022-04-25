@@ -14,7 +14,7 @@ const selectAsset = createSelector(
 
 const selectAssetName = createSelector(
   [selectRaw],
-  (raw) => raw.data.name,
+  (raw) => raw.data?.name,
 );
 
 const selectDailyAssetData = createSelector(
