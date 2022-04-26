@@ -45,7 +45,6 @@ const OverviewContent = ({
       ref.current.appendChild(toolTip);
     toolTip.style.display = 'block';
     toolTip.style.fontWeight = '500';
-    toolTip.style.left = -4 + 'px';
     toolTip.style.top = '-' + 8 + 'px';
     toolTip.style.position = 'absolute';
     toolTip.style.zIndex = '100';
@@ -61,15 +60,10 @@ const OverviewContent = ({
     }
 
     toolTip.innerHTML =
-      `<div style="font-size: 16px; margin: 4px 0px; color: ${textColor};">${title}</div>` +
+      `<div class='d-flex align-items-center justify-content-end'><div style="font-size: 16px; margin: 4px 0px;">${title}</div>` +
       `<div style="font-size: 22px; margin: 4px 0px; color:${textColor}" >` +
       formattedNum(price, true) +
-      '</div>' +
-      (date ?
-        '<div>' +
-        date +
-        '</div>'
-        : '');
+      '</div></div>';
   }, [
     base,
     data,

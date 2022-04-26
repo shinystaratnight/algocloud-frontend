@@ -86,7 +86,7 @@ function ShowcaseChart() {
       }, 500);
     }
 
-    return () => chatClient?.disconnectUser();
+    // return () => chatClient?.disconnectUser();
   }, [loading]);
 
   useEffect(() => {
