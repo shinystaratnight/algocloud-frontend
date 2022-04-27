@@ -23,8 +23,11 @@ export default function OverviewCard(props) {
 
   return (
     <>
-      <div className="container w-50 w-100 bg-box rounded m-0 p-0">
-        <div className="ol-2" style={{ maxWidth: "100%", alignItems: "center" }}>
+      <div className="container w-50 w-100 bg-box rounded m-0 p-0 dashboard-card">
+        
+     
+      <div className='dashboard-chard-card ' style={{ minHeight: '200px' }}>
+      <div className="ol-2" style={{ maxWidth: "100%", alignItems: "center" }}>
           <div className="" style={{ width: "min-content" }}>
             <img className='token card-token' src={image} alt="" style={{ width: 35, marginRight: '.5rem' }}></img>
           </div>
@@ -47,13 +50,12 @@ export default function OverviewCard(props) {
             </h5>
             <h6 className="ww-2 m-0">Price (24hrs)</h6></div>
         </div>
-      </div>
-      <div className='dashboard-chard-card' style={{ minHeight: '200px' }}>
         <OverviewAssetCard
           color='#687dfd'
           data={asset}
           title={asset.unitName}
         />
+      </div>
       </div>
     </>
   );

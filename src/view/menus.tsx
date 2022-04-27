@@ -6,6 +6,12 @@ const permissions = Permissions.values;
 
 export default [
   {
+    path: '/algocloudhq',
+    permissionRequired: permissions.algorandRead,
+    icon: 'fas fa-layer-group',
+    label: i18n('entities.algocloudhq.menu'),
+  },
+  {
     path: '/overview',
     exact: true,
     icon: 'fa-solid fa-table-columns',
@@ -128,12 +134,6 @@ export default [
     label: i18n('launchpad.menu'),
     permissionRequired: permissions.algorandRead,
     icon: 'fas fa-rocket',
-  },
-  {
-    path: '/algocloudhq',
-    permissionRequired: permissions.algorandRead,
-    icon: 'fas fa-layer-group',
-    label: i18n('entities.algocloudhq.menu'),
   },
   {
     path: '/customer',

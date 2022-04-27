@@ -169,8 +169,8 @@ function AssetTable(props) {
             /> */}
 
             <TableColumnHeader
-              name='last7days'
-              label='Last 7 Days'
+              name='last3days'
+              label='Last 3 Days'
               align={'center'}
             />
           </tr>
@@ -217,27 +217,11 @@ function AssetTable(props) {
                 <td>
                   <div className='d-flex'>
                     <Link to={`/algocloudhq/assets/${asset.assetId}`}>
-                      <img className="token" src={image} style={{ width: 25, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                      <img className="token" src={image} style={{ width: 35, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
                       <div style={{ marginRight: '4px' }}>
                         <div className='d-flex'>
                           <h6 className='table-algo-title'>{asset.name}</h6>
-                          {/* <button
-                          className="btn"
-                          onClick={(e) =>
-                            console.log('event: ', e)
-                            // e.preventDefault()
-                          }
-                        > */}
-
-                          {/* </button> */}
-                        </div>
-                        <div>
-                          <span style={{ color: 'white' }}>{asset.unitName}</span>
-                          <span style={{ color: 'grey' }}>{' '}{asset.assetId}</span>
-                        </div>
-                      </div>
-                    </Link>
-                    {
+                          {
                       currentUser.superadmin === true ?
                         <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer', marginTop: '3px' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
                         : asset.isVerified && <span
@@ -251,6 +235,23 @@ function AssetTable(props) {
                           <ReactTooltip id="shield-verified-help-tooltip" />
                         </span>
                     }
+                          {/* <button
+                          className="btn"
+                          onClick={(e) =>
+                            console.log('event: ', e)
+                            // e.preventDefault()
+                          }
+                        > */}
+
+                          {/* </button> */}
+                        </div>
+                        <div>
+                          <span style={{ color: 'var(--algocloud-body-color)' }}>{asset.unitName}</span>
+                          <span style={{ color: 'grey' }}>{' '}{asset.assetId}</span>
+                        </div>
+                      </div>
+                    </Link>
+                    
                   </div>
                 </td>
                 <td>{formatPrice(asset.price)}</td>
@@ -348,17 +349,17 @@ function AssetTable(props) {
                   <Link to={`/algocloudhq/assets/${asset.assetId}`}>
                     {
                       asset.hourlyPrices && <CandleStickChart
-                        data={asset.hourlyPrices}
-                        width={200}
-                        height={100}
-                        base={0}
-                        paddingTop='0'
-                        valueFormatter={(val) => val?.toFixed(4)}
-                        duration={ASSET_CHART_VIEW_DURATION.WEEK}
-                        showToolTip={false}
-                        showGrid={false}
-                        showPlayIcon={false}
-                      />
+                      data={asset.hourlyPrices}
+                      width={160}
+                      height={60}
+                      base={0}
+                      paddingTop='0'
+                      valueFormatter={(val) => val?.toFixed(4)}
+                      duration={ASSET_CHART_VIEW_DURATION.WEEK}
+                      showToolTip={false}
+                      showGrid={false}
+                      showPlayIcon={false}
+                    />
                     }
                   </Link>
                 </td>

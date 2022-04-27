@@ -4,8 +4,8 @@ export const ChartWindowWrapper = styled.div`
   margin-top: 16px;
   padding: 1.25rem;
   background: #1e2d58; 
-  background: var(--algocloud-card-bg-color); 
-  box-shadow: 0 0 0 1px var(--card-border);
+  background: transparent; 
+  box-shadow: none;
   width: 100%;
   border-radius: 5px;
   position: relative;

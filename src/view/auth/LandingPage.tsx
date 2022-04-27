@@ -404,7 +404,7 @@ function LandingPage() {
                   </div>
                </div>
             </nav>
-            <section className="py-0 overflow-hidden light" id="banner">
+            <section className="ac-landing py-0 overflow-hidden light" id="banner">
                <div className="bg-holder overlay" style={{ backgroundImage: "url(/assets/light-bg-01.png)", backgroundPosition: "centerBottom" }}></div>
                <div className="container">
                   <div className="justify-content-center align-items-center pt-8 pb-lg-9 pt-lg-9 pb-xl-0 row">
@@ -441,7 +441,7 @@ function LandingPage() {
                   </div>
                </div>
             </section>
-            <section className="bg-light py-3 shadow-sm">
+            <section className="ac-landing bg-light py-3 shadow-sm">
                <div className="container">
                   <div className="flex-center row">
                      <div className="my-1 my-sm-3 px-card col-sm-auto col-3">
@@ -465,7 +465,7 @@ function LandingPage() {
                   </div>
                </div>
             </section>
-            <section className="">
+            <section className="ac-landing">
                <div className="container">
                   <div className="justify-content-center text-center row">
                      <div className="col-xxl-6 col-xxl-6 col-xl-7 col-lg-8">
@@ -518,7 +518,7 @@ function LandingPage() {
                   </div>
                </div>
             </section>
-            <section className="bg-light text-center">
+            <section className="ac-landing bg-light text-center">
                <div className="container">
                   <div className="justify-content-center text-center row">
                      <div className="col-xxl-6 col-xxl-6 col-xl-7 col-lg-8">
@@ -583,7 +583,7 @@ function LandingPage() {
                   </div>
                </div>
             </section>
-            <section className="text-center bg-200-2">
+            <section className="ac-landing text-center bg-200-2">
                <div className="container">
                   <div className="card landing-faq">
                      <div className="card-header">
@@ -655,7 +655,7 @@ function LandingPage() {
                   </div>
                </div>
             </section>
-            <section className="light">
+            <section className="ac-landing light">
                <div className="bg-holder overlay"
                   style={{ backgroundImage: "url(/assets/bg-motherboard.png)", backgroundPosition: "centerTop" }}></div>
                <div className="container">
@@ -671,7 +671,7 @@ function LandingPage() {
                   </div>
                </div>
             </section>
-            <section className="bg-dark-2 pt-8 pb-4 light">
+            <section className="ac-landing bg-dark-2 pt-8 pb-4 light">
                <div className="container">
                   <div className="position-absolute btn-back-to-top cursor-pointer bg-dark-2">
                      <a className="text-600" href="#banner" data-bs-offset-top="0" data-scroll-to="#banner">
@@ -768,7 +768,7 @@ function LandingPage() {
                   </div>
                </div>
             </section>
-            <section className=" bg-dark-2 py-0 text-center fs--1 light">
+            <section className="ac-landing bg-dark-2 py-0 text-center fs--1 light">
                <hr className="my-0 border-600 opacity-25" />
                <div className="container py-3">
                   <div className="justify-content-between row">

@@ -211,27 +211,11 @@ function AssetTable(props) {
                 <td>
                   <div className='d-flex'>
                     <Link to={`/algorand/assets/${asset.assetId}`}>
-                      <img className="token" src={image} style={{ width: 33, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
+                      <img className="token" src={image} style={{ width: 35, marginRight: 10, objectFit: 'contain', float: 'left' }}></img>
                       <div style={{ marginRight: '4px' }}>
                         <div className='d-flex'>
                           <h6 className='table-algo-title flex'>{asset.name}</h6>
-                          {/* <button
-                          className="btn"
-                          onClick={(e) =>
-                            console.log('event: ', e)
-                            // e.preventDefault()
-                          }
-                        > */}
-
-                          {/* </button> */}
-                        </div>
-                        <div>
-                          <span style={{ color: 'white' }}>{asset.unitName}</span>
-                          <span style={{ color: 'grey' }}>{' '}{asset.assetId}</span>
-                        </div>
-                      </div>
-                    </Link>
-                    {
+                          {
                       currentUser.superadmin === true ?
                         <div className={`bi bi-shield-check ${asset.isVerified ? 'text-primary' : ''}`} style={{ cursor: 'pointer' }} onClick={() => handleVerifyAsset(asset.assetId, asset.isVerified)}></div>
                         : asset.isVerified &&
@@ -250,6 +234,23 @@ function AssetTable(props) {
                         </span>
 
                     }
+                          {/* <button
+                          className="btn"
+                          onClick={(e) =>
+                            console.log('event: ', e)
+                            // e.preventDefault()
+                          }
+                        > */}
+
+                          {/* </button> */}
+                        </div>
+                        <div>
+                          <span style={{ color: 'var(--algocloud-body-color)' }}>{asset.unitName}</span>
+                          <span style={{ color: 'grey' }}>{' '}{asset.assetId}</span>
+                        </div>
+                      </div>
+                    </Link>
+                    
                   </div>
                 </td>
                 <td>{formatPrice(asset.price)}</td>

@@ -18,7 +18,7 @@ function PublicRoute({
         );
 
         if (permissionChecker.isAuthenticated) {
-          return <Redirect to="/dashboard" />;
+          return <Redirect to="/algocloudhq" />;
         }
 
         return <Component {...props} />;
